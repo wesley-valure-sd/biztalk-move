@@ -1,0 +1,19 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk.Scripts/271ChannelHealthEligibility/GetInfoToReplaceOn271File.sql",
+    "type": "file",
+    "name": "GetInfoToReplaceOn271File.sql",
+    "kind": "sql",
+    "path": "Cloud9.BizTalk.Scripts/271ChannelHealthEligibility/GetInfoToReplaceOn271File.sql"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "definedIn",
+      "from": "sqlscript:Cloud9.BizTalk.Scripts/271ChannelHealthEligibility/GetInfoToReplaceOn271File.sql",
+      "fromName": "GetInfoToReplaceOn271File.sql",
+      "fromType": "sqlscript",
+      "fromFile": "adjacency/sqlscript/Cloud9.BizTalk.Scripts_271ChannelHealthEligibility_GetInfoToReplaceOn271File.sql.json"
+    }
+  ]
+}

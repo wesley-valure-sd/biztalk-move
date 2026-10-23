@@ -1,0 +1,113 @@
+{
+  "node": {
+    "id": "orchestration:Cloud9.BizTalk.Common.AddLog",
+    "type": "orchestration",
+    "name": "AddLog",
+    "ports": [
+      "Port_CreateLogEntry (uses PortType_CreateLogEntry)"
+    ],
+    "parameters": "System.String strPracticeAddr, System.String strLogMessage, System.String strLogType, System.String strProcessName, System.String InternalEntityID, System.String ExternalEntityID",
+    "messages": [
+      "msg_CreateLogEntryResp: MPType_CreateLogEntryResp",
+      "msg_CreateLogEntryReq: MPType_CreateLogEntryReq"
+    ],
+    "visibility": "public",
+    "module": "Cloud9.BizTalk.Common",
+    "invocation": "called/started by another orchestration",
+    "contextProperties": [],
+    "line": 260,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Common/Orchestrations/Cloud9.BizTalk.Common.AddLog.odx",
+    "bindingStates": {
+      "Cloud9.BizTalk.Deployment": "Unenlisted",
+      "Cloud9.BizTalk.PDS.Deployment": "Unenlisted"
+    }
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Common/Orchestrations/Cloud9.BizTalk.Common.AddLog.odx",
+      "toName": "Cloud9.BizTalk.Common.AddLog.odx",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Common_Orchestrations_Cloud9.BizTalk.Common.AddLog.odx.json"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.Common.MPType_CreateLogEntryResp",
+      "toName": "MPType_CreateLogEntryResp",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.Common.MPType_CreateLogEntryResp.json",
+      "message": "msg_CreateLogEntryResp"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.Common.MPType_CreateLogEntryReq",
+      "toName": "MPType_CreateLogEntryReq",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.Common.MPType_CreateLogEntryReq.json",
+      "message": "msg_CreateLogEntryReq"
+    },
+    {
+      "type": "invokesProc",
+      "to": "sqlproc:BizTalkCloud9Common.BTS.CreateLogEntry",
+      "toName": "BTS.CreateLogEntry",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.CreateLogEntry.json",
+      "line": 298,
+      "via": "static send port operation CreateLogEntry (BtsActionMapping)"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.BizTalk.Deployment/WCF_SQL_CREATE_LOG_ENTRY",
+      "toName": "WCF_SQL_CREATE_LOG_ENTRY",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.BizTalk.Deployment_WCF_SQL_CREATE_LOG_ENTRY.json",
+      "bindingSet": "Cloud9.BizTalk.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "Port_CreateLogEntry"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.BizTalk.PDS.Deployment/WCF_SQL_CREATE_LOG_ENTRY",
+      "toName": "WCF_SQL_CREATE_LOG_ENTRY",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.BizTalk.PDS.Deployment_WCF_SQL_CREATE_LOG_ENTRY.json",
+      "bindingSet": "Cloud9.BizTalk.PDS.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "Port_CreateLogEntry"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "callsOrchestration",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_835Insurance",
+      "fromName": "Process_CHC_835Insurance",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_835Insurance.json",
+      "line": 1310
+    },
+    {
+      "type": "startsOrchestration",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Controller",
+      "fromName": "Process_CHC_InboundFiles_Controller",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Controller.json",
+      "line": 478
+    },
+    {
+      "type": "startsOrchestration",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker",
+      "fromName": "Process_CHC_InboundFiles_Worker",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker.json",
+      "line": 1647
+    },
+    {
+      "type": "implementedBy",
+      "from": "flowstep:CHC-06-Log",
+      "fromName": "ImportLog for each claim, BTS.Log for errors",
+      "fromType": "flowstep",
+      "fromFile": "adjacency/flowstep/CHC-06-Log.json",
+      "curated": true
+    }
+  ]
+}

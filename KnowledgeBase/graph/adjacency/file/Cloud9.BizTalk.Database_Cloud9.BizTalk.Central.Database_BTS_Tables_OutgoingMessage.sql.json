@@ -1,0 +1,27 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Tables/OutgoingMessage.sql",
+    "type": "file",
+    "name": "OutgoingMessage.sql",
+    "kind": "sql",
+    "path": "Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Tables/OutgoingMessage.sql"
+  },
+  "outgoing": [
+    {
+      "type": "defines",
+      "to": "sqltable:BizTalkCloud9Common.BTS.OutgoingMessage",
+      "toName": "BTS.OutgoingMessage",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/BizTalkCloud9Common.BTS.OutgoingMessage.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.Central.Database",
+      "fromName": "Cloud9.BizTalk.Central.Database",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.Central.Database.json"
+    }
+  ]
+}

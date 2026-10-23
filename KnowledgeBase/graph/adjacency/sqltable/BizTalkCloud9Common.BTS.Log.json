@@ -1,0 +1,48 @@
+{
+  "node": {
+    "id": "sqltable:BizTalkCloud9Common.BTS.Log",
+    "type": "sqltable",
+    "name": "BTS.Log",
+    "database": "BizTalkCloud9Common",
+    "columns": [
+      "logGUID uniqueidentifier",
+      "pcInstanceAddress nvarchar(200)",
+      "logProcess varchar(50)",
+      "logType varchar(50)",
+      "logMessage varchar(max)",
+      "logInternalEntityId varchar(100)",
+      "logExternalEntityId varchar(100)",
+      "logRequest varchar(max)",
+      "logStackTrace varchar(max)",
+      "logCreatedDate datetime",
+      "logCreatedBy varchar(50)",
+      "logGUID ASC",
+      "logCreatedDate ASC"
+    ],
+    "path": "Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Tables/Log.sql"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Tables/Log.sql",
+      "fromName": "Log.sql",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Tables_Log.sql.json"
+    },
+    {
+      "type": "writes",
+      "from": "sqlproc:BizTalkCloud9Common.BTS.CreateLogEntry",
+      "fromName": "BTS.CreateLogEntry",
+      "fromType": "sqlproc",
+      "fromFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.CreateLogEntry.json"
+    },
+    {
+      "type": "writes",
+      "from": "sqlproc:BizTalkCloud9Common.BTS.QueueUnprocessedStagingPatientIDs",
+      "fromName": "BTS.QueueUnprocessedStagingPatientIDs",
+      "fromType": "sqlproc",
+      "fromFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.QueueUnprocessedStagingPatientIDs.json"
+    }
+  ]
+}

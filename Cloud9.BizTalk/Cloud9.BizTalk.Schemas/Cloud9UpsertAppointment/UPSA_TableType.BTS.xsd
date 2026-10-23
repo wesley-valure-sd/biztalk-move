@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ns4="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:ns3="http://schemas.microsoft.com/Sql/2008/05/Types/TableTypes/BTS" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/Sql/2008/05/Types/TableTypes/BTS" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation=".\UPSA_Serialization.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:annotation>
+    <xs:appinfo>
+      <fileNameHint xmlns="http://schemas.microsoft.com/servicemodel/adapters/metadata/xsd">TableType.BTS</fileNameHint>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:complexType name="AppointmentTableType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="eiApptID" nillable="true">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="eiApptSecondaryID" nillable="true">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="patGUID" nillable="true" type="ns4:guid" />
+      <xs:element minOccurs="0" maxOccurs="1" name="apptDateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="apptMinutes" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" maxOccurs="1" name="checkinDateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AppointmentStatusCode" nillable="true">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="12" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="AppointmentTypeCode" nillable="true">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="12" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="AppointmentLocation" nillable="true">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="AppointmentScheduleView" nillable="true">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="ChairName" nillable="true">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="apptNote" nillable="true">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="500" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="Orthodontist" nillable="true">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="Assistant" nillable="true">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="Creator" nillable="true">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="LocationGUID" nillable="true" type="ns4:guid" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OrthodontistGUID" nillable="true" type="ns4:guid" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AssistantGUID" nillable="true" type="ns4:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AppointmentTableType" nillable="true" type="ns3:AppointmentTableType" />
+  <xs:complexType name="ArrayOfAppointmentTableType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AppointmentTableType" type="ns3:AppointmentTableType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAppointmentTableType" nillable="true" type="ns3:ArrayOfAppointmentTableType" />
+</xs:schema>

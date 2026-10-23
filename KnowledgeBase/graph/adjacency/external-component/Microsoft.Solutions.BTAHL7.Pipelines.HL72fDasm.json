@@ -1,0 +1,18 @@
+{
+  "node": {
+    "id": "class:Microsoft.Solutions.BTAHL7.Pipelines.HL72fDasm",
+    "type": "external-component",
+    "name": "Microsoft.Solutions.BTAHL7.Pipelines.HL72fDasm",
+    "definedInRepo": false
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "usesComponent",
+      "from": "pipeline:Cloud9.BizTalk.Epic.Pipelines.ReceiveHL7Pipeline",
+      "fromName": "Cloud9.BizTalk.Epic.Pipelines.ReceiveHL7Pipeline",
+      "fromType": "pipeline",
+      "fromFile": "adjacency/pipeline/Cloud9.BizTalk.Epic.Pipelines.ReceiveHL7Pipeline.json"
+    }
+  ]
+}

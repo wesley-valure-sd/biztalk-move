@@ -1,0 +1,19 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12.Schemas/CHC_X12_00501_837_D.cs",
+    "type": "file",
+    "name": "CHC_X12_00501_837_D.cs",
+    "kind": "csharp",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12.Schemas/CHC_X12_00501_837_D.cs"
+  },
+  "outgoing": [
+    {
+      "type": "defines",
+      "to": "class:Cloud9.BizTalk.X12.Schemas.X12_00501_837_D",
+      "toName": "Cloud9.BizTalk.X12.Schemas.X12_00501_837_D",
+      "toType": "class",
+      "toFile": "adjacency/class/Cloud9.BizTalk.X12.Schemas.X12_00501_837_D.json"
+    }
+  ],
+  "incoming": []
+}

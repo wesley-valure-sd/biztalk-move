@@ -1,0 +1,100 @@
+MAP: Cloud9.BizTalk.Epic.MFN_M02ToUpsertEmployee.btm
+PATH: Cloud9.BizTalk\Cloud9.BizTalk.Epic\Maps\Cloud9.BizTalk.Epic.MFN_M02ToUpsertEmployee.btm
+SOURCE: BTAHL7Schemas.MFN_M02_26_GLO_DEF (root MFN_M02_26_GLO_DEF)
+TARGET: Cloud9.BizTalk.Schemas.Cloud9UpsertEmployee.UpsertEmployeeTypedProcedure_BTS (root UpsertEmployee)
+SCRIPT PRECEDENCE (first match wins when a functoid has more than one script): CSharp > ExternalAssembly > VbNet > JScript > XsltCallTemplate > Xslt
+
+=== PAGE: Page 1 ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L7: MFN_M02_26_GLO_DEF/<Sequence>/STF_StaffIdentification/STF_1_PrimaryKeyValueStf/CWE_0_Identifier -> UpsertEmployee/Employee/EmployeeEntityTableType/EmployeeIntegrationID
+L9: MFN_M02_26_GLO_DEF/<Sequence>/PRA_PractitionerDetail/PRA_6_PractitionerIdNumbers -> F4
+L10: F4 -> UpsertEmployee/Employee/EmployeeEntityTableType/empGUID
+L11: MFN_M02_26_GLO_DEF/<Sequence>/PRA_PractitionerDetail/PRA_6_PractitionerIdNumbers/PLN_0_IdNumber -> UpsertEmployee/Employee/EmployeeEntityTableType/empGUID
+L12: MFN_M02_26_GLO_DEF/<Sequence>/PRA_PractitionerDetail/PRA_6_PractitionerIdNumbers/PLN_1_TypeOfIdNumber -> F5
+L13: F5 -> UpsertEmployee/Employee/EmployeeEntityTableType/empGUID
+L14: MFN_M02_26_GLO_DEF/<Sequence>/PRA_PractitionerDetail/PRA_6_PractitionerIdNumbers -> F6
+L15: F6 -> UpsertEmployee/Employee/EmployeeEntityTableType/empProviderNumber
+L16: F7 -> UpsertEmployee/Employee/EmployeeEntityTableType/empProviderNumber
+L17: MFN_M02_26_GLO_DEF/<Sequence>/PRA_PractitionerDetail/PRA_6_PractitionerIdNumbers/PLN_1_TypeOfIdNumber -> F7
+L18: MFN_M02_26_GLO_DEF/<Sequence>/PRA_PractitionerDetail/PRA_6_PractitionerIdNumbers/PLN_0_IdNumber -> UpsertEmployee/Employee/EmployeeEntityTableType/empProviderNumber
+L19: MFN_M02_26_GLO_DEF/<Sequence>/PRA_PractitionerDetail/PRA_6_PractitionerIdNumbers -> F8
+L20: MFN_M02_26_GLO_DEF/<Sequence>/PRA_PractitionerDetail/PRA_6_PractitionerIdNumbers/PLN_1_TypeOfIdNumber -> F9
+L21: F8 -> UpsertEmployee/Employee/EmployeeEntityTableType/empLicenseNumber
+L22: F9 -> UpsertEmployee/Employee/EmployeeEntityTableType/empLicenseNumber
+L23: MFN_M02_26_GLO_DEF/<Sequence>/PRA_PractitionerDetail/PRA_6_PractitionerIdNumbers/PLN_0_IdNumber -> UpsertEmployee/Employee/EmployeeEntityTableType/empLicenseNumber
+L24: MFN_M02_26_GLO_DEF/<Sequence>/PRA_PractitionerDetail/PRA_6_PractitionerIdNumbers -> F10
+L25: MFN_M02_26_GLO_DEF/<Sequence>/PRA_PractitionerDetail/PRA_6_PractitionerIdNumbers/PLN_1_TypeOfIdNumber -> F11
+L26: F10 -> UpsertEmployee/Employee/EmployeeEntityTableType/empTIN
+L28: MFN_M02_26_GLO_DEF/<Sequence>/PRA_PractitionerDetail/PRA_6_PractitionerIdNumbers/PLN_0_IdNumber -> UpsertEmployee/Employee/EmployeeEntityTableType/empTIN
+L29: F11 -> UpsertEmployee/Employee/EmployeeEntityTableType/empTIN
+L31: MFN_M02_26_GLO_DEF/<Sequence>/STF_StaffIdentification/STF_3_StaffName/XPN_1_GivenName -> UpsertEmployee/Employee/EmployeeEntityTableType/persFirstName
+L32: MFN_M02_26_GLO_DEF/<Sequence>/STF_StaffIdentification/STF_3_StaffName/XPN_4_PrefixEGDr -> UpsertEmployee/Employee/EmployeeEntityTableType/persTitle
+L33: MFN_M02_26_GLO_DEF/<Sequence>/STF_StaffIdentification/STF_3_StaffName/XPN_3_SuffixEGJrOrIii -> UpsertEmployee/Employee/EmployeeEntityTableType/persSuffix
+L30: MFN_M02_26_GLO_DEF/<Sequence>/STF_StaffIdentification/STF_3_StaffName/XPN_0_FamilyName/XPN_0_0_Surname -> UpsertEmployee/Employee/EmployeeEntityTableType/persLastName
+L35: MFN_M02_26_GLO_DEF/<Sequence>/STF_StaffIdentification/STF_5_AdministrativeSex -> UpsertEmployee/Employee/EmployeeEntityTableType/persGender
+L38: MFN_M02_26_GLO_DEF/<Sequence>/STF_StaffIdentification/STF_17_MaritalStatus/CWE_1_Text -> UpsertEmployee/Employee/EmployeeEntityTableType/MaritalStatus
+L40: MFN_M02_26_GLO_DEF/<Sequence>/STF_StaffIdentification/STF_20_EmploymentStatusCode/CWE_0_Identifier -> UpsertEmployee/Employee/EmployeeEntityTableType/EmploymentStatus
+L41: MFN_M02_26_GLO_DEF/<Sequence>/STF_StaffIdentification/STF_8_Department/CWE_0_Identifier -> UpsertEmployee/Employee/EmployeeEntityTableType/Profession
+L42: MFN_M02_26_GLO_DEF/<Sequence>/NTE_NotesAndComments/NTE_3_Comment -> UpsertEmployee/Employee/EmployeeEntityTableType/persNote
+L43: MFN_M02_26_GLO_DEF/<Sequence>/STF_StaffIdentification/STF_11_OfficeHomeAddressBirthplace/XAD_0_StreetAddress/XAD_0_0_StreetOrMailingAddress -> UpsertEmployee/Employee/EmployeeEntityTableType/AddressStreet
+L44: MFN_M02_26_GLO_DEF/<Sequence>/STF_StaffIdentification/STF_11_OfficeHomeAddressBirthplace/XAD_2_City -> UpsertEmployee/Employee/EmployeeEntityTableType/AddressCity
+L45: MFN_M02_26_GLO_DEF/<Sequence>/STF_StaffIdentification/STF_11_OfficeHomeAddressBirthplace/XAD_3_StateOrProvince -> UpsertEmployee/Employee/EmployeeEntityTableType/AddressState
+L46: MFN_M02_26_GLO_DEF/<Sequence>/STF_StaffIdentification/STF_11_OfficeHomeAddressBirthplace/XAD_4_ZipOrPostalCode -> UpsertEmployee/Employee/EmployeeEntityTableType/AddressPostalCode
+L47: MFN_M02_26_GLO_DEF/<Sequence>/STF_StaffIdentification/STF_10_Phone -> F12
+L48: F12 -> UpsertEmployee/ContactInfo/ContactInfoTableType
+L51: MFN_M02_26_GLO_DEF/<Sequence>/STF_StaffIdentification/STF_10_Phone/XTN_0_TelephoneNumber -> F14
+L52: F14 -> F15
+L53: MFN_M02_26_GLO_DEF/<Sequence>/STF_StaffIdentification/STF_10_Phone/XTN_0_TelephoneNumber -> F15
+L54: F15 -> UpsertEmployee/ContactInfo/ContactInfoTableType/ciValue
+L55: F14 -> F16
+L56: F16 -> F17
+L57: MFN_M02_26_GLO_DEF/<Sequence>/STF_StaffIdentification/STF_10_Phone/XTN_3_CommunicationAddress -> F17
+L58: F17 -> UpsertEmployee/ContactInfo/ContactInfoTableType/ciValue
+L59: MFN_M02_26_GLO_DEF/<Sequence>/STF_StaffIdentification/STF_10_Phone/XTN_2_TelecommunicationEquipmentType -> F18
+L49: F18 -> UpsertEmployee/ContactInfo/ContactInfoTableType/citContactType
+L63: F19 -> UpsertEmployee/Employee/EmployeeEntityTableType/persBirthdate
+L64: MFN_M02_26_GLO_DEF/<Sequence>/STF_StaffIdentification/STF_6_DateTimeOfBirth -> F19
+L67: MFN_M02_26_GLO_DEF/<Sequence>/STF_StaffIdentification/STF_10_Phone -> F22
+L68: F22 -> F21
+L69: F21 -> UpsertEmployee/ContactInfo/ContactInfoTableType/ciRank
+L71: MFN_M02_26_GLO_DEF/<Sequence>/STF_StaffIdentification/STF_10_Phone/XTN_17_PreferenceOrder -> F24
+L72: F24 -> UpsertEmployee/ContactInfo/ContactInfoTableType/ciRank
+L74: MFN_M02_26_GLO_DEF/<Sequence>/STF_StaffIdentification/STF_10_Phone/XTN_17_PreferenceOrder -> F25
+L75: F25 -> F23
+L76: F25 -> F24
+L77: F23 -> F21
+L82: MFN_M02_26_GLO_DEF/<Sequence>/STF_StaffIdentification/STF_3_StaffName/XPN_1_GivenName -> F29
+L83: MFN_M02_26_GLO_DEF/<Sequence>/STF_StaffIdentification/STF_3_StaffName/XPN_0_FamilyName/XPN_0_0_Surname -> F30
+L84: F29 -> F28
+L85: F30 -> F28
+L86: F28 -> UpsertEmployee/Employee/EmployeeEntityTableType/empCode
+L87: MFN_M02_26_GLO_DEF/<Sequence>/STF_StaffIdentification/STF_3_StaffName/XPN_2_SecondAndFurtherGivenNamesOrInitialsThereof -> UpsertEmployee/Employee/EmployeeEntityTableType/persMiddleName
+L88: MFN_M02_26_GLO_DEF/<Sequence>/STF_StaffIdentification/STF_4_StaffType -> UpsertEmployee/Employee/EmployeeEntityTableType/EmployeeType
+L89: MFN_M02_26_GLO_DEF/<Sequence>/PRA_PractitionerDetail/PRA_5_Specialty/SPD_0_SpecialtyName -> UpsertEmployee/Employee/EmployeeEntityTableType/Specialty
+--- FUNCTOIDS ---
+F4 [Looping] inputs: L9
+F5 [Equal (inferred)] inputs: L12, const:'CLOUD9'
+F6 [Looping] inputs: L14
+F7 [Equal (inferred)] inputs: L17, const:'UPIN'
+F8 [Looping] inputs: L19
+F9 [Equal (inferred)] inputs: L20, const:'MD'
+F10 [Looping] inputs: L24
+F11 [Equal (inferred)] inputs: L25, const:'TAX'
+F12 [Looping] inputs: L47
+F14 [FID 317] inputs: L51
+F15 [Value Mapping] inputs: L52, L53
+F16 [Logical NOT (inferred)] inputs: L55
+F17 [Value Mapping] inputs: L56, L57
+F18 [Scripting] inputs: L59
+    script ExternalAssembly: Cloud9.BizTalk.Helper.HL7TypeConversion.ConvertCommunicationTypeFromHL7ToCloud9 [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F19 [Scripting] inputs: L64
+    script ExternalAssembly: Cloud9.BizTalk.Helper.DateFormatConversion.ConvertHL7DateToSQLDatetimeWithoutOffset [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F21 [Value Mapping] inputs: L77, L68
+F22 [Iteration (inferred)] inputs: L67
+F23 [Logical NOT (inferred)] inputs: L75
+F24 [Value Mapping] inputs: L76, L71
+F25 [FID 317] inputs: L74
+F28 [String Concatenate] inputs: L84, L85
+F29 [String Left (inferred)] inputs: L82, const:'1'
+F30 [String Left (inferred)] inputs: L83, const:'1'
+

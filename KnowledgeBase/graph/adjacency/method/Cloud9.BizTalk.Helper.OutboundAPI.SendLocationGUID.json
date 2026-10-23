@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.Helper.OutboundAPI.SendLocationGUID",
+    "type": "method",
+    "name": "OutboundAPI.SendLocationGUID",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/OutboundAPI.cs",
+    "class": "Cloud9.BizTalk.Helper.OutboundAPI",
+    "line": 109,
+    "signatures": [
+      "public static string SendLocationGUID(string xCorrelationId, Guid locationGUID)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.Helper.OutboundAPI",
+      "fromName": "Cloud9.BizTalk.Helper.OutboundAPI",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.Helper.OutboundAPI.json"
+    }
+  ]
+}

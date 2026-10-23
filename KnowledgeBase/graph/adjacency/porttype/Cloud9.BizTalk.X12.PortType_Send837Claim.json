@@ -1,0 +1,22 @@
+{
+  "node": {
+    "id": "porttype:Cloud9.BizTalk.X12.PortType_Send837Claim",
+    "type": "porttype",
+    "name": "PortType_Send837Claim",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_837Claims_Worker.odx",
+    "module": "Cloud9.BizTalk.X12",
+    "operations": [
+      "oneway Operation_Send837(Schemas.CHC_X12_00501_837_D)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_837Claims_Worker.odx",
+      "fromName": "Process_CHC_837Claims_Worker.odx",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Orchestrations_Process_CHC_837Claims_Worker.odx.json"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "node": {
+    "id": "map:Cloud9.BizTalk.Maps.QueueProcessParametersTypedPolling_To_UpdateProcessParameters",
+    "type": "map",
+    "name": "Cloud9.BizTalk.Maps.QueueProcessParametersTypedPolling_To_UpdateProcessParameters",
+    "readableSummary": "KnowledgeBase/map-summaries/QueueProcessParametersTypedPolling_To_UpdateProcessParameters.txt",
+    "targetSchema": "Cloud9.BizTalk.Schemas.UPP_TypedProcedure_BTS",
+    "inlineScripts": [],
+    "functoidCount": 2,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Transforms/QueueProcessParametersTypedPolling_To_UpdateProcessParameters.btm",
+    "sourceSchema": "Cloud9.BizTalk.Schemas.QPP_TypedPolling_QueueProcessParameters",
+    "linkCount": 5,
+    "sourceRoot": "TypedPolling",
+    "targetRoot": "UpdateProcessParameters"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Transforms/QueueProcessParametersTypedPolling_To_UpdateProcessParameters.btm",
+      "toName": "QueueProcessParametersTypedPolling_To_UpdateProcessParameters.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Transforms_QueueProcessParametersTypedPolling_To_UpdateProcessParameters.btm.json"
+    },
+    {
+      "type": "sourceSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.QPP_TypedPolling_QueueProcessParameters",
+      "toName": "Cloud9.BizTalk.Schemas.QPP_TypedPolling_QueueProcessParameters",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.QPP_TypedPolling_QueueProcessParameters.json",
+      "root": "TypedPolling"
+    },
+    {
+      "type": "targetSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.UPP_TypedProcedure_BTS",
+      "toName": "Cloud9.BizTalk.Schemas.UPP_TypedProcedure_BTS",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.UPP_TypedProcedure_BTS.json",
+      "root": "UpdateProcessParameters"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "usesMap",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_837Claims_Controller",
+      "fromName": "Process_CHC_837Claims_Controller",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_837Claims_Controller.json",
+      "output": "msg_UpdateProcessParametersReq.Body",
+      "input": "msg_QueueProcessParametersResp.Body",
+      "line": 519
+    },
+    {
+      "type": "usesMap",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Controller",
+      "fromName": "Process_CHC_InboundFiles_Controller",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Controller.json",
+      "output": "msg_UpdateProcessParametersReq.Body",
+      "input": "msg_QueueProcessParametersResp.Body",
+      "line": 459
+    }
+  ]
+}

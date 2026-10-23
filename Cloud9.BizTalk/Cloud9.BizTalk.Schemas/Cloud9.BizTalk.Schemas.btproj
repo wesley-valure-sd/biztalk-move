@@ -1,0 +1,687 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DD30F6B7-769D-4D18-99E3-B94B46003EAD}</ProjectGuid>
+    <ProjectTypeGuids>{EF7E3281-CD33-11D4-8326-00C04FA0CE8D};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>library</OutputType>
+    <GenericProcessing>true</GenericProcessing>
+    <RootNamespace>Cloud9.BizTalk.Schemas</RootNamespace>
+    <AssemblyName>Cloud9.BizTalk.Schemas</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <BpelCompliance>True</BpelCompliance>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\Cloud9.BizTalk.Epic.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Name>System.Configuration</Name>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.Pipeline">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.DefaultPipelines">
+      <Name>Microsoft.BizTalk.DefaultPipelines</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.GlobalPropertySchemas">
+      <Name>Microsoft.BizTalk.GlobalPropertySchemas</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.TestTools">
+      <Name>Microsoft.BizTalk.TestTools</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.XLANGs.BaseTypes">
+      <Name>Microsoft.XLANGs.BaseTypes</Name>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ImportLog\ImportLogSerialization.xsd.cs">
+      <DependentUpon>ImportLogSerialization.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Schema Include="Cloud9InsertPatient\UpsertPatient_BTS.xsd">
+      <SubType>Task</SubType>
+      <TypeName>UpsertPatient_BTS</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas.Cloud9InsertPatient</Namespace>
+    </Schema>
+    <Schema Include="Cloud9InsertPatient\UpsertPatient_BTS_1.xsd">
+      <SubType>Task</SubType>
+      <TypeName>UpsertPatient_BTS_1</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas.Cloud9InsertPatient</Namespace>
+    </Schema>
+    <Schema Include="Cloud9InsertPatient\UpsertPatient_Serialization.xsd">
+      <SubType>Task</SubType>
+      <TypeName>UpsertPatient_Serialization</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas.Cloud9InsertPatient</Namespace>
+    </Schema>
+    <Schema Include="Cloud9InsertPatient\UpsertPatient_UpsertPatient.xsd">
+      <SubType>Task</SubType>
+      <TypeName>UpsertPatient_UpsertPatient</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas.Cloud9InsertPatient</Namespace>
+    </Schema>
+    <Schema Include="Cloud9UpsertEmployee\UpsertEmployeeProcedureResultSet.BTS.UpsertEmployee.xsd">
+      <SubType>Task</SubType>
+      <TypeName>UpsertEmployeeProcedureResultSet_BTS_UpsertEmployee</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas.Cloud9UpsertEmployee</Namespace>
+    </Schema>
+    <Schema Include="Cloud9UpsertEmployee\UpsertEmployeeSerialization.xsd">
+      <SubType>Task</SubType>
+      <TypeName>UpsertEmployeeSerialization</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas.Cloud9UpsertEmployee</Namespace>
+    </Schema>
+    <Schema Include="Cloud9UpsertEmployee\UpsertEmployeeTableType.BTS.xsd">
+      <SubType>Task</SubType>
+      <TypeName>UpsertEmployeeTableType_BTS</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas.Cloud9UpsertEmployee</Namespace>
+    </Schema>
+    <Schema Include="Cloud9UpsertEmployee\UpsertEmployeeTypedProcedure.BTS.xsd">
+      <SubType>Task</SubType>
+      <TypeName>UpsertEmployeeTypedProcedure_BTS</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas.Cloud9UpsertEmployee</Namespace>
+    </Schema>
+    <Schema Include="ProcessingErrors\PE_Serialization.xsd">
+      <TypeName>PE_Serialization</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas.ProcessingErrors</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="ProcessingErrors\PE_SimpleTypeArray.xsd">
+      <TypeName>PE_SimpleTypeArray</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="ProcessingErrors\PE_Table.BTS.xsd">
+      <TypeName>PE_Table_BTS</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="ProcessingErrors\PE_TableOperation.BTS.ProcessingError.xsd">
+      <TypeName>PE_TableOperation_BTS_ProcessingError</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="HL7InboundStaging\Cloud9.BizTalk.Schemas.HL7InboundMessage.xsd">
+      <TypeName>HL7InboundMessage</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="HL7InboundStaging\HIS_SimpleTypeArray.xsd">
+      <TypeName>HIS_SimpleTypeArray</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="HL7InboundStaging\HIS_Table.BTS.xsd">
+      <TypeName>HIS_Table_BTS</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="HL7InboundStaging\HIS_TableOperation.BTS.HL7InboundStaging.xsd">
+      <TypeName>HIS_TableOperation_BTS_HL7InboundStaging</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="PracticeConfig\GPC_ProcedureResultSet.BTS.GetPracticeConfiguration.xsd">
+      <TypeName>GPC_ProcedureResultSet_BTS_GetPracticeConfiguration</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="PracticeConfig\GPC_Serialization.xsd">
+      <TypeName>GPC_Serialization</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="PracticeConfig\GPC_TypedProcedure.BTS.xsd">
+      <TypeName>GPC_TypedProcedure_BTS</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClaimErrorMessages\WcfSendPort_SqlAdapterBinding_Custom.bindinginfo.xml" />
+    <Content Include="ClaimsProcessing\WcfSendPort_SqlAdapterBinding_Custom.bindinginfo.xml" />
+    <Content Include="Cloud9UpsertAppointment\WcfSendPort_SqlAdapterBinding_Custom.bindinginfo.xml" />
+    <Content Include="Cloud9UpsertEmployee\WcfSendPort_SqlAdapterBinding_Custom.bindinginfo.xml" />
+    <Content Include="PracticeConfig\WcfSendPort_SqlAdapterBinding_Custom.bindinginfo.xml" />
+    <Content Include="HL7InboundStaging\WcfSendPort_SqlAdapterBinding_Custom.bindinginfo.xml" />
+    <Content Include="ProcessingErrors\WcfSendPort_SqlAdapterBinding_Custom.bindinginfo.xml" />
+    <Content Include="GetProcessingStagingPatientMessages\WcfSendPort_SqlAdapterBinding_Custom.bindinginfo.xml" />
+    <Content Include="SetStagingPatientMessageStatus\WcfSendPort_SqlAdapterBinding_Custom.bindinginfo.xml" />
+    <Content Include="QueueUnprocessedStagingPatientIDs\WcfReceivePort_SqlAdapterBinding_Custom.bindinginfo.xml" />
+    <Content Include="Cloud9InsertPatient\WcfSendPort_SqlAdapterBinding_Custom.bindinginfo.xml" />
+    <Content Include="SignalR\WcfSendPort_SqlAdapterBinding_Custom.bindinginfo.xml" />
+    <Content Include="UpdateProcessParameters\WcfSendPort_SqlAdapterBinding_Custom.bindinginfo.xml" />
+    <Content Include="QueueProcessParameters\WcfReceivePort_SqlAdapterBinding_Custom.bindinginfo.xml" />
+    <Content Include="PatientTreatmentCard\WcfSendPort_SqlAdapterBinding_Custom.bindinginfo.xml" />
+    <Content Include="UpdateClaimStatuses\WcfSendPort_SqlAdapterBinding_Custom.bindinginfo.xml" />
+    <Content Include="ClaimErrorMessages\WcfSendPort_SqlAdapterBinding_Custom.bindinginfo.xml" />
+    <Content Include="ImportLog\WcfSendPort_SqlAdapterBinding_Custom.bindinginfo.xml" />
+    <Content Include="ADAClaim\WcfSendPort_SqlAdapterBinding_Custom.bindinginfo.xml" />
+    <Content Include="CreateLogEntry\WcfSendPort_SqlAdapterBinding_Custom.bindinginfo.xml" />
+    <Content Include="AddTodoItem\WcfSendPort_SqlAdapterBinding_Custom.bindinginfo.xml" />
+    <Content Include="GetPracticeEDISettings\WcfSendPort_SqlAdapterBinding_Custom.bindinginfo.xml" />
+    <Content Include="SubmittedClaims\WcfSendPort_SqlAdapterBinding_Custom.bindinginfo.xml" />
+    <Content Include="GetPracticeConfigForClaim\WcfSendPort_SqlAdapterBinding_Custom.bindinginfo.xml" />
+    <Content Include="ApplicationLookupValue\WcfSendPort_SqlAdapterBinding_Custom.bindinginfo.xml" />
+    <Content Include="Post835\WcfSendPort_SqlAdapterBinding_Custom.bindinginfo.xml" />
+    <Content Include="GetLocationTimezone\WcfSendPort_SqlAdapterBinding_Custom.bindinginfo.xml" />
+    <Content Include="UpdatePatientInsurancePolicy\WcfSendPort_SqlAdapterBinding_Custom.bindinginfo.xml" />
+    <Content Include="PatientEligibility\WcfSendPort_SqlAdapterBinding_Custom.bindinginfo.xml" />
+    <Content Include="GetMessageInfo\WcfSendPort_SqlAdapterBinding_Custom.bindinginfo.xml" />
+    <Content Include="GetPracticeConfigForEmdeon\WcfSendPort_SqlAdapterBinding_Custom.bindinginfo.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\Cloud9.BizTalk.Epic.snk">
+      <Link>Cloud9.BizTalk.Epic.snk</Link>
+    </None>
+    <Schema Include="GetPracticeConfigForEmdeon\GPFE_ProcedureResultSet.BTS.GetPracticeConfigurationByEmdeonUser.xsd">
+      <TypeName>GPFE_ProcedureResultSet_BTS_GetPracticeConfigurationByEmdeonUser</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="GetPracticeConfigForEmdeon\GPFE_Serialization.xsd">
+      <TypeName>GPFE_Serialization</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="GetPracticeConfigForEmdeon\GPFE_TypedProcedure.BTS.xsd">
+      <TypeName>GPFE_TypedProcedure_BTS</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="GetMessageInfo\GIMI_ProcedureResultSet.BTS.GetIncomingMessageInfo.xsd">
+      <TypeName>GIMI_ProcedureResultSet_BTS_GetIncomingMessageInfo</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="GetMessageInfo\GIMI_Serialization.xsd">
+      <TypeName>GIMI_Serialization</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="GetMessageInfo\GIMI_TypedProcedure.BTS.xsd">
+      <TypeName>GIMI_TypedProcedure_BTS</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="PatientEligibility\ProcedureResultSet.BTS.SetPatientInsuranceEligibility.xsd">
+      <TypeName>ProcedureResultSet_BTS_SetPatientInsuranceEligibilities</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="PatientEligibility\TypedProcedure.BTS.xsd">
+      <TypeName>TypedProcedure_BTS</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="PatientEligibility\Serialization.xsd">
+      <SubType>Task</SubType>
+      <TypeName>Serialization</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas.PatientEligibilities</Namespace>
+    </Schema>
+    <Schema Include="Canonical\PatientEligibilityInfo.xsd">
+      <SubType>Task</SubType>
+      <TypeName>PatientEligibilities</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas.Canonical</Namespace>
+    </Schema>
+    <Schema Include="UpdatePatientInsurancePolicy\UPIP_ProcedureResultSet.BTS.UpdatePatientInsurancePolicyByPipGUID.xsd">
+      <TypeName>UPIP_ProcedureResultSet_BTS_UpdatePatientInsurancePolicyByPipGUID</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="UpdatePatientInsurancePolicy\UPIP_Serialization.xsd">
+      <TypeName>UPIP_Serialization</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="UpdatePatientInsurancePolicy\UPIP_TypedProcedure.BTS.xsd">
+      <TypeName>UPIP_TypedProcedure_BTS</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Canonical\InsuranceInformation.xsd">
+      <TypeName>InsuranceInformation</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas.Canonical</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="GetLocationTimezone\GLT_ProcedureResultSet.BTS.GetLocationTimezone.xsd">
+      <TypeName>GLT_ProcedureResultSet_BTS_GetLocationTimezone</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="GetLocationTimezone\GLT_Serialization.xsd">
+      <TypeName>GLT_Serialization</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="GetLocationTimezone\GLT_TypedProcedure.BTS.xsd">
+      <TypeName>GLT_TypedProcedure_BTS</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="CHC_Emdeon\EmdeonGetMailFileResponse.xsd">
+      <TypeName>EmdeonGetMailFileResponse</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas.CHC_Emdeon</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="CHC_Emdeon\EmdeonDeleteFileRequest.xsd">
+      <TypeName>EmdeonDeleteFileRequest</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas.CHC_Emdeon</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="CHC_Emdeon\EmdeonDeleteFileResponse.xsd">
+      <TypeName>EmdeonDeleteFileResponse</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas.CHC_Emdeon</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="CHC_Emdeon\EmdeonGetMailFileListMailFileElement.xsd">
+      <TypeName>EmdeonGetMailFileListMailFileElement</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas.CHC_Emdeon</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="CHC_Emdeon\EmdeonGetMailFileListRequest.xsd">
+      <TypeName>EmdeonGetMailFileListRequest</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas.CHC_Emdeon</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="CHC_Emdeon\EmdeonGetMailFileListResponse.xsd">
+      <TypeName>EmdeonGetMailFileListResponse</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas.CHC_Emdeon</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="CHC_Emdeon\EmdeonGetMailFileRequest.xsd">
+      <TypeName>EmdeonGetMailFileRequest</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas.CHC_Emdeon</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="CHC_Emdeon\EmdeonSubmitClaimRequest.xsd">
+      <TypeName>EmdeonSubmitClaimRequest</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas.CHC_Emdeon</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="CHC_Emdeon\EmdeonSubmitClaimResponse.xsd">
+      <TypeName>EmdeonSubmitClaimResponse</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas.CHC_Emdeon</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="ApplicationLookupValue\ALV_ProcedureResultSet.BTS.GetApplicationLookupValue.xsd">
+      <TypeName>ALV_ProcedureResultSet_BTS_GetApplicationLookupValue</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="ApplicationLookupValue\ALV_ProcedureResultSet.BTS.GetApplicationLookupValues.xsd">
+      <TypeName>ALV_ProcedureResultSet_BTS_GetApplicationLookupValues</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="ApplicationLookupValue\ALV_Serialization.xsd">
+      <TypeName>ALV_Serialization</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="ApplicationLookupValue\ALV_TypedProcedure.BTS.xsd">
+      <TypeName>ALV_TypedProcedure_BTS</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Post835\Post835ProcedureResultSet.BTS.Post835InsuranceTransaction.xsd">
+      <TypeName>Post835ProcedureResultSet_BTS_Post835InsuranceTransaction</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Post835\Post835ProcedureResultSet.BTS.Post835PatientTransaction.xsd">
+      <TypeName>Post835ProcedureResultSet_BTS_Post835PatientTransaction</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Post835\Post835Serialization.xsd">
+      <TypeName>Post835Serialization</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Post835\Post835TypedProcedure.BTS.xsd">
+      <TypeName>Post835TypedProcedure_BTS</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="GetPracticeConfigForClaim\GPCFC_ProcedureResultSet.BTS.GetPracticeConfigurationForClaim.xsd">
+      <TypeName>GPCFC_ProcedureResultSet_BTS_GetPracticeConfigurationForClaim</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="GetPracticeConfigForClaim\GPCFC_Serialization.xsd">
+      <TypeName>GPCFC_Serialization</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="GetPracticeConfigForClaim\GPCFC_TypedProcedure.BTS.xsd">
+      <TypeName>GPCFC_TypedProcedure_BTS</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="SubmittedClaims\SC_Serialization.xsd">
+      <TypeName>SC_Serialization</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas.SubmittedClaims</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="SubmittedClaims\SC_SimpleTypeArray.xsd">
+      <TypeName>SC_SimpleTypeArray</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="SubmittedClaims\SC_Table.BTS.xsd">
+      <TypeName>SC_Table_BTS</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="SubmittedClaims\SC_TableOperation.BTS.SubmittedClaims.xsd">
+      <TypeName>SC_TableOperation_BTS_SubmittedClaims</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="AddTodoItem\ProcedureResultSet.BTS.AddTodoItem.xsd">
+      <TypeName>ProcedureResultSet_BTS_AddTodoItem</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="AddTodoItem\Serialization.xsd">
+      <TypeName>Serialization</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Canonical\ClaimPaymentBatch.xsd">
+      <TypeName>ClaimPaymentBatch</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas.Canonical</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="GetPracticeEDISettings\GPE_ProcedureResultSet.BTS.GetPracticeEDISettings.xsd">
+      <TypeName>GPE_ProcedureResultSet_BTS_GetPracticeEDISettings</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="GetPracticeEDISettings\GPE_Serialization.xsd">
+      <TypeName>GPE_Serialization</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="GetPracticeEDISettings\GPE_TypedProcedure.BTS.xsd">
+      <TypeName>GPE_TypedProcedure_BTS</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Canonical\ClaimPayment.xsd">
+      <TypeName>ClaimPayment</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas.Canonical</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Canonical\ClaimStatus.xsd">
+      <TypeName>ClaimStatus</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas.Canonical</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Canonical\Claim.xsd">
+      <SubType>Task</SubType>
+      <TypeName>ClaimCanonical</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas.Canonical</Namespace>
+    </Schema>
+    <Schema Include="OutgoingMessage\OutgoingMessagePropertySchema.xsd">
+      <TypeName>OutgoingMessagePropertySchema</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas.OutgoingMessage</Namespace>
+    </Schema>
+    <Schema Include="AddTodoItem\AddTodoItemTypedProcedure.BTS.xsd">
+      <TypeName>AddTodoItemTypedProcedure_BTS</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="CreateLogEntry\CLE_TypedProcedure.BTS.xsd">
+      <TypeName>CLE_TypedProcedure_BTS</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="CreateLogEntry\CLE_Serialization.xsd">
+      <TypeName>CLE_Serialization</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="ImportLog\ImportLogSerialization.xsd">
+      <TypeName>ImportLogSerialization</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas.ImportLog</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Canonical\ClaimInformation.xsd">
+      <TypeName>ClaimInformation</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas.Canonical</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="OutgoingMessage\OutgoingMessage.xsd">
+      <TypeName>OutgoingMessage</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas.OutgoingMessage</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="OutgoingMessage\OutgoingMessageBatch.xsd">
+      <TypeName>OutgoingMessageBatch</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas.OutgoingMessage</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="ClaimsProcessing\QC_TypedProcedure.BTS.xsd">
+      <SubType>Task</SubType>
+      <TypeName>QC_TypedProcedure_BTS</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas.ClaimsProcessing</Namespace>
+    </Schema>
+    <Schema Include="ImportLog\ImportLogTypedProcedure.BTS.xsd">
+      <TypeName>ImportLogTypedProcedure_BTS</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="ADAClaim\ADAClaimProcedureResultSet.dbo.GetADAClaim.xsd">
+      <TypeName>ADAClaimProcedureResultSet_dbo_GetADAClaim</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="ADAClaim\ADAClaimSerialization.xsd">
+      <TypeName>ADAClaimSerialization</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="ADAClaim\ADAClaimTypedProcedure.dbo.xsd">
+      <TypeName>ADAClaimTypedProcedure_dbo</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="ClaimErrorMessages\ACE_TableType.BTS.xsd">
+      <TypeName>ACE_TableType_BTS</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas.ClaimErrorMessages</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="ClaimErrorMessages\ACE_TypedProcedure.BTS.xsd">
+      <TypeName>ACE_TypedProcedure_BTS</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas.ClaimErrorMessages</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="ClaimsProcessing\QC_Serialization.xsd">
+      <SubType>Task</SubType>
+      <TypeName>QC_Serialization</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas.ClaimsProcessing</Namespace>
+    </Schema>
+    <Schema Include="ClaimsProcessing\QC_ProcedureResultSet.BTS.QueueClaims.xsd">
+      <SubType>Task</SubType>
+      <TypeName>QC_ProcedureResultSet_BTS_QueueClaims</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas.ClaimsProcessing</Namespace>
+    </Schema>
+    <Schema Include="PracticeConfig\GPC_ProcedureResultSet.BTS.GetPracticeConfigurationByName.xsd">
+      <SubType>Task</SubType>
+      <TypeName>GPC_ProcedureResultSet_BTS_GetPracticeConfigurationByName</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+    </Schema>
+    <Schema Include="UpdateClaimStatuses\UCS_Serialization.xsd">
+      <TypeName>UCS_Serialization</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="UpdateClaimStatuses\UCS_TableType.BTS.xsd">
+      <TypeName>UCS_TableType_BTS</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="UpdateClaimStatuses\UCS_TypedProcedure.BTS.xsd">
+      <TypeName>UCS_TypedProcedure_BTS</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="PatientTreatmentCard\PTC_ProcedureResultSet.BTS.GetTreatmentCardPatientList.xsd">
+      <TypeName>PTC_ProcedureResultSet_BTS_GetTreatmentCardPatientList</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="PatientTreatmentCard\PTC_Serialization.xsd">
+      <TypeName>PTC_Serialization</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="PatientTreatmentCard\PTC_TypedProcedure.BTS.xsd">
+      <TypeName>PTC_TypedProcedure_BTS</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="QueueProcessParameters\PropertySchema.xsd">
+      <TypeName>PropertySchema</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas.PropertySchema</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="QueueProcessParameters\QPP_Serialization.xsd">
+      <TypeName>QPP_Serialization</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="QueueProcessParameters\QPP_TypedPolling.QueueProcessParameters.xsd">
+      <TypeName>QPP_TypedPolling_QueueProcessParameters</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="UpdateProcessParameters\UPP_Serialization.xsd">
+      <TypeName>UPP_Serialization</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="UpdateProcessParameters\UPP_TypedProcedure.BTS.xsd">
+      <TypeName>UPP_TypedProcedure_BTS</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="SignalR\ASP_TypedProcedure.BTS.xsd">
+      <TypeName>ASP_TypedProcedure_BTS</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Cloud9UpsertAppointment\UPSA_ProcedureResultSet.BTS.UpsertAppointment.xsd">
+      <TypeName>UPSA_ProcedureResultSet_BTS_UpsertAppointment</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas.Cloud9UpsertAppointment</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Cloud9UpsertAppointment\UPSA_Serialization.xsd">
+      <TypeName>UPSA_Serialization</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas.Cloud9UpsertAppointment</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Cloud9UpsertAppointment\UPSA_TableType.BTS.xsd">
+      <TypeName>UPSA_TableType_BTS</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas.Cloud9UpsertAppointment</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Cloud9UpsertAppointment\UPSA_TypedProcedure.BTS.xsd">
+      <TypeName>UPSA_TypedProcedure_BTS</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas.Cloud9UpsertAppointment</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="GetProcessingStagingPatientMessages\GPSP_Serialization.xsd">
+      <TypeName>GPSP_Serialization</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas.GetProcessingStagingPatientMessages</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="QueueUnprocessedStagingPatientIDs\QUSP_TypedPolling.QueueUnprocessedStagingPatientIDs.xsd">
+      <TypeName>QUSP_TypedPolling_QueueUnprocessedStagingPatientIDs</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="SetStagingPatientMessageStatus\SSPS_TypedProcedure.BTS.xsd">
+      <TypeName>SSPS_TypedProcedure_BTS</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="GetProcessingStagingPatientMessages\GPSP_ProcedureResultSet.BTS.GetProcessingStagingPatientMessages.xsd">
+      <TypeName>GPSP_ProcedureResultSet_BTS_GetProcessingStagingPatientMessages</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="GetProcessingStagingPatientMessages\GPSP_TypedProcedure.BTS.xsd">
+      <TypeName>GPSP_TypedProcedure_BTS</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="HL7IncomingMessageSQL\Table_BTS.xsd">
+      <TypeName>Table_BTS</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="HL7IncomingMessageSQL\Table_IncomingMessage.xsd">
+      <TypeName>Table_IncomingMessage</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="HL7IncomingMessageSQL\Table_Serialization.xsd">
+      <TypeName>Table_Serialization</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="HL7IncomingMessageSQL\Polling_IncomingMessage.xsd">
+      <TypeName>Polling_IncomingMessage</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="HL7IncomingMessageSQL\Polling_Serialization.xsd">
+      <TypeName>Polling_Serialization</TypeName>
+      <Namespace>Cloud9.BizTalk.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ClaimStatusInquiry\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
+</Project>

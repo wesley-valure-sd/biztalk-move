@@ -1,0 +1,24 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.HIS_SimpleTypeArray",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.HIS_SimpleTypeArray",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/HL7InboundStaging/HIS_SimpleTypeArray.xsd",
+    "rootElements": [
+      "ArrayOflong"
+    ],
+    "kind": "wcf-serialization",
+    "targetNamespace": "http://schemas.microsoft.com/2003/10/Serialization/Arrays",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/HL7InboundStaging/HIS_SimpleTypeArray.xsd",
+      "toName": "HIS_SimpleTypeArray.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_HL7InboundStaging_HIS_SimpleTypeArray.xsd.json"
+    }
+  ],
+  "incoming": []
+}

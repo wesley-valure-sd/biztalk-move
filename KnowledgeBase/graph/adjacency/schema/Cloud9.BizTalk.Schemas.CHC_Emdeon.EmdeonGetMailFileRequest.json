@@ -1,0 +1,41 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonGetMailFileRequest",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonGetMailFileRequest",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/CHC_Emdeon/EmdeonGetMailFileRequest.xsd",
+    "rootElements": [
+      "claim_submission_api"
+    ],
+    "kind": "canonical-or-other",
+    "targetNamespace": "http://Cloud9.BizTalk.Schemas.Emdeon.EmdeonGetMailFilesRequest",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/CHC_Emdeon/EmdeonGetMailFileRequest.xsd",
+      "toName": "EmdeonGetMailFileRequest.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_CHC_Emdeon_EmdeonGetMailFileRequest.xsd.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.X12.Maps.CHC_GetMailFileListReq_GetMailFileRespElement_To_GetMailFileReq",
+      "fromName": "Cloud9.BizTalk.X12.Maps.CHC_GetMailFileListReq_GetMailFileRespElement_To_GetMailFileReq",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.CHC_GetMailFileListReq_GetMailFileRespElement_To_GetMailFileReq.json",
+      "root": "claim_submission_api"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.MPType_GetMailFileReq",
+      "fromName": "MPType_GetMailFileReq",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.MPType_GetMailFileReq.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonGetMailFileRequest"
+    }
+  ]
+}

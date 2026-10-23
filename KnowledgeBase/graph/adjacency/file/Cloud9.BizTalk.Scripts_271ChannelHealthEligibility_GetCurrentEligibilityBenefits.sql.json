@@ -1,0 +1,19 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk.Scripts/271ChannelHealthEligibility/GetCurrentEligibilityBenefits.sql",
+    "type": "file",
+    "name": "GetCurrentEligibilityBenefits.sql",
+    "kind": "sql",
+    "path": "Cloud9.BizTalk.Scripts/271ChannelHealthEligibility/GetCurrentEligibilityBenefits.sql"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "definedIn",
+      "from": "sqlscript:Cloud9.BizTalk.Scripts/271ChannelHealthEligibility/GetCurrentEligibilityBenefits.sql",
+      "fromName": "GetCurrentEligibilityBenefits.sql",
+      "fromType": "sqlscript",
+      "fromFile": "adjacency/sqlscript/Cloud9.BizTalk.Scripts_271ChannelHealthEligibility_GetCurrentEligibilityBenefits.sql.json"
+    }
+  ]
+}

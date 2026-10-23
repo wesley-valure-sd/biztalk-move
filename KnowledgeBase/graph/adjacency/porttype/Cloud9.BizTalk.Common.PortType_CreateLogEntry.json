@@ -1,0 +1,22 @@
+{
+  "node": {
+    "id": "porttype:Cloud9.BizTalk.Common.PortType_CreateLogEntry",
+    "type": "porttype",
+    "name": "PortType_CreateLogEntry",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Common/Orchestrations/Cloud9.BizTalk.Common.AddLog.odx",
+    "module": "Cloud9.BizTalk.Common",
+    "operations": [
+      "requestresponse CreateLogEntry(MPType_CreateLogEntryReq, MPType_CreateLogEntryResp)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.Common/Orchestrations/Cloud9.BizTalk.Common.AddLog.odx",
+      "fromName": "Cloud9.BizTalk.Common.AddLog.odx",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Common_Orchestrations_Cloud9.BizTalk.Common.AddLog.odx.json"
+    }
+  ]
+}

@@ -1,0 +1,870 @@
+{
+  "node": {
+    "id": "project:Cloud9.BizTalk.Schemas",
+    "type": "project",
+    "name": "Cloud9.BizTalk.Schemas",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Cloud9.BizTalk.Schemas.btproj",
+    "framework": "v4.6",
+    "kind": "biztalk",
+    "rootNamespace": "Cloud9.BizTalk.Schemas",
+    "assemblyName": "Cloud9.BizTalk.Schemas"
+  },
+  "outgoing": [
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ADAClaim/ADAClaimProcedureResultSet.dbo.GetADAClaim.xsd",
+      "toName": "ADAClaimProcedureResultSet.dbo.GetADAClaim.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_ADAClaim_ADAClaimProcedureResultSet.dbo.GetADAClaim.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ADAClaim/ADAClaimSerialization.xsd",
+      "toName": "ADAClaimSerialization.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_ADAClaim_ADAClaimSerialization.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ADAClaim/ADAClaimTypedProcedure.dbo.xsd",
+      "toName": "ADAClaimTypedProcedure.dbo.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_ADAClaim_ADAClaimTypedProcedure.dbo.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/AddTodoItem/AddTodoItemTypedProcedure.BTS.xsd",
+      "toName": "AddTodoItemTypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_AddTodoItem_AddTodoItemTypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/AddTodoItem/ProcedureResultSet.BTS.AddTodoItem.xsd",
+      "toName": "ProcedureResultSet.BTS.AddTodoItem.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_AddTodoItem_ProcedureResultSet.BTS.AddTodoItem.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/AddTodoItem/Serialization.xsd",
+      "toName": "Serialization.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_AddTodoItem_Serialization.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ApplicationLookupValue/ALV_ProcedureResultSet.BTS.GetApplicationLookupValue.xsd",
+      "toName": "ALV_ProcedureResultSet.BTS.GetApplicationLookupValue.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_ApplicationLookupValue_ALV_ProcedureResultSet.BTS.GetApplicationLookupValue.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ApplicationLookupValue/ALV_ProcedureResultSet.BTS.GetApplicationLookupValues.xsd",
+      "toName": "ALV_ProcedureResultSet.BTS.GetApplicationLookupValues.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_ApplicationLookupValue_ALV_ProcedureResultSet.BTS.GetApplicationLookupValues.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ApplicationLookupValue/ALV_Serialization.xsd",
+      "toName": "ALV_Serialization.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_ApplicationLookupValue_ALV_Serialization.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ApplicationLookupValue/ALV_TypedProcedure.BTS.xsd",
+      "toName": "ALV_TypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_ApplicationLookupValue_ALV_TypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Canonical/Claim.xsd",
+      "toName": "Claim.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_Canonical_Claim.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Canonical/ClaimInformation.xsd",
+      "toName": "ClaimInformation.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_Canonical_ClaimInformation.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Canonical/ClaimPayment.xsd",
+      "toName": "ClaimPayment.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_Canonical_ClaimPayment.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Canonical/ClaimPaymentBatch.xsd",
+      "toName": "ClaimPaymentBatch.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_Canonical_ClaimPaymentBatch.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Canonical/ClaimStatus.xsd",
+      "toName": "ClaimStatus.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_Canonical_ClaimStatus.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Canonical/InsuranceInformation.xsd",
+      "toName": "InsuranceInformation.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_Canonical_InsuranceInformation.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Canonical/PatientEligibilityInfo.xsd",
+      "toName": "PatientEligibilityInfo.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_Canonical_PatientEligibilityInfo.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/CHC_Emdeon/EmdeonDeleteFileRequest.xsd",
+      "toName": "EmdeonDeleteFileRequest.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_CHC_Emdeon_EmdeonDeleteFileRequest.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/CHC_Emdeon/EmdeonDeleteFileResponse.xsd",
+      "toName": "EmdeonDeleteFileResponse.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_CHC_Emdeon_EmdeonDeleteFileResponse.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/CHC_Emdeon/EmdeonGetMailFileListMailFileElement.xsd",
+      "toName": "EmdeonGetMailFileListMailFileElement.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_CHC_Emdeon_EmdeonGetMailFileListMailFileElement.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/CHC_Emdeon/EmdeonGetMailFileListRequest.xsd",
+      "toName": "EmdeonGetMailFileListRequest.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_CHC_Emdeon_EmdeonGetMailFileListRequest.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/CHC_Emdeon/EmdeonGetMailFileListResponse.xsd",
+      "toName": "EmdeonGetMailFileListResponse.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_CHC_Emdeon_EmdeonGetMailFileListResponse.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/CHC_Emdeon/EmdeonGetMailFileRequest.xsd",
+      "toName": "EmdeonGetMailFileRequest.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_CHC_Emdeon_EmdeonGetMailFileRequest.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/CHC_Emdeon/EmdeonGetMailFileResponse.xsd",
+      "toName": "EmdeonGetMailFileResponse.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_CHC_Emdeon_EmdeonGetMailFileResponse.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/CHC_Emdeon/EmdeonSubmitClaimRequest.xsd",
+      "toName": "EmdeonSubmitClaimRequest.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_CHC_Emdeon_EmdeonSubmitClaimRequest.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/CHC_Emdeon/EmdeonSubmitClaimResponse.xsd",
+      "toName": "EmdeonSubmitClaimResponse.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_CHC_Emdeon_EmdeonSubmitClaimResponse.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ClaimErrorMessages/ACE_TableType.BTS.xsd",
+      "toName": "ACE_TableType.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_ClaimErrorMessages_ACE_TableType.BTS.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ClaimErrorMessages/ACE_TypedProcedure.BTS.xsd",
+      "toName": "ACE_TypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_ClaimErrorMessages_ACE_TypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ClaimsProcessing/QC_ProcedureResultSet.BTS.QueueClaims.xsd",
+      "toName": "QC_ProcedureResultSet.BTS.QueueClaims.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_ClaimsProcessing_QC_ProcedureResultSet.BTS.QueueClaims.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ClaimsProcessing/QC_Serialization.xsd",
+      "toName": "QC_Serialization.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_ClaimsProcessing_QC_Serialization.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ClaimsProcessing/QC_TypedProcedure.BTS.xsd",
+      "toName": "QC_TypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_ClaimsProcessing_QC_TypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Cloud9InsertPatient/UpsertPatient_BTS_1.xsd",
+      "toName": "UpsertPatient_BTS_1.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_Cloud9InsertPatient_UpsertPatient_BTS_1.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Cloud9InsertPatient/UpsertPatient_BTS.xsd",
+      "toName": "UpsertPatient_BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_Cloud9InsertPatient_UpsertPatient_BTS.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Cloud9InsertPatient/UpsertPatient_Serialization.xsd",
+      "toName": "UpsertPatient_Serialization.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_Cloud9InsertPatient_UpsertPatient_Serialization.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Cloud9InsertPatient/UpsertPatient_UpsertPatient.xsd",
+      "toName": "UpsertPatient_UpsertPatient.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_Cloud9InsertPatient_UpsertPatient_UpsertPatient.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Cloud9UpsertAppointment/UPSA_ProcedureResultSet.BTS.UpsertAppointment.xsd",
+      "toName": "UPSA_ProcedureResultSet.BTS.UpsertAppointment.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_Cloud9UpsertAppointment_UPSA_ProcedureResultSet.BTS.UpsertAppointment.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Cloud9UpsertAppointment/UPSA_Serialization.xsd",
+      "toName": "UPSA_Serialization.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_Cloud9UpsertAppointment_UPSA_Serialization.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Cloud9UpsertAppointment/UPSA_TableType.BTS.xsd",
+      "toName": "UPSA_TableType.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_Cloud9UpsertAppointment_UPSA_TableType.BTS.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Cloud9UpsertAppointment/UPSA_TypedProcedure.BTS.xsd",
+      "toName": "UPSA_TypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_Cloud9UpsertAppointment_UPSA_TypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Cloud9UpsertEmployee/UpsertEmployeeProcedureResultSet.BTS.UpsertEmployee.xsd",
+      "toName": "UpsertEmployeeProcedureResultSet.BTS.UpsertEmployee.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_Cloud9UpsertEmployee_UpsertEmployeeProcedureResultSet.BTS.UpsertEmployee.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Cloud9UpsertEmployee/UpsertEmployeeSerialization.xsd",
+      "toName": "UpsertEmployeeSerialization.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_Cloud9UpsertEmployee_UpsertEmployeeSerialization.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Cloud9UpsertEmployee/UpsertEmployeeTableType.BTS.xsd",
+      "toName": "UpsertEmployeeTableType.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_Cloud9UpsertEmployee_UpsertEmployeeTableType.BTS.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Cloud9UpsertEmployee/UpsertEmployeeTypedProcedure.BTS.xsd",
+      "toName": "UpsertEmployeeTypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_Cloud9UpsertEmployee_UpsertEmployeeTypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/CreateLogEntry/CLE_Serialization.xsd",
+      "toName": "CLE_Serialization.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_CreateLogEntry_CLE_Serialization.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/CreateLogEntry/CLE_TypedProcedure.BTS.xsd",
+      "toName": "CLE_TypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_CreateLogEntry_CLE_TypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetLocationTimezone/GLT_ProcedureResultSet.BTS.GetLocationTimezone.xsd",
+      "toName": "GLT_ProcedureResultSet.BTS.GetLocationTimezone.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_GetLocationTimezone_GLT_ProcedureResultSet.BTS.GetLocationTimezone.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetLocationTimezone/GLT_Serialization.xsd",
+      "toName": "GLT_Serialization.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_GetLocationTimezone_GLT_Serialization.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetLocationTimezone/GLT_TypedProcedure.BTS.xsd",
+      "toName": "GLT_TypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_GetLocationTimezone_GLT_TypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetMessageInfo/GIMI_ProcedureResultSet.BTS.GetIncomingMessageInfo.xsd",
+      "toName": "GIMI_ProcedureResultSet.BTS.GetIncomingMessageInfo.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_GetMessageInfo_GIMI_ProcedureResultSet.BTS.GetIncomingMessageInfo.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetMessageInfo/GIMI_Serialization.xsd",
+      "toName": "GIMI_Serialization.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_GetMessageInfo_GIMI_Serialization.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetMessageInfo/GIMI_TypedProcedure.BTS.xsd",
+      "toName": "GIMI_TypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_GetMessageInfo_GIMI_TypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetPracticeConfigForClaim/GPCFC_ProcedureResultSet.BTS.GetPracticeConfigurationForClaim.xsd",
+      "toName": "GPCFC_ProcedureResultSet.BTS.GetPracticeConfigurationForClaim.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_GetPracticeConfigForClaim_GPCFC_ProcedureResultSet.BTS.GetPracticeConfigurationForClaim.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetPracticeConfigForClaim/GPCFC_Serialization.xsd",
+      "toName": "GPCFC_Serialization.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_GetPracticeConfigForClaim_GPCFC_Serialization.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetPracticeConfigForClaim/GPCFC_TypedProcedure.BTS.xsd",
+      "toName": "GPCFC_TypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_GetPracticeConfigForClaim_GPCFC_TypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetPracticeConfigForEmdeon/GPFE_ProcedureResultSet.BTS.GetPracticeConfigurationByEmdeonUser.xsd",
+      "toName": "GPFE_ProcedureResultSet.BTS.GetPracticeConfigurationByEmdeonUser.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_GetPracticeConfigForEmdeon_GPFE_ProcedureResultSet.BTS.GetPracticeConfigurationByEmdeonUser.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetPracticeConfigForEmdeon/GPFE_Serialization.xsd",
+      "toName": "GPFE_Serialization.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_GetPracticeConfigForEmdeon_GPFE_Serialization.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetPracticeConfigForEmdeon/GPFE_TypedProcedure.BTS.xsd",
+      "toName": "GPFE_TypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_GetPracticeConfigForEmdeon_GPFE_TypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetPracticeEDISettings/GPE_ProcedureResultSet.BTS.GetPracticeEDISettings.xsd",
+      "toName": "GPE_ProcedureResultSet.BTS.GetPracticeEDISettings.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_GetPracticeEDISettings_GPE_ProcedureResultSet.BTS.GetPracticeEDISettings.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetPracticeEDISettings/GPE_Serialization.xsd",
+      "toName": "GPE_Serialization.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_GetPracticeEDISettings_GPE_Serialization.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetPracticeEDISettings/GPE_TypedProcedure.BTS.xsd",
+      "toName": "GPE_TypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_GetPracticeEDISettings_GPE_TypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetProcessingStagingPatientMessages/GPSP_ProcedureResultSet.BTS.GetProcessingStagingPatientMessages.xsd",
+      "toName": "GPSP_ProcedureResultSet.BTS.GetProcessingStagingPatientMessages.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_GetProcessingStagingPatientMessages_GPSP_ProcedureResultSet.BTS.GetProcessingStagingPatientMessages.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetProcessingStagingPatientMessages/GPSP_Serialization.xsd",
+      "toName": "GPSP_Serialization.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_GetProcessingStagingPatientMessages_GPSP_Serialization.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetProcessingStagingPatientMessages/GPSP_TypedProcedure.BTS.xsd",
+      "toName": "GPSP_TypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_GetProcessingStagingPatientMessages_GPSP_TypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/HL7InboundStaging/Cloud9.BizTalk.Schemas.HL7InboundMessage.xsd",
+      "toName": "Cloud9.BizTalk.Schemas.HL7InboundMessage.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_HL7InboundStaging_Cloud9.BizTalk.Schemas.HL7InboundMessage.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/HL7InboundStaging/HIS_SimpleTypeArray.xsd",
+      "toName": "HIS_SimpleTypeArray.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_HL7InboundStaging_HIS_SimpleTypeArray.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/HL7InboundStaging/HIS_Table.BTS.xsd",
+      "toName": "HIS_Table.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_HL7InboundStaging_HIS_Table.BTS.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/HL7InboundStaging/HIS_TableOperation.BTS.HL7InboundStaging.xsd",
+      "toName": "HIS_TableOperation.BTS.HL7InboundStaging.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_HL7InboundStaging_HIS_TableOperation.BTS.HL7InboundStaging.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/HL7IncomingMessageSQL/Polling_IncomingMessage.xsd",
+      "toName": "Polling_IncomingMessage.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_HL7IncomingMessageSQL_Polling_IncomingMessage.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/HL7IncomingMessageSQL/Polling_Serialization.xsd",
+      "toName": "Polling_Serialization.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_HL7IncomingMessageSQL_Polling_Serialization.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/HL7IncomingMessageSQL/Table_BTS.xsd",
+      "toName": "Table_BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_HL7IncomingMessageSQL_Table_BTS.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/HL7IncomingMessageSQL/Table_IncomingMessage.xsd",
+      "toName": "Table_IncomingMessage.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_HL7IncomingMessageSQL_Table_IncomingMessage.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/HL7IncomingMessageSQL/Table_Serialization.xsd",
+      "toName": "Table_Serialization.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_HL7IncomingMessageSQL_Table_Serialization.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ImportLog/ImportLogSerialization.xsd",
+      "toName": "ImportLogSerialization.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_ImportLog_ImportLogSerialization.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ImportLog/ImportLogTypedProcedure.BTS.xsd",
+      "toName": "ImportLogTypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_ImportLog_ImportLogTypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/OutgoingMessage/OutgoingMessage.xsd",
+      "toName": "OutgoingMessage.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_OutgoingMessage_OutgoingMessage.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/OutgoingMessage/OutgoingMessageBatch.xsd",
+      "toName": "OutgoingMessageBatch.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_OutgoingMessage_OutgoingMessageBatch.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/OutgoingMessage/OutgoingMessagePropertySchema.xsd",
+      "toName": "OutgoingMessagePropertySchema.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_OutgoingMessage_OutgoingMessagePropertySchema.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/PatientEligibility/ProcedureResultSet.BTS.SetPatientInsuranceEligibility.xsd",
+      "toName": "ProcedureResultSet.BTS.SetPatientInsuranceEligibility.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_PatientEligibility_ProcedureResultSet.BTS.SetPatientInsuranceEligibility.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/PatientEligibility/Serialization.xsd",
+      "toName": "Serialization.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_PatientEligibility_Serialization.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/PatientEligibility/TypedProcedure.BTS.xsd",
+      "toName": "TypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_PatientEligibility_TypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/PatientTreatmentCard/PTC_ProcedureResultSet.BTS.GetTreatmentCardPatientList.xsd",
+      "toName": "PTC_ProcedureResultSet.BTS.GetTreatmentCardPatientList.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_PatientTreatmentCard_PTC_ProcedureResultSet.BTS.GetTreatmentCardPatientList.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/PatientTreatmentCard/PTC_Serialization.xsd",
+      "toName": "PTC_Serialization.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_PatientTreatmentCard_PTC_Serialization.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/PatientTreatmentCard/PTC_TypedProcedure.BTS.xsd",
+      "toName": "PTC_TypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_PatientTreatmentCard_PTC_TypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Post835/Post835ProcedureResultSet.BTS.Post835InsuranceTransaction.xsd",
+      "toName": "Post835ProcedureResultSet.BTS.Post835InsuranceTransaction.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_Post835_Post835ProcedureResultSet.BTS.Post835InsuranceTransaction.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Post835/Post835ProcedureResultSet.BTS.Post835PatientTransaction.xsd",
+      "toName": "Post835ProcedureResultSet.BTS.Post835PatientTransaction.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_Post835_Post835ProcedureResultSet.BTS.Post835PatientTransaction.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Post835/Post835Serialization.xsd",
+      "toName": "Post835Serialization.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_Post835_Post835Serialization.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Post835/Post835TypedProcedure.BTS.xsd",
+      "toName": "Post835TypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_Post835_Post835TypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/PracticeConfig/GPC_ProcedureResultSet.BTS.GetPracticeConfiguration.xsd",
+      "toName": "GPC_ProcedureResultSet.BTS.GetPracticeConfiguration.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_PracticeConfig_GPC_ProcedureResultSet.BTS.GetPracticeConfiguration.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/PracticeConfig/GPC_ProcedureResultSet.BTS.GetPracticeConfigurationByName.xsd",
+      "toName": "GPC_ProcedureResultSet.BTS.GetPracticeConfigurationByName.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_PracticeConfig_GPC_ProcedureResultSet.BTS.GetPracticeConfigurationByName.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/PracticeConfig/GPC_Serialization.xsd",
+      "toName": "GPC_Serialization.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_PracticeConfig_GPC_Serialization.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/PracticeConfig/GPC_TypedProcedure.BTS.xsd",
+      "toName": "GPC_TypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_PracticeConfig_GPC_TypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ProcessingErrors/PE_Serialization.xsd",
+      "toName": "PE_Serialization.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_ProcessingErrors_PE_Serialization.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ProcessingErrors/PE_SimpleTypeArray.xsd",
+      "toName": "PE_SimpleTypeArray.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_ProcessingErrors_PE_SimpleTypeArray.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ProcessingErrors/PE_Table.BTS.xsd",
+      "toName": "PE_Table.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_ProcessingErrors_PE_Table.BTS.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ProcessingErrors/PE_TableOperation.BTS.ProcessingError.xsd",
+      "toName": "PE_TableOperation.BTS.ProcessingError.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_ProcessingErrors_PE_TableOperation.BTS.ProcessingError.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/QueueProcessParameters/PropertySchema.xsd",
+      "toName": "PropertySchema.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_QueueProcessParameters_PropertySchema.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/QueueProcessParameters/QPP_Serialization.xsd",
+      "toName": "QPP_Serialization.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_QueueProcessParameters_QPP_Serialization.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/QueueProcessParameters/QPP_TypedPolling.QueueProcessParameters.xsd",
+      "toName": "QPP_TypedPolling.QueueProcessParameters.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_QueueProcessParameters_QPP_TypedPolling.QueueProcessParameters.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/QueueUnprocessedStagingPatientIDs/QUSP_TypedPolling.QueueUnprocessedStagingPatientIDs.xsd",
+      "toName": "QUSP_TypedPolling.QueueUnprocessedStagingPatientIDs.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_QueueUnprocessedStagingPatientIDs_QUSP_TypedPolling.QueueUnprocessedStagingPatientIDs.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/SetStagingPatientMessageStatus/SSPS_TypedProcedure.BTS.xsd",
+      "toName": "SSPS_TypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_SetStagingPatientMessageStatus_SSPS_TypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/SignalR/ASP_TypedProcedure.BTS.xsd",
+      "toName": "ASP_TypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_SignalR_ASP_TypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/SubmittedClaims/SC_Serialization.xsd",
+      "toName": "SC_Serialization.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_SubmittedClaims_SC_Serialization.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/SubmittedClaims/SC_SimpleTypeArray.xsd",
+      "toName": "SC_SimpleTypeArray.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_SubmittedClaims_SC_SimpleTypeArray.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/SubmittedClaims/SC_Table.BTS.xsd",
+      "toName": "SC_Table.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_SubmittedClaims_SC_Table.BTS.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/SubmittedClaims/SC_TableOperation.BTS.SubmittedClaims.xsd",
+      "toName": "SC_TableOperation.BTS.SubmittedClaims.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_SubmittedClaims_SC_TableOperation.BTS.SubmittedClaims.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/UpdateClaimStatuses/UCS_Serialization.xsd",
+      "toName": "UCS_Serialization.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_UpdateClaimStatuses_UCS_Serialization.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/UpdateClaimStatuses/UCS_TableType.BTS.xsd",
+      "toName": "UCS_TableType.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_UpdateClaimStatuses_UCS_TableType.BTS.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/UpdateClaimStatuses/UCS_TypedProcedure.BTS.xsd",
+      "toName": "UCS_TypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_UpdateClaimStatuses_UCS_TypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/UpdatePatientInsurancePolicy/UPIP_ProcedureResultSet.BTS.UpdatePatientInsurancePolicyByPipGUID.xsd",
+      "toName": "UPIP_ProcedureResultSet.BTS.UpdatePatientInsurancePolicyByPipGUID.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_UpdatePatientInsurancePolicy_UPIP_ProcedureResultSet.BTS.UpdatePatientInsurancePolicyByPipGUID.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/UpdatePatientInsurancePolicy/UPIP_Serialization.xsd",
+      "toName": "UPIP_Serialization.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_UpdatePatientInsurancePolicy_UPIP_Serialization.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/UpdatePatientInsurancePolicy/UPIP_TypedProcedure.BTS.xsd",
+      "toName": "UPIP_TypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_UpdatePatientInsurancePolicy_UPIP_TypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/UpdateProcessParameters/UPP_Serialization.xsd",
+      "toName": "UPP_Serialization.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_UpdateProcessParameters_UPP_Serialization.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/UpdateProcessParameters/UPP_TypedProcedure.BTS.xsd",
+      "toName": "UPP_TypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_UpdateProcessParameters_UPP_TypedProcedure.BTS.xsd.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "references",
+      "from": "project:Cloud9.BizTalk.Common",
+      "fromName": "Cloud9.BizTalk.Common",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.Common.json"
+    },
+    {
+      "type": "references",
+      "from": "project:Cloud9.BizTalk.Epic",
+      "fromName": "Cloud9.BizTalk.Epic",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.Epic.json"
+    },
+    {
+      "type": "references",
+      "from": "project:Cloud9.BizTalk.Maps",
+      "fromName": "Cloud9.BizTalk.Maps",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.Maps.json"
+    },
+    {
+      "type": "references",
+      "from": "project:Cloud9.BizTalk.X12",
+      "fromName": "Cloud9.BizTalk.X12",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.X12.json"
+    },
+    {
+      "type": "references",
+      "from": "project:Cloud9.BizTalk.X12.PDS",
+      "fromName": "Cloud9.BizTalk.X12.PDS",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.X12.PDS.json"
+    },
+    {
+      "type": "contains",
+      "from": "solution:Cloud9.BizTalk.PDS",
+      "fromName": "Cloud9.BizTalk.PDS",
+      "fromType": "solution",
+      "fromFile": "adjacency/solution/Cloud9.BizTalk.PDS.json"
+    },
+    {
+      "type": "contains",
+      "from": "solution:Cloud9.BizTalk",
+      "fromName": "Cloud9.BizTalk",
+      "fromType": "solution",
+      "fromFile": "adjacency/solution/Cloud9.BizTalk.json"
+    },
+    {
+      "type": "contains",
+      "from": "solution:Cloud9.EDI.PDS",
+      "fromName": "Cloud9.EDI.PDS",
+      "fromType": "solution",
+      "fromFile": "adjacency/solution/Cloud9.EDI.PDS.json"
+    },
+    {
+      "type": "contains",
+      "from": "solution:Cloud9.EDI",
+      "fromName": "Cloud9.EDI",
+      "fromType": "solution",
+      "fromFile": "adjacency/solution/Cloud9.EDI.json"
+    }
+  ]
+}

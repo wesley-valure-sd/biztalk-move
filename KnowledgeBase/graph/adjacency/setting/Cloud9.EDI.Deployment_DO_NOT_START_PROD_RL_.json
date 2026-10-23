@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "setting:Cloud9.EDI.Deployment/DO_NOT_START_PROD_RL_",
+    "type": "setting",
+    "name": "DO_NOT_START_PROD_RL_",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.Deployment/SettingsFileGenerator.xml",
+    "bindingSet": "Cloud9.EDI.Deployment",
+    "valuesByEnvironment": {
+      "Default Values (DefaultSettings)": "RL_",
+      "Local Dev (LocalSettings)": "RL_",
+      "JGLISSON Development (JGLISSONSettings)": "RL_",
+      "LAB (LABSettings)": "RL_",
+      "LAB2 (LAB2Settings)": "RL_",
+      "LAB3 (LAB3Settings)": "RL_",
+      "PROD (C9Prod1_Settings)": "DO_NOT_START_RL_",
+      "PROD (C9Prod2_Settings)": "DO_NOT_START_RL_",
+      "LAB (SDLab1_Settings)": "RL_",
+      "PROD (SDProd1_Settings)": "DO_NOT_START_RL_"
+    }
+  },
+  "outgoing": [],
+  "incoming": []
+}

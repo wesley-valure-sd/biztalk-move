@@ -1,0 +1,21 @@
+{
+  "node": {
+    "id": "class:Cloud9.BizTalk.Helper.MessagePart",
+    "type": "class",
+    "name": "Cloud9.BizTalk.Helper.MessagePart",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/MessagePart.cs",
+    "visibility": "public",
+    "kind": "class",
+    "line": 5
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/MessagePart.cs",
+      "fromName": "MessagePart.cs",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Helper_MessagePart.cs.json"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+MAP: Cloud9.BizTalk.Epic.IncomingMessageToUpdateStatusFail.btm
+PATH: Cloud9.BizTalk\Cloud9.BizTalk.Epic\Maps\Cloud9.BizTalk.Epic.IncomingMessageToUpdateStatusFail.btm
+SOURCE: Cloud9.BizTalk.Schemas.Polling_IncomingMessage (root TypedPollingResultSet0)
+TARGET: Cloud9.BizTalk.Schemas.Table_IncomingMessage (root Update)
+SCRIPT PRECEDENCE (first match wins when a functoid has more than one script): CSharp > ExternalAssembly > VbNet > JScript > XsltCallTemplate > Xslt
+
+=== PAGE: Page 1 ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L1: TypedPollingResultSet0/imGUID -> Update/Rows/RowPair/After/imGUID
+L5: F1 -> Update/Rows/RowPair/After/imStatus
+L6: F2 -> Update/Rows/RowPair/After/imProcessTime
+L9: TypedPollingResultSet0/imGUID -> Update/Rows/RowPair/Before/imGUID
+--- FUNCTOIDS ---
+F1 [String Concatenate] inputs: const:'3'
+F2 [Date and Time, current (inferred)] inputs: 
+

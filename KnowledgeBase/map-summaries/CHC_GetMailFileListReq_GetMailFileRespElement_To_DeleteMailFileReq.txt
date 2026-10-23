@@ -1,0 +1,19 @@
+MAP: CHC_GetMailFileListReq_GetMailFileRespElement_To_DeleteMailFileReq.btm
+PATH: Cloud9.BizTalk\Cloud9.BizTalk.X12\Maps\CHC_GetMailFileListReq_GetMailFileRespElement_To_DeleteMailFileReq.btm
+SOURCE:  (root Root)
+TARGET: Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonDeleteFileRequest (root claim_submission_api)
+SCRIPT PRECEDENCE (first match wins when a functoid has more than one script): CSharp > ExternalAssembly > VbNet > JScript > XsltCallTemplate > Xslt
+
+=== PAGE: Page 1 ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L1: Root/InputMessagePart_0/claim_submission_api/authentication/vendor_id -> claim_submission_api/authentication/vendor_id
+L2: Root/InputMessagePart_0/claim_submission_api/authentication/user_id -> claim_submission_api/authentication/user_id
+L3: Root/InputMessagePart_0/claim_submission_api/authentication/password -> claim_submission_api/authentication/password
+L4: Root/InputMessagePart_0/claim_submission_api/transaction/trace_id -> claim_submission_api/transaction/trace_id
+L5: Root/InputMessagePart_1/mail_file/file_name -> claim_submission_api/transaction/trx_data/mail_file/file_name
+L6: Root/InputMessagePart_1/mail_file/file_token -> claim_submission_api/transaction/trx_data/mail_file/file_token
+L9: F2 -> claim_submission_api/transaction/trx_type
+L11: Root/InputMessagePart_0/claim_submission_api/revision -> claim_submission_api/revision
+--- FUNCTOIDS ---
+F2 [String Concatenate] inputs: const:'delete_mail_file_request'
+

@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.HL7.DAL.HL7StagingModel.OnModelCreating",
+    "type": "method",
+    "name": "HL7StagingModel.OnModelCreating",
+    "path": "Cloud9.HL7.WebAPI/Cloud9.HL7.DAL/HL7StagingModel.cs",
+    "class": "Cloud9.HL7.DAL.HL7StagingModel",
+    "line": 18,
+    "signatures": [
+      "protected override void OnModelCreating(DbModelBuilder modelBuilder)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.HL7.DAL.HL7StagingModel",
+      "fromName": "Cloud9.HL7.DAL.HL7StagingModel",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.HL7.DAL.HL7StagingModel.json"
+    }
+  ]
+}

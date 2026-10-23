@@ -1,0 +1,63 @@
+{
+  "node": {
+    "id": "map:Cloud9.BizTalk.X12.Maps.Instantiate_GetPracticeConfigurationByName",
+    "type": "map",
+    "name": "Cloud9.BizTalk.X12.Maps.Instantiate_GetPracticeConfigurationByName",
+    "readableSummary": "KnowledgeBase/map-summaries/Instantiate_GetPracticeConfigurationByName.txt",
+    "targetSchema": "Cloud9.BizTalk.Schemas.GPC_TypedProcedure_BTS",
+    "inlineScripts": [],
+    "functoidCount": 1,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/Instantiate_GetPracticeConfigurationByName.btm",
+    "sourceSchema": "Cloud9.BizTalk.X12.Schemas.BBVA_X12_00501_835",
+    "linkCount": 1,
+    "sourceRoot": "X12_00501_835",
+    "targetRoot": "GetPracticeConfigurationByName"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/Instantiate_GetPracticeConfigurationByName.btm",
+      "toName": "Instantiate_GetPracticeConfigurationByName.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_Instantiate_GetPracticeConfigurationByName.btm.json"
+    },
+    {
+      "type": "sourceSchema",
+      "to": "schema:Cloud9.BizTalk.X12.Schemas.BBVA_X12_00501_835",
+      "toName": "Cloud9.BizTalk.X12.Schemas.BBVA_X12_00501_835",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.X12.Schemas.BBVA_X12_00501_835.json",
+      "root": "X12_00501_835"
+    },
+    {
+      "type": "targetSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.GPC_TypedProcedure_BTS",
+      "toName": "Cloud9.BizTalk.Schemas.GPC_TypedProcedure_BTS",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.GPC_TypedProcedure_BTS.json",
+      "root": "GetPracticeConfigurationByName"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "usesMap",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_BBVA_835Insurance",
+      "fromName": "Process_BBVA_835Insurance",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_BBVA_835Insurance.json",
+      "output": "GetPracticeConfigurationByName.Body",
+      "input": "BBVA835.Body",
+      "line": 967
+    },
+    {
+      "type": "usesMap",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_BBVA_835Patient",
+      "fromName": "Process_BBVA_835Patient",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_BBVA_835Patient.json",
+      "output": "GetPracticeConfigurationByName.Body",
+      "input": "BBVA835.Body",
+      "line": 635
+    }
+  ]
+}

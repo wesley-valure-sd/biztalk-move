@@ -1,0 +1,53 @@
+{
+  "node": {
+    "id": "map:Cloud9.BizTalk.X12.Maps.QueueClaimsResponse_To_ClaimsCanonical",
+    "type": "map",
+    "name": "Cloud9.BizTalk.X12.Maps.QueueClaimsResponse_To_ClaimsCanonical",
+    "readableSummary": "KnowledgeBase/map-summaries/QueueClaimsResponse_To_ClaimsCanonical.txt",
+    "targetSchema": "Cloud9.BizTalk.Schemas.Canonical.ClaimCanonical",
+    "inlineScripts": [],
+    "functoidCount": 5,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/QueueClaimsResponse_To_ClaimsCanonical.btm",
+    "sourceSchema": "Cloud9.BizTalk.Schemas.ClaimsProcessing.QC_TypedProcedure_BTS",
+    "linkCount": 129,
+    "sourceRoot": "QueueClaimsResponse",
+    "targetRoot": "Root"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/QueueClaimsResponse_To_ClaimsCanonical.btm",
+      "toName": "QueueClaimsResponse_To_ClaimsCanonical.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_QueueClaimsResponse_To_ClaimsCanonical.btm.json"
+    },
+    {
+      "type": "sourceSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.ClaimsProcessing.QC_TypedProcedure_BTS",
+      "toName": "Cloud9.BizTalk.Schemas.ClaimsProcessing.QC_TypedProcedure_BTS",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.ClaimsProcessing.QC_TypedProcedure_BTS.json",
+      "root": "QueueClaimsResponse"
+    },
+    {
+      "type": "targetSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.Canonical.ClaimCanonical",
+      "toName": "Cloud9.BizTalk.Schemas.Canonical.ClaimCanonical",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.Canonical.ClaimCanonical.json",
+      "root": "Root"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "usesMap",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker",
+      "fromName": "Process_CHC_837Claims_Worker",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker.json",
+      "output": "msg_C9Claims",
+      "input": "msg_QueueClaimsResp.Body",
+      "line": 1459
+    }
+  ]
+}

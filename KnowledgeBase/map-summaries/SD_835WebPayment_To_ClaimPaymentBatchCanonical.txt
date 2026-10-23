@@ -1,0 +1,178 @@
+MAP: SD_835WebPayment_To_ClaimPaymentBatchCanonical.btm
+PATH: Cloud9.BizTalk\Cloud9.BizTalk.X12\Maps\SD_835WebPayment_To_ClaimPaymentBatchCanonical.btm
+SOURCE: Cloud9.BizTalk.X12.Schemas.SD_X12_00501_835 (root X12_00501_835)
+TARGET: Cloud9.BizTalk.Schemas.Canonical.ClaimPaymentBatch (root ClaimPaymentBatch)
+SCRIPT PRECEDENCE (first match wins when a functoid has more than one script): CSharp > ExternalAssembly > VbNet > JScript > XsltCallTemplate > Xslt
+
+=== PAGE: Links ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L62: X12_00501_835/BPR/BPR04 -> ClaimPaymentBatch/ClaimPayment/PaymentMethodCode
+L63: X12_00501_835/BPR/BPR07 -> ClaimPaymentBatch/ClaimPayment/SenderDFIIdentifier
+L64: X12_00501_835/BPR/BPR16 -> ClaimPaymentBatch/ClaimPayment/CheckDate
+L65: X12_00501_835/TRN/TRN02 -> ClaimPaymentBatch/ClaimPayment/CheckorEFTTraceNumber
+L67: X12_00501_835/TRN/TRN04 -> ClaimPaymentBatch/ClaimPayment/ClaimIdentifier
+L69: X12_00501_835/DTM/DTM02 -> ClaimPaymentBatch/ClaimPayment/PaymentDepositDate
+L68: X12_00501_835/REF/REF02 -> ClaimPaymentBatch/ClaimPayment/LockboxNumber
+L79: X12_00501_835/LXLoop1/CLPLoop1/CLP/CLP04 -> ClaimPaymentBatch/ClaimPayment/TotalActualProviderPaymentAmount
+L80: X12_00501_835/LXLoop1/CLPLoop1/CLP/CLP01 -> ClaimPaymentBatch/ClaimPayment/PatientControlNumber
+L81: X12_00501_835/LXLoop1/CLPLoop1/NM1/NM109 -> ClaimPaymentBatch/ClaimPayment/PatientIdentifier
+L82: X12_00501_835/LXLoop1/CLPLoop1/CLP/CLP07 -> ClaimPaymentBatch/ClaimPayment/PayerClaimControlNumber
+L141: X12_00501_835/TRN/TRN02 -> ClaimPaymentBatch/ClaimPayment/OpenEdgeTransactionID
+--- FUNCTOIDS ---
+
+=== PAGE: Functoids ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L2: F1 -> ClaimPaymentBatch/ClaimPayment
+L21: F4 -> ClaimPaymentBatch/ClaimPayment/CheckIssueorEFTEffectiveDate
+L22: F4 -> ClaimPaymentBatch/ClaimPayment/PaymentPostedDate
+L70: X12_00501_835/LXLoop1/CLPLoop1 -> F1
+L75: X12_00501_835/LXLoop1/CLPLoop1/REF_3 -> F14
+L90: F22 -> F21
+L91: X12_00501_835/LXLoop1/CLPLoop1/NM1/NM101 -> F22
+L92: X12_00501_835/LXLoop1/CLPLoop1/NM1/NM109 -> F21
+L93: F21 -> ClaimPaymentBatch/ClaimPayment/patGUID
+L94: X12_00501_835/LXLoop1/CLPLoop1/REF_3/REF01 -> F24
+L95: X12_00501_835/LXLoop1/CLPLoop1/REF_3/REF02 -> F23
+L96: F24 -> F23
+L97: F23 -> ClaimPaymentBatch/ClaimPayment/ApprovalCode
+L98: F26 -> F25
+L99: X12_00501_835/LXLoop1/CLPLoop1/REF_3/REF01 -> F26
+L100: X12_00501_835/LXLoop1/CLPLoop1/REF_3/REF02 -> F25
+L104: F14 -> ClaimPaymentBatch/ClaimPayment/ApprovalCode
+L120: F32 -> ClaimPaymentBatch/ClaimPayment/TransactionNote
+L126: F38 -> F37
+L128: X12_00501_835/LXLoop1/CLPLoop1/NM1/NM101 -> F38
+L129: X12_00501_835/LXLoop1/CLPLoop1/NM1/NM109 -> F37
+L130: F37 -> ClaimPaymentBatch/ClaimPayment/pipGUID
+L133: X12_00501_835/LXLoop1/CLPLoop1/NM1 -> F40
+L134: F40 -> ClaimPaymentBatch/ClaimPayment/pipGUID
+L135: F37 -> ClaimPaymentBatch/ClaimPayment/SubscriberIdentifier
+L137: F41 -> ClaimPaymentBatch/ClaimPayment/SubscriberIdentifier
+L138: X12_00501_835/LXLoop1/CLPLoop1/NM1 -> F41
+L139: F14 -> ClaimPaymentBatch/ClaimPayment/ReferenceIdentifier
+L140: F25 -> ClaimPaymentBatch/ClaimPayment/ReferenceIdentifier
+L142: F42 -> ClaimPaymentBatch/ClaimPayment/OpenEdgeXWebGUID
+L143: F43 -> ClaimPaymentBatch/ClaimPayment/MaskedCreditCardNumber
+L144: X12_00501_835/BPR/BPR04 -> F43
+L145: X12_00501_835/BPR/BPR04 -> F44
+L146: F44 -> ClaimPaymentBatch/ClaimPayment/MaskedBankAccountNumber
+L147: X12_00501_835/BPR/BPR04 -> F45
+L148: F45 -> ClaimPaymentBatch/ClaimPayment/CreditCardType
+L149: X12_00501_835/BPR/BPR04 -> F46
+L150: F46 -> ClaimPaymentBatch/ClaimPayment/OpenEdgeCheckNumber
+L151: F47 -> ClaimPaymentBatch/ClaimPayment/MaskedRoutingNumber
+--- FUNCTOIDS ---
+F1 [Looping] inputs: L70
+F4 [Date and Time, current (inferred)] inputs: 
+F14 [Looping] inputs: L75
+F21 [Value Mapping] inputs: L90, L92
+F22 [Equal (inferred)] inputs: L91, const:'QC'
+F23 [Value Mapping] inputs: L96, L95
+F24 [Equal (inferred)] inputs: L94, const:'1Z'
+F25 [Value Mapping] inputs: L98, L100
+F26 [Equal (inferred)] inputs: L99, const:'2H'
+F32 [Scripting] inputs: 
+    script language: XsltCallTemplate
+    | <xsl:template name="TransactionNoteTemplate">
+    | 	<xsl:variable name="PaymentMethod" select="/*[local-name()='X12_00501_835']/*[local-name()='BPR']/*[local-name()='BPR04']"/>
+    | 	<xsl:variable name="TransactionID" select="/*[local-name()='X12_00501_835']/*[local-name()='LXLoop1']/*[local-name()='CLPLoop1']/*[local-name()='REF_3'][*[local-name()='REF01']='2H']/*[local-name()='REF02']"/>
+    | 	<xsl:variable name="ApprovalCode" select="/*[local-name()='X12_00501_835']/*[local-name()='LXLoop1']/*[local-name()='CLPLoop1']/*[local-name()='REF_3'][*[local-name()='REF01']='1Z']/*[local-name()='REF02']"/>
+    | 	<xsl:variable name="PaymentAmount" select="/*[local-name()='X12_00501_835']/*[local-name()='LXLoop1']/*[local-name()='CLPLoop1']/*[local-name()='CLP']/*[local-name()='CLP04']"/>
+    | 	<xsl:variable name="Now" select="substring(userCSharp:DateCurrentDateTime(), 0, 11)"/>
+    | 	
+    | 	<xsl:element name="TransactionNote">
+    | 		<xsl:if test="$PaymentMethod = 'ACH'">
+    | 			<xsl:value-of select="concat($Now, ' Payment; Transaction ID=', $TransactionID, '; Response=Check Submitted')"/>
+    | 		</xsl:if>
+    | 		<xsl:if test="$PaymentMethod = 'REV'">
+    | 			<xsl:value-of select="concat($Now, ' Web ACH Return; Transaction ID=', $TransactionID, '; Amount=$', $PaymentAmount)"/>
+    | 		</xsl:if>
+    | 		<xsl:if test="$PaymentMethod = 'CCC'">
+    | 			<xsl:value-of select="concat($Now, ' CC Payment; Transaction ID=', $TransactionID, '; Approval Code=', $ApprovalCode)"/>
+    | 		</xsl:if>
+    | 		
+    | 		<xsl:if test="/*[local-name()='X12_00501_835']/*[local-name()='LXLoop1']/*[local-name()='CLPLoop1']/*[local-name()='REF_3'][*[local-name()='REF01']='TD']/*[local-name()='REF02'] != ''">
+    | 			<xsl:value-of select="concat('; Reversal=', /*[local-name()='X12_00501_835']/*[local-name()='LXLoop1']/*[local-name()='CLPLoop1']/*[local-name()='REF_3'][*[local-name()='REF01']='TD']/*[local-name()='REF02'])" />
+    | 		</xsl:if>		
+    | 	</xsl:element>
+    | </xsl:template>
+F37 [Value Mapping] inputs: L126, L129
+F38 [Equal (inferred)] inputs: L128, const:'IL'
+F40 [Looping] inputs: L133
+F41 [Looping] inputs: L138
+F42 [Scripting] inputs: 
+    script language: XsltCallTemplate
+    | <xsl:template name="OpenEdgeXWebTemplate">
+    | <xsl:element name="OpenEdgeXWebGUID">
+    | <xsl:value-of select="s0:REF_3[REF01/text()='EM']/REF02/text()" />
+    | </xsl:element>
+    | </xsl:template>
+    | 
+    | 
+F43 [Scripting] inputs: L144
+    script language: XsltCallTemplate
+    | <xsl:template name="MaskedCreditCardTemplate">
+    | <xsl:param name="param1" />
+    | <xsl:if test="$param1 = 'CCC'">
+    | <xsl:element name="MaskedCreditCardNumber">
+    | <xsl:value-of select="s0:REF_3[REF01/text()='TN']/REF02/text()" />
+    | </xsl:element>
+    | </xsl:if>
+    | </xsl:template>
+    | 
+    | 
+F44 [Scripting] inputs: L145
+    script language: XsltCallTemplate
+    | <xsl:template name="MaskedBankAccountTemplate">
+    | <xsl:param name="param1" />
+    | <xsl:if test="$param1 = 'ACH'">
+    | <xsl:element name="MaskedBankAccountNumber">
+    | <xsl:value-of select="s0:REF_3[REF01/text()='TN']/REF02/text()" />
+    | </xsl:element>
+    | </xsl:if>
+    | <xsl:if test="$param1 = 'REV'">
+    | <xsl:element name="MaskedBankAccountNumber">
+    | <xsl:value-of select="s0:REF_3[REF01/text()='TN']/REF02/text()" />
+    | </xsl:element>
+    | </xsl:if></xsl:template>
+    | 
+    | 
+F45 [Scripting] inputs: L147
+    script language: XsltCallTemplate
+    | <xsl:template name="CreditCardTypeTemplate">
+    | <xsl:param name="param1" />
+    | <xsl:if test="$param1 = 'CCC'">
+    | <xsl:element name="CreditCardType">
+    | <xsl:value-of select="s0:REF_3[REF01/text()='8X']/REF02/text()" />
+    | </xsl:element>
+    | </xsl:if>
+    | </xsl:template>
+    | 
+    | 
+F46 [Scripting] inputs: L149
+    script language: XsltCallTemplate
+    | <xsl:template name="OpenEdgeCheckNumberTemplate">
+    | <xsl:param name="param1" />
+    | <xsl:if test="$param1 = 'ACH'">
+    | <xsl:element name="OpenEdgeCheckNumber">
+    | <xsl:value-of select="s0:REF_3[REF01/text()='1Z']/REF02/text()" />
+    | </xsl:element>
+    | </xsl:if>
+    | <xsl:if test="$param1 = 'REV'">
+    | <xsl:element name="OpenEdgeCheckNumber">
+    | <xsl:value-of select="s0:REF_3[REF01/text()='1Z']/REF02/text()" />
+    | </xsl:element>
+    | </xsl:if>
+    | </xsl:template>
+    | 
+    | 
+F47 [Scripting] inputs: 
+    script language: XsltCallTemplate
+    | <xsl:template name="MaskedRoutingNumberTemplate">
+    | <xsl:element name="MaskedRoutingNumber">
+    | <xsl:value-of select="s0:REF_3[REF01/text()='EY']/REF02/text()" />
+    | </xsl:element>
+    | </xsl:template>
+    | 
+    | 
+

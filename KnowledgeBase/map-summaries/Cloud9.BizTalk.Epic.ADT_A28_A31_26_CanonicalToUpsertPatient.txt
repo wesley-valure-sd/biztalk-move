@@ -1,0 +1,242 @@
+MAP: Cloud9.BizTalk.Epic.ADT_A28_A31_26_CanonicalToUpsertPatient.btm
+PATH: Cloud9.BizTalk\Cloud9.BizTalk.Epic\Maps\Cloud9.BizTalk.Epic.ADT_A28_A31_26_CanonicalToUpsertPatient.btm
+SOURCE: ..\Schemas\ADT_A28_A31_26_Canonical.xsd (root ADT_A28_A31_26_Canonical)
+TARGET: Cloud9.BizTalk.Schemas.Cloud9InsertPatient.UpsertPatient_BTS (root UpsertPatient)
+SCRIPT PRECEDENCE (first match wins when a functoid has more than one script): CSharp > ExternalAssembly > VbNet > JScript > XsltCallTemplate > Xslt
+
+=== PAGE: Patient ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L1: ADT_A28_A31_26_Canonical/PID_PatientIdentification -> F1
+L16: F1 -> UpsertPatient/Patient/PatientEntityTableType
+L17: ADT_A28_A31_26_Canonical/PID_PatientIdentification/PID_11_PatientAddress/XAD_0_StreetAddress/XAD_0_0_StreetOrMailingAddress -> UpsertPatient/Patient/PatientEntityTableType/AddressStreet
+L18: ADT_A28_A31_26_Canonical/PID_PatientIdentification/PID_11_PatientAddress/XAD_4_ZipOrPostalCode -> UpsertPatient/Patient/PatientEntityTableType/AddressPostalCode
+L19: ADT_A28_A31_26_Canonical/PID_PatientIdentification/PID_11_PatientAddress/XAD_3_StateOrProvince -> UpsertPatient/Patient/PatientEntityTableType/AddressState
+L20: ADT_A28_A31_26_Canonical/PID_PatientIdentification/PID_11_PatientAddress/XAD_2_City -> UpsertPatient/Patient/PatientEntityTableType/AddressCity
+L21: ADT_A28_A31_26_Canonical/PID_PatientIdentification/PID_1_SetIdPid -> UpsertPatient/Patient/PatientEntityTableType/persID
+L23: ADT_A28_A31_26_Canonical/PID_PatientIdentification/PID_5_PatientName/XPN_4_PrefixEGDr -> UpsertPatient/Patient/PatientEntityTableType/persTitle
+L24: ADT_A28_A31_26_Canonical/PID_PatientIdentification/PID_5_PatientName/XPN_1_GivenName -> UpsertPatient/Patient/PatientEntityTableType/persFirstName
+L25: ADT_A28_A31_26_Canonical/PID_PatientIdentification/PID_5_PatientName/XPN_0_FamilyName/XPN_0_0_Surname -> UpsertPatient/Patient/PatientEntityTableType/persLastName
+L26: ADT_A28_A31_26_Canonical/PID_PatientIdentification/PID_5_PatientName/XPN_3_SuffixEGJrOrIii -> UpsertPatient/Patient/PatientEntityTableType/persSuffix
+L29: ADT_A28_A31_26_Canonical/PID_PatientIdentification/PID_19_SsnNumberPatient -> UpsertPatient/Patient/PatientEntityTableType/persSocial
+L40: ADT_A28_A31_26_Canonical/PID_PatientIdentification/PID_13_PhoneNumberHome/XTN_0_TelephoneNumber -> F5
+L47: ADT_A28_A31_26_Canonical/PID_PatientIdentification/PID_14_PhoneNumberBusiness/XTN_0_TelephoneNumber -> F8
+L48: ADT_A28_A31_26_Canonical/PID_PatientIdentification -> F9
+L50: F5 -> F9
+L51: F8 -> F9
+L54: ADT_A28_A31_26_Canonical/PID_PatientIdentification/PID_13_PhoneNumberHome/XTN_0_TelephoneNumber -> F10
+L55: ADT_A28_A31_26_Canonical/PID_PatientIdentification/PID_14_PhoneNumberBusiness/XTN_0_TelephoneNumber -> F11
+L56: F10 -> F9
+L57: F11 -> F9
+L67: F9 -> F14
+L68: F9 -> F15
+L74: ADT_A28_A31_26_Canonical/PID_PatientIdentification/PID_16_MaritalStatus/CWE_0_Identifier -> UpsertPatient/Patient/PatientEntityTableType/MaritalStatus
+L75: ADT_A28_A31_26_Canonical/PID_PatientIdentification/PID_7_DateTimeOfBirth -> F17
+L76: F17 -> UpsertPatient/Patient/PatientEntityTableType/persBirthdate
+L49: F9 -> UpsertPatient/PatientContactInfo/PatientContactInfoTableType
+L69: F14 -> UpsertPatient/PatientContactInfo/PatientContactInfoTableType/citContactType
+L70: F15 -> UpsertPatient/PatientContactInfo/PatientContactInfoTableType/ciValue
+L106: ADT_A28_A31_26_Canonical/PD1_PatientAdditionalDemographic/PD1_4_PatientPrimaryCareProviderNameIdNo/XCN_1_FamilyName/XCN_1_0_Surname -> F29
+L108: ADT_A28_A31_26_Canonical/PD1_PatientAdditionalDemographic/PD1_4_PatientPrimaryCareProviderNameIdNo/XCN_2_GivenName -> F29
+L109: ADT_A28_A31_26_Canonical/PD1_PatientAdditionalDemographic/PD1_4_PatientPrimaryCareProviderNameIdNo/XCN_1_FamilyName/XCN_1_0_Surname -> F30
+L110: ADT_A28_A31_26_Canonical/PD1_PatientAdditionalDemographic/PD1_4_PatientPrimaryCareProviderNameIdNo/XCN_2_GivenName -> F31
+L111: F30 -> F32
+L112: F31 -> F32
+L113: F32 -> F33
+L114: F29 -> F33
+L115: F33 -> UpsertPatient/Patient/PatientEntityTableType/Orthodontist
+L118: F9 -> F34
+L119: F34 -> UpsertPatient/PatientContactInfo/PatientContactInfoTableType/ciRank
+L122: ADT_A28_A31_26_Canonical/PID_PatientIdentification/PID_3_PatientIdentifierList -> F36
+L123: F36 -> UpsertPatient/Patient/PatientEntityTableType/patGUID
+L124: ADT_A28_A31_26_Canonical/PID_PatientIdentification/PID_3_PatientIdentifierList/CX_3_AssigningAuthority/CX_3_0_NamespaceId -> F37
+L125: F37 -> UpsertPatient/Patient/PatientEntityTableType/patGUID
+L126: ADT_A28_A31_26_Canonical/PID_PatientIdentification/PID_3_PatientIdentifierList/CX_0_IdNumber -> UpsertPatient/Patient/PatientEntityTableType/patGUID
+L127: ADT_A28_A31_26_Canonical/EVN_EventType/EVN_1_EventTypeCode -> UpsertPatient/MessageType
+L128: ADT_A28_A31_26_Canonical/PID_PatientIdentification/PID_8_AdministrativeSex/CWE_0_Identifier -> UpsertPatient/Patient/PatientEntityTableType/persGender
+L142: ADT_A28_A31_26_Canonical/PID_PatientIdentification/PID_5_PatientName/XPN_2_SecondAndFurtherGivenNamesOrInitialsThereof -> UpsertPatient/Patient/PatientEntityTableType/persMiddleName
+L162: F42 -> UpsertPatient/VendorUserName
+L214: ADT_A28_A31_26_Canonical/PD1_PatientAdditionalDemographic/PD1_4_PatientPrimaryCareProviderNameIdNo/XCN_0_IdNumber -> UpsertPatient/Patient/PatientEntityTableType/OrthodontistGUID
+L218: ADT_A28_A31_26_Canonical/PD1_PatientAdditionalDemographic/PD1_3_PatientPrimaryFacility/XON_0_OrganizationName -> UpsertPatient/Patient/PatientEntityTableType/LocationGUID
+L219: ADT_A28_A31_26_Canonical/PD1_PatientAdditionalDemographic/PD1_3_PatientPrimaryFacility/XON_0_OrganizationName -> UpsertPatient/Patient/PatientEntityTableType/Location
+L223: ADT_A28_A31_26_Canonical/PID_PatientIdentification/PID_10_Race/CWE_0_Identifier -> UpsertPatient/Patient/PatientEntityTableType/racDescription
+L227: ADT_A28_A31_26_Canonical/AL1_PatientAllergyInformation/AL1_3_AllergenCodeMnemonicDescription/CWE_1_Text -> F51
+L228: F52 -> F51
+L229: F51 -> F50
+L232: F54 -> UpsertPatient/AllergyCommentTypeGUID
+L239: F50 -> F58
+L240: F58 -> UpsertPatient/AllergyNote
+L241: ADT_A28_A31_26_Canonical/PID_PatientIdentification/PID_9_PatientAlias/XPN_1_GivenName -> UpsertPatient/Patient/PatientEntityTableType/persGreeting
+L242: ADT_A28_A31_26_Canonical/PID_PatientIdentification/PID_3_PatientIdentifierList/CX_0_IdNumber -> UpsertPatient/Patient/PatientEntityTableType/SourceID
+L243: ADT_A28_A31_26_Canonical/PID_PatientIdentification/PID_3_PatientIdentifierList -> F59
+L244: F59 -> UpsertPatient/Patient/PatientEntityTableType/SourceID
+L245: ADT_A28_A31_26_Canonical/PID_PatientIdentification/PID_3_PatientIdentifierList/CX_3_AssigningAuthority/CX_3_0_NamespaceId -> F60
+L246: F60 -> UpsertPatient/Patient/PatientEntityTableType/SourceID
+--- FUNCTOIDS ---
+F1 [Looping] inputs: L1
+F5 [FID 317] inputs: L40
+F8 [FID 317] inputs: L47
+F9 [FID 703] inputs: L48, const:'4', L50, L51, L56, L57, const:'Phone', const:'Office', const:'1', const:'2'
+F10 [String Concatenate] inputs: L54
+F11 [String Concatenate] inputs: L55
+F14 [FID 704] inputs: L67, const:'2'
+F15 [FID 704] inputs: L68, const:'3'
+F17 [Scripting] inputs: L75
+    script ExternalAssembly: Cloud9.BizTalk.Helper.DateFormatConversion.ConvertHL7DateToSQLDate [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F29 [String Concatenate] inputs: L106, const:', ', L108
+F30 [FID 317] inputs: L109
+F31 [FID 317] inputs: L110
+F32 [FID 321] inputs: L111, L112
+F33 [Value Mapping] inputs: L113, L114
+F34 [FID 704] inputs: L118, const:'4'
+F36 [Looping] inputs: L122
+F37 [Equal (inferred)] inputs: L124, const:'CLOUD9'
+F42 [String Concatenate] inputs: const:'setme'
+F50 [Cumulative Concatenate (inferred)] inputs: L229
+F51 [String Concatenate] inputs: L227, L228
+F52 [String Concatenate] inputs: const:' ,  '
+F53 [String Concatenate] inputs: const:'setme'
+F54 [String Concatenate] inputs: const:'setme'
+F58 [Scripting] inputs: L239
+    script language: CSharp
+    | public string TrimLast2(string param1)
+    | {
+    |     string result = param1;
+    |      if (param1.Length > 4)
+    |           result = param1.Substring(0, param1.Length -4 );
+    |     return result;
+    | }
+F59 [Looping] inputs: L243
+F60 [Equal (inferred)] inputs: L245, const:'EPIC'
+
+=== PAGE: Guarantor ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L30: ADT_A28_A31_26_Canonical/GT1_Guarantor -> F4
+L31: F4 -> UpsertPatient/Guarantor/GuarantorEntityTableType
+L33: ADT_A28_A31_26_Canonical/GT1_Guarantor/GT1_3_GuarantorName/XPN_1_GivenName -> UpsertPatient/Guarantor/GuarantorEntityTableType/persFirstName
+L34: ADT_A28_A31_26_Canonical/GT1_Guarantor/GT1_3_GuarantorName/XPN_0_FamilyName/XPN_0_0_Surname -> UpsertPatient/Guarantor/GuarantorEntityTableType/persLastName
+L36: ADT_A28_A31_26_Canonical/GT1_Guarantor/GT1_3_GuarantorName/XPN_3_SuffixEGJrOrIii -> UpsertPatient/Guarantor/GuarantorEntityTableType/persSuffix
+L77: F19 -> UpsertPatient/Guarantor/GuarantorEntityTableType/persBirthdate
+L78: ADT_A28_A31_26_Canonical/GT1_Guarantor/GT1_8_GuarantorDateTimeOfBirth -> F19
+L80: F21 -> F23
+L81: F22 -> F23
+L82: F23 -> F26
+L83: F23 -> F27
+L84: F24 -> F23
+L85: F25 -> F23
+L86: F23 -> UpsertPatient/GuarantorContactInfo/GuarantorContactInfoTableType
+L87: ADT_A28_A31_26_Canonical/GT1_Guarantor -> F23
+L88: ADT_A28_A31_26_Canonical/GT1_Guarantor/GT1_6_GuarantorPhNumHome/XTN_0_TelephoneNumber -> F21
+L90: ADT_A28_A31_26_Canonical/GT1_Guarantor/GT1_6_GuarantorPhNumHome/XTN_0_TelephoneNumber -> F24
+L91: ADT_A28_A31_26_Canonical/GT1_Guarantor/GT1_7_GuarantorPhNumBusiness/XTN_0_TelephoneNumber -> F22
+L92: ADT_A28_A31_26_Canonical/GT1_Guarantor/GT1_7_GuarantorPhNumBusiness/XTN_0_TelephoneNumber -> F25
+L93: F26 -> UpsertPatient/GuarantorContactInfo/GuarantorContactInfoTableType/citContactType
+L94: F27 -> UpsertPatient/GuarantorContactInfo/GuarantorContactInfoTableType/ciValue
+L96: ADT_A28_A31_26_Canonical/GT1_Guarantor/GT1_5_GuarantorAddress/XAD_0_StreetAddress/XAD_0_0_StreetOrMailingAddress -> UpsertPatient/Guarantor/GuarantorEntityTableType/AddressStreet
+L98: ADT_A28_A31_26_Canonical/GT1_Guarantor/GT1_5_GuarantorAddress/XAD_2_City -> UpsertPatient/Guarantor/GuarantorEntityTableType/AddressCity
+L99: ADT_A28_A31_26_Canonical/GT1_Guarantor/GT1_5_GuarantorAddress/XAD_3_StateOrProvince -> UpsertPatient/Guarantor/GuarantorEntityTableType/AddressState
+L100: ADT_A28_A31_26_Canonical/GT1_Guarantor/GT1_5_GuarantorAddress/XAD_4_ZipOrPostalCode -> UpsertPatient/Guarantor/GuarantorEntityTableType/AddressPostalCode
+L101: ADT_A28_A31_26_Canonical/GT1_Guarantor/GT1_30_GuarantorMaritalStatusCode/CWE_0_Identifier -> UpsertPatient/Guarantor/GuarantorEntityTableType/MaritalStatus
+L120: F23 -> F35
+L121: F35 -> UpsertPatient/GuarantorContactInfo/GuarantorContactInfoTableType/ciRank
+L129: ADT_A28_A31_26_Canonical/GT1_Guarantor/GT1_9_GuarantorAdministrativeSex/CWE_0_Identifier -> UpsertPatient/Guarantor/GuarantorEntityTableType/persGender
+L139: ADT_A28_A31_26_Canonical/GT1_Guarantor/GT1_12_GuarantorSsn/CWE_0_Identifier -> UpsertPatient/Guarantor/GuarantorEntityTableType/persSocial
+L141: ADT_A28_A31_26_Canonical/GT1_Guarantor/GT1_3_GuarantorName/XPN_2_SecondAndFurtherGivenNamesOrInitialsThereof -> UpsertPatient/Guarantor/GuarantorEntityTableType/persMiddleName
+L144: ADT_A28_A31_26_Canonical/GT1_Guarantor/GT1_3_GuarantorName/XPN_4_PrefixEGDr -> UpsertPatient/Guarantor/GuarantorEntityTableType/persTitle
+L145: ADT_A28_A31_26_Canonical/GT1_Guarantor/GT1_20_GuarantorEmploymentStatus/CWE_0_Identifier -> UpsertPatient/Guarantor/GuarantorEntityTableType/EmploymentStatus
+L159: ADT_A28_A31_26_Canonical/GT1_Guarantor/GT1_17_GuarantorEmployerAddress/XAD_2_City -> UpsertPatient/Guarantor/GuarantorEntityTableType/EmployerAddressCity
+L160: ADT_A28_A31_26_Canonical/GT1_Guarantor/GT1_17_GuarantorEmployerAddress/XAD_3_StateOrProvince -> UpsertPatient/Guarantor/GuarantorEntityTableType/EmployerAddressState
+L161: ADT_A28_A31_26_Canonical/GT1_Guarantor/GT1_17_GuarantorEmployerAddress/XAD_4_ZipOrPostalCode -> UpsertPatient/Guarantor/GuarantorEntityTableType/EmployerAddressPostalCode
+L163: ADT_A28_A31_26_Canonical/GT1_Guarantor/GT1_17_GuarantorEmployerAddress/XAD_0_StreetAddress/XAD_0_0_StreetOrMailingAddress -> UpsertPatient/Guarantor/GuarantorEntityTableType/EmployerAddressStreet
+L203: F48 -> UpsertPatient/Guarantor/GuarantorEntityTableType/ID
+L204: ADT_A28_A31_26_Canonical/GT1_Guarantor -> F48
+L208: F48 -> UpsertPatient/GuarantorContactInfo/GuarantorContactInfoTableType/ID
+L209: ADT_A28_A31_26_Canonical/GT1_Guarantor/GT1_16_GuarantorEmployerName/XPN_0_FamilyName/XPN_0_0_Surname -> UpsertPatient/Guarantor/GuarantorEntityTableType/EmployerName
+L220: ADT_A28_A31_26_Canonical/GT1_Guarantor/GT1_11_GuarantorRelationship/CWE_0_Identifier -> UpsertPatient/Guarantor/GuarantorEntityTableType/RelationshipToPatient
+L224: ADT_A28_A31_26_Canonical/GT1_Guarantor/GT1_2_GuarantorNumber/CX_0_IdNumber -> UpsertPatient/Guarantor/GuarantorEntityTableType/SourceID
+--- FUNCTOIDS ---
+F4 [Looping] inputs: L30
+F19 [Scripting] inputs: L78
+    script ExternalAssembly: Cloud9.BizTalk.Helper.DateFormatConversion.ConvertHL7DateToSQLDate [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F21 [FID 317] inputs: L88
+F22 [FID 317] inputs: L91
+F23 [FID 703] inputs: L87, const:'4', L80, L81, L84, L85, const:'Phone', const:'Office', const:'1', const:'2'
+F24 [String Concatenate] inputs: L90
+F25 [String Concatenate] inputs: L92
+F26 [FID 704] inputs: L82, const:'2'
+F27 [FID 704] inputs: L83, const:'3'
+F35 [FID 704] inputs: L120, const:'4'
+F48 [Iteration (inferred)] inputs: L204
+
+=== PAGE: Insurance ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L59: ADT_A28_A31_26_Canonical/<Sequence>/IN1_Insurance -> F12
+L60: F12 -> UpsertPatient/Insurance/InsuranceEntityTableType
+L131: ADT_A28_A31_26_Canonical/<Sequence>/IN1_Insurance/IN1_7_InsuranceCoPhoneNumber/XTN_0_TelephoneNumber -> F38
+L130: ADT_A28_A31_26_Canonical/<Sequence>/IN1_Insurance/IN1_7_InsuranceCoPhoneNumber/XTN_0_TelephoneNumber -> UpsertPatient/InsuranceContactInfo/InsuranceContactInfoTableType/ciValue
+L132: F38 -> F39
+L133: F28 -> F39
+L134: F39 -> UpsertPatient/InsuranceContactInfo/InsuranceContactInfoTableType/citContactType
+L135: F38 -> F41
+L136: F40 -> F41
+L137: F41 -> UpsertPatient/InsuranceContactInfo/InsuranceContactInfoTableType/ciRank
+L138: F38 -> UpsertPatient/InsuranceContactInfo/InsuranceContactInfoTableType
+L166: ADT_A28_A31_26_Canonical/<Sequence>/IN1_Insurance/IN1_3_InsuranceCompanyId/CX_0_IdNumber -> UpsertPatient/Insurance/InsuranceEntityTableType/InsuranceCompanyID
+L168: ADT_A28_A31_26_Canonical/<Sequence>/IN1_Insurance/IN1_5_InsuranceCompanyAddress/XAD_0_StreetAddress/XAD_0_0_StreetOrMailingAddress -> UpsertPatient/Insurance/InsuranceEntityTableType/InsuranceCompanyAddressStreet
+L169: ADT_A28_A31_26_Canonical/<Sequence>/IN1_Insurance/IN1_5_InsuranceCompanyAddress/XAD_2_City -> UpsertPatient/Insurance/InsuranceEntityTableType/InsuranceCompanyAddressCity
+L170: ADT_A28_A31_26_Canonical/<Sequence>/IN1_Insurance/IN1_5_InsuranceCompanyAddress/XAD_3_StateOrProvince -> UpsertPatient/Insurance/InsuranceEntityTableType/InsuranceCompanyAddressState
+L171: ADT_A28_A31_26_Canonical/<Sequence>/IN1_Insurance/IN1_5_InsuranceCompanyAddress/XAD_4_ZipOrPostalCode -> UpsertPatient/Insurance/InsuranceEntityTableType/InsuranceCompanyAddressPostalCode
+L172: ADT_A28_A31_26_Canonical/<Sequence>/IN1_Insurance/IN1_8_GroupNumber -> UpsertPatient/Insurance/InsuranceEntityTableType/GroupNumber
+L173: ADT_A28_A31_26_Canonical/<Sequence>/IN1_Insurance/IN1_9_GroupName/XON_0_OrganizationName -> UpsertPatient/Insurance/InsuranceEntityTableType/GroupName
+L175: ADT_A28_A31_26_Canonical/<Sequence>/IN1_Insurance/IN1_10_InsuredSGroupEmpId/CX_0_IdNumber -> UpsertPatient/Insurance/InsuranceEntityTableType/InsuredsGroupEmployerID
+L176: ADT_A28_A31_26_Canonical/<Sequence>/IN1_Insurance/IN1_11_InsuredSGroupEmpName/XON_0_OrganizationName -> UpsertPatient/Insurance/InsuranceEntityTableType/InsuredsGroupEmployerName
+L177: F43 -> UpsertPatient/Insurance/InsuranceEntityTableType/PlanEffectiveDate
+L178: ADT_A28_A31_26_Canonical/<Sequence>/IN1_Insurance/IN1_12_PlanEffectiveDate -> F43
+L179: ADT_A28_A31_26_Canonical/<Sequence>/IN1_Insurance/IN1_13_PlanExpirationDate -> F44
+L180: F44 -> UpsertPatient/Insurance/InsuranceEntityTableType/PlanExpirationDate
+L182: ADT_A28_A31_26_Canonical/<Sequence>/IN1_Insurance/IN1_18_InsuredSDateOfBirth -> F45
+L183: F45 -> UpsertPatient/Insurance/InsuranceEntityTableType/SubscriberBirthdate
+L184: ADT_A28_A31_26_Canonical/<Sequence>/IN1_Insurance/IN1_16_NameOfInsured/XPN_0_FamilyName/XPN_0_0_Surname -> F46
+L185: ADT_A28_A31_26_Canonical/<Sequence>/IN1_Insurance/IN1_16_NameOfInsured/XPN_1_GivenName -> F46
+L186: F46 -> UpsertPatient/Insurance/InsuranceEntityTableType/SubscriberName
+L187: ADT_A28_A31_26_Canonical/<Sequence>/IN1_Insurance/IN1_19_InsuredSAddress/XAD_0_StreetAddress/XAD_0_0_StreetOrMailingAddress -> UpsertPatient/Insurance/InsuranceEntityTableType/SubscriberAddressStreet
+L188: ADT_A28_A31_26_Canonical/<Sequence>/IN1_Insurance/IN1_19_InsuredSAddress/XAD_2_City -> UpsertPatient/Insurance/InsuranceEntityTableType/SubscriberAddressCity
+L189: ADT_A28_A31_26_Canonical/<Sequence>/IN1_Insurance/IN1_19_InsuredSAddress/XAD_3_StateOrProvince -> UpsertPatient/Insurance/InsuranceEntityTableType/SubscriberAddressState
+L190: ADT_A28_A31_26_Canonical/<Sequence>/IN1_Insurance/IN1_19_InsuredSAddress/XAD_4_ZipOrPostalCode -> UpsertPatient/Insurance/InsuranceEntityTableType/SubscriberAddressPostalCode
+L191: ADT_A28_A31_26_Canonical/<Sequence>/IN1_Insurance/IN1_36_PolicyNumber -> UpsertPatient/Insurance/InsuranceEntityTableType/PolicyNumber
+L192: ADT_A28_A31_26_Canonical/<Sequence>/IN1_Insurance/IN1_35_CompanyPlanCode/CWE_0_Identifier -> UpsertPatient/Insurance/InsuranceEntityTableType/CompanyPlanCode
+L193: ADT_A28_A31_26_Canonical/<Sequence>/IN1_Insurance/IN1_37_PolicyDeductible/CP_0_Price/CP_0_0_Quantity -> UpsertPatient/Insurance/InsuranceEntityTableType/PolicyDeductible
+L194: ADT_A28_A31_26_Canonical/<Sequence>/IN1_Insurance/IN1_38_PolicyLimitAmount/CP_0_Price/CP_0_0_Quantity -> UpsertPatient/Insurance/InsuranceEntityTableType/PolicyLimitAmount
+L195: ADT_A28_A31_26_Canonical/<Sequence>/IN1_Insurance/IN1_42_InsuredSEmploymentStatus/CWE_0_Identifier -> UpsertPatient/Insurance/InsuranceEntityTableType/SubscriberEmploymentStatus
+L196: ADT_A28_A31_26_Canonical/<Sequence>/IN1_Insurance/IN1_44_InsuredSEmployerSAddress/XAD_0_StreetAddress/XAD_0_0_StreetOrMailingAddress -> UpsertPatient/Insurance/InsuranceEntityTableType/SubscriberEmployerAddressStreet
+L197: ADT_A28_A31_26_Canonical/<Sequence>/IN1_Insurance/IN1_44_InsuredSEmployerSAddress/XAD_2_City -> UpsertPatient/Insurance/InsuranceEntityTableType/SubscriberEmployerAddressCity
+L198: ADT_A28_A31_26_Canonical/<Sequence>/IN1_Insurance/IN1_44_InsuredSEmployerSAddress/XAD_3_StateOrProvince -> UpsertPatient/Insurance/InsuranceEntityTableType/SubscriberEmployerAddressState
+L199: ADT_A28_A31_26_Canonical/<Sequence>/IN1_Insurance/IN1_44_InsuredSEmployerSAddress/XAD_4_ZipOrPostalCode -> UpsertPatient/Insurance/InsuranceEntityTableType/SubscriberEmployerAddressPostalCode
+L200: F47 -> UpsertPatient/Insurance/InsuranceEntityTableType/ID
+L201: ADT_A28_A31_26_Canonical/<Sequence>/IN1_Insurance -> F47
+L206: ADT_A28_A31_26_Canonical/<Sequence>/IN1_Insurance/IN1_49_InsuredSIdNumber/CX_0_IdNumber -> UpsertPatient/Insurance/InsuranceEntityTableType/InsuredsIDNumber
+L207: F47 -> UpsertPatient/InsuranceContactInfo/InsuranceContactInfoTableType/ID
+L221: ADT_A28_A31_26_Canonical/<Sequence>/IN1_Insurance/IN1_17_InsuredSRelationshipToPatient/CWE_0_Identifier -> UpsertPatient/Insurance/InsuranceEntityTableType/SubscriberRelationshipToPatient
+L249: F61 -> UpsertPatient/Insurance/InsuranceEntityTableType/InsuranceCompanyName
+L250: ADT_A28_A31_26_Canonical/<Sequence>/IN1_Insurance/IN1_4_InsuranceCompanyName/XON_0_OrganizationName -> F61
+L251: ADT_A28_A31_26_Canonical/<Sequence>/IN1_Insurance/IN1_3_InsuranceCompanyId/CX_0_IdNumber -> F61
+L252: ADT_A28_A31_26_Canonical/<Sequence>/IN1_Insurance/IN1_2_InsurancePlanId/CWE_0_Identifier -> F62
+L253: ADT_A28_A31_26_Canonical/<Sequence>/IN1_Insurance/IN1_2_InsurancePlanId/CWE_1_Text -> F62
+L254: F62 -> UpsertPatient/Insurance/InsuranceEntityTableType/InsurancePlanID
+--- FUNCTOIDS ---
+F12 [Looping] inputs: L59
+F28 [String Concatenate] inputs: const:'Insurance'
+F38 [FID 317] inputs: L131
+F39 [Value Mapping] inputs: L132, L133
+F40 [String Concatenate] inputs: const:'1'
+F41 [Value Mapping] inputs: L135, L136
+F43 [Scripting] inputs: L178
+    script ExternalAssembly: Cloud9.BizTalk.Helper.DateFormatConversion.ConvertHL7DateToSQLDate [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F44 [Scripting] inputs: L179
+    script ExternalAssembly: Cloud9.BizTalk.Helper.DateFormatConversion.ConvertHL7DateToSQLDate [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F45 [Scripting] inputs: L182
+    script ExternalAssembly: Cloud9.BizTalk.Helper.DateFormatConversion.ConvertHL7DateToSQLDate [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F46 [String Concatenate] inputs: L184, const:', ', L185
+F47 [Iteration (inferred)] inputs: L201
+F61 [String Concatenate] inputs: L251, const:' ', L250
+F62 [String Concatenate] inputs: L252, const:' ', L253
+

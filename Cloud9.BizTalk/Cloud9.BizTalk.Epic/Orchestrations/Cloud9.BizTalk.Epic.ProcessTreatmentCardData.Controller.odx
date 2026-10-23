@@ -1,0 +1,646 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="4e6b9bd0-c270-46d0-953c-e0a4dc617418" LowerBound="1.1" HigherBound="137.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Cloud9.BizTalk.Epic" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="ServiceDeclaration" OID="5853e72e-3df1-4e73-b16a-3c1a98b8147c" ParentLink="Module_ServiceDeclaration" LowerBound="38.1" HigherBound="136.1">
+            <om:Property Name="InitializedTransactionType" Value="True" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ProcessTreatmentCardData_Controller" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="e1fe059c-1084-48cb-a3c6-c189a2a12e9a" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="50.1" HigherBound="51.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ExternalEntityID" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="071a0b41-ecf4-45d9-a599-a9540ad0a601" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="51.1" HigherBound="52.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="imCorrelationId" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="63375203-4243-4fb2-8181-c3e0f05fa20a" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="52.1" HigherBound="53.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strPracticeAddr" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="f5ff24e3-89c0-43e5-98c1-92222f937430" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="53.1" HigherBound="54.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strLogType" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="3fe2c2ec-fcdf-4148-a2a0-4d52c2dee221" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="54.1" HigherBound="55.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strProcessName" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="1d3c1705-3bae-43d1-8c64-83f7d3ba0f1a" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="55.1" HigherBound="56.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="instanceConnectionString" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="9e2214b5-fbcb-424a-96c2-20db8369220e" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="56.1" HigherBound="57.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strError" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="959562d6-6643-4188-a7ef-56f0ab84d615" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="57.1" HigherBound="58.1">
+                <om:Property Name="InitialValue" Value="0" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="iProcessCount" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="c5d11158-b3b5-4403-bab4-142ef7df229d" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="58.1" HigherBound="59.1">
+                <om:Property Name="InitialValue" Value="1" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="iProcessIdx" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="f10cd4f3-efcc-4bb4-8ae4-8699a5a95b7d" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="59.1" HigherBound="60.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strXPath" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="b99c5e95-75f7-4c8c-83ed-d83b2bb3ea7f" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="60.1" HigherBound="61.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="InternalEntityID" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="LongRunningTransaction" OID="9db33ae0-84ac-49ee-b819-e768d8bea8a1" ParentLink="ServiceDeclaration_Transaction" LowerBound="39.21" HigherBound="39.81">
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Transaction_1" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="ea9246ee-3cca-4207-8b3a-043cf7ab565b" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="45.1" HigherBound="46.1">
+                <om:Property Name="Type" Value="Cloud9.BizTalk.Epic.MPType_QueueProcessParametersHeader" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_QueueProcessParametersHeader" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="1369911b-9d8f-46ef-bec9-292ef5c82beb" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="46.1" HigherBound="47.1">
+                <om:Property Name="Type" Value="Cloud9.BizTalk.Epic.MPType_QueueProcessParametersResp" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_QueueProcessParametersResp" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="8adb399e-9cc2-4d8f-ad75-41c5ca28cef7" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="47.1" HigherBound="48.1">
+                <om:Property Name="Type" Value="Cloud9.BizTalk.Epic.MPType_QueueProcessParametersPracticeElement" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_QueueProcessParametersPracticeElement" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="a1350e4f-ff0a-4dd7-8f9c-d5a3c75d7bad" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="48.1" HigherBound="49.1">
+                <om:Property Name="Type" Value="Cloud9.BizTalk.Epic.MPType_UpdateProcessParametersReq" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_UpdateProcessParametersReq" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="fad8e004-9194-4dcb-8c0b-00488e30ffac" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="49.1" HigherBound="50.1">
+                <om:Property Name="Type" Value="Cloud9.BizTalk.Epic.MPType_UpdateProcessParametersResp" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_UpdateProcessParametersResp" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="6eaa7ce9-faed-44c3-a1a0-948f0a06f671" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="b5795f44-195c-4228-8eab-05a0dc58e851" ParentLink="ServiceBody_Statement" LowerBound="63.1" HigherBound="76.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="Port_Receive_QueueProcessParametersResp" />
+                    <om:Property Name="MessageName" Value="msg_QueueProcessParametersResp" />
+                    <om:Property Name="OperationName" Value="Operation_Receive_QueueProcessParametersResp" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive__QueueProcessParametersResp" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="DNFPredicate" OID="c3802698-ae92-4b25-87ee-599c17b1a7ca" ParentLink="Receive_DNFPredicate">
+                        <om:Property Name="LHS" Value="Cloud9.BizTalk.Schemas.PropertySchema.processName" />
+                        <om:Property Name="RHS" Value="&quot;ProcessTreatmentCards&quot;" />
+                        <om:Property Name="Grouping" Value="AND" />
+                        <om:Property Name="Operator" Value="Equals" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Scope" OID="24f3e5a2-5d22-4a07-9722-27e2ac3f703a" ParentLink="ServiceBody_Statement" LowerBound="76.1" HigherBound="134.1">
+                    <om:Property Name="InitializedTransactionType" Value="True" />
+                    <om:Property Name="IsSynchronized" Value="False" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Scope_ProcessTreatmentCardData_Controller" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Construct" OID="8e910a99-c672-44d6-9337-bd0e3adb98f7" ParentLink="ComplexStatement_Statement" LowerBound="81.1" HigherBound="87.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Construct_msg_QueueProcessParametersHeader" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessageRef" OID="45a68dfe-7aea-4a0d-aadd-9de3e0025e1f" ParentLink="Construct_MessageRef" LowerBound="82.31" HigherBound="82.63">
+                            <om:Property Name="Ref" Value="msg_QueueProcessParametersHeader" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessageAssignment" OID="7a1afd75-94f9-4e1a-bdaf-a8f3b1d05261" ParentLink="ComplexStatement_Statement" LowerBound="84.1" HigherBound="86.1">
+                            <om:Property Name="Expression" Value="msg_QueueProcessParametersHeader.Body = xpath(msg_QueueProcessParametersResp.Body, &quot;/*[local-name()='TypedPolling' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/QueueProcessParameters']/*[local-name()='TypedPollingResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/QueueProcessParameters']/*[local-name()='TypedPollingResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/QueueProcessParameters']&quot;);" />
+                            <om:Property Name="ReportToAnalyst" Value="False" />
+                            <om:Property Name="Name" Value="MessageAssignment_msg_QueueProcessParametersHeader" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="VariableAssignment" OID="5a5f1e14-6dc5-4c3b-96b2-a0e641e40908" ParentLink="ComplexStatement_Statement" LowerBound="87.1" HigherBound="89.1">
+                        <om:Property Name="Expression" Value="iProcessCount = xpath(msg_QueueProcessParametersResp.Body, &quot;count(/*[local-name()='TypedPolling' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/QueueProcessParameters']/*[local-name()='TypedPollingResultSet1' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/QueueProcessParameters']/*[local-name()='TypedPollingResultSet1' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/QueueProcessParameters'])&quot;) ;&#xD;&#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Get_ProcessCount" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="While" OID="a018d1f7-54d2-457d-a3cf-b7e2694e85f7" ParentLink="ComplexStatement_Statement" LowerBound="89.1" HigherBound="107.1">
+                        <om:Property Name="Expression" Value="iProcessIdx &lt;= iProcessCount" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ProcessLoop" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="VariableAssignment" OID="068604e9-9080-4b28-b37e-6f2b8441af51" ParentLink="ComplexStatement_Statement" LowerBound="92.1" HigherBound="96.1">
+                            <om:Property Name="Expression" Value="strXPath = System.String.Format(&quot;string(/*[local-name()='TypedPolling' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/QueueProcessParameters']/*[local-name()='TypedPollingResultSet1' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/QueueProcessParameters']/*[local-name()='TypedPollingResultSet1' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/QueueProcessParameters'][{0}]/*[local-name()='pcInstanceConnectionString' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/QueueProcessParameters'])&quot;, iProcessIdx);&#xD;&#xA;instanceConnectionString = xpath(msg_QueueProcessParametersResp.Body, strXPath);&#xD;&#xA;strXPath = System.String.Format(&quot;/*[local-name()='TypedPolling' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/QueueProcessParameters']/*[local-name()='TypedPollingResultSet1' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/QueueProcessParameters']/*[local-name()='TypedPollingResultSet1' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/QueueProcessParameters'][{0}]&quot;, iProcessIdx);&#xD;&#xA;" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Set Element XPATH" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="Construct" OID="37b34354-c3ff-4234-b923-4bfc93a7be8a" ParentLink="ComplexStatement_Statement" LowerBound="96.1" HigherBound="102.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Construct_msg_QueueProcessParametersElement" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessageAssignment" OID="07b2188a-0c5a-4f5a-9d0c-5cb09e882740" ParentLink="ComplexStatement_Statement" LowerBound="99.1" HigherBound="101.1">
+                                <om:Property Name="Expression" Value="msg_QueueProcessParametersPracticeElement.Body = xpath(msg_QueueProcessParametersResp.Body, strXPath);" />
+                                <om:Property Name="ReportToAnalyst" Value="False" />
+                                <om:Property Name="Name" Value="MessageAssignment_msg_QueueProcessParametersPracticeElement" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="MessageRef" OID="e7632bfa-14cb-4feb-82c8-8482808e83ec" ParentLink="Construct_MessageRef" LowerBound="97.35" HigherBound="97.76">
+                                <om:Property Name="Ref" Value="msg_QueueProcessParametersPracticeElement" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="Call" OID="85b570a6-898d-46d1-a33d-a3b61c032dc2" ParentLink="ComplexStatement_Statement" LowerBound="102.1" HigherBound="104.1">
+                            <om:Property Name="Identifier" Value="CallOrchestration_ProcessTreatmentCardData_Worker" />
+                            <om:Property Name="Invokee" Value="Cloud9.BizTalk.Epic.ProcessTreatmentCardData_Worker" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="CallOrchestration_ProcessTreatmentCardData_Worker" />
+                            <om:Property Name="Signal" Value="False" />
+                            <om:Element Type="Parameter" OID="4a7168b9-d7ec-4cb1-a47b-34124d935006" ParentLink="InvokeStatement_Parameter">
+                                <om:Property Name="Direction" Value="In" />
+                                <om:Property Name="Name" Value="instanceConnectionString" />
+                                <om:Property Name="Type" Value="System.String" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="Parameter" OID="ee8c642b-2fd1-451d-91e6-e3493adbf61d" ParentLink="InvokeStatement_Parameter">
+                                <om:Property Name="Direction" Value="In" />
+                                <om:Property Name="Name" Value="msg_QueueProcessParametersHeader" />
+                                <om:Property Name="Type" Value="Cloud9.BizTalk.Epic.MPType_QueueProcessParametersHeader" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="Parameter" OID="d5ec3ef9-25c9-4ae5-882f-8e699990073f" ParentLink="InvokeStatement_Parameter">
+                                <om:Property Name="Direction" Value="In" />
+                                <om:Property Name="Name" Value="msg_QueueProcessParametersPracticeElement" />
+                                <om:Property Name="Type" Value="Cloud9.BizTalk.Epic.MPType_QueueProcessParametersPracticeElement" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="VariableAssignment" OID="7dc76b2d-81c5-4846-864a-5319432bc65a" ParentLink="ComplexStatement_Statement" LowerBound="104.1" HigherBound="106.1">
+                            <om:Property Name="Expression" Value="iProcessIdx = iProcessIdx + 1;" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Increment Index" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Construct" OID="ed9f7d8b-e8b5-4b91-90ba-ebdbf9144b61" ParentLink="ComplexStatement_Statement" LowerBound="107.1" HigherBound="113.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ConstructMessage_1" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="Transform" OID="61241cce-f115-475e-92bb-a14a8aff857a" ParentLink="ComplexStatement_Statement" LowerBound="110.1" HigherBound="112.1">
+                            <om:Property Name="ClassName" Value="Cloud9.BizTalk.Epic.Transform_QueueProcParams_To_UpdateQueueProcParams" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Transform_msg_QueueProcessParametersResp" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessagePartRef" OID="98d00458-c4dd-4c48-bac8-bb4d88a9aedc" ParentLink="Transform_InputMessagePartRef" LowerBound="111.147" HigherBound="111.182">
+                                <om:Property Name="MessageRef" Value="msg_QueueProcessParametersResp" />
+                                <om:Property Name="PartRef" Value="Body" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_1" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessagePartRef" OID="65611e5d-6b17-4ac8-b764-d2c2be488aed" ParentLink="Transform_OutputMessagePartRef" LowerBound="111.36" HigherBound="111.71">
+                                <om:Property Name="MessageRef" Value="msg_UpdateProcessParametersReq" />
+                                <om:Property Name="PartRef" Value="Body" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_2" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="MessageRef" OID="ade94174-2bfc-43f1-89fe-39adf2480471" ParentLink="Construct_MessageRef" LowerBound="108.31" HigherBound="108.61">
+                            <om:Property Name="Ref" Value="msg_UpdateProcessParametersReq" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Send" OID="22f7a02d-92e5-4f9b-9977-9b6a9a142cf4" ParentLink="ComplexStatement_Statement" LowerBound="113.1" HigherBound="115.1">
+                        <om:Property Name="PortName" Value="Port_SendUpdateProcessParameters" />
+                        <om:Property Name="MessageName" Value="msg_UpdateProcessParametersReq" />
+                        <om:Property Name="OperationName" Value="UpdateProcessParameters" />
+                        <om:Property Name="OperationMessageName" Value="Request" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Send_msg_UpdateProcessParametersReq" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Receive" OID="dd2e7160-b712-4d8d-97c7-783cc252e63b" ParentLink="ComplexStatement_Statement" LowerBound="115.1" HigherBound="117.1">
+                        <om:Property Name="Activate" Value="False" />
+                        <om:Property Name="PortName" Value="Port_SendUpdateProcessParameters" />
+                        <om:Property Name="MessageName" Value="msg_UpdateProcessParametersResp" />
+                        <om:Property Name="OperationName" Value="UpdateProcessParameters" />
+                        <om:Property Name="OperationMessageName" Value="Response" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Receive_msg_UpdateProcessParametersResp" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Catch" OID="f31b9b5d-489f-4eb7-b940-cb857e1790e3" ParentLink="Scope_Catch" LowerBound="120.1" HigherBound="132.1">
+                        <om:Property Name="ExceptionName" Value="exc" />
+                        <om:Property Name="ExceptionType" Value="System.Exception" />
+                        <om:Property Name="IsFaultMessage" Value="False" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Catch_SystemException" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="VariableAssignment" OID="4c32e8e6-a104-49ac-81f2-0d55fdc40cb8" ParentLink="Catch_Statement" LowerBound="123.1" HigherBound="129.1">
+                            <om:Property Name="Expression" Value="strProcessName = &quot;ProcessTreatmentCardData_Controller&quot;;&#xD;&#xA;&#xD;&#xA;strLogType = &quot;Error&quot;;&#xD;&#xA;strPracticeAddr = &quot;&quot;;&#xD;&#xA;strError = exc.Message;" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Get Error Message" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="Exec" OID="8c30667b-63fc-4be8-a126-5d7045e518d1" ParentLink="Catch_Statement" LowerBound="129.1" HigherBound="131.1">
+                            <om:Property Name="Invokee" Value="Cloud9.BizTalk.Epic.AddLog" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="StartOrchestration_ErrorReporting" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="Parameter" OID="89b57a6a-f144-4c1c-91ef-6ec4b51bfc5b" ParentLink="InvokeStatement_Parameter">
+                                <om:Property Name="Direction" Value="In" />
+                                <om:Property Name="Name" Value="strPracticeAddr" />
+                                <om:Property Name="Type" Value="System.String" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="Parameter" OID="5af010de-9080-4b2a-b618-75a172e81f8f" ParentLink="InvokeStatement_Parameter">
+                                <om:Property Name="Direction" Value="In" />
+                                <om:Property Name="Name" Value="strError" />
+                                <om:Property Name="Type" Value="System.String" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="Parameter" OID="d5256f97-4a75-4dce-a801-22b77ff80903" ParentLink="InvokeStatement_Parameter">
+                                <om:Property Name="Direction" Value="In" />
+                                <om:Property Name="Name" Value="strLogType" />
+                                <om:Property Name="Type" Value="System.String" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="Parameter" OID="b42a80a0-0326-4e6f-9130-fbd948ef63b7" ParentLink="InvokeStatement_Parameter">
+                                <om:Property Name="Direction" Value="In" />
+                                <om:Property Name="Name" Value="strProcessName" />
+                                <om:Property Name="Type" Value="System.String" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="Parameter" OID="33544840-f7ae-42ff-9c10-83a3e8a5679a" ParentLink="InvokeStatement_Parameter">
+                                <om:Property Name="Direction" Value="In" />
+                                <om:Property Name="Name" Value="InternalEntityID" />
+                                <om:Property Name="Type" Value="System.String" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="Parameter" OID="e56dd8f8-7c08-40a0-ad0f-17fb53184667" ParentLink="InvokeStatement_Parameter">
+                                <om:Property Name="Direction" Value="In" />
+                                <om:Property Name="Name" Value="ExternalEntityID" />
+                                <om:Property Name="Type" Value="System.String" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="LongRunningTransaction" OID="850ce6d3-961c-4462-ab68-40600f6b5e05" ParentLink="Scope_Transaction" LowerBound="77.18" HigherBound="77.56">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Transaction_2" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="b1ab0bb1-da6f-4703-ac23-28ad3a4f1a6e" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="41.1" HigherBound="43.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Cloud9.BizTalk.Epic.PortType_Receive_QueueProcessParametersResp" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_Receive_QueueProcessParametersResp" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="DirectBindingAttribute" OID="7e6d8728-2294-4558-8cc2-6b3041541186" ParentLink="PortDeclaration_CLRAttribute" LowerBound="41.1" HigherBound="42.1">
+                    <om:Property Name="DirectBindingType" Value="MessageBox" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="fa9fb730-d103-496b-ad9c-7a59bb74dba7" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="43.1" HigherBound="45.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="74" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Cloud9.BizTalk.Epic.PortType__SendUpdateProcessParameters" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_SendUpdateProcessParameters" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="b943287e-2805-4804-a1d1-904fb4c72198" ParentLink="PortDeclaration_CLRAttribute" LowerBound="43.1" HigherBound="44.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="52e3b43e-1191-4749-88df-872b67cad119" ParentLink="Module_MessageType" LowerBound="4.1" HigherBound="8.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="MPType_QueueProcessParametersHeader" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="aeac43a4-3dd7-40e7-a432-7aeddd43f5a8" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="6.1" HigherBound="7.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.Schemas.QPP_TypedPolling_QueueProcessParameters.TypedPollingResultSet0" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="0b1b4c96-3a58-497f-8ddc-3bc7e1402dd7" ParentLink="Module_MessageType" LowerBound="8.1" HigherBound="12.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="MPType_UpdateProcessParametersResp" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="347540de-4ff5-4d7a-87b2-6b8c9251c697" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="10.1" HigherBound="11.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.Schemas.UPP_TypedProcedure_BTS.UpdateProcessParametersResponse" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="4a3623ec-370a-4eb6-ba59-1bb869cfb85c" ParentLink="Module_MessageType" LowerBound="12.1" HigherBound="16.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="MPType_QueueProcessParametersResp" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="b613dee4-d5c0-4afb-a569-b691f8b410c4" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="14.1" HigherBound="15.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.Schemas.QPP_TypedPolling_QueueProcessParameters.TypedPolling" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="ded06940-2cc5-42e4-94fb-4bc391a4c590" ParentLink="Module_MessageType" LowerBound="16.1" HigherBound="20.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="MPType_QueueProcessParametersPracticeElement" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="9d2fd451-cb89-402c-833d-9c83bc8a82f5" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="18.1" HigherBound="19.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.Schemas.QPP_TypedPolling_QueueProcessParameters.TypedPollingResultSet1" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="9f0917ef-0332-4302-a1b1-5d8dab66a9d6" ParentLink="Module_MessageType" LowerBound="20.1" HigherBound="24.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="MPType_UpdateProcessParametersReq" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="a56b562e-d833-4ae4-aae2-e4a9935067c2" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="22.1" HigherBound="23.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.Schemas.UPP_TypedProcedure_BTS.UpdateProcessParameters" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="1fd88182-b887-4b83-b124-162b7c8ecfed" ParentLink="Module_PortType" LowerBound="24.1" HigherBound="31.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_Receive_QueueProcessParametersResp" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="e28c720f-0e18-4ddf-a1b7-0416ca4f0913" ParentLink="PortType_OperationDeclaration" LowerBound="26.1" HigherBound="30.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_Receive_QueueProcessParametersResp" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="b829cf9f-0c4d-407c-9c17-cf82264f858f" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="28.13" HigherBound="28.46">
+                    <om:Property Name="Ref" Value="Cloud9.BizTalk.Epic.MPType_QueueProcessParametersResp" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="d9593f8b-e7f8-479e-bc98-652a6b1e7476" ParentLink="Module_PortType" LowerBound="31.1" HigherBound="38.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType__SendUpdateProcessParameters" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="5a440e3e-046f-4db5-9744-15a7bfce1c2f" ParentLink="PortType_OperationDeclaration" LowerBound="33.1" HigherBound="37.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="UpdateProcessParameters" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="992c1301-f188-4e12-8949-427725e30f41" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="35.13" HigherBound="35.46">
+                    <om:Property Name="Ref" Value="Cloud9.BizTalk.Epic.MPType_UpdateProcessParametersReq" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="75c9a1ee-0fbf-4238-990f-2428df1b9c26" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="35.48" HigherBound="35.82">
+                    <om:Property Name="Ref" Value="Cloud9.BizTalk.Epic.MPType_UpdateProcessParametersResp" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Cloud9.BizTalk.Epic
+{
+    internal messagetype MPType_QueueProcessParametersHeader
+    {
+        body Cloud9.BizTalk.Schemas.QPP_TypedPolling_QueueProcessParameters.TypedPollingResultSet0 Body;
+    };
+    internal messagetype MPType_UpdateProcessParametersResp
+    {
+        body Cloud9.BizTalk.Schemas.UPP_TypedProcedure_BTS.UpdateProcessParametersResponse Body;
+    };
+    internal messagetype MPType_QueueProcessParametersResp
+    {
+        body Cloud9.BizTalk.Schemas.QPP_TypedPolling_QueueProcessParameters.TypedPolling Body;
+    };
+    internal messagetype MPType_QueueProcessParametersPracticeElement
+    {
+        body Cloud9.BizTalk.Schemas.QPP_TypedPolling_QueueProcessParameters.TypedPollingResultSet1 Body;
+    };
+    internal messagetype MPType_UpdateProcessParametersReq
+    {
+        body Cloud9.BizTalk.Schemas.UPP_TypedProcedure_BTS.UpdateProcessParameters Body;
+    };
+    internal porttype PortType_Receive_QueueProcessParametersResp
+    {
+        oneway Operation_Receive_QueueProcessParametersResp
+        {
+            MPType_QueueProcessParametersResp
+        };
+    };
+    internal porttype PortType__SendUpdateProcessParameters
+    {
+        requestresponse UpdateProcessParameters
+        {
+            MPType_UpdateProcessParametersReq, MPType_UpdateProcessParametersResp
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service longrunning transaction ProcessTreatmentCardData_Controller
+    {
+        [Microsoft.XLANGs.BaseTypes.DirectBinding()]
+        port implements PortType_Receive_QueueProcessParametersResp Port_Receive_QueueProcessParametersResp;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType__SendUpdateProcessParameters Port_SendUpdateProcessParameters;
+        message MPType_QueueProcessParametersHeader msg_QueueProcessParametersHeader;
+        message MPType_QueueProcessParametersResp msg_QueueProcessParametersResp;
+        message MPType_QueueProcessParametersPracticeElement msg_QueueProcessParametersPracticeElement;
+        message MPType_UpdateProcessParametersReq msg_UpdateProcessParametersReq;
+        message MPType_UpdateProcessParametersResp msg_UpdateProcessParametersResp;
+        System.String ExternalEntityID;
+        System.String imCorrelationId;
+        System.String strPracticeAddr;
+        System.String strLogType;
+        System.String strProcessName;
+        System.String instanceConnectionString;
+        System.String strError;
+        System.Int32 iProcessCount;
+        System.Int32 iProcessIdx;
+        System.String strXPath;
+        System.String InternalEntityID;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("b5795f44-195c-4228-8eab-05a0dc58e851")]
+            activate ((Cloud9.BizTalk.Schemas.PropertySchema.processName == "ProcessTreatmentCards"))receive (Port_Receive_QueueProcessParametersResp.Operation_Receive_QueueProcessParametersResp, msg_QueueProcessParametersResp);
+            ExternalEntityID = "";
+            imCorrelationId = "";
+            strPracticeAddr = "";
+            strLogType = "";
+            strProcessName = "";
+            instanceConnectionString = "";
+            strError = "";
+            iProcessCount = 0;
+            iProcessIdx = 1;
+            strXPath = "";
+            InternalEntityID = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("24f3e5a2-5d22-4a07-9722-27e2ac3f703a")]
+            scope longrunning transaction Transaction_2
+            {
+                body
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("8e910a99-c672-44d6-9337-bd0e3adb98f7")]
+                    construct msg_QueueProcessParametersHeader
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("7a1afd75-94f9-4e1a-bdaf-a8f3b1d05261")]
+                        msg_QueueProcessParametersHeader.Body = xpath(msg_QueueProcessParametersResp.Body, "/*[local-name()='TypedPolling' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/QueueProcessParameters']/*[local-name()='TypedPollingResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/QueueProcessParameters']/*[local-name()='TypedPollingResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/QueueProcessParameters']");
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("5a5f1e14-6dc5-4c3b-96b2-a0e641e40908")]
+                    iProcessCount = xpath(msg_QueueProcessParametersResp.Body, "count(/*[local-name()='TypedPolling' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/QueueProcessParameters']/*[local-name()='TypedPollingResultSet1' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/QueueProcessParameters']/*[local-name()='TypedPollingResultSet1' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/QueueProcessParameters'])") ;
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("a018d1f7-54d2-457d-a3cf-b7e2694e85f7")]
+                    while (iProcessIdx <= iProcessCount)
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("068604e9-9080-4b28-b37e-6f2b8441af51")]
+                        strXPath = System.String.Format("string(/*[local-name()='TypedPolling' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/QueueProcessParameters']/*[local-name()='TypedPollingResultSet1' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/QueueProcessParameters']/*[local-name()='TypedPollingResultSet1' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/QueueProcessParameters'][{0}]/*[local-name()='pcInstanceConnectionString' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/QueueProcessParameters'])", iProcessIdx);
+                        instanceConnectionString = xpath(msg_QueueProcessParametersResp.Body, strXPath);
+                        strXPath = System.String.Format("/*[local-name()='TypedPolling' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/QueueProcessParameters']/*[local-name()='TypedPollingResultSet1' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/QueueProcessParameters']/*[local-name()='TypedPollingResultSet1' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/QueueProcessParameters'][{0}]", iProcessIdx);
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("37b34354-c3ff-4234-b923-4bfc93a7be8a")]
+                        construct msg_QueueProcessParametersPracticeElement
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("07b2188a-0c5a-4f5a-9d0c-5cb09e882740")]
+                            msg_QueueProcessParametersPracticeElement.Body = xpath(msg_QueueProcessParametersResp.Body, strXPath);
+                        }
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("85b570a6-898d-46d1-a33d-a3b61c032dc2")]
+                        call Cloud9.BizTalk.Epic.ProcessTreatmentCardData_Worker (instanceConnectionString, msg_QueueProcessParametersHeader, msg_QueueProcessParametersPracticeElement) CallOrchestration_ProcessTreatmentCardData_Worker;
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("7dc76b2d-81c5-4846-864a-5319432bc65a")]
+                        iProcessIdx = iProcessIdx + 1;
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("ed9f7d8b-e8b5-4b91-90ba-ebdbf9144b61")]
+                    construct msg_UpdateProcessParametersReq
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("61241cce-f115-475e-92bb-a14a8aff857a")]
+                        transform (msg_UpdateProcessParametersReq.Body) = Cloud9.BizTalk.Epic.Transform_QueueProcParams_To_UpdateQueueProcParams (msg_QueueProcessParametersResp.Body);
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("22f7a02d-92e5-4f9b-9977-9b6a9a142cf4")]
+                    send (Port_SendUpdateProcessParameters.UpdateProcessParameters, msg_UpdateProcessParametersReq);
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("dd2e7160-b712-4d8d-97c7-783cc252e63b")]
+                    receive (Port_SendUpdateProcessParameters.UpdateProcessParameters, msg_UpdateProcessParametersResp);
+                }
+                exceptions
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("f31b9b5d-489f-4eb7-b940-cb857e1790e3")]
+                    catch (System.Exception exc)
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("4c32e8e6-a104-49ac-81f2-0d55fdc40cb8")]
+                        strProcessName = "ProcessTreatmentCardData_Controller";
+                        
+                        strLogType = "Error";
+                        strPracticeAddr = "";
+                        strError = exc.Message;
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("8c30667b-63fc-4be8-a126-5d7045e518d1")]
+                        exec Cloud9.BizTalk.Epic.AddLog (strPracticeAddr, strError, strLogType, strProcessName, InternalEntityID, ExternalEntityID);
+                    }
+                }
+            }
+        }
+    }
+}
+

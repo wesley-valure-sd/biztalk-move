@@ -1,0 +1,21 @@
+{
+  "node": {
+    "id": "receiveport:Cloud9.EDI.PDS.Deployment/RP_SD835_Patient",
+    "type": "receiveport",
+    "name": "RP_SD835_Patient",
+    "note": "Bound here but not defined in this binding file. The port is defined in another binding set or exists only on the server.",
+    "bindingSet": "Cloud9.EDI.PDS.Deployment"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "boundToReceivePort",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_SD_835Patient",
+      "fromName": "Process_SD_835Patient",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_SD_835Patient.json",
+      "logicalPort": "ReceiveSD835PatientPort",
+      "bindingSet": "Cloud9.EDI.PDS.Deployment"
+    }
+  ]
+}

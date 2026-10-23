@@ -1,0 +1,35 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.Cloud9InsertPatient.UpsertPatient_BTS_1",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.Cloud9InsertPatient.UpsertPatient_BTS_1",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Cloud9InsertPatient/UpsertPatient_BTS_1.xsd",
+    "rootElements": [
+      "GuarantorEntityTableType",
+      "ArrayOfGuarantorEntityTableType",
+      "GuarantorContactInfoTableType",
+      "ArrayOfGuarantorContactInfoTableType",
+      "PatientEntityTableType",
+      "ArrayOfPatientEntityTableType",
+      "PatientContactInfoTableType",
+      "ArrayOfPatientContactInfoTableType",
+      "InsuranceEntityTableType",
+      "ArrayOfInsuranceEntityTableType",
+      "InsuranceContactInfoTableType",
+      "ArrayOfInsuranceContactInfoTableType"
+    ],
+    "kind": "wcf-sql-table",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/Types/TableTypes/BTS",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Cloud9InsertPatient/UpsertPatient_BTS_1.xsd",
+      "toName": "UpsertPatient_BTS_1.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_Cloud9InsertPatient_UpsertPatient_BTS_1.xsd.json"
+    }
+  ],
+  "incoming": []
+}

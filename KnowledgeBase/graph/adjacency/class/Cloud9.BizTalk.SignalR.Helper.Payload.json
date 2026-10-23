@@ -1,0 +1,29 @@
+{
+  "node": {
+    "id": "class:Cloud9.BizTalk.SignalR.Helper.Payload",
+    "type": "class",
+    "name": "Cloud9.BizTalk.SignalR.Helper.Payload",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.SignalR.Helper/Payload.cs",
+    "visibility": "public",
+    "kind": "class",
+    "line": 14
+  },
+  "outgoing": [
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.SignalR.Helper.Payload.GetAppointmentChanged",
+      "toName": "Payload.GetAppointmentChanged",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.SignalR.Helper.Payload.GetAppointmentChanged.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.SignalR.Helper/Payload.cs",
+      "fromName": "Payload.cs",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.SignalR.Helper_Payload.cs.json"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "node": {
+    "id": "project:Cloud9.HL7.DAL",
+    "type": "project",
+    "name": "Cloud9.HL7.DAL",
+    "path": "Cloud9.HL7.WebAPI/Cloud9.HL7.DAL/Cloud9.HL7.DAL.csproj",
+    "framework": "v4.5.1",
+    "kind": "csharp",
+    "rootNamespace": "Cloud9.HL7.DAL",
+    "assemblyName": "Cloud9.HL7.DAL"
+  },
+  "outgoing": [
+    {
+      "type": "contains",
+      "to": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.DAL/BizTalkCloud9CommonEntities/BizTalkCloud9CommonEntities.cs",
+      "toName": "BizTalkCloud9CommonEntities.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.HL7.WebAPI_Cloud9.HL7.DAL_BizTalkCloud9CommonEntities_BizTalkCloud9CommonEntities.cs.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.DAL/BizTalkCloud9CommonEntities/IncomingMessage.cs",
+      "toName": "IncomingMessage.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.HL7.WebAPI_Cloud9.HL7.DAL_BizTalkCloud9CommonEntities_IncomingMessage.cs.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.DAL/BizTalkCloud9CommonEntities/Log.cs",
+      "toName": "Log.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.HL7.WebAPI_Cloud9.HL7.DAL_BizTalkCloud9CommonEntities_Log.cs.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.DAL/BizTalkCloud9CommonEntities/PracticeConfig.cs",
+      "toName": "PracticeConfig.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.HL7.WebAPI_Cloud9.HL7.DAL_BizTalkCloud9CommonEntities_PracticeConfig.cs.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.DAL/PartnersEntities/Log.cs",
+      "toName": "Log.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.HL7.WebAPI_Cloud9.HL7.DAL_PartnersEntities_Log.cs.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.DAL/PartnersEntities/Partner.cs",
+      "toName": "Partner.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.HL7.WebAPI_Cloud9.HL7.DAL_PartnersEntities_Partner.cs.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.DAL/PartnersEntities/PartnerClients.cs",
+      "toName": "PartnerClients.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.HL7.WebAPI_Cloud9.HL7.DAL_PartnersEntities_PartnerClients.cs.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.DAL/PartnersEntities/PartnersEntities.cs",
+      "toName": "PartnersEntities.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.HL7.WebAPI_Cloud9.HL7.DAL_PartnersEntities_PartnersEntities.cs.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "references",
+      "from": "project:Cloud9.HL7.BLL",
+      "fromName": "Cloud9.HL7.BLL",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.HL7.BLL.json"
+    },
+    {
+      "type": "contains",
+      "from": "solution:Cloud9.HL7.WebAPI",
+      "fromName": "Cloud9.HL7.WebAPI",
+      "fromType": "solution",
+      "fromFile": "adjacency/solution/Cloud9.HL7.WebAPI.json"
+    }
+  ]
+}

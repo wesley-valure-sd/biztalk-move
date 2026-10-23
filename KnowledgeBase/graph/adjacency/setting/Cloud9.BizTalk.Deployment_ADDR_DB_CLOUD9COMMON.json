@@ -1,0 +1,101 @@
+{
+  "node": {
+    "id": "setting:Cloud9.BizTalk.Deployment/ADDR_DB_CLOUD9COMMON",
+    "type": "setting",
+    "name": "ADDR_DB_CLOUD9COMMON",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Deployment/SettingsFileGenerator.xml",
+    "bindingSet": "Cloud9.BizTalk.Deployment",
+    "valuesByEnvironment": {
+      "Default Values": "mssql://localhost//BizTalkCloud9Common",
+      "Local Dev (LocalSettings)": "mssql://localhost//BizTalkCloud9Common",
+      "AWARE Development (AWARESettings)": "mssql://localhost//BizTalkCloud9Common",
+      "LAB (LABSettings)": "mssql://lab-db1/LABDB1INSTANCE/BizTalkCloud9Common",
+      "LAB2 (LAB2Settings)": "mssql://lab-db1/LABDB1INSTANCE/BizTalkCloud9Common",
+      "LAB3 (LAB3Settings)": "mssql://lab-db1/LABDB1INSTANCE/BizTalkCloud9CommonLAB",
+      "PROD (C9Prod1_Settings)": "mssql://atl-dbc1//BizTalkCloud9Common",
+      "PROD (C9Prod2_Settings)": "mssql://us-ea1-a2-dbs7/biztalk,1435/BizTalkCloud9Common",
+      "LAB (SDLab1_Settings)": "mssql://c9-t-sql-01//BizTalkCloud9Common",
+      "PROD (SDProd1_Settings)": "mssql://c9-p-sql-01//BizTalkCloud9Common"
+    }
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "usesSetting",
+      "from": "sendport:Cloud9.BizTalk.Deployment/WCF_SQL_GET_PRACTICE_CONFIG",
+      "fromName": "WCF_SQL_GET_PRACTICE_CONFIG",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.BizTalk.Deployment_WCF_SQL_GET_PRACTICE_CONFIG.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "sendport:Cloud9.BizTalk.Deployment/WCF_SQL_INSERT_PROCESSING_ERROR",
+      "fromName": "WCF_SQL_INSERT_PROCESSING_ERROR",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.BizTalk.Deployment_WCF_SQL_INSERT_PROCESSING_ERROR.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "sendport:Cloud9.BizTalk.Deployment/WCF_SQL_INSERT_HL7_STAGING",
+      "fromName": "WCF_SQL_INSERT_HL7_STAGING",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.BizTalk.Deployment_WCF_SQL_INSERT_HL7_STAGING.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "sendport:Cloud9.BizTalk.Deployment/WCF_SQL_SET_STAGING_PATIENT_MESSAGE_STATUS",
+      "fromName": "WCF_SQL_SET_STAGING_PATIENT_MESSAGE_STATUS",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.BizTalk.Deployment_WCF_SQL_SET_STAGING_PATIENT_MESSAGE_STATUS.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "sendport:Cloud9.BizTalk.Deployment/WCF_SQL_GET_STAGING_PATIENT_MESSAGES",
+      "fromName": "WCF_SQL_GET_STAGING_PATIENT_MESSAGES",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.BizTalk.Deployment_WCF_SQL_GET_STAGING_PATIENT_MESSAGES.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "sendport:Cloud9.BizTalk.Deployment/WCF_SQL_UPDATE_STATUS",
+      "fromName": "WCF_SQL_UPDATE_STATUS",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.BizTalk.Deployment_WCF_SQL_UPDATE_STATUS.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "sendport:Cloud9.BizTalk.Deployment/WCF_UPDATE_PROCESS_PARAMETERS",
+      "fromName": "WCF_UPDATE_PROCESS_PARAMETERS",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.BizTalk.Deployment_WCF_UPDATE_PROCESS_PARAMETERS.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "sendport:Cloud9.BizTalk.Deployment/WCF_SQL_CREATE_LOG_ENTRY",
+      "fromName": "WCF_SQL_CREATE_LOG_ENTRY",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.BizTalk.Deployment_WCF_SQL_CREATE_LOG_ENTRY.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.BizTalk.Deployment/RL.ReceiveUnprocessedPatientStagingHL7",
+      "fromName": "RL.ReceiveUnprocessedPatientStagingHL7",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.BizTalk.Deployment_RL.ReceiveUnprocessedPatientStagingHL7.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.BizTalk.Deployment/RL.PollingIncomingMessage",
+      "fromName": "RL.PollingIncomingMessage",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.BizTalk.Deployment_RL.PollingIncomingMessage.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.BizTalk.Deployment/RL.QueueTreatmentCardSendProcess",
+      "fromName": "RL.QueueTreatmentCardSendProcess",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.BizTalk.Deployment_RL.QueueTreatmentCardSendProcess.json"
+    }
+  ]
+}

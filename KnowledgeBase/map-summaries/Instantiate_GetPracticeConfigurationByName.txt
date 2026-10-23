@@ -1,0 +1,12 @@
+MAP: Instantiate_GetPracticeConfigurationByName.btm
+PATH: Cloud9.BizTalk\Cloud9.BizTalk.X12\Maps\Instantiate_GetPracticeConfigurationByName.btm
+SOURCE: Cloud9.BizTalk.X12.Schemas.BBVA_X12_00501_835 (root X12_00501_835)
+TARGET: Cloud9.BizTalk.Schemas.GPC_TypedProcedure_BTS (root GetPracticeConfigurationByName)
+SCRIPT PRECEDENCE (first match wins when a functoid has more than one script): CSharp > ExternalAssembly > VbNet > JScript > XsltCallTemplate > Xslt
+
+=== PAGE: Page 1 ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L2: F1 -> GetPracticeConfigurationByName/pcName
+--- FUNCTOIDS ---
+F1 [String Concatenate] inputs: const:''
+

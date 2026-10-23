@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.PartnersShared.ViewModels.Security.Encrypt",
+    "type": "method",
+    "name": "Security.Encrypt",
+    "path": "Cloud9.HL7.WebAPI/Cloud9.HL7.BLL/ViewModels/Security.cs",
+    "class": "Cloud9.PartnersShared.ViewModels.Security",
+    "line": 28,
+    "signatures": [
+      "internal static string Encrypt(string dataToEncrypt)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.PartnersShared.ViewModels.Security",
+      "fromName": "Cloud9.PartnersShared.ViewModels.Security",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.PartnersShared.ViewModels.Security.json"
+    }
+  ]
+}

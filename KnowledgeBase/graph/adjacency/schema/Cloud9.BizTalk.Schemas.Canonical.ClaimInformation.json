@@ -1,0 +1,49 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.Canonical.ClaimInformation",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.Canonical.ClaimInformation",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Canonical/ClaimInformation.xsd",
+    "rootElements": [
+      "ClaimInformation"
+    ],
+    "kind": "canonical-or-other",
+    "targetNamespace": "http://Cloud9.BizTalk.Schemas.Canonical.ClaimInformation",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Canonical/ClaimInformation.xsd",
+      "toName": "ClaimInformation.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_Canonical_ClaimInformation.xsd.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "sourceSchema",
+      "from": "map:Cloud9.BizTalk.X12.Maps.ClaimInformation_To_X12_00501_276",
+      "fromName": "Cloud9.BizTalk.X12.Maps.ClaimInformation_To_X12_00501_276",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.ClaimInformation_To_X12_00501_276.json",
+      "root": "ClaimInformation"
+    },
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.X12.Maps.GetADAClaimResponse_To_ClaimInformation",
+      "fromName": "Cloud9.BizTalk.X12.Maps.GetADAClaimResponse_To_ClaimInformation",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.GetADAClaimResponse_To_ClaimInformation.json",
+      "root": "ClaimInformation"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.CanonicalClaimInformation_MMT",
+      "fromName": "CanonicalClaimInformation_MMT",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.CanonicalClaimInformation_MMT.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.Canonical.ClaimInformation"
+    }
+  ]
+}

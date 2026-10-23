@@ -1,0 +1,3405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cloud9 BizTalk Knowledge Base</title>
+<style>
+body { font-family: Segoe UI, Arial, sans-serif; max-width: 1100px; margin: 0 auto; padding: 24px; line-height: 1.5; color: #1f2328; }
+h1 { border-bottom: 2px solid #d0d7de; padding-bottom: 6px; }
+h2 { border-bottom: 1px solid #d0d7de; padding-bottom: 4px; margin-top: 32px; }
+code { background: #f3f4f6; padding: 1px 4px; border-radius: 4px; font-size: 90%; }
+pre { background: #f6f8fa; padding: 12px; overflow-x: auto; border-radius: 6px; }
+pre code { background: none; padding: 0; }
+table { border-collapse: collapse; margin: 12px 0; font-size: 92%; }
+th, td { border: 1px solid #d0d7de; padding: 6px 10px; vertical-align: top; text-align: left; }
+th { background: #f6f8fa; }
+nav { background: #f6f8fa; border: 1px solid #d0d7de; border-radius: 6px; padding: 8px 24px; }
+section { page-break-before: always; }
+section:first-of-type { page-break-before: auto; }
+.meta { color: #656d76; font-size: 90%; }
+@media print { nav { display: none; } a { color: inherit; } }
+</style>
+</head>
+<body>
+<p class="meta">Generated 2026-10-16 17:51 from KnowledgeBase/README.md and KnowledgeBase/docs/*.md.</p>
+<nav><strong>Contents</strong><ol>
+<li><a href="#doc-readme">Cloud9 BizTalk knowledge base</a></li>
+<li><a href="#doc-01-system-overview">Cloud9 BizTalk: system overview</a></li>
+<li><a href="#doc-02-payments-835-end-to-end">835 payment processing: end to end</a></li>
+<li><a href="#doc-03-replacement-guide">Replacement guide: move the 835 payment flows out of BizTalk</a></li>
+<li><a href="#doc-04-data-contracts">Data contracts for the payment flows</a></li>
+<li><a href="#doc-05-known-issues-and-open-questions">Known issues, risks, and open questions</a></li>
+</ol></nav>
+<section id="doc-readme"><h1 id="cloud9-biztalk-knowledge-base">Cloud9 BizTalk knowledge base</h1>
+<p>This folder documents the BizTalk integration layer in this repository. The focus is the patient and insurance payment flows (lockbox and 835), and what a replacement application must do.</p>
+<h2 id="start-here">Start here</h2>
+<table>
+<thead>
+<tr>
+<th>Document</th>
+<th>Use it to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#doc-01-system-overview">docs/01-system-overview.md</a></td>
+<td>Learn the repository layout, the BizTalk applications, the databases, and every integration</td>
+</tr>
+<tr>
+<td><a href="#doc-02-payments-835-end-to-end">docs/02-payments-835-end-to-end.md</a></td>
+<td>Follow each payment flow from the partner file to the practice database, field by field</td>
+</tr>
+<tr>
+<td><a href="#doc-03-replacement-guide">docs/03-replacement-guide.md</a></td>
+<td>Plan the replacement: responsibilities, facts to confirm, design, pseudo-code, cut-over, tests</td>
+</tr>
+<tr>
+<td><a href="#doc-04-data-contracts">docs/04-data-contracts.md</a></td>
+<td>Look up every stored procedure parameter, table, and schema that the payment flows use</td>
+</tr>
+<tr>
+<td><a href="#doc-05-known-issues-and-open-questions">docs/05-known-issues-and-open-questions.md</a></td>
+<td>See defects, security items, and unknowns found in the source</td>
+</tr>
+<tr>
+<td><a href="../graph/README.md">graph/README.md</a></td>
+<td>Traverse the code graph (nodes, edges, one adjacency file for each node)</td>
+</tr>
+<tr>
+<td><a href="../map-summaries">map-summaries</a></td>
+<td>Read any BizTalk map as plain text: links, functoids, inline C# and XSLT</td>
+</tr>
+</tbody>
+</table>
+<h2 id="payment-flows-at-a-glance">Payment flows at a glance</h2>
+<table>
+<thead>
+<tr>
+<th>Flow</th>
+<th>Partner</th>
+<th>Orchestration</th>
+<th>Posts with</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A. Patient lockbox</td>
+<td>BBVA / Navigant (now Fifth Third / Guidehouse)</td>
+<td><code>Process_BBVA_835Patient</code></td>
+<td><code>BTS.Post835PatientTransaction</code> (<code>PATIENT</code>)</td>
+</tr>
+<tr>
+<td>B. Web patient payment</td>
+<td>Smile Doctors web (card, ACH, ACH return)</td>
+<td><code>Process_SD_835Patient</code></td>
+<td><code>BTS.Post835PatientTransaction</code> (<code>WEB</code>)</td>
+</tr>
+<tr>
+<td>C. Insurance lockbox</td>
+<td>BBVA / Navigant (now Fifth Third / Guidehouse)</td>
+<td><code>Process_BBVA_835Insurance</code></td>
+<td><code>BTS.Post835InsuranceTransaction</code> (claims and PLB adjustments)</td>
+</tr>
+<tr>
+<td>D. Insurance ERA</td>
+<td>Change Healthcare (Emdeon)</td>
+<td><code>Process_CHC_InboundFiles_*</code>, <code>Process_CHC_835Insurance</code></td>
+<td><code>BTS.Post835InsuranceTransaction</code> or <code>BTS.AddTodoItem</code> (reversals)</td>
+</tr>
+<tr>
+<td>E. 835 pass-through</td>
+<td>Change Healthcare to BBVA</td>
+<td><code>Process_CHC_835_To_BBVA</code></td>
+<td>No posting. SFTP forward</td>
+</tr>
+</tbody>
+</table>
+<p>All posting flows find the practice database in <code>BizTalkCloud9Common.BTS.PracticeConfig</code> and write one <code>ImportLog</code> row for each payment.</p>
+<p>The discovery session of 2026-10-14 puts flows A and C first in the replacement scope. See <a href="#doc-03-replacement-guide">docs/03-replacement-guide.md</a> section 0.</p>
+<h2 id="other-sources">Other sources</h2>
+<p>The <code>references</code> folder at the repository root holds documents that are not source code. The docs use them as follows.</p>
+<table>
+<thead>
+<tr>
+<th>Document</th>
+<th>Used in</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>BizTalk to Cloud9 Discovery 20261014-171226UTC.docx</code></td>
+<td>Documents 01, 02, 03, 05</td>
+</tr>
+<tr>
+<td><code>BizTalk-v1.3_ReleaseNotes_c9*.docx</code> (release 1.3.2108.86)</td>
+<td>Documents 02, 03, 05</td>
+</tr>
+<tr>
+<td><code>*/835_*_Mapping_v1.xlsx</code> (vendor mapping specs)</td>
+<td>Documents 02, 05</td>
+</tr>
+<tr>
+<td><code>SFTP Monitoring Tool.docx</code></td>
+<td>Documents 03, 05</td>
+</tr>
+<tr>
+<td>SQL scripts and <code>Cloud9.BizTalk.Scripts.zip</code></td>
+<td>Older copies of <code>Cloud9.BizTalk.Scripts</code>. Document 02</td>
+</tr>
+<tr>
+<td><code>*.pdf</code> (process guides and the 2021 incident letter)</td>
+<td>Documents 02, 05</td>
+</tr>
+<tr>
+<td><code>How To Test *.zip</code></td>
+<td>Not reviewed (276/277 and 837D, not payments)</td>
+</tr>
+</tbody>
+</table>
+<p>The code is the source of truth for current behavior. Where a reference does not agree with the code, document 02 lists the difference.</p>
+<h2 id="tools">Tools</h2>
+<p>The scripts need PowerShell 7 (<code>pwsh</code>). They read the source and do not change it.</p>
+<table>
+<thead>
+<tr>
+<th>Script</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../tools/Build-CodeGraph.ps1">tools/Build-CodeGraph.ps1</a></td>
+<td>Rebuilds <code>graph/</code> (merges <code>graph/curated/*.json</code>)</td>
+</tr>
+<tr>
+<td><a href="../tools/Export-MapSummaries.ps1">tools/Export-MapSummaries.ps1</a></td>
+<td>Rebuilds <code>map-summaries/</code> from every <code>.btm</code> file</td>
+</tr>
+<tr>
+<td><a href="../tools/Find-GraphNode.ps1">tools/Find-GraphNode.ps1</a></td>
+<td>Searches the graph and prints neighbors</td>
+</tr>
+<tr>
+<td><a href="../tools/Export-Utf8Copies.ps1">tools/Export-Utf8Copies.ps1</a></td>
+<td>Writes UTF-8 copies of the UTF-16 BizTalk files to <code>%TEMP%\c9decoded</code> for text tools</td>
+</tr>
+<tr>
+<td><a href="../tools/Export-ReferenceText.ps1">tools/Export-ReferenceText.ps1</a></td>
+<td>Writes plain text of the <code>references</code> docx, xlsx, pdf, and zip files to <code>%TEMP%\c9refs</code>. Compares the reference SQL files with the repository. Uses <code>pdftotext</code> if it exists, else <a href="../tools/Convert-PdfToText.ps1">tools/Convert-PdfToText.ps1</a></td>
+</tr>
+<tr>
+<td><a href="../tools/Export-DocsHtml.ps1">tools/Export-DocsHtml.ps1</a></td>
+<td>Writes this README and <code>docs/*.md</code> to one HTML file in <code>export/</code></td>
+</tr>
+</tbody>
+</table>
+<p>The workspace file <code>.vscode/tasks.json</code> has VS Code tasks that run these scripts (<code>kb-*</code>).</p>
+<h2 id="conventions-in-these-documents">Conventions in these documents</h2>
+<ol>
+<li>A statement marked <strong>(inferred)</strong> comes from reasoning about the code, not from an explicit line of code. Confirm it before you depend on it.</li>
+<li>Links point to files in this repository. Line numbers refer to the source at the time of writing.</li>
+<li>Secrets in the source are never copied here. The graph shows <code>[REDACTED]</code> for password, key, and token settings.</li>
+<li>The practice database procedures are not in this repository. Documents 03 and 04 tell you how to read them.</li>
+</ol>
+<h2 id="keep-the-knowledge-base-current">Keep the knowledge base current</h2>
+<ol>
+<li>After a change to an orchestration, map, schema, binding, or SQL file, run <code>Build-CodeGraph.ps1</code> and <code>Export-MapSummaries.ps1</code>.</li>
+<li>If you learn a new fact about a payment flow, update the document that owns the topic (02 for behavior, 04 for contracts, 05 for issues) and, if it is a step or rule, <code>graph/curated/payment-flows.json</code>.</li>
+<li>Check <code>graph/build-warnings.txt</code> after each build. A curated id that does not exist creates a warning and a placeholder node.</li>
+</ol>
+</section>
+<section id="doc-01-system-overview"><h1 id="cloud9-biztalk-system-overview">Cloud9 BizTalk: system overview</h1>
+<p>This repository holds the BizTalk Server 2016 integration layer of the Cloud9 orthodontic practice management system. It also holds a central BizTalk support database, test SQL scripts, and a small HL7 Web API. This document gives the general picture. The payment flows have their own document: <a href="#doc-02-payments-835-end-to-end">02-payments-835-end-to-end.md</a>.</p>
+<h2 id="repository-layout">Repository layout</h2>
+<table>
+<thead>
+<tr>
+<th>Folder</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../Cloud9.BizTalk">Cloud9.BizTalk</a></td>
+<td>BizTalk projects (<code>.btproj</code>), C# helper projects (<code>.csproj</code>), deployment projects (BizTalk Deployment Framework, <code>.btdfproj</code>), party configuration, tools</td>
+</tr>
+<tr>
+<td><a href="../../Cloud9.BizTalk.Database">Cloud9.BizTalk.Database</a></td>
+<td>SQL project for the central database <code>BizTalkCloud9Common</code> (schema <code>BTS</code>)</td>
+</tr>
+<tr>
+<td><a href="../../Cloud9.BizTalk.Scripts">Cloud9.BizTalk.Scripts</a></td>
+<td>Ad hoc SQL that testers use to build test files and to check results, one folder for each integration</td>
+</tr>
+<tr>
+<td><a href="../../Cloud9.HL7.WebAPI">Cloud9.HL7.WebAPI</a></td>
+<td>ASP.NET Web API that accepts HL7 messages and locations from partners and writes them to <code>BizTalkCloud9Common</code></td>
+</tr>
+<tr>
+<td><a href="..">KnowledgeBase</a></td>
+<td>This knowledge base, the code graph, and the tools that build it</td>
+</tr>
+</tbody>
+</table>
+<p>The repository is a source export. It is not a git repository.</p>
+<h2 id="biztalk-applications">BizTalk applications</h2>
+<table>
+<thead>
+<tr>
+<th>BizTalk application</th>
+<th>Solution</th>
+<th>Deployment project</th>
+<th>Main content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Cloud9.Common</code></td>
+<td><a href="../../Cloud9.BizTalk/Cloud9.Common.sln">Cloud9.Common.sln</a></td>
+<td><a href="../../Cloud9.BizTalk/Cloud9.Common.Deployment">Cloud9.Common.Deployment</a></td>
+<td>Shared pipeline component (Archive) and shared ports</td>
+</tr>
+<tr>
+<td><code>Cloud9.BizTalk</code></td>
+<td><a href="../../Cloud9.BizTalk/Cloud9.BizTalk.sln">Cloud9.BizTalk.sln</a></td>
+<td><a href="../../Cloud9.BizTalk/Cloud9.BizTalk.Deployment">Cloud9.BizTalk.Deployment</a></td>
+<td>Epic HL7 integration, treatment cards, shared schemas, <code>Common.AddLog</code></td>
+</tr>
+<tr>
+<td><code>Cloud9.EDI</code></td>
+<td><a href="../../Cloud9.BizTalk/Cloud9.EDI.sln">Cloud9.EDI.sln</a></td>
+<td><a href="../../Cloud9.BizTalk/Cloud9.EDI.Deployment">Cloud9.EDI.Deployment</a></td>
+<td>X12 EDI: 835 payments, 837 claims, 276/277 claim status, 271 eligibility, Change Healthcare mailbox</td>
+</tr>
+</tbody>
+</table>
+<p>Each solution has a <code>.PDS</code> variant (<code>Cloud9.BizTalk.PDS.sln</code>, <code>Cloud9.Common.PDS.sln</code>, <code>Cloud9.EDI.PDS.sln</code>) with its own deployment folder. The PDS variant is for a second customer deployment. The helper library calls a PDS API through Okta at <code>pacificdental.okta.com</code>, so PDS is Pacific Dental Services <strong>(inferred)</strong>. The Smile Doctors deployment uses the non-PDS bindings.</p>
+<p>Hosts named in the bindings: <code>BizTalkProcessingHost</code> (orchestrations), <code>BizTalkReceiveHost</code>, <code>BizTalkReceiveHostSFTP</code>, <code>BizTalkSendHost</code>, <code>BizTalkSendHostSFTP</code>.</p>
+<h2 id="projects">Projects</h2>
+<table>
+<thead>
+<tr>
+<th>Project</th>
+<th>Type</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Cloud9.BizTalk.X12</code> (and <code>.PDS</code>)</td>
+<td>BizTalk</td>
+<td>X12 orchestrations, maps, pipelines</td>
+</tr>
+<tr>
+<td><code>Cloud9.BizTalk.X12.Schemas</code></td>
+<td>BizTalk</td>
+<td>X12 schemas: BBVA 835, SD 835, CHC 835/837D/276/277/277CA/271, Channel Health 271</td>
+</tr>
+<tr>
+<td><code>Cloud9.BizTalk.Schemas</code></td>
+<td>BizTalk</td>
+<td>Canonical schemas and WCF-SQL schemas for every stored procedure call</td>
+</tr>
+<tr>
+<td><code>Cloud9.BizTalk.Maps</code> (folder <code>Cloud9.BizTalk.Transforms</code>)</td>
+<td>BizTalk</td>
+<td>Shared map <code>QueueProcessParametersTypedPolling_To_UpdateProcessParameters</code></td>
+</tr>
+<tr>
+<td><code>Cloud9.BizTalk.Common</code></td>
+<td>BizTalk</td>
+<td>Orchestration <code>Cloud9.BizTalk.Common.AddLog</code> (writes <code>BTS.Log</code>)</td>
+</tr>
+<tr>
+<td><code>Cloud9.BizTalk.Epic</code></td>
+<td>BizTalk</td>
+<td>Epic HL7 v2.6 orchestrations and maps</td>
+</tr>
+<tr>
+<td><code>Cloud9.BizTalk.Epic.BTAHL7*</code></td>
+<td>BizTalk</td>
+<td>HL7 v2.6 schemas for the BizTalk Accelerator for HL7</td>
+</tr>
+<tr>
+<td><code>Cloud9.BizTalk.Helper</code></td>
+<td>C#</td>
+<td>Helper methods for orchestrations and maps (dates, codes, Emdeon payload, Okta, PDS API)</td>
+</tr>
+<tr>
+<td><code>Cloud9.BizTalk.Shared.Components.Archive</code></td>
+<td>C# pipeline component</td>
+<td>Writes a raw copy of each received file</td>
+</tr>
+<tr>
+<td><code>Cloud9.BizTalk.PipelineComponent.CustomEncoder</code></td>
+<td>C# pipeline component</td>
+<td>Re-encodes the body as ASCII (Emdeon HTTP send)</td>
+</tr>
+<tr>
+<td><code>Cloud9.BizTalk.PipelineComponent.EmdeonPayload</code></td>
+<td>C# pipeline component</td>
+<td>Puts an EDI payload into the Emdeon XML envelope (base64 and size)</td>
+</tr>
+<tr>
+<td><code>Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings</code></td>
+<td>C# pipeline component</td>
+<td>Replaces strings from an SSO setting (HL7 receive pipeline only)</td>
+</tr>
+<tr>
+<td><code>Cloud9.BizTalk.ReportGenerator</code>, <code>Cloud9.BizTalk.Reports</code>, <code>...ConsoleTest</code></td>
+<td>C#</td>
+<td>Telerik treatment card PDF</td>
+</tr>
+<tr>
+<td><code>Cloud9.BizTalk.SignalR.Helper</code></td>
+<td>C#</td>
+<td>SignalR payload builder (appointment changed)</td>
+</tr>
+<tr>
+<td><code>Cloud9.BizTalk.HelperTest</code></td>
+<td>C# test</td>
+<td>Tests for the helper library</td>
+</tr>
+<tr>
+<td><code>Cloud9.BizTalk.Central.Database</code></td>
+<td>SQL project</td>
+<td><code>BizTalkCloud9Common</code> database</td>
+</tr>
+<tr>
+<td><code>Cloud9.HL7.WebAPI</code>, <code>.BLL</code>, <code>.DAL</code>, <code>.WebAPIClient</code></td>
+<td>C#</td>
+<td>HL7 Web API and test client</td>
+</tr>
+</tbody>
+</table>
+<p>For the full project graph, read <code>project:*</code> and <code>solution:*</code> nodes in <a href="../graph/index.md">../graph/index.md</a>.</p>
+<h2 id="databases">Databases</h2>
+<table>
+<thead>
+<tr>
+<th>Database</th>
+<th>Owner</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>BizTalkCloud9Common</code></td>
+<td>This repository</td>
+<td>Practice routing (<code>BTS.PracticeConfig</code>), lookup values, logs (<code>BTS.Log</code>), process scheduling (<code>BTS.ProcessParameter</code>), HL7 staging (<code>BTS.IncomingMessage</code>, <code>BTS.HL7InboundStaging</code>), claim tracking (<code>BTS.SubmittedClaim</code>), outgoing message queue (<code>BTS.OutgoingMessage</code>)</td>
+</tr>
+<tr>
+<td>Practice databases</td>
+<td>Cloud9 application</td>
+<td>One database for each practice group. BizTalk calls procedures in the <code>BTS</code> schema of each database. The address comes from <code>BTS.PracticeConfig.pcInstanceAddress</code></td>
+</tr>
+<tr>
+<td>BizTalk databases</td>
+<td>BizTalk Server</td>
+<td>MessageBox, tracking, SSO. Not in this repository</td>
+</tr>
+</tbody>
+</table>
+<h2 id="integration-catalog">Integration catalog</h2>
+<p>The orchestrations below are in the graph as <code>orchestration:*</code> nodes. Each node lists its activation, ports, messages, maps, called orchestrations, and stored procedures.</p>
+<h3 id="edi-application-cloud9.edi">EDI (application Cloud9.EDI)</h3>
+<table>
+<thead>
+<tr>
+<th>Integration</th>
+<th>Orchestrations</th>
+<th>Trigger</th>
+<th>Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Patient lockbox payments (BBVA)</td>
+<td><code>Process_BBVA_835Patient</code></td>
+<td>File in a region folder</td>
+<td>See document 02, flow A</td>
+</tr>
+<tr>
+<td>Web patient payments (Smile Doctors)</td>
+<td><code>Process_SD_835Patient</code></td>
+<td>File in an <code>SD-&lt;REGION&gt;</code> folder</td>
+<td>See document 02, flow B</td>
+</tr>
+<tr>
+<td>Insurance lockbox payments (BBVA)</td>
+<td><code>Process_BBVA_835Insurance</code></td>
+<td>File in a region folder</td>
+<td>See document 02, flow C</td>
+</tr>
+<tr>
+<td>Insurance ERA (Change Healthcare)</td>
+<td><code>Process_CHC_InboundFiles_Controller</code>, <code>Process_CHC_InboundFiles_Worker</code>, <code>Process_CHC_835Insurance</code></td>
+<td>SQL polling of <code>BTS.ProcessParameter</code> (<code>ProcessCHCInboundFiles</code>)</td>
+<td>See document 02, flow D</td>
+</tr>
+<tr>
+<td>CHC 835 and 837 pass-through to BBVA</td>
+<td><code>Process_CHC_835_To_BBVA</code>, <code>Process_CHC_837_To_BBVA</code></td>
+<td>File in a folder</td>
+<td>Re-envelope and send by SFTP</td>
+</tr>
+<tr>
+<td>Dental claims 837D (Change Healthcare)</td>
+<td><code>Process_CHC_837Claims_Controller</code>, <code>Process_CHC_837Claims_Worker</code></td>
+<td>SQL polling (<code>ProcessClaims</code>)</td>
+<td>Read queued claims from each practice, map to 837D, send by HTTP to Change Healthcare, update claim status, archive</td>
+</tr>
+<tr>
+<td>Claim status inquiry 276/277</td>
+<td><code>Process_CHC_276ClaimStatus</code>, <code>Process_CHC_ClaimsStatus</code></td>
+<td><code>BTS.OutgoingMessage</code> rows with <code>omMessageType = 276</code> (XML polling)</td>
+<td>Build a 276 from <code>GetADAClaim</code>, send, map the 277 response, update statuses</td>
+</tr>
+<tr>
+<td>Claim status 277 and 277CA</td>
+<td><code>Process_CHC_277ClaimsStatus</code>, <code>Process_CHC_277AClaimsStatus</code>, <code>Process_CHC_277_Unsolicitated_ClaimsStatus</code></td>
+<td>Files in <code>CHC_Inbound</code> (from the mailbox) and <code>CHC_Inbound\277</code></td>
+<td>Map to <code>ClaimStatus</code> canonical, then <code>Process_CHC_ClaimsStatus</code> updates claim statuses, adds claim errors and to-do items</td>
+</tr>
+<tr>
+<td>Eligibility 271</td>
+<td><code>Process_CHC_271Eligibility</code>, <code>Process_ChannelHealth_271Eligibility</code></td>
+<td>Files from Change Healthcare and Channel Health</td>
+<td>Map to <code>InsuranceInformation</code> and <code>PatientEligibilities</code> canonical, update <code>PatientInsurancePolicy</code></td>
+</tr>
+<tr>
+<td>Shared types</td>
+<td><code>EDITypes</code></td>
+<td>None</td>
+<td>Message types and port types for the X12 orchestrations</td>
+</tr>
+</tbody>
+</table>
+<p>Active status: the discovery session of 2026-10-14 calls the 271 eligibility flows and the patient insurance policy updates inactive. It names the BBVA / Fifth Third patient and insurance lockbox flows and the web patient payments as active. It does not give a status for the other EDI flows. See <a href="#doc-03-replacement-guide">03-replacement-guide.md</a>.</p>
+<h3 id="epic-hl7-application-cloud9.biztalk">Epic HL7 (application Cloud9.BizTalk)</h3>
+<table>
+<thead>
+<tr>
+<th>Integration</th>
+<th>Orchestrations</th>
+<th>Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HL7 intake</td>
+<td><code>HL7SQLReceive</code>, <code>HL7FlatFileReceive</code>, <code>ProcessingHl7_Inbound</code>, <code>StageHL7_Inbound</code></td>
+<td>Poll <code>BTS.IncomingMessage</code> (written by the HL7 Web API) or read flat files, stage each message in <code>BTS.HL7InboundStaging</code></td>
+</tr>
+<tr>
+<td>HL7 processing</td>
+<td><code>ProcessHL7MessagesForPatient</code></td>
+<td>Poll staged patients, then upsert patients (ADT A28/A31), employees (MFN M02), and appointments (SIU) in the practice database</td>
+</tr>
+<tr>
+<td>Treatment cards</td>
+<td><code>ProcessTreatmentCardData_Controller</code>, <code>ProcessTreatmentCardData_Worker</code>, <code>SendTreatmentCardsToPDS</code></td>
+<td>Render treatment card PDFs (Telerik), wrap them in MDM T02, send to the PDS API</td>
+</tr>
+<tr>
+<td>Logging and errors</td>
+<td><code>Cloud9.BizTalk.Epic.AddLog</code>, <code>ErrorReporting</code>, <code>Cloud9.BizTalk.Common.AddLog</code></td>
+<td>Write <code>BTS.Log</code> and <code>BTS.ProcessingError</code> rows</td>
+</tr>
+</tbody>
+</table>
+<h3 id="hl7-web-api">HL7 Web API</h3>
+<p><code>Cloud9.HL7.WebAPI</code> has two controllers: <code>IncomingMessagesController</code> (partners post HL7 messages) and <code>LocationController</code>. Partners authenticate with a user name and password that the BLL checks against a partner database. Messages go to <code>BTS.IncomingMessage</code>. BizTalk polls that table (<code>HL7SQLReceive</code>).</p>
+<h2 id="shared-mechanisms">Shared mechanisms</h2>
+<ol>
+<li><strong>Practice routing.</strong> Every flow that writes to a practice database finds the address in <code>BTS.PracticeConfig</code>. Dynamic WCF-SQL send ports carry the address at run time.</li>
+<li><strong>Typed procedure calls.</strong> Each call uses a WCF-SQL schema from <code>Cloud9.BizTalk.Schemas</code>. The action is <code>TypedProcedure/BTS/&lt;ProcName&gt;</code>. Orchestrations set <code>useAmbientTransaction=false</code> and <code>EnableTransaction=false</code>. The procedures own the transactions.</li>
+<li><strong>Process scheduling.</strong> Rows in <code>BTS.ProcessParameter</code> trigger the polling receive locations (<code>ProcessClaims</code>, <code>ProcessCHCInboundFiles</code>, <code>ProcessTreatmentCards</code>). <code>BTS.QueueProcessParameters</code> returns the practice list. The controller orchestration calls a worker for each practice.</li>
+<li><strong>Logging.</strong> Central <code>BTS.Log</code> (through <code>Common.AddLog</code>), practice <code>ImportLog</code> (through <code>BTS.AddImportLog</code>), and the Windows event log.</li>
+<li><strong>Configuration.</strong> The BizTalk Deployment Framework replaces <code>${...}</code> placeholders in <code>PortBindingsMaster.xml</code> with values from <code>SettingsFileGenerator.xml</code> for each environment. Environments in the EDI settings: Default, Local Dev, JGLISSON Development, LAB, LAB2, LAB3, C9Prod1, C9Prod2, SDLab1, SDProd1. Some runtime settings (PDS API) come from SSO through <code>SSOClientHelper</code>.</li>
+</ol>
+<h2 id="how-to-read-biztalk-artifacts-without-biztalk">How to read BizTalk artifacts without BizTalk</h2>
+<table>
+<thead>
+<tr>
+<th>Artifact</th>
+<th>Format</th>
+<th>How to read it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Orchestration <code>.odx</code></td>
+<td>XML designer data, then the XLANG/s code after the line <code>#endif // __DESIGNER_DATA</code></td>
+<td>Read the code section. It has every shape as code. The graph node gives the line of the <code>service</code> declaration</td>
+</tr>
+<tr>
+<td>Map <code>.btm</code></td>
+<td>UTF-16 XML with very long lines</td>
+<td>Read the dump in <a href="../map-summaries">../map-summaries</a>. Run <a href="../tools/Export-MapSummaries.ps1">Export-MapSummaries.ps1</a> again after a change</td>
+</tr>
+<tr>
+<td>Pipeline <code>.btp</code></td>
+<td>UTF-16 XML</td>
+<td>The graph <code>pipeline:*</code> node lists the components. Binding files override component properties for each location</td>
+</tr>
+<tr>
+<td>Schema <code>.xsd</code></td>
+<td>XML, some UTF-16</td>
+<td>X12 schemas use <code>trigger_field</code> / <code>trigger_value</code> to bind a qualifier (for example <code>REF01 = EJ</code>) to a named record</td>
+</tr>
+<tr>
+<td>Binding <code>PortBindingsMaster.xml</code></td>
+<td>XML with <code>${...}</code> placeholders</td>
+<td>Graph nodes <code>receiveport:*</code>, <code>receivelocation:*</code>, <code>sendport:*</code>, <code>setting:*</code></td>
+</tr>
+<tr>
+<td>Settings <code>SettingsFileGenerator.xml</code></td>
+<td>Excel 2003 XML</td>
+<td>Graph nodes <code>setting:*</code> with values for each environment (secrets redacted)</td>
+</tr>
+</tbody>
+</table>
+<p>Some editors and tools cannot read UTF-16. <a href="../tools/Export-Utf8Copies.ps1">Export-Utf8Copies.ps1</a> writes UTF-8 copies of all source files to <code>%TEMP%\c9decoded</code>.</p>
+</section>
+<section id="doc-02-payments-835-end-to-end"><h1 id="payment-processing-end-to-end">835 payment processing: end to end</h1>
+<p>This document describes the patient and insurance payment flows (lockbox and 835) in detail. It covers the receive side, the maps, the orchestrations, the stored procedure calls, and the logs. Most facts come from the source files in this repository. A statement that comes from inference has the label <strong>(inferred)</strong>. Some facts come from the documents in the <code>references</code> folder. Those facts name their source. The section <a href="#reference-documents-compared-with-the-code">Reference documents compared with the code</a> lists where the references and the code do not agree.</p>
+<p>Related documents:</p>
+<ul>
+<li><a href="#doc-03-replacement-guide">03-replacement-guide.md</a> tells you what a replacement application must do.</li>
+<li><a href="#doc-04-data-contracts">04-data-contracts.md</a> lists every parameter and field.</li>
+<li><a href="#doc-05-known-issues-and-open-questions">05-known-issues-and-open-questions.md</a> lists defects, gaps, and unknowns.</li>
+<li>The readable map dumps are in <a href="../map-summaries">../map-summaries</a>. Each dump lists every link, functoid, and inline script of one map.</li>
+<li>The graph nodes for these flows start at <code>flow:*</code> in <a href="../graph/index.md">../graph/index.md</a>.</li>
+</ul>
+<h2 id="summary-of-the-five-flows">Summary of the five flows</h2>
+<table>
+<thead>
+<tr>
+<th>Flow</th>
+<th>Source</th>
+<th>Entry point</th>
+<th>Orchestration</th>
+<th>Practice key</th>
+<th>Stored procedures (practice DB unless noted)</th>
+<th>Graph node</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A. BBVA patient lockbox</td>
+<td>BBVA / Navigant lockbox SFTP</td>
+<td><code>RP_BBVA835_Patient</code></td>
+<td><code>Process_BBVA_835Patient</code></td>
+<td>Folder name</td>
+<td><code>BTS.Post835PatientTransaction</code>, <code>BTS.AddImportLog</code></td>
+<td><code>flow:BBVA-835-Patient-Lockbox</code></td>
+</tr>
+<tr>
+<td>B. SD web patient payment</td>
+<td>Smile Doctors web payment SFTP</td>
+<td><code>RP_SD835_Patient</code></td>
+<td><code>Process_SD_835Patient</code></td>
+<td>Folder name (<code>SD-&lt;REGION&gt;</code>)</td>
+<td><code>BTS.Post835PatientTransaction</code>, <code>BTS.AddImportLog</code></td>
+<td><code>flow:SD-835-Web-Patient-Payment</code></td>
+</tr>
+<tr>
+<td>C. BBVA insurance lockbox</td>
+<td>BBVA / Navigant lockbox SFTP</td>
+<td><code>RP_BBVA835_Insurance</code></td>
+<td><code>Process_BBVA_835Insurance</code></td>
+<td>Folder name</td>
+<td><code>BTS.Post835InsuranceTransaction</code>, <code>BTS.AddImportLog</code></td>
+<td><code>flow:BBVA-835-Insurance-Lockbox</code></td>
+</tr>
+<tr>
+<td>D. Change Healthcare ERA 835</td>
+<td>Change Healthcare (Emdeon) mailbox API</td>
+<td><code>RP_CHC_Inbound_EDI</code></td>
+<td><code>Process_CHC_835Insurance</code></td>
+<td>File name prefix</td>
+<td><code>BTS.Post835InsuranceTransaction</code>, <code>BTS.AddTodoItem</code>, <code>BTS.AddImportLog</code>, central <code>BTS.CreateLogEntry</code></td>
+<td><code>flow:CHC-835-Insurance-ERA</code></td>
+</tr>
+<tr>
+<td>E. CHC 835 pass-through to BBVA</td>
+<td>Change Healthcare file folder</td>
+<td><code>RP_CHC835ToBBVA</code></td>
+<td><code>Process_CHC_835_To_BBVA</code></td>
+<td>None (payee ID lookup)</td>
+<td>Central <code>BTS.GetApplicationLookupValues</code></td>
+<td><code>flow:CHC-835-To-BBVA-Passthrough</code></td>
+</tr>
+</tbody>
+</table>
+<p>Every posting flow uses the central lookup <code>BTS.GetPracticeConfigurationByName</code> in the <code>BizTalkCloud9Common</code> database.</p>
+<pre class="mermaid">flowchart LR
+  subgraph Sources
+    BBVA[BBVA lockbox SFTP]
+    SDW[SD web payment SFTP]
+    CHC[Change Healthcare mailbox API]
+  end
+  subgraph BizTalk
+    RLP[RP_BBVA835_Patient]
+    RLI[RP_BBVA835_Insurance]
+    RLS[RP_SD835_Patient]
+    POLL[RP_CHCInboundToProcess&lt;br/>SQL polling]
+    WRK[CHC InboundFiles Controller + Worker]
+    RLC[RP_CHC_Inbound_EDI]
+    PIPE[ReceiveEDIPipeline&lt;br/>Archive + EDI disassembler]
+    OP[Process_BBVA_835Patient]
+    OS[Process_SD_835Patient]
+    OI[Process_BBVA_835Insurance]
+    OC[Process_CHC_835Insurance]
+  end
+  subgraph Databases
+    CDB[(BizTalkCloud9Common&lt;br/>BTS.PracticeConfig)]
+    PDB[(Practice DB&lt;br/>one per practice)]
+  end
+  BBVA --> RLP --> PIPE
+  BBVA --> RLI --> PIPE
+  SDW --> RLS --> PIPE
+  POLL --> WRK
+  CHC --> WRK -->|CHC_Inbound folder| RLC --> PIPE
+  PIPE --> OP &amp; OS &amp; OI &amp; OC
+  OP &amp; OS &amp; OI &amp; OC -->|GetPracticeConfigurationByName| CDB
+  OP &amp; OS -->|Post835PatientTransaction + AddImportLog| PDB
+  OI -->|Post835InsuranceTransaction + AddImportLog| PDB
+  OC -->|Post835InsuranceTransaction or AddTodoItem + AddImportLog| PDB
+</pre>
+<h2 id="shared-receive-behavior">Shared receive behavior</h2>
+<p>All 835 receive locations use the pipeline <code>Cloud9.BizTalk.X12.Pipelines.ReceiveEDIPipeline</code> (<a href="../../Cloud9.BizTalk/Cloud9.BizTalk.X12/Pipelines/ReceiveEDIPipeline.btp">ReceiveEDIPipeline.btp</a>).</p>
+<ol>
+<li><strong>Archive component</strong> (decode stage). Class <code>Cloud9.BizTalk.Shared.Components.Archive.Archive</code> (<a href="../../Cloud9.BizTalk/Cloud9.BizTalk.Shared.Components.Archive/Archive.cs">Archive.cs</a>). The binding sets <code>FilePath</code> to <code>&lt;receive folder&gt;\Archive</code> and <code>FileName</code> to <code>%FileReceivedFileName%%FileReceivedFileExtension%</code>. The component writes a copy of the raw file before parsing. <code>Overwrite</code> is true.</li>
+<li><strong>EDI disassembler</strong> (disassemble stage). <code>EdiDataValidation</code> is true. <code>XmlSchemaValidation</code> is false. <code>PreserveInterchange</code> is false. Thus BizTalk publishes <strong>one message for each ST/SE transaction set</strong>. Each orchestration instance processes one transaction set, not one file.</li>
+<li>The disassembler picks the schema namespace from the party agreement that matches the ISA sender and receiver IDs. See the table below. The orchestrations subscribe by message type <code>namespace#X12_00501_835</code>.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Agreement (in <a href="../../Cloud9.BizTalk/Configuration/PartyCollection.xml">PartyCollection.xml</a>)</th>
+<th>Sender identity</th>
+<th>Receiver identity</th>
+<th>Schema namespace</th>
+<th>Used by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>BBVA_To_SmileDoctors</code></td>
+<td>ZZ <code>BBVANAV</code></td>
+<td>ZZ <code>SMILE DOCTORS</code></td>
+<td><code>http://schemas.microsoft.com/BizTalk/EDI/X12/2006/BBVA</code></td>
+<td>Flows A and C</td>
+</tr>
+<tr>
+<td><code>SmileDoctors_To_Cloud9</code></td>
+<td>ZZ <code>SMILE DOCTORS</code></td>
+<td>ZZ <code>CLOUD9</code></td>
+<td><code>http://schemas.microsoft.com/BizTalk/EDI/X12/2006/SmileDoctors</code></td>
+<td>Flow B</td>
+</tr>
+<tr>
+<td><code>ChangeHealthcare_Cloud9</code> (and related CHC agreements)</td>
+<td>Change Healthcare IDs (<code>0135WCH00</code>, <code>WEBMDDENTAL</code>, <code>061267267</code>)</td>
+<td>CLOUD9 IDs (<code>271836984</code>, <code>CLOUD9</code>, <code>462</code>)</td>
+<td><code>http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC</code></td>
+<td>Flows D and E</td>
+</tr>
+</tbody>
+</table>
+<p>The exact direction of each CHC identity inside each agreement is not confirmed. Read the agreement XML before you rely on it.</p>
+<h3 id="receive-locations-and-folders">Receive locations and folders</h3>
+<p>The binding file is <a href="../../Cloud9.BizTalk/Cloud9.EDI.Deployment/PortBindingsMaster.xml">Cloud9.EDI.Deployment/PortBindingsMaster.xml</a>. The <code>${...}</code> values come from <a href="../../Cloud9.BizTalk/Cloud9.EDI.Deployment/SettingsFileGenerator.xml">SettingsFileGenerator.xml</a>. The graph has every setting as a <code>setting:*</code> node with values for each environment. Secrets are redacted in the graph.</p>
+<table>
+<thead>
+<tr>
+<th>Receive port</th>
+<th>Location pattern</th>
+<th>Transport</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>RP_BBVA835_Patient</code></td>
+<td><code>${BBVA_835_PATIENT_FILE_FOLDER}\&lt;REGION&gt;\*.*</code></td>
+<td>FILE, poll 60 s</td>
+<td>One FILE and one SFTP location for each region</td>
+</tr>
+<tr>
+<td><code>RP_BBVA835_Patient</code></td>
+<td><code>sftp://${BBVA_SFTP_HOST}${BBVA_835_PATIENT_FTP_FOLDER}/&lt;REGION&gt;/*.*</code></td>
+<td>SFTP, poll 15 min</td>
+<td>Daily schedule, Eastern time, window 02:00 to 05:00</td>
+</tr>
+<tr>
+<td><code>RP_BBVA835_Insurance</code></td>
+<td><code>${BBVA_835_INSURANCE_FILE_FOLDER}\&lt;REGION&gt;\*.*</code> and SFTP <code>${BBVA_835_INSURANCE_FTP_FOLDER}/&lt;REGION&gt;</code></td>
+<td>FILE and SFTP</td>
+<td>Same pattern as patient</td>
+</tr>
+<tr>
+<td><code>RP_SD835_Patient</code></td>
+<td><code>${SD_835_WEB_FILE_FOLDER}\SD-&lt;REGION&gt;\*.*</code> and SFTP <code>${SD_835_WEB_FTP_FOLDER}/SD-&lt;REGION&gt;</code></td>
+<td>FILE and SFTP</td>
+<td>Folder names keep the <code>SD-</code> prefix. Exception: the PRACTICASMILEDOCTORS locations use the folder <code>SMILEDOCTORS</code> (no prefix). <code>SD-MIDWEST2</code> is defined twice</td>
+</tr>
+<tr>
+<td><code>RP_CHC_Inbound_EDI</code></td>
+<td><code>${ADDR_FILE_ROOT}\CHC_Inbound\*.*</code></td>
+<td>FILE</td>
+<td>Shared by 835, 277 and 277CA. Archive goes to <code>${CH_835_INSURANCE_FILE_FOLDER}\Archive</code></td>
+</tr>
+<tr>
+<td><code>RP_CHC835ToBBVA</code></td>
+<td><code>${CH_835_TO_BBVA_FILE_FOLDER}\*.*</code></td>
+<td>FILE</td>
+<td>SFTP location exists but is disabled</td>
+</tr>
+</tbody>
+</table>
+<p>Regions in the binding (22): GULFCOAST, GULFCOAST2, MIDATLANTIC, HOUSTONMETRO, ATLANTAMETRO, ATLANTAMETRO2, CENTRALPLAINS, DALLASMETRO, DALLASMETRO2, DALLASMETRO3, DNORTHO, INDIANA, KNOXVILLEMETRO, MOUNTAINCENTRAL, PRACTICASMILEDOCTORS, SOUTHEAST, SOUTHEAST2, SOUTHWEST, AUSTINMETRO, MIDWEST, MIDWEST2, SPILLERS.</p>
+<p>SFTP locations sit between <code>${DEV_ENV_START}</code> and <code>${DEV_ENV_STOP}</code> markers. The settings generator can remove that block for some environments. Many locations have <code>&lt;Enable&gt;false&lt;/Enable&gt;</code> in the master file. The live state on the BizTalk server can differ. Confirm the live state before cut-over.</p>
+<p>The discovery session of 2026-10-14 reported these operation facts:</p>
+<ul>
+<li>BizTalk polls the SFTP location about every 15 minutes.</li>
+<li>Files arrive through the whole day. Most files arrive near 06:00 Eastern.</li>
+<li>The legacy configuration keeps 21 original Cloud9-instance folders. Only about 9 folders are in use after the practice consolidation.</li>
+<li>Failed items can need a service restart, a file restore from the archive, or a manual reprocess.</li>
+</ul>
+<p>The 02:00 to 05:00 window in the master binding does not agree with a 06:00 peak. The binding has 22 regions, not 21. Confirm the live schedule and the active folders on the server. See document 05, items C8 and C9.</p>
+<h3 id="practice-resolution">Practice resolution</h3>
+<p>Each posting flow must find the practice database. BizTalk uses the central table <code>BTS.PracticeConfig</code> (<a href="../../Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Tables/PracticeConfig.sql">PracticeConfig.sql</a>).</p>
+<ol>
+<li>The flow gets a practice name.
+<ul>
+<li>Flows A, B, C: the name of the folder that contains the file. The code takes <code>BTS.InboundTransportLocation</code>, removes the text after the last <code>\</code> (FILE) or <code>/</code> (SFTP or FTP), and keeps the last path segment. For <code>...\Patient\GULFCOAST\*.*</code> the name is <code>GULFCOAST</code>. For <code>.../SD-GULFCOAST/*.*</code> the name is <code>SD-GULFCOAST</code>.</li>
+<li>Flow D: the text of <code>FILE.ReceivedFileName</code> after the last <code>\</code> and before the first <code>_</code>. The CHC mailbox worker writes file names as <code>&lt;pcName&gt;_&lt;GUID&gt;.edi</code>.</li>
+</ul>
+</li>
+<li>The flow calls <code>BTS.GetPracticeConfigurationByName(@pcName NVARCHAR(50))</code>. The procedure returns <code>pcGUID</code>, <code>pcInstanceAddress</code>, <code>pcInstanceConnectionString</code> for the row where <code>pcName = @pcName</code>. The procedure does not filter on <code>pcsStatusID</code>.</li>
+<li>The flow uses <code>pcInstanceAddress</code> as the WCF-SQL address of the dynamic send port. The value has the form <code>mssql://&lt;server&gt;/&lt;instance&gt;/&lt;database&gt;?</code> <strong>(inferred from the adapter type)</strong>.</li>
+</ol>
+<p>Flows A, B and C do not check for an empty result. If no row matches, the send to an empty address fails, the exception goes to the event log, and nothing is posted. Flow D checks for an empty address for each claim (see flow D).</p>
+<h2 id="flow-a-bbva-patient-lockbox-835">Flow A: BBVA patient lockbox 835</h2>
+<p>Source: <a href="../../Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_BBVA_835Patient.odx">Process_BBVA_835Patient.odx</a> (XLANG code starts at line 556).</p>
+<h3 id="steps">Steps</h3>
+<ol>
+<li>Activate on <code>ReceiveBBVA835PatientPort</code>. The logical port binds to <code>RP_BBVA835_Patient</code>. The message type is <code>BBVA835_MMT</code> (schema <code>Cloud9.BizTalk.X12.Schemas.BBVA_X12_00501_835</code>).</li>
+<li>Get the practice name from the folder. Call <code>GetPracticeConfigurationByName</code> through the static send port <code>SP_BizTalkCloud9Common_WCF</code>.</li>
+<li>Transform the 835 with <code>BBVA_835Patient_To_ClaimPaymentBatchCanonical</code>. The result has one <code>ClaimPayment</code> for each 2100 (CLP) loop.</li>
+<li>For each <code>ClaimPayment</code> (positional XPath <code>//*[local-name()='ClaimPayment'][n]</code>):
+<ol>
+<li>Transform with <code>ClaimPaymentCanonical_To_Post835PatientTransaction</code>.</li>
+<li>Set <code>lbcLockboxCodeType</code> to <code>PATIENT</code>. The map writes the placeholder <code>setme</code> first.</li>
+<li>Send to the dynamic port with <code>WCF.Action = TypedProcedure/BTS/Post835PatientTransaction</code>, <code>useAmbientTransaction=false</code>, <code>EnableTransaction=false</code>, <code>RetryCount=0</code>.</li>
+<li>Read <code>ErrorCount</code> and <code>ResponseMessage</code> from the first result set.</li>
+<li>If <code>ErrorCount != &quot;0&quot;</code>, write the message to the event log <code>BizTalk.Process_BBVA_835Patient</code>. Set log level 0 and state <code>Failed</code>. Else set log level 2 and state <code>Finished</code>. The log message is <code>ResponseMessage</code> in both cases.</li>
+<li>Call <code>BTS.AddImportLog</code> in the same practice database. See <a href="#importlog-rows">ImportLog rows</a>.</li>
+</ol>
+</li>
+<li>Catch <code>System.Exception</code>: write <code>ex.ToString()</code> to the event log only. No ImportLog row, no suspend. The remaining payments in the transaction set are not processed.</li>
+</ol>
+<h3 id="map-bbva-835-to-canonical-patient">Map: BBVA 835 to canonical (patient)</h3>
+<p>Source: <a href="../../Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/BBVA_835Patient_To_ClaimPaymentBatchCanonical.btm">BBVA_835Patient_To_ClaimPaymentBatchCanonical.btm</a>. Dump: <a href="../map-summaries/BBVA_835Patient_To_ClaimPaymentBatchCanonical.txt">map summary</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Canonical field</th>
+<th>Source in the 835</th>
+<th>Logic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(record) <code>ClaimPayment</code></td>
+<td>Loop 2100 (<code>TS835_2000_Loop/TS835_2100_Loop</code>)</td>
+<td>One record for each CLP</td>
+</tr>
+<tr>
+<td><code>PaymentMethodCode</code></td>
+<td>BPR04</td>
+<td>Copy</td>
+</tr>
+<tr>
+<td><code>SenderDFIIdentifier</code></td>
+<td>BPR07</td>
+<td>Copy</td>
+</tr>
+<tr>
+<td><code>PatientControlNumber</code></td>
+<td>CLP01</td>
+<td>Copy</td>
+</tr>
+<tr>
+<td><code>TotalActualProviderPaymentAmount</code></td>
+<td>CLP04</td>
+<td>Copy</td>
+</tr>
+<tr>
+<td><code>PayerClaimControlNumber</code></td>
+<td>CLP07</td>
+<td>Copy</td>
+</tr>
+<tr>
+<td><code>PatientIdentifier</code></td>
+<td>NM1*QC NM109</td>
+<td>Copy. Contains the Cloud9 <code>patGUID</code></td>
+</tr>
+<tr>
+<td><code>SubscriberIdentifier</code></td>
+<td>NM1*IL NM109</td>
+<td>Copy. Contains the responsible party <code>ppGUID</code> (PersonPerson)</td>
+</tr>
+<tr>
+<td><code>pipGUID</code></td>
+<td>NM1*IL NM109</td>
+<td>Copy (not used by the patient posting map)</td>
+</tr>
+<tr>
+<td><code>ProviderIdentifier</code>, <code>ProviderLastName</code>, <code>ProviderFirstName</code></td>
+<td>NM1*82 NM109, NM103, NM104</td>
+<td>Copy (not used later)</td>
+</tr>
+<tr>
+<td><code>PaymentDepositDate</code></td>
+<td>DTM02 (header DTM, production date)</td>
+<td>Copy</td>
+</tr>
+<tr>
+<td><code>CheckorEFTTraceNumber</code></td>
+<td>TRN02</td>
+<td>Copy</td>
+</tr>
+<tr>
+<td><code>ReferenceIdentifier</code></td>
+<td>TRN02</td>
+<td>Copy</td>
+</tr>
+<tr>
+<td><code>CheckDate</code></td>
+<td>BPR16</td>
+<td>Copy</td>
+</tr>
+<tr>
+<td><code>LockboxNumber</code></td>
+<td>Header REF*LB REF02</td>
+<td>Copy</td>
+</tr>
+<tr>
+<td><code>PaymentIdentifier</code></td>
+<td>2100 REF REF02 where REF01 = <code>F8</code></td>
+<td>Looping plus value mapping</td>
+</tr>
+<tr>
+<td><code>TransactionNote</code></td>
+<td>DTM02, BPR16, REF*LB</td>
+<td><code>&quot;Deposit Date: &quot; + DTM02 + &quot;, Check Date: &quot; + BPR16 + &quot;, Lockbox: &quot; + GetLockboxNumber(REF*LB, DTM02)</code></td>
+</tr>
+<tr>
+<td><code>CheckIssueorEFTEffectiveDate</code>, <code>PaymentPostedDate</code></td>
+<td>None</td>
+<td>Current date and time of the map run (functoid FID 125, inferred)</td>
+</tr>
+</tbody>
+</table>
+<p><code>GetLockboxNumber(lockboxCode, checkDate)</code> removes the <code>checkDate</code> text from the lockbox code and removes one trailing <code>_</code>.</p>
+<pre><code class="language-csharp">public string GetLockboxNumber(string lockboxCode, string checkDate)
+{
+    if (lockboxCode.Contains(checkDate)) lockboxCode = lockboxCode.Replace(checkDate, System.String.Empty);
+    if (lockboxCode.EndsWith(&quot;_&quot;)) lockboxCode = lockboxCode.Substring(0, lockboxCode.Length - 1);
+    return lockboxCode;
+}
+</code></pre>
+<p>The BBVA patient mapping spec v1 has a sample. The header <code>REF*LB*DAL-674462_3_20200205</code> and <code>DTM*405*20200205</code> give the lockbox <code>DAL-674462_3</code>. Thus the REF*LB value has the form <code>&lt;lockbox&gt;_&lt;batch&gt;_&lt;yyyyMMdd&gt;</code> <strong>(inferred from one sample)</strong>.</p>
+<h3 id="map-canonical-to-post835patienttransaction-lockbox">Map: canonical to Post835PatientTransaction (lockbox)</h3>
+<p>Source: <a href="../../Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/ClaimPaymentCanonical_To_Post835PatientTransaction.btm">ClaimPaymentCanonical_To_Post835PatientTransaction.btm</a>. Dump: <a href="../map-summaries/ClaimPaymentCanonical_To_Post835PatientTransaction.txt">map summary</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>patGUID</code></td>
+<td><code>PatientIdentifier</code> (NM1*QC NM109)</td>
+</tr>
+<tr>
+<td><code>ppGUID</code></td>
+<td><code>SubscriberIdentifier</code> (NM1*IL NM109)</td>
+</tr>
+<tr>
+<td><code>transRouting</code></td>
+<td><code>SenderDFIIdentifier</code> (BPR07)</td>
+</tr>
+<tr>
+<td><code>lbcLockboxCode</code></td>
+<td><code>PaymentMethodCode</code> (BPR04)</td>
+</tr>
+<tr>
+<td><code>lbcLockboxCodeType</code></td>
+<td><code>setme</code>, then the orchestration sets <code>PATIENT</code></td>
+</tr>
+<tr>
+<td><code>transReference</code></td>
+<td><code>ReferenceIdentifier</code> (TRN02)</td>
+</tr>
+<tr>
+<td><code>transCheckNumber</code></td>
+<td><code>CheckorEFTTraceNumber</code> (TRN02)</td>
+</tr>
+<tr>
+<td><code>PaymentIdentifier</code></td>
+<td><code>PaymentIdentifier</code> (REF*F8)</td>
+</tr>
+<tr>
+<td><code>transNote</code></td>
+<td><code>TransactionNote</code></td>
+</tr>
+<tr>
+<td><code>transAmount</code>, <code>transDueNowAmount</code>, <code>transTotalDueAmount</code></td>
+<td><code>TotalActualProviderPaymentAmount * -1</code> (CLP04 negated)</td>
+</tr>
+<tr>
+<td><code>transProductionAmount</code>, <code>transClaimAmount</code></td>
+<td><code>'0'</code></td>
+</tr>
+<tr>
+<td><code>transIsGroup</code></td>
+<td><code>'0'</code></td>
+</tr>
+<tr>
+<td><code>transStatus</code></td>
+<td><code>'N'</code></td>
+</tr>
+<tr>
+<td><code>transGUID</code></td>
+<td><code>Guid.NewGuid()</code></td>
+</tr>
+<tr>
+<td><code>transDateTime</code></td>
+<td><code>FormatDate(CheckIssueorEFTEffectiveDate)</code> = processing time</td>
+</tr>
+<tr>
+<td><code>transDateTimePosted</code></td>
+<td><code>FormatDateTimePosted(PaymentPostedDate)</code> = processing time</td>
+</tr>
+</tbody>
+</table>
+<p><code>FormatDate</code> returns <code>yyyy-MM-dd</code> for an 8-character <code>yyyyMMdd</code> input. Else it parses the input and returns <code>yyyy-MM-ddTHH:mm:ss</code>. These functoids also reference <code>DateFormatConversion.ConvertHL7DateToSQLDatetimeWithoutOffset</code>, but the map's script precedence puts inline C# first. Thus the inline C# runs.</p>
+<h3 id="verification-scripts">Verification scripts</h3>
+<p><a href="../../Cloud9.BizTalk.Scripts/835BBVAPatientPaymentLockbox">835BBVAPatientPaymentLockbox</a> has helper queries for testers.</p>
+<ul>
+<li><code>GetLockboxPaymentType.sql</code> checks <code>BTS.PaymentType</code> (practice DB) and <code>TransactionType</code> for code <code>LBOXPERCMO</code>. The practice must have this transaction type.</li>
+<li><code>GetTransactionsPatientPayment.sql</code> finds posted rows in <code>[Transaction]</code> where <code>transNote LIKE '%Lockbox%'</code>.</li>
+<li><code>GetInfoToReplaceOn835File.sql</code> shows how test files are built: NM1<em>QC NM109 = <code>patGUID</code>, NM1</em>IL NM109 = <code>PersonPerson.ppGUID</code> of the financially responsible person.</li>
+<li><code>GetImportLogsPatientPaymentSuccess.sql</code> and <code>...Failed.sql</code> read <code>ImportLog</code> by <code>ilProcess</code>.</li>
+</ul>
+<h2 id="flow-b-sd-web-patient-payment-835">Flow B: SD web patient payment 835</h2>
+<p>Source: <a href="../../Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_SD_835Patient.odx">Process_SD_835Patient.odx</a> (XLANG code starts at line 552).</p>
+<p>The structure is the same as flow A. The differences:</p>
+<ol>
+<li>The schema is <code>SD_X12_00501_835</code> (namespace <code>.../SmileDoctors</code>). Its element names are generic (<code>BPR/BPR04</code>, <code>LXLoop1/CLPLoop1/REF_3</code>).</li>
+<li>The practice name keeps the <code>SD-</code> prefix of the folder (for example <code>SD-GULFCOAST</code>). The SD web location for PRACTICASMILEDOCTORS uses the folder <code>SMILEDOCTORS</code>, so its practice name is <code>SMILEDOCTORS</code>.</li>
+<li>The orchestration also computes the file name and calls <code>XLangMessageHelpers.GetReceiveLocationName</code>. Neither value is used later.</li>
+<li>The canonical map runs before the practice lookup.</li>
+<li>The posting map is <code>ClaimPaymentCanonical_To_Post835PatientTransactionWeb</code>. <code>lbcLockboxCodeType</code> is <code>WEB</code>.</li>
+<li>On success the ImportLog message is the constant <code>Processed successfully</code>. <code>ilExternalReference</code> is not sent.</li>
+<li>The event log source text is <code>BizTalk.Process_BBVA_835Patient</code> (copy-paste in the source).</li>
+</ol>
+<h3 id="map-sd-835-to-canonical">Map: SD 835 to canonical</h3>
+<p>Source: <a href="../../Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/SD_835WebPayment_To_ClaimPaymentBatchCanonical.btm">SD_835WebPayment_To_ClaimPaymentBatchCanonical.btm</a>. Dump: <a href="../map-summaries/SD_835WebPayment_To_ClaimPaymentBatchCanonical.txt">map summary</a>.</p>
+<p>BPR04 controls the payment type: <code>CCC</code> = credit card, <code>ACH</code> = ACH, <code>REV</code> = web ACH return.</p>
+<table>
+<thead>
+<tr>
+<th>Canonical field</th>
+<th>Source</th>
+<th>Logic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(record) <code>ClaimPayment</code></td>
+<td><code>LXLoop1/CLPLoop1</code></td>
+<td>One record for each CLP</td>
+</tr>
+<tr>
+<td><code>PaymentMethodCode</code></td>
+<td>BPR04</td>
+<td>Copy</td>
+</tr>
+<tr>
+<td><code>SenderDFIIdentifier</code></td>
+<td>BPR07</td>
+<td>Copy</td>
+</tr>
+<tr>
+<td><code>CheckDate</code></td>
+<td>BPR16</td>
+<td>Copy</td>
+</tr>
+<tr>
+<td><code>CheckorEFTTraceNumber</code>, <code>OpenEdgeTransactionID</code></td>
+<td>TRN02</td>
+<td>Copy</td>
+</tr>
+<tr>
+<td><code>ClaimIdentifier</code></td>
+<td>TRN04</td>
+<td>Copy</td>
+</tr>
+<tr>
+<td><code>PaymentDepositDate</code></td>
+<td>DTM02</td>
+<td>Copy</td>
+</tr>
+<tr>
+<td><code>LockboxNumber</code></td>
+<td>Header REF02</td>
+<td>Copy</td>
+</tr>
+<tr>
+<td><code>TotalActualProviderPaymentAmount</code></td>
+<td>CLP04</td>
+<td>Copy</td>
+</tr>
+<tr>
+<td><code>PatientControlNumber</code></td>
+<td>CLP01</td>
+<td>Copy</td>
+</tr>
+<tr>
+<td><code>PayerClaimControlNumber</code></td>
+<td>CLP07</td>
+<td>Copy</td>
+</tr>
+<tr>
+<td><code>PatientIdentifier</code></td>
+<td>NM109</td>
+<td>Copy (first NM1 in the loop)</td>
+</tr>
+<tr>
+<td><code>patGUID</code></td>
+<td>NM109 where NM101 = <code>QC</code></td>
+<td>Value mapping</td>
+</tr>
+<tr>
+<td><code>pipGUID</code>, <code>SubscriberIdentifier</code></td>
+<td>NM109 where NM101 = <code>IL</code></td>
+<td>Value mapping inside a looping functoid</td>
+</tr>
+<tr>
+<td><code>ApprovalCode</code></td>
+<td>REF02 where REF01 = <code>1Z</code></td>
+<td>Value mapping</td>
+</tr>
+<tr>
+<td><code>ReferenceIdentifier</code></td>
+<td>REF02 where REF01 = <code>2H</code></td>
+<td>Value mapping (transaction ID)</td>
+</tr>
+<tr>
+<td><code>MaskedCreditCardNumber</code></td>
+<td>REF02 where REF01 = <code>TN</code></td>
+<td>Only if BPR04 = <code>CCC</code></td>
+</tr>
+<tr>
+<td><code>MaskedBankAccountNumber</code></td>
+<td>REF02 where REF01 = <code>TN</code></td>
+<td>Only if BPR04 = <code>ACH</code> or <code>REV</code></td>
+</tr>
+<tr>
+<td><code>CreditCardType</code></td>
+<td>REF02 where REF01 = <code>8X</code></td>
+<td>Only if BPR04 = <code>CCC</code></td>
+</tr>
+<tr>
+<td><code>OpenEdgeCheckNumber</code></td>
+<td>REF02 where REF01 = <code>1Z</code></td>
+<td>Only if BPR04 = <code>ACH</code> or <code>REV</code></td>
+</tr>
+<tr>
+<td><code>MaskedRoutingNumber</code></td>
+<td>REF02 where REF01 = <code>EY</code></td>
+<td>Always</td>
+</tr>
+<tr>
+<td><code>OpenEdgeXWebGUID</code></td>
+<td>REF02 where REF01 = <code>EM</code></td>
+<td>Always</td>
+</tr>
+<tr>
+<td><code>TransactionNote</code></td>
+<td>XSLT template</td>
+<td>Not used by the web posting map</td>
+</tr>
+<tr>
+<td><code>CheckIssueorEFTEffectiveDate</code>, <code>PaymentPostedDate</code></td>
+<td>None</td>
+<td>Current date and time</td>
+</tr>
+</tbody>
+</table>
+<h3 id="map-canonical-to-post835patienttransaction-web">Map: canonical to Post835PatientTransaction (web)</h3>
+<p>Source: <a href="../../Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/ClaimPaymentCanonical_To_Post835PatientTransactionWeb.btm">ClaimPaymentCanonical_To_Post835PatientTransactionWeb.btm</a>. Dump: <a href="../map-summaries/ClaimPaymentCanonical_To_Post835PatientTransactionWeb.txt">map summary</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>patGUID</code></td>
+<td><code>PatientIdentifier</code></td>
+</tr>
+<tr>
+<td><code>ppGUID</code></td>
+<td><code>SubscriberIdentifier</code></td>
+</tr>
+<tr>
+<td><code>lbcLockboxCode</code></td>
+<td><code>PaymentMethodCode</code> (BPR04)</td>
+</tr>
+<tr>
+<td><code>lbcLockboxCodeType</code></td>
+<td><code>WEB</code></td>
+</tr>
+<tr>
+<td><code>transApprovalCode</code></td>
+<td><code>ApprovalCode</code> (REF*1Z, max 10 characters)</td>
+</tr>
+<tr>
+<td><code>transCardNumber</code></td>
+<td><code>MaskedCreditCardNumber</code></td>
+</tr>
+<tr>
+<td><code>transCardType</code></td>
+<td><code>CreditCardType</code></td>
+</tr>
+<tr>
+<td><code>xwebGUID</code></td>
+<td><code>OpenEdgeXWebGUID</code> (REF*EM)</td>
+</tr>
+<tr>
+<td><code>transCheckNumber</code></td>
+<td><code>OpenEdgeCheckNumber</code></td>
+</tr>
+<tr>
+<td><code>transRouting</code></td>
+<td><code>MaskedRoutingNumber</code></td>
+</tr>
+<tr>
+<td><code>transReference</code></td>
+<td>If <code>MaskedRoutingNumber</code> has length &gt; 0: <code>MaskedBankAccountNumber</code>. Else <code>MaskedCreditCardNumber</code></td>
+</tr>
+<tr>
+<td><code>transTransactionIDStr</code></td>
+<td><code>ReferenceIdentifier</code> (REF*2H)</td>
+</tr>
+<tr>
+<td><code>transNote</code>, <code>transReceiptNote</code></td>
+<td><code>FormatNote(PaymentMethodCode, ReferenceIdentifier, ApprovalCode, amount)</code></td>
+</tr>
+<tr>
+<td><code>transAmount</code>, <code>transDueNowAmount</code>, <code>transTotalDueAmount</code></td>
+<td>CLP04 * -1</td>
+</tr>
+<tr>
+<td><code>transProductionAmount</code>, <code>transClaimAmount</code></td>
+<td><code>'0'</code></td>
+</tr>
+<tr>
+<td><code>transIsGroup</code></td>
+<td><code>'0'</code></td>
+</tr>
+<tr>
+<td><code>transStatus</code></td>
+<td><code>'N'</code></td>
+</tr>
+<tr>
+<td><code>transGUID</code></td>
+<td>New GUID</td>
+</tr>
+<tr>
+<td><code>transDateTime</code></td>
+<td>Processing time</td>
+</tr>
+<tr>
+<td><code>transDateTimePosted</code></td>
+<td>Processing time</td>
+</tr>
+</tbody>
+</table>
+<p><code>FormatNote</code>:</p>
+<pre><code class="language-csharp">if (paymentMethodCode == &quot;ACH&quot;) note = string.Format(&quot;{0} payment; Transaction ID = {1}; Response = Check Submitted&quot;, DateTime.Now.ToString(&quot;M/dd/yyyy&quot;), trxID);
+if (paymentMethodCode == &quot;REV&quot;) note = string.Format(&quot;{0} - Web ACH Return - (${2}) Additional Info: {1}&quot;, DateTime.Now.ToString(&quot;M/dd/yyyy HH:mm:ss tt&quot;), trxID, Math.Abs(Convert.ToDouble(pmtAmt)).ToString(&quot;#.##&quot;));
+if (paymentMethodCode == &quot;CCC&quot;) note = string.Format(&quot;Approval Code={0}; Transaction ID={1}&quot;, approvalCode, trxID);
+</code></pre>
+<p><code>PaymentIdentifier</code> is not mapped. The orchestration does not send <code>ilExternalReference</code>.</p>
+<h3 id="verification-scripts-1">Verification scripts</h3>
+<p><a href="../../Cloud9.BizTalk.Scripts/835SDWebPatientPayment">835SDWebPatientPayment</a>: <code>GetWebPatientPaymentType.sql</code> expects <code>BTS.PaymentType</code> rows with <code>ptPaymentType = 'WEB'</code> and transaction types <code>WEBCC</code>, <code>WEBACH</code>, <code>WEBACHRET</code>. <code>GetTransactionsPatientPayment.sql</code> finds rows where <code>transNote LIKE '%Approval Code%' AND transRouting IS NOT NULL</code>.</p>
+<h2 id="flow-c-bbva-insurance-lockbox-835">Flow C: BBVA insurance lockbox 835</h2>
+<p>Source: <a href="../../Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_BBVA_835Insurance.odx">Process_BBVA_835Insurance.odx</a> (XLANG code starts at line 879).</p>
+<p>Flows A and C use the same message type. The receive port decides the flow. A file in the <code>Insurance</code> folder goes to flow C.</p>
+<h3 id="steps-1">Steps</h3>
+<ol>
+<li>Activate on <code>ReceiveBBVA835InsurancePort</code> (bound to <code>RP_BBVA835_Insurance</code>).</li>
+<li>Get the practice name and call <code>GetPracticeConfigurationByName</code>. Save <code>pcInstanceAddress</code>.</li>
+<li>Count values in the 835 transaction set:
+<ul>
+<li><code>CLPCount</code> = number of <code>TS835_2000_Loop</code> (LX header loops).</li>
+<li><code>PLBCount</code> = number of <code>PLB_ProviderAdjustment</code> segments.</li>
+<li><code>STControlNumber</code> = ST02.</li>
+</ul>
+</li>
+<li><strong>Guard.</strong> Continue only if <code>(CLPCount == 1 &amp;&amp; PLBCount &gt;= 0) || (CLPCount &gt;= 1 &amp;&amp; PLBCount == 0)</code>. In simple terms: a transaction set with PLB adjustments must have exactly one claim group. The reason is <strong>(inferred)</strong>: the adjustment map takes the patient and policy from the 2100 loop, so it can only assign a PLB to a patient when one claim exists.
+<ul>
+<li>If the guard fails: write one ImportLog row with level 0, state <code>Failed</code>, message <code>There were {CLPCount} CLP payments and {PLBCount} PLB adjustments on transaction {ST02}</code>. Post nothing.</li>
+</ul>
+</li>
+<li>Transform with <code>BBVA_835Insurance_To_ClaimPaymentBatchCanonical</code>. For each <code>ClaimPayment</code>: transform with <code>ClaimPaymentCanonical_To_Post835InsuranceTransaction</code>, call <code>BTS.Post835InsuranceTransaction</code>, evaluate <code>ErrorCount</code>, call <code>AddImportLog</code>.</li>
+<li>Transform with <code>BBVA_835_To_AdjustmentClaimPaymentBatchCanonical</code> (one <code>ClaimPayment</code> for each PLB). For each one: same posting map and procedure. The ImportLog message has the prefix <code>ADJ - </code>.</li>
+<li>Catch <code>System.Exception</code>: write to the event log, then <code>suspend</code>. The instance stays suspended (resumable) in BizTalk.</li>
+</ol>
+<h3 id="map-bbva-835-to-canonical-insurance">Map: BBVA 835 to canonical (insurance)</h3>
+<p>Source: <a href="../../Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/BBVA_835Insurance_To_ClaimPaymentBatchCanonical.btm">BBVA_835Insurance_To_ClaimPaymentBatchCanonical.btm</a>. Dump: <a href="../map-summaries/BBVA_835Insurance_To_ClaimPaymentBatchCanonical.txt">map summary</a>.</p>
+<p>The BBVA schema has custom REF qualifiers in loop 2100:</p>
+<ul>
+<li><code>REF*EJ</code> (<code>REF_PatientIdentification</code>) carries the Cloud9 <code>patGUID</code>.</li>
+<li><code>REF*69</code> (<code>REF_InsurancePolicyIdentification</code>) carries the Cloud9 <code>pipGUID</code> (PatientInsurancePolicy).</li>
+<li><code>REF*F8</code> (in <code>REF_OtherClaimRelatedIdentification</code>) carries the payment identifier.</li>
+<li>Header <code>REF*LB</code> (<code>REF_LockboxIdentification</code>) carries the lockbox code.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Canonical field</th>
+<th>Source</th>
+<th>Logic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(record) <code>ClaimPayment</code></td>
+<td>Loop 2100</td>
+<td>One record for each CLP</td>
+</tr>
+<tr>
+<td><code>PaymentMethodCode</code></td>
+<td>BPR04</td>
+<td>Copy</td>
+</tr>
+<tr>
+<td><code>SenderDFIIdentifier</code></td>
+<td>BPR07</td>
+<td>Copy</td>
+</tr>
+<tr>
+<td><code>CheckDate</code></td>
+<td>BPR16</td>
+<td>Copy</td>
+</tr>
+<tr>
+<td><code>PatientControlNumber</code></td>
+<td>CLP01</td>
+<td>Copy (the Cloud9 ADA claim number)</td>
+</tr>
+<tr>
+<td><code>TotalActualProviderPaymentAmount</code></td>
+<td>CLP04</td>
+<td>Copy</td>
+</tr>
+<tr>
+<td><code>PayerClaimControlNumber</code></td>
+<td>CLP07</td>
+<td>Copy</td>
+</tr>
+<tr>
+<td><code>PatientIdentifier</code></td>
+<td>NM1*QC NM109</td>
+<td>Copy (becomes <code>pipPolicyNumber</code>)</td>
+</tr>
+<tr>
+<td><code>SubscriberIdentifier</code></td>
+<td>NM1*IL NM109</td>
+<td>Copy</td>
+</tr>
+<tr>
+<td><code>patGUID</code></td>
+<td>REF*EJ REF02</td>
+<td>Direct link and a link through FID 701</td>
+</tr>
+<tr>
+<td><code>pipGUID</code></td>
+<td>REF<em>69 REF02 and NM1</em>IL NM109</td>
+<td>Three links to one field (see known issues)</td>
+</tr>
+<tr>
+<td><code>PaymentDepositDate</code></td>
+<td>DTM02</td>
+<td>Copy</td>
+</tr>
+<tr>
+<td><code>CheckorEFTTraceNumber</code>, <code>ReferenceIdentifier</code></td>
+<td>TRN02</td>
+<td>Copy</td>
+</tr>
+<tr>
+<td><code>ClaimIdentifier</code></td>
+<td>TRN04</td>
+<td>Copy</td>
+</tr>
+<tr>
+<td><code>LockboxNumber</code></td>
+<td>REF*LB REF02</td>
+<td>Copy</td>
+</tr>
+<tr>
+<td><code>PaymentIdentifier</code></td>
+<td>REF02 where REF01 = <code>F8</code></td>
+<td>Looping plus value mapping</td>
+</tr>
+<tr>
+<td><code>TransactionNote</code></td>
+<td>See below</td>
+<td>Conditional</td>
+</tr>
+<tr>
+<td><code>CheckIssueorEFTEffectiveDate</code>, <code>PaymentPostedDate</code></td>
+<td>None</td>
+<td>Current date and time</td>
+</tr>
+</tbody>
+</table>
+<p><code>TransactionNote</code> logic:</p>
+<pre><code class="language-text">base = &quot;Deposit Date: &quot; + DTM02 + &quot;, Check Date: &quot; + BPR16 + &quot;, Claim Number: &quot; + CLP01 + &quot;, Lockbox: &quot; + GetLockboxNumber(REF*LB, DTM02)
+if BPR04 == &quot;NON&quot;:
+    claimAdj   = concat over claim-level CAS of (CAS02 + &quot;: &quot; + CAS03 + &quot;, &quot;), then drop the last 2 characters
+    serviceAdj = concat over service-level CAS of (CAS02 + &quot;: &quot; + CAS03 + &quot;, &quot;), then drop the last 2 characters
+    TransactionNote = Left(base + &quot;, &quot; + claimAdj + &quot;, &quot; + serviceAdj, 250)
+else:
+    TransactionNote = base
+</code></pre>
+<p>Only the first reason/amount pair (CAS02/CAS03) of each CAS segment is used. The functoid names for this logic are inferred from their inputs. See the map summary for the exact chain.</p>
+<h3 id="map-bbva-835-to-adjustment-canonical-plb">Map: BBVA 835 to adjustment canonical (PLB)</h3>
+<p>Source: <a href="../../Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/BBVA_835_To_AdjustmentClaimPaymentBatchCanonical.btm">BBVA_835_To_AdjustmentClaimPaymentBatchCanonical.btm</a>. Dump: <a href="../map-summaries/BBVA_835_To_AdjustmentClaimPaymentBatchCanonical.txt">map summary</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Canonical field</th>
+<th>Source</th>
+<th>Logic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(record) <code>ClaimPayment</code></td>
+<td><code>PLB_ProviderAdjustment</code></td>
+<td>One record for each PLB segment</td>
+</tr>
+<tr>
+<td><code>TotalActualProviderPaymentAmount</code></td>
+<td>PLB04</td>
+<td>Multiplied by -1</td>
+</tr>
+<tr>
+<td><code>AdjustmentType</code></td>
+<td>PLB03-1 (C04201 adjustment reason code, for example <code>L6</code>, <code>WO</code>, <code>FB</code>)</td>
+<td>Copy (max 2 characters in the proc)</td>
+</tr>
+<tr>
+<td><code>ReferenceIdentifier</code></td>
+<td>TRN02</td>
+<td><code>&quot;ADJ&quot; + &lt;iteration index of the PLB&gt; + &quot;-&quot; + TRN02</code></td>
+</tr>
+<tr>
+<td><code>TransactionNote</code></td>
+<td></td>
+<td>Base note plus <code>&quot;, Adj Reason: &quot; + PLB03-1</code></td>
+</tr>
+<tr>
+<td>Other fields</td>
+<td>Same as the insurance map</td>
+<td>Taken from loop 2100 (the single claim)</td>
+</tr>
+</tbody>
+</table>
+<p>Only the first adjustment pair of each PLB segment (PLB03/PLB04) is used. PLB05 to PLB14 are ignored.</p>
+<p>The posting map negates the amount again. Thus the posted <code>transAmount</code> for a PLB equals PLB04 (double negation). Confirm this result with the practice procedure behavior.</p>
+<h3 id="map-canonical-to-post835insurancetransaction">Map: canonical to Post835InsuranceTransaction</h3>
+<p>Source: <a href="../../Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/ClaimPaymentCanonical_To_Post835InsuranceTransaction.btm">ClaimPaymentCanonical_To_Post835InsuranceTransaction.btm</a>. Dump: <a href="../map-summaries/ClaimPaymentCanonical_To_Post835InsuranceTransaction.txt">map summary</a>. Flows C and D use this map.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>transRouting</code></td>
+<td><code>SenderDFIIdentifier</code> (BPR07)</td>
+</tr>
+<tr>
+<td><code>adaClaimNumber</code></td>
+<td><code>PatientControlNumber</code> (CLP01, or the parsed claim number in flow D)</td>
+</tr>
+<tr>
+<td><code>transCheckNumber</code></td>
+<td><code>CheckorEFTTraceNumber</code> (TRN02)</td>
+</tr>
+<tr>
+<td><code>ptPaymentTypeCode</code></td>
+<td><code>PaymentMethodCode</code> (BPR04, max 3 characters)</td>
+</tr>
+<tr>
+<td><code>patGUID</code></td>
+<td><code>patGUID</code></td>
+</tr>
+<tr>
+<td><code>pipGUID</code></td>
+<td><code>pipGUID</code></td>
+</tr>
+<tr>
+<td><code>pipPolicyNumber</code></td>
+<td><code>PatientIdentifier</code> (NM1*QC NM109)</td>
+</tr>
+<tr>
+<td><code>transReference</code></td>
+<td><code>ReferenceIdentifier</code></td>
+</tr>
+<tr>
+<td><code>AdjustmentType</code></td>
+<td><code>AdjustmentType</code></td>
+</tr>
+<tr>
+<td><code>PaymentIdentifier</code></td>
+<td><code>PaymentIdentifier</code></td>
+</tr>
+<tr>
+<td><code>ClaimIdentifier</code></td>
+<td><code>ClaimIdentifier</code></td>
+</tr>
+<tr>
+<td><code>transNote</code>, <code>transReceiptNote</code></td>
+<td><code>GetNote(checkNumber, claimNumber, transNote)</code>: the canonical note if it is not empty. Else <code>&quot;Check Number: &quot; + TRN02 + &quot;, Claim Number: &quot; + claim</code></td>
+</tr>
+<tr>
+<td><code>transAmount</code>, <code>transDueNowAmount</code>, <code>transTotalDueAmount</code></td>
+<td>Amount * -1</td>
+</tr>
+<tr>
+<td><code>transProductionAmount</code>, <code>transClaimAmount</code></td>
+<td><code>'0'</code></td>
+</tr>
+<tr>
+<td><code>transIsGroup</code></td>
+<td><code>'0'</code></td>
+</tr>
+<tr>
+<td><code>transStatus</code></td>
+<td><code>'N'</code></td>
+</tr>
+<tr>
+<td><code>transGUID</code></td>
+<td>New GUID</td>
+</tr>
+<tr>
+<td><code>transDateTime</code></td>
+<td><code>GetDateTime(CheckIssueorEFTEffectiveDate)</code> = processing time</td>
+</tr>
+<tr>
+<td><code>transDateTimePosted</code></td>
+<td><code>GetDateTimePosted(PaymentPostedDate)</code> = processing time</td>
+</tr>
+</tbody>
+</table>
+<p>Important: in the map, many links point to <code>Post835InsuranceTransaction/Transactions/udt835Transaction/&lt;field&gt;</code>. The typed procedure schema in this repo (<a href="../../Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Post835/Post835TypedProcedure.BTS.xsd">Post835TypedProcedure.BTS.xsd</a>) has flat parameters and no <code>Transactions</code> table-valued parameter. The deployed binding tracks a schema <code>Cloud9.BizTalk.X12.sql_TableType_BTS</code> with root <code>udt835Transaction</code>. Thus the deployed procedure can take a table-valued parameter. Read the real signature from a practice database before you build the replacement. See <a href="#doc-05-known-issues-and-open-questions">05-known-issues-and-open-questions.md</a>.</p>
+<h3 id="verification-scripts-2">Verification scripts</h3>
+<p><a href="../../Cloud9.BizTalk.Scripts/835BBVAInsurancePayment">835BBVAInsurancePayment</a>:</p>
+<ul>
+<li><code>GetInsurancePaymentType.sql</code> expects <code>BTS.PaymentType.ptPaymentTypeCode IN ('L6C','L6P','PLB')</code> and transaction types <code>INTERESTOTSD</code>, <code>INSIPC</code>, <code>LBOXINSC</code>. The procedure uses these codes <strong>(inferred)</strong>. The mapping from BPR04 / AdjustmentType to these codes is inside the procedure and is not in this repo.</li>
+<li><code>GetUnmappedTransactionsInsurancePayment.sql</code> reads <code>UnmappedTransaction</code>. The procedure writes a row there when it cannot match a payment. Release 1.3.2108.86 (C9-33839) confirms this. It removed a foreign key so that a payment with an unknown <code>patGUID</code> or <code>pipGUID</code> goes to the unmapped transactions.</li>
+<li><code>GetInfoToReplaceOn835File.sql</code> shows the test data: <code>REF*EJ</code> = <code>patGUID</code>, NM1*QC NM109 = <code>pipPolicyNumber</code>, CLP01 = <code>ADAClaim.adaclaimNumber</code>.</li>
+</ul>
+<h2 id="flow-d-change-healthcare-835-era">Flow D: Change Healthcare 835 ERA</h2>
+<h3 id="d1.mailbox-download-scheduled">D1. Mailbox download (scheduled)</h3>
+<p>Sources: <a href="../../Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_InboundFiles_Controller.odx">Process_CHC_InboundFiles_Controller.odx</a>, <a href="../../Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_InboundFiles_Worker.odx">Process_CHC_InboundFiles_Worker.odx</a>.</p>
+<ol>
+<li>Receive location <code>${DO_NOT_START_PROD_RL_}CHCInboundToProcess</code> (port <code>RP_CHCInboundToProcess</code>) is WCF-SQL TypedPolling on <code>BizTalkCloud9Common</code>.
+<ul>
+<li>Data-available statement: <code>select COUNT([ppID]) from [BTS].[ProcessParameter] WHERE [ppProcessName] = 'ProcessCHCInboundFiles' and [ppStatus] = 0</code>.</li>
+<li>Polling statement: <code>EXEC [BTS].[QueueProcessParameters] 'ProcessCHCInboundFiles'</code>. The procedure marks the newest open <code>ProcessParameter</code> row as status 1. It returns a header and <strong>all</strong> <code>PracticeConfig</code> rows.</li>
+<li>Something outside this repo inserts the <code>ProcessParameter</code> rows (a SQL Agent job or a Cloud9 feature) <strong>(inferred)</strong>.</li>
+</ul>
+</li>
+<li>The controller activates when <code>processName == &quot;ProcessCHCInboundFiles&quot;</code>. It calls the worker once for each practice row. At the end it calls <code>UpdateProcessParameters</code> (map <code>QueueProcessParametersTypedPolling_To_UpdateProcessParameters</code>).</li>
+<li>The worker, for one practice:
+<ol>
+<li>Calls <code>BTS.GetPracticeEDISettings</code> (no parameters) in the practice DB (<code>pcInstanceAddress</code>).</li>
+<li>Uses <code>pracEmdeonTestURL</code> if <code>pracEmdeonIsTest = &quot;1&quot;</code>, else <code>pracEmdeonURL</code>.</li>
+<li>Sends <code>GetMailFileList</code> (HTTP POST, XML, map <code>CHC_PracticeEDISettings_To_GetMailFileListReq</code>). An <code>error_code</code> other than <code>0</code> raises an exception.</li>
+<li>For each <code>mail_file</code>: sends <code>GetMailFile</code>. Decodes <code>file_data</code> with <code>EmdeonConversion.DecodePayload(file_compression, file_encoding, file_data)</code>: base64 decode, PKZIP extract (first entry) when compression is <code>pkzip</code>, UTF-8 text.</li>
+<li>Writes the text to <code>${ADDR_FILE_ROOT}\CHC_Inbound\&lt;pcName&gt;_&lt;new GUID&gt;.edi</code> through send port <code>SP_CHC_Inbound</code>.</li>
+<li>Sends <code>DeleteMailFile</code> for the file.</li>
+<li>Errors go to <code>Cloud9.BizTalk.Common.AddLog</code> (central <code>BTS.Log</code>) with <code>strPracticeAddr = &quot;&quot;</code>.</li>
+</ol>
+</li>
+</ol>
+<p>The HTTP pipelines are <code>SendEmdeonXMLPipeline</code> (XML assembler, ESB remove/add namespace, <code>CustomEncoder</code> to ASCII, archive) and <code>ReceiveEmdeonMailPipeline</code> (ESB remove/add namespace, XML disassembler, archive).</p>
+<h3 id="d2.era-posting">D2. ERA posting</h3>
+<p>Source: <a href="../../Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_835Insurance.odx">Process_CHC_835Insurance.odx</a> (XLANG code starts at line 1089).</p>
+<ol>
+<li>Activate on <code>RP_CHC_Inbound_EDI</code> with filter <code>BTS.MessageType == &quot;http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC#X12_00501_835&quot;</code>.</li>
+<li>Practice name = file name after the last <code>\</code> and before the first <code>_</code>. Build the <code>GetPracticeConfigurationByName</code> request as an XML string. Call it. Save <code>pcInstanceAddress</code>.</li>
+<li>Transform with <code>CHC_835_To_ClaimPaymentBatchCanonical</code>.</li>
+<li>For each <code>ClaimPayment</code>, in its own scope:
+<ol>
+<li>Read <code>ReversalFlag</code> and <code>PatientControlNumber</code>.</li>
+<li>If <code>ReversalFlag</code> is true: transform with <code>ClaimPaymentCanonical_To_AddTodoItem</code> and call <code>BTS.AddTodoItem</code> in the practice DB. If the result <code>ErrorMessage</code> is not blank, set error number <code>50001</code>.</li>
+<li>Else if the connection is blank: set error <code>001</code>, message <code>Connection String not found for Claim {claim} in File {file}</code>. Write to the event log and to central <code>BTS.Log</code> through <code>Common.AddLog</code>.</li>
+<li>Else: transform with <code>ClaimPaymentCanonical_To_Post835InsuranceTransaction</code> and call <code>BTS.Post835InsuranceTransaction</code>. Read <code>ErrorCount</code> and <code>ResponseMessage</code>.</li>
+<li>On exception: error <code>001</code>, log to the event log and <code>BTS.Log</code>, continue with the next claim.</li>
+<li>If the connection is not blank: write one ImportLog row (<code>ilProcess = 'Process_CHC_835Insurance'</code>). Level 0 / <code>Failed</code> with the error message, or level 2 / <code>Finished</code> with <code>Processed successfully</code>.</li>
+</ol>
+</li>
+</ol>
+<h3 id="map-chc-835-to-canonical">Map: CHC 835 to canonical</h3>
+<p>Source: <a href="../../Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/CHC_835_To_ClaimPaymentBatchCanonical.btm">CHC_835_To_ClaimPaymentBatchCanonical.btm</a>. Dump: <a href="../map-summaries/CHC_835_To_ClaimPaymentBatchCanonical.txt">map summary</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Canonical field</th>
+<th>Source</th>
+<th>Logic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(record) <code>ClaimPayment</code></td>
+<td>Loop 2100</td>
+<td>One record for each CLP</td>
+</tr>
+<tr>
+<td><code>PatientIdentifier</code></td>
+<td>NM1*QC NM109</td>
+<td>Copy (becomes <code>pipPolicyNumber</code>)</td>
+</tr>
+<tr>
+<td><code>SubscriberIdentifier</code></td>
+<td>NM1*IL NM109</td>
+<td>Copy</td>
+</tr>
+<tr>
+<td><code>TotalActualProviderPaymentAmount</code></td>
+<td>CLP04</td>
+<td>Copy</td>
+</tr>
+<tr>
+<td><code>PaymentMethodCode</code></td>
+<td>BPR04</td>
+<td>Copy</td>
+</tr>
+<tr>
+<td><code>SenderDFIIdentifier</code></td>
+<td>BPR07</td>
+<td>Copy</td>
+</tr>
+<tr>
+<td><code>CheckorEFTTraceNumber</code></td>
+<td>TRN02</td>
+<td>Copy</td>
+</tr>
+<tr>
+<td><code>PatientControlNumber</code></td>
+<td>CLP01</td>
+<td><code>ParseClaimNumber</code>: <code>int.Parse(CLP01.Substring(12)).ToString()</code></td>
+</tr>
+<tr>
+<td><code>ReversalFlag</code></td>
+<td>CLP04, CLP02, service CAS01</td>
+<td><code>true</code> if CLP04 &lt; 0, or CLP02 = <code>22</code>, or any service-level CAS01 contains <code>CR</code></td>
+</tr>
+<tr>
+<td><code>CheckIssueorEFTEffectiveDate</code>, <code>PaymentPostedDate</code></td>
+<td>None</td>
+<td>Current date and time</td>
+</tr>
+</tbody>
+</table>
+<p><code>ParseClaimNumber</code> documents the Cloud9 claim number layout in CLP01: characters 1 to 2 = PMS ID <code>C9</code>, characters 3 to 12 = database / Emdeon user name, characters 13 and up = claim number. A parse failure raises <code>ParseClaimNumber: Parsing Claim Number: &lt;CLP01&gt;</code>. The whole map fails for that transaction set.</p>
+<p>The CHC map does not set <code>patGUID</code>, <code>pipGUID</code>, <code>PaymentIdentifier</code>, <code>ClaimIdentifier</code>, <code>ReferenceIdentifier</code>, or <code>TransactionNote</code>. Thus the posting procedure must find the claim by <code>adaClaimNumber</code> and the policy by <code>pipPolicyNumber</code> <strong>(inferred)</strong>. The note becomes <code>Check Number: &lt;TRN02&gt;, Claim Number: &lt;claim&gt;</code>.</p>
+<h3 id="map-canonical-to-addtodoitem">Map: canonical to AddTodoItem</h3>
+<p>Source: <a href="../../Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/ClaimPaymentCanonical_To_AddTodoItem.btm">ClaimPaymentCanonical_To_AddTodoItem.btm</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>adaclaimNumber</code> (int)</td>
+<td><code>PatientControlNumber</code></td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td><code>&quot;Payment for claim&quot; + PatientControlNumber + &quot; needs reversal for amount $&quot; + amount + &quot;.&quot;</code> (no space after &quot;claim&quot;)</td>
+</tr>
+<tr>
+<td><code>errorCode</code>, <code>reason</code></td>
+<td>Not mapped</td>
+</tr>
+</tbody>
+</table>
+<h2 id="flow-e-chc-835-pass-through-to-bbva">Flow E: CHC 835 pass-through to BBVA</h2>
+<p>Source: <a href="../../Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_835_To_BBVA.odx">Process_CHC_835_To_BBVA.odx</a>.</p>
+<p>This flow does not post payments. It forwards a Change Healthcare 835 to the Smile Doctors / BBVA SFTP.</p>
+<ol>
+<li>Receive from <code>${CH_835_TO_BBVA_FILE_FOLDER}\*.*</code> (port <code>RP_CHC835ToBBVA</code>).</li>
+<li><code>PayeeIdentifier</code> = N1*PE N104 (loop 1000B).</li>
+<li>Call central <code>BTS.GetApplicationLookupValues(alvApplication = 'CHC835ToBBVA', alvLookup = PayeeIdentifier)</code>.</li>
+<li>Read keys <code>AgreementNameForSend</code>, <code>SenderPartyNameForSend</code>, <code>ReceiverPartyNameForSend</code>. The seed data has one row set for payee <code>1000000004</code>: <code>ChangeHealthcare_BBVA</code>, <code>ChangeHealthcare</code>, <code>BBVA</code>.</li>
+<li>If all three exist: copy the message, set <code>EDI.AgreementNameForSend</code>, <code>EDI.SenderPartyNameForSend</code>, <code>EDI.ReceiverPartyNameForSend</code>, and send to <code>SP_CHC835ToSD_SFTP</code> (EdiSend pipeline) at <code>sftp://${SD_SFTP_HOST_BBVA}/${SD_SFTP_FOLDER_BBVA}/835/835_%MessageID%.edi</code>.</li>
+<li>Else drop the message with no log.</li>
+<li>On exception: event log source <code>BizTalk.Process_CHC_837Claim</code> (copy-paste), then suspend.</li>
+</ol>
+<p>In the <code>Cloud9.EDI.Deployment</code> binding the orchestration state is <code>Unenlisted</code>. In the <code>Cloud9.EDI.PDS.Deployment</code> binding it is <code>Started</code>. Confirm on the server if this flow is live.</p>
+<p>The sibling flow <code>Process_CHC_837_To_BBVA</code> does the same for 837 claims (lookup application <code>CHC837ToBBVA</code>, payee = 2010AA NM109).</p>
+<h2 id="importlog-rows">ImportLog rows</h2>
+<p><code>BTS.AddImportLog</code> runs in the practice database. Every posting flow writes rows with the fields below. See <a href="#doc-04-data-contracts">04-data-contracts.md</a> for the types.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ilDateTime</code></td>
+<td><code>DateTime.Now</code> on the BizTalk server</td>
+</tr>
+<tr>
+<td><code>ilFileName</code></td>
+<td><code>FILE.ReceivedFileName</code> (full path for FILE; for SFTP the adapter value)</td>
+</tr>
+<tr>
+<td><code>ilProcess</code></td>
+<td><code>Process_BBVA_835Patient</code>, <code>Process_SD_835Patient</code>, <code>Process_BBVA_835Insurance</code>, or <code>Process_CHC_835Insurance</code></td>
+</tr>
+<tr>
+<td><code>ilLogLevel</code></td>
+<td><code>2</code> success, <code>0</code> error</td>
+</tr>
+<tr>
+<td><code>ilImportState</code></td>
+<td><code>Finished</code> or <code>Failed</code></td>
+</tr>
+<tr>
+<td><code>ilMessage</code></td>
+<td><code>ResponseMessage</code> from the post procedure, or a constant, or the guard message</td>
+</tr>
+<tr>
+<td><code>ilStackTrace</code></td>
+<td>Empty string (flows A, B) or exception stack (flow D)</td>
+</tr>
+<tr>
+<td><code>ilImportGUID</code></td>
+<td>BizTalk <code>BTS.MessageID</code> of the transaction-set message</td>
+</tr>
+<tr>
+<td><code>ilExternalReference</code></td>
+<td><code>PaymentIdentifier</code> (flows A and C only)</td>
+</tr>
+</tbody>
+</table>
+<p>The Cloud9 application reads <code>ImportLog</code> to show import results <strong>(inferred from the test scripts)</strong>.</p>
+<h2 id="error-handling-summary">Error handling summary</h2>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>Flow A / B</th>
+<th>Flow C</th>
+<th>Flow D</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Practice not found</td>
+<td>Exception, event log, nothing posted</td>
+<td>Exception, event log, suspend</td>
+<td>Claim error <code>001</code>, <code>BTS.Log</code>, no ImportLog</td>
+</tr>
+<tr>
+<td>Procedure returns <code>ErrorCount &lt;&gt; 0</code></td>
+<td>ImportLog <code>Failed</code>, continue</td>
+<td>ImportLog <code>Failed</code>, continue</td>
+<td>ImportLog <code>Failed</code>, continue</td>
+</tr>
+<tr>
+<td>Exception in a payment</td>
+<td>Stop the loop, event log</td>
+<td>Stop, event log, suspend</td>
+<td><code>BTS.Log</code>, continue with next claim</td>
+</tr>
+<tr>
+<td>Map failure</td>
+<td>Stop, event log</td>
+<td>Stop, suspend</td>
+<td>Stop (outer catch), <code>BTS.Log</code></td>
+</tr>
+<tr>
+<td>Invalid EDI</td>
+<td>The disassembler fails in the pipeline. BizTalk suspends the message. Acknowledgment output depends on the agreement settings</td>
+<td>Same</td>
+<td>Same</td>
+</tr>
+</tbody>
+</table>
+<p>BizTalk adapter retry is disabled for all posting sends (<code>BTS.RetryCount = 0</code>).</p>
+<h2 id="reference-documents-compared-with-the-code">Reference documents compared with the code</h2>
+<p>The <code>references</code> folder (outside this knowledge base) holds documents from the vendor and from the project. This section lists what they add and where they do not agree with the code. The code is the source of truth for current behavior.</p>
+<h3 id="process-guides-pdf">Process guides (PDF)</h3>
+<p>Files: <code>references/BBVA 835/835BBVAPatientPayment.pdf</code>, <code>references/BBVA 835/835BBVAInsurancePayment.pdf</code>, <code>references/Web 835/835SDWebPatientPayment.pdf</code>. The vendor wrote one guide for each flow. Each guide has an overview, the process steps, the BizTalk artifacts, the main field map, and a test procedure.</p>
+<p>The guides add these facts:</p>
+<ul>
+<li><strong>Business process (patient).</strong> The patient mails a check to the lockbox of the practice. BBVA collects the check, processes the payment, makes an 835 file, and puts the file on the SFTP site.</li>
+<li><strong>Business process (insurance).</strong> A Cloud9 user queues an insurance claim. The insurer pays BBVA. BBVA makes an 835 file and puts it on the SFTP site.</li>
+<li><strong>Business process (web).</strong> The patient pays on the Smile Doctors website. An 835 file then goes to the receive location. The guide does not name the system that builds the file. The test guide uses the practice <code>ATLANTAMETRO</code>.</li>
+<li><strong>Result.</strong> A posted payment shows in the Patient Ledger view of Cloud9.</li>
+<li><strong>Unmatched payments.</strong> <code>Post835PatientTransaction</code> adds the payment to <code>[Transaction]</code> if it finds a match. Else it adds the payment to <code>UnmappedTransaction</code>. Thus the unmapped path applies to patient payments too, not only to insurance payments.</li>
+<li><strong>Test procedure.</strong> The guides use the practice <code>GULFCOAST</code>. A tester checks <code>PracticeConfig</code>, finds the FILE receive location, checks the payment type, builds a file with the <code>GetInfoToReplaceOn835File.sql</code> values, and drops it in the folder.</li>
+</ul>
+<p>The field maps in the guides are the same as the mapping specs v1. They have the same differences from the code (see <a href="#mapping-specs-v1">Mapping specs v1</a> below). The insurance guide does not list the <code>Post835InsuranceTransaction</code> call in its steps. The code makes that call.</p>
+<h3 id="incident-letter-2021">Incident letter (2021)</h3>
+<p>File: <code>references/Smile_Doctors-BizTalk-Issue.pdf</code>. Cloud 9 Software wrote this letter to Smile Doctors on 2021-08-24. BizTalk stopped processing payments and claim statuses. The cause was a Microsoft BizTalk defect. Microsoft BizTalk Server 2016 Feature Update 3 (version 3.13.349.2) fixed it. The teams tested the update in staging and then installed it in production. The letter also proposed BizTalk360 for SFTP monitoring (see <code>SFTP Monitoring Tool.docx</code>).</p>
+<h3 id="mapping-specs-v1">Mapping specs v1</h3>
+<p>Files: <code>references/BBVA 835/835_BBVA_PatientPayment_Mapping_v1.xlsx</code>, <code>references/BBVA 835/835_BBVA_InsurancePayment_Mapping_v1.xlsx</code>, <code>references/Web 835/835_SD_WebPatientPayment_Mapping_v1.xlsx</code>.</p>
+<p>Each workbook has three sheets: the 835 segments with samples, the 835 to canonical map, and the canonical to procedure map. The samples confirm these facts:</p>
+<ul>
+<li>The sender is ZZ <code>BBVANAV</code> and the receiver is ZZ <code>SMILE DOCTORS</code>. The party agreement in BizTalk holds these IDs.</li>
+<li>ISA11 (repetition separator) is <code>^</code>. ISA14 is <code>0</code>. Thus the partner does not ask for an acknowledgment.</li>
+<li>In patient files, NM1<em>QC NM109 and NM1</em>IL NM109 hold GUIDs.</li>
+<li>In insurance files, NM1*QC NM109 holds the policy number and CLP01 holds the numeric ADA claim number.</li>
+<li>The web files have <code>NOT PROVIDED</code> in the N1, N3, and name elements.</li>
+</ul>
+<p>The specs do not agree with the code on these fields:</p>
+<table>
+<thead>
+<tr>
+<th>Flow</th>
+<th>Field</th>
+<th>Mapping spec v1</th>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A. Patient lockbox</td>
+<td><code>transDateTime</code></td>
+<td>BPR16, format <code>yyyyMMdd</code></td>
+<td>Processing time (functoid with no input)</td>
+</tr>
+<tr>
+<td>A. Patient lockbox</td>
+<td><code>transIsGroup</code></td>
+<td><code>&quot;1&quot;</code></td>
+<td><code>'0'</code></td>
+</tr>
+<tr>
+<td>A. Patient lockbox</td>
+<td><code>transDebitGroup</code>, <code>transCreditGroup</code></td>
+<td>New GUID</td>
+<td>Not mapped</td>
+</tr>
+<tr>
+<td>A. Patient lockbox</td>
+<td><code>ppGUID</code></td>
+<td>Not mapped</td>
+<td>NM1*IL NM109</td>
+</tr>
+<tr>
+<td>A. Patient lockbox</td>
+<td><code>transNote</code></td>
+<td><code>&quot;Check Number: &quot; + TRN02</code></td>
+<td><code>Deposit Date: ..., Check Date: ..., Lockbox: ...</code></td>
+</tr>
+<tr>
+<td>B. SD web</td>
+<td><code>transDateTime</code></td>
+<td>BPR16, format <code>yyyyMMdd</code></td>
+<td>Processing time</td>
+</tr>
+<tr>
+<td>B. SD web</td>
+<td>REF qualifiers</td>
+<td><code>TN</code>, <code>1Z</code>, <code>EY</code></td>
+<td><code>TN</code>, <code>1Z</code>, <code>EY</code>, and also <code>2H</code>, <code>8X</code>, <code>EM</code></td>
+</tr>
+<tr>
+<td>C. Insurance lockbox</td>
+<td><code>patGUID</code>, <code>pipGUID</code></td>
+<td>&quot;REF02&quot; (no qualifier given)</td>
+<td>REF<em>EJ and REF</em>69 (see D5 in document 05)</td>
+</tr>
+<tr>
+<td>C. Insurance lockbox</td>
+<td><code>transNote</code></td>
+<td><code>&quot;Check Number: &quot; + TRN02</code></td>
+<td>Canonical note with deposit date, check date, claim, lockbox, CAS codes</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>FormatDate</code> function in the patient posting map accepts an 8-character <code>yyyyMMdd</code> value. This agrees with the spec, which used BPR16. The canonical map now sends the processing time. Ask the business which date is correct. See document 05, item D16.</p>
+<h3 id="release-notes-1.3.2108.86">Release notes 1.3.2108.86</h3>
+<p>Files: <code>references/BizTalk-v1.3_ReleaseNotes_c9.docx</code> and <code>references/BizTalk-v1.3_ReleaseNotes_c9 (2).docx</code>. The two files have the same items. The first file says &quot;BBVA&quot;. The second file says &quot;Guidehouse&quot;.</p>
+<table>
+<thead>
+<tr>
+<th>Ticket</th>
+<th>Change</th>
+<th>Impact on a replacement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C9-33839</td>
+<td>A payment with an unknown <code>patGUID</code> or <code>pipGUID</code> goes to the unmapped transactions. The foreign key was removed</td>
+<td>The procedure accepts unknown GUIDs. Do not reject them earlier</td>
+</tr>
+<tr>
+<td>C9-33839</td>
+<td>BizTalk did not process 835 files with PLB segments. Fixed</td>
+<td>Test PLB files</td>
+</tr>
+<tr>
+<td>C9-34067</td>
+<td>New settings make BizTalk read ISA11 (<code>^</code>) as a line break</td>
+<td>The parser must accept <code>^</code> in ISA11. Test a file with this value</td>
+</tr>
+<tr>
+<td>C9-33835</td>
+<td>New settings stop rejections of $0.00 provider line amounts and claim payment amounts</td>
+<td>Accept zero amounts in CLP04 and in service lines</td>
+</tr>
+<tr>
+<td>C9-33707</td>
+<td>837 to CHC: DN1 has Total Months and Total Months Remaining</td>
+<td>Not a payment flow</td>
+</tr>
+<tr>
+<td>C9-36192, C9-39479, C9-36191</td>
+<td>276 and 277 go back to the SFTP site for the partner to pull. Unsolicited 277 comes from the CHC folder</td>
+<td>Not a payment flow</td>
+</tr>
+</tbody>
+</table>
+<p>The ISA11 and $0.00 changes are settings, not code. They are most likely in the party agreement or the EDI validation settings on the server <strong>(inferred)</strong>. Export the live agreement before you build the parser.</p>
+<h3 id="reference-sql-scripts">Reference SQL scripts</h3>
+<p>The SQL files in <code>references</code> are older copies of <a href="../../Cloud9.BizTalk.Scripts">Cloud9.BizTalk.Scripts</a>. The patient, web, eligibility, and common scripts are the same. Four BBVA insurance scripts differ. The reference copies use the database <code>LocalDemo-Trunk</code>. The reference copy of <code>GetInfoToReplaceOn835File.sql</code> does not put the <code>patGUID</code> in <code>REF*EJ</code>. The repository copies are newer. Use the repository copies.</p>
+</section>
+<section id="doc-03-replacement-guide"><h1 id="replacement-guide-move-the-835-payment-flows-out-of-biztalk">Replacement guide: move the 835 payment flows out of BizTalk</h1>
+<p>This guide lists what an external application must do to replace flows A to E. It also lists the facts that you must confirm first, and a cut-over and test plan. Read <a href="#doc-02-payments-835-end-to-end">02-payments-835-end-to-end.md</a> for the behavior and <a href="#doc-04-data-contracts">04-data-contracts.md</a> for the interfaces.</p>
+<h2 id="project-context-discovery-session-2026-10-14">0. Project context (discovery session, 2026-10-14)</h2>
+<p>Source: <code>references/BizTalk to Cloud9 Discovery 20261014-171226UTC.docx</code>.</p>
+<ul>
+<li><strong>Initiative.</strong> &quot;EDI Replacement for BizTalk&quot; is an approved initiative (development forecast line 58).</li>
+<li><strong>Partners.</strong> The work is part of the Fifth Third payment-file work. Guidehouse can still be in the transfer path. The ISA sender <code>BBVANAV</code> is most likely BBVA plus Navigant, and Guidehouse bought Navigant <strong>(inferred)</strong>. The release notes use &quot;BBVA&quot; and &quot;Guidehouse&quot; for the same 835 fixes.</li>
+<li><strong>First scope.</strong> Flows A and C (BBVA / Fifth Third patient and insurance lockbox). Confirm that flow B (SD web) uses the same transfer and posting parts. The code shows that it does. Flow B has its own SFTP folders and its own posting map.</li>
+<li><strong>Out of scope.</strong> The 271 eligibility flows and the patient insurance policy updates are inactive. Do not migrate them unless code and production evidence show that a live flow uses them.</li>
+<li><strong>Not named.</strong> The discovery document does not name flow D (Change Healthcare ERA) or flow E (pass-through). Confirm if they are live. The discovery asks for a design that can take more 835 types later, for example ERA adjustments. It does not say that BizTalk supports them today.</li>
+<li><strong>Identity.</strong> The BizTalk host runs as <code>c9\svc.biztalk.host</code>. It most likely uses integrated security to reach the databases.</li>
+<li><strong>People.</strong> Wes Valure and Cade Roux review the source. Wes builds the active-flow inventory. Taylor Paddock answers questions about the legacy setup. Jonathan and the file-transfer stakeholders confirm the Fifth Third and ERA scope.</li>
+</ul>
+<h2 id="what-biztalk-does-today-responsibility-list">1. What BizTalk does today (responsibility list)</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Responsibility</th>
+<th>BizTalk part</th>
+<th>Replacement must</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R1</td>
+<td>Pull files from partner SFTP</td>
+<td>SFTP receive locations (BBVA, SD web, CHC). Poll 15 min (BBVA, SD) or 5 s (CHC). Daily window 02:00 to 05:00 Eastern for BBVA and SD</td>
+<td>Poll each partner folder. Keep the region folder name with each file. Delete or move the remote file only after a safe local copy exists</td>
+</tr>
+<tr>
+<td>R2</td>
+<td>Watch local or UNC folders</td>
+<td>FILE receive locations, poll 60 s, batch 20 files</td>
+<td>Watch the same folders during a parallel run, or replace them with direct SFTP intake</td>
+</tr>
+<tr>
+<td>R3</td>
+<td>Archive the raw file</td>
+<td><code>Archive</code> pipeline component writes <code>&lt;folder&gt;\Archive\&lt;file name&gt;</code> and overwrites</td>
+<td>Store the raw bytes before parsing. Use a unique name (the current component overwrites a file with the same name)</td>
+</tr>
+<tr>
+<td>R4</td>
+<td>Parse and validate X12</td>
+<td>EDI disassembler, party agreements, <code>EdiDataValidation=true</code></td>
+<td>Parse ISA/GS/ST envelopes. Validate the X12 syntax. Split by ST. Reject or quarantine a bad interchange</td>
+</tr>
+<tr>
+<td>R5</td>
+<td>Pick the flow</td>
+<td>Receive port (patient or insurance folder), or message type and namespace (CHC)</td>
+<td>Route by source and folder: patient lockbox, insurance lockbox, SD web, CHC ERA</td>
+</tr>
+<tr>
+<td>R6</td>
+<td>Find the practice database</td>
+<td>Folder name or file prefix, then <code>BTS.GetPracticeConfigurationByName</code></td>
+<td>Same lookup. Fail loudly when no row matches (BizTalk does not)</td>
+</tr>
+<tr>
+<td>R7</td>
+<td>Transform each payment</td>
+<td>Maps described in document 02</td>
+<td>Implement the field rules in code. Use the map summaries as the specification</td>
+</tr>
+<tr>
+<td>R8</td>
+<td>Post each payment</td>
+<td>Practice <code>BTS.Post835PatientTransaction</code> or <code>BTS.Post835InsuranceTransaction</code>, one call for each payment, no shared transaction</td>
+<td>Call the same procedures with the same parameters. Keep one call for each payment unless you change the procedures</td>
+</tr>
+<tr>
+<td>R9</td>
+<td>Reversals (CHC)</td>
+<td><code>BTS.AddTodoItem</code> instead of a post</td>
+<td>Same rule and same message text</td>
+</tr>
+<tr>
+<td>R10</td>
+<td>Import log</td>
+<td><code>BTS.AddImportLog</code> once for each payment</td>
+<td>Same rows, same <code>ilProcess</code> values, so that the Cloud9 screens keep working</td>
+</tr>
+<tr>
+<td>R11</td>
+<td>Error log</td>
+<td>Windows event log, BizTalk suspended instances, central <code>BTS.Log</code></td>
+<td>Structured logs, alerts, a dead-letter folder, and <code>BTS.Log</code> rows if other teams read them</td>
+</tr>
+<tr>
+<td>R12</td>
+<td>Download from the CHC mailbox</td>
+<td>Controller and worker orchestrations, <code>BTS.ProcessParameter</code> trigger, HTTP XML API, base64 and PKZIP decode</td>
+<td>Run on a schedule for each practice. Call the same API. Decode the payload. Delete the mailbox file only after a safe local copy</td>
+</tr>
+<tr>
+<td>R13</td>
+<td>CHC 835 pass-through (if live)</td>
+<td>Look up agreement by payee ID, re-envelope, SFTP to SD/BBVA</td>
+<td>Confirm if this flow is live (state <code>Unenlisted</code> in one binding). If yes, re-envelope with the BBVA ISA/GS IDs and send</td>
+</tr>
+<tr>
+<td>R14</td>
+<td>TA1 acknowledgments</td>
+<td><code>SP_ACKS</code> writes TA1 messages to <code>${ADDR_FILE_ROOT}\Acks</code></td>
+<td>Decide if you need acknowledgments. BizTalk does not send them back to the partners from these bindings</td>
+</tr>
+<tr>
+<td>R15</td>
+<td>Monitoring</td>
+<td>None. Operators read the event log and the BizTalk console. An SFTP adapter that stops leaves files on the server with no alert</td>
+<td>Send transport, parse, validation, database, and business-rule events to Datadog. Alert when a file stays unprocessed too long</td>
+</tr>
+<tr>
+<td>R16</td>
+<td>Recovery and replay</td>
+<td>Manual: restart the host, restore the file from the archive, reprocess by hand</td>
+<td>Give operators a safe replay with duplicate protection, a clear retry policy, and an audit trail</td>
+</tr>
+</tbody>
+</table>
+<h3 id="requirements-from-the-discovery-session">Requirements from the discovery session</h3>
+<p>The discovery document adds these requirements. Each one maps to a responsibility above.</p>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Maps to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Process each eligible file exactly once</td>
+<td>R1, R16</td>
+</tr>
+<tr>
+<td>Support polling or event-driven pickup. Check that a file is stable (not still in upload) before you read it</td>
+<td>R1</td>
+</tr>
+<tr>
+<td>Keep the business routing of the legacy folders and the Cloud9-instance mappings</td>
+<td>R5, R6</td>
+</tr>
+<tr>
+<td>Archive successful files. Quarantine failed files. Give each file an immutable correlation ID</td>
+<td>R3, R11</td>
+</tr>
+<tr>
+<td>Reproduce all active validation, numeric conversion, mapping, and transaction-type rules</td>
+<td>R4, R7</td>
+</tr>
+<tr>
+<td>Call the Cloud9 transaction-post procedure and write the expected import-log row</td>
+<td>R8, R10</td>
+</tr>
+<tr>
+<td>Make the transaction-type handling extensible (ERA adjustments and other 835 content)</td>
+<td>R7</td>
+</tr>
+<tr>
+<td>Send telemetry to Datadog with actionable alerts</td>
+<td>R11, R15</td>
+</tr>
+<tr>
+<td>Use managed credentials or workload identity where possible. Document any integrated-security dependency</td>
+<td>R6, R8</td>
+</tr>
+<tr>
+<td>Show the status of each file and each transaction: source, times, destination instance, result, error</td>
+<td>R10, R11</td>
+</tr>
+</tbody>
+</table>
+<p>An earlier vendor note (<code>references/SFTP Monitoring Tool.docx</code>) shows that the SFTP adapters stopped in the past and left files unread. It proposed BizTalk360 folder monitoring or a custom Windows service that emails watchers. R15 replaces both options.</p>
+<h2 id="facts-to-confirm-before-you-build">2. Facts to confirm before you build</h2>
+<p>These facts are not in this repository, or the repository is not consistent. Each one can change the design.</p>
+<ol>
+<li><strong>Live procedure signatures.</strong> Read <code>BTS.Post835PatientTransaction</code>, <code>BTS.Post835InsuranceTransaction</code>, <code>BTS.AddImportLog</code>, <code>BTS.AddTodoItem</code> from one practice database. The insurance map writes to a <code>Transactions</code> table-valued parameter (<code>udt835Transaction</code>) that the repository schema does not have. Use the query in <a href="#doc-04-data-contracts">04-data-contracts.md</a>.</li>
+<li><strong>Procedure behavior.</strong> Read the procedure bodies. Find the duplicate check, the transaction type selection (<code>BTS.PaymentType</code>), the claim match, and the <code>UnmappedTransaction</code> path. BizTalk has no duplicate protection of its own.</li>
+<li><strong>Deployed assemblies.</strong> The deployed BizTalk DLLs can differ from this source. Export the maps from the server (or decompile <code>Cloud9.BizTalk.X12.dll</code>) and compare with the map summaries.</li>
+<li><strong>Live receive location state.</strong> The master binding has <code>Enable=false</code> on many locations and puts SFTP locations in a dev-only block. Export the live bindings from BizTalk Administration and compare.</li>
+<li><strong>PracticeConfig names.</strong> List <code>pcName</code> values. Every region folder (and every <code>SD-&lt;REGION&gt;</code> folder) needs a row. Run <a href="../../Cloud9.BizTalk.Scripts/IntegrationsCommon/GetPracticeConfig.sql">GetPracticeConfig.sql</a>.</li>
+<li><strong>Party IDs.</strong> Confirm the ISA06/ISA08 and GS02/GS03 values that each partner sends today. The agreements in <a href="../../Cloud9.BizTalk/Configuration/PartyCollection.xml">PartyCollection.xml</a> are a 2020 export.</li>
+<li><strong>CHC trigger.</strong> Find the job that inserts <code>BTS.ProcessParameter</code> rows with <code>ppProcessName = 'ProcessCHCInboundFiles'</code>.</li>
+<li><strong>Flow E status.</strong> Confirm if <code>Process_CHC_835_To_BBVA</code> is enlisted on the production server.</li>
+<li><strong>Who reads ImportLog and BTS.Log.</strong> Confirm the Cloud9 screens and reports that depend on these rows and on the exact <code>ilProcess</code> values.</li>
+<li><strong>Transfer endpoint.</strong> Confirm which SFTP endpoint and owner the new application uses after the file-transfer changes. Confirm if Guidehouse stays in the path, and when Fifth Third becomes the direct source.</li>
+<li><strong>File inventory.</strong> For each active flow, list the file name patterns, folders, party IDs, arrival times, sizes, and record counts. The discovery reports about 9 active folders of 21. The binding has 22 regions.</li>
+<li><strong>Schedule.</strong> The master binding has a 02:00 to 05:00 Eastern window. The discovery reports polls every 15 minutes and a peak near 06:00. Read the live receive location schedule.</li>
+<li><strong>Acknowledgments.</strong> The samples have ISA14 = <code>0</code>. Confirm with the partner that no 997, 999, or result file is necessary.</li>
+<li><strong>EDI settings on the server.</strong> Export the live party agreement and the validation settings. Release 1.3.2108.86 added settings for ISA11 <code>^</code> and for $0.00 amounts. The repository export (<a href="../../Cloud9.BizTalk/Configuration/PartyCollection.xml">PartyCollection.xml</a>) is older.</li>
+<li><strong>Database identity.</strong> List the permissions of <code>c9\svc.biztalk.host</code> on <code>BizTalkCloud9Common</code> and on each practice database. The new identity needs the same <code>EXECUTE</code> rights.</li>
+<li><strong>Failure rules.</strong> Agree which errors are retryable, which go to quarantine, and when processing stops. Agree how to prevent duplicate postings on a retry.</li>
+</ol>
+<h2 id="target-design-suggested">3. Target design (suggested)</h2>
+<pre class="mermaid">flowchart TB
+  subgraph Intake
+    S1[SFTP poller&lt;br/>BBVA patient / insurance]
+    S2[SFTP poller&lt;br/>SD web]
+    S3[CHC mailbox client&lt;br/>scheduled for each practice]
+    ARC[(Raw archive&lt;br/>immutable)]
+  end
+  subgraph Processing
+    Q[[Work queue&lt;br/>one item for each file]]
+    P[X12 parser + validator&lt;br/>split by ST]
+    R[Router&lt;br/>source + folder or namespace]
+    M[Payment mappers&lt;br/>A, B, C, D rules]
+    PR[Practice resolver&lt;br/>BTS.PracticeConfig]
+    W[Poster&lt;br/>one proc call for each payment]
+  end
+  subgraph Stores
+    CDB[(BizTalkCloud9Common)]
+    PDB[(Practice DBs)]
+    LOG[(App log + alerts)]
+  end
+  S1 &amp; S2 &amp; S3 --> ARC --> Q --> P --> R --> M --> PR --> W
+  PR --> CDB
+  W -->|Post835* / AddTodoItem / AddImportLog| PDB
+  P &amp; W --> LOG
+</pre>
+<p>Design notes:</p>
+<ol>
+<li><strong>Idempotency.</strong> Store a hash of each raw file and each ST transaction set. Skip a set that is already done. BizTalk posts again if the same file arrives twice, unless the procedure rejects it.</li>
+<li><strong>Unit of work.</strong> BizTalk posts one payment at a time and continues after an <code>ErrorCount</code> failure. Keep this behavior at first, so that the Cloud9 data matches. Record the result of each payment so that a rerun can skip the posted ones.</li>
+<li><strong>Practice resolution.</strong> Make the folder-to-practice map explicit in configuration, or keep the lookup by <code>pcName</code>. Fail the file and alert if no practice matches.</li>
+<li><strong>Configuration.</strong> Move every <code>${...}</code> value to the new configuration store. Keep secrets in a vault. The settings file in this repository holds secrets in plain text (see document 05).</li>
+<li><strong>Parsing library.</strong> Use an X12 005010X221A1 parser that keeps the custom BBVA qualifiers (<code>REF*LB</code>, <code>REF*EJ</code>, <code>REF*69</code>). The SD web files use the same segments with non-standard REF qualifiers (<code>2H</code>, <code>1Z</code>, <code>TN</code>, <code>8X</code>, <code>EY</code>, <code>EM</code>, <code>TD</code>).</li>
+<li><strong>Dates.</strong> BizTalk sets <code>transDateTime</code> and <code>transDateTimePosted</code> to the processing time, not BPR16 or DTM02. Keep this unless the business asks for a change. The server time zone matters. The BizTalk server time is the current reference.</li>
+<li><strong>Logging.</strong> Keep <code>ilProcess</code> values the same (<code>Process_BBVA_835Patient</code>, <code>Process_SD_835Patient</code>, <code>Process_BBVA_835Insurance</code>, <code>Process_CHC_835Insurance</code>), or agree new values with the Cloud9 team.</li>
+<li><strong>Identity.</strong> Use a managed identity for the databases and a vault for the SFTP keys. Do not reuse the <code>c9\svc.biztalk.host</code> account.</li>
+<li><strong>EDI tolerance.</strong> Accept <code>^</code> in ISA11. Accept $0.00 in CLP04 and in service-line amounts. Do not reject a payment with an unknown <code>patGUID</code> or <code>pipGUID</code>. The procedure sends it to the unmapped transactions.</li>
+<li><strong>Observability.</strong> Give each file a correlation ID. Put the ID in every log line, Datadog event, and <code>ImportLog</code> row where a field exists.</li>
+</ol>
+<h2 id="payment-rules-to-implement-pseudo-code">4. Payment rules to implement (pseudo-code)</h2>
+<p>The code below restates the maps. The map summaries are the source of truth.</p>
+<pre><code class="language-text">for each file:
+    archive(file)
+    for each ST transaction set in file:
+        source  = BBVA_PATIENT | BBVA_INSURANCE | SD_WEB | CHC
+        pcName  = folderName(file)                        # BBVA, SD (keeps &quot;SD-&quot;)
+                | fileName.afterLast('\').before('_')     # CHC
+        practice = GetPracticeConfigurationByName(pcName)  # central DB
+
+        case BBVA_PATIENT:
+            lockbox = REF*LB.REF02.replace(DTM02, &quot;&quot;).trimOneTrailing(&quot;_&quot;)
+            note    = &quot;Deposit Date: {DTM02}, Check Date: {BPR16}, Lockbox: {lockbox}&quot;
+            for each CLP loop:
+                p = Post835PatientTransaction(
+                      transGUID=newGuid, transStatus=&quot;N&quot;, transIsGroup=&quot;0&quot;,
+                      transProductionAmount=0, transClaimAmount=&quot;0&quot;,
+                      transAmount=transDueNowAmount=transTotalDueAmount = -CLP04,
+                      transDateTime=now, transDateTimePosted=now,
+                      patGUID=NM1*QC.NM109, ppGUID=NM1*IL.NM109,
+                      transRouting=BPR07, transReference=TRN02, transCheckNumber=TRN02,
+                      lbcLockboxCode=BPR04, lbcLockboxCodeType=&quot;PATIENT&quot;,
+                      PaymentIdentifier=REF*F8.REF02, transNote=note)
+                AddImportLog(process=&quot;Process_BBVA_835Patient&quot;, ref=REF*F8.REF02, result=p)
+
+        case SD_WEB:
+            for each CLP loop:
+                ref(q) = REF02 where REF01 == q inside the CLP loop
+                type   = BPR04                      # CCC | ACH | REV
+                note   = ACH: &quot;{M/dd/yyyy} payment; Transaction ID = {ref(2H)}; Response = Check Submitted&quot;
+                         REV: &quot;{M/dd/yyyy HH:mm:ss tt} - Web ACH Return - (${abs(CLP04):#.##}) Additional Info: {ref(2H)}&quot;
+                         CCC: &quot;Approval Code={ref(1Z)}; Transaction ID={ref(2H)}&quot;
+                p = Post835PatientTransaction(
+                      ...same constants and amounts as BBVA patient...,
+                      patGUID=first NM1.NM109, ppGUID=NM1*IL.NM109,
+                      lbcLockboxCode=type, lbcLockboxCodeType=&quot;WEB&quot;,
+                      transApprovalCode=ref(1Z), transTransactionIDStr=ref(2H),
+                      transCardNumber = type==CCC ? ref(TN) : null,
+                      transCardType   = type==CCC ? ref(8X) : null,
+                      transCheckNumber= type in (ACH,REV) ? ref(1Z) : null,
+                      transRouting=ref(EY), xwebGUID=ref(EM),
+                      transReference = len(ref(EY))&gt;0 ? (type in (ACH,REV) ? ref(TN) : null) : (type==CCC ? ref(TN) : null),
+                      transNote=note, transReceiptNote=note)
+                AddImportLog(process=&quot;Process_SD_835Patient&quot;, message = ok ? &quot;Processed successfully&quot; : p.ResponseMessage)
+
+        case BBVA_INSURANCE:
+            clp = count(LX loops); plb = count(PLB)
+            if not (clp == 1 or plb == 0):
+                AddImportLog(Failed, &quot;There were {clp} CLP payments and {plb} PLB adjustments on transaction {ST02}&quot;)
+                continue
+            base = &quot;Deposit Date: {DTM02}, Check Date: {BPR16}, Claim Number: {CLP01}, Lockbox: {lockbox}&quot;
+            for each CLP loop:
+                note = BPR04 == &quot;NON&quot;
+                       ? left(base + &quot;, &quot; + casList(claim CAS) + &quot;, &quot; + casList(service CAS), 250)
+                       : base                      # casList = &quot;CAS02: CAS03&quot; joined by &quot;, &quot; (first pair only)
+                p = Post835InsuranceTransaction(
+                      constants as above, amount = -CLP04,
+                      patGUID=REF*EJ, pipGUID=REF*69, pipPolicyNumber=NM1*QC.NM109,
+                      adaClaimNumber=CLP01, ptPaymentTypeCode=BPR04, transRouting=BPR07,
+                      transCheckNumber=TRN02, transReference=TRN02, ClaimIdentifier=TRN04,
+                      PaymentIdentifier=REF*F8, transNote=note, transReceiptNote=note)
+                AddImportLog(process=&quot;Process_BBVA_835Insurance&quot;, ref=REF*F8, result=p)
+            n = 0
+            for each PLB:
+                n += 1
+                p = Post835InsuranceTransaction(
+                      constants, amount = PLB04 (map negates twice),
+                      AdjustmentType=PLB03-1, transReference=&quot;ADJ{n}-{TRN02}&quot;,
+                      patient/policy/claim fields from the single CLP loop,
+                      transNote = base + &quot;, Adj Reason: {PLB03-1}&quot;)
+                AddImportLog(process=&quot;Process_BBVA_835Insurance&quot;, message=&quot;ADJ - &quot; + p.ResponseMessage)
+
+        case CHC:
+            for each CLP loop:
+                claim = int(CLP01.substring(12))          # fail the set if this does not parse
+                reversal = CLP04 &lt; 0 or CLP02 == &quot;22&quot; or any(service CAS01 contains &quot;CR&quot;)
+                if reversal:
+                    AddTodoItem(adaclaimNumber=claim, message=&quot;Payment for claim{claim} needs reversal for amount ${CLP04}.&quot;)
+                elif practice is null:
+                    BTS.Log(&quot;Connection String not found for Claim {claim} in File {file}&quot;)
+                    continue                               # no ImportLog row
+                else:
+                    p = Post835InsuranceTransaction(
+                          constants, amount=-CLP04, adaClaimNumber=claim,
+                          pipPolicyNumber=NM1*QC.NM109, ptPaymentTypeCode=BPR04,
+                          transRouting=BPR07, transCheckNumber=TRN02,
+                          transNote = transReceiptNote = &quot;Check Number: {TRN02}, Claim Number: {claim}&quot;)
+                AddImportLog(process=&quot;Process_CHC_835Insurance&quot;, message = ok ? &quot;Processed successfully&quot; : error)
+</code></pre>
+<p>Rules for the edge cases:</p>
+<ol>
+<li><strong>Comparisons.</strong> The functoid names for <code>&lt;</code>, <code>OR</code>, <code>Find</code>, <code>Left</code>, <code>Size</code>, <code>Subtraction</code>, <code>Multiplication</code> are inferred from their inputs. Confirm with a sample file and the BizTalk output before you rely on them.</li>
+<li><strong>Multiple links to one field.</strong> In the BBVA insurance map, <code>pipGUID</code> gets values from three links. Test with real files to see which value BizTalk sends.</li>
+<li><strong>Missing segments.</strong> BizTalk sends no element when the source segment is missing. The procedure then uses its default. Do the same: omit the parameter, do not send an empty string for a GUID.</li>
+</ol>
+<h2 id="cut-over-plan">5. Cut-over plan</h2>
+<ol>
+<li><strong>Read-only shadow run.</strong> Run the new application on copies of the production files. Do not post. Compare each computed parameter set with the BizTalk tracking data (message body tracking is on for <code>Process_CHC_835Insurance</code> only). For the other flows, compare with the <code>[Transaction]</code> rows and <code>ImportLog</code> rows.</li>
+<li><strong>Test database run.</strong> Post to a test practice database. The discovery names Cloud9 T for this comparison. The settings also have an <code>SDLab1</code> environment. Use the test-file scripts in <a href="../../Cloud9.BizTalk.Scripts">Cloud9.BizTalk.Scripts</a> to build files with real GUIDs. If necessary, restore the test BizTalk instance. Then run the same 835 files through BizTalk and the new application and compare the results.</li>
+<li><strong>Switch one source at a time.</strong> For each source and region:
+<ol>
+<li>Disable the BizTalk receive locations for that source (FILE and SFTP).</li>
+<li>Enable the new poller for the same folders.</li>
+<li>Watch <code>ImportLog</code> and the alert channel for one full business cycle.</li>
+</ol>
+</li>
+<li><strong>Keep BizTalk for rollback.</strong> Do not undeploy the orchestrations until every source runs on the new application for an agreed period.</li>
+<li><strong>CHC last.</strong> The CHC flow shares the <code>CHC_Inbound</code> folder with the 277 and 277CA flows. If the new application takes over the mailbox download, it must also feed the 277 files to BizTalk (or replace those flows too). Else the claim status flows stop.</li>
+<li><strong>Retire with evidence.</strong> Before you disable a legacy folder, port, or service, agree an observation period. Show zero traffic for that period.</li>
+</ol>
+<p>The discovery document has an eight-step validation plan. The steps above and the tests below cover it:</p>
+<table>
+<thead>
+<tr>
+<th>Discovery step</th>
+<th>Where in this guide</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Configuration inventory</td>
+<td>Section 2, facts 3, 4, 11, 12, 14</td>
+</tr>
+<tr>
+<td>2. Code-path analysis</td>
+<td>Document 02 and section 4</td>
+</tr>
+<tr>
+<td>3. Golden-file comparison</td>
+<td>Cut-over steps 1 and 2</td>
+</tr>
+<tr>
+<td>4. Negative testing</td>
+<td>Test checklist</td>
+</tr>
+<tr>
+<td>5. Volume and timing</td>
+<td>Not covered yet. Replay a peak morning and a full day</td>
+</tr>
+<tr>
+<td>6. Recovery and replay</td>
+<td>Design notes 1 and 2, test checklist</td>
+</tr>
+<tr>
+<td>7. Observability</td>
+<td>R15, design note 10</td>
+</tr>
+<tr>
+<td>8. Cut-over rehearsal</td>
+<td>Cut-over steps 3 to 6</td>
+</tr>
+</tbody>
+</table>
+<h2 id="test-checklist">6. Test checklist</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Expected result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BBVA patient file, two CLP loops, valid GUIDs</td>
+<td>Two <code>[Transaction]</code> rows with negative amounts, <code>lbcLockboxCodeType = PATIENT</code>, two <code>ImportLog</code> rows <code>Finished</code></td>
+</tr>
+<tr>
+<td>BBVA patient file for a region with no <code>PracticeConfig</code> row</td>
+<td>New application: file failed and alert. BizTalk today: event log only</td>
+</tr>
+<tr>
+<td>SD web CCC payment</td>
+<td><code>transCardNumber</code>, <code>transCardType</code>, <code>transApprovalCode</code> set, note <code>Approval Code=...; Transaction ID=...</code></td>
+</tr>
+<tr>
+<td>SD web ACH payment</td>
+<td><code>transCheckNumber</code> = REF*1Z, <code>transReference</code> = masked bank account, note with <code>Check Submitted</code></td>
+</tr>
+<tr>
+<td>SD web REV payment</td>
+<td>Note with <code>Web ACH Return</code> and the absolute amount</td>
+</tr>
+<tr>
+<td>BBVA insurance, one CLP, one PLB</td>
+<td>One claim row, one adjustment row with <code>ADJ1-&lt;TRN02&gt;</code></td>
+</tr>
+<tr>
+<td>BBVA insurance, two CLP, one PLB</td>
+<td>Nothing posted, one <code>Failed</code> ImportLog row with the CLP/PLB count message</td>
+</tr>
+<tr>
+<td>BBVA insurance, BPR04 = <code>NON</code></td>
+<td>Note lists CAS reasons and amounts, max 250 characters</td>
+</tr>
+<tr>
+<td>CHC 835, CLP02 = <code>22</code></td>
+<td><code>AddTodoItem</code> call, no post</td>
+</tr>
+<tr>
+<td>CHC 835, CLP01 too short</td>
+<td>The transaction set fails with <code>ParseClaimNumber</code> error</td>
+</tr>
+<tr>
+<td>Same file twice</td>
+<td>Decide and test the duplicate rule (BizTalk has none of its own)</td>
+</tr>
+<tr>
+<td>File with ISA11 = <code>^</code></td>
+<td>Parsed and posted (release 1.3.2108.86, C9-34067)</td>
+</tr>
+<tr>
+<td>CLP04 = 0.00</td>
+<td>Not rejected by the parser (C9-33835). Compare the procedure result with BizTalk</td>
+</tr>
+<tr>
+<td>BBVA insurance with an unknown <code>patGUID</code></td>
+<td>Row in <code>UnmappedTransaction</code> (C9-33839)</td>
+</tr>
+<tr>
+<td>SFTP file not picked up within the agreed time</td>
+<td>Datadog alert</td>
+</tr>
+<tr>
+<td>Database not reachable during a file</td>
+<td>File in quarantine or retry as agreed. A replay posts no duplicates</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="doc-04-data-contracts"><h1 id="data-contracts-for-the-payment-flows">Data contracts for the payment flows</h1>
+<p>This document lists every interface that the payment flows use. A replacement application must produce the same calls and data.</p>
+<p>Source of truth for each table: the WCF-SQL schema in this repository. The practice database procedures are <strong>not</strong> in this repository. Before you build the replacement, read the real signature from one practice database. Use the query in <a href="#read-the-live-procedure-signatures">Read the live procedure signatures</a>.</p>
+<h2 id="databases">Databases</h2>
+<table>
+<thead>
+<tr>
+<th>Database</th>
+<th>Location</th>
+<th>Contents used by the payment flows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>BizTalkCloud9Common</code> (central)</td>
+<td>Address from setting <code>ADDR_DB_CLOUD9COMMON</code>. Production value in the settings file: <code>mssql://c9-p-sql-01//BizTalkCloud9Common</code> (SDProd1 column). Confirm the current server.</td>
+<td><code>BTS.PracticeConfig</code>, <code>BTS.ApplicationLookupValue</code>, <code>BTS.Log</code>, <code>BTS.ProcessParameter</code>, procedures <code>GetPracticeConfigurationByName</code>, <code>GetApplicationLookupValues</code>, <code>CreateLogEntry</code>, <code>QueueProcessParameters</code>, <code>UpdateProcessParameters</code></td>
+</tr>
+<tr>
+<td>Practice database (one for each practice)</td>
+<td><code>BTS.PracticeConfig.pcInstanceAddress</code> (WCF-SQL URI) or <code>pcInstanceConnectionString</code></td>
+<td>Procedures <code>BTS.Post835PatientTransaction</code>, <code>BTS.Post835InsuranceTransaction</code>, <code>BTS.AddImportLog</code>, <code>BTS.AddTodoItem</code>, <code>BTS.GetPracticeEDISettings</code>. Tables <code>[Transaction]</code>, <code>TransactionType</code>, <code>BTS.PaymentType</code>, <code>ImportLog</code>, <code>UnmappedTransaction</code>, <code>ADAClaim</code>, <code>PatientInsurancePolicy</code>, <code>Patient</code>, <code>Person</code>, <code>PersonPerson</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="central-database">Central database</h2>
+<h3 id="bts.practiceconfig">BTS.PracticeConfig</h3>
+<p>Source: <a href="../../Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Tables/PracticeConfig.sql">PracticeConfig.sql</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pcGUID</code></td>
+<td>uniqueidentifier, PK, default <code>newid()</code></td>
+<td>Practice key</td>
+</tr>
+<tr>
+<td><code>pcName</code></td>
+<td>nvarchar(50), not null</td>
+<td>Lookup key. Equals the region folder name (BBVA), <code>SD-&lt;REGION&gt;</code> (SD web), or the CHC file prefix. The refactor log shows a unique index <code>UIX_PracticeConfig_pcName</code> <strong>(inferred)</strong></td>
+</tr>
+<tr>
+<td><code>pcInstanceAddress</code></td>
+<td>nvarchar(200)</td>
+<td>WCF-SQL address of the practice database</td>
+</tr>
+<tr>
+<td><code>pcInstanceConnectionString</code></td>
+<td>nvarchar(200)</td>
+<td>ADO.NET connection string (not used by the payment orchestrations)</td>
+</tr>
+<tr>
+<td><code>pcsStatusID</code></td>
+<td>smallint, default 1</td>
+<td>FK to <code>PracticeConfigStatus</code>. Seed: 0 = Active, 1 = Inactive. The lookup procedure ignores this column</td>
+</tr>
+<tr>
+<td><code>pcRoutingPrefix</code></td>
+<td>nvarchar(6)</td>
+<td>Claim routing prefix (claims flows)</td>
+</tr>
+<tr>
+<td><code>emdeonUserID</code></td>
+<td>nvarchar(10)</td>
+<td>Change Healthcare user (277 flows)</td>
+</tr>
+<tr>
+<td><code>pcCreatedDate</code>, <code>pcCreatedBy</code>, <code>pcLastModified</code>, <code>pcLastModifiedBy</code></td>
+<td>audit</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="bts.getpracticeconfigurationbyname">BTS.GetPracticeConfigurationByName</h3>
+<table>
+<thead>
+<tr>
+<th>Direction</th>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>In</td>
+<td><code>@pcName</code></td>
+<td>NVARCHAR(50)</td>
+</tr>
+<tr>
+<td>Out (result set 0)</td>
+<td><code>pcGUID</code>, <code>pcInstanceAddress</code>, <code>pcInstanceConnectionString</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="bts.getapplicationlookupvalues-flow-e">BTS.GetApplicationLookupValues (flow E)</h3>
+<table>
+<thead>
+<tr>
+<th>Direction</th>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>In</td>
+<td><code>@alvApplication</code></td>
+<td>VARCHAR(50)</td>
+</tr>
+<tr>
+<td>In</td>
+<td><code>@alvLookup</code></td>
+<td>VARCHAR(50)</td>
+</tr>
+<tr>
+<td>Out</td>
+<td><code>alvGUID</code>, <code>alvApplication</code>, <code>alvLookup</code>, <code>alvKey</code>, <code>alvValue</code>, <code>alvDescription</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Seed rows (<a href="../../Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BizTalkCloud9Common.PostDeployment.sql">BizTalkCloud9Common.PostDeployment.sql</a>):</p>
+<table>
+<thead>
+<tr>
+<th>alvApplication</th>
+<th>alvLookup</th>
+<th>alvKey</th>
+<th>alvValue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CHC835ToBBVA</td>
+<td>1000000004</td>
+<td>AgreementNameForSend</td>
+<td>ChangeHealthcare_BBVA</td>
+</tr>
+<tr>
+<td>CHC835ToBBVA</td>
+<td>1000000004</td>
+<td>SenderPartyNameForSend</td>
+<td>ChangeHealthcare</td>
+</tr>
+<tr>
+<td>CHC835ToBBVA</td>
+<td>1000000004</td>
+<td>ReceiverPartyNameForSend</td>
+<td>BBVA</td>
+</tr>
+</tbody>
+</table>
+<h3 id="bts.createlogentry-and-bts.log-flow-d-errors">BTS.CreateLogEntry and BTS.Log (flow D errors)</h3>
+<p><code>BTS.CreateLogEntry(@pcInstanceAddress NVARCHAR(200), @Process VARCHAR(50), @Type VARCHAR(50), @Message VARCHAR(MAX), @InternalEntityID VARCHAR(100) = NULL, @ExternalEntityID VARCHAR(100) = NULL, @StackTrace VARCHAR(MAX) = NULL, @CreatedBy VARCHAR(50) = NULL)</code> inserts one row into <code>BTS.Log</code>. The orchestration <code>Cloud9.BizTalk.Common.AddLog</code> builds the request by string concatenation and puts the message in a CDATA block.</p>
+<h3 id="bts.processparameter-and-bts.queueprocessparameters-flow-d-schedule">BTS.ProcessParameter and BTS.QueueProcessParameters (flow D schedule)</h3>
+<p><code>QueueProcessParameters(@processName varchar(25))</code> takes the newest row with <code>ppProcessName = @processName AND ppStatus = 0</code>, sets <code>ppStatus = 1</code>, and returns two result sets: a header (<code>ppID</code>, <code>fromDateTime</code> = <code>ppProcessLastRun</code>, <code>toDateTime</code> = now, <code>processName</code>) and every <code>PracticeConfig</code> row (<code>pcGUID</code>, <code>pcInstanceAddress</code>, <code>pcInstanceConnectionString</code>, <code>pcRoutingPrefix</code>, <code>pcName</code>). See <a href="../../Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored%20Procedures/QueueProcessParameters.sql">QueueProcessParameters.sql</a>.</p>
+<h2 id="practice-database-procedures">Practice database procedures</h2>
+<h3 id="bts.post835patienttransaction-flows-a-and-b">BTS.Post835PatientTransaction (flows A and B)</h3>
+<p>Schema: <a href="../../Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Post835/Post835TypedProcedure.BTS.xsd">Post835TypedProcedure.BTS.xsd</a>. All parameters are optional and nullable in the schema.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Flow A value</th>
+<th>Flow B value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>transDateTime</code></td>
+<td>datetime</td>
+<td>Processing time</td>
+<td>Processing time</td>
+</tr>
+<tr>
+<td><code>transDateTimePosted</code></td>
+<td>datetime</td>
+<td>Processing time</td>
+<td>Processing time</td>
+</tr>
+<tr>
+<td><code>transStatus</code></td>
+<td>string(2)</td>
+<td><code>N</code></td>
+<td><code>N</code></td>
+</tr>
+<tr>
+<td><code>transGUID</code></td>
+<td>guid</td>
+<td>New GUID</td>
+<td>New GUID</td>
+</tr>
+<tr>
+<td><code>locGUIDPosted</code></td>
+<td>guid</td>
+<td>Not sent</td>
+<td>Not sent</td>
+</tr>
+<tr>
+<td><code>locGUIDAssigned</code></td>
+<td>guid</td>
+<td>Not sent</td>
+<td>Not sent</td>
+</tr>
+<tr>
+<td><code>empGUIDProvider</code></td>
+<td>guid</td>
+<td>Not sent</td>
+<td>Not sent</td>
+</tr>
+<tr>
+<td><code>patGUID</code></td>
+<td>guid</td>
+<td>NM1*QC NM109</td>
+<td>NM1 NM109 (first NM1)</td>
+</tr>
+<tr>
+<td><code>ttypGUID</code></td>
+<td>guid</td>
+<td>Not sent (the procedure resolves it)</td>
+<td>Not sent</td>
+</tr>
+<tr>
+<td><code>transDebitGroup</code>, <code>transCreditGroup</code></td>
+<td>guid</td>
+<td>Not sent</td>
+<td>Not sent</td>
+</tr>
+<tr>
+<td><code>transAmount</code></td>
+<td>decimal</td>
+<td>-CLP04</td>
+<td>-CLP04</td>
+</tr>
+<tr>
+<td><code>transNote</code></td>
+<td>string(250)</td>
+<td>Deposit/check/lockbox note</td>
+<td><code>FormatNote</code> result</td>
+</tr>
+<tr>
+<td><code>transReceiptNote</code></td>
+<td>string(250)</td>
+<td>Not sent</td>
+<td><code>FormatNote</code> result</td>
+</tr>
+<tr>
+<td><code>transReference</code></td>
+<td>string(100)</td>
+<td>TRN02</td>
+<td>Masked bank account or masked card</td>
+</tr>
+<tr>
+<td><code>transDueNowAmount</code></td>
+<td>decimal</td>
+<td>-CLP04</td>
+<td>-CLP04</td>
+</tr>
+<tr>
+<td><code>transTotalDueAmount</code></td>
+<td>decimal</td>
+<td>-CLP04</td>
+<td>-CLP04</td>
+</tr>
+<tr>
+<td><code>transProductionAmount</code></td>
+<td>decimal</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>ppGUID</code></td>
+<td>guid</td>
+<td>NM1*IL NM109</td>
+<td>NM1*IL NM109</td>
+</tr>
+<tr>
+<td><code>persGUIDRelated</code>, <code>orgGUID</code></td>
+<td>guid</td>
+<td>Not sent</td>
+<td>Not sent</td>
+</tr>
+<tr>
+<td><code>transIsGroup</code></td>
+<td>string(100)</td>
+<td><code>0</code></td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>transClaimAmount</code></td>
+<td>string(100)</td>
+<td><code>0</code></td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>transCheckNumber</code></td>
+<td>string(100)</td>
+<td>TRN02</td>
+<td>REF*1Z (ACH, REV only)</td>
+</tr>
+<tr>
+<td><code>transRouting</code></td>
+<td>string(100)</td>
+<td>BPR07</td>
+<td>REF*EY</td>
+</tr>
+<tr>
+<td><code>emGUID</code></td>
+<td>guid</td>
+<td>Not sent</td>
+<td>Not sent</td>
+</tr>
+<tr>
+<td><code>lbcLockboxCode</code></td>
+<td>string(100)</td>
+<td>BPR04</td>
+<td>BPR04 (<code>CCC</code>, <code>ACH</code>, <code>REV</code>)</td>
+</tr>
+<tr>
+<td><code>lbcLockboxCodeType</code></td>
+<td>string(25)</td>
+<td><code>PATIENT</code></td>
+<td><code>WEB</code></td>
+</tr>
+<tr>
+<td><code>transCardNumber</code></td>
+<td>string(50)</td>
+<td>Not sent</td>
+<td>REF*TN (CCC only)</td>
+</tr>
+<tr>
+<td><code>transCardType</code></td>
+<td>string(50)</td>
+<td>Not sent</td>
+<td>REF*8X (CCC only)</td>
+</tr>
+<tr>
+<td><code>transApprovalCode</code></td>
+<td>string(10)</td>
+<td>Not sent</td>
+<td>REF*1Z</td>
+</tr>
+<tr>
+<td><code>xwebGUID</code></td>
+<td>guid</td>
+<td>Not sent</td>
+<td>REF*EM</td>
+</tr>
+<tr>
+<td><code>transTransactionIDStr</code></td>
+<td>string(100)</td>
+<td>Not sent</td>
+<td>REF*2H</td>
+</tr>
+<tr>
+<td><code>PaymentIdentifier</code></td>
+<td>string(100)</td>
+<td>REF*F8</td>
+<td>Not sent</td>
+</tr>
+</tbody>
+</table>
+<p>Result set 0: <code>ErrorCount</code> (int), <code>ResponseMessage</code> (string). Also <code>ReturnValue</code> (int).</p>
+<p>BizTalk sends only the elements that the map creates. An element that the map does not create is not sent, so the procedure uses its default. Keep this behavior: do not send NULL for a parameter that BizTalk does not send, unless the procedure default is NULL.</p>
+<h3 id="bts.post835insurancetransaction-flows-c-and-d">BTS.Post835InsuranceTransaction (flows C and D)</h3>
+<p>Same schema file. Repository version: flat parameters below. The map expects a <code>Transactions</code> table-valued parameter of type <code>udt835Transaction</code> for some fields. Confirm the live signature.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Flow C (claim)</th>
+<th>Flow C (PLB)</th>
+<th>Flow D</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>transDateTime</code></td>
+<td>datetime</td>
+<td>Processing time</td>
+<td>Processing time</td>
+<td>Processing time</td>
+</tr>
+<tr>
+<td><code>transDateTimePosted</code></td>
+<td>datetime</td>
+<td>Processing time</td>
+<td>Processing time</td>
+<td>Processing time</td>
+</tr>
+<tr>
+<td><code>transStatus</code></td>
+<td>string(2)</td>
+<td><code>N</code></td>
+<td><code>N</code></td>
+<td><code>N</code></td>
+</tr>
+<tr>
+<td><code>transGUID</code></td>
+<td>guid</td>
+<td>New GUID</td>
+<td>New GUID</td>
+<td>New GUID</td>
+</tr>
+<tr>
+<td><code>patGUID</code></td>
+<td>guid</td>
+<td>REF*EJ</td>
+<td>REF*EJ of the single claim</td>
+<td>Not sent</td>
+</tr>
+<tr>
+<td><code>pipGUID</code></td>
+<td>guid</td>
+<td>REF*69 (see known issues)</td>
+<td>REF*69</td>
+<td>Not sent</td>
+</tr>
+<tr>
+<td><code>transAmount</code>, <code>transDueNowAmount</code>, <code>transTotalDueAmount</code></td>
+<td>decimal</td>
+<td>-CLP04</td>
+<td>PLB04 (negated twice)</td>
+<td>-CLP04</td>
+</tr>
+<tr>
+<td><code>transNote</code>, <code>transReceiptNote</code></td>
+<td>string(250)</td>
+<td>Canonical note</td>
+<td>Canonical note with <code>Adj Reason</code></td>
+<td><code>Check Number: &lt;TRN02&gt;, Claim Number: &lt;claim&gt;</code></td>
+</tr>
+<tr>
+<td><code>transReference</code></td>
+<td>string(100)</td>
+<td>TRN02</td>
+<td><code>ADJ&lt;n&gt;-&lt;TRN02&gt;</code></td>
+<td>Not sent</td>
+</tr>
+<tr>
+<td><code>transProductionAmount</code></td>
+<td>decimal</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>transIsGroup</code>, <code>transClaimAmount</code></td>
+<td>string(100)</td>
+<td><code>0</code></td>
+<td><code>0</code></td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>transCheckNumber</code></td>
+<td>string(100)</td>
+<td>TRN02</td>
+<td>TRN02</td>
+<td>TRN02</td>
+</tr>
+<tr>
+<td><code>transRouting</code></td>
+<td>string(100)</td>
+<td>BPR07</td>
+<td>BPR07</td>
+<td>BPR07</td>
+</tr>
+<tr>
+<td><code>adaClaimNumber</code></td>
+<td>string(100)</td>
+<td>CLP01</td>
+<td>CLP01 of the single claim</td>
+<td><code>int(CLP01.Substring(12))</code></td>
+</tr>
+<tr>
+<td><code>pipPolicyNumber</code></td>
+<td>string(100)</td>
+<td>NM1*QC NM109</td>
+<td>NM1*QC NM109</td>
+<td>NM1*QC NM109</td>
+</tr>
+<tr>
+<td><code>ptPaymentTypeCode</code></td>
+<td>string(3)</td>
+<td>BPR04</td>
+<td>BPR04</td>
+<td>BPR04</td>
+</tr>
+<tr>
+<td><code>ClaimIdentifier</code></td>
+<td>string(100)</td>
+<td>TRN04</td>
+<td>TRN04</td>
+<td>Not sent</td>
+</tr>
+<tr>
+<td><code>PaymentIdentifier</code></td>
+<td>string(100)</td>
+<td>REF*F8</td>
+<td>REF*F8 (or <code>true</code>/<code>false</code>, see known issues)</td>
+<td>Not sent</td>
+</tr>
+<tr>
+<td><code>AdjustmentType</code></td>
+<td>string(2)</td>
+<td>Not sent</td>
+<td>PLB03-1</td>
+<td>Not sent</td>
+</tr>
+<tr>
+<td><code>locGUIDPosted</code>, <code>locGUIDAssigned</code>, <code>empGUIDProvider</code>, <code>ttypGUID</code>, <code>transDebitGroup</code>, <code>transCreditGroup</code>, <code>ppGUID</code>, <code>persGUIDRelated</code>, <code>orgGUID</code></td>
+<td>guid</td>
+<td>Not sent</td>
+<td>Not sent</td>
+<td>Not sent</td>
+</tr>
+</tbody>
+</table>
+<p>Result set 0: <code>ErrorCount</code> (int), <code>ResponseMessage</code> (string). Also <code>ReturnValue</code> (int).</p>
+<h3 id="bts.addimportlog-all-posting-flows">BTS.AddImportLog (all posting flows)</h3>
+<p>Schema: <a href="../../Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ImportLog/ImportLogTypedProcedure.BTS.xsd">ImportLogTypedProcedure.BTS.xsd</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ilDateTime</code></td>
+<td>datetime</td>
+</tr>
+<tr>
+<td><code>ilFileName</code></td>
+<td>string(250)</td>
+</tr>
+<tr>
+<td><code>ilProcess</code></td>
+<td>string(50)</td>
+</tr>
+<tr>
+<td><code>ilLogLevel</code></td>
+<td>int</td>
+</tr>
+<tr>
+<td><code>ilMessage</code></td>
+<td>string (max)</td>
+</tr>
+<tr>
+<td><code>ilStackTrace</code></td>
+<td>string (max)</td>
+</tr>
+<tr>
+<td><code>ilImportGUID</code></td>
+<td>guid</td>
+</tr>
+<tr>
+<td><code>ilImportState</code></td>
+<td>string(50)</td>
+</tr>
+<tr>
+<td><code>ilExternalReference</code></td>
+<td>string (required in the schema, but flows B and D do not send it)</td>
+</tr>
+</tbody>
+</table>
+<p>Response: <code>ReturnValue</code> only.</p>
+<h3 id="bts.addtodoitem-flow-d-reversals">BTS.AddTodoItem (flow D reversals)</h3>
+<p>Schema: <a href="../../Cloud9.BizTalk/Cloud9.BizTalk.Schemas/AddTodoItem/AddTodoItemTypedProcedure.BTS.xsd">AddTodoItemTypedProcedure.BTS.xsd</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Flow D value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>adaclaimNumber</code></td>
+<td>int</td>
+<td>Parsed claim number</td>
+</tr>
+<tr>
+<td><code>errorCode</code></td>
+<td>string(10)</td>
+<td>Not sent</td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td>string(300)</td>
+<td><code>Payment for claim&lt;n&gt; needs reversal for amount $&lt;CLP04&gt;.</code></td>
+</tr>
+<tr>
+<td><code>reason</code></td>
+<td>string(50)</td>
+<td>Not sent</td>
+</tr>
+</tbody>
+</table>
+<p>Result set 0: <code>tdGUID</code> (guid), <code>ErrorMessage</code> (string). A non-blank <code>ErrorMessage</code> is an error.</p>
+<h3 id="bts.getpracticeedisettings-flow-d-mailbox">BTS.GetPracticeEDISettings (flow D mailbox)</h3>
+<p>No parameters. The worker reads <code>pracEmdeonIsTest</code>, <code>pracEmdeonURL</code>, <code>pracEmdeonTestURL</code> and passes the response to the map <code>CHC_PracticeEDISettings_To_GetMailFileListReq</code>. The map summary lists the credential fields that go into the mailbox request: <a href="../map-summaries/CHC_PracticeEDISettings_To_GetMailFileListReq.txt">CHC_PracticeEDISettings_To_GetMailFileListReq.txt</a>.</p>
+<h2 id="practice-tables-named-by-the-test-scripts">Practice tables named by the test scripts</h2>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Columns named in scripts</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[Transaction]</code></td>
+<td><code>transGUID</code>, <code>transDateTime</code>, <code>transDateTimePosted</code>, <code>transStatus</code>, <code>locGUIDAssigned</code>, <code>patGUID</code>, <code>ttypGUID</code>, <code>transAmount</code>, <code>transNote</code>, <code>transReceiptNote</code>, <code>transReference</code>, <code>transDueNowAmount</code>, <code>transTotalDueAmount</code>, <code>transProductionAmount</code>, <code>ppGUID</code>, <code>pipGUID</code>, <code>transClaimAmount</code>, <code>transCheckNumber</code>, <code>transRouting</code></td>
+<td>Posted ledger rows</td>
+</tr>
+<tr>
+<td><code>TransactionType</code></td>
+<td><code>ttypGUID</code>, <code>ttypCode</code>, <code>ttypDescription</code>, <code>ttypDeleted</code></td>
+<td>Codes used: <code>LBOXPERCMO</code>, <code>WEBCC</code>, <code>WEBACH</code>, <code>WEBACHRET</code>, <code>INTERESTOTSD</code>, <code>INSIPC</code>, <code>LBOXINSC</code></td>
+</tr>
+<tr>
+<td><code>BTS.PaymentType</code></td>
+<td><code>ttypCode</code>, <code>ptPaymentType</code>, <code>ptPaymentTypeCode</code>, <code>ptIsDeleted</code></td>
+<td>Maps BizTalk payment codes to transaction types. Expected codes: <code>WEB</code> type, <code>L6C</code>, <code>L6P</code>, <code>PLB</code></td>
+</tr>
+<tr>
+<td><code>ImportLog</code></td>
+<td><code>ilDateTime</code>, <code>ilProcess</code>, <code>ilLogLevel</code>, <code>ilMessage</code>, <code>ilFileName</code>, <code>ilImportGUID</code>, <code>ilImportState</code>, <code>ilStackTrace</code>, <code>ilExternalReference</code></td>
+<td>Import results</td>
+</tr>
+<tr>
+<td><code>UnmappedTransaction</code></td>
+<td><code>patGUID</code>, <code>utDateTime</code>, <code>utStatus</code>, <code>utAmount</code>, <code>utReceiptNote</code>, <code>utReference</code>, <code>utCheckNumber</code>, <code>utRouting</code>, <code>adaClaimNumber</code>, <code>pipPolicyNumber</code>, <code>ptPaymentTypeCode</code>, <code>utErrorMessage</code></td>
+<td>Insurance payments that the procedure cannot match <strong>(inferred)</strong></td>
+</tr>
+<tr>
+<td><code>ADAClaim</code></td>
+<td><code>adaclaimNumber</code>, <code>patGUID</code>, <code>pipGUID</code></td>
+<td>Dental claims</td>
+</tr>
+<tr>
+<td><code>PatientInsurancePolicy</code></td>
+<td><code>pipGUID</code>, <code>patGUID</code>, <code>pipPolicyNumber</code></td>
+<td>Policies</td>
+</tr>
+<tr>
+<td><code>Patient</code>, <code>Person</code>, <code>PersonPerson</code></td>
+<td><code>patGUID</code>, <code>persGUID</code>, <code>persFullName</code>, <code>ppGUID</code>, <code>persGUIDRelated</code>, <code>ppFinanciallyResponsible</code></td>
+<td>Patient and responsible party</td>
+</tr>
+</tbody>
+</table>
+<h2 id="canonical-schemas-biztalk-internal">Canonical schemas (BizTalk internal)</h2>
+<p>A replacement does not need these schemas. They help you read the maps.</p>
+<ul>
+<li><code>ClaimPaymentBatch</code> (<a href="../../Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Canonical/ClaimPaymentBatch.xsd">ClaimPaymentBatch.xsd</a>): a list of <code>ClaimPayment</code>.</li>
+<li><code>ClaimPayment</code> (<a href="../../Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Canonical/ClaimPayment.xsd">ClaimPayment.xsd</a>), namespace <code>http://Cloud9.BizTalk.Schemas.Canonical.ClaimPayment</code>. Fields: <code>TotalActualProviderPaymentAmount</code>, <code>PaymentMethodCode</code>, <code>SenderDFIIdentifier</code>, <code>CheckIssueorEFTEffectiveDate</code>, <code>CheckorEFTTraceNumber</code>, <code>PatientControlNumber</code>, <code>PatientIdentifier</code>, <code>SubscriberIdentifier</code>, <code>PayerClaimControlNumber</code>, <code>PaymentDepositDate</code>, <code>PaymentPostedDate</code>, <code>ProviderIdentifier</code>, <code>ProviderFirstName</code>, <code>ProviderLastName</code>, <code>LockboxNumber</code>, <code>CheckDate</code>, <code>TransactionNote</code>, <code>PracticeTIN</code>, <code>PracticeProviderNumber</code>, <code>PracticeLicenseNumber</code>, <code>PatientAccountID</code>, <code>ReversalFlag</code> (default false), <code>patGUID</code>, <code>pipGUID</code>, <code>ttypGUID</code>, <code>orgGUID</code>, <code>ClaimIdentifier</code>, <code>PaymentIdentifier</code>, <code>ReferenceIdentifier</code>, <code>ApprovalCode</code>, <code>OpenEdgeTransactionID</code>, <code>OpenEdgeXWebGUID</code>, <code>MaskedCreditCardNumber</code>, <code>CreditCardType</code>, <code>MaskedBankAccountNumber</code>, <code>OpenEdgeCheckNumber</code>, <code>MaskedRoutingNumber</code>, <code>AdjustmentType</code>.</li>
+</ul>
+<h2 id="x12-835-inbound-schemas">X12 835 inbound schemas</h2>
+<table>
+<thead>
+<tr>
+<th>Schema</th>
+<th>Namespace</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../Cloud9.BizTalk/Cloud9.BizTalk.X12.Schemas/BBVA_X12_00501_835.xsd">BBVA_X12_00501_835.xsd</a></td>
+<td><code>.../X12/2006/BBVA</code></td>
+<td>Standard 005010X221 names plus header <code>REF*LB</code> (lockbox), 2100 <code>REF*EJ</code> (patient GUID) and <code>REF*69</code> (policy GUID)</td>
+</tr>
+<tr>
+<td><a href="../../Cloud9.BizTalk/Cloud9.BizTalk.X12.Schemas/SD_X12_00501_835.xsd">SD_X12_00501_835.xsd</a></td>
+<td><code>.../X12/2006/SmileDoctors</code></td>
+<td>Generic element names (<code>BPR04</code>, <code>REF_3</code>). Qualifiers are tested in the map</td>
+</tr>
+<tr>
+<td><a href="../../Cloud9.BizTalk/Cloud9.BizTalk.X12.Schemas/CHC_X12_00501_835.xsd">CHC_X12_00501_835.xsd</a></td>
+<td><code>.../X12/2006/CHC</code></td>
+<td>Standard 005010X221 names</td>
+</tr>
+</tbody>
+</table>
+<h2 id="read-the-live-procedure-signatures">Read the live procedure signatures</h2>
+<p>Run this query in one practice database (read-only). For production, use only the approved read-only endpoint.</p>
+<pre><code class="language-sql">SELECT  OBJECT_SCHEMA_NAME(p.object_id) AS SchemaName,
+        OBJECT_NAME(p.object_id)        AS ProcName,
+        p.parameter_id,
+        p.name                          AS ParameterName,
+        TYPE_NAME(p.user_type_id)       AS TypeName,
+        p.max_length,
+        p.is_output,
+        p.has_default_value
+FROM    sys.parameters AS p
+WHERE   OBJECT_SCHEMA_NAME(p.object_id) = 'BTS'
+  AND   OBJECT_NAME(p.object_id) IN ('Post835PatientTransaction', 'Post835InsuranceTransaction', 'AddImportLog', 'AddTodoItem', 'GetPracticeEDISettings')
+ORDER BY ProcName, p.parameter_id;
+
+-- Table-valued parameter type used by the insurance map (if it exists)
+SELECT  tt.name AS TypeName, c.column_id, c.name AS ColumnName, TYPE_NAME(c.user_type_id) AS ColumnType, c.max_length
+FROM    sys.table_types AS tt
+JOIN    sys.columns AS c ON c.object_id = tt.type_table_object_id
+WHERE   tt.name LIKE '%835%'
+ORDER BY tt.name, c.column_id;
+
+-- Procedure bodies
+SELECT OBJECT_NAME(object_id) AS ProcName, definition
+FROM   sys.sql_modules
+WHERE  OBJECT_NAME(object_id) IN ('Post835PatientTransaction', 'Post835InsuranceTransaction', 'AddImportLog', 'AddTodoItem');
+</code></pre>
+</section>
+<section id="doc-05-known-issues-and-open-questions"><h1 id="known-issues-risks-and-open-questions">Known issues, risks, and open questions</h1>
+<p>This list comes from a read of the source and of the documents in the <code>references</code> folder. Each item has the evidence. Severity is for a replacement project: <strong>High</strong> can change posted money or block the design, <strong>Medium</strong> can lose data or hide errors, <strong>Low</strong> is a cosmetic or maintenance issue.</p>
+<h2 id="security">Security</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Severity</th>
+<th>Issue</th>
+<th>Evidence</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S1</td>
+<td>High</td>
+<td>SFTP passwords are in plain text in the settings spreadsheets for several environments, production included</td>
+<td><a href="../../Cloud9.BizTalk/Cloud9.EDI.Deployment/SettingsFileGenerator.xml">Cloud9.EDI.Deployment/SettingsFileGenerator.xml</a>, rows <code>BBVA_SFTP_PASSWORD</code>, <code>SD_SFTP_PASSWORD</code>, <code>CH_SFTP_PASSWORD</code>, <code>SD_SFTP_PASSWORD_BBVA</code> and others</td>
+<td>Rotate the credentials. Keep the new ones in a vault. The graph build redacts these values</td>
+</tr>
+<tr>
+<td>S2</td>
+<td>Medium</td>
+<td>The SFTP receive locations set <code>AccessAnySSHServerHostKey</code> to true. The client does not verify the server host key</td>
+<td>Every SFTP receive location in <a href="../../Cloud9.BizTalk/Cloud9.EDI.Deployment/PortBindingsMaster.xml">PortBindingsMaster.xml</a></td>
+<td>Pin the host keys in the replacement</td>
+</tr>
+<tr>
+<td>S3</td>
+<td>Medium</td>
+<td><code>Process_CHC_835_To_BBVA</code> and <code>Process_CHC_837_To_BBVA</code> write the full lookup request to the event log with source <code>Blah</code> on every run</td>
+<td><a href="../../Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_835_To_BBVA.odx">Process_CHC_835_To_BBVA.odx</a></td>
+<td>Remove debug logging in the replacement</td>
+</tr>
+<tr>
+<td>S4</td>
+<td>Low</td>
+<td>A hard-coded hashing key exists in the partner password hasher of the HL7 Web API (not a payment component)</td>
+<td><code>Cloud9.HL7.WebAPI/Cloud9.HL7.BLL/Converters/PartnerPasswordHasher.cs</code></td>
+<td>Out of scope for payments. Report to the owner</td>
+</tr>
+</tbody>
+</table>
+<h2 id="correctness-and-data">Correctness and data</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Severity</th>
+<th>Issue</th>
+<th>Evidence</th>
+<th>Impact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D1</td>
+<td>High</td>
+<td>The insurance posting map writes many fields to <code>Post835InsuranceTransaction/Transactions/udt835Transaction/*</code>. The schema in the repository has flat parameters and no <code>Transactions</code> element</td>
+<td><a href="../map-summaries/ClaimPaymentCanonical_To_Post835InsuranceTransaction.txt">ClaimPaymentCanonical_To_Post835InsuranceTransaction summary</a> and <a href="../../Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Post835/Post835TypedProcedure.BTS.xsd">Post835TypedProcedure.BTS.xsd</a>. The deployed binding tracks <code>Cloud9.BizTalk.X12.sql_TableType_BTS</code> root <code>udt835Transaction</code></td>
+<td>The deployed assembly and the source can differ. Read the live procedure signature and the deployed map</td>
+</tr>
+<tr>
+<td>D2</td>
+<td>High</td>
+<td>No duplicate protection in BizTalk. Adapter retry is 0. If a file arrives twice, BizTalk posts it twice unless the procedure rejects it</td>
+<td>All posting orchestrations. The discovery session also lists duplicate handling as a key risk</td>
+<td>Design idempotency in the replacement. Read the procedure bodies</td>
+</tr>
+<tr>
+<td>D3</td>
+<td>High</td>
+<td>No transaction across a file. Flows A and B stop at the first exception and leave earlier payments posted. No ImportLog row is written for the failure</td>
+<td><a href="../../Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_BBVA_835Patient.odx">Process_BBVA_835Patient.odx</a> catch block</td>
+<td>Partial files. A rerun can post duplicates</td>
+</tr>
+<tr>
+<td>D4</td>
+<td>Medium</td>
+<td>Flows A, B, C do not check for a missing <code>PracticeConfig</code> row. The send to an empty address fails</td>
+<td>Practice lookup in all three orchestrations</td>
+<td>Silent failure (event log only, or suspended in flow C)</td>
+</tr>
+<tr>
+<td>D5</td>
+<td>Medium</td>
+<td><code>pipGUID</code> in the BBVA insurance canonical map has three source links: REF<em>69 direct, REF</em>69 through FID 701, NM1*IL NM109</td>
+<td><a href="../map-summaries/BBVA_835Insurance_To_ClaimPaymentBatchCanonical.txt">BBVA_835Insurance_To_ClaimPaymentBatchCanonical summary</a> links L45, L49, L53</td>
+<td>The value that BizTalk sends is not clear. Test with real files</td>
+</tr>
+<tr>
+<td>D6</td>
+<td>Medium</td>
+<td>In the PLB adjustment map, the output of the <code>Equal(REF01,'F8')</code> functoid also links to <code>PaymentIdentifier</code></td>
+<td><a href="../map-summaries/BBVA_835_To_AdjustmentClaimPaymentBatchCanonical.txt">BBVA_835_To_AdjustmentClaimPaymentBatchCanonical summary</a> link L54</td>
+<td><code>PaymentIdentifier</code> can contain <code>true</code> or <code>false</code> for adjustments</td>
+</tr>
+<tr>
+<td>D7</td>
+<td>Medium</td>
+<td>Only the first adjustment pair of each PLB segment (PLB03/PLB04) is posted. Only the first reason/amount pair of each CAS segment goes into the note</td>
+<td>Same summaries</td>
+<td>Lost adjustments if a PLB has more than one pair</td>
+</tr>
+<tr>
+<td>D8</td>
+<td>Medium</td>
+<td>The PLB amount is negated in the adjustment map and again in the posting map</td>
+<td>Adjustment map F22, posting map F6</td>
+<td>Posted amount equals PLB04. Confirm that the procedure expects this sign</td>
+</tr>
+<tr>
+<td>D9</td>
+<td>Medium</td>
+<td><code>transDateTime</code> and <code>transDateTimePosted</code> are the processing time. BPR16 (check date) and DTM02 (deposit date) only go into the note</td>
+<td>All canonical maps (FID 125 functoid)</td>
+<td>Late processing shifts the ledger date</td>
+</tr>
+<tr>
+<td>D10</td>
+<td>Medium</td>
+<td>In flow D, <code>ParseClaimNumber</code> runs inside the batch map. One bad CLP01 fails the whole transaction set before the loop starts</td>
+<td><a href="../map-summaries/CHC_835_To_ClaimPaymentBatchCanonical.txt">CHC_835_To_ClaimPaymentBatchCanonical summary</a></td>
+<td>One bad claim blocks all claims in the set</td>
+</tr>
+<tr>
+<td>D11</td>
+<td>Medium</td>
+<td>In flow D, the reversal check runs before the connection check. A reversal for a practice with no connection fails with an exception, not with the <code>Connection String not found</code> message</td>
+<td><a href="../../Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_835Insurance.odx">Process_CHC_835Insurance.odx</a></td>
+<td>Misleading error text</td>
+</tr>
+<tr>
+<td>D12</td>
+<td>Low</td>
+<td><code>ilExternalReference</code> is required in the AddImportLog schema, but flows B and D do not send it</td>
+<td><a href="../../Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ImportLog/ImportLogTypedProcedure.BTS.xsd">ImportLogTypedProcedure.BTS.xsd</a></td>
+<td>Works because the send pipeline does not validate. The procedure must have a default</td>
+</tr>
+<tr>
+<td>D13</td>
+<td>Low</td>
+<td>Reversal to-do text has no space: <code>Payment for claim123 needs reversal ...</code></td>
+<td><a href="../map-summaries/ClaimPaymentCanonical_To_AddTodoItem.txt">ClaimPaymentCanonical_To_AddTodoItem summary</a></td>
+<td>Keep or fix with the business owner</td>
+</tr>
+<tr>
+<td>D14</td>
+<td>Low</td>
+<td>The Archive component overwrites a file with the same name</td>
+<td>Binding <code>Overwrite = -1</code></td>
+<td>Lost raw copies when a partner reuses a name</td>
+</tr>
+<tr>
+<td>D15</td>
+<td>Low</td>
+<td>Flow E drops a message without a log when the payee has no lookup rows</td>
+<td><a href="../../Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_835_To_BBVA.odx">Process_CHC_835_To_BBVA.odx</a></td>
+<td>Silent loss</td>
+</tr>
+<tr>
+<td>D16</td>
+<td>Medium</td>
+<td>The mapping specs v1 do not agree with the code for flows A and B. The spec uses BPR16 for <code>transDateTime</code>, <code>transIsGroup = 1</code>, and new debit and credit group GUIDs. The code uses the processing time, <code>0</code>, and no group GUIDs</td>
+<td><code>references/*/835_*_Mapping_v1.xlsx</code> and document 02, section <a href="#doc-02-payments-835-end-to-end">Reference documents compared with the code</a></td>
+<td>Copy the code, not the spec. Ask the business which ledger date is correct</td>
+</tr>
+</tbody>
+</table>
+<h2 id="configuration-and-maintenance">Configuration and maintenance</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Severity</th>
+<th>Issue</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C1</td>
+<td>Medium</td>
+<td><code>RL_SD_835_WEB_MIDWEST2_FILE</code> and <code>SD_835_WEB_MIDWEST2_SFTP</code> are defined twice in the master binding</td>
+<td><a href="../../Cloud9.BizTalk/Cloud9.EDI.Deployment/PortBindingsMaster.xml">PortBindingsMaster.xml</a> lines 5481 and 5577, 5541 and 5601</td>
+</tr>
+<tr>
+<td>C2</td>
+<td>Medium</td>
+<td>The SD web location for PRACTICASMILEDOCTORS reads the folder <code>SMILEDOCTORS</code>. All other SD web folders use the <code>SD-</code> prefix</td>
+<td>Same file, line 5099</td>
+</tr>
+<tr>
+<td>C3</td>
+<td>Medium</td>
+<td>Many FILE receive locations have <code>Enable=false</code>. SFTP locations sit in a dev-only block. The master file does not show the live state</td>
+<td>Same file</td>
+</tr>
+<tr>
+<td>C4</td>
+<td>Low</td>
+<td>Event log sources are copy-paste: <code>Process_SD_835Patient</code> logs as <code>BizTalk.Process_BBVA_835Patient</code>. <code>Process_CHC_835_To_BBVA</code> logs as <code>BizTalk.Process_CHC_837Claim</code></td>
+<td>Orchestration sources</td>
+</tr>
+<tr>
+<td>C5</td>
+<td>Low</td>
+<td>Project item type names do not match the orchestration names (for example <code>Process_CHC_835Insurance.odx</code> has TypeName <code>Process_BBVA_835Insurance_Copy</code>, <code>Process_BBVA_835Insurance.odx</code> has <code>Process_BBVALockbox</code>). The deployed type name comes from the XLANG <code>module</code> and <code>service</code> names</td>
+<td><a href="../../Cloud9.BizTalk/Cloud9.BizTalk.X12/Cloud9.BizTalk.X12.btproj">Cloud9.BizTalk.X12.btproj</a></td>
+</tr>
+<tr>
+<td>C6</td>
+<td>Low</td>
+<td><code>Process_CHC_835_To_BBVA</code> is <code>Unenlisted</code> in <code>Cloud9.EDI.Deployment</code> and <code>Started</code> in <code>Cloud9.EDI.PDS.Deployment</code></td>
+<td>Both binding files</td>
+</tr>
+<tr>
+<td>C7</td>
+<td>Low</td>
+<td>Two map projects build the same files (<code>Cloud9.BizTalk.X12.btproj</code> and <code>Cloud9.BizTalk.X12.PDS.btproj</code>)</td>
+<td>Project files</td>
+</tr>
+<tr>
+<td>C8</td>
+<td>Medium</td>
+<td>The master binding gives the BBVA and SD SFTP locations a daily window of 02:00 to 05:00 Eastern. The discovery session reports polls every 15 minutes through the day and a file peak near 06:00</td>
+<td><a href="../../Cloud9.BizTalk/Cloud9.EDI.Deployment/PortBindingsMaster.xml">PortBindingsMaster.xml</a> and the discovery document</td>
+</tr>
+<tr>
+<td>C9</td>
+<td>Medium</td>
+<td>The binding has 22 region folders. The discovery reports 21 original folders and about 9 in use after the consolidation</td>
+<td>Same file and the discovery document</td>
+</tr>
+<tr>
+<td>C10</td>
+<td>Medium</td>
+<td>Release 1.3.2108.86 fixed ISA11 <code>^</code> handling and $0.00 rejections with server settings. These settings are not in the repository export</td>
+<td><code>references/BizTalk-v1.3_ReleaseNotes_c9.docx</code>, <a href="../../Cloud9.BizTalk/Configuration/PartyCollection.xml">PartyCollection.xml</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="operations">Operations</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Severity</th>
+<th>Issue</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>O1</td>
+<td>High</td>
+<td>BizTalk stopped processing payments and claim statuses in 2021, and nothing alerted the team. The cause was a BizTalk defect. BizTalk Server 2016 Feature Update 3 (3.13.349.2) fixed it. The vendor then proposed SFTP monitoring</td>
+<td><code>references/Smile_Doctors-BizTalk-Issue.pdf</code> (letter of 2021-08-24 from Cloud 9 Software), <code>references/SFTP Monitoring Tool.docx</code></td>
+</tr>
+<tr>
+<td>O2</td>
+<td>Medium</td>
+<td>Recovery is manual: restart the host service, restore the file from the archive, or reprocess a curated file. Operators read the logs by hand</td>
+<td>Discovery document, section 2</td>
+</tr>
+<tr>
+<td>O3</td>
+<td>Medium</td>
+<td>The BizTalk host account <code>c9\svc.biztalk.host</code> reaches the databases with integrated security <strong>(reported, not verified)</strong></td>
+<td>Discovery document, section 2</td>
+</tr>
+</tbody>
+</table>
+<h2 id="open-questions">Open questions</h2>
+<ol>
+<li>What are the live signatures and bodies of the practice procedures? (D1, D2, D8)</li>
+<li>Which production server hosts <code>BizTalkCloud9Common</code> today? The settings file shows several servers (<code>atl-dbc1</code>, <code>us-ea1-a2-dbs7</code>, <code>c9-p-sql-01</code>).</li>
+<li>Which receive locations are enabled in production today? (C3)</li>
+<li>Which process inserts <code>BTS.ProcessParameter</code> rows for <code>ProcessCHCInboundFiles</code>?</li>
+<li>Is flow E live? (C6)</li>
+<li>Does BizTalk send any 997/999 acknowledgment to the partners? The bindings only show TA1 messages written to <code>${ADDR_FILE_ROOT}\Acks</code>. The discovery session did not confirm any acknowledgment. The spec samples have ISA14 = <code>0</code> (no acknowledgment asked). Is an acknowledgment necessary in the new design?</li>
+<li>Do other systems read <code>BTS.Log</code>, <code>ImportLog</code>, or the BizTalk tracking database for payment status?</li>
+<li>What does the Cloud9 application do with <code>lbcLockboxCode</code>, <code>lbcLockboxCodeType</code>, and <code>BTS.PaymentType</code>? The mapping from BPR04 / PLB codes to <code>TransactionType</code> is in the procedures.</li>
+<li>Which SFTP endpoint will the new application use after the file-transfer changes? Does Guidehouse stay in the path? When does Fifth Third become the direct source?</li>
+<li>Is flow D (Change Healthcare ERA) live? The discovery document does not name it. It asks for ERA adjustments as a possible future need.</li>
+<li>Which ERA transaction types or adjustments are necessary, who asked for them, and what are the acceptance rules?</li>
+<li>Which receive schedule and which folders are live? (C8, C9)</li>
+<li>What observation period and zero-traffic evidence are necessary before a legacy folder, port, or service is disabled?</li>
+<li>The two <code>How To Test *.zip</code> files in <code>references</code> are not reviewed. They cover 276/277 and 837D, not payments.</li>
+</ol>
+</section>
+
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+document.querySelectorAll('code.language-mermaid').forEach(c => {
+  const d = document.createElement('div');
+  d.className = 'mermaid';
+  d.textContent = c.textContent;
+  c.parentElement.replaceWith(d);
+});
+mermaid.initialize({ startOnLoad: false });
+await mermaid.run();
+</script>
+</body>
+</html>

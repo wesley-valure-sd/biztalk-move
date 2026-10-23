@@ -1,0 +1,11 @@
+MAP: PatientToProcess_To_GetProcessingStagingPatientMessages.btm
+PATH: Cloud9.BizTalk\Cloud9.BizTalk.Epic\Maps\PatientToProcess_To_GetProcessingStagingPatientMessages.btm
+SOURCE: Cloud9.BizTalk.Schemas.QUSP_TypedPolling_QueueUnprocessedStagingPatientIDs (root TypedPollingResultSet0)
+TARGET: Cloud9.BizTalk.Schemas.GPSP_TypedProcedure_BTS (root GetProcessingStagingPatientMessages)
+SCRIPT PRECEDENCE (first match wins when a functoid has more than one script): CSharp > ExternalAssembly > VbNet > JScript > XsltCallTemplate > Xslt
+
+=== PAGE: Page 1 ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L1: TypedPollingResultSet0/hisEPICPatientID -> GetProcessingStagingPatientMessages/hisEPICPatientID
+--- FUNCTOIDS ---
+

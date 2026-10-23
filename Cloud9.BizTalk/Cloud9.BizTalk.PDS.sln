@@ -1,0 +1,110 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cloud9.BizTalk.Epic.BTAHL7V2XCommon.Schemas", "Cloud9.BizTalk.Epic.BTAHL7V2XCommon.Schemas\Cloud9.BizTalk.Epic.BTAHL7V2XCommon.Schemas.btproj", "{12101033-8C98-4F32-AE0F-96FCADE07407}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cloud9.BizTalk.Epic.BTAHL7V26Common.Schemas", "Cloud9.BizTalk.Epic.BTAHL7V26Common.Schemas\Cloud9.BizTalk.Epic.BTAHL7V26Common.Schemas.btproj", "{CA5BBCA2-C69A-4114-8D1D-E7042C8FF2EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cloud9.BizTalk.Epic.BTAHL7_2_6.Schemas", "Cloud9.BizTalk.Epic.BTAHL7_2_6.Schemas\Cloud9.BizTalk.Epic.BTAHL7_2_6.Schemas.btproj", "{EDEB5BA0-194A-42BE-A947-F113F48B7520}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cloud9.BizTalk.Schemas", "Cloud9.BizTalk.Schemas\Cloud9.BizTalk.Schemas.btproj", "{DD30F6B7-769D-4D18-99E3-B94B46003EAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cloud9.BizTalk.Epic", "Cloud9.BizTalk.Epic\Cloud9.BizTalk.Epic.btproj", "{36C59292-3038-4E0B-A783-29997786B09D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cloud9.BizTalk.Helper", "Cloud9.BizTalk.Helper\Cloud9.BizTalk.Helper.csproj", "{5397F72F-A8B7-4B25-87DD-DC25C77CC9CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cloud9.BizTalk.Shared.Components.Archive", "Cloud9.BizTalk.Shared.Components.Archive\Cloud9.BizTalk.Shared.Components.Archive.csproj", "{6A6303BE-D627-43EA-813F-E761F53FE0A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cloud9.BizTalk.ReportGenerator", "Cloud9.BizTalk.ReportGenerator\Cloud9.BizTalk.ReportGenerator\Cloud9.BizTalk.ReportGenerator.csproj", "{2D7AF5B8-66FF-489A-93C8-9576B704D527}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cloud9.BizTalk.Reports", "Cloud9.BizTalk.ReportGenerator\Cloud9.BizTalk.Reports\Cloud9.BizTalk.Reports.csproj", "{A9FCC58C-81D5-41F9-80CA-C44BD34D8D32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cloud9.BizTalk.SignalR.Helper", "Cloud9.BizTalk.SignalR.Helper\Cloud9.BizTalk.SignalR.Helper.csproj", "{201D36A5-3207-474E-9AF3-4B32C877DDEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cloud9.BizTalk.Common", "Cloud9.BizTalk.Common\Cloud9.BizTalk.Common.btproj", "{3B42AC4F-F3AB-4459-97A2-A5AFF989E9BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings", "Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings\Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.csproj", "{6A1EE72A-A584-447A-A892-C1030FF7982E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cloud9.BizTalk.PDS.Deployment", "Cloud9.BizTalk.PDS.Deployment", "{7E704E0F-7B44-4EB1-9EFC-4AC6C28A342E}"
+	ProjectSection(SolutionItems) = preProject
+		Cloud9.BizTalk.PDS.Deployment\Deployment.btdfproj = Cloud9.BizTalk.PDS.Deployment\Deployment.btdfproj
+		Cloud9.BizTalk.PDS.Deployment\InstallWizard.xml = Cloud9.BizTalk.PDS.Deployment\InstallWizard.xml
+		Cloud9.BizTalk.PDS.Deployment\License.rtf = Cloud9.BizTalk.PDS.Deployment\License.rtf
+		Cloud9.BizTalk.PDS.Deployment\PortBindingsMaster.xml = Cloud9.BizTalk.PDS.Deployment\PortBindingsMaster.xml
+		Cloud9.BizTalk.PDS.Deployment\SettingsFileGenerator.xml = Cloud9.BizTalk.PDS.Deployment\SettingsFileGenerator.xml
+		Cloud9.BizTalk.PDS.Deployment\UnInstallWizard.xml = Cloud9.BizTalk.PDS.Deployment\UnInstallWizard.xml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{12101033-8C98-4F32-AE0F-96FCADE07407}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12101033-8C98-4F32-AE0F-96FCADE07407}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12101033-8C98-4F32-AE0F-96FCADE07407}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{12101033-8C98-4F32-AE0F-96FCADE07407}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12101033-8C98-4F32-AE0F-96FCADE07407}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12101033-8C98-4F32-AE0F-96FCADE07407}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{CA5BBCA2-C69A-4114-8D1D-E7042C8FF2EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA5BBCA2-C69A-4114-8D1D-E7042C8FF2EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA5BBCA2-C69A-4114-8D1D-E7042C8FF2EC}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{CA5BBCA2-C69A-4114-8D1D-E7042C8FF2EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA5BBCA2-C69A-4114-8D1D-E7042C8FF2EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA5BBCA2-C69A-4114-8D1D-E7042C8FF2EC}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{EDEB5BA0-194A-42BE-A947-F113F48B7520}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDEB5BA0-194A-42BE-A947-F113F48B7520}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDEB5BA0-194A-42BE-A947-F113F48B7520}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{EDEB5BA0-194A-42BE-A947-F113F48B7520}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDEB5BA0-194A-42BE-A947-F113F48B7520}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDEB5BA0-194A-42BE-A947-F113F48B7520}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{DD30F6B7-769D-4D18-99E3-B94B46003EAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD30F6B7-769D-4D18-99E3-B94B46003EAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD30F6B7-769D-4D18-99E3-B94B46003EAD}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{DD30F6B7-769D-4D18-99E3-B94B46003EAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD30F6B7-769D-4D18-99E3-B94B46003EAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD30F6B7-769D-4D18-99E3-B94B46003EAD}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{36C59292-3038-4E0B-A783-29997786B09D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36C59292-3038-4E0B-A783-29997786B09D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36C59292-3038-4E0B-A783-29997786B09D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{36C59292-3038-4E0B-A783-29997786B09D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36C59292-3038-4E0B-A783-29997786B09D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36C59292-3038-4E0B-A783-29997786B09D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{5397F72F-A8B7-4B25-87DD-DC25C77CC9CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5397F72F-A8B7-4B25-87DD-DC25C77CC9CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5397F72F-A8B7-4B25-87DD-DC25C77CC9CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5397F72F-A8B7-4B25-87DD-DC25C77CC9CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A6303BE-D627-43EA-813F-E761F53FE0A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A6303BE-D627-43EA-813F-E761F53FE0A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A6303BE-D627-43EA-813F-E761F53FE0A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A6303BE-D627-43EA-813F-E761F53FE0A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D7AF5B8-66FF-489A-93C8-9576B704D527}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D7AF5B8-66FF-489A-93C8-9576B704D527}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D7AF5B8-66FF-489A-93C8-9576B704D527}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D7AF5B8-66FF-489A-93C8-9576B704D527}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9FCC58C-81D5-41F9-80CA-C44BD34D8D32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9FCC58C-81D5-41F9-80CA-C44BD34D8D32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9FCC58C-81D5-41F9-80CA-C44BD34D8D32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9FCC58C-81D5-41F9-80CA-C44BD34D8D32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{201D36A5-3207-474E-9AF3-4B32C877DDEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{201D36A5-3207-474E-9AF3-4B32C877DDEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{201D36A5-3207-474E-9AF3-4B32C877DDEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{201D36A5-3207-474E-9AF3-4B32C877DDEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B42AC4F-F3AB-4459-97A2-A5AFF989E9BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B42AC4F-F3AB-4459-97A2-A5AFF989E9BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B42AC4F-F3AB-4459-97A2-A5AFF989E9BF}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3B42AC4F-F3AB-4459-97A2-A5AFF989E9BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B42AC4F-F3AB-4459-97A2-A5AFF989E9BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B42AC4F-F3AB-4459-97A2-A5AFF989E9BF}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{6A1EE72A-A584-447A-A892-C1030FF7982E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A1EE72A-A584-447A-A892-C1030FF7982E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A1EE72A-A584-447A-A892-C1030FF7982E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A1EE72A-A584-447A-A892-C1030FF7982E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

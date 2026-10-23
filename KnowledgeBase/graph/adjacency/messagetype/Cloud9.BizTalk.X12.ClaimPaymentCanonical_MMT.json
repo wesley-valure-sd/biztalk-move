@@ -1,0 +1,37 @@
+{
+  "node": {
+    "id": "messagetype:Cloud9.BizTalk.X12.ClaimPaymentCanonical_MMT",
+    "type": "messagetype",
+    "name": "ClaimPaymentCanonical_MMT",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_835Insurance.odx",
+    "bodyType": "Cloud9.BizTalk.Schemas.Canonical.ClaimPayment",
+    "module": "Cloud9.BizTalk.X12"
+  },
+  "outgoing": [
+    {
+      "type": "bodySchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.Canonical.ClaimPayment",
+      "toName": "Cloud9.BizTalk.Schemas.Canonical.ClaimPayment",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.Canonical.ClaimPayment.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.Canonical.ClaimPayment"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_835Insurance.odx",
+      "fromName": "Process_CHC_835Insurance.odx",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Orchestrations_Process_CHC_835Insurance.odx.json"
+    },
+    {
+      "type": "usesMessageType",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_835Insurance",
+      "fromName": "Process_CHC_835Insurance",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_835Insurance.json",
+      "message": "ClaimPaymentCanonical"
+    }
+  ]
+}

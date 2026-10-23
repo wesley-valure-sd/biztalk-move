@@ -1,0 +1,22 @@
+{
+  "node": {
+    "id": "setting:Cloud9.EDI.PDS.Deployment/SsoAppAdminGroup",
+    "type": "setting",
+    "name": "SsoAppAdminGroup",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.PDS.Deployment/SettingsFileGenerator.xml",
+    "bindingSet": "Cloud9.EDI.PDS.Deployment",
+    "valuesByEnvironment": {
+      "Default Values": "BizTalk Server Administrators",
+      "Local Dev (LocalSettings)": "BizTalk Server Administrators",
+      "LAB2 (LAB2Settings)": "CLOUD9\\BizTalk-LAB-SSO-Admins",
+      "DEV (DEVSettings)": "pdsi.corp\\AWS-Biztalk-DEV-SSO-Admins-Cloud9",
+      "CFG (CFGSettings)": "pdsi.corp\\AWS-Biztalk-TST-SSO-Admins-Cloud9",
+      "TST (TSTSettings)": "pdsi.corp\\AWS-Biztalk-TST-SSO-Admins-Cloud9",
+      "TRN (TrainingSettings)": "pdsi.corp\\AWS-Biztalk-TRN-SSO-Admins-Cloud9",
+      "STG (StagingSettings)": "pdsi.corp\\AWS-Biztalk-STG-SSO-Admins-Cloud9",
+      "PROD (ProdSettings)": "pdsi.corp\\AWS-Biztalk-PRD-SSO-Admins-Cloud9"
+    }
+  },
+  "outgoing": [],
+  "incoming": []
+}

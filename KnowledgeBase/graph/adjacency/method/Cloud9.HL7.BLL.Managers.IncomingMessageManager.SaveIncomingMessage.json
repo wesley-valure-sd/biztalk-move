@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.HL7.BLL.Managers.IncomingMessageManager.SaveIncomingMessage",
+    "type": "method",
+    "name": "IncomingMessageManager.SaveIncomingMessage",
+    "path": "Cloud9.HL7.WebAPI/Cloud9.HL7.BLL/Managers/IncomingMessageManager.cs",
+    "class": "Cloud9.HL7.BLL.Managers.IncomingMessageManager",
+    "line": 17,
+    "signatures": [
+      "public static string SaveIncomingMessage(IncomingMessageItem incomingMessage)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.HL7.BLL.Managers.IncomingMessageManager",
+      "fromName": "Cloud9.HL7.BLL.Managers.IncomingMessageManager",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.HL7.BLL.Managers.IncomingMessageManager.json"
+    }
+  ]
+}

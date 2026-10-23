@@ -1,0 +1,25 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.GLT_ProcedureResultSet_BTS_GetLocationTimezone",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.GLT_ProcedureResultSet_BTS_GetLocationTimezone",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetLocationTimezone/GLT_ProcedureResultSet.BTS.GetLocationTimezone.xsd",
+    "rootElements": [
+      "StoredProcedureResultSet0",
+      "ArrayOfStoredProcedureResultSet0"
+    ],
+    "kind": "wcf-sql-result-set",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetLocationTimezone",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetLocationTimezone/GLT_ProcedureResultSet.BTS.GetLocationTimezone.xsd",
+      "toName": "GLT_ProcedureResultSet.BTS.GetLocationTimezone.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_GetLocationTimezone_GLT_ProcedureResultSet.BTS.GetLocationTimezone.xsd.json"
+    }
+  ],
+  "incoming": []
+}

@@ -1,0 +1,111 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_277ClaimsStatus.odx",
+    "type": "file",
+    "name": "Process_CHC_277ClaimsStatus.odx",
+    "kind": "odx",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_277ClaimsStatus.odx"
+  },
+  "outgoing": [
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.X12.CHC277_MMT",
+      "toName": "CHC277_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.CHC277_MMT.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.X12.CHC277A_MMT",
+      "toName": "CHC277A_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.CHC277A_MMT.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.X12.AddClaimErrorsRequest_MMT",
+      "toName": "AddClaimErrorsRequest_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.AddClaimErrorsRequest_MMT.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.X12.AddClaimErrorsResponse_MMT",
+      "toName": "AddClaimErrorsResponse_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.AddClaimErrorsResponse_MMT.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.X12.UpdateClaimStatusesRequest_MMT",
+      "toName": "UpdateClaimStatusesRequest_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.UpdateClaimStatusesRequest_MMT.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.X12.UpdateClaimStatusesResponse_MMT",
+      "toName": "UpdateClaimStatusesResponse_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.UpdateClaimStatusesResponse_MMT.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.X12.ClaimStatusCanonical_MMT",
+      "toName": "ClaimStatusCanonical_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.ClaimStatusCanonical_MMT.json"
+    },
+    {
+      "type": "defines",
+      "to": "porttype:Cloud9.BizTalk.X12.PortType_ReceiveCHC277",
+      "toName": "PortType_ReceiveCHC277",
+      "toType": "porttype",
+      "toFile": "adjacency/porttype/Cloud9.BizTalk.X12.PortType_ReceiveCHC277.json"
+    },
+    {
+      "type": "defines",
+      "to": "porttype:Cloud9.BizTalk.X12.PortType_UpdateClaimStatuses",
+      "toName": "PortType_UpdateClaimStatuses",
+      "toType": "porttype",
+      "toFile": "adjacency/porttype/Cloud9.BizTalk.X12.PortType_UpdateClaimStatuses.json"
+    },
+    {
+      "type": "defines",
+      "to": "porttype:Cloud9.BizTalk.X12.PortType_AddClaimErrors",
+      "toName": "PortType_AddClaimErrors",
+      "toType": "porttype",
+      "toFile": "adjacency/porttype/Cloud9.BizTalk.X12.PortType_AddClaimErrors.json"
+    },
+    {
+      "type": "defines",
+      "to": "porttype:Cloud9.BizTalk.X12.Send_277_BBVA_Type",
+      "toName": "Send_277_BBVA_Type",
+      "toType": "porttype",
+      "toFile": "adjacency/porttype/Cloud9.BizTalk.X12.Send_277_BBVA_Type.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.X12",
+      "fromName": "Cloud9.BizTalk.X12",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.X12.json"
+    },
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.X12.PDS",
+      "fromName": "Cloud9.BizTalk.X12.PDS",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.X12.PDS.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_277ClaimsStatus",
+      "fromName": "Process_CHC_277ClaimsStatus",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_277ClaimsStatus.json"
+    }
+  ]
+}

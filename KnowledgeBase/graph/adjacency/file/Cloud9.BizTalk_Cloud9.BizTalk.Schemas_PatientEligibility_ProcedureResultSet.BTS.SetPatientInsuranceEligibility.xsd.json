@@ -1,0 +1,26 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/PatientEligibility/ProcedureResultSet.BTS.SetPatientInsuranceEligibility.xsd",
+    "type": "file",
+    "name": "ProcedureResultSet.BTS.SetPatientInsuranceEligibility.xsd",
+    "kind": "xsd",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/PatientEligibility/ProcedureResultSet.BTS.SetPatientInsuranceEligibility.xsd"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.Schemas",
+      "fromName": "Cloud9.BizTalk.Schemas",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.Schemas.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "schema:Cloud9.BizTalk.Schemas.ProcedureResultSet_BTS_SetPatientInsuranceEligibilities",
+      "fromName": "Cloud9.BizTalk.Schemas.ProcedureResultSet_BTS_SetPatientInsuranceEligibilities",
+      "fromType": "schema",
+      "fromFile": "adjacency/schema/Cloud9.BizTalk.Schemas.ProcedureResultSet_BTS_SetPatientInsuranceEligibilities.json"
+    }
+  ]
+}

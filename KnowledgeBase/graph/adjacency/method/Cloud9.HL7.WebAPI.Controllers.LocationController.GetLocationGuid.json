@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.HL7.WebAPI.Controllers.LocationController.GetLocationGuid",
+    "type": "method",
+    "name": "LocationController.GetLocationGuid",
+    "path": "Cloud9.HL7.WebAPI/Cloud9.HL7.WebAPI/Controllers/LocationController.cs",
+    "class": "Cloud9.HL7.WebAPI.Controllers.LocationController",
+    "line": 79,
+    "signatures": [
+      "public IHttpActionResult GetLocationGuid(string locationName)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.HL7.WebAPI.Controllers.LocationController",
+      "fromName": "Cloud9.HL7.WebAPI.Controllers.LocationController",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.HL7.WebAPI.Controllers.LocationController.json"
+    }
+  ]
+}

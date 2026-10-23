@@ -1,0 +1,39 @@
+{
+  "node": {
+    "id": "flowstep:SD-Web-04-Post",
+    "type": "flowstep",
+    "name": "Post each payment with BTS.Post835PatientTransaction (WEB)",
+    "order": 4,
+    "curated": true,
+    "logic": "lbcLockboxCodeType='WEB'. transNote and transReceiptNote come from FormatNote(): ACH -> '<M/dd/yyyy> payment; Transaction ID = <id>; Response = Check Submitted'. REV -> '<M/dd/yyyy HH:mm:ss tt> - Web ACH Return - ($<abs amount>) Additional Info: <id>'. CCC -> 'Approval Code=<code>; Transaction ID=<id>'. transReference = masked bank account if a routing number exists, else masked card number."
+  },
+  "outgoing": [
+    {
+      "type": "implementedBy",
+      "to": "map:Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835PatientTransactionWeb",
+      "toName": "Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835PatientTransactionWeb",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835PatientTransactionWeb.json",
+      "curated": true
+    },
+    {
+      "type": "implementedBy",
+      "to": "sqlproc:PracticeDB.BTS.Post835PatientTransaction",
+      "toName": "BTS.Post835PatientTransaction",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/PracticeDB.BTS.Post835PatientTransaction.json",
+      "curated": true
+    }
+  ],
+  "incoming": [
+    {
+      "type": "hasStep",
+      "from": "flow:SD-835-Web-Patient-Payment",
+      "fromName": "Smile Doctors web payment 835 -> patient payment transactions (card / ACH / ACH return)",
+      "fromType": "flow",
+      "fromFile": "adjacency/flow/SD-835-Web-Patient-Payment.json",
+      "order": 4,
+      "curated": true
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "node": {
+    "id": "map:Cloud9.BizTalk.Epic.Transform_QueueProcParams_To_UpdateQueueProcParams",
+    "type": "map",
+    "name": "Cloud9.BizTalk.Epic.Transform_QueueProcParams_To_UpdateQueueProcParams",
+    "readableSummary": "KnowledgeBase/map-summaries/Transform_QueueProcParams_To_UpdateQueueProcParams.txt",
+    "targetSchema": "Cloud9.BizTalk.Schemas.UPP_TypedProcedure_BTS",
+    "inlineScripts": [],
+    "functoidCount": 2,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/Transform_QueueProcParams_To_UpdateQueueProcParams.btm",
+    "sourceSchema": "Cloud9.BizTalk.Schemas.QPP_TypedPolling_QueueProcessParameters",
+    "linkCount": 5,
+    "sourceRoot": "TypedPolling",
+    "targetRoot": "UpdateProcessParameters"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/Transform_QueueProcParams_To_UpdateQueueProcParams.btm",
+      "toName": "Transform_QueueProcParams_To_UpdateQueueProcParams.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Maps_Transform_QueueProcParams_To_UpdateQueueProcParams.btm.json"
+    },
+    {
+      "type": "sourceSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.QPP_TypedPolling_QueueProcessParameters",
+      "toName": "Cloud9.BizTalk.Schemas.QPP_TypedPolling_QueueProcessParameters",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.QPP_TypedPolling_QueueProcessParameters.json",
+      "root": "TypedPolling"
+    },
+    {
+      "type": "targetSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.UPP_TypedProcedure_BTS",
+      "toName": "Cloud9.BizTalk.Schemas.UPP_TypedProcedure_BTS",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.UPP_TypedProcedure_BTS.json",
+      "root": "UpdateProcessParameters"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "usesMap",
+      "from": "orchestration:Cloud9.BizTalk.Epic.ProcessTreatmentCardData_Controller",
+      "fromName": "ProcessTreatmentCardData_Controller",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.ProcessTreatmentCardData_Controller.json",
+      "output": "msg_UpdateProcessParametersReq.Body",
+      "input": "msg_QueueProcessParametersResp.Body",
+      "line": 620
+    }
+  ]
+}

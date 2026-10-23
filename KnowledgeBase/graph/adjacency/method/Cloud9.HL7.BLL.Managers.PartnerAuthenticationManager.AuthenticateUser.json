@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.HL7.BLL.Managers.PartnerAuthenticationManager.AuthenticateUser",
+    "type": "method",
+    "name": "PartnerAuthenticationManager.AuthenticateUser",
+    "path": "Cloud9.HL7.WebAPI/Cloud9.HL7.BLL/Managers/PartnerAuthenticationManager.cs",
+    "class": "Cloud9.HL7.BLL.Managers.PartnerAuthenticationManager",
+    "line": 14,
+    "signatures": [
+      "public static int AuthenticateUser(string userName, string password)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.HL7.BLL.Managers.PartnerAuthenticationManager",
+      "fromName": "Cloud9.HL7.BLL.Managers.PartnerAuthenticationManager",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.HL7.BLL.Managers.PartnerAuthenticationManager.json"
+    }
+  ]
+}

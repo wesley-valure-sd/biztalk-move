@@ -1,0 +1,51 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.ASP_TypedProcedure_BTS",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.ASP_TypedProcedure_BTS",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/SignalR/ASP_TypedProcedure.BTS.xsd",
+    "rootElements": [
+      "AddSignalRPayload",
+      "AddSignalRPayloadResponse"
+    ],
+    "kind": "wcf-sql-typed-procedure",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS",
+    "sqlActions": [
+      "TypedProcedure/BTS/AddSignalRPayload"
+    ]
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/SignalR/ASP_TypedProcedure.BTS.xsd",
+      "toName": "ASP_TypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_SignalR_ASP_TypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "describesParametersOf",
+      "to": "sqlproc:PracticeDB.BTS.AddSignalRPayload",
+      "toName": "BTS.AddSignalRPayload",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/PracticeDB.BTS.AddSignalRPayload.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.Epic.MPType_SignalRAddPayloadResp",
+      "fromName": "MPType_SignalRAddPayloadResp",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_SignalRAddPayloadResp.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.ASP_TypedProcedure_BTS.AddSignalRPayloadResponse"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.Epic.MPType_SignalRAddPayloadReq",
+      "fromName": "MPType_SignalRAddPayloadReq",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_SignalRAddPayloadReq.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.ASP_TypedProcedure_BTS.AddSignalRPayload"
+    }
+  ]
+}

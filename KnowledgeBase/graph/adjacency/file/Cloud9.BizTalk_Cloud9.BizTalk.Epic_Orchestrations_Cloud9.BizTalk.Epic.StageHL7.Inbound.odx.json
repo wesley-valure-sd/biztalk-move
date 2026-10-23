@@ -1,0 +1,90 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.StageHL7.Inbound.odx",
+    "type": "file",
+    "name": "Cloud9.BizTalk.Epic.StageHL7.Inbound.odx",
+    "kind": "odx",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.StageHL7.Inbound.odx"
+  },
+  "outgoing": [
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.Epic.MPType_GetPracticeConfigResp",
+      "toName": "MPType_GetPracticeConfigResp",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_GetPracticeConfigResp.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.Epic.MPType_GetPracticeConfigReq",
+      "toName": "MPType_GetPracticeConfigReq",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_GetPracticeConfigReq.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.Epic.MPType_HL7StagingReq",
+      "toName": "MPType_HL7StagingReq",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_HL7StagingReq.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.Epic.MPType_HL7StagingResp",
+      "toName": "MPType_HL7StagingResp",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_HL7StagingResp.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.Epic.MPType_ProcessingErrorReq",
+      "toName": "MPType_ProcessingErrorReq",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_ProcessingErrorReq.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.Epic.MPType_ProcessingErrorResp",
+      "toName": "MPType_ProcessingErrorResp",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_ProcessingErrorResp.json"
+    },
+    {
+      "type": "defines",
+      "to": "porttype:Cloud9.BizTalk.Epic.PortType_GetOrganziationConfig",
+      "toName": "PortType_GetOrganziationConfig",
+      "toType": "porttype",
+      "toFile": "adjacency/porttype/Cloud9.BizTalk.Epic.PortType_GetOrganziationConfig.json"
+    },
+    {
+      "type": "defines",
+      "to": "porttype:Cloud9.BizTalk.Epic.PortType_ProcessingError",
+      "toName": "PortType_ProcessingError",
+      "toType": "porttype",
+      "toFile": "adjacency/porttype/Cloud9.BizTalk.Epic.PortType_ProcessingError.json"
+    },
+    {
+      "type": "defines",
+      "to": "porttype:Cloud9.BizTalk.Epic.PortType_SendHL7StagingInsert",
+      "toName": "PortType_SendHL7StagingInsert",
+      "toType": "porttype",
+      "toFile": "adjacency/porttype/Cloud9.BizTalk.Epic.PortType_SendHL7StagingInsert.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.Epic",
+      "fromName": "Cloud9.BizTalk.Epic",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.Epic.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "orchestration:Cloud9.BizTalk.Epic.StageHL7_Inbound",
+      "fromName": "StageHL7_Inbound",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.StageHL7_Inbound.json"
+    }
+  ]
+}

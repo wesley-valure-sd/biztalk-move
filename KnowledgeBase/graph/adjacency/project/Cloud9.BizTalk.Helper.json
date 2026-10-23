@@ -1,0 +1,198 @@
+{
+  "node": {
+    "id": "project:Cloud9.BizTalk.Helper",
+    "type": "project",
+    "name": "Cloud9.BizTalk.Helper",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/Cloud9.BizTalk.Helper.csproj",
+    "framework": "v4.6",
+    "kind": "csharp",
+    "rootNamespace": "Cloud9.BizTalk.Helper",
+    "assemblyName": "Cloud9.BizTalk.Helper"
+  },
+  "outgoing": [
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/Authorization.cs",
+      "toName": "Authorization.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Helper_Authorization.cs.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/ClaimStatus.cs",
+      "toName": "ClaimStatus.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Helper_ClaimStatus.cs.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/Cloud9.BizTalk.Helper.cs",
+      "toName": "Cloud9.BizTalk.Helper.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Helper_Cloud9.BizTalk.Helper.cs.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/CustomBTXMessage.cs",
+      "toName": "CustomBTXMessage.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Helper_CustomBTXMessage.cs.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/DateFormatConversion.cs",
+      "toName": "DateFormatConversion.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Helper_DateFormatConversion.cs.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/EDIClaimHelper.cs",
+      "toName": "EDIClaimHelper.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Helper_EDIClaimHelper.cs.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/EDICodeConversion.cs",
+      "toName": "EDICodeConversion.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Helper_EDICodeConversion.cs.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/EmdeonHelper.cs",
+      "toName": "EmdeonHelper.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Helper_EmdeonHelper.cs.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/HL7BTXMessage.cs",
+      "toName": "HL7BTXMessage.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Helper_HL7BTXMessage.cs.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/HL7TypeConversion.cs",
+      "toName": "HL7TypeConversion.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Helper_HL7TypeConversion.cs.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/MessagePart.cs",
+      "toName": "MessagePart.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Helper_MessagePart.cs.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/OutboundAPI.cs",
+      "toName": "OutboundAPI.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Helper_OutboundAPI.cs.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/ParseNameAddressBox.cs",
+      "toName": "ParseNameAddressBox.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Helper_ParseNameAddressBox.cs.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/SSOClientHelper.cs",
+      "toName": "SSOClientHelper.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Helper_SSOClientHelper.cs.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/Validation.cs",
+      "toName": "Validation.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Helper_Validation.cs.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/XLangMessageHelpers.cs",
+      "toName": "XLangMessageHelpers.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Helper_XLangMessageHelpers.cs.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/APIItems/ExceptionItem.cs",
+      "toName": "ExceptionItem.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Helper_APIItems_ExceptionItem.cs.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/APIItems/TransmissionItem.cs",
+      "toName": "TransmissionItem.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Helper_APIItems_TransmissionItem.cs.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "references",
+      "from": "project:Cloud9.BizTalk.Epic",
+      "fromName": "Cloud9.BizTalk.Epic",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.Epic.json"
+    },
+    {
+      "type": "references",
+      "from": "project:Cloud9.BizTalk.HelperTest",
+      "fromName": "Cloud9.BizTalk.HelperTest",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.HelperTest.json"
+    },
+    {
+      "type": "references",
+      "from": "project:Cloud9.BizTalk.X12",
+      "fromName": "Cloud9.BizTalk.X12",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.X12.json"
+    },
+    {
+      "type": "references",
+      "from": "project:Cloud9.BizTalk.X12.PDS",
+      "fromName": "Cloud9.BizTalk.X12.PDS",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.X12.PDS.json"
+    },
+    {
+      "type": "contains",
+      "from": "solution:Cloud9.BizTalk.PDS",
+      "fromName": "Cloud9.BizTalk.PDS",
+      "fromType": "solution",
+      "fromFile": "adjacency/solution/Cloud9.BizTalk.PDS.json"
+    },
+    {
+      "type": "contains",
+      "from": "solution:Cloud9.BizTalk",
+      "fromName": "Cloud9.BizTalk",
+      "fromType": "solution",
+      "fromFile": "adjacency/solution/Cloud9.BizTalk.json"
+    },
+    {
+      "type": "contains",
+      "from": "solution:Cloud9.EDI.PDS",
+      "fromName": "Cloud9.EDI.PDS",
+      "fromType": "solution",
+      "fromFile": "adjacency/solution/Cloud9.EDI.PDS.json"
+    },
+    {
+      "type": "contains",
+      "from": "solution:Cloud9.EDI",
+      "fromName": "Cloud9.EDI",
+      "fromType": "solution",
+      "fromFile": "adjacency/solution/Cloud9.EDI.json"
+    }
+  ]
+}

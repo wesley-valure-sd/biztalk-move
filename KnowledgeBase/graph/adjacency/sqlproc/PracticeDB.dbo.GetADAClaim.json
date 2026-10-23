@@ -1,0 +1,28 @@
+{
+  "node": {
+    "id": "sqlproc:PracticeDB.dbo.GetADAClaim",
+    "type": "sqlproc",
+    "name": "dbo.GetADAClaim",
+    "database": "PracticeDB (one database per practice; resolved at run time from BTS.PracticeConfig.pcInstanceAddress)",
+    "definedInRepo": false
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "describesParametersOf",
+      "from": "schema:Cloud9.BizTalk.Schemas.ADAClaimTypedProcedure_dbo",
+      "fromName": "Cloud9.BizTalk.Schemas.ADAClaimTypedProcedure_dbo",
+      "fromType": "schema",
+      "fromFile": "adjacency/schema/Cloud9.BizTalk.Schemas.ADAClaimTypedProcedure_dbo.json"
+    },
+    {
+      "type": "invokesProc",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_276ClaimStatus",
+      "fromName": "Process_CHC_276ClaimStatus",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_276ClaimStatus.json",
+      "line": 778,
+      "via": "dynamic WCF-SQL send port (WCF.Action set in code)"
+    }
+  ]
+}

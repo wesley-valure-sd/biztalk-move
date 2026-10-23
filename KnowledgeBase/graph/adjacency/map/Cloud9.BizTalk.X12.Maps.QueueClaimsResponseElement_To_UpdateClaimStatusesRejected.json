@@ -1,0 +1,42 @@
+{
+  "node": {
+    "id": "map:Cloud9.BizTalk.X12.Maps.QueueClaimsResponseElement_To_UpdateClaimStatusesRejected",
+    "type": "map",
+    "name": "Cloud9.BizTalk.X12.Maps.QueueClaimsResponseElement_To_UpdateClaimStatusesRejected",
+    "readableSummary": "KnowledgeBase/map-summaries/QueueClaimsResponseElement_To_UpdateClaimStatusesRejected.txt",
+    "targetSchema": "Cloud9.BizTalk.Schemas.UCS_TypedProcedure_BTS",
+    "inlineScripts": [],
+    "functoidCount": 1,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/QueueClaimsResponseElement_To_UpdateClaimStatusesRejected.btm",
+    "sourceSchema": "Cloud9.BizTalk.Schemas.ClaimsProcessing.QC_ProcedureResultSet_BTS_QueueClaims",
+    "linkCount": 2,
+    "sourceRoot": "StoredProcedureResultSet0",
+    "targetRoot": "UpdateClaimStatuses"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/QueueClaimsResponseElement_To_UpdateClaimStatusesRejected.btm",
+      "toName": "QueueClaimsResponseElement_To_UpdateClaimStatusesRejected.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_QueueClaimsResponseElement_To_UpdateClaimStatusesRejected.btm.json"
+    },
+    {
+      "type": "sourceSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.ClaimsProcessing.QC_ProcedureResultSet_BTS_QueueClaims",
+      "toName": "Cloud9.BizTalk.Schemas.ClaimsProcessing.QC_ProcedureResultSet_BTS_QueueClaims",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.ClaimsProcessing.QC_ProcedureResultSet_BTS_QueueClaims.json",
+      "root": "StoredProcedureResultSet0"
+    },
+    {
+      "type": "targetSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.UCS_TypedProcedure_BTS",
+      "toName": "Cloud9.BizTalk.Schemas.UCS_TypedProcedure_BTS",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.UCS_TypedProcedure_BTS.json",
+      "root": "UpdateClaimStatuses"
+    }
+  ],
+  "incoming": []
+}

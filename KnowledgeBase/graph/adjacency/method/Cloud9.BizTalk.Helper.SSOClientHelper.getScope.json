@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.Helper.SSOClientHelper.getScope",
+    "type": "method",
+    "name": "SSOClientHelper.getScope",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/SSOClientHelper.cs",
+    "class": "Cloud9.BizTalk.Helper.SSOClientHelper",
+    "line": 72,
+    "signatures": [
+      "public static string getScope()"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.Helper.SSOClientHelper",
+      "fromName": "Cloud9.BizTalk.Helper.SSOClientHelper",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.Helper.SSOClientHelper.json"
+    }
+  ]
+}

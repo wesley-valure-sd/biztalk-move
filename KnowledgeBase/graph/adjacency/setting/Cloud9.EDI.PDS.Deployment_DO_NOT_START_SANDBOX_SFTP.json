@@ -1,0 +1,22 @@
+{
+  "node": {
+    "id": "setting:Cloud9.EDI.PDS.Deployment/DO_NOT_START_SANDBOX_SFTP",
+    "type": "setting",
+    "name": "DO_NOT_START_SANDBOX_SFTP",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.PDS.Deployment/SettingsFileGenerator.xml",
+    "bindingSet": "Cloud9.EDI.PDS.Deployment",
+    "valuesByEnvironment": {
+      "Default Values": "DO_NOT_START_RL_",
+      "Local Dev (LocalSettings)": "DO_NOT_START_RL_",
+      "LAB2 (LAB2Settings)": "DO_NOT_START_RL_",
+      "DEV (DEVSettings)": "DO_NOT_START_RL_",
+      "CFG (CFGSettings)": "DO_NOT_START_RL_",
+      "TST (TSTSettings)": "DO_NOT_START_RL_",
+      "TRN (TrainingSettings)": "DO_NOT_START_RL_",
+      "STG (StagingSettings)": "DO_NOT_START_RL_",
+      "PROD (ProdSettings)": "RL_"
+    }
+  },
+  "outgoing": [],
+  "incoming": []
+}

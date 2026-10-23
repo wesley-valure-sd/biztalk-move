@@ -1,0 +1,97 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.Canonical.ClaimPaymentBatch",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.Canonical.ClaimPaymentBatch",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Canonical/ClaimPaymentBatch.xsd",
+    "rootElements": [
+      "ClaimPaymentBatch"
+    ],
+    "kind": "canonical-or-other",
+    "targetNamespace": "http://Cloud9.BizTalk.Schemas.Canonical.ClaimPaymentBatch",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Canonical/ClaimPaymentBatch.xsd",
+      "toName": "ClaimPaymentBatch.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_Canonical_ClaimPaymentBatch.xsd.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.X12.Maps.BBVA_835_To_AdjustmentClaimPaymentBatchCanonical",
+      "fromName": "Cloud9.BizTalk.X12.Maps.BBVA_835_To_AdjustmentClaimPaymentBatchCanonical",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.BBVA_835_To_AdjustmentClaimPaymentBatchCanonical.json",
+      "root": "ClaimPaymentBatch"
+    },
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.X12.Maps.BBVA_835Insurance_To_ClaimPaymentBatchCanonical",
+      "fromName": "Cloud9.BizTalk.X12.Maps.BBVA_835Insurance_To_ClaimPaymentBatchCanonical",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.BBVA_835Insurance_To_ClaimPaymentBatchCanonical.json",
+      "root": "ClaimPaymentBatch"
+    },
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.X12.Maps.BBVA_835Patient_To_ClaimPaymentBatchCanonical",
+      "fromName": "Cloud9.BizTalk.X12.Maps.BBVA_835Patient_To_ClaimPaymentBatchCanonical",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.BBVA_835Patient_To_ClaimPaymentBatchCanonical.json",
+      "root": "ClaimPaymentBatch"
+    },
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.X12.Maps.CHC_835_To_ClaimPaymentBatchCanonical",
+      "fromName": "Cloud9.BizTalk.X12.Maps.CHC_835_To_ClaimPaymentBatchCanonical",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.CHC_835_To_ClaimPaymentBatchCanonical.json",
+      "root": "ClaimPaymentBatch"
+    },
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.X12.Maps.SD_835WebPayment_To_ClaimPaymentBatchCanonical",
+      "fromName": "Cloud9.BizTalk.X12.Maps.SD_835WebPayment_To_ClaimPaymentBatchCanonical",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.SD_835WebPayment_To_ClaimPaymentBatchCanonical.json",
+      "root": "ClaimPaymentBatch"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.ClaimPaymentBatch_MMT",
+      "fromName": "ClaimPaymentBatch_MMT",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.ClaimPaymentBatch_MMT.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.Canonical.ClaimPaymentBatch"
+    },
+    {
+      "type": "usesSchema",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_BBVA_835Insurance",
+      "fromName": "Process_BBVA_835Insurance",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_BBVA_835Insurance.json",
+      "message": "AdjClaimPaymentBatch"
+    },
+    {
+      "type": "usesSchema",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_BBVA_835Patient",
+      "fromName": "Process_BBVA_835Patient",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_BBVA_835Patient.json",
+      "message": "ClaimPaymentBatch"
+    },
+    {
+      "type": "usesSchema",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_SD_835Patient",
+      "fromName": "Process_SD_835Patient",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_SD_835Patient.json",
+      "message": "ClaimPaymentBatch"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "node": {
+    "id": "orchestration:Cloud9.BizTalk.X12.EDITypes",
+    "type": "orchestration",
+    "name": "EDITypes",
+    "ports": [],
+    "messages": [],
+    "visibility": "internal",
+    "module": "Cloud9.BizTalk.X12",
+    "contextProperties": [],
+    "line": 744,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/EDITypes.odx",
+    "bindingStates": {
+      "Cloud9.EDI.Deployment": "Started",
+      "Cloud9.EDI.PDS.Deployment": "Started"
+    }
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/EDITypes.odx",
+      "toName": "EDITypes.odx",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Orchestrations_EDITypes.odx.json"
+    }
+  ],
+  "incoming": []
+}

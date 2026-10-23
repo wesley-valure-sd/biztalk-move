@@ -1,0 +1,21 @@
+{
+  "node": {
+    "id": "class:Cloud9.BizTalk.Helper.APIItems.TransmissionItem",
+    "type": "class",
+    "name": "Cloud9.BizTalk.Helper.APIItems.TransmissionItem",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/APIItems/TransmissionItem.cs",
+    "visibility": "public",
+    "kind": "class",
+    "line": 9
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/APIItems/TransmissionItem.cs",
+      "fromName": "TransmissionItem.cs",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Helper_APIItems_TransmissionItem.cs.json"
+    }
+  ]
+}

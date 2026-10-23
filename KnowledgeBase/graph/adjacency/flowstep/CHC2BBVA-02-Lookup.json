@@ -1,0 +1,39 @@
+{
+  "node": {
+    "id": "flowstep:CHC2BBVA-02-Lookup",
+    "type": "flowstep",
+    "name": "Look up outbound agreement by payee ID",
+    "order": 2,
+    "curated": true,
+    "logic": "PayeeIdentifier = N1*PE N104. BTS.GetApplicationLookupValues(alvApplication='CHC835ToBBVA', alvLookup=<payee id>). Keys AgreementNameForSend, SenderPartyNameForSend, ReceiverPartyNameForSend. Seed row: payee 1000000004 -> ChangeHealthcare_BBVA, ChangeHealthcare, BBVA."
+  },
+  "outgoing": [
+    {
+      "type": "implementedBy",
+      "to": "orchestration:Cloud9.BizTalk.X12.Process_CHC_835_To_BBVA",
+      "toName": "Process_CHC_835_To_BBVA",
+      "toType": "orchestration",
+      "toFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_835_To_BBVA.json",
+      "curated": true
+    },
+    {
+      "type": "implementedBy",
+      "to": "sqlproc:BizTalkCloud9Common.BTS.GetApplicationLookupValues",
+      "toName": "BTS.GetApplicationLookupValues",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.GetApplicationLookupValues.json",
+      "curated": true
+    }
+  ],
+  "incoming": [
+    {
+      "type": "hasStep",
+      "from": "flow:CHC-835-To-BBVA-Passthrough",
+      "fromName": "Change Healthcare 835 pass-through to the BBVA/SD SFTP (no posting)",
+      "fromType": "flow",
+      "fromFile": "adjacency/flow/CHC-835-To-BBVA-Passthrough.json",
+      "order": 2,
+      "curated": true
+    }
+  ]
+}

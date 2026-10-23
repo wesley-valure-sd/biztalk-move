@@ -1,0 +1,26 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ApplicationLookupValue/ALV_ProcedureResultSet.BTS.GetApplicationLookupValue.xsd",
+    "type": "file",
+    "name": "ALV_ProcedureResultSet.BTS.GetApplicationLookupValue.xsd",
+    "kind": "xsd",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ApplicationLookupValue/ALV_ProcedureResultSet.BTS.GetApplicationLookupValue.xsd"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.Schemas",
+      "fromName": "Cloud9.BizTalk.Schemas",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.Schemas.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "schema:Cloud9.BizTalk.Schemas.ALV_ProcedureResultSet_BTS_GetApplicationLookupValue",
+      "fromName": "Cloud9.BizTalk.Schemas.ALV_ProcedureResultSet_BTS_GetApplicationLookupValue",
+      "fromType": "schema",
+      "fromFile": "adjacency/schema/Cloud9.BizTalk.Schemas.ALV_ProcedureResultSet_BTS_GetApplicationLookupValue.json"
+    }
+  ]
+}

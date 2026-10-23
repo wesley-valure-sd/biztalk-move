@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.Helper.Authorization.GetOktaAuthorizationCode",
+    "type": "method",
+    "name": "Authorization.GetOktaAuthorizationCode",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/Authorization.cs",
+    "class": "Cloud9.BizTalk.Helper.Authorization",
+    "line": 68,
+    "signatures": [
+      "private static string GetOktaAuthorizationCode(string issuer, string clientId, string redirectUri, string scope, string state, string sessionToken)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.Helper.Authorization",
+      "fromName": "Cloud9.BizTalk.Helper.Authorization",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.Helper.Authorization.json"
+    }
+  ]
+}

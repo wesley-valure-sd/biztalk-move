@@ -1,0 +1,740 @@
+{
+    "description": "Hand-written overlay for the 835 payment flows. Build-CodeGraph.ps1 merges this file into the generated graph. Keep every id equal to a generated id. The build writes a placeholder node and a warning for an id that does not exist.",
+    "nodes": [
+        {
+            "id": "externalsystem:BBVA-Lockbox-SFTP",
+            "type": "externalsystem",
+            "name": "BBVA / Navigant lockbox SFTP (RevenueMed host)",
+            "doc": "KnowledgeBase/docs/02-payments-835-end-to-end.md",
+            "detail": "Sends patient lockbox 835 files and insurance lockbox 835 files. One folder for each practice region. X12 sender ZZ:BBVANAV, receiver ZZ:SMILE DOCTORS. Settings BBVA_SFTP_HOST, BBVA_835_PATIENT_FTP_FOLDER, BBVA_835_INSURANCE_FTP_FOLDER."
+        },
+        {
+            "id": "externalsystem:SmileDoctors-Web-SFTP",
+            "type": "externalsystem",
+            "name": "Smile Doctors web payment SFTP (OpenEdge / XWeb card and ACH payments)",
+            "doc": "KnowledgeBase/docs/02-payments-835-end-to-end.md",
+            "detail": "Sends 835-shaped files for web credit card, ACH and ACH-return payments. One folder SD-<REGION> for each practice. X12 sender ZZ:SMILE DOCTORS, receiver ZZ:CLOUD9. Settings SD_SFTP_HOST, SD_835_WEB_FTP_FOLDER."
+        },
+        {
+            "id": "externalsystem:ChangeHealthcare-Mailbox",
+            "type": "externalsystem",
+            "name": "Change Healthcare (Emdeon) claim submission API mailbox",
+            "doc": "KnowledgeBase/docs/02-payments-835-end-to-end.md",
+            "detail": "HTTP XML API (claim_submission_api). GetMailFileList, GetMailFile, DeleteMailFile. URL and credentials come from BTS.GetPracticeEDISettings in each practice database (pracEmdeonURL / pracEmdeonTestURL / pracEmdeonIsTest). Payload is base64 and can be PKZIP."
+        },
+        {
+            "id": "externalsystem:ChangeHealthcare-SFTP",
+            "type": "externalsystem",
+            "name": "Change Healthcare SFTP (835 and 835-to-BBVA folders)",
+            "doc": "KnowledgeBase/docs/02-payments-835-end-to-end.md",
+            "detail": "SFTP receive locations exist in the bindings but are inside the DEV_ENV_START/STOP block and are disabled by default. Settings CH_SFTP_HOST, CH_SFTP_PORT, CH_835_FTP_FOLDER, CH_835_TO_BBVA_FTP_FOLDER."
+        },
+        {
+            "id": "flow:BBVA-835-Patient-Lockbox",
+            "type": "flow",
+            "name": "BBVA patient lockbox 835 -> patient payment transactions",
+            "doc": "KnowledgeBase/docs/02-payments-835-end-to-end.md#flow-a-bbva-patient-lockbox-835",
+            "replacementSpec": "KnowledgeBase/docs/03-replacement-guide.md"
+        },
+        {
+            "id": "flow:SD-835-Web-Patient-Payment",
+            "type": "flow",
+            "name": "Smile Doctors web payment 835 -> patient payment transactions (card / ACH / ACH return)",
+            "doc": "KnowledgeBase/docs/02-payments-835-end-to-end.md#flow-b-sd-web-patient-payment-835",
+            "replacementSpec": "KnowledgeBase/docs/03-replacement-guide.md"
+        },
+        {
+            "id": "flow:BBVA-835-Insurance-Lockbox",
+            "type": "flow",
+            "name": "BBVA insurance lockbox 835 -> insurance payment and PLB adjustment transactions",
+            "doc": "KnowledgeBase/docs/02-payments-835-end-to-end.md#flow-c-bbva-insurance-lockbox-835",
+            "replacementSpec": "KnowledgeBase/docs/03-replacement-guide.md"
+        },
+        {
+            "id": "flow:CHC-835-Insurance-ERA",
+            "type": "flow",
+            "name": "Change Healthcare ERA 835 -> insurance payment transactions or reversal to-do items",
+            "doc": "KnowledgeBase/docs/02-payments-835-end-to-end.md#flow-d-change-healthcare-835-era",
+            "replacementSpec": "KnowledgeBase/docs/03-replacement-guide.md"
+        },
+        {
+            "id": "flow:CHC-835-To-BBVA-Passthrough",
+            "type": "flow",
+            "name": "Change Healthcare 835 pass-through to the BBVA/SD SFTP (no posting)",
+            "doc": "KnowledgeBase/docs/02-payments-835-end-to-end.md#flow-e-chc-835-pass-through-to-bbva",
+            "replacementSpec": "KnowledgeBase/docs/03-replacement-guide.md"
+        },
+        {
+            "id": "flowstep:BBVA-Patient-01-Receive",
+            "type": "flowstep",
+            "name": "Receive file from region folder",
+            "order": 1,
+            "logic": "FILE (or SFTP) receive location for each region: ${BBVA_835_PATIENT_FILE_FOLDER}\\<REGION>\\*.*. Archive component copies the raw file to <REGION>\\Archive. EDI disassembler splits the interchange into one message for each ST transaction set and resolves the BBVA schema through party agreement BBVA_To_SmileDoctors."
+        },
+        {
+            "id": "flowstep:BBVA-Patient-02-PracticeLookup",
+            "type": "flowstep",
+            "name": "Find practice database from folder name",
+            "order": 2,
+            "logic": "Practice name = name of the parent folder of the receive location (text between the last two path separators of BTS.InboundTransportLocation). Call BTS.GetPracticeConfigurationByName(@pcName) in BizTalkCloud9Common. Use pcInstanceAddress (a WCF-SQL mssql:// URI) as the practice database address. No check exists for a missing row."
+        },
+        {
+            "id": "flowstep:BBVA-Patient-03-MapCanonical",
+            "type": "flowstep",
+            "name": "Map 835 to ClaimPaymentBatch (one ClaimPayment for each CLP loop)",
+            "order": 3,
+            "logic": "See map summary. Key rules: patGUID source is NM1*QC NM109. ppGUID source is NM1*IL NM109. PaymentIdentifier = REF02 where REF01='F8'. TransactionNote = 'Deposit Date: <DTM02>, Check Date: <BPR16>, Lockbox: <REF*LB with check date and trailing underscore removed>'. Posted dates use the current date and time."
+        },
+        {
+            "id": "flowstep:BBVA-Patient-04-Post",
+            "type": "flowstep",
+            "name": "Post each ClaimPayment with BTS.Post835PatientTransaction",
+            "order": 4,
+            "logic": "For each ClaimPayment: map to Post835PatientTransaction, set lbcLockboxCodeType='PATIENT', call the proc in the practice DB. transAmount = CLP04 * -1. transStatus='N'. transGUID = new GUID. lbcLockboxCode = BPR04. Proc returns ErrorCount and ResponseMessage."
+        },
+        {
+            "id": "flowstep:BBVA-Patient-05-ImportLog",
+            "type": "flowstep",
+            "name": "Write one ImportLog row for each payment",
+            "order": 5,
+            "logic": "BTS.AddImportLog in the practice DB. ilProcess='Process_BBVA_835Patient'. ilLogLevel 2/'Finished' if ErrorCount='0', else 0/'Failed'. ilImportGUID = BizTalk MessageID. ilExternalReference = PaymentIdentifier. ilMessage = ResponseMessage. An exception stops the loop and writes only to the Windows event log."
+        },
+        {
+            "id": "flowstep:SD-Web-01-Receive",
+            "type": "flowstep",
+            "name": "Receive file from SD-<REGION> folder",
+            "order": 1,
+            "logic": "${SD_835_WEB_FILE_FOLDER}\\SD-<REGION>\\*.*. Same pipeline as BBVA. Agreement SmileDoctors_To_Cloud9 resolves the SmileDoctors schema namespace."
+        },
+        {
+            "id": "flowstep:SD-Web-02-MapCanonical",
+            "type": "flowstep",
+            "name": "Map SD 835 to ClaimPaymentBatch",
+            "order": 2,
+            "logic": "BPR04 drives payment type: CCC (card), ACH, REV (ACH return). REF qualifiers in the CLP loop: 2H transaction ID, 1Z approval code (CCC) or check number (ACH/REV), TN masked card (CCC) or masked bank account (ACH/REV), 8X card type, EY masked routing, EM OpenEdge XWeb GUID, TD reversal. NM1*QC NM109 = patGUID, NM1*IL NM109 = ppGUID."
+        },
+        {
+            "id": "flowstep:SD-Web-03-PracticeLookup",
+            "type": "flowstep",
+            "name": "Find practice database from folder name",
+            "order": 3,
+            "logic": "Same as BBVA, but the folder name keeps the 'SD-' prefix. PracticeConfig.pcName must equal the folder name (for example 'SD-GULFCOAST')."
+        },
+        {
+            "id": "flowstep:SD-Web-04-Post",
+            "type": "flowstep",
+            "name": "Post each payment with BTS.Post835PatientTransaction (WEB)",
+            "order": 4,
+            "logic": "lbcLockboxCodeType='WEB'. transNote and transReceiptNote come from FormatNote(): ACH -> '<M/dd/yyyy> payment; Transaction ID = <id>; Response = Check Submitted'. REV -> '<M/dd/yyyy HH:mm:ss tt> - Web ACH Return - ($<abs amount>) Additional Info: <id>'. CCC -> 'Approval Code=<code>; Transaction ID=<id>'. transReference = masked bank account if a routing number exists, else masked card number."
+        },
+        {
+            "id": "flowstep:SD-Web-05-ImportLog",
+            "type": "flowstep",
+            "name": "Write ImportLog row (no external reference)",
+            "order": 5,
+            "logic": "Same as BBVA patient, ilProcess='Process_SD_835Patient'. ilExternalReference is not sent. Success message is the constant 'Processed successfully'."
+        },
+        {
+            "id": "flowstep:BBVA-Ins-01-Receive",
+            "type": "flowstep",
+            "name": "Receive file from insurance region folder",
+            "order": 1,
+            "logic": "${BBVA_835_INSURANCE_FILE_FOLDER}\\<REGION>\\*.*. Same pipeline and agreement as the patient flow. Receive port RP_BBVA835_Insurance decides that the file is insurance (both orchestrations use the same message type)."
+        },
+        {
+            "id": "flowstep:BBVA-Ins-02-Guard",
+            "type": "flowstep",
+            "name": "Guard: CLP and PLB counts",
+            "order": 2,
+            "logic": "CLPCount = count of 2000 (LX) loops. PLBCount = count of PLB segments. Continue only if (CLPCount == 1) or (PLBCount == 0). Else write one failed ImportLog: 'There were {CLP} CLP payments and {PLB} PLB adjustments on transaction {ST02}' and post nothing."
+        },
+        {
+            "id": "flowstep:BBVA-Ins-03-PostClaims",
+            "type": "flowstep",
+            "name": "Post each CLP with BTS.Post835InsuranceTransaction",
+            "order": 3,
+            "logic": "Map BBVA_835Insurance_To_ClaimPaymentBatchCanonical then ClaimPaymentCanonical_To_Post835InsuranceTransaction. patGUID = REF*EJ, pipGUID = REF*69, pipPolicyNumber = NM1*QC NM109, adaClaimNumber = CLP01, ptPaymentTypeCode = BPR04, ClaimIdentifier = TRN04, amount = CLP04 * -1. If BPR04='NON' the note also lists claim and service CAS adjustments (max 250 chars)."
+        },
+        {
+            "id": "flowstep:BBVA-Ins-04-PostPLB",
+            "type": "flowstep",
+            "name": "Post each PLB as an adjustment",
+            "order": 4,
+            "logic": "Map BBVA_835_To_AdjustmentClaimPaymentBatchCanonical: one ClaimPayment for each PLB. Amount = PLB04 * -1. AdjustmentType = PLB03-1 (C04201). ReferenceIdentifier = 'ADJ<n>-<TRN02>'. ImportLog message is prefixed 'ADJ - '."
+        },
+        {
+            "id": "flowstep:BBVA-Ins-05-ImportLog",
+            "type": "flowstep",
+            "name": "Write ImportLog rows",
+            "order": 5,
+            "logic": "ilProcess='Process_BBVA_835Insurance'. One row for each claim and each PLB. Unhandled exception: event log then suspend the instance (resumable in BizTalk)."
+        },
+        {
+            "id": "flowstep:CHC-01-Poll",
+            "type": "flowstep",
+            "name": "Scheduled poll of the Change Healthcare mailbox for each practice",
+            "order": 1,
+            "logic": "WCF-SQL polling receive location RP_CHCInboundToProcess runs EXEC BTS.QueueProcessParameters 'ProcessCHCInboundFiles' when BTS.ProcessParameter has a row with that name and ppStatus=0. Controller loops over every PracticeConfig row and calls the worker."
+        },
+        {
+            "id": "flowstep:CHC-02-Download",
+            "type": "flowstep",
+            "name": "Download, decode and delete mailbox files",
+            "order": 2,
+            "logic": "Worker: GetPracticeEDISettings (practice DB) -> GetMailFileList -> for each file GetMailFile -> DecodePayload (base64, optional PKZIP, UTF-8) -> write to ${ADDR_FILE_ROOT}\\CHC_Inbound\\<pcName>_<new GUID>.edi -> DeleteMailFile. All file types (835, 277, 277CA) land in the same folder."
+        },
+        {
+            "id": "flowstep:CHC-03-Receive",
+            "type": "flowstep",
+            "name": "Receive CHC_Inbound file and route 835 by message type",
+            "order": 3,
+            "logic": "RL_CHC_Inbound_EDI with ReceiveEDIPipeline. Agreement ChangeHealthcare_Cloud9 resolves the CHC namespace. Activation filter BTS.MessageType == 'http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC#X12_00501_835'."
+        },
+        {
+            "id": "flowstep:CHC-04-PracticeLookup",
+            "type": "flowstep",
+            "name": "Find practice from the file name prefix",
+            "order": 4,
+            "logic": "Practice name = FILE.ReceivedFileName after the last backslash, up to the first underscore. GetPracticeConfigurationByName. If pcInstanceAddress is empty, each claim logs 'Connection String not found for Claim {0} in File {1}' to BTS.Log through Common.AddLog."
+        },
+        {
+            "id": "flowstep:CHC-05-ReversalOrPost",
+            "type": "flowstep",
+            "name": "For each CLP: reversal to-do or insurance post",
+            "order": 5,
+            "logic": "ReversalFlag = (CLP04 < 0) OR (CLP02 = '22') OR (any service CAS01 contains 'CR'). Reversal -> BTS.AddTodoItem(adaclaimNumber, message 'Payment for claim<n> needs reversal for amount $<CLP04>.'). Else -> BTS.Post835InsuranceTransaction. adaClaimNumber = int(CLP01.Substring(12)) (C9 claim numbers: 2-char PMS ID + 10-char Emdeon user + claim number)."
+        },
+        {
+            "id": "flowstep:CHC-06-Log",
+            "type": "flowstep",
+            "name": "ImportLog for each claim, BTS.Log for errors",
+            "order": 6,
+            "logic": "AddImportLog with ilProcess='Process_CHC_835Insurance' when a connection exists. Exceptions inside a claim go to BTS.Log (CreateLogEntry) and the loop continues with the next claim."
+        },
+        {
+            "id": "flowstep:CHC2BBVA-01-Receive",
+            "type": "flowstep",
+            "name": "Receive CHC 835 from CHC835ToBBVA folder",
+            "order": 1,
+            "logic": "${CH_835_TO_BBVA_FILE_FOLDER}\\*.*, ReceiveEDIPipeline."
+        },
+        {
+            "id": "flowstep:CHC2BBVA-02-Lookup",
+            "type": "flowstep",
+            "name": "Look up outbound agreement by payee ID",
+            "order": 2,
+            "logic": "PayeeIdentifier = N1*PE N104. BTS.GetApplicationLookupValues(alvApplication='CHC835ToBBVA', alvLookup=<payee id>). Keys AgreementNameForSend, SenderPartyNameForSend, ReceiverPartyNameForSend. Seed row: payee 1000000004 -> ChangeHealthcare_BBVA, ChangeHealthcare, BBVA."
+        },
+        {
+            "id": "flowstep:CHC2BBVA-03-Send",
+            "type": "flowstep",
+            "name": "Re-serialize as X12 and send by SFTP",
+            "order": 3,
+            "logic": "If all three values exist, set EDI.*ForSend context properties and send through EdiSend pipeline to sftp://${SD_SFTP_HOST_BBVA}/${SD_SFTP_FOLDER_BBVA}/835/835_<MessageID>.edi. Else the message is dropped without a log. Orchestration state is Unenlisted in the Cloud9.EDI binding (Started in the PDS binding)."
+        },
+        {
+            "id": "businessrule:PracticeResolution",
+            "type": "businessrule",
+            "name": "Practice database resolution",
+            "logic": "BBVA and SD flows: folder name. CHC flow: file name prefix written by the mailbox worker. In every case the lookup key is BTS.PracticeConfig.pcName and the target is pcInstanceAddress."
+        },
+        {
+            "id": "businessrule:AmountSign",
+            "type": "businessrule",
+            "name": "Payments are posted as negative amounts",
+            "logic": "Every Post835 map sets transAmount, transDueNowAmount and transTotalDueAmount to the 835 amount multiplied by -1. transProductionAmount and transClaimAmount are '0'. transIsGroup is '0'. transStatus is 'N'."
+        },
+        {
+            "id": "businessrule:NoFileLevelTransaction",
+            "type": "businessrule",
+            "name": "No transaction across a file",
+            "logic": "Each payment is a separate proc call with useAmbientTransaction=false and EnableTransaction=false. A failure in payment n does not roll back payments 1..n-1. BizTalk retry is disabled (RetryCount=0). Duplicate protection, if any, is inside the practice DB procs (not in this repo)."
+        }
+    ],
+    "edges": [
+        {
+            "from": "flow:BBVA-835-Patient-Lockbox",
+            "to": "externalsystem:BBVA-Lockbox-SFTP",
+            "type": "source"
+        },
+        {
+            "from": "flow:BBVA-835-Patient-Lockbox",
+            "to": "receiveport:Cloud9.EDI.Deployment/RP_BBVA835_Patient",
+            "type": "entryPoint"
+        },
+        {
+            "from": "flow:BBVA-835-Patient-Lockbox",
+            "to": "flowstep:BBVA-Patient-01-Receive",
+            "type": "hasStep",
+            "order": 1
+        },
+        {
+            "from": "flow:BBVA-835-Patient-Lockbox",
+            "to": "flowstep:BBVA-Patient-02-PracticeLookup",
+            "type": "hasStep",
+            "order": 2
+        },
+        {
+            "from": "flow:BBVA-835-Patient-Lockbox",
+            "to": "flowstep:BBVA-Patient-03-MapCanonical",
+            "type": "hasStep",
+            "order": 3
+        },
+        {
+            "from": "flow:BBVA-835-Patient-Lockbox",
+            "to": "flowstep:BBVA-Patient-04-Post",
+            "type": "hasStep",
+            "order": 4
+        },
+        {
+            "from": "flow:BBVA-835-Patient-Lockbox",
+            "to": "flowstep:BBVA-Patient-05-ImportLog",
+            "type": "hasStep",
+            "order": 5
+        },
+        {
+            "from": "flowstep:BBVA-Patient-01-Receive",
+            "to": "pipeline:Cloud9.BizTalk.X12.Pipelines.ReceiveEDIPipeline",
+            "type": "implementedBy"
+        },
+        {
+            "from": "flowstep:BBVA-Patient-01-Receive",
+            "to": "schema:Cloud9.BizTalk.X12.Schemas.BBVA_X12_00501_835",
+            "type": "implementedBy"
+        },
+        {
+            "from": "flowstep:BBVA-Patient-02-PracticeLookup",
+            "to": "orchestration:Cloud9.BizTalk.X12.Process_BBVA_835Patient",
+            "type": "implementedBy"
+        },
+        {
+            "from": "flowstep:BBVA-Patient-02-PracticeLookup",
+            "to": "sqlproc:BizTalkCloud9Common.BTS.GetPracticeConfigurationByName",
+            "type": "implementedBy"
+        },
+        {
+            "from": "flowstep:BBVA-Patient-03-MapCanonical",
+            "to": "map:Cloud9.BizTalk.X12.Maps.BBVA_835Patient_To_ClaimPaymentBatchCanonical",
+            "type": "implementedBy"
+        },
+        {
+            "from": "flowstep:BBVA-Patient-04-Post",
+            "to": "map:Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835PatientTransaction",
+            "type": "implementedBy"
+        },
+        {
+            "from": "flowstep:BBVA-Patient-04-Post",
+            "to": "sqlproc:PracticeDB.BTS.Post835PatientTransaction",
+            "type": "implementedBy"
+        },
+        {
+            "from": "flowstep:BBVA-Patient-05-ImportLog",
+            "to": "sqlproc:PracticeDB.BTS.AddImportLog",
+            "type": "implementedBy"
+        },
+        {
+            "from": "flow:SD-835-Web-Patient-Payment",
+            "to": "externalsystem:SmileDoctors-Web-SFTP",
+            "type": "source"
+        },
+        {
+            "from": "flow:SD-835-Web-Patient-Payment",
+            "to": "receiveport:Cloud9.EDI.Deployment/RP_SD835_Patient",
+            "type": "entryPoint"
+        },
+        {
+            "from": "flow:SD-835-Web-Patient-Payment",
+            "to": "flowstep:SD-Web-01-Receive",
+            "type": "hasStep",
+            "order": 1
+        },
+        {
+            "from": "flow:SD-835-Web-Patient-Payment",
+            "to": "flowstep:SD-Web-02-MapCanonical",
+            "type": "hasStep",
+            "order": 2
+        },
+        {
+            "from": "flow:SD-835-Web-Patient-Payment",
+            "to": "flowstep:SD-Web-03-PracticeLookup",
+            "type": "hasStep",
+            "order": 3
+        },
+        {
+            "from": "flow:SD-835-Web-Patient-Payment",
+            "to": "flowstep:SD-Web-04-Post",
+            "type": "hasStep",
+            "order": 4
+        },
+        {
+            "from": "flow:SD-835-Web-Patient-Payment",
+            "to": "flowstep:SD-Web-05-ImportLog",
+            "type": "hasStep",
+            "order": 5
+        },
+        {
+            "from": "flowstep:SD-Web-01-Receive",
+            "to": "schema:Cloud9.BizTalk.X12.Schemas.SD_X12_00501_835",
+            "type": "implementedBy"
+        },
+        {
+            "from": "flowstep:SD-Web-02-MapCanonical",
+            "to": "map:Cloud9.BizTalk.X12.Maps.SD_835WebPayment_To_ClaimPaymentBatchCanonical",
+            "type": "implementedBy"
+        },
+        {
+            "from": "flowstep:SD-Web-03-PracticeLookup",
+            "to": "orchestration:Cloud9.BizTalk.X12.Process_SD_835Patient",
+            "type": "implementedBy"
+        },
+        {
+            "from": "flowstep:SD-Web-03-PracticeLookup",
+            "to": "sqlproc:BizTalkCloud9Common.BTS.GetPracticeConfigurationByName",
+            "type": "implementedBy"
+        },
+        {
+            "from": "flowstep:SD-Web-04-Post",
+            "to": "map:Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835PatientTransactionWeb",
+            "type": "implementedBy"
+        },
+        {
+            "from": "flowstep:SD-Web-04-Post",
+            "to": "sqlproc:PracticeDB.BTS.Post835PatientTransaction",
+            "type": "implementedBy"
+        },
+        {
+            "from": "flowstep:SD-Web-05-ImportLog",
+            "to": "sqlproc:PracticeDB.BTS.AddImportLog",
+            "type": "implementedBy"
+        },
+        {
+            "from": "flow:BBVA-835-Insurance-Lockbox",
+            "to": "externalsystem:BBVA-Lockbox-SFTP",
+            "type": "source"
+        },
+        {
+            "from": "flow:BBVA-835-Insurance-Lockbox",
+            "to": "receiveport:Cloud9.EDI.Deployment/RP_BBVA835_Insurance",
+            "type": "entryPoint"
+        },
+        {
+            "from": "flow:BBVA-835-Insurance-Lockbox",
+            "to": "flowstep:BBVA-Ins-01-Receive",
+            "type": "hasStep",
+            "order": 1
+        },
+        {
+            "from": "flow:BBVA-835-Insurance-Lockbox",
+            "to": "flowstep:BBVA-Ins-02-Guard",
+            "type": "hasStep",
+            "order": 2
+        },
+        {
+            "from": "flow:BBVA-835-Insurance-Lockbox",
+            "to": "flowstep:BBVA-Ins-03-PostClaims",
+            "type": "hasStep",
+            "order": 3
+        },
+        {
+            "from": "flow:BBVA-835-Insurance-Lockbox",
+            "to": "flowstep:BBVA-Ins-04-PostPLB",
+            "type": "hasStep",
+            "order": 4
+        },
+        {
+            "from": "flow:BBVA-835-Insurance-Lockbox",
+            "to": "flowstep:BBVA-Ins-05-ImportLog",
+            "type": "hasStep",
+            "order": 5
+        },
+        {
+            "from": "flowstep:BBVA-Ins-02-Guard",
+            "to": "orchestration:Cloud9.BizTalk.X12.Process_BBVA_835Insurance",
+            "type": "implementedBy"
+        },
+        {
+            "from": "flowstep:BBVA-Ins-03-PostClaims",
+            "to": "map:Cloud9.BizTalk.X12.Maps.BBVA_835Insurance_To_ClaimPaymentBatchCanonical",
+            "type": "implementedBy"
+        },
+        {
+            "from": "flowstep:BBVA-Ins-03-PostClaims",
+            "to": "map:Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835InsuranceTransaction",
+            "type": "implementedBy"
+        },
+        {
+            "from": "flowstep:BBVA-Ins-03-PostClaims",
+            "to": "sqlproc:PracticeDB.BTS.Post835InsuranceTransaction",
+            "type": "implementedBy"
+        },
+        {
+            "from": "flowstep:BBVA-Ins-04-PostPLB",
+            "to": "map:Cloud9.BizTalk.X12.Maps.BBVA_835_To_AdjustmentClaimPaymentBatchCanonical",
+            "type": "implementedBy"
+        },
+        {
+            "from": "flowstep:BBVA-Ins-04-PostPLB",
+            "to": "sqlproc:PracticeDB.BTS.Post835InsuranceTransaction",
+            "type": "implementedBy"
+        },
+        {
+            "from": "flowstep:BBVA-Ins-05-ImportLog",
+            "to": "sqlproc:PracticeDB.BTS.AddImportLog",
+            "type": "implementedBy"
+        },
+        {
+            "from": "flow:CHC-835-Insurance-ERA",
+            "to": "externalsystem:ChangeHealthcare-Mailbox",
+            "type": "source"
+        },
+        {
+            "from": "flow:CHC-835-Insurance-ERA",
+            "to": "externalsystem:ChangeHealthcare-SFTP",
+            "type": "source"
+        },
+        {
+            "from": "flow:CHC-835-Insurance-ERA",
+            "to": "receiveport:Cloud9.EDI.Deployment/RP_CHC_Inbound_EDI",
+            "type": "entryPoint"
+        },
+        {
+            "from": "flow:CHC-835-Insurance-ERA",
+            "to": "flowstep:CHC-01-Poll",
+            "type": "hasStep",
+            "order": 1
+        },
+        {
+            "from": "flow:CHC-835-Insurance-ERA",
+            "to": "flowstep:CHC-02-Download",
+            "type": "hasStep",
+            "order": 2
+        },
+        {
+            "from": "flow:CHC-835-Insurance-ERA",
+            "to": "flowstep:CHC-03-Receive",
+            "type": "hasStep",
+            "order": 3
+        },
+        {
+            "from": "flow:CHC-835-Insurance-ERA",
+            "to": "flowstep:CHC-04-PracticeLookup",
+            "type": "hasStep",
+            "order": 4
+        },
+        {
+            "from": "flow:CHC-835-Insurance-ERA",
+            "to": "flowstep:CHC-05-ReversalOrPost",
+            "type": "hasStep",
+            "order": 5
+        },
+        {
+            "from": "flow:CHC-835-Insurance-ERA",
+            "to": "flowstep:CHC-06-Log",
+            "type": "hasStep",
+            "order": 6
+        },
+        {
+            "from": "flowstep:CHC-01-Poll",
+            "to": "receiveport:Cloud9.EDI.Deployment/RP_CHCInboundToProcess",
+            "type": "implementedBy"
+        },
+        {
+            "from": "flowstep:CHC-01-Poll",
+            "to": "sqlproc:BizTalkCloud9Common.BTS.QueueProcessParameters",
+            "type": "implementedBy"
+        },
+        {
+            "from": "flowstep:CHC-01-Poll",
+            "to": "orchestration:Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Controller",
+            "type": "implementedBy"
+        },
+        {
+            "from": "flowstep:CHC-02-Download",
+            "to": "orchestration:Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker",
+            "type": "implementedBy"
+        },
+        {
+            "from": "flowstep:CHC-02-Download",
+            "to": "method:Cloud9.BizTalk.Helper.EmdeonConversion.DecodePayload",
+            "type": "implementedBy"
+        },
+        {
+            "from": "flowstep:CHC-02-Download",
+            "to": "sendport:Cloud9.EDI.Deployment/SP_CHC_Inbound",
+            "type": "implementedBy"
+        },
+        {
+            "from": "flowstep:CHC-03-Receive",
+            "to": "schema:Cloud9.BizTalk.X12.Schemas.CHC_X12_00501_835",
+            "type": "implementedBy"
+        },
+        {
+            "from": "flowstep:CHC-04-PracticeLookup",
+            "to": "orchestration:Cloud9.BizTalk.X12.Process_CHC_835Insurance",
+            "type": "implementedBy"
+        },
+        {
+            "from": "flowstep:CHC-05-ReversalOrPost",
+            "to": "map:Cloud9.BizTalk.X12.Maps.CHC_835_To_ClaimPaymentBatchCanonical",
+            "type": "implementedBy"
+        },
+        {
+            "from": "flowstep:CHC-05-ReversalOrPost",
+            "to": "map:Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_AddTodoItem",
+            "type": "implementedBy"
+        },
+        {
+            "from": "flowstep:CHC-05-ReversalOrPost",
+            "to": "map:Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835InsuranceTransaction",
+            "type": "implementedBy"
+        },
+        {
+            "from": "flowstep:CHC-05-ReversalOrPost",
+            "to": "sqlproc:PracticeDB.BTS.AddTodoItem",
+            "type": "implementedBy"
+        },
+        {
+            "from": "flowstep:CHC-05-ReversalOrPost",
+            "to": "sqlproc:PracticeDB.BTS.Post835InsuranceTransaction",
+            "type": "implementedBy"
+        },
+        {
+            "from": "flowstep:CHC-06-Log",
+            "to": "orchestration:Cloud9.BizTalk.Common.AddLog",
+            "type": "implementedBy"
+        },
+        {
+            "from": "flowstep:CHC-06-Log",
+            "to": "sqlproc:PracticeDB.BTS.AddImportLog",
+            "type": "implementedBy"
+        },
+        {
+            "from": "flow:CHC-835-To-BBVA-Passthrough",
+            "to": "receiveport:Cloud9.EDI.Deployment/RP_CHC835ToBBVA",
+            "type": "entryPoint"
+        },
+        {
+            "from": "flow:CHC-835-To-BBVA-Passthrough",
+            "to": "flowstep:CHC2BBVA-01-Receive",
+            "type": "hasStep",
+            "order": 1
+        },
+        {
+            "from": "flow:CHC-835-To-BBVA-Passthrough",
+            "to": "flowstep:CHC2BBVA-02-Lookup",
+            "type": "hasStep",
+            "order": 2
+        },
+        {
+            "from": "flow:CHC-835-To-BBVA-Passthrough",
+            "to": "flowstep:CHC2BBVA-03-Send",
+            "type": "hasStep",
+            "order": 3
+        },
+        {
+            "from": "flowstep:CHC2BBVA-02-Lookup",
+            "to": "orchestration:Cloud9.BizTalk.X12.Process_CHC_835_To_BBVA",
+            "type": "implementedBy"
+        },
+        {
+            "from": "flowstep:CHC2BBVA-02-Lookup",
+            "to": "sqlproc:BizTalkCloud9Common.BTS.GetApplicationLookupValues",
+            "type": "implementedBy"
+        },
+        {
+            "from": "flowstep:CHC2BBVA-03-Send",
+            "to": "sendport:Cloud9.EDI.Deployment/SP_CHC835ToSD_SFTP",
+            "type": "implementedBy"
+        },
+        {
+            "from": "businessrule:PracticeResolution",
+            "to": "sqltable:BizTalkCloud9Common.BTS.PracticeConfig",
+            "type": "appliesTo"
+        },
+        {
+            "from": "businessrule:PracticeResolution",
+            "to": "flowstep:BBVA-Patient-02-PracticeLookup",
+            "type": "appliesTo"
+        },
+        {
+            "from": "businessrule:PracticeResolution",
+            "to": "flowstep:SD-Web-03-PracticeLookup",
+            "type": "appliesTo"
+        },
+        {
+            "from": "businessrule:PracticeResolution",
+            "to": "flowstep:CHC-04-PracticeLookup",
+            "type": "appliesTo"
+        },
+        {
+            "from": "businessrule:AmountSign",
+            "to": "map:Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835PatientTransaction",
+            "type": "appliesTo"
+        },
+        {
+            "from": "businessrule:AmountSign",
+            "to": "map:Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835PatientTransactionWeb",
+            "type": "appliesTo"
+        },
+        {
+            "from": "businessrule:AmountSign",
+            "to": "map:Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835InsuranceTransaction",
+            "type": "appliesTo"
+        },
+        {
+            "from": "businessrule:NoFileLevelTransaction",
+            "to": "flow:BBVA-835-Patient-Lockbox",
+            "type": "appliesTo"
+        },
+        {
+            "from": "businessrule:NoFileLevelTransaction",
+            "to": "flow:SD-835-Web-Patient-Payment",
+            "type": "appliesTo"
+        },
+        {
+            "from": "businessrule:NoFileLevelTransaction",
+            "to": "flow:BBVA-835-Insurance-Lockbox",
+            "type": "appliesTo"
+        },
+        {
+            "from": "businessrule:NoFileLevelTransaction",
+            "to": "flow:CHC-835-Insurance-ERA",
+            "type": "appliesTo"
+        },
+        {
+            "from": "sqlscript:Cloud9.BizTalk.Scripts/835BBVAPatientPaymentLockbox/GetTransactionsPatientPayment.sql",
+            "to": "flow:BBVA-835-Patient-Lockbox",
+            "type": "verifies"
+        },
+        {
+            "from": "sqlscript:Cloud9.BizTalk.Scripts/835BBVAPatientPaymentLockbox/GetLockboxPaymentType.sql",
+            "to": "flow:BBVA-835-Patient-Lockbox",
+            "type": "verifies"
+        },
+        {
+            "from": "sqlscript:Cloud9.BizTalk.Scripts/835SDWebPatientPayment/GetWebPatientPaymentType.sql",
+            "to": "flow:SD-835-Web-Patient-Payment",
+            "type": "verifies"
+        },
+        {
+            "from": "sqlscript:Cloud9.BizTalk.Scripts/835SDWebPatientPayment/GetTransactionsPatientPayment.sql",
+            "to": "flow:SD-835-Web-Patient-Payment",
+            "type": "verifies"
+        },
+        {
+            "from": "sqlscript:Cloud9.BizTalk.Scripts/835BBVAInsurancePayment/GetInsurancePaymentType.sql",
+            "to": "flow:BBVA-835-Insurance-Lockbox",
+            "type": "verifies"
+        },
+        {
+            "from": "sqlscript:Cloud9.BizTalk.Scripts/835BBVAInsurancePayment/GetUnmappedTransactionsInsurancePayment.sql",
+            "to": "flow:BBVA-835-Insurance-Lockbox",
+            "type": "verifies"
+        },
+        {
+            "from": "sqlscript:Cloud9.BizTalk.Scripts/835CHCtoBBVAPassthrough/GetApplicationLookupValues.sql",
+            "to": "flow:CHC-835-To-BBVA-Passthrough",
+            "type": "verifies"
+        }
+    ]
+}

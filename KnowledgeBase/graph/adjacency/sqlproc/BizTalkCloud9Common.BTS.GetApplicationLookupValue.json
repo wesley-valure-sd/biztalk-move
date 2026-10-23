@@ -1,0 +1,40 @@
+{
+  "node": {
+    "id": "sqlproc:BizTalkCloud9Common.BTS.GetApplicationLookupValue",
+    "type": "sqlproc",
+    "name": "BTS.GetApplicationLookupValue",
+    "database": "BizTalkCloud9Common",
+    "definedInRepo": true,
+    "parameters": [
+      "@alvApplication VARCHAR(50)",
+      "@alvLookup VARCHAR(50)",
+      "@alvKey VARCHAR(50)"
+    ],
+    "path": "Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored Procedures/GetApplicationLookupValue.sql"
+  },
+  "outgoing": [
+    {
+      "type": "reads",
+      "to": "sqltable:BizTalkCloud9Common.BTS.ApplicationLookupValue",
+      "toName": "BTS.ApplicationLookupValue",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/BizTalkCloud9Common.BTS.ApplicationLookupValue.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored Procedures/GetApplicationLookupValue.sql",
+      "fromName": "GetApplicationLookupValue.sql",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Stored_Procedures_GetApplicationLookupValue.sql.json"
+    },
+    {
+      "type": "describesParametersOf",
+      "from": "schema:Cloud9.BizTalk.Schemas.ALV_TypedProcedure_BTS",
+      "fromName": "Cloud9.BizTalk.Schemas.ALV_TypedProcedure_BTS",
+      "fromType": "schema",
+      "fromFile": "adjacency/schema/Cloud9.BizTalk.Schemas.ALV_TypedProcedure_BTS.json"
+    }
+  ]
+}

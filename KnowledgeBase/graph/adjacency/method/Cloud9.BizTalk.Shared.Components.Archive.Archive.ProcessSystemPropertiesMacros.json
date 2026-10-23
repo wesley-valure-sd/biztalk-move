@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.Shared.Components.Archive.Archive.ProcessSystemPropertiesMacros",
+    "type": "method",
+    "name": "Archive.ProcessSystemPropertiesMacros",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Shared.Components.Archive/Archive.cs",
+    "class": "Cloud9.BizTalk.Shared.Components.Archive.Archive",
+    "line": 502,
+    "signatures": [
+      "private string ProcessSystemPropertiesMacros(string target, string transportType, IBaseMessage Message)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.Shared.Components.Archive.Archive",
+      "fromName": "Cloud9.BizTalk.Shared.Components.Archive.Archive",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.Shared.Components.Archive.Archive.json"
+    }
+  ]
+}

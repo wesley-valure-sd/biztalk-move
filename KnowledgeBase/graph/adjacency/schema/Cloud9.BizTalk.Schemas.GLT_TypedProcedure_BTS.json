@@ -1,0 +1,59 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.GLT_TypedProcedure_BTS",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.GLT_TypedProcedure_BTS",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetLocationTimezone/GLT_TypedProcedure.BTS.xsd",
+    "rootElements": [
+      "GetLocationTimezone",
+      "GetLocationTimezoneResponse"
+    ],
+    "kind": "wcf-sql-typed-procedure",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS",
+    "sqlActions": [
+      "TypedProcedure/BTS/GetLocationTimezone"
+    ]
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetLocationTimezone/GLT_TypedProcedure.BTS.xsd",
+      "toName": "GLT_TypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_GetLocationTimezone_GLT_TypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "describesParametersOf",
+      "to": "sqlproc:PracticeDB.BTS.GetLocationTimezone",
+      "toName": "BTS.GetLocationTimezone",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/PracticeDB.BTS.GetLocationTimezone.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.Epic.SIUMessageData_To_GetLocationTimezoneReq",
+      "fromName": "Cloud9.BizTalk.Epic.SIUMessageData_To_GetLocationTimezoneReq",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.Epic.SIUMessageData_To_GetLocationTimezoneReq.json",
+      "root": "GetLocationTimezone"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.Epic.MPType_GetLocationTimezoneReq",
+      "fromName": "MPType_GetLocationTimezoneReq",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_GetLocationTimezoneReq.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.GLT_TypedProcedure_BTS.GetLocationTimezone"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.Epic.MPType_GetLocationTimezoneResp",
+      "fromName": "MPType_GetLocationTimezoneResp",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_GetLocationTimezoneResp.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.GLT_TypedProcedure_BTS.GetLocationTimezoneResponse"
+    }
+  ]
+}

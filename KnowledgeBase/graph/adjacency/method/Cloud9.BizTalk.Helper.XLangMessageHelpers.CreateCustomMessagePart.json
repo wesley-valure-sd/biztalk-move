@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.Helper.XLangMessageHelpers.CreateCustomMessagePart",
+    "type": "method",
+    "name": "XLangMessageHelpers.CreateCustomMessagePart",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/XLangMessageHelpers.cs",
+    "class": "Cloud9.BizTalk.Helper.XLangMessageHelpers",
+    "line": 106,
+    "signatures": [
+      "private static BTXMessage CreateCustomMessagePart(string message, string messageName, string messagePartName)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.Helper.XLangMessageHelpers",
+      "fromName": "Cloud9.BizTalk.Helper.XLangMessageHelpers",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.Helper.XLangMessageHelpers.json"
+    }
+  ]
+}

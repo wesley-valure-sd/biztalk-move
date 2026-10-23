@@ -1,0 +1,90 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_271Eligibility.odx",
+    "type": "file",
+    "name": "Process_CHC_271Eligibility.odx",
+    "kind": "odx",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_271Eligibility.odx"
+  },
+  "outgoing": [
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.X12.GetIncomingMessageInfoResponse_MMT",
+      "toName": "GetIncomingMessageInfoResponse_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.GetIncomingMessageInfoResponse_MMT.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.X12.SetPatientEligibilitiesRequest_MMT",
+      "toName": "SetPatientEligibilitiesRequest_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.SetPatientEligibilitiesRequest_MMT.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.X12.SetPatientEligibilitiesResponse_MMT",
+      "toName": "SetPatientEligibilitiesResponse_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.SetPatientEligibilitiesResponse_MMT.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.X12.PatientEligibilities_MMT",
+      "toName": "PatientEligibilities_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.PatientEligibilities_MMT.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.X12.GetIncomingMessageInfo_MMT",
+      "toName": "GetIncomingMessageInfo_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.GetIncomingMessageInfo_MMT.json"
+    },
+    {
+      "type": "defines",
+      "to": "porttype:Cloud9.BizTalk.X12.ReceiveCHC271PortType",
+      "toName": "ReceiveCHC271PortType",
+      "toType": "porttype",
+      "toFile": "adjacency/porttype/Cloud9.BizTalk.X12.ReceiveCHC271PortType.json"
+    },
+    {
+      "type": "defines",
+      "to": "porttype:Cloud9.BizTalk.X12.PortType_SetPatientInsuranceEligibilities",
+      "toName": "PortType_SetPatientInsuranceEligibilities",
+      "toType": "porttype",
+      "toFile": "adjacency/porttype/Cloud9.BizTalk.X12.PortType_SetPatientInsuranceEligibilities.json"
+    },
+    {
+      "type": "defines",
+      "to": "porttype:Cloud9.BizTalk.X12.PortType_GetIncomingMessageInfo",
+      "toName": "PortType_GetIncomingMessageInfo",
+      "toType": "porttype",
+      "toFile": "adjacency/porttype/Cloud9.BizTalk.X12.PortType_GetIncomingMessageInfo.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.X12",
+      "fromName": "Cloud9.BizTalk.X12",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.X12.json"
+    },
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.X12.PDS",
+      "fromName": "Cloud9.BizTalk.X12.PDS",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.X12.PDS.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_271Eligibility",
+      "fromName": "Process_CHC_271Eligibility",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_271Eligibility.json"
+    }
+  ]
+}

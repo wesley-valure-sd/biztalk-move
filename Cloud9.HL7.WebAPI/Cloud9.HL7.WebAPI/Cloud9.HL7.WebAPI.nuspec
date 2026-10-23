@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Cloud9.HL7.WebAPI</id>
+    <version>1.00</version>
+    <title>Cloud9 HL7 WebAPI</title>
+    <authors>Cloud9Ortho</authors>
+    <owners>Cloud9Ortho</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>HL7 Incoming Message API</description>
+    <releaseNotes>Initial release.</releaseNotes>
+    <copyright>Copyright 2019</copyright>
+    <tags>WebAPI</tags>
+  </metadata>
+  <files>
+  		<file src="bin\**" target="bin" />
+		<file src="Global.asax" target="Global.asax" />
+		<file src="packages.config" target="packages.config" />
+		<file src="web.config" target="web.config" />
+  </files>
+</package>

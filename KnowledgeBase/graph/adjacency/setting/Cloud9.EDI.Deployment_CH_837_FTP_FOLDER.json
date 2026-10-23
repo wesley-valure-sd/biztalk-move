@@ -1,0 +1,31 @@
+{
+  "node": {
+    "id": "setting:Cloud9.EDI.Deployment/CH_837_FTP_FOLDER",
+    "type": "setting",
+    "name": "CH_837_FTP_FOLDER",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.Deployment/SettingsFileGenerator.xml",
+    "bindingSet": "Cloud9.EDI.Deployment",
+    "valuesByEnvironment": {
+      "Default Values (DefaultSettings)": "/fv_cloud9/Test_To_CHC/x12/837",
+      "Local Dev (LocalSettings)": "/fv_cloud9/Test_To_CHC/x12/837",
+      "JGLISSON Development (JGLISSONSettings)": "/fv_cloud9/Test_To_CHC/x12/837",
+      "LAB (LABSettings)": "/fv_cloud9/Test_To_CHC/x12/837",
+      "LAB2 (LAB2Settings)": "/fv_cloud9/Test_To_CHC/x12/837",
+      "LAB3 (LAB3Settings)": "/fv_cloud9/Test_To_CHC/x12/837",
+      "PROD (C9Prod1_Settings)": "/fv_cloud9/Prod_To_CHC/x12/837",
+      "PROD (C9Prod2_Settings)": "/fv_cloud9/Prod_To_CHC/x12/837",
+      "LAB (SDLab1_Settings)": "/fv_cloud9/Test_To_CHC/x12/837",
+      "PROD (SDProd1_Settings)": "/fv_cloud9/Prod_To_CHC/x12/837"
+    }
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "usesSetting",
+      "from": "sendport:Cloud9.EDI.Deployment/SP_CH_837_SFTP",
+      "fromName": "SP_CH_837_SFTP",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.Deployment_SP_CH_837_SFTP.json"
+    }
+  ]
+}

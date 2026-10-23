@@ -1,0 +1,427 @@
+MAP: InsuranceInformationCanonical_To_UpdatePatientInsurancePolicyByPipGUID.btm
+PATH: Cloud9.BizTalk\Cloud9.BizTalk.X12\Maps\InsuranceInformationCanonical_To_UpdatePatientInsurancePolicyByPipGUID.btm
+SOURCE: Cloud9.BizTalk.Schemas.Canonical.InsuranceInformation (root InsuranceInformation)
+TARGET: Cloud9.BizTalk.Schemas.UPIP_TypedProcedure_BTS (root UpdatePatientInsurancePolicyByPipGUID)
+SCRIPT PRECEDENCE (first match wins when a functoid has more than one script): CSharp > ExternalAssembly > VbNet > JScript > XsltCallTemplate > Xslt
+
+=== PAGE: Page 1 ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L66: InsuranceInformation/PatientIdentifier -> F3
+L74: F8 -> F9
+L75: F8 -> F10
+L76: F9 -> F12
+L77: F10 -> F11
+L78: InsuranceInformation/OrganizationPlanIdentifier -> F8
+L79: InsuranceInformation/OrganizationPlanIdentifier -> F11
+L80: F12 -> UpdatePatientInsurancePolicyByPipGUID/oipGUID
+L81: F11 -> UpdatePatientInsurancePolicyByPipGUID/oipGUID
+L82: F13 -> F14
+L83: F13 -> F15
+L84: F14 -> F17
+L85: F15 -> F16
+L86: InsuranceInformation/BillingCenterIdentifier -> F13
+L87: InsuranceInformation/BillingCenterIdentifier -> F16
+L88: F17 -> UpdatePatientInsurancePolicyByPipGUID/icbcGUID
+L89: F16 -> UpdatePatientInsurancePolicyByPipGUID/icbcGUID
+L90: F18 -> F19
+L91: F18 -> F20
+L92: F19 -> F22
+L93: F20 -> F21
+L94: InsuranceInformation/PolicyNumber -> F18
+L95: InsuranceInformation/PolicyNumber -> F21
+L96: F22 -> UpdatePatientInsurancePolicyByPipGUID/pipPolicyNumber
+L97: F21 -> UpdatePatientInsurancePolicyByPipGUID/pipPolicyNumber
+L98: F23 -> F24
+L99: F23 -> F25
+L100: F24 -> F27
+L101: F25 -> F26
+L102: InsuranceInformation/GroupNumber -> F23
+L103: InsuranceInformation/GroupNumber -> F26
+L104: F27 -> UpdatePatientInsurancePolicyByPipGUID/pipGroupNumber
+L105: F26 -> UpdatePatientInsurancePolicyByPipGUID/pipGroupNumber
+L106: F28 -> F29
+L107: F28 -> F30
+L108: F29 -> F32
+L109: F30 -> F31
+L110: InsuranceInformation/CodeTypeIdentifier -> F28
+L111: InsuranceInformation/CodeTypeIdentifier -> F31
+L112: F32 -> UpdatePatientInsurancePolicyByPipGUID/ctypGUID
+L113: F31 -> UpdatePatientInsurancePolicyByPipGUID/ctypGUID
+L114: F33 -> F34
+L115: F33 -> F35
+L116: F34 -> F37
+L117: F35 -> F36
+L118: InsuranceInformation/RelatedPersonIdentifier -> F33
+L119: InsuranceInformation/RelatedPersonIdentifier -> F36
+L120: F37 -> UpdatePatientInsurancePolicyByPipGUID/ppGUID
+L121: F36 -> UpdatePatientInsurancePolicyByPipGUID/ppGUID
+L122: F38 -> F39
+L123: F38 -> F40
+L124: F39 -> F42
+L125: F40 -> F41
+L126: InsuranceInformation/AcceptAssignmentFlag -> F38
+L127: InsuranceInformation/AcceptAssignmentFlag -> F41
+L128: F42 -> UpdatePatientInsurancePolicyByPipGUID/pipAcceptAssignment
+L129: F41 -> UpdatePatientInsurancePolicyByPipGUID/pipAcceptAssignment
+L130: F43 -> F44
+L131: F43 -> F45
+L132: F44 -> F47
+L133: F45 -> F46
+L134: InsuranceInformation/PredeterminationRequiredFlag -> F43
+L135: InsuranceInformation/PredeterminationRequiredFlag -> F46
+L136: F47 -> UpdatePatientInsurancePolicyByPipGUID/pipPredeterminationRequired
+L137: F46 -> UpdatePatientInsurancePolicyByPipGUID/pipPredeterminationRequired
+L138: F48 -> F49
+L139: F48 -> F50
+L140: F49 -> F52
+L141: F50 -> F51
+L142: InsuranceInformation/InitialRequiredFlag -> F48
+L143: InsuranceInformation/InitialRequiredFlag -> F51
+L144: F52 -> UpdatePatientInsurancePolicyByPipGUID/pipInitialRequired
+L145: F51 -> UpdatePatientInsurancePolicyByPipGUID/pipInitialRequired
+L146: F53 -> F54
+L147: F53 -> F55
+L148: F54 -> F57
+L149: F55 -> F56
+L150: InsuranceInformation/ContinuationRequiredFlag -> F53
+L151: InsuranceInformation/ContinuationRequiredFlag -> F56
+L152: F57 -> UpdatePatientInsurancePolicyByPipGUID/pipContinuationRequired
+L153: F56 -> UpdatePatientInsurancePolicyByPipGUID/pipContinuationRequired
+L154: F58 -> F59
+L155: F58 -> F60
+L156: F59 -> F62
+L157: F60 -> F61
+L158: InsuranceInformation/Rank -> F58
+L159: InsuranceInformation/Rank -> F61
+L160: F62 -> UpdatePatientInsurancePolicyByPipGUID/pipRank
+L161: F61 -> UpdatePatientInsurancePolicyByPipGUID/pipRank
+L162: F63 -> F64
+L163: F63 -> F65
+L164: F64 -> F67
+L165: F65 -> F66
+L166: InsuranceInformation/ActiveFlag -> F63
+L167: InsuranceInformation/ActiveFlag -> F66
+L168: F67 -> UpdatePatientInsurancePolicyByPipGUID/pipIsActive
+L169: F66 -> UpdatePatientInsurancePolicyByPipGUID/pipIsActive
+L170: F68 -> F69
+L171: F68 -> F70
+L172: F69 -> F72
+L173: F70 -> F71
+L174: InsuranceInformation/SubscriberName -> F68
+L175: InsuranceInformation/SubscriberName -> F71
+L176: F72 -> UpdatePatientInsurancePolicyByPipGUID/pipSubscriberName
+L177: F71 -> UpdatePatientInsurancePolicyByPipGUID/pipSubscriberName
+L178: F73 -> F74
+L179: F73 -> F75
+L180: F74 -> F77
+L181: F75 -> F76
+L182: InsuranceInformation/Note -> F73
+L183: InsuranceInformation/Note -> F76
+L184: F77 -> UpdatePatientInsurancePolicyByPipGUID/pipNote
+L185: F76 -> UpdatePatientInsurancePolicyByPipGUID/pipNote
+L186: F78 -> F79
+L187: F78 -> F80
+L188: F79 -> F82
+L189: F80 -> F81
+L190: InsuranceInformation/DeletedFlag -> F78
+L191: InsuranceInformation/DeletedFlag -> F81
+L192: F82 -> UpdatePatientInsurancePolicyByPipGUID/pipDeleted
+L193: F81 -> UpdatePatientInsurancePolicyByPipGUID/pipDeleted
+L194: F83 -> F84
+L195: F83 -> F85
+L196: F84 -> F87
+L197: F85 -> F86
+L198: InsuranceInformation/FeeScheduleIdentifier -> F83
+L199: InsuranceInformation/FeeScheduleIdentifier -> F86
+L200: F87 -> UpdatePatientInsurancePolicyByPipGUID/fsGUID
+L201: F86 -> UpdatePatientInsurancePolicyByPipGUID/fsGUID
+L204: F89 -> F92
+L205: F90 -> F91
+L207: InsuranceInformation/IndividualDeductible -> F91
+L208: F92 -> UpdatePatientInsurancePolicyByPipGUID/pipIndividualDeductible
+L209: F91 -> UpdatePatientInsurancePolicyByPipGUID/pipIndividualDeductible
+L212: F94 -> F97
+L213: F95 -> F96
+L215: InsuranceInformation/IndividualAnnualMax -> F96
+L216: F97 -> UpdatePatientInsurancePolicyByPipGUID/pipIndividualAnnualMax
+L217: F96 -> UpdatePatientInsurancePolicyByPipGUID/pipIndividualAnnualMax
+L220: F99 -> F102
+L221: F100 -> F101
+L223: InsuranceInformation/FamilyDeductible -> F101
+L224: F102 -> UpdatePatientInsurancePolicyByPipGUID/pipFamilyDeductible
+L225: F101 -> UpdatePatientInsurancePolicyByPipGUID/pipFamilyDeductible
+L228: F104 -> F107
+L229: F105 -> F106
+L231: InsuranceInformation/FamilyAnnualMax -> F106
+L232: F107 -> UpdatePatientInsurancePolicyByPipGUID/pipFamilyAnnualMax
+L233: F106 -> UpdatePatientInsurancePolicyByPipGUID/pipFamilyAnnualMax
+L236: F109 -> F112
+L237: F110 -> F111
+L239: InsuranceInformation/IndividualOrthoDeductible -> F111
+L240: F112 -> UpdatePatientInsurancePolicyByPipGUID/pipIndividualOrthoDeductible
+L241: F111 -> UpdatePatientInsurancePolicyByPipGUID/pipIndividualOrthoDeductible
+L244: F114 -> F117
+L245: F115 -> F116
+L247: InsuranceInformation/IndividualOrthoMax -> F116
+L248: F117 -> UpdatePatientInsurancePolicyByPipGUID/pipIndividualOrthoMax
+L249: F116 -> UpdatePatientInsurancePolicyByPipGUID/pipIndividualOrthoMax
+L252: F119 -> F122
+L253: F120 -> F121
+L255: InsuranceInformation/ReplaceMissingTeethFlag -> F121
+L256: F122 -> UpdatePatientInsurancePolicyByPipGUID/pipReplaceMissingTeeth
+L257: F121 -> UpdatePatientInsurancePolicyByPipGUID/pipReplaceMissingTeeth
+L260: F124 -> F127
+L261: F125 -> F126
+L263: InsuranceInformation/LifetimeMax -> F126
+L264: F127 -> UpdatePatientInsurancePolicyByPipGUID/pipLifetimeMax
+L265: F126 -> UpdatePatientInsurancePolicyByPipGUID/pipLifetimeMax
+L268: F129 -> F132
+L269: F130 -> F131
+L271: InsuranceInformation/InNetworkFlag -> F131
+L272: F132 -> UpdatePatientInsurancePolicyByPipGUID/pipInNetwork
+L273: F131 -> UpdatePatientInsurancePolicyByPipGUID/pipInNetwork
+L276: F134 -> F137
+L277: F135 -> F136
+L279: InsuranceInformation/PayOutOfNetworkFlag -> F136
+L280: F137 -> UpdatePatientInsurancePolicyByPipGUID/pipPayOutOfNetwork
+L281: F136 -> UpdatePatientInsurancePolicyByPipGUID/pipPayOutOfNetwork
+L284: F139 -> F142
+L285: F140 -> F141
+L287: InsuranceInformation/BenefitRenewalDate -> F141
+L288: F142 -> UpdatePatientInsurancePolicyByPipGUID/pipBenefitRenewal
+L289: F141 -> UpdatePatientInsurancePolicyByPipGUID/pipBenefitRenewal
+L292: F144 -> F147
+L293: F145 -> F146
+L295: InsuranceInformation/ExcludeFromMassBenefitUpdateFlag -> F146
+L296: F147 -> UpdatePatientInsurancePolicyByPipGUID/pipExcludeFromMassBenefitUpdate
+L297: F146 -> UpdatePatientInsurancePolicyByPipGUID/pipExcludeFromMassBenefitUpdate
+L300: F149 -> F152
+L301: F150 -> F151
+L303: InsuranceInformation/IndividualOrthoMaxRemaining -> F151
+L304: F152 -> UpdatePatientInsurancePolicyByPipGUID/pipIndividualOrthoMaxRemaining
+L305: F151 -> UpdatePatientInsurancePolicyByPipGUID/pipIndividualOrthoMaxRemaining
+L308: F154 -> F157
+L309: F155 -> F156
+L311: InsuranceInformation/IndividualDeductibleRemaining -> F156
+L312: F157 -> UpdatePatientInsurancePolicyByPipGUID/pipIndividualDeductibleRemaining
+L313: F156 -> UpdatePatientInsurancePolicyByPipGUID/pipIndividualDeductibleRemaining
+L316: F159 -> F162
+L317: F160 -> F161
+L319: InsuranceInformation/IndividualAnnualMaxRemaining -> F161
+L320: F162 -> UpdatePatientInsurancePolicyByPipGUID/pipIndividualAnnualMaxRemaining
+L321: F161 -> UpdatePatientInsurancePolicyByPipGUID/pipIndividualAnnualMaxRemaining
+L29: InsuranceInformation/PolicyIdentifier -> UpdatePatientInsurancePolicyByPipGUID/pipGUID
+L67: F3 -> F4
+L68: F4 -> F7
+L69: F7 -> UpdatePatientInsurancePolicyByPipGUID/patGUID
+L70: F3 -> F5
+L71: F5 -> F6
+L72: InsuranceInformation/PatientIdentifier -> F6
+L73: F6 -> UpdatePatientInsurancePolicyByPipGUID/patGUID
+L322: InsuranceInformation/IndividualDeductible -> F163
+L254: InsuranceInformation/ReplaceMissingTeethFlag -> F118
+L250: F118 -> F119
+L251: F118 -> F120
+L294: InsuranceInformation/ExcludeFromMassBenefitUpdateFlag -> F143
+L290: F143 -> F144
+L291: F143 -> F145
+L327: F163 -> F89
+L328: F89 -> F90
+L329: InsuranceInformation/IndividualAnnualMaxRemaining -> F164
+L330: F164 -> F159
+L331: F159 -> F160
+L332: InsuranceInformation/IndividualDeductibleRemaining -> F165
+L333: F165 -> F154
+L334: F154 -> F155
+L335: F149 -> F150
+L336: InsuranceInformation/IndividualOrthoMaxRemaining -> F166
+L337: F166 -> F149
+L338: InsuranceInformation/LifetimeMax -> F167
+L339: F167 -> F124
+L340: F124 -> F125
+L341: InsuranceInformation/IndividualOrthoDeductible -> F168
+L342: F168 -> F109
+L343: F109 -> F110
+L344: InsuranceInformation/FamilyAnnualMax -> F169
+L345: F169 -> F104
+L346: F104 -> F105
+L347: InsuranceInformation/FamilyDeductible -> F171
+L348: F171 -> F99
+L349: F99 -> F100
+L350: InsuranceInformation/IndividualAnnualMax -> F172
+L351: F172 -> F94
+L352: F94 -> F95
+L353: InsuranceInformation/IndividualOrthoMax -> F173
+L354: F173 -> F114
+L355: F114 -> F115
+L356: InsuranceInformation/BenefitRenewalDate -> F174
+L357: F174 -> F139
+L358: F139 -> F140
+L359: InsuranceInformation/InNetworkFlag -> F175
+L360: F175 -> F129
+L361: F129 -> F130
+L362: InsuranceInformation/PayOutOfNetworkFlag -> F176
+L363: F176 -> F134
+L364: F134 -> F135
+--- FUNCTOIDS ---
+F3 [FID 706] inputs: L66
+F8 [FID 706] inputs: L78
+F9 [Equal (inferred)] inputs: L74, const:'true'
+F10 [Logical NOT (inferred)] inputs: L75
+F11 [Value Mapping] inputs: L77, L79
+F12 [FID 376] inputs: L76
+F13 [FID 706] inputs: L86
+F14 [Equal (inferred)] inputs: L82, const:'true'
+F15 [Logical NOT (inferred)] inputs: L83
+F16 [Value Mapping] inputs: L85, L87
+F17 [FID 376] inputs: L84
+F18 [FID 706] inputs: L94
+F19 [Equal (inferred)] inputs: L90, const:'true'
+F20 [Logical NOT (inferred)] inputs: L91
+F21 [Value Mapping] inputs: L93, L95
+F22 [FID 376] inputs: L92
+F23 [FID 706] inputs: L102
+F24 [Equal (inferred)] inputs: L98, const:'true'
+F25 [Logical NOT (inferred)] inputs: L99
+F26 [Value Mapping] inputs: L101, L103
+F27 [FID 376] inputs: L100
+F28 [FID 706] inputs: L110
+F29 [Equal (inferred)] inputs: L106, const:'true'
+F30 [Logical NOT (inferred)] inputs: L107
+F31 [Value Mapping] inputs: L109, L111
+F32 [FID 376] inputs: L108
+F33 [FID 706] inputs: L118
+F34 [Equal (inferred)] inputs: L114, const:'true'
+F35 [Logical NOT (inferred)] inputs: L115
+F36 [Value Mapping] inputs: L117, L119
+F37 [FID 376] inputs: L116
+F38 [FID 706] inputs: L126
+F39 [Equal (inferred)] inputs: L122, const:'true'
+F40 [Logical NOT (inferred)] inputs: L123
+F41 [Value Mapping] inputs: L125, L127
+F42 [FID 376] inputs: L124
+F43 [FID 706] inputs: L134
+F44 [Equal (inferred)] inputs: L130, const:'true'
+F45 [Logical NOT (inferred)] inputs: L131
+F46 [Value Mapping] inputs: L133, L135
+F47 [FID 376] inputs: L132
+F48 [FID 706] inputs: L142
+F49 [Equal (inferred)] inputs: L138, const:'true'
+F50 [Logical NOT (inferred)] inputs: L139
+F51 [Value Mapping] inputs: L141, L143
+F52 [FID 376] inputs: L140
+F53 [FID 706] inputs: L150
+F54 [Equal (inferred)] inputs: L146, const:'true'
+F55 [Logical NOT (inferred)] inputs: L147
+F56 [Value Mapping] inputs: L149, L151
+F57 [FID 376] inputs: L148
+F58 [FID 706] inputs: L158
+F59 [Equal (inferred)] inputs: L154, const:'true'
+F60 [Logical NOT (inferred)] inputs: L155
+F61 [Value Mapping] inputs: L157, L159
+F62 [FID 376] inputs: L156
+F63 [FID 706] inputs: L166
+F64 [Equal (inferred)] inputs: L162, const:'true'
+F65 [Logical NOT (inferred)] inputs: L163
+F66 [Value Mapping] inputs: L165, L167
+F67 [FID 376] inputs: L164
+F68 [FID 706] inputs: L174
+F69 [Equal (inferred)] inputs: L170, const:'true'
+F70 [Logical NOT (inferred)] inputs: L171
+F71 [Value Mapping] inputs: L173, L175
+F72 [FID 376] inputs: L172
+F73 [FID 706] inputs: L182
+F74 [Equal (inferred)] inputs: L178, const:'true'
+F75 [Logical NOT (inferred)] inputs: L179
+F76 [Value Mapping] inputs: L181, L183
+F77 [FID 376] inputs: L180
+F78 [FID 706] inputs: L190
+F79 [Equal (inferred)] inputs: L186, const:'true'
+F80 [Logical NOT (inferred)] inputs: L187
+F81 [Value Mapping] inputs: L189, L191
+F82 [FID 376] inputs: L188
+F83 [FID 706] inputs: L198
+F84 [Equal (inferred)] inputs: L194, const:'true'
+F85 [Logical NOT (inferred)] inputs: L195
+F86 [Value Mapping] inputs: L197, L199
+F87 [FID 376] inputs: L196
+F89 [Equal (inferred)] inputs: L327, const:'0'
+F90 [Logical NOT (inferred)] inputs: L328
+F91 [Value Mapping] inputs: L205, L207
+F92 [FID 376] inputs: L204
+F94 [Equal (inferred)] inputs: L351, const:'0'
+F95 [Logical NOT (inferred)] inputs: L352
+F96 [Value Mapping] inputs: L213, L215
+F97 [FID 376] inputs: L212
+F99 [Equal (inferred)] inputs: L348, const:'0'
+F100 [Logical NOT (inferred)] inputs: L349
+F101 [Value Mapping] inputs: L221, L223
+F102 [FID 376] inputs: L220
+F104 [Equal (inferred)] inputs: L345, const:'0'
+F105 [Logical NOT (inferred)] inputs: L346
+F106 [Value Mapping] inputs: L229, L231
+F107 [FID 376] inputs: L228
+F109 [Equal (inferred)] inputs: L342, const:'0'
+F110 [Logical NOT (inferred)] inputs: L343
+F111 [Value Mapping] inputs: L237, L239
+F112 [FID 376] inputs: L236
+F114 [Equal (inferred)] inputs: L354, const:'0'
+F115 [Logical NOT (inferred)] inputs: L355
+F116 [Value Mapping] inputs: L245, L247
+F117 [FID 376] inputs: L244
+F119 [Equal (inferred)] inputs: L250, const:'true'
+F120 [Logical NOT (inferred)] inputs: L251
+F121 [Value Mapping] inputs: L253, L255
+F122 [FID 376] inputs: L252
+F124 [Equal (inferred)] inputs: L339, const:'0'
+F125 [Logical NOT (inferred)] inputs: L340
+F126 [Value Mapping] inputs: L261, L263
+F127 [FID 376] inputs: L260
+F129 [Equal (inferred)] inputs: L360, const:'0'
+F130 [Logical NOT (inferred)] inputs: L361
+F131 [Value Mapping] inputs: L269, L271
+F132 [FID 376] inputs: L268
+F134 [Equal (inferred)] inputs: L363, const:'true'
+F135 [Logical NOT (inferred)] inputs: L364
+F136 [Value Mapping] inputs: L277, L279
+F137 [FID 376] inputs: L276
+F139 [Equal (inferred)] inputs: L357, const:'0'
+F140 [Logical NOT (inferred)] inputs: L358
+F141 [Value Mapping] inputs: L285, L287
+F142 [FID 376] inputs: L284
+F144 [Equal (inferred)] inputs: L290, const:'true'
+F145 [Logical NOT (inferred)] inputs: L291
+F146 [Value Mapping] inputs: L293, L295
+F147 [FID 376] inputs: L292
+F149 [Equal (inferred)] inputs: L337, const:'0'
+F150 [Logical NOT (inferred)] inputs: L335
+F151 [Value Mapping] inputs: L301, L303
+F152 [FID 376] inputs: L300
+F154 [Equal (inferred)] inputs: L333, const:'0'
+F155 [Logical NOT (inferred)] inputs: L334
+F156 [Value Mapping] inputs: L309, L311
+F157 [FID 376] inputs: L308
+F159 [Equal (inferred)] inputs: L330, const:'0'
+F160 [Logical NOT (inferred)] inputs: L331
+F161 [Value Mapping] inputs: L317, L319
+F162 [FID 376] inputs: L316
+F4 [Equal (inferred)] inputs: L67, const:'true'
+F7 [FID 376] inputs: L68
+F5 [Logical NOT (inferred)] inputs: L70
+F6 [Value Mapping] inputs: L71, L72
+F163 [String Size (inferred)] inputs: L322
+F118 [FID 706] inputs: L254
+F143 [FID 706] inputs: L294
+F164 [String Size (inferred)] inputs: L329
+F165 [String Size (inferred)] inputs: L332
+F166 [String Size (inferred)] inputs: L336
+F167 [String Size (inferred)] inputs: L338
+F168 [String Size (inferred)] inputs: L341
+F169 [String Size (inferred)] inputs: L344
+F171 [String Size (inferred)] inputs: L347
+F172 [String Size (inferred)] inputs: L350
+F173 [String Size (inferred)] inputs: L353
+F174 [String Size (inferred)] inputs: L356
+F175 [String Size (inferred)] inputs: L359
+F176 [String Size (inferred)] inputs: L362
+

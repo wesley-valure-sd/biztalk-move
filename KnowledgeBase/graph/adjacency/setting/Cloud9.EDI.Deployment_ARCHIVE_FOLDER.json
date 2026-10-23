@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "setting:Cloud9.EDI.Deployment/ARCHIVE_FOLDER",
+    "type": "setting",
+    "name": "ARCHIVE_FOLDER",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.Deployment/SettingsFileGenerator.xml",
+    "bindingSet": "Cloud9.EDI.Deployment",
+    "valuesByEnvironment": {
+      "Default Values (DefaultSettings)": "C:\\BizTalkTest\\Archive",
+      "Local Dev (LocalSettings)": "C:\\BizTalkTest\\Archive",
+      "JGLISSON Development (JGLISSONSettings)": "C:\\BizTalkTest\\Archive",
+      "LAB (LABSettings)": "\\\\10.2.1.1\\Development\\BizTalk1\\Archive",
+      "LAB2 (LAB2Settings)": "\\\\10.2.1.1\\Development\\Lab2\\Archive",
+      "LAB3 (LAB3Settings)": "\\\\10.2.1.1\\Development\\BizTalk3\\Archive",
+      "PROD (C9Prod1_Settings)": "\\\\atl-nas2\\BizTalk\\Archive",
+      "PROD (C9Prod2_Settings)": "\\\\us-ea1-fs1\\BizTalk\\Archive",
+      "LAB (SDLab1_Settings)": "\\\\c9.smiledoctors.com\\c9\\cloud9-test\\BizTalk\\Archive",
+      "PROD (SDProd1_Settings)": "\\\\c9.smiledoctors.com\\c9\\cloud9\\BizTalk\\Archive"
+    }
+  },
+  "outgoing": [],
+  "incoming": []
+}

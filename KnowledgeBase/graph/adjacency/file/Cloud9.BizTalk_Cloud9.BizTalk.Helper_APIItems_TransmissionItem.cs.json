@@ -1,0 +1,34 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/APIItems/TransmissionItem.cs",
+    "type": "file",
+    "name": "TransmissionItem.cs",
+    "kind": "csharp",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/APIItems/TransmissionItem.cs"
+  },
+  "outgoing": [
+    {
+      "type": "defines",
+      "to": "class:Cloud9.BizTalk.Helper.APIItems.TransmissionItem",
+      "toName": "Cloud9.BizTalk.Helper.APIItems.TransmissionItem",
+      "toType": "class",
+      "toFile": "adjacency/class/Cloud9.BizTalk.Helper.APIItems.TransmissionItem.json"
+    },
+    {
+      "type": "defines",
+      "to": "class:Cloud9.BizTalk.Helper.APIItems.MDMTransmissionItem",
+      "toName": "Cloud9.BizTalk.Helper.APIItems.MDMTransmissionItem",
+      "toType": "class",
+      "toFile": "adjacency/class/Cloud9.BizTalk.Helper.APIItems.MDMTransmissionItem.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.Helper",
+      "fromName": "Cloud9.BizTalk.Helper",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.Helper.json"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "node": {
+    "id": "sendport:Cloud9.BizTalk.Deployment/Cloud9.BizTalk.Epic_1.0.0.0_Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient_Port_UpsertAppointmentDynamic_182f4e020577c79e",
+    "type": "sendport",
+    "name": "Cloud9.BizTalk.Epic_1.0.0.0_Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient_Port_UpsertAppointmentDynamic_182f4e020577c79e",
+    "sendPipeline": "Microsoft.BizTalk.DefaultPipelines.XMLTransmit",
+    "bindingSet": "Cloud9.BizTalk.Deployment",
+    "actionMappings": [],
+    "isTwoWay": "true",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Deployment/PortBindingsMaster.xml",
+    "filter": [],
+    "isStatic": "false"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Deployment/PortBindingsMaster.xml",
+      "toName": "PortBindingsMaster.xml",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Deployment_PortBindingsMaster.xml.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "boundToSendPort",
+      "from": "orchestration:Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient",
+      "fromName": "ProcessHL7MessagesForPatient",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient.json",
+      "bindingSet": "Cloud9.BizTalk.Deployment",
+      "bindingOption": "4",
+      "logicalPort": "Port_UpsertAppointmentDynamic"
+    }
+  ]
+}

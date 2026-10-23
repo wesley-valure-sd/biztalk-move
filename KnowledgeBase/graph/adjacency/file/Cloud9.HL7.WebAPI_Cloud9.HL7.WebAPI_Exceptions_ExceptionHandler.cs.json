@@ -1,0 +1,19 @@
+{
+  "node": {
+    "id": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.WebAPI/Exceptions/ExceptionHandler.cs",
+    "type": "file",
+    "name": "ExceptionHandler.cs",
+    "kind": "csharp",
+    "path": "Cloud9.HL7.WebAPI/Cloud9.HL7.WebAPI/Exceptions/ExceptionHandler.cs"
+  },
+  "outgoing": [
+    {
+      "type": "defines",
+      "to": "class:Cloud9.HL7.WebAPI.Exceptions.ExceptionHandler",
+      "toName": "Cloud9.HL7.WebAPI.Exceptions.ExceptionHandler",
+      "toType": "class",
+      "toFile": "adjacency/class/Cloud9.HL7.WebAPI.Exceptions.ExceptionHandler.json"
+    }
+  ],
+  "incoming": []
+}

@@ -1,0 +1,19 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk.Scripts/835BBVAPatientPaymentLockbox/GetImportLogsPatientPaymentFailed.sql",
+    "type": "file",
+    "name": "GetImportLogsPatientPaymentFailed.sql",
+    "kind": "sql",
+    "path": "Cloud9.BizTalk.Scripts/835BBVAPatientPaymentLockbox/GetImportLogsPatientPaymentFailed.sql"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "definedIn",
+      "from": "sqlscript:Cloud9.BizTalk.Scripts/835BBVAPatientPaymentLockbox/GetImportLogsPatientPaymentFailed.sql",
+      "fromName": "GetImportLogsPatientPaymentFailed.sql",
+      "fromType": "sqlscript",
+      "fromFile": "adjacency/sqlscript/Cloud9.BizTalk.Scripts_835BBVAPatientPaymentLockbox_GetImportLogsPatientPaymentFailed.sql.json"
+    }
+  ]
+}

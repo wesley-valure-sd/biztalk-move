@@ -1,0 +1,44 @@
+{
+  "node": {
+    "id": "sendport:Cloud9.EDI.PDS.Deployment/SP_CHC_Inbound",
+    "type": "sendport",
+    "name": "SP_CHC_Inbound",
+    "sendPipeline": "Microsoft.BizTalk.DefaultPipelines.PassThruTransmit",
+    "bindingSet": "Cloud9.EDI.PDS.Deployment",
+    "actionMappings": [],
+    "isTwoWay": "false",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.PDS.Deployment/PortBindingsMaster.xml",
+    "address": "${ADDR_FILE_ROOT}\\CHC_Inbound\\%SourceFileName%",
+    "filter": [],
+    "isStatic": "true",
+    "transport": "FILE"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.EDI.PDS.Deployment/PortBindingsMaster.xml",
+      "toName": "PortBindingsMaster.xml",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.EDI.PDS.Deployment_PortBindingsMaster.xml.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.EDI.PDS.Deployment/ADDR_FILE_ROOT",
+      "toName": "ADDR_FILE_ROOT",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.EDI.PDS.Deployment_ADDR_FILE_ROOT.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "boundToSendPort",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker",
+      "fromName": "Process_CHC_InboundFiles_Worker",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker.json",
+      "bindingSet": "Cloud9.EDI.PDS.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "Port_SaveEDIFile"
+    }
+  ]
+}

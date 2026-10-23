@@ -1,0 +1,69 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.ProcessTreatmentCardData.Worker.odx",
+    "type": "file",
+    "name": "Cloud9.BizTalk.Epic.ProcessTreatmentCardData.Worker.odx",
+    "kind": "odx",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.ProcessTreatmentCardData.Worker.odx"
+  },
+  "outgoing": [
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.Epic.MPType_MDM_T02",
+      "toName": "MPType_MDM_T02",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_MDM_T02.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.Epic.MPType_GetTreatmentCardPatientListReq",
+      "toName": "MPType_GetTreatmentCardPatientListReq",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_GetTreatmentCardPatientListReq.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.Epic.MPType_GetTreatmentCardPatientListResp",
+      "toName": "MPType_GetTreatmentCardPatientListResp",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_GetTreatmentCardPatientListResp.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.Epic.MPType_TCPatientListElement",
+      "toName": "MPType_TCPatientListElement",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_TCPatientListElement.json"
+    },
+    {
+      "type": "defines",
+      "to": "porttype:Cloud9.BizTalk.Epic.PortType_GetTreatmentCardPatientList",
+      "toName": "PortType_GetTreatmentCardPatientList",
+      "toType": "porttype",
+      "toFile": "adjacency/porttype/Cloud9.BizTalk.Epic.PortType_GetTreatmentCardPatientList.json"
+    },
+    {
+      "type": "defines",
+      "to": "porttype:Cloud9.BizTalk.Epic.PortType_Send_MDM_T02",
+      "toName": "PortType_Send_MDM_T02",
+      "toType": "porttype",
+      "toFile": "adjacency/porttype/Cloud9.BizTalk.Epic.PortType_Send_MDM_T02.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.Epic",
+      "fromName": "Cloud9.BizTalk.Epic",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.Epic.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "orchestration:Cloud9.BizTalk.Epic.ProcessTreatmentCardData_Worker",
+      "fromName": "ProcessTreatmentCardData_Worker",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.ProcessTreatmentCardData_Worker.json"
+    }
+  ]
+}

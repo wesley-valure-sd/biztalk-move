@@ -1,0 +1,27 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored Procedures/UpdateProcessParameters.sql",
+    "type": "file",
+    "name": "UpdateProcessParameters.sql",
+    "kind": "sql",
+    "path": "Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored Procedures/UpdateProcessParameters.sql"
+  },
+  "outgoing": [
+    {
+      "type": "defines",
+      "to": "sqlproc:BizTalkCloud9Common.BTS.UpdateProcessParameters",
+      "toName": "BTS.UpdateProcessParameters",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.UpdateProcessParameters.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.Central.Database",
+      "fromName": "Cloud9.BizTalk.Central.Database",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.Central.Database.json"
+    }
+  ]
+}

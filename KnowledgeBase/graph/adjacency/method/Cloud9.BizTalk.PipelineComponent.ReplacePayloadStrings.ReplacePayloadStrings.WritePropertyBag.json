@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.ReplacePayloadStrings.WritePropertyBag",
+    "type": "method",
+    "name": "ReplacePayloadStrings.WritePropertyBag",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings/ReplacePayloadStrings.cs",
+    "class": "Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.ReplacePayloadStrings",
+    "line": 165,
+    "signatures": [
+      "private void WritePropertyBag(Microsoft.BizTalk.Component.Interop.IPropertyBag pb, string propName, object val)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.ReplacePayloadStrings",
+      "fromName": "Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.ReplacePayloadStrings",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.ReplacePayloadStrings.json"
+    }
+  ]
+}

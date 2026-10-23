@@ -1,0 +1,28 @@
+{
+  "node": {
+    "id": "sqltable:BizTalkCloud9Common.BTS.ProcessingError",
+    "type": "sqltable",
+    "name": "BTS.ProcessingError",
+    "database": "BizTalkCloud9Common",
+    "columns": [
+      "peID BIGINT",
+      "peMessageID NVARCHAR(100)",
+      "ifGUID UNIQUEIDENTIFIER",
+      "peMessageType NVARCHAR(10)",
+      "peErrorMessage NVARCHAR(1000)",
+      "peCreatedDate DATETIME",
+      "peCreatedBy NVARCHAR(50)"
+    ],
+    "path": "Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Tables/ProcessingError.sql"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Tables/ProcessingError.sql",
+      "fromName": "ProcessingError.sql",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Tables_ProcessingError.sql.json"
+    }
+  ]
+}

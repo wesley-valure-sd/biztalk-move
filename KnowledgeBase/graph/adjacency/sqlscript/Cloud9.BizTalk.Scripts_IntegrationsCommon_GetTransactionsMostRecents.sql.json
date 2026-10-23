@@ -1,0 +1,28 @@
+{
+  "node": {
+    "id": "sqlscript:Cloud9.BizTalk.Scripts/IntegrationsCommon/GetTransactionsMostRecents.sql",
+    "type": "sqlscript",
+    "name": "GetTransactionsMostRecents.sql",
+    "path": "Cloud9.BizTalk.Scripts/IntegrationsCommon/GetTransactionsMostRecents.sql",
+    "purpose": "Get Most recent Transactions",
+    "folder": "IntegrationsCommon",
+    "database": "LocalDemo-Trunk"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk.Scripts/IntegrationsCommon/GetTransactionsMostRecents.sql",
+      "toName": "GetTransactionsMostRecents.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Scripts_IntegrationsCommon_GetTransactionsMostRecents.sql.json"
+    },
+    {
+      "type": "queries",
+      "to": "sqltable:PracticeDB.dbo.Transaction",
+      "toName": "dbo.Transaction",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/PracticeDB.dbo.Transaction.json"
+    }
+  ],
+  "incoming": []
+}

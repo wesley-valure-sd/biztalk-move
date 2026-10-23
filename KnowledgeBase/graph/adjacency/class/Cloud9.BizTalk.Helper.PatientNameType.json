@@ -1,0 +1,21 @@
+{
+  "node": {
+    "id": "class:Cloud9.BizTalk.Helper.PatientNameType",
+    "type": "class",
+    "name": "Cloud9.BizTalk.Helper.PatientNameType",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/ParseNameAddressBox.cs",
+    "visibility": "private",
+    "kind": "enum",
+    "line": 197
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/ParseNameAddressBox.cs",
+      "fromName": "ParseNameAddressBox.cs",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Helper_ParseNameAddressBox.cs.json"
+    }
+  ]
+}

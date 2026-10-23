@@ -1,0 +1,31 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.Helper.XLangMessageHelpers.CreateHL7MessageFromString",
+    "type": "method",
+    "name": "XLangMessageHelpers.CreateHL7MessageFromString",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/XLangMessageHelpers.cs",
+    "class": "Cloud9.BizTalk.Helper.XLangMessageHelpers",
+    "line": 59,
+    "signatures": [
+      "public static XLANGMessage CreateHL7MessageFromString(string message, string messageName, string messagePartName)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.Helper.XLangMessageHelpers",
+      "fromName": "Cloud9.BizTalk.Helper.XLangMessageHelpers",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.Helper.XLangMessageHelpers.json"
+    },
+    {
+      "type": "callsMethod",
+      "from": "orchestration:Cloud9.BizTalk.Epic.Orchestrations.HL7SQLReceive",
+      "fromName": "HL7SQLReceive",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.Orchestrations.HL7SQLReceive.json",
+      "line": 884
+    }
+  ]
+}

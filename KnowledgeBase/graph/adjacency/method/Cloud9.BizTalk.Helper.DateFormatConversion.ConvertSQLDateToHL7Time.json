@@ -1,0 +1,31 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.Helper.DateFormatConversion.ConvertSQLDateToHL7Time",
+    "type": "method",
+    "name": "DateFormatConversion.ConvertSQLDateToHL7Time",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/DateFormatConversion.cs",
+    "class": "Cloud9.BizTalk.Helper.DateFormatConversion",
+    "line": 43,
+    "signatures": [
+      "public static string ConvertSQLDateToHL7Time(string sqlDatetime)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.Helper.DateFormatConversion",
+      "fromName": "Cloud9.BizTalk.Helper.DateFormatConversion",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.Helper.DateFormatConversion.json"
+    },
+    {
+      "type": "callsMethod",
+      "from": "map:Cloud9.BizTalk.Epic.Maps.TCForPatient_To_MDM_T02Body",
+      "fromName": "Cloud9.BizTalk.Epic.Maps.TCForPatient_To_MDM_T02Body",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.Epic.Maps.TCForPatient_To_MDM_T02Body.json",
+      "via": "scripting functoid (ExternalAssembly)"
+    }
+  ]
+}

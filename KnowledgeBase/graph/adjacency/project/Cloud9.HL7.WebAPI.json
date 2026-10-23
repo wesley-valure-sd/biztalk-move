@@ -1,0 +1,86 @@
+{
+  "node": {
+    "id": "project:Cloud9.HL7.WebAPI",
+    "type": "project",
+    "name": "Cloud9.HL7.WebAPI",
+    "path": "Cloud9.HL7.WebAPI/Cloud9.HL7.WebAPI/Cloud9.HL7.WebAPI.csproj",
+    "framework": "v4.5.1",
+    "kind": "csharp",
+    "rootNamespace": "Cloud9.HL7.WebAPI",
+    "assemblyName": "Cloud9.HL7.WebAPI"
+  },
+  "outgoing": [
+    {
+      "type": "references",
+      "to": "project:Cloud9.HL7.BLL",
+      "toName": "Cloud9.HL7.BLL",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.HL7.BLL.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.WebAPI/Global.asax.cs",
+      "toName": "Global.asax.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.HL7.WebAPI_Cloud9.HL7.WebAPI_Global.asax.cs.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.WebAPI/App_Start/WebApiConfig.cs",
+      "toName": "WebApiConfig.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.HL7.WebAPI_Cloud9.HL7.WebAPI_App_Start_WebApiConfig.cs.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.WebAPI/Controllers/IncomingMessagesController.cs",
+      "toName": "IncomingMessagesController.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.HL7.WebAPI_Cloud9.HL7.WebAPI_Controllers_IncomingMessagesController.cs.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.WebAPI/Controllers/LocationController.cs",
+      "toName": "LocationController.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.HL7.WebAPI_Cloud9.HL7.WebAPI_Controllers_LocationController.cs.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.WebAPI/DTO/CredentialsDTO.cs",
+      "toName": "CredentialsDTO.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.HL7.WebAPI_Cloud9.HL7.WebAPI_DTO_CredentialsDTO.cs.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.WebAPI/DTO/IncomingMessageDTO.cs",
+      "toName": "IncomingMessageDTO.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.HL7.WebAPI_Cloud9.HL7.WebAPI_DTO_IncomingMessageDTO.cs.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.WebAPI/DTO/LocationDTO.cs",
+      "toName": "LocationDTO.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.HL7.WebAPI_Cloud9.HL7.WebAPI_DTO_LocationDTO.cs.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.WebAPI/Handlers/CorrelationIdHandler.cs",
+      "toName": "CorrelationIdHandler.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.HL7.WebAPI_Cloud9.HL7.WebAPI_Handlers_CorrelationIdHandler.cs.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "solution:Cloud9.HL7.WebAPI",
+      "fromName": "Cloud9.HL7.WebAPI",
+      "fromType": "solution",
+      "fromFile": "adjacency/solution/Cloud9.HL7.WebAPI.json"
+    }
+  ]
+}

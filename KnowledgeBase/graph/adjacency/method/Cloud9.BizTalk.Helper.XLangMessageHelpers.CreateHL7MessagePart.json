@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.Helper.XLangMessageHelpers.CreateHL7MessagePart",
+    "type": "method",
+    "name": "XLangMessageHelpers.CreateHL7MessagePart",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/XLangMessageHelpers.cs",
+    "class": "Cloud9.BizTalk.Helper.XLangMessageHelpers",
+    "line": 71,
+    "signatures": [
+      "private static HL7BTXMessage CreateHL7MessagePart(string message, string messageName, string messagePartName)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.Helper.XLangMessageHelpers",
+      "fromName": "Cloud9.BizTalk.Helper.XLangMessageHelpers",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.Helper.XLangMessageHelpers.json"
+    }
+  ]
+}

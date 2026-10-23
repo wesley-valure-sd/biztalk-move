@@ -1,0 +1,21 @@
+{
+  "node": {
+    "id": "class:Cloud9.HL7.DAL.PartnersEntities.Partner",
+    "type": "class",
+    "name": "Cloud9.HL7.DAL.PartnersEntities.Partner",
+    "path": "Cloud9.HL7.WebAPI/Cloud9.HL7.DAL/PartnersEntities/Partner.cs",
+    "visibility": "public",
+    "kind": "class",
+    "line": 9
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.DAL/PartnersEntities/Partner.cs",
+      "fromName": "Partner.cs",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.HL7.WebAPI_Cloud9.HL7.DAL_PartnersEntities_Partner.cs.json"
+    }
+  ]
+}

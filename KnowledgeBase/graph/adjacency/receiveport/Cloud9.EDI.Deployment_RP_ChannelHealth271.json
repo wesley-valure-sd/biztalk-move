@@ -1,0 +1,45 @@
+{
+  "node": {
+    "id": "receiveport:Cloud9.EDI.Deployment/RP_ChannelHealth271",
+    "type": "receiveport",
+    "name": "RP_ChannelHealth271",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.Deployment/PortBindingsMaster.xml",
+    "bindingSet": "Cloud9.EDI.Deployment",
+    "isTwoWay": "false",
+    "application": "Cloud9.EDI"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.EDI.Deployment/PortBindingsMaster.xml",
+      "toName": "PortBindingsMaster.xml",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.EDI.Deployment_PortBindingsMaster.xml.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "partOf",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_ChannelHealth271_FILE",
+      "fromName": "RL_ChannelHealth271_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_ChannelHealth271_FILE.json"
+    },
+    {
+      "type": "partOf",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}RL_ChannelHealth271_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}RL_ChannelHealth271_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}RL_ChannelHealth271_SFTP.json"
+    },
+    {
+      "type": "boundToReceivePort",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_ChannelHealth_271Eligibility",
+      "fromName": "Process_ChannelHealth_271Eligibility",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_ChannelHealth_271Eligibility.json",
+      "logicalPort": "ReceiveChannelHealth271Port",
+      "bindingSet": "Cloud9.EDI.Deployment"
+    }
+  ]
+}

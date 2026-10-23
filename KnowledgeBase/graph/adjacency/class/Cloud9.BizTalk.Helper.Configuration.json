@@ -1,0 +1,29 @@
+{
+  "node": {
+    "id": "class:Cloud9.BizTalk.Helper.Configuration",
+    "type": "class",
+    "name": "Cloud9.BizTalk.Helper.Configuration",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/Cloud9.BizTalk.Helper.cs",
+    "visibility": "public",
+    "kind": "class",
+    "line": 37
+  },
+  "outgoing": [
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.Configuration.GetConfiguration",
+      "toName": "Configuration.GetConfiguration",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.Configuration.GetConfiguration.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/Cloud9.BizTalk.Helper.cs",
+      "fromName": "Cloud9.BizTalk.Helper.cs",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Helper_Cloud9.BizTalk.Helper.cs.json"
+    }
+  ]
+}

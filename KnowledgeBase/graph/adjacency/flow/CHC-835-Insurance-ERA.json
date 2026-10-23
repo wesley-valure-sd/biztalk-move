@@ -1,0 +1,100 @@
+{
+  "node": {
+    "id": "flow:CHC-835-Insurance-ERA",
+    "type": "flow",
+    "name": "Change Healthcare ERA 835 -> insurance payment transactions or reversal to-do items",
+    "doc": "KnowledgeBase/docs/02-payments-835-end-to-end.md#flow-d-change-healthcare-835-era",
+    "replacementSpec": "KnowledgeBase/docs/03-replacement-guide.md",
+    "curated": true
+  },
+  "outgoing": [
+    {
+      "type": "source",
+      "to": "externalsystem:ChangeHealthcare-Mailbox",
+      "toName": "Change Healthcare (Emdeon) claim submission API mailbox",
+      "toType": "externalsystem",
+      "toFile": "adjacency/externalsystem/ChangeHealthcare-Mailbox.json",
+      "curated": true
+    },
+    {
+      "type": "source",
+      "to": "externalsystem:ChangeHealthcare-SFTP",
+      "toName": "Change Healthcare SFTP (835 and 835-to-BBVA folders)",
+      "toType": "externalsystem",
+      "toFile": "adjacency/externalsystem/ChangeHealthcare-SFTP.json",
+      "curated": true
+    },
+    {
+      "type": "entryPoint",
+      "to": "receiveport:Cloud9.EDI.Deployment/RP_CHC_Inbound_EDI",
+      "toName": "RP_CHC_Inbound_EDI",
+      "toType": "receiveport",
+      "toFile": "adjacency/receiveport/Cloud9.EDI.Deployment_RP_CHC_Inbound_EDI.json",
+      "curated": true
+    },
+    {
+      "type": "hasStep",
+      "to": "flowstep:CHC-01-Poll",
+      "toName": "Scheduled poll of the Change Healthcare mailbox for each practice",
+      "toType": "flowstep",
+      "toFile": "adjacency/flowstep/CHC-01-Poll.json",
+      "order": 1,
+      "curated": true
+    },
+    {
+      "type": "hasStep",
+      "to": "flowstep:CHC-02-Download",
+      "toName": "Download, decode and delete mailbox files",
+      "toType": "flowstep",
+      "toFile": "adjacency/flowstep/CHC-02-Download.json",
+      "order": 2,
+      "curated": true
+    },
+    {
+      "type": "hasStep",
+      "to": "flowstep:CHC-03-Receive",
+      "toName": "Receive CHC_Inbound file and route 835 by message type",
+      "toType": "flowstep",
+      "toFile": "adjacency/flowstep/CHC-03-Receive.json",
+      "order": 3,
+      "curated": true
+    },
+    {
+      "type": "hasStep",
+      "to": "flowstep:CHC-04-PracticeLookup",
+      "toName": "Find practice from the file name prefix",
+      "toType": "flowstep",
+      "toFile": "adjacency/flowstep/CHC-04-PracticeLookup.json",
+      "order": 4,
+      "curated": true
+    },
+    {
+      "type": "hasStep",
+      "to": "flowstep:CHC-05-ReversalOrPost",
+      "toName": "For each CLP: reversal to-do or insurance post",
+      "toType": "flowstep",
+      "toFile": "adjacency/flowstep/CHC-05-ReversalOrPost.json",
+      "order": 5,
+      "curated": true
+    },
+    {
+      "type": "hasStep",
+      "to": "flowstep:CHC-06-Log",
+      "toName": "ImportLog for each claim, BTS.Log for errors",
+      "toType": "flowstep",
+      "toFile": "adjacency/flowstep/CHC-06-Log.json",
+      "order": 6,
+      "curated": true
+    }
+  ],
+  "incoming": [
+    {
+      "type": "appliesTo",
+      "from": "businessrule:NoFileLevelTransaction",
+      "fromName": "No transaction across a file",
+      "fromType": "businessrule",
+      "fromFile": "adjacency/businessrule/NoFileLevelTransaction.json",
+      "curated": true
+    }
+  ]
+}

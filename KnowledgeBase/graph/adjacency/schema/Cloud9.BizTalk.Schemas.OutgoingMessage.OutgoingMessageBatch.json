@@ -1,0 +1,24 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.OutgoingMessage.OutgoingMessageBatch",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.OutgoingMessage.OutgoingMessageBatch",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/OutgoingMessage/OutgoingMessageBatch.xsd",
+    "rootElements": [
+      "OutgoingMessageBatch"
+    ],
+    "kind": "canonical-or-other",
+    "targetNamespace": "http://Cloud9.BizTalk.Schemas.OutgoingMessage.OutgoingMessageBatch",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/OutgoingMessage/OutgoingMessageBatch.xsd",
+      "toName": "OutgoingMessageBatch.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_OutgoingMessage_OutgoingMessageBatch.xsd.json"
+    }
+  ],
+  "incoming": []
+}

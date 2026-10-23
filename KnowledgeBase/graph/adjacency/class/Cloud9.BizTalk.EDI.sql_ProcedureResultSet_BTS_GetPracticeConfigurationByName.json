@@ -1,0 +1,21 @@
+{
+  "node": {
+    "id": "class:Cloud9.BizTalk.EDI.sql_ProcedureResultSet_BTS_GetPracticeConfigurationByName",
+    "type": "class",
+    "name": "Cloud9.BizTalk.EDI.sql_ProcedureResultSet_BTS_GetPracticeConfigurationByName",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/PracticeConfig/GPC_ProcedureResultSet.BTS.GetPracticeConfigurationByName.cs",
+    "visibility": "public",
+    "kind": "class",
+    "line": 11
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/PracticeConfig/GPC_ProcedureResultSet.BTS.GetPracticeConfigurationByName.cs",
+      "fromName": "GPC_ProcedureResultSet.BTS.GetPracticeConfigurationByName.cs",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_PracticeConfig_GPC_ProcedureResultSet.BTS.GetPracticeConfigurationByName.cs.json"
+    }
+  ]
+}

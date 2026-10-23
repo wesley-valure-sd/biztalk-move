@@ -1,0 +1,32 @@
+{
+  "node": {
+    "id": "receivelocation:Cloud9.BizTalk.Deployment/RL.MDM_T02_To_PDS",
+    "type": "receivelocation",
+    "name": "RL.MDM_T02_To_PDS",
+    "enabled": "true",
+    "bindingSet": "Cloud9.BizTalk.Deployment",
+    "receivePipeline": "Microsoft.BizTalk.DefaultPipelines.PassThruReceive",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Deployment/PortBindingsMaster.xml",
+    "address": "${ADDR_FILE_ROOT}\\MDM_T02\\*.*",
+    "serviceWindow": "2000-01-01T00:00:00 to 2000-01-01T23:59:59 (enabled=false)",
+    "pollingInterval": "60000",
+    "transport": "FILE"
+  },
+  "outgoing": [
+    {
+      "type": "partOf",
+      "to": "receiveport:Cloud9.BizTalk.Deployment/RP.MDM_T02_To_PDS",
+      "toName": "RP.MDM_T02_To_PDS",
+      "toType": "receiveport",
+      "toFile": "adjacency/receiveport/Cloud9.BizTalk.Deployment_RP.MDM_T02_To_PDS.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.BizTalk.Deployment/ADDR_FILE_ROOT",
+      "toName": "ADDR_FILE_ROOT",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.BizTalk.Deployment_ADDR_FILE_ROOT.json"
+    }
+  ],
+  "incoming": []
+}

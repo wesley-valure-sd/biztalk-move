@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.Helper.AddressInfoType.GetAddressInfo",
+    "type": "method",
+    "name": "AddressInfoType.GetAddressInfo",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/ParseNameAddressBox.cs",
+    "class": "Cloud9.BizTalk.Helper.AddressInfoType",
+    "line": 276,
+    "signatures": [
+      "private static string GetAddressInfo(string cityStateZip, AddressInfoType whichInfo)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.Helper.AddressInfoType",
+      "fromName": "Cloud9.BizTalk.Helper.AddressInfoType",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.Helper.AddressInfoType.json"
+    }
+  ]
+}

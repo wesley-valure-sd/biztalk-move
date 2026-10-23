@@ -1,0 +1,67 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.AddTodoItemTypedProcedure_BTS",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.AddTodoItemTypedProcedure_BTS",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/AddTodoItem/AddTodoItemTypedProcedure.BTS.xsd",
+    "rootElements": [
+      "AddTodoItem",
+      "AddTodoItemResponse"
+    ],
+    "kind": "wcf-sql-typed-procedure",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS",
+    "sqlActions": [
+      "TypedProcedure/BTS/AddTodoItem"
+    ]
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/AddTodoItem/AddTodoItemTypedProcedure.BTS.xsd",
+      "toName": "AddTodoItemTypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_AddTodoItem_AddTodoItemTypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "describesParametersOf",
+      "to": "sqlproc:PracticeDB.BTS.AddTodoItem",
+      "toName": "BTS.AddTodoItem",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/PracticeDB.BTS.AddTodoItem.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_AddTodoItem",
+      "fromName": "Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_AddTodoItem",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_AddTodoItem.json",
+      "root": "AddTodoItem"
+    },
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.X12.Maps.ClaimStatusCanonical_To_AddTodoItem",
+      "fromName": "Cloud9.BizTalk.X12.Maps.ClaimStatusCanonical_To_AddTodoItem",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.ClaimStatusCanonical_To_AddTodoItem.json",
+      "root": "AddTodoItem"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.AddTodoItemRequest_MMT",
+      "fromName": "AddTodoItemRequest_MMT",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.AddTodoItemRequest_MMT.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.AddTodoItemTypedProcedure_BTS.AddTodoItem"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.AddTodoItemResponse_MMT",
+      "fromName": "AddTodoItemResponse_MMT",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.AddTodoItemResponse_MMT.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.AddTodoItemTypedProcedure_BTS.AddTodoItemResponse"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.ADAClaimProcedureResultSet_dbo_GetADAClaim",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.ADAClaimProcedureResultSet_dbo_GetADAClaim",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ADAClaim/ADAClaimProcedureResultSet.dbo.GetADAClaim.xsd",
+    "rootElements": [
+      "StoredProcedureResultSet0",
+      "ArrayOfStoredProcedureResultSet0"
+    ],
+    "kind": "wcf-sql-result-set",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/dbo/GetADAClaim",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ADAClaim/ADAClaimProcedureResultSet.dbo.GetADAClaim.xsd",
+      "toName": "ADAClaimProcedureResultSet.dbo.GetADAClaim.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_ADAClaim_ADAClaimProcedureResultSet.dbo.GetADAClaim.xsd.json"
+    }
+  ],
+  "incoming": []
+}

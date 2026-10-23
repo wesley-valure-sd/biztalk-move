@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ns0="http://microsoft.com/HealthCare/HL7/2X/2.6/Segments" xmlns:b="http://schemas.microsoft.com/BizTalk/2003" xmlns="http://microsoft.com/HealthCare/HL7/2X" targetNamespace="http://microsoft.com/HealthCare/HL7/2X" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="BTAHL7Schemas.segments_26" namespace="http://microsoft.com/HealthCare/HL7/2X/2.6/Segments" />
+  <xs:annotation>
+    <xs:appinfo>
+      <b:references>
+        <b:reference targetNameSpace="http://microsoft.com/HealthCare/HL7/2X/2.6/Segments" />
+        <b:reference targetNameSpace="http://microsoft.com/HealthCare/HL7/2X/2.6/DataTypes" />
+        <b:reference targetNameSpace="http://microsoft.com/HealthCare/HL7/2X/2.6/Tables" />
+      </b:references>
+      <b:schemaInfo standards_version="HL7.DBVersion.1_5" document_type="HL7 2X Schema" version="0.0.0.0.2.0" root_reference="MFN_M02_26_GLO_DEF" />
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="MFN_M02_26_GLO_DEF">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="SFT_SoftwareSegment" type="ns0:SFT" />
+        <xs:element minOccurs="0" maxOccurs="1" name="UAC_UserAuthenticationCredentialSegment" type="ns0:UAC" />
+        <xs:element minOccurs="1" maxOccurs="1" name="MFI_MasterFileIdentification" type="ns0:MFI" />
+        <xs:sequence minOccurs="1" maxOccurs="unbounded">
+          <xs:element minOccurs="1" maxOccurs="1" name="MFE_MasterFileEntry" type="ns0:MFE" />
+          <xs:element minOccurs="1" maxOccurs="1" name="STF_StaffIdentification" type="ns0:STF" />
+          <xs:element minOccurs="1" maxOccurs="unbounded" name="PRA_PractitionerDetail" type="ns0:PRA" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ZLK_Linking" type="ns0:ZLK" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ORG_PractitionerOrganizationUnit" type="ns0:ORG" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="AFF_ProfessionalAffiliation" type="ns0:AFF" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="LAN_LanguageDetail" type="ns0:LAN" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="EDU_EducationalDetail" type="ns0:EDU" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="CER_CertificateDetail" type="ns0:CER" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="NTE_NotesAndComments" type="ns0:NTE" />
+        </xs:sequence>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

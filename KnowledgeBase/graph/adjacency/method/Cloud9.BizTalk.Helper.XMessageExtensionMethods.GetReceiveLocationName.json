@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.Helper.XMessageExtensionMethods.GetReceiveLocationName",
+    "type": "method",
+    "name": "XMessageExtensionMethods.GetReceiveLocationName",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/XLangMessageHelpers.cs",
+    "class": "Cloud9.BizTalk.Helper.XMessageExtensionMethods",
+    "line": 177,
+    "signatures": [
+      "public static string GetReceiveLocationName(this XMessage @this)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.Helper.XMessageExtensionMethods",
+      "fromName": "Cloud9.BizTalk.Helper.XMessageExtensionMethods",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.Helper.XMessageExtensionMethods.json"
+    }
+  ]
+}

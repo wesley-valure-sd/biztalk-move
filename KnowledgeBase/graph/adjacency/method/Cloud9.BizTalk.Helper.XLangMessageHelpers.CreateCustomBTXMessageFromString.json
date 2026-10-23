@@ -1,0 +1,31 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.Helper.XLangMessageHelpers.CreateCustomBTXMessageFromString",
+    "type": "method",
+    "name": "XLangMessageHelpers.CreateCustomBTXMessageFromString",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/XLangMessageHelpers.cs",
+    "class": "Cloud9.BizTalk.Helper.XLangMessageHelpers",
+    "line": 94,
+    "signatures": [
+      "public static XLANGMessage CreateCustomBTXMessageFromString(string message, string messageName, string messagePartName)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.Helper.XLangMessageHelpers",
+      "fromName": "Cloud9.BizTalk.Helper.XLangMessageHelpers",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.Helper.XLangMessageHelpers.json"
+    },
+    {
+      "type": "callsMethod",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker",
+      "fromName": "Process_CHC_InboundFiles_Worker",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker.json",
+      "line": 1607
+    }
+  ]
+}

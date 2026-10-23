@@ -1,0 +1,39 @@
+{
+  "node": {
+    "id": "flowstep:BBVA-Patient-04-Post",
+    "type": "flowstep",
+    "name": "Post each ClaimPayment with BTS.Post835PatientTransaction",
+    "order": 4,
+    "curated": true,
+    "logic": "For each ClaimPayment: map to Post835PatientTransaction, set lbcLockboxCodeType='PATIENT', call the proc in the practice DB. transAmount = CLP04 * -1. transStatus='N'. transGUID = new GUID. lbcLockboxCode = BPR04. Proc returns ErrorCount and ResponseMessage."
+  },
+  "outgoing": [
+    {
+      "type": "implementedBy",
+      "to": "map:Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835PatientTransaction",
+      "toName": "Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835PatientTransaction",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835PatientTransaction.json",
+      "curated": true
+    },
+    {
+      "type": "implementedBy",
+      "to": "sqlproc:PracticeDB.BTS.Post835PatientTransaction",
+      "toName": "BTS.Post835PatientTransaction",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/PracticeDB.BTS.Post835PatientTransaction.json",
+      "curated": true
+    }
+  ],
+  "incoming": [
+    {
+      "type": "hasStep",
+      "from": "flow:BBVA-835-Patient-Lockbox",
+      "fromName": "BBVA patient lockbox 835 -> patient payment transactions",
+      "fromType": "flow",
+      "fromFile": "adjacency/flow/BBVA-835-Patient-Lockbox.json",
+      "order": 4,
+      "curated": true
+    }
+  ]
+}

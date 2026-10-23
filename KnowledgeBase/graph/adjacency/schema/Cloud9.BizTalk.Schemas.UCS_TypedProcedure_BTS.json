@@ -1,0 +1,91 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.UCS_TypedProcedure_BTS",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.UCS_TypedProcedure_BTS",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/UpdateClaimStatuses/UCS_TypedProcedure.BTS.xsd",
+    "rootElements": [
+      "UpdateClaimStatuses",
+      "UpdateClaimStatusesResponse"
+    ],
+    "kind": "wcf-sql-typed-procedure",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS",
+    "sqlActions": [
+      "TypedProcedure/BTS/UpdateClaimStatuses"
+    ]
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/UpdateClaimStatuses/UCS_TypedProcedure.BTS.xsd",
+      "toName": "UCS_TypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_UpdateClaimStatuses_UCS_TypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "describesParametersOf",
+      "to": "sqlproc:PracticeDB.BTS.UpdateClaimStatuses",
+      "toName": "BTS.UpdateClaimStatuses",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/PracticeDB.BTS.UpdateClaimStatuses.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.X12.Maps.ClaimStatusCanonical_To_UpdateClaimStatuses",
+      "fromName": "Cloud9.BizTalk.X12.Maps.ClaimStatusCanonical_To_UpdateClaimStatuses",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.ClaimStatusCanonical_To_UpdateClaimStatuses.json",
+      "root": "UpdateClaimStatuses"
+    },
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.X12.Maps.QueueClaimsResponseElement_To_UpdateClaimStatuses",
+      "fromName": "Cloud9.BizTalk.X12.Maps.QueueClaimsResponseElement_To_UpdateClaimStatuses",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.QueueClaimsResponseElement_To_UpdateClaimStatuses.json",
+      "root": "UpdateClaimStatuses"
+    },
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.X12.Maps.QueueClaimsResponseElement_To_UpdateClaimStatusesRejected",
+      "fromName": "Cloud9.BizTalk.X12.Maps.QueueClaimsResponseElement_To_UpdateClaimStatusesRejected",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.QueueClaimsResponseElement_To_UpdateClaimStatusesRejected.json",
+      "root": "UpdateClaimStatuses"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.UpdateClaimStatusesRequest_MMT",
+      "fromName": "UpdateClaimStatusesRequest_MMT",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.UpdateClaimStatusesRequest_MMT.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.UCS_TypedProcedure_BTS.UpdateClaimStatuses"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.UpdateClaimStatusesResponse_MMT",
+      "fromName": "UpdateClaimStatusesResponse_MMT",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.UpdateClaimStatusesResponse_MMT.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.UCS_TypedProcedure_BTS.UpdateClaimStatusesResponse"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.MPType_UpdateClaimStatusResp",
+      "fromName": "MPType_UpdateClaimStatusResp",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.MPType_UpdateClaimStatusResp.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.UCS_TypedProcedure_BTS.UpdateClaimStatusesResponse"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.MPType_UpdateClaimStatusReq",
+      "fromName": "MPType_UpdateClaimStatusReq",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.MPType_UpdateClaimStatusReq.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.UCS_TypedProcedure_BTS.UpdateClaimStatuses"
+    }
+  ]
+}

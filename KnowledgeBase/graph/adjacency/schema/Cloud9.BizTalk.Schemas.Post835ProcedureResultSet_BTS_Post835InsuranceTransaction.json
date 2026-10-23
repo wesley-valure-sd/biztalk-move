@@ -1,0 +1,25 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.Post835ProcedureResultSet_BTS_Post835InsuranceTransaction",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.Post835ProcedureResultSet_BTS_Post835InsuranceTransaction",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Post835/Post835ProcedureResultSet.BTS.Post835InsuranceTransaction.xsd",
+    "rootElements": [
+      "StoredProcedureResultSet0",
+      "ArrayOfStoredProcedureResultSet0"
+    ],
+    "kind": "wcf-sql-result-set",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/Post835InsuranceTransaction",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Post835/Post835ProcedureResultSet.BTS.Post835InsuranceTransaction.xsd",
+      "toName": "Post835ProcedureResultSet.BTS.Post835InsuranceTransaction.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_Post835_Post835ProcedureResultSet.BTS.Post835InsuranceTransaction.xsd.json"
+    }
+  ],
+  "incoming": []
+}

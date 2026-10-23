@@ -1,0 +1,57 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.Canonical.InsuranceInformation",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.Canonical.InsuranceInformation",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Canonical/InsuranceInformation.xsd",
+    "rootElements": [
+      "InsuranceInformation"
+    ],
+    "kind": "canonical-or-other",
+    "targetNamespace": "http://Cloud9.BizTalk.Schemas.Canonical.InsuranceInformation",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Canonical/InsuranceInformation.xsd",
+      "toName": "InsuranceInformation.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_Canonical_InsuranceInformation.xsd.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.X12.Maps.ChannelHealth_X12_00501_271_To_InsuranceInformationCanonical",
+      "fromName": "Cloud9.BizTalk.X12.Maps.ChannelHealth_X12_00501_271_To_InsuranceInformationCanonical",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.ChannelHealth_X12_00501_271_To_InsuranceInformationCanonical.json",
+      "root": "InsuranceInformation"
+    },
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.X12.Maps.CHC_X12_00501_271_To_InsuranceInformationCanonical",
+      "fromName": "Cloud9.BizTalk.X12.Maps.CHC_X12_00501_271_To_InsuranceInformationCanonical",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.CHC_X12_00501_271_To_InsuranceInformationCanonical.json",
+      "root": "InsuranceInformation"
+    },
+    {
+      "type": "sourceSchema",
+      "from": "map:Cloud9.BizTalk.X12.Maps.InsuranceInformationCanonical_To_UpdatePatientInsurancePolicyByPipGUID",
+      "fromName": "Cloud9.BizTalk.X12.Maps.InsuranceInformationCanonical_To_UpdatePatientInsurancePolicyByPipGUID",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.InsuranceInformationCanonical_To_UpdatePatientInsurancePolicyByPipGUID.json",
+      "root": "InsuranceInformation"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.InsuranceInformationCanonical_MMT",
+      "fromName": "InsuranceInformationCanonical_MMT",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.InsuranceInformationCanonical_MMT.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.Canonical.InsuranceInformation"
+    }
+  ]
+}

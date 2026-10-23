@@ -1,0 +1,21 @@
+{
+  "node": {
+    "id": "class:Cloud9.HL7.DAL.PartnersEntities.Log",
+    "type": "class",
+    "name": "Cloud9.HL7.DAL.PartnersEntities.Log",
+    "path": "Cloud9.HL7.WebAPI/Cloud9.HL7.DAL/PartnersEntities/Log.cs",
+    "visibility": "public",
+    "kind": "class",
+    "line": 9
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.DAL/PartnersEntities/Log.cs",
+      "fromName": "Log.cs",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.HL7.WebAPI_Cloud9.HL7.DAL_PartnersEntities_Log.cs.json"
+    }
+  ]
+}

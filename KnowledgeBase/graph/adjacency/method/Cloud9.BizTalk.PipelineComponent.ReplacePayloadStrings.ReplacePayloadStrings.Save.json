@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.ReplacePayloadStrings.Save",
+    "type": "method",
+    "name": "ReplacePayloadStrings.Save",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings/ReplacePayloadStrings.cs",
+    "class": "Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.ReplacePayloadStrings",
+    "line": 128,
+    "signatures": [
+      "public virtual void Save(Microsoft.BizTalk.Component.Interop.IPropertyBag pb, bool fClearDirty, bool fSaveAllProperties)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.ReplacePayloadStrings",
+      "fromName": "Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.ReplacePayloadStrings",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.ReplacePayloadStrings.json"
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "node": {
+    "id": "pipeline:Cloud9.BizTalk.X12.Pipelines.SendEmdeonXMLPipeline",
+    "type": "pipeline",
+    "name": "Cloud9.BizTalk.X12.Pipelines.SendEmdeonXMLPipeline",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Pipelines/SendEmdeonXMLPipeline.btp",
+    "components": [
+      "Microsoft.BizTalk.Component.XmlAsmComp",
+      "Microsoft.Practices.ESB.Namespace.PipelineComponents.RemoveNamespace",
+      "Microsoft.Practices.ESB.Namespace.PipelineComponents.AddNamespace",
+      "Cloud9.BizTalk.PipelineComponent.CustomEncoder.CustomEncoder",
+      "Cloud9.BizTalk.Shared.Components.Archive.Archive"
+    ],
+    "direction": "send"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Pipelines/SendEmdeonXMLPipeline.btp",
+      "toName": "SendEmdeonXMLPipeline.btp",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Pipelines_SendEmdeonXMLPipeline.btp.json"
+    },
+    {
+      "type": "usesComponent",
+      "to": "class:Microsoft.BizTalk.Component.XmlAsmComp",
+      "toName": "Microsoft.BizTalk.Component.XmlAsmComp",
+      "toType": "external-component",
+      "toFile": "adjacency/external-component/Microsoft.BizTalk.Component.XmlAsmComp.json"
+    },
+    {
+      "type": "usesComponent",
+      "to": "class:Microsoft.Practices.ESB.Namespace.PipelineComponents.RemoveNamespace",
+      "toName": "Microsoft.Practices.ESB.Namespace.PipelineComponents.RemoveNamespace",
+      "toType": "external-component",
+      "toFile": "adjacency/external-component/Microsoft.Practices.ESB.Namespace.PipelineComponents.RemoveNamespace.json"
+    },
+    {
+      "type": "usesComponent",
+      "to": "class:Microsoft.Practices.ESB.Namespace.PipelineComponents.AddNamespace",
+      "toName": "Microsoft.Practices.ESB.Namespace.PipelineComponents.AddNamespace",
+      "toType": "external-component",
+      "toFile": "adjacency/external-component/Microsoft.Practices.ESB.Namespace.PipelineComponents.AddNamespace.json"
+    },
+    {
+      "type": "usesComponent",
+      "to": "class:Cloud9.BizTalk.PipelineComponent.CustomEncoder.CustomEncoder",
+      "toName": "Cloud9.BizTalk.PipelineComponent.CustomEncoder.CustomEncoder",
+      "toType": "class",
+      "toFile": "adjacency/class/Cloud9.BizTalk.PipelineComponent.CustomEncoder.CustomEncoder.json"
+    },
+    {
+      "type": "usesComponent",
+      "to": "class:Cloud9.BizTalk.Shared.Components.Archive.Archive",
+      "toName": "Cloud9.BizTalk.Shared.Components.Archive.Archive",
+      "toType": "class",
+      "toFile": "adjacency/class/Cloud9.BizTalk.Shared.Components.Archive.Archive.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "usesPipeline",
+      "from": "sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetMailFileList_HTTP_Dynamic_182f4e020577c79e",
+      "fromName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetMailFileList_HTTP_Dynamic_182f4e020577c79e",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetMailFileList_HTTP_Dynamic_182f4e020577c79e.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetMailFile_HTTP_Dynamic_182f4e020577c79e",
+      "fromName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetMailFile_HTTP_Dynamic_182f4e020577c79e",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetMailFile_HTTP_Dynamic_182f4e020577c79e.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_DeleteMailFile_HTTP_Dynamic_182f4e020577c79e",
+      "fromName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_DeleteMailFile_HTTP_Dynamic_182f4e020577c79e",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_DeleteMailFile_HTTP_Dynamic_182f4e020577c79e.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "sendport:Cloud9.EDI.PDS.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetMailFileList_HTTP_Dynamic_182f4e020577c79e",
+      "fromName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetMailFileList_HTTP_Dynamic_182f4e020577c79e",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.PDS.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetMailFileList_HTTP_Dynamic_182f4e020577c79e.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "sendport:Cloud9.EDI.PDS.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetMailFile_HTTP_Dynamic_182f4e020577c79e",
+      "fromName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetMailFile_HTTP_Dynamic_182f4e020577c79e",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.PDS.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetMailFile_HTTP_Dynamic_182f4e020577c79e.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "sendport:Cloud9.EDI.PDS.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_DeleteMailFile_HTTP_Dynamic_182f4e020577c79e",
+      "fromName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_DeleteMailFile_HTTP_Dynamic_182f4e020577c79e",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.PDS.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_DeleteMailFile_HTTP_Dynamic_182f4e020577c79e.json"
+    }
+  ]
+}

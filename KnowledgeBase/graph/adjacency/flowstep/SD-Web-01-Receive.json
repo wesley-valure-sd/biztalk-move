@@ -1,0 +1,31 @@
+{
+  "node": {
+    "id": "flowstep:SD-Web-01-Receive",
+    "type": "flowstep",
+    "name": "Receive file from SD-<REGION> folder",
+    "order": 1,
+    "curated": true,
+    "logic": "${SD_835_WEB_FILE_FOLDER}\\SD-<REGION>\\*.*. Same pipeline as BBVA. Agreement SmileDoctors_To_Cloud9 resolves the SmileDoctors schema namespace."
+  },
+  "outgoing": [
+    {
+      "type": "implementedBy",
+      "to": "schema:Cloud9.BizTalk.X12.Schemas.SD_X12_00501_835",
+      "toName": "Cloud9.BizTalk.X12.Schemas.SD_X12_00501_835",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.X12.Schemas.SD_X12_00501_835.json",
+      "curated": true
+    }
+  ],
+  "incoming": [
+    {
+      "type": "hasStep",
+      "from": "flow:SD-835-Web-Patient-Payment",
+      "fromName": "Smile Doctors web payment 835 -> patient payment transactions (card / ACH / ACH return)",
+      "fromType": "flow",
+      "fromFile": "adjacency/flow/SD-835-Web-Patient-Payment.json",
+      "order": 1,
+      "curated": true
+    }
+  ]
+}

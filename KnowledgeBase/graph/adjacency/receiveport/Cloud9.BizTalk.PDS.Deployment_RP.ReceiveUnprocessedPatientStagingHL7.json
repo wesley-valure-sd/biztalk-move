@@ -1,0 +1,29 @@
+{
+  "node": {
+    "id": "receiveport:Cloud9.BizTalk.PDS.Deployment/RP.ReceiveUnprocessedPatientStagingHL7",
+    "type": "receiveport",
+    "name": "RP.ReceiveUnprocessedPatientStagingHL7",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.PDS.Deployment/PortBindingsMaster.xml",
+    "bindingSet": "Cloud9.BizTalk.PDS.Deployment",
+    "isTwoWay": "false",
+    "application": "Cloud9.BizTalk"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.PDS.Deployment/PortBindingsMaster.xml",
+      "toName": "PortBindingsMaster.xml",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.PDS.Deployment_PortBindingsMaster.xml.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "partOf",
+      "from": "receivelocation:Cloud9.BizTalk.PDS.Deployment/RL.ReceiveUnprocessedPatientStagingHL7",
+      "fromName": "RL.ReceiveUnprocessedPatientStagingHL7",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.BizTalk.PDS.Deployment_RL.ReceiveUnprocessedPatientStagingHL7.json"
+    }
+  ]
+}

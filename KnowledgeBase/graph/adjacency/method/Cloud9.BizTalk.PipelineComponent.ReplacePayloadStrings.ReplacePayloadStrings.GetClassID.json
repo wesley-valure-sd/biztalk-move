@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.ReplacePayloadStrings.GetClassID",
+    "type": "method",
+    "name": "ReplacePayloadStrings.GetClassID",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings/ReplacePayloadStrings.cs",
+    "class": "Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.ReplacePayloadStrings",
+    "line": 90,
+    "signatures": [
+      "public void GetClassID(out System.Guid classid)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.ReplacePayloadStrings",
+      "fromName": "Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.ReplacePayloadStrings",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.ReplacePayloadStrings.json"
+    }
+  ]
+}

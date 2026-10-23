@@ -1,0 +1,26 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/Cloud9.BizTalk.Epic.ADT_A28_A31_26_CanonicalToUpsertPatient.btm",
+    "type": "file",
+    "name": "Cloud9.BizTalk.Epic.ADT_A28_A31_26_CanonicalToUpsertPatient.btm",
+    "kind": "btm",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/Cloud9.BizTalk.Epic.ADT_A28_A31_26_CanonicalToUpsertPatient.btm"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.Epic",
+      "fromName": "Cloud9.BizTalk.Epic",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.Epic.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "map:Cloud9.BizTalk.Epic.Maps.ADT_A28_A31_26_CanonicalToUpsertPatient",
+      "fromName": "Cloud9.BizTalk.Epic.Maps.ADT_A28_A31_26_CanonicalToUpsertPatient",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.Epic.Maps.ADT_A28_A31_26_CanonicalToUpsertPatient.json"
+    }
+  ]
+}

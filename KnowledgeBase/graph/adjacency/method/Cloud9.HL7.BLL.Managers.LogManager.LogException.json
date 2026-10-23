@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.HL7.BLL.Managers.LogManager.LogException",
+    "type": "method",
+    "name": "LogManager.LogException",
+    "path": "Cloud9.HL7.WebAPI/Cloud9.HL7.BLL/Managers/LogManager.cs",
+    "class": "Cloud9.HL7.BLL.Managers.LogManager",
+    "line": 12,
+    "signatures": [
+      "public static void LogException(string process, Exception ex, string request, string correlationId)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.HL7.BLL.Managers.LogManager",
+      "fromName": "Cloud9.HL7.BLL.Managers.LogManager",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.HL7.BLL.Managers.LogManager.json"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.ReportGenerator/Cloud9.BizTalk.Reports/Utilities.cs",
+    "type": "file",
+    "name": "Utilities.cs",
+    "kind": "csharp",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.ReportGenerator/Cloud9.BizTalk.Reports/Utilities.cs"
+  },
+  "outgoing": [
+    {
+      "type": "defines",
+      "to": "class:Cloud9.BizTalk.Reports.Utilities",
+      "toName": "Cloud9.BizTalk.Reports.Utilities",
+      "toType": "class",
+      "toFile": "adjacency/class/Cloud9.BizTalk.Reports.Utilities.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.Reports",
+      "fromName": "Cloud9.BizTalk.Reports",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.Reports.json"
+    }
+  ]
+}

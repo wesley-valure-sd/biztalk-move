@@ -1,0 +1,22 @@
+{
+  "node": {
+    "id": "porttype:Cloud9.BizTalk.X12.PortType_GetADAClaim",
+    "type": "porttype",
+    "name": "PortType_GetADAClaim",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_276ClaimStatus.odx",
+    "module": "Cloud9.BizTalk.X12",
+    "operations": [
+      "requestresponse GetADAClaim(GetADAClaimRequest_MMT, GetADAClaimResponse_MMT)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_276ClaimStatus.odx",
+      "fromName": "Process_CHC_276ClaimStatus.odx",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Orchestrations_Process_CHC_276ClaimStatus.odx.json"
+    }
+  ]
+}

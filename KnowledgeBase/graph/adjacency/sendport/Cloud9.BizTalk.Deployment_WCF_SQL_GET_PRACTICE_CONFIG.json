@@ -1,0 +1,35 @@
+{
+  "node": {
+    "id": "sendport:Cloud9.BizTalk.Deployment/WCF_SQL_GET_PRACTICE_CONFIG",
+    "type": "sendport",
+    "name": "WCF_SQL_GET_PRACTICE_CONFIG",
+    "sendPipeline": "Microsoft.BizTalk.DefaultPipelines.XMLTransmit",
+    "bindingSet": "Cloud9.BizTalk.Deployment",
+    "actionMappings": [
+      "GetPracticeConfiguration"
+    ],
+    "isTwoWay": "true",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Deployment/PortBindingsMaster.xml",
+    "address": "${ADDR_DB_CLOUD9COMMON}?",
+    "filter": [],
+    "isStatic": "true",
+    "transport": "WCF-Custom"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Deployment/PortBindingsMaster.xml",
+      "toName": "PortBindingsMaster.xml",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Deployment_PortBindingsMaster.xml.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.BizTalk.Deployment/ADDR_DB_CLOUD9COMMON",
+      "toName": "ADDR_DB_CLOUD9COMMON",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.BizTalk.Deployment_ADDR_DB_CLOUD9COMMON.json"
+    }
+  ],
+  "incoming": []
+}

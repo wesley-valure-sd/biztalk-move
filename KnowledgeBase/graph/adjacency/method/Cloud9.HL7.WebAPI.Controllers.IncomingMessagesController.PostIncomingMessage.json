@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.HL7.WebAPI.Controllers.IncomingMessagesController.PostIncomingMessage",
+    "type": "method",
+    "name": "IncomingMessagesController.PostIncomingMessage",
+    "path": "Cloud9.HL7.WebAPI/Cloud9.HL7.WebAPI/Controllers/IncomingMessagesController.cs",
+    "class": "Cloud9.HL7.WebAPI.Controllers.IncomingMessagesController",
+    "line": 23,
+    "signatures": [
+      "public IHttpActionResult PostIncomingMessage(IncomingMessageDTO data)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.HL7.WebAPI.Controllers.IncomingMessagesController",
+      "fromName": "Cloud9.HL7.WebAPI.Controllers.IncomingMessagesController",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.HL7.WebAPI.Controllers.IncomingMessagesController.json"
+    }
+  ]
+}

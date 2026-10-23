@@ -1,0 +1,99 @@
+{
+  "node": {
+    "id": "flow:BBVA-835-Patient-Lockbox",
+    "type": "flow",
+    "name": "BBVA patient lockbox 835 -> patient payment transactions",
+    "doc": "KnowledgeBase/docs/02-payments-835-end-to-end.md#flow-a-bbva-patient-lockbox-835",
+    "replacementSpec": "KnowledgeBase/docs/03-replacement-guide.md",
+    "curated": true
+  },
+  "outgoing": [
+    {
+      "type": "source",
+      "to": "externalsystem:BBVA-Lockbox-SFTP",
+      "toName": "BBVA / Navigant lockbox SFTP (RevenueMed host)",
+      "toType": "externalsystem",
+      "toFile": "adjacency/externalsystem/BBVA-Lockbox-SFTP.json",
+      "curated": true
+    },
+    {
+      "type": "entryPoint",
+      "to": "receiveport:Cloud9.EDI.Deployment/RP_BBVA835_Patient",
+      "toName": "RP_BBVA835_Patient",
+      "toType": "receiveport",
+      "toFile": "adjacency/receiveport/Cloud9.EDI.Deployment_RP_BBVA835_Patient.json",
+      "curated": true
+    },
+    {
+      "type": "hasStep",
+      "to": "flowstep:BBVA-Patient-01-Receive",
+      "toName": "Receive file from region folder",
+      "toType": "flowstep",
+      "toFile": "adjacency/flowstep/BBVA-Patient-01-Receive.json",
+      "order": 1,
+      "curated": true
+    },
+    {
+      "type": "hasStep",
+      "to": "flowstep:BBVA-Patient-02-PracticeLookup",
+      "toName": "Find practice database from folder name",
+      "toType": "flowstep",
+      "toFile": "adjacency/flowstep/BBVA-Patient-02-PracticeLookup.json",
+      "order": 2,
+      "curated": true
+    },
+    {
+      "type": "hasStep",
+      "to": "flowstep:BBVA-Patient-03-MapCanonical",
+      "toName": "Map 835 to ClaimPaymentBatch (one ClaimPayment for each CLP loop)",
+      "toType": "flowstep",
+      "toFile": "adjacency/flowstep/BBVA-Patient-03-MapCanonical.json",
+      "order": 3,
+      "curated": true
+    },
+    {
+      "type": "hasStep",
+      "to": "flowstep:BBVA-Patient-04-Post",
+      "toName": "Post each ClaimPayment with BTS.Post835PatientTransaction",
+      "toType": "flowstep",
+      "toFile": "adjacency/flowstep/BBVA-Patient-04-Post.json",
+      "order": 4,
+      "curated": true
+    },
+    {
+      "type": "hasStep",
+      "to": "flowstep:BBVA-Patient-05-ImportLog",
+      "toName": "Write one ImportLog row for each payment",
+      "toType": "flowstep",
+      "toFile": "adjacency/flowstep/BBVA-Patient-05-ImportLog.json",
+      "order": 5,
+      "curated": true
+    }
+  ],
+  "incoming": [
+    {
+      "type": "appliesTo",
+      "from": "businessrule:NoFileLevelTransaction",
+      "fromName": "No transaction across a file",
+      "fromType": "businessrule",
+      "fromFile": "adjacency/businessrule/NoFileLevelTransaction.json",
+      "curated": true
+    },
+    {
+      "type": "verifies",
+      "from": "sqlscript:Cloud9.BizTalk.Scripts/835BBVAPatientPaymentLockbox/GetTransactionsPatientPayment.sql",
+      "fromName": "GetTransactionsPatientPayment.sql",
+      "fromType": "sqlscript",
+      "fromFile": "adjacency/sqlscript/Cloud9.BizTalk.Scripts_835BBVAPatientPaymentLockbox_GetTransactionsPatientPayment.sql.json",
+      "curated": true
+    },
+    {
+      "type": "verifies",
+      "from": "sqlscript:Cloud9.BizTalk.Scripts/835BBVAPatientPaymentLockbox/GetLockboxPaymentType.sql",
+      "fromName": "GetLockboxPaymentType.sql",
+      "fromType": "sqlscript",
+      "fromFile": "adjacency/sqlscript/Cloud9.BizTalk.Scripts_835BBVAPatientPaymentLockbox_GetLockboxPaymentType.sql.json",
+      "curated": true
+    }
+  ]
+}

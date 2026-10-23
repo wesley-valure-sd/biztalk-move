@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.HL7.WebAPI.Exceptions.ExceptionHandler.SaveDataExceptionHandler",
+    "type": "method",
+    "name": "ExceptionHandler.SaveDataExceptionHandler",
+    "path": "Cloud9.HL7.WebAPI/Cloud9.HL7.WebAPI/Exceptions/ExceptionHandler.cs",
+    "class": "Cloud9.HL7.WebAPI.Exceptions.ExceptionHandler",
+    "line": 11,
+    "signatures": [
+      "public static void SaveDataExceptionHandler(Exception e)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.HL7.WebAPI.Exceptions.ExceptionHandler",
+      "fromName": "Cloud9.HL7.WebAPI.Exceptions.ExceptionHandler",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.HL7.WebAPI.Exceptions.ExceptionHandler.json"
+    }
+  ]
+}

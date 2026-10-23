@@ -1,0 +1,74 @@
+{
+  "node": {
+    "id": "orchestration:Cloud9.BizTalk.Epic.Orchestrations.HL7FlatFileReceive",
+    "type": "orchestration",
+    "name": "HL7FlatFileReceive",
+    "activation": "activate receive (Port_Receive_HL7_FlatFile.Operation_Receive, msg_HL7_Received)",
+    "ports": [
+      "Port_Receive_HL7_FlatFile (implements PortType_Receive_HL7_FlatFile)",
+      "Port_ArchiveFile (uses PortType_ArchiveFile)",
+      "Port_ProcessingError (uses Cloud9.BizTalk.Epic.PortType_ProcessingError)"
+    ],
+    "messages": [
+      "msg_MessageInfo: Cloud9.BizTalk.Schemas.HL7InboundMessage",
+      "msg_HL7_Received: System.Xml.XmlDocument",
+      "msg_HL7_Parsed: MPType_HL7_Message",
+      "msg_Header: BTAHL7Schemas.MSH_25_GLO_DEF",
+      "msg_HL7_Body: System.Xml.XmlDocument",
+      "msgProcessingErrorReq: Cloud9.BizTalk.Epic.MPType_ProcessingErrorReq",
+      "msgProcessingErrorResp: Cloud9.BizTalk.Epic.MPType_ProcessingErrorResp"
+    ],
+    "transaction": "longrunning transaction",
+    "visibility": "internal",
+    "module": "Cloud9.BizTalk.Epic.Orchestrations",
+    "contextProperties": [
+      "FILE.ReceivedFileName"
+    ],
+    "line": 643,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.HL7FlatFileReceive.odx"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.HL7FlatFileReceive.odx",
+      "toName": "Cloud9.BizTalk.Epic.HL7FlatFileReceive.odx",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Orchestrations_Cloud9.BizTalk.Epic.HL7FlatFileReceive.odx.json"
+    },
+    {
+      "type": "usesSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.HL7InboundMessage",
+      "toName": "Cloud9.BizTalk.Schemas.HL7InboundMessage",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.HL7InboundMessage.json",
+      "message": "msg_MessageInfo"
+    },
+    {
+      "type": "usesSchema",
+      "to": "schema:BTAHL7Schemas.MSH_25_GLO_DEF",
+      "toName": "BTAHL7Schemas.MSH_25_GLO_DEF",
+      "toType": "schema",
+      "toFile": "adjacency/schema/BTAHL7Schemas.MSH_25_GLO_DEF.json",
+      "message": "msg_Header"
+    },
+    {
+      "type": "usesMap",
+      "to": "map:Cloud9.BizTalk.Epic.HeaderAndFileToProcessingError",
+      "toName": "Cloud9.BizTalk.Epic.HeaderAndFileToProcessingError",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.Epic.HeaderAndFileToProcessingError.json",
+      "output": "msgProcessingErrorReq.Body",
+      "input": "msg_MessageInfo",
+      "line": 807
+    },
+    {
+      "type": "startsOrchestration",
+      "to": "orchestration:Cloud9.BizTalk.Epic.StageHL7_Inbound",
+      "toName": "StageHL7_Inbound",
+      "toType": "orchestration",
+      "toFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.StageHL7_Inbound.json",
+      "line": 751
+    }
+  ],
+  "incoming": []
+}

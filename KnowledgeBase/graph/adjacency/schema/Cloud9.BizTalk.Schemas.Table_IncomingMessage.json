@@ -1,0 +1,70 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.Table_IncomingMessage",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.Table_IncomingMessage",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/HL7IncomingMessageSQL/Table_IncomingMessage.xsd",
+    "rootElements": [
+      "RowPair",
+      "ArrayOfRowPair",
+      "Update",
+      "UpdateResponse"
+    ],
+    "kind": "wcf-sql-table",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/TableOp/BTS/IncomingMessage",
+    "sqlActions": [
+      "TableOp/Update/BTS/IncomingMessage"
+    ]
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/HL7IncomingMessageSQL/Table_IncomingMessage.xsd",
+      "toName": "Table_IncomingMessage.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_HL7IncomingMessageSQL_Table_IncomingMessage.xsd.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.Epic.Maps.HL7InboundMessageToUpdateStatusFail",
+      "fromName": "Cloud9.BizTalk.Epic.Maps.HL7InboundMessageToUpdateStatusFail",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.Epic.Maps.HL7InboundMessageToUpdateStatusFail.json",
+      "root": "Update"
+    },
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_IncomingMessageToUpdateStatusFail",
+      "fromName": "Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_IncomingMessageToUpdateStatusFail",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_IncomingMessageToUpdateStatusFail.json",
+      "root": "Update"
+    },
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_IncomingMessageToUpdateStatusSuccess",
+      "fromName": "Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_IncomingMessageToUpdateStatusSuccess",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_IncomingMessageToUpdateStatusSuccess.json",
+      "root": "Update"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.Epic.Orchestrations.TableOp_BTS_IncomingMessage_Update_OutputMessage",
+      "fromName": "TableOp_BTS_IncomingMessage_Update_OutputMessage",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.Orchestrations.TableOp_BTS_IncomingMessage_Update_OutputMessage.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.Table_IncomingMessage.UpdateResponse"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.Epic.Orchestrations.TableOp_BTS_IncomingMessage_Update_InputMessage",
+      "fromName": "TableOp_BTS_IncomingMessage_Update_InputMessage",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.Orchestrations.TableOp_BTS_IncomingMessage_Update_InputMessage.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.Table_IncomingMessage.Update"
+    }
+  ]
+}

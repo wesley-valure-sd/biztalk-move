@@ -1,0 +1,173 @@
+{
+  "node": {
+    "id": "orchestration:Cloud9.BizTalk.X12.Process_CHC_277ClaimsStatus",
+    "type": "orchestration",
+    "name": "Process_CHC_277ClaimsStatus",
+    "activation": "activate receive (ReceiveCHC277Port.Operation_1, CHC227)",
+    "ports": [
+      "GetPracticeConfigurationByNamePort (uses PartnerConfigurationPortType)",
+      "ReceiveCHC277Port (implements PortType_ReceiveCHC277)",
+      "Send_Solicitated_277_BBVA (uses Send_277_BBVA_Type)"
+    ],
+    "messages": [
+      "GetPracticeConfigurationByNameResponse: GetPracticeConfigurationByNameResponse_MMT",
+      "GetPracticeConfigurationByNameRequest: GetPracticeConfigurationByName_MMT",
+      "CHC227: CHC277_MMT",
+      "UpdateClaimStatusesRequest: UpdateClaimStatusesRequest_MMT",
+      "UpdateClaimStatusesResponse: UpdateClaimStatusesResponse_MMT",
+      "AddClaimErrorsRequest: AddClaimErrorsRequest_MMT",
+      "AddClaimErrorsResponse: AddClaimErrorsResponse_MMT",
+      "ClaimStatusCanonical: ClaimStatusCanonical_MMT"
+    ],
+    "visibility": "internal",
+    "module": "Cloud9.BizTalk.X12",
+    "contextProperties": [
+      "FILE.ReceivedFileName"
+    ],
+    "line": 563,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_277ClaimsStatus.odx",
+    "bindingStates": {
+      "Cloud9.EDI.Deployment": "Started",
+      "Cloud9.EDI.PDS.Deployment": "Started"
+    }
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_277ClaimsStatus.odx",
+      "toName": "Process_CHC_277ClaimsStatus.odx",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Orchestrations_Process_CHC_277ClaimsStatus.odx.json"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.GetPracticeConfigurationByNameResponse_MMT",
+      "toName": "GetPracticeConfigurationByNameResponse_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.GetPracticeConfigurationByNameResponse_MMT.json",
+      "message": "GetPracticeConfigurationByNameResponse"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.GetPracticeConfigurationByName_MMT",
+      "toName": "GetPracticeConfigurationByName_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.GetPracticeConfigurationByName_MMT.json",
+      "message": "GetPracticeConfigurationByNameRequest"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.CHC277_MMT",
+      "toName": "CHC277_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.CHC277_MMT.json",
+      "message": "CHC227"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.UpdateClaimStatusesRequest_MMT",
+      "toName": "UpdateClaimStatusesRequest_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.UpdateClaimStatusesRequest_MMT.json",
+      "message": "UpdateClaimStatusesRequest"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.UpdateClaimStatusesResponse_MMT",
+      "toName": "UpdateClaimStatusesResponse_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.UpdateClaimStatusesResponse_MMT.json",
+      "message": "UpdateClaimStatusesResponse"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.AddClaimErrorsRequest_MMT",
+      "toName": "AddClaimErrorsRequest_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.AddClaimErrorsRequest_MMT.json",
+      "message": "AddClaimErrorsRequest"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.AddClaimErrorsResponse_MMT",
+      "toName": "AddClaimErrorsResponse_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.AddClaimErrorsResponse_MMT.json",
+      "message": "AddClaimErrorsResponse"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.ClaimStatusCanonical_MMT",
+      "toName": "ClaimStatusCanonical_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.ClaimStatusCanonical_MMT.json",
+      "message": "ClaimStatusCanonical"
+    },
+    {
+      "type": "usesMap",
+      "to": "map:Cloud9.BizTalk.X12.Maps.CHC_277_To_ClaimStatusCanonical",
+      "toName": "Cloud9.BizTalk.X12.Maps.CHC_277_To_ClaimStatusCanonical",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.CHC_277_To_ClaimStatusCanonical.json",
+      "output": "ClaimStatusCanonical.Body",
+      "input": "CHC227.Body",
+      "line": 634
+    },
+    {
+      "type": "callsOrchestration",
+      "to": "orchestration:Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus",
+      "toName": "Process_CHC_ClaimsStatus",
+      "toType": "orchestration",
+      "toFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus.json",
+      "line": 637
+    },
+    {
+      "type": "invokesProc",
+      "to": "sqlproc:BizTalkCloud9Common.BTS.GetPracticeConfigurationByName",
+      "toName": "BTS.GetPracticeConfigurationByName",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.GetPracticeConfigurationByName.json",
+      "line": 625,
+      "via": "static send port operation GetPracticeConfigurationByName (BtsActionMapping)"
+    },
+    {
+      "type": "boundToReceivePort",
+      "to": "receiveport:Cloud9.EDI.Deployment/RP_CHC_Inbound_EDI",
+      "toName": "RP_CHC_Inbound_EDI",
+      "toType": "receiveport",
+      "toFile": "adjacency/receiveport/Cloud9.EDI.Deployment_RP_CHC_Inbound_EDI.json",
+      "logicalPort": "ReceiveCHC277Port",
+      "bindingSet": "Cloud9.EDI.Deployment"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.Deployment/SP_BizTalkCloud9Common_WCF",
+      "toName": "SP_BizTalkCloud9Common_WCF",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.Deployment_SP_BizTalkCloud9Common_WCF.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "GetPracticeConfigurationByNamePort"
+    },
+    {
+      "type": "boundToReceivePort",
+      "to": "receiveport:Cloud9.EDI.PDS.Deployment/RP_CHC_Inbound_EDI",
+      "toName": "RP_CHC_Inbound_EDI",
+      "toType": "receiveport",
+      "toFile": "adjacency/receiveport/Cloud9.EDI.PDS.Deployment_RP_CHC_Inbound_EDI.json",
+      "logicalPort": "ReceiveCHC277Port",
+      "bindingSet": "Cloud9.EDI.PDS.Deployment"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.PDS.Deployment/SP_BizTalkCloud9Common_WCF",
+      "toName": "SP_BizTalkCloud9Common_WCF",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.PDS.Deployment_SP_BizTalkCloud9Common_WCF.json",
+      "bindingSet": "Cloud9.EDI.PDS.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "GetPracticeConfigurationByNamePort"
+    }
+  ],
+  "incoming": []
+}

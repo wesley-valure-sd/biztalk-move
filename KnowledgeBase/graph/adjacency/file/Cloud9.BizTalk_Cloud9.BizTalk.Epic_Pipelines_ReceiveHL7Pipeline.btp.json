@@ -1,0 +1,26 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Pipelines/ReceiveHL7Pipeline.btp",
+    "type": "file",
+    "name": "ReceiveHL7Pipeline.btp",
+    "kind": "btp",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Pipelines/ReceiveHL7Pipeline.btp"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.Epic",
+      "fromName": "Cloud9.BizTalk.Epic",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.Epic.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "pipeline:Cloud9.BizTalk.Epic.Pipelines.ReceiveHL7Pipeline",
+      "fromName": "Cloud9.BizTalk.Epic.Pipelines.ReceiveHL7Pipeline",
+      "fromType": "pipeline",
+      "fromFile": "adjacency/pipeline/Cloud9.BizTalk.Epic.Pipelines.ReceiveHL7Pipeline.json"
+    }
+  ]
+}

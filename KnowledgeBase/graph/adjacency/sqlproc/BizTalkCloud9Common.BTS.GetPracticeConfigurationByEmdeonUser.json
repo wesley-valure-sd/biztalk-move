@@ -1,0 +1,47 @@
+{
+  "node": {
+    "id": "sqlproc:BizTalkCloud9Common.BTS.GetPracticeConfigurationByEmdeonUser",
+    "type": "sqlproc",
+    "name": "BTS.GetPracticeConfigurationByEmdeonUser",
+    "database": "BizTalkCloud9Common",
+    "definedInRepo": true,
+    "parameters": [
+      "@emdeonUserID NVARCHAR(10)"
+    ],
+    "path": "Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored Procedures/GetPracticeConfigurationByEmdeonUser.sql"
+  },
+  "outgoing": [
+    {
+      "type": "reads",
+      "to": "sqltable:BizTalkCloud9Common.BTS.PracticeConfig",
+      "toName": "BTS.PracticeConfig",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/BizTalkCloud9Common.BTS.PracticeConfig.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored Procedures/GetPracticeConfigurationByEmdeonUser.sql",
+      "fromName": "GetPracticeConfigurationByEmdeonUser.sql",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Stored_Procedures_GetPracticeConfigurationByEmdeonUser.sql.json"
+    },
+    {
+      "type": "describesParametersOf",
+      "from": "schema:Cloud9.BizTalk.Schemas.GPFE_TypedProcedure_BTS",
+      "fromName": "Cloud9.BizTalk.Schemas.GPFE_TypedProcedure_BTS",
+      "fromType": "schema",
+      "fromFile": "adjacency/schema/Cloud9.BizTalk.Schemas.GPFE_TypedProcedure_BTS.json"
+    },
+    {
+      "type": "invokesProc",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_277_Unsolicitated_ClaimsStatus",
+      "fromName": "Process_CHC_277_Unsolicitated_ClaimsStatus",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_277_Unsolicitated_ClaimsStatus.json",
+      "line": 537,
+      "via": "static send port operation GetPracticeConfigurationByEmdeonUser (BtsActionMapping)"
+    }
+  ]
+}

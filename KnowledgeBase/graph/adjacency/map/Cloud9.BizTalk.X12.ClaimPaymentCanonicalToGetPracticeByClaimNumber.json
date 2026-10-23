@@ -1,0 +1,58 @@
+{
+  "node": {
+    "id": "map:Cloud9.BizTalk.X12.ClaimPaymentCanonicalToGetPracticeByClaimNumber",
+    "type": "map",
+    "name": "Cloud9.BizTalk.X12.ClaimPaymentCanonicalToGetPracticeByClaimNumber",
+    "readableSummary": "KnowledgeBase/map-summaries/ClaimPaymentCanonicalToGetPracticeByClaimNumber.txt",
+    "targetSchema": "Cloud9.BizTalk.Schemas.GPCFC_TypedProcedure_BTS",
+    "inlineScripts": [],
+    "functoidCount": 2,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/ClaimPaymentCanonicalToGetPracticeByClaimNumber.btm",
+    "sourceSchema": "Cloud9.BizTalk.Schemas.Canonical.ClaimPayment",
+    "linkCount": 8,
+    "sourceRoot": "ClaimPayment",
+    "targetRoot": "GetPracticeConfigurationForClaim"
+  },
+  "outgoing": [
+    {
+      "type": "callsMethod",
+      "to": "method:Cloud9.BizTalk.Helper.EDIClaimHelper.GetClaimNumberPrefix",
+      "toName": "EDIClaimHelper.GetClaimNumberPrefix",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.EDIClaimHelper.GetClaimNumberPrefix.json",
+      "via": "scripting functoid (ExternalAssembly)"
+    },
+    {
+      "type": "callsMethod",
+      "to": "method:Cloud9.BizTalk.Helper.EDIClaimHelper.GetClaimNumber",
+      "toName": "EDIClaimHelper.GetClaimNumber",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.EDIClaimHelper.GetClaimNumber.json",
+      "via": "scripting functoid (ExternalAssembly)"
+    },
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/ClaimPaymentCanonicalToGetPracticeByClaimNumber.btm",
+      "toName": "ClaimPaymentCanonicalToGetPracticeByClaimNumber.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_ClaimPaymentCanonicalToGetPracticeByClaimNumber.btm.json"
+    },
+    {
+      "type": "sourceSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.Canonical.ClaimPayment",
+      "toName": "Cloud9.BizTalk.Schemas.Canonical.ClaimPayment",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.Canonical.ClaimPayment.json",
+      "root": "ClaimPayment"
+    },
+    {
+      "type": "targetSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.GPCFC_TypedProcedure_BTS",
+      "toName": "Cloud9.BizTalk.Schemas.GPCFC_TypedProcedure_BTS",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.GPCFC_TypedProcedure_BTS.json",
+      "root": "GetPracticeConfigurationForClaim"
+    }
+  ],
+  "incoming": []
+}

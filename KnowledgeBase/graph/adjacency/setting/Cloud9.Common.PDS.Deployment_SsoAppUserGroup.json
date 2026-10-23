@@ -1,0 +1,22 @@
+{
+  "node": {
+    "id": "setting:Cloud9.Common.PDS.Deployment/SsoAppUserGroup",
+    "type": "setting",
+    "name": "SsoAppUserGroup",
+    "path": "Cloud9.BizTalk/Cloud9.Common.PDS.Deployment/SettingsFileGenerator.xml",
+    "bindingSet": "Cloud9.Common.PDS.Deployment",
+    "valuesByEnvironment": {
+      "Default Values": "BizTalk Application Users",
+      "Local Dev (LocalSettings)": "BizTalk Application Users",
+      "LAB2 (LAB2Settings)": "CLOUD9\\BizTalk-PROD-SSO-Admins",
+      "DEV (DEVSettings)": "pdsi.corp\\AWS-BizTalk-DEV-App-Users-Cloud9",
+      "CFG (CFGSettings)": "pdsi.corp\\AWS-BizTalk-TST-App-Users-Cloud9",
+      "TST (TSTSettings)": "pdsi.corp\\AWS-BizTalk-TST-App-Users-Cloud9",
+      "TRN (TrainingSettings)": "pdsi.corp\\AWS-BizTalk-TRN-App-Users-Cloud9",
+      "STG (StagingSettings)": "pdsi.corp\\AWS-BizTalk-STG-App-Users-Cloud9",
+      "PROD (ProdSettings)": "pdsi.corp\\AWS-BizTalk-PRD-App-Users-Cloud9"
+    }
+  },
+  "outgoing": [],
+  "incoming": []
+}

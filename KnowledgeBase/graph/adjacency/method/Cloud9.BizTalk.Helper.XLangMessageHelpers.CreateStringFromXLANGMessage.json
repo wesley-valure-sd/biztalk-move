@@ -1,0 +1,31 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.Helper.XLangMessageHelpers.CreateStringFromXLANGMessage",
+    "type": "method",
+    "name": "XLangMessageHelpers.CreateStringFromXLANGMessage",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/XLangMessageHelpers.cs",
+    "class": "Cloud9.BizTalk.Helper.XLangMessageHelpers",
+    "line": 36,
+    "signatures": [
+      "public static string CreateStringFromXLANGMessage(XLANGMessage message, int index)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.Helper.XLangMessageHelpers",
+      "fromName": "Cloud9.BizTalk.Helper.XLangMessageHelpers",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.Helper.XLangMessageHelpers.json"
+    },
+    {
+      "type": "callsMethod",
+      "from": "orchestration:Cloud9.BizTalk.Epic.SendTreatmentCardsToPDS",
+      "fromName": "SendTreatmentCardsToPDS",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.SendTreatmentCardsToPDS.json",
+      "line": 314
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "node": {
+    "id": "sqlscript:Cloud9.BizTalk.Scripts/835CHCtoBBVAPassthrough/GetApplicationLookupValues.sql",
+    "type": "sqlscript",
+    "name": "GetApplicationLookupValues.sql",
+    "path": "Cloud9.BizTalk.Scripts/835CHCtoBBVAPassthrough/GetApplicationLookupValues.sql",
+    "purpose": "Get Application Lookup values for 835 CHC to BBVA",
+    "folder": "835CHCtoBBVAPassthrough",
+    "database": "BizTalkCloud9Common"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk.Scripts/835CHCtoBBVAPassthrough/GetApplicationLookupValues.sql",
+      "toName": "GetApplicationLookupValues.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Scripts_835CHCtoBBVAPassthrough_GetApplicationLookupValues.sql.json"
+    },
+    {
+      "type": "queries",
+      "to": "sqltable:BizTalkCloud9Common.BTS.ApplicationLookupValue",
+      "toName": "BTS.ApplicationLookupValue",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/BizTalkCloud9Common.BTS.ApplicationLookupValue.json"
+    },
+    {
+      "type": "verifies",
+      "to": "flow:CHC-835-To-BBVA-Passthrough",
+      "toName": "Change Healthcare 835 pass-through to the BBVA/SD SFTP (no posting)",
+      "toType": "flow",
+      "toFile": "adjacency/flow/CHC-835-To-BBVA-Passthrough.json",
+      "curated": true
+    }
+  ],
+  "incoming": []
+}

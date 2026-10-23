@@ -1,0 +1,22 @@
+{
+  "node": {
+    "id": "porttype:Cloud9.BizTalk.X12.GetPracticeConfigurationByEmdeonPortType",
+    "type": "porttype",
+    "name": "GetPracticeConfigurationByEmdeonPortType",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_277_Unsolicitated_ClaimsStatus.odx",
+    "module": "Cloud9.BizTalk.X12",
+    "operations": [
+      "requestresponse GetPracticeConfigurationByEmdeonUser(GetPracticeConfigurationByEmdeon_MMT, GetPracticeConfigurationByEmdeonResponse_MMT)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_277_Unsolicitated_ClaimsStatus.odx",
+      "fromName": "Process_CHC_277_Unsolicitated_ClaimsStatus.odx",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Orchestrations_Process_CHC_277_Unsolicitated_ClaimsStatus.odx.json"
+    }
+  ]
+}

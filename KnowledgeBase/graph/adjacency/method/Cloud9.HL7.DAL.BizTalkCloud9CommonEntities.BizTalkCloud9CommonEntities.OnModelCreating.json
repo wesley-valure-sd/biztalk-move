@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.HL7.DAL.BizTalkCloud9CommonEntities.BizTalkCloud9CommonEntities.OnModelCreating",
+    "type": "method",
+    "name": "BizTalkCloud9CommonEntities.OnModelCreating",
+    "path": "Cloud9.HL7.WebAPI/Cloud9.HL7.DAL/BizTalkCloud9CommonEntities/BizTalkCloud9CommonEntities.cs",
+    "class": "Cloud9.HL7.DAL.BizTalkCloud9CommonEntities.BizTalkCloud9CommonEntities",
+    "line": 19,
+    "signatures": [
+      "protected override void OnModelCreating(DbModelBuilder modelBuilder)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.HL7.DAL.BizTalkCloud9CommonEntities.BizTalkCloud9CommonEntities",
+      "fromName": "Cloud9.HL7.DAL.BizTalkCloud9CommonEntities.BizTalkCloud9CommonEntities",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.HL7.DAL.BizTalkCloud9CommonEntities.BizTalkCloud9CommonEntities.json"
+    }
+  ]
+}

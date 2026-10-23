@@ -1,0 +1,61 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.Polling_IncomingMessage",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.Polling_IncomingMessage",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/HL7IncomingMessageSQL/Polling_IncomingMessage.xsd",
+    "rootElements": [
+      "TypedPollingResultSet0",
+      "ArrayOfTypedPollingResultSet0",
+      "TypedPolling"
+    ],
+    "kind": "wcf-sql-typed-polling",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/TypedPolling/IncomingMessage",
+    "sqlActions": [
+      "TypedPolling"
+    ]
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/HL7IncomingMessageSQL/Polling_IncomingMessage.xsd",
+      "toName": "Polling_IncomingMessage.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_HL7IncomingMessageSQL_Polling_IncomingMessage.xsd.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "sourceSchema",
+      "from": "map:Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_IncomingMessageToUpdateStatusFail",
+      "fromName": "Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_IncomingMessageToUpdateStatusFail",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_IncomingMessageToUpdateStatusFail.json",
+      "root": "TypedPollingResultSet0"
+    },
+    {
+      "type": "sourceSchema",
+      "from": "map:Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_IncomingMessageToUpdateStatusSuccess",
+      "fromName": "Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_IncomingMessageToUpdateStatusSuccess",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_IncomingMessageToUpdateStatusSuccess.json",
+      "root": "TypedPollingResultSet0"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.Epic.Orchestrations.TypedPolling_IncomingMessage_TypedPolling_InputMessage",
+      "fromName": "TypedPolling_IncomingMessage_TypedPolling_InputMessage",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.Orchestrations.TypedPolling_IncomingMessage_TypedPolling_InputMessage.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.Polling_IncomingMessage.TypedPolling"
+    },
+    {
+      "type": "usesSchema",
+      "from": "orchestration:Cloud9.BizTalk.Epic.Orchestrations.HL7SQLReceive",
+      "fromName": "HL7SQLReceive",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.Orchestrations.HL7SQLReceive.json",
+      "message": "msg_Record"
+    }
+  ]
+}

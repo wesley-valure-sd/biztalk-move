@@ -1,0 +1,46 @@
+{
+  "node": {
+    "id": "sendport:Cloud9.BizTalk.Deployment/WCF_SQL_SET_STAGING_PATIENT_MESSAGE_STATUS",
+    "type": "sendport",
+    "name": "WCF_SQL_SET_STAGING_PATIENT_MESSAGE_STATUS",
+    "sendPipeline": "Microsoft.BizTalk.DefaultPipelines.XMLTransmit",
+    "bindingSet": "Cloud9.BizTalk.Deployment",
+    "actionMappings": [
+      "SetStagingPatientMessageStatus"
+    ],
+    "isTwoWay": "true",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Deployment/PortBindingsMaster.xml",
+    "address": "${ADDR_DB_CLOUD9COMMON}?",
+    "filter": [],
+    "isStatic": "true",
+    "transport": "WCF-Custom"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Deployment/PortBindingsMaster.xml",
+      "toName": "PortBindingsMaster.xml",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Deployment_PortBindingsMaster.xml.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.BizTalk.Deployment/ADDR_DB_CLOUD9COMMON",
+      "toName": "ADDR_DB_CLOUD9COMMON",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.BizTalk.Deployment_ADDR_DB_CLOUD9COMMON.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "boundToSendPort",
+      "from": "orchestration:Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient",
+      "fromName": "ProcessHL7MessagesForPatient",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient.json",
+      "bindingSet": "Cloud9.BizTalk.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "Port_SetStagingPatientMessageStatus"
+    }
+  ]
+}

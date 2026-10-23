@@ -1,0 +1,456 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FCE3A310-8826-4645-AD40-01C6ECB681A5}</ProjectGuid>
+    <ProjectTypeGuids>{EF7E3281-CD33-11D4-8326-00C04FA0CE8D};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>library</OutputType>
+    <GenericProcessing>true</GenericProcessing>
+    <RootNamespace>Cloud9.BizTalk.X12</RootNamespace>
+    <AssemblyName>Cloud9.BizTalk.X12</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <BpelCompliance>True</BpelCompliance>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Cloud9.BizTalk.Epic.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.BizTalk.Edi.BaseArtifacts, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalAssemblies\Microsoft.BizTalk.Edi.BaseArtifacts.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.Edi.EdiPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files (x86)\Microsoft BizTalk Server 2016\Microsoft.BizTalk.Edi.EdiPipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.Edi.PipelineComponents, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.BizTalk.EdiInt.PipelineComponents, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.BizTalk.Pipeline.Components, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.ESB.JMS.PipelineComponents, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.ESB.Namespace.PipelineComponents, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ExternalAssemblies\Microsoft.Practices.ESB.Namespace.PipelineComponents.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.XLANGs.Pipeline, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\Microsoft.XLANGs.Pipeline\v4.0_3.0.1.0__31bf3856ad364e35\Microsoft.XLANGs.Pipeline.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Name>System.Configuration</Name>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.Pipeline">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.DefaultPipelines">
+      <Name>Microsoft.BizTalk.DefaultPipelines</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.GlobalPropertySchemas">
+      <Name>Microsoft.BizTalk.GlobalPropertySchemas</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.BizTalk.TestTools">
+      <Name>Microsoft.BizTalk.TestTools</Name>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.XLANGs.BaseTypes">
+      <Name>Microsoft.XLANGs.BaseTypes</Name>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Cloud9.BizTalk.Epic.snk" />
+    <Schema Include="Schemas\CHCEmdeonPropertySchema.xsd">
+      <TypeName>CHCEmdeonPropertySchema</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+    <Schema Include="Schemas\EDIPropertySchema.xsd">
+      <TypeName>EDIPropertySchema</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Schemas</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Cloud9.BizTalk.Common\Cloud9.BizTalk.Common.btproj">
+      <Project>{3b42ac4f-f3ab-4459-97a2-a5aff989e9bf}</Project>
+      <Name>Cloud9.BizTalk.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cloud9.BizTalk.Helper\Cloud9.BizTalk.Helper.csproj">
+      <Project>{5397f72f-a8b7-4b25-87dd-dc25c77cc9cf}</Project>
+      <Name>Cloud9.BizTalk.Helper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cloud9.BizTalk.PipelineComponent.CustomEncoder\Cloud9.BizTalk.PipelineComponent.CustomEncoder.csproj">
+      <Project>{db912ffc-a7fa-4901-a818-46af212af7f8}</Project>
+      <Name>Cloud9.BizTalk.PipelineComponent.CustomEncoder</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cloud9.BizTalk.PipelineComponent.EmdeonPayload\Cloud9.BizTalk.PipelineComponent.EmdeonPayload.csproj">
+      <Project>{6a1ee72a-a584-447a-a892-c1030ff7982e}</Project>
+      <Name>Cloud9.BizTalk.PipelineComponent.EmdeonPayload</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cloud9.BizTalk.Schemas\Cloud9.BizTalk.Schemas.btproj">
+      <Project>{dd30f6b7-769d-4d18-99e3-b94b46003ead}</Project>
+      <Name>Cloud9.BizTalk.Schemas</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cloud9.BizTalk.Shared.Components.Archive\Cloud9.BizTalk.Shared.Components.Archive.csproj">
+      <Project>{6a6303be-d627-43ea-813f-e761f53fe0a3}</Project>
+      <Name>Cloud9.BizTalk.Shared.Components.Archive</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cloud9.BizTalk.Shared.Components.Archive\Cloud9.BizTalk.Shared.Components.Archive.csproj">
+      <Project>{6a6303be-d627-43ea-813f-e761f53fe0a3}</Project>
+      <Name>Cloud9.BizTalk.Shared.Components.Archive</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cloud9.BizTalk.Transforms\Cloud9.BizTalk.Maps.btproj">
+      <Project>{68a1a1eb-475f-4995-8408-933fcb3311cc}</Project>
+      <Name>Cloud9.BizTalk.Maps</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Cloud9.BizTalk.X12.Schemas\Cloud9.BizTalk.X12.Schemas.btproj">
+      <Project>{770c9fed-0e5b-49f8-aff1-b9305f02d73f}</Project>
+      <Name>Cloud9.BizTalk.X12.Schemas</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="Orchestrations\Process_BBVA_835Insurance.odx">
+      <TypeName>Process_BBVALockbox</TypeName>
+      <Namespace>Cloud9.BizTalk.Lockbox.Orchestrations</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <Pipeline Include="Pipelines\ReceiveEDIPipeline.btp">
+      <TypeName>ReceiveEDIPipeline</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Pipelines</Namespace>
+      <SubType>Task</SubType>
+    </Pipeline>
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="Orchestrations\EDITypes.odx">
+      <TypeName>EDITypes</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Orchestrations</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+    <XLang Include="Orchestrations\Process_BBVA_835Patient.odx">
+      <TypeName>Process_BBVA_835Patient</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Orchestrations</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="Maps\CHC_835_To_ClaimPaymentCanonical.btm">
+      <SubType>Task</SubType>
+      <TypeName>CHC_835_To_ClaimPaymentCanonical</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Maps</Namespace>
+    </Map>
+    <Map Include="Maps\ClaimCanonical_To_CHC_X12_5010_837D.btm">
+      <TypeName>ClaimCanonical_To_CHC_X12_5010_837D</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <XLang Include="Orchestrations\Process_CHC_837Claims_Controller.odx">
+      <SubType>Task</SubType>
+      <TypeName>Cloud9_BizTalk_Epic_ProcessTreatmentCardData_Controller</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Orchestrations</Namespace>
+    </XLang>
+    <XLang Include="Orchestrations\Process_CHC_837Claims_Worker.odx">
+      <SubType>Task</SubType>
+      <TypeName>Cloud9_BizTalk_Epic_ProcessTreatmentCardData_Worker</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Orchestrations</Namespace>
+    </XLang>
+    <Map Include="Maps\GetADAClaimResponse_To_ClaimInformation.btm">
+      <SubType>Task</SubType>
+      <TypeName>GetADAClaimResponse_To_ClaimInformation</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Maps</Namespace>
+    </Map>
+    <Map Include="Maps\QueueClaimsResponse_To_ClaimsCanonical.btm">
+      <TypeName>QueueClaimsResponse_To_ClaimsCanonical</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\QueueClaimsResponseElement_To_UpdateClaimStatuses.btm">
+      <TypeName>QueueClaimsResponseElement_To_UpdateClaimStatuses</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\Instantiate_GetPracticeConfigurationByName.btm">
+      <TypeName>Instantiate_GetPracticeConfigurationByName</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="Maps\CHC_277_To_ClaimStatusCanonical.btm">
+      <TypeName>CHC_277_To_ClaimStatusCanonical</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="Maps\CHC_277A_To_ClaimStatusCanonical.btm">
+      <TypeName>CHC_277A_To_ClaimStatusCanonical</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="Orchestrations\Process_CHC_277ClaimsStatus.odx">
+      <TypeName>Process_CHC_277ClaimsStatus</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Orchestrations</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="Orchestrations\Process_CHC_277AClaimsStatus.odx">
+      <TypeName>Process_CHC_277AClaimsStatus</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Orchestrations</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="Maps\QueueClaimsResponseElement_To_UpdateClaimStatusesRejected.btm">
+      <SubType>Task</SubType>
+      <TypeName>QueueClaimsResponseElement_To_UpdateClaimStatusesRejected</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Maps</Namespace>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="Maps\ClaimInformation_To_X12_00501_276.btm">
+      <TypeName>ClaimInformation_To_X12_00501_276</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <ItemGroup>
+    <XLang Include="Orchestrations\Process_CHC_277_Unsolicitated_ClaimsStatus.odx">
+      <TypeName>Process_CHC_277_Unsolicitated_ClaimsStatus</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Orchestrations</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+    <XLang Include="Orchestrations\Process_CHC_271Eligibility.odx">
+      <TypeName>Process_CHC_271Eligibility</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Orchestrations</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+    <XLang Include="Orchestrations\Process_CHC_837_To_BBVA.odx">
+      <TypeName>Process_CHC_837_To_BBVA</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Orchestrations</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+    <XLang Include="Orchestrations\Process_ChannelHealth_271Eligibility.odx">
+      <TypeName>Process_ChannelHealth_271Eligibility</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Orchestrations</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+    <Pipeline Include="Pipelines\ReceiveEmdeonMailPipeline.btp">
+      <TypeName>ReceiveEmdeonMailPipeline</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Pipelines</Namespace>
+      <SubType>Task</SubType>
+    </Pipeline>
+    <Pipeline Include="Pipelines\SendEmdeonXMLPipeline.btp">
+      <TypeName>SendEmdeonXMLPipeline</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Pipelines</Namespace>
+      <SubType>Task</SubType>
+    </Pipeline>
+    <Map Include="Maps\CHC_PracticeEDISettings_To_GetMailFileListReq.btm">
+      <TypeName>CHC_PracticeEDISettings_To_GetMailFileListReq</TypeName>
+      <Namespace>Cloud9.BizTalk.X12</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <XLang Include="Orchestrations\Process_CHC_InboundFiles_Controller.odx">
+      <TypeName>Process_CHC_InboundFiles_Controller</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Orchestrations</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+    <XLang Include="Orchestrations\Process_CHC_InboundFiles_Worker.odx">
+      <TypeName>Process_CHC_InboundFiles_Worker</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Orchestrations</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+    <Pipeline Include="Pipelines\SendEmdeonEDIPipeline.btp">
+      <TypeName>SendEmdeonEDIPipeline</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Pipelines</Namespace>
+      <SubType>Task</SubType>
+    </Pipeline>
+    <XLang Include="Orchestrations\Process_CHC_835_To_BBVA.odx">
+      <TypeName>Process_CHC_835_To_BBVA</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Orchestrations</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+    <Map Include="Maps\ClaimPaymentCanonical_To_Post835PatientTransactionWeb.btm">
+      <SubType>Task</SubType>
+      <TypeName>ClaimPaymentCanonical_To_Post835PatientTransactionWeb</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Maps</Namespace>
+    </Map>
+    <XLang Include="Orchestrations\Process_SD_835Patient.odx">
+      <SubType>Task</SubType>
+      <TypeName>Process_BBVA_SD_835Patient_Web_Copy</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Orchestrations</Namespace>
+    </XLang>
+    <Map Include="Maps\ClaimPaymentCanonical_To_AddTodoItem.btm">
+      <TypeName>ClaimPaymentCanonical_To_AddTodoItem</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\ClaimStatusCanonical_To_AddTodoItem.btm">
+      <TypeName>ClaimStatusCanonical_To_AddTodoItem</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <XLang Include="Orchestrations\Process_CHC_ClaimsStatus.odx">
+      <TypeName>Process_CHC_ClaimsStatus</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Orchestrations</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+    <XLang Include="Orchestrations\Process_CHC_835Insurance.odx">
+      <SubType>Task</SubType>
+      <TypeName>Process_BBVA_835Insurance_Copy</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Orchestrations</Namespace>
+    </XLang>
+    <Map Include="Maps\ClaimPaymentCanonical_To_Post835InsuranceTransaction.btm">
+      <SubType>Task</SubType>
+      <TypeName>ClaimPaymentCanonical_To_Post835InsuranceTransaction</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Maps</Namespace>
+    </Map>
+    <Map Include="Maps\ClaimPaymentCanonical_To_Post835PatientTransaction.btm">
+      <SubType>Task</SubType>
+      <TypeName>ClaimPaymentCanonical_To_Post835PatientTransaction</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Maps</Namespace>
+    </Map>
+    <Map Include="Maps\BBVA_835Insurance_To_ClaimPaymentBatchCanonical.btm">
+      <TypeName>BBVA_835Insurance_To_ClaimPaymentBatchCanonical</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\CHC_835_To_ClaimPaymentBatchCanonical.btm">
+      <SubType>Task</SubType>
+      <TypeName>CHC_835_To_ClaimPaymentBatchCanonical</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Maps</Namespace>
+    </Map>
+    <Map Include="Maps\BBVA_835_To_AdjustmentClaimPaymentBatchCanonical.btm">
+      <SubType>Task</SubType>
+      <TypeName>BBVA_835_To_AdjustmentClaimPaymentBatchCanonical</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Maps</Namespace>
+    </Map>
+    <Map Include="Maps\SD_835WebPayment_To_ClaimPaymentBatchCanonical.btm">
+      <SubType>Task</SubType>
+      <TypeName>SD_835WebPayment_To_ClaimPaymentBatchCanonical</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Maps</Namespace>
+    </Map>
+    <Map Include="Maps\BBVA_835Patient_To_ClaimPaymentBatchCanonical.btm">
+      <SubType>Task</SubType>
+      <TypeName>BBVA_835Patient_To_ClaimPaymentBatchCanonical</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Maps</Namespace>
+    </Map>
+    <Map Include="Maps\C9ClaimToSubmittedClaimReq.btm">
+      <TypeName>C9ClaimToSubmittedClaimReq</TypeName>
+      <Namespace>Cloud9.BizTalk.X12</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\ClaimPaymentCanonicalToGetPracticeByClaimNumber.btm">
+      <TypeName>ClaimPaymentCanonicalToGetPracticeByClaimNumber</TypeName>
+      <Namespace>Cloud9.BizTalk.X12</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\CHC_GetMailFileListReq_GetMailFileRespElement_To_DeleteMailFileReq.btm">
+      <TypeName>CHC_GetMailFileListReq_GetMailFileRespElement_To_DeleteMailFileReq</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\CHC_GetMailFileListReq_GetMailFileRespElement_To_GetMailFileReq.btm">
+      <TypeName>CHC_GetMailFileListReq_GetMailFileRespElement_To_GetMailFileReq</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\CHC_277_4010_To_ClaimStatusCanonical.btm">
+      <TypeName>CHC_277_4010_To_ClaimStatusCanonical</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\ChannelHealth_X12_00501_271_To_InsuranceInformationCanonical.btm">
+      <SubType>Designer</SubType>
+      <TypeName>ChannelHealth_X12_00501_271_To_InsuranceInformationCanonical</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Maps</Namespace>
+    </Map>
+    <Map Include="Maps\InsuranceInformationCanonical_To_UpdatePatientInsurancePolicyByPipGUID.btm">
+      <SubType>Task</SubType>
+      <TypeName>InsuranceInformationCanonical_To_UpdatePatientInsurancePolicyByPipGUID</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Maps</Namespace>
+    </Map>
+    <Map Include="Maps\CHC_X12_00501_271_To_InsuranceInformationCanonical.btm">
+      <TypeName>CHC_X12_00501_271_To_InsuranceInformationCanonical</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\CHC_X12_00501_271SelfSubscr_To_PatientEligibilitiesCanonical.btm">
+      <TypeName>CHC_X12_00501_271SelfSubscr_To_PatientEligibilitiesCanonical</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\CHC_X12_00501_271_To_PatientEligibilitiesCanonical.btm">
+      <TypeName>CHC_X12_00501_271_To_PatientEligibilitiesCanonical</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\CHC_277_Unsolicited_To_ClaimStatusCanonical.btm">
+      <SubType>Task</SubType>
+      <TypeName>CHC_277_Unsolicited_To_ClaimStatusCanonical</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Maps</Namespace>
+    </Map>
+    <Content Include="Maps\ClaimInformation_To_X12_00501_276.xslt">
+      <SubType>Task</SubType>
+      <TypeName>ClaimInformation_To_X12_00501_276_Copy</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Maps</Namespace>
+    </Content>
+    <XLang Include="Orchestrations\Process_CHC_276ClaimStatus.odx">
+      <TypeName>Process_CHC_276ClaimStatus</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Orchestrations</Namespace>
+      <SubType>Task</SubType>
+    </XLang>
+    <Map Include="Maps\ClaimStatusCanonical_To_AddClaimErrors.btm">
+      <TypeName>ClaimStatusCanonical_To_AddClaimErrors</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+    <Map Include="Maps\ClaimStatusCanonical_To_UpdateClaimStatuses.btm">
+      <TypeName>ClaimStatusCanonical_To_UpdateClaimStatuses</TypeName>
+      <Namespace>Cloud9.BizTalk.X12.Maps</Namespace>
+      <SubType>Task</SubType>
+    </Map>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
+</Project>

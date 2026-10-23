@@ -1,0 +1,27 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored Procedures/PollingIncomingMessages.sql",
+    "type": "file",
+    "name": "PollingIncomingMessages.sql",
+    "kind": "sql",
+    "path": "Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored Procedures/PollingIncomingMessages.sql"
+  },
+  "outgoing": [
+    {
+      "type": "defines",
+      "to": "sqlproc:BizTalkCloud9Common.BTS.PollingIncomingMessages",
+      "toName": "BTS.PollingIncomingMessages",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.PollingIncomingMessages.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.Central.Database",
+      "fromName": "Cloud9.BizTalk.Central.Database",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.Central.Database.json"
+    }
+  ]
+}

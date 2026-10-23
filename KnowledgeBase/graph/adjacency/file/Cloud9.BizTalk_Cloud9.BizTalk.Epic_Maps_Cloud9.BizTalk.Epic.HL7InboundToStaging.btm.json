@@ -1,0 +1,26 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/Cloud9.BizTalk.Epic.HL7InboundToStaging.btm",
+    "type": "file",
+    "name": "Cloud9.BizTalk.Epic.HL7InboundToStaging.btm",
+    "kind": "btm",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/Cloud9.BizTalk.Epic.HL7InboundToStaging.btm"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.Epic",
+      "fromName": "Cloud9.BizTalk.Epic",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.Epic.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "map:Cloud9.BizTalk.Epic.Maps.HL7InboundToStaging",
+      "fromName": "Cloud9.BizTalk.Epic.Maps.HL7InboundToStaging",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.Epic.Maps.HL7InboundToStaging.json"
+    }
+  ]
+}

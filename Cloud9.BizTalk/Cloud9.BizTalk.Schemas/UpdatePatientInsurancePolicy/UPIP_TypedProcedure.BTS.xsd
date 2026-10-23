@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ns4="http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/UpdatePatientInsurancePolicyByPipGUID" xmlns:ns3="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation=".\UPIP_Serialization.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation=".\UPIP_ProcedureResultSet.BTS.UpdatePatientInsurancePolicyByPipGUID.xsd" namespace="http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/UpdatePatientInsurancePolicyByPipGUID" />
+  <xs:annotation>
+    <xs:appinfo>
+      <fileNameHint xmlns="http://schemas.microsoft.com/servicemodel/adapters/metadata/xsd">TypedProcedure.BTS</fileNameHint>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="UpdatePatientInsurancePolicyByPipGUID">
+    <xs:annotation>
+      <xs:documentation>
+        <doc:action xmlns:doc="http://schemas.microsoft.com/servicemodel/adapters/metadata/documentation">TypedProcedure/BTS/UpdatePatientInsurancePolicyByPipGUID</doc:action>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="pipGUID" nillable="true" type="ns3:guid" />
+        <xs:element minOccurs="0" maxOccurs="1" name="patGUID" nillable="true" type="ns3:guid" />
+        <xs:element minOccurs="0" maxOccurs="1" name="oipGUID" nillable="true" type="ns3:guid" />
+        <xs:element minOccurs="0" maxOccurs="1" name="icbcGUID" nillable="true" type="ns3:guid" />
+        <xs:element minOccurs="0" maxOccurs="1" name="pipPolicyNumber" nillable="true">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="50" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="1" name="pipGroupNumber" nillable="true">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="50" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="1" name="ctypGUID" nillable="true" type="ns3:guid" />
+        <xs:element minOccurs="0" maxOccurs="1" name="pipAcceptAssignment" nillable="true" type="xs:unsignedByte" />
+        <xs:element minOccurs="0" maxOccurs="1" name="pipPredeterminationRequired" nillable="true" type="xs:unsignedByte" />
+        <xs:element minOccurs="0" maxOccurs="1" name="pipInitialRequired" nillable="true" type="xs:unsignedByte" />
+        <xs:element minOccurs="0" maxOccurs="1" name="pipContinuationRequired" nillable="true" type="xs:unsignedByte" />
+        <xs:element minOccurs="0" maxOccurs="1" name="ppGUID" nillable="true" type="ns3:guid" />
+        <xs:element minOccurs="0" maxOccurs="1" name="pipRank" nillable="true" type="xs:unsignedByte" />
+        <xs:element minOccurs="0" maxOccurs="1" name="pipIsActive" nillable="true" type="xs:unsignedByte" />
+        <xs:element minOccurs="0" maxOccurs="1" name="pipSubscriberName" nillable="true">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="250" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="1" name="pipNote" nillable="true">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="2048" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="1" name="pipDeleted" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="fsGUID" nillable="true" type="ns3:guid" />
+        <xs:element minOccurs="0" maxOccurs="1" name="pipIndividualDeductible" nillable="true" type="xs:decimal" />
+        <xs:element minOccurs="0" maxOccurs="1" name="pipIndividualAnnualMax" nillable="true" type="xs:decimal" />
+        <xs:element minOccurs="0" maxOccurs="1" name="pipFamilyDeductible" nillable="true" type="xs:decimal" />
+        <xs:element minOccurs="0" maxOccurs="1" name="pipFamilyAnnualMax" nillable="true" type="xs:decimal" />
+        <xs:element minOccurs="0" maxOccurs="1" name="pipIndividualOrthoDeductible" nillable="true" type="xs:decimal" />
+        <xs:element minOccurs="0" maxOccurs="1" name="pipIndividualOrthoMax" nillable="true" type="xs:decimal" />
+        <xs:element minOccurs="0" maxOccurs="1" name="pipReplaceMissingTeeth" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="pipLifetimeMax" nillable="true" type="xs:decimal" />
+        <xs:element minOccurs="0" maxOccurs="1" name="pipInNetwork" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="pipPayOutOfNetwork" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="pipBenefitRenewal" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" maxOccurs="1" name="pipExcludeFromMassBenefitUpdate" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" maxOccurs="1" name="pipIndividualOrthoMaxRemaining" nillable="true" type="xs:decimal" />
+        <xs:element minOccurs="0" maxOccurs="1" name="pipIndividualDeductibleRemaining" nillable="true" type="xs:decimal" />
+        <xs:element minOccurs="0" maxOccurs="1" name="pipIndividualAnnualMaxRemaining" nillable="true" type="xs:decimal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePatientInsurancePolicyByPipGUIDResponse">
+    <xs:annotation>
+      <xs:documentation>
+        <doc:action xmlns:doc="http://schemas.microsoft.com/servicemodel/adapters/metadata/documentation">TypedProcedure/BTS/UpdatePatientInsurancePolicyByPipGUID/response</doc:action>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="StoredProcedureResultSet0" nillable="true" type="ns4:ArrayOfStoredProcedureResultSet0" />
+        <xs:element minOccurs="1" maxOccurs="1" name="ReturnValue" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

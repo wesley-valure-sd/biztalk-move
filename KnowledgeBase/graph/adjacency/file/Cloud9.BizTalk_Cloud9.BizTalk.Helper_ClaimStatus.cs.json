@@ -1,0 +1,27 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/ClaimStatus.cs",
+    "type": "file",
+    "name": "ClaimStatus.cs",
+    "kind": "csharp",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/ClaimStatus.cs"
+  },
+  "outgoing": [
+    {
+      "type": "defines",
+      "to": "class:Cloud9.BizTalk.Helper.ClaimStatus",
+      "toName": "Cloud9.BizTalk.Helper.ClaimStatus",
+      "toType": "class",
+      "toFile": "adjacency/class/Cloud9.BizTalk.Helper.ClaimStatus.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.Helper",
+      "fromName": "Cloud9.BizTalk.Helper",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.Helper.json"
+    }
+  ]
+}

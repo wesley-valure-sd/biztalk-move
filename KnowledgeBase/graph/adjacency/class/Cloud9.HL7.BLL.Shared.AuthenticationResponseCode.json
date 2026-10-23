@@ -1,0 +1,21 @@
+{
+  "node": {
+    "id": "class:Cloud9.HL7.BLL.Shared.AuthenticationResponseCode",
+    "type": "class",
+    "name": "Cloud9.HL7.BLL.Shared.AuthenticationResponseCode",
+    "path": "Cloud9.HL7.WebAPI/Cloud9.HL7.BLL/Shared/AuthenticationResponseCode.cs",
+    "visibility": "public",
+    "kind": "enum",
+    "line": 8
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.BLL/Shared/AuthenticationResponseCode.cs",
+      "fromName": "AuthenticationResponseCode.cs",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.HL7.WebAPI_Cloud9.HL7.BLL_Shared_AuthenticationResponseCode.cs.json"
+    }
+  ]
+}

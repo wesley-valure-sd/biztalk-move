@@ -1,0 +1,63 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.Helper.DateFormatConversion.ConvertHL7DateToSQLDatetimeWithoutOffset",
+    "type": "method",
+    "name": "DateFormatConversion.ConvertHL7DateToSQLDatetimeWithoutOffset",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/DateFormatConversion.cs",
+    "class": "Cloud9.BizTalk.Helper.DateFormatConversion",
+    "line": 23,
+    "signatures": [
+      "public static string ConvertHL7DateToSQLDatetimeWithoutOffset(string hl7Date)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.Helper.DateFormatConversion",
+      "fromName": "Cloud9.BizTalk.Helper.DateFormatConversion",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.Helper.DateFormatConversion.json"
+    },
+    {
+      "type": "callsMethod",
+      "from": "map:Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_MFN_M02ToUpsertEmployee",
+      "fromName": "Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_MFN_M02ToUpsertEmployee",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_MFN_M02ToUpsertEmployee.json",
+      "via": "scripting functoid (ExternalAssembly)"
+    },
+    {
+      "type": "callsMethod",
+      "from": "map:Cloud9.BizTalk.X12.Maps.ChannelHealth_X12_00501_271_To_InsuranceInformationCanonical",
+      "fromName": "Cloud9.BizTalk.X12.Maps.ChannelHealth_X12_00501_271_To_InsuranceInformationCanonical",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.ChannelHealth_X12_00501_271_To_InsuranceInformationCanonical.json",
+      "via": "scripting functoid (ExternalAssembly)"
+    },
+    {
+      "type": "callsMethod",
+      "from": "map:Cloud9.BizTalk.X12.Maps.CHC_X12_00501_271_To_InsuranceInformationCanonical",
+      "fromName": "Cloud9.BizTalk.X12.Maps.CHC_X12_00501_271_To_InsuranceInformationCanonical",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.CHC_X12_00501_271_To_InsuranceInformationCanonical.json",
+      "via": "scripting functoid (ExternalAssembly)"
+    },
+    {
+      "type": "callsMethod",
+      "from": "map:Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835InsuranceTransaction",
+      "fromName": "Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835InsuranceTransaction",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835InsuranceTransaction.json",
+      "via": "scripting functoid (ExternalAssembly)"
+    },
+    {
+      "type": "callsMethod",
+      "from": "map:Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835PatientTransaction",
+      "fromName": "Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835PatientTransaction",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835PatientTransaction.json",
+      "via": "scripting functoid (ExternalAssembly)"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/CH_Realtime/Core_www_caqh_org_SOAP_WSDL.xsd",
+    "type": "file",
+    "name": "Core_www_caqh_org_SOAP_WSDL.xsd",
+    "kind": "xsd",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/CH_Realtime/Core_www_caqh_org_SOAP_WSDL.xsd"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "definedIn",
+      "from": "schema:file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/CH_Realtime/Core_www_caqh_org_SOAP_WSDL.xsd",
+      "fromName": "Core_www_caqh_org_SOAP_WSDL",
+      "fromType": "schema",
+      "fromFile": "adjacency/schema/file_Cloud9.BizTalk_Cloud9.BizTalk.Schemas_CH_Realtime_Core_www_caqh_org_SOAP_WSDL.xsd.json"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonGetMailFileListMailFileElement",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonGetMailFileListMailFileElement",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/CHC_Emdeon/EmdeonGetMailFileListMailFileElement.xsd",
+    "rootElements": [
+      "mail_file"
+    ],
+    "kind": "canonical-or-other",
+    "targetNamespace": "http://Cloud9.BizTalk.Schemas.Emdeon.EmdeonGetAllMailFilesResponse",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/CHC_Emdeon/EmdeonGetMailFileListMailFileElement.xsd",
+      "toName": "EmdeonGetMailFileListMailFileElement.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_CHC_Emdeon_EmdeonGetMailFileListMailFileElement.xsd.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.MPType_GetMailFileListElement",
+      "fromName": "MPType_GetMailFileListElement",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.MPType_GetMailFileListElement.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonGetMailFileListMailFileElement"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "node": {
+    "id": "receiveport:Cloud9.EDI.Deployment/RP_CHCInboundToProcess",
+    "type": "receiveport",
+    "name": "RP_CHCInboundToProcess",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.Deployment/PortBindingsMaster.xml",
+    "bindingSet": "Cloud9.EDI.Deployment",
+    "isTwoWay": "false",
+    "application": "Cloud9.EDI"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.EDI.Deployment/PortBindingsMaster.xml",
+      "toName": "PortBindingsMaster.xml",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.EDI.Deployment_PortBindingsMaster.xml.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "partOf",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_PROD_RL_}CHCInboundToProcess",
+      "fromName": "${DO_NOT_START_PROD_RL_}CHCInboundToProcess",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_PROD_RL_}CHCInboundToProcess.json"
+    },
+    {
+      "type": "implementedBy",
+      "from": "flowstep:CHC-01-Poll",
+      "fromName": "Scheduled poll of the Change Healthcare mailbox for each practice",
+      "fromType": "flowstep",
+      "fromFile": "adjacency/flowstep/CHC-01-Poll.json",
+      "curated": true
+    }
+  ]
+}

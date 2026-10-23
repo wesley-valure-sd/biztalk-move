@@ -1,0 +1,26 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12.Schemas/SD_X12_00501_835.xsd",
+    "type": "file",
+    "name": "SD_X12_00501_835.xsd",
+    "kind": "xsd",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12.Schemas/SD_X12_00501_835.xsd"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.X12.Schemas",
+      "fromName": "Cloud9.BizTalk.X12.Schemas",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.X12.Schemas.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "schema:Cloud9.BizTalk.X12.Schemas.SD_X12_00501_835",
+      "fromName": "Cloud9.BizTalk.X12.Schemas.SD_X12_00501_835",
+      "fromType": "schema",
+      "fromFile": "adjacency/schema/Cloud9.BizTalk.X12.Schemas.SD_X12_00501_835.json"
+    }
+  ]
+}

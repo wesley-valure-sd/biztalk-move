@@ -1,0 +1,37 @@
+{
+  "node": {
+    "id": "sqlproc:PracticeDB.BTS.AddClaimErrors",
+    "type": "sqlproc",
+    "name": "BTS.AddClaimErrors",
+    "database": "PracticeDB (one database per practice; resolved at run time from BTS.PracticeConfig.pcInstanceAddress)",
+    "definedInRepo": false
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "describesParametersOf",
+      "from": "schema:Cloud9.BizTalk.Schemas.ClaimErrorMessages.ACE_TypedProcedure_BTS",
+      "fromName": "Cloud9.BizTalk.Schemas.ClaimErrorMessages.ACE_TypedProcedure_BTS",
+      "fromType": "schema",
+      "fromFile": "adjacency/schema/Cloud9.BizTalk.Schemas.ClaimErrorMessages.ACE_TypedProcedure_BTS.json"
+    },
+    {
+      "type": "invokesProc",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker",
+      "fromName": "Process_CHC_837Claims_Worker",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker.json",
+      "line": 1492,
+      "via": "dynamic WCF-SQL send port (WCF.Action set in code)"
+    },
+    {
+      "type": "invokesProc",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus",
+      "fromName": "Process_CHC_ClaimsStatus",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus.json",
+      "line": 488,
+      "via": "dynamic WCF-SQL send port (WCF.Action set in code)"
+    }
+  ]
+}

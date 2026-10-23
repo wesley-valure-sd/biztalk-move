@@ -1,0 +1,34 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.ReportGenerator/Cloud9.BizTalk.Reports/_PatientTreatmentCard.cs",
+    "type": "file",
+    "name": "_PatientTreatmentCard.cs",
+    "kind": "csharp",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.ReportGenerator/Cloud9.BizTalk.Reports/_PatientTreatmentCard.cs"
+  },
+  "outgoing": [
+    {
+      "type": "defines",
+      "to": "class:Cloud9.BizTalk.Reports._PatientTreatmentCard",
+      "toName": "Cloud9.BizTalk.Reports._PatientTreatmentCard",
+      "toType": "class",
+      "toFile": "adjacency/class/Cloud9.BizTalk.Reports._PatientTreatmentCard.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:_PatientTreatmentCard",
+      "fromName": "_PatientTreatmentCard",
+      "fromType": "project",
+      "fromFile": "adjacency/project/_PatientTreatmentCard.json"
+    },
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.Reports",
+      "fromName": "Cloud9.BizTalk.Reports",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.Reports.json"
+    }
+  ]
+}

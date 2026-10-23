@@ -1,0 +1,76 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.X12.Schemas.X12_00501_276",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.X12.Schemas.X12_00501_276",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12.Schemas/X12_00501_276.xsd",
+    "rootElements": [
+      "X12_00501_276",
+      "NM1Loop1",
+      "NM1Loop2",
+      "SVCLoop1",
+      "TRNLoop1",
+      "HLLoop1",
+      "BHT",
+      "REF",
+      "NM1",
+      "N2",
+      "N3",
+      "N4",
+      "REF_2",
+      "PER",
+      "HL",
+      "SBR",
+      "PAT",
+      "DMG",
+      "NM1_2",
+      "N3_2",
+      "N4_2",
+      "PER_2",
+      "TRN",
+      "REF_3",
+      "AMT",
+      "DTP",
+      "SVC",
+      "REF_4",
+      "DTP_2",
+      "C040",
+      "C040_2",
+      "C056",
+      "C040_3",
+      "C003",
+      "C003_2",
+      "C040_4"
+    ],
+    "kind": "x12-edi",
+    "targetNamespace": "http://schemas.microsoft.com/BizTalk/EDI/X12/2006",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12.Schemas/X12_00501_276.xsd",
+      "toName": "X12_00501_276.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12.Schemas_X12_00501_276.xsd.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.X12.Maps.ClaimInformation_To_X12_00501_276",
+      "fromName": "Cloud9.BizTalk.X12.Maps.ClaimInformation_To_X12_00501_276",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.ClaimInformation_To_X12_00501_276.json",
+      "root": "X12_00501_276"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.CHC276_MMT",
+      "fromName": "CHC276_MMT",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.CHC276_MMT.json",
+      "bodyType": "Schemas.X12_00501_276"
+    }
+  ]
+}

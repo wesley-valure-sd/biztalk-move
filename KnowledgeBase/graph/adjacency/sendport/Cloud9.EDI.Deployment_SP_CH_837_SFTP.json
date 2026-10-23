@@ -1,0 +1,54 @@
+{
+  "node": {
+    "id": "sendport:Cloud9.EDI.Deployment/SP_CH_837_SFTP",
+    "type": "sendport",
+    "name": "SP_CH_837_SFTP",
+    "sendPipeline": "Microsoft.BizTalk.Edi.DefaultPipelines.EdiSend",
+    "bindingSet": "Cloud9.EDI.Deployment",
+    "actionMappings": [],
+    "isTwoWay": "false",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.Deployment/PortBindingsMaster.xml",
+    "address": "sftp://${CH_SFTP_HOST}:${CH_SFTP_PORT}/${CH_837_FTP_FOLDER}/%SourceFileName%",
+    "filter": [],
+    "isStatic": "true",
+    "transport": "SFTP"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.EDI.Deployment/PortBindingsMaster.xml",
+      "toName": "PortBindingsMaster.xml",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.EDI.Deployment_PortBindingsMaster.xml.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.EDI.Deployment/CH_SFTP_HOST",
+      "toName": "CH_SFTP_HOST",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.EDI.Deployment_CH_SFTP_HOST.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.EDI.Deployment/CH_SFTP_PORT",
+      "toName": "CH_SFTP_PORT",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.EDI.Deployment_CH_SFTP_PORT.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.EDI.Deployment/CH_837_FTP_FOLDER",
+      "toName": "CH_837_FTP_FOLDER",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.EDI.Deployment_CH_837_FTP_FOLDER.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.EDI.Deployment/CH_SFTP_PASSWORD",
+      "toName": "CH_SFTP_PASSWORD",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.EDI.Deployment_CH_SFTP_PASSWORD.json"
+    }
+  ],
+  "incoming": []
+}

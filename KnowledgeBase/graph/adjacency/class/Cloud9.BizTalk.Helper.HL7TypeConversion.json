@@ -1,0 +1,43 @@
+{
+  "node": {
+    "id": "class:Cloud9.BizTalk.Helper.HL7TypeConversion",
+    "type": "class",
+    "name": "Cloud9.BizTalk.Helper.HL7TypeConversion",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/HL7TypeConversion.cs",
+    "visibility": "public",
+    "kind": "class",
+    "line": 13
+  },
+  "outgoing": [
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.HL7TypeConversion.ConvertCommunicationTypeFromHL7ToCloud9",
+      "toName": "HL7TypeConversion.ConvertCommunicationTypeFromHL7ToCloud9",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.HL7TypeConversion.ConvertCommunicationTypeFromHL7ToCloud9.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.HL7TypeConversion.ConvertSIUMessageTypeToCloud9",
+      "toName": "HL7TypeConversion.ConvertSIUMessageTypeToCloud9",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.HL7TypeConversion.ConvertSIUMessageTypeToCloud9.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.HL7TypeConversion.ConvertSIUAppointmentStatusToCloud9",
+      "toName": "HL7TypeConversion.ConvertSIUAppointmentStatusToCloud9",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.HL7TypeConversion.ConvertSIUAppointmentStatusToCloud9.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/HL7TypeConversion.cs",
+      "fromName": "HL7TypeConversion.cs",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Helper_HL7TypeConversion.cs.json"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.HelperTest/ValidationTest.cs",
+    "type": "file",
+    "name": "ValidationTest.cs",
+    "kind": "csharp",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.HelperTest/ValidationTest.cs"
+  },
+  "outgoing": [
+    {
+      "type": "defines",
+      "to": "class:Cloud9.BizTalk.HelperTest.ValidationTest",
+      "toName": "Cloud9.BizTalk.HelperTest.ValidationTest",
+      "toType": "class",
+      "toFile": "adjacency/class/Cloud9.BizTalk.HelperTest.ValidationTest.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.HelperTest",
+      "fromName": "Cloud9.BizTalk.HelperTest",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.HelperTest.json"
+    }
+  ]
+}

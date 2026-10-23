@@ -1,0 +1,20 @@
+MAP: ClaimStatusCanonical_To_AddClaimErrors.btm
+PATH: Cloud9.BizTalk\Cloud9.BizTalk.X12\Maps\ClaimStatusCanonical_To_AddClaimErrors.btm
+SOURCE: Cloud9.BizTalk.Schemas.Canonical.ClaimStatus (root ClaimStatus)
+TARGET: Cloud9.BizTalk.Schemas.ClaimErrorMessages.ACE_TypedProcedure_BTS (root AddClaimErrors)
+SCRIPT PRECEDENCE (first match wins when a functoid has more than one script): CSharp > ExternalAssembly > VbNet > JScript > XsltCallTemplate > Xslt
+
+=== PAGE: Page 1 ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L1: ClaimStatus/Patient/Claim/ClaimControlNumber -> AddClaimErrors/adaclaimNumber
+L2: ClaimStatus/Patient/Claim/Message -> AddClaimErrors/Messages/MessageListTableType/Message
+L4: ClaimStatus/Patient/Claim/StatusCode -> F1
+L5: F1 -> AddClaimErrors/Messages/MessageListTableType/Code
+--- FUNCTOIDS ---
+F1 [Scripting] inputs: L4
+    script language: CSharp
+    | public string PaddingClaimStatusCode(string code)
+    | {
+    |     return code.PadLeft(4, '0');
+    | }
+

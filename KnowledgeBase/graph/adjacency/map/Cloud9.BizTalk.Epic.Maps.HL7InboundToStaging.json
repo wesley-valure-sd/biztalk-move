@@ -1,0 +1,44 @@
+{
+  "node": {
+    "id": "map:Cloud9.BizTalk.Epic.Maps.HL7InboundToStaging",
+    "type": "map",
+    "name": "Cloud9.BizTalk.Epic.Maps.HL7InboundToStaging",
+    "readableSummary": "KnowledgeBase/map-summaries/Cloud9.BizTalk.Epic.HL7InboundToStaging.txt",
+    "targetSchema": "Cloud9.BizTalk.Schemas.HIS_TableOperation_BTS_HL7InboundStaging",
+    "inlineScripts": [],
+    "functoidCount": 7,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/Cloud9.BizTalk.Epic.HL7InboundToStaging.btm",
+    "linkCount": 17,
+    "sourceRoot": "Root",
+    "targetRoot": "Insert"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/Cloud9.BizTalk.Epic.HL7InboundToStaging.btm",
+      "toName": "Cloud9.BizTalk.Epic.HL7InboundToStaging.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Maps_Cloud9.BizTalk.Epic.HL7InboundToStaging.btm.json"
+    },
+    {
+      "type": "targetSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.HIS_TableOperation_BTS_HL7InboundStaging",
+      "toName": "Cloud9.BizTalk.Schemas.HIS_TableOperation_BTS_HL7InboundStaging",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.HIS_TableOperation_BTS_HL7InboundStaging.json",
+      "root": "Insert"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "usesMap",
+      "from": "orchestration:Cloud9.BizTalk.Epic.StageHL7_Inbound",
+      "fromName": "StageHL7_Inbound",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.StageHL7_Inbound.json",
+      "output": "msgStagingInsertReq.Body",
+      "input": "msg_FileInfo, msgHeader",
+      "line": 788
+    }
+  ]
+}

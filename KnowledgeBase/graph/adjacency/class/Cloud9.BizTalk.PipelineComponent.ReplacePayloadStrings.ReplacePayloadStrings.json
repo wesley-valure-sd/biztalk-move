@@ -1,0 +1,85 @@
+{
+  "node": {
+    "id": "class:Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.ReplacePayloadStrings",
+    "type": "class",
+    "name": "Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.ReplacePayloadStrings",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings/ReplacePayloadStrings.cs",
+    "visibility": "public",
+    "kind": "class",
+    "line": 12
+  },
+  "outgoing": [
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.ReplacePayloadStrings.GetClassID",
+      "toName": "ReplacePayloadStrings.GetClassID",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.ReplacePayloadStrings.GetClassID.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.ReplacePayloadStrings.InitNew",
+      "toName": "ReplacePayloadStrings.InitNew",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.ReplacePayloadStrings.InitNew.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.ReplacePayloadStrings.Load",
+      "toName": "ReplacePayloadStrings.Load",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.ReplacePayloadStrings.Load.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.ReplacePayloadStrings.Save",
+      "toName": "ReplacePayloadStrings.Save",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.ReplacePayloadStrings.Save.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.ReplacePayloadStrings.ReadPropertyBag",
+      "toName": "ReplacePayloadStrings.ReadPropertyBag",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.ReplacePayloadStrings.ReadPropertyBag.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.ReplacePayloadStrings.WritePropertyBag",
+      "toName": "ReplacePayloadStrings.WritePropertyBag",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.ReplacePayloadStrings.WritePropertyBag.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.ReplacePayloadStrings.Validate",
+      "toName": "ReplacePayloadStrings.Validate",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.ReplacePayloadStrings.Validate.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.ReplacePayloadStrings.Execute",
+      "toName": "ReplacePayloadStrings.Execute",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.ReplacePayloadStrings.Execute.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings/ReplacePayloadStrings.cs",
+      "fromName": "ReplacePayloadStrings.cs",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings_ReplacePayloadStrings.cs.json"
+    },
+    {
+      "type": "usesComponent",
+      "from": "pipeline:Cloud9.BizTalk.Epic.Pipelines.ReceiveHL7Pipeline",
+      "fromName": "Cloud9.BizTalk.Epic.Pipelines.ReceiveHL7Pipeline",
+      "fromType": "pipeline",
+      "fromFile": "adjacency/pipeline/Cloud9.BizTalk.Epic.Pipelines.ReceiveHL7Pipeline.json"
+    }
+  ]
+}

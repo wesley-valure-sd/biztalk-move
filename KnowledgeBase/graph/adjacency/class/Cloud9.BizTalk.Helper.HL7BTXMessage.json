@@ -1,0 +1,21 @@
+{
+  "node": {
+    "id": "class:Cloud9.BizTalk.Helper.HL7BTXMessage",
+    "type": "class",
+    "name": "Cloud9.BizTalk.Helper.HL7BTXMessage",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/HL7BTXMessage.cs",
+    "visibility": "internal",
+    "kind": "class",
+    "line": 9
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/HL7BTXMessage.cs",
+      "fromName": "HL7BTXMessage.cs",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Helper_HL7BTXMessage.cs.json"
+    }
+  ]
+}

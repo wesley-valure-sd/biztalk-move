@@ -1,0 +1,39 @@
+{
+  "node": {
+    "id": "solution:Cloud9.HL7.WebAPI",
+    "type": "solution",
+    "name": "Cloud9.HL7.WebAPI",
+    "path": "Cloud9.HL7.WebAPI/Cloud9.HL7.WebAPI.sln"
+  },
+  "outgoing": [
+    {
+      "type": "contains",
+      "to": "project:Cloud9.HL7.WebAPI",
+      "toName": "Cloud9.HL7.WebAPI",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.HL7.WebAPI.json"
+    },
+    {
+      "type": "contains",
+      "to": "project:Cloud9.HL7.WebAPIClient",
+      "toName": "Cloud9.HL7.WebAPIClient",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.HL7.WebAPIClient.json"
+    },
+    {
+      "type": "contains",
+      "to": "project:Cloud9.HL7.DAL",
+      "toName": "Cloud9.HL7.DAL",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.HL7.DAL.json"
+    },
+    {
+      "type": "contains",
+      "to": "project:Cloud9.HL7.BLL",
+      "toName": "Cloud9.HL7.BLL",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.HL7.BLL.json"
+    }
+  ],
+  "incoming": []
+}

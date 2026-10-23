@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.HL7.WebAPI.WebApiConfig.Register",
+    "type": "method",
+    "name": "WebApiConfig.Register",
+    "path": "Cloud9.HL7.WebAPI/Cloud9.HL7.WebAPI/App_Start/WebApiConfig.cs",
+    "class": "Cloud9.HL7.WebAPI.WebApiConfig",
+    "line": 11,
+    "signatures": [
+      "public static void Register(HttpConfiguration config)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.HL7.WebAPI.WebApiConfig",
+      "fromName": "Cloud9.HL7.WebAPI.WebApiConfig",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.HL7.WebAPI.WebApiConfig.json"
+    }
+  ]
+}

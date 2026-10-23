@@ -1,0 +1,73 @@
+{
+  "node": {
+    "id": "map:Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835PatientTransactionWeb",
+    "type": "map",
+    "name": "Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835PatientTransactionWeb",
+    "readableSummary": "KnowledgeBase/map-summaries/ClaimPaymentCanonical_To_Post835PatientTransactionWeb.txt",
+    "targetSchema": "Cloud9.BizTalk.Schemas.Post835TypedProcedure_BTS",
+    "inlineScripts": [
+      "CSharp:GetTransGUID",
+      "CSharp:FormatDate",
+      "CSharp:FormatNote"
+    ],
+    "functoidCount": 14,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/ClaimPaymentCanonical_To_Post835PatientTransactionWeb.btm",
+    "sourceSchema": "Cloud9.BizTalk.Schemas.Canonical.ClaimPayment",
+    "linkCount": 38,
+    "sourceRoot": "ClaimPayment",
+    "targetRoot": "Post835PatientTransaction"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/ClaimPaymentCanonical_To_Post835PatientTransactionWeb.btm",
+      "toName": "ClaimPaymentCanonical_To_Post835PatientTransactionWeb.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_ClaimPaymentCanonical_To_Post835PatientTransactionWeb.btm.json"
+    },
+    {
+      "type": "sourceSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.Canonical.ClaimPayment",
+      "toName": "Cloud9.BizTalk.Schemas.Canonical.ClaimPayment",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.Canonical.ClaimPayment.json",
+      "root": "ClaimPayment"
+    },
+    {
+      "type": "targetSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.Post835TypedProcedure_BTS",
+      "toName": "Cloud9.BizTalk.Schemas.Post835TypedProcedure_BTS",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.Post835TypedProcedure_BTS.json",
+      "root": "Post835PatientTransaction"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "usesMap",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_SD_835Patient",
+      "fromName": "Process_SD_835Patient",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_SD_835Patient.json",
+      "output": "Post835PatientTransaction.Body",
+      "input": "ClaimPayment",
+      "line": 680
+    },
+    {
+      "type": "implementedBy",
+      "from": "flowstep:SD-Web-04-Post",
+      "fromName": "Post each payment with BTS.Post835PatientTransaction (WEB)",
+      "fromType": "flowstep",
+      "fromFile": "adjacency/flowstep/SD-Web-04-Post.json",
+      "curated": true
+    },
+    {
+      "type": "appliesTo",
+      "from": "businessrule:AmountSign",
+      "fromName": "Payments are posted as negative amounts",
+      "fromType": "businessrule",
+      "fromFile": "adjacency/businessrule/AmountSign.json",
+      "curated": true
+    }
+  ]
+}

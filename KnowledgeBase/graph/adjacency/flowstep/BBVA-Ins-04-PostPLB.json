@@ -1,0 +1,39 @@
+{
+  "node": {
+    "id": "flowstep:BBVA-Ins-04-PostPLB",
+    "type": "flowstep",
+    "name": "Post each PLB as an adjustment",
+    "order": 4,
+    "curated": true,
+    "logic": "Map BBVA_835_To_AdjustmentClaimPaymentBatchCanonical: one ClaimPayment for each PLB. Amount = PLB04 * -1. AdjustmentType = PLB03-1 (C04201). ReferenceIdentifier = 'ADJ<n>-<TRN02>'. ImportLog message is prefixed 'ADJ - '."
+  },
+  "outgoing": [
+    {
+      "type": "implementedBy",
+      "to": "map:Cloud9.BizTalk.X12.Maps.BBVA_835_To_AdjustmentClaimPaymentBatchCanonical",
+      "toName": "Cloud9.BizTalk.X12.Maps.BBVA_835_To_AdjustmentClaimPaymentBatchCanonical",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.BBVA_835_To_AdjustmentClaimPaymentBatchCanonical.json",
+      "curated": true
+    },
+    {
+      "type": "implementedBy",
+      "to": "sqlproc:PracticeDB.BTS.Post835InsuranceTransaction",
+      "toName": "BTS.Post835InsuranceTransaction",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/PracticeDB.BTS.Post835InsuranceTransaction.json",
+      "curated": true
+    }
+  ],
+  "incoming": [
+    {
+      "type": "hasStep",
+      "from": "flow:BBVA-835-Insurance-Lockbox",
+      "fromName": "BBVA insurance lockbox 835 -> insurance payment and PLB adjustment transactions",
+      "fromType": "flow",
+      "fromFile": "adjacency/flow/BBVA-835-Insurance-Lockbox.json",
+      "order": 4,
+      "curated": true
+    }
+  ]
+}

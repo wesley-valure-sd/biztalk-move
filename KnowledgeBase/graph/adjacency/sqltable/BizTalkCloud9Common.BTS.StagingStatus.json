@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "sqltable:BizTalkCloud9Common.BTS.StagingStatus",
+    "type": "sqltable",
+    "name": "BTS.StagingStatus",
+    "database": "BizTalkCloud9Common",
+    "columns": [
+      "stsStatusID SMALLINT",
+      "stsStatusDescription NVARCHAR(100)"
+    ],
+    "path": "Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Tables/StagingStatus.sql"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Tables/StagingStatus.sql",
+      "fromName": "StagingStatus.sql",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Tables_StagingStatus.sql.json"
+    }
+  ]
+}

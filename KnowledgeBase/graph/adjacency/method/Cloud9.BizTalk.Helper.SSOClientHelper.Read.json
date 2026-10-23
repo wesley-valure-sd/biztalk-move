@@ -1,0 +1,39 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.Helper.SSOClientHelper.Read",
+    "type": "method",
+    "name": "SSOClientHelper.Read",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/SSOClientHelper.cs",
+    "class": "Cloud9.BizTalk.Helper.SSOClientHelper",
+    "line": 23,
+    "signatures": [
+      "public static string Read(string appName, string propName)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.Helper.SSOClientHelper",
+      "fromName": "Cloud9.BizTalk.Helper.SSOClientHelper",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.Helper.SSOClientHelper.json"
+    },
+    {
+      "type": "callsMethod",
+      "from": "orchestration:Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient",
+      "fromName": "ProcessHL7MessagesForPatient",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient.json",
+      "line": 2577
+    },
+    {
+      "type": "callsMethod",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_276ClaimStatus",
+      "fromName": "Process_CHC_276ClaimStatus",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_276ClaimStatus.json",
+      "line": 741
+    }
+  ]
+}

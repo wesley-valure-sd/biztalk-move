@@ -1,0 +1,33 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Pipelines/ReceiveEDIPipeline.btp",
+    "type": "file",
+    "name": "ReceiveEDIPipeline.btp",
+    "kind": "btp",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Pipelines/ReceiveEDIPipeline.btp"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.X12",
+      "fromName": "Cloud9.BizTalk.X12",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.X12.json"
+    },
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.X12.PDS",
+      "fromName": "Cloud9.BizTalk.X12.PDS",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.X12.PDS.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "pipeline:Cloud9.BizTalk.X12.Pipelines.ReceiveEDIPipeline",
+      "fromName": "Cloud9.BizTalk.X12.Pipelines.ReceiveEDIPipeline",
+      "fromType": "pipeline",
+      "fromFile": "adjacency/pipeline/Cloud9.BizTalk.X12.Pipelines.ReceiveEDIPipeline.json"
+    }
+  ]
+}

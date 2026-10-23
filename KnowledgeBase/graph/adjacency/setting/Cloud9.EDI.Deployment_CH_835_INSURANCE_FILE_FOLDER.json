@@ -1,0 +1,52 @@
+{
+  "node": {
+    "id": "setting:Cloud9.EDI.Deployment/CH_835_INSURANCE_FILE_FOLDER",
+    "type": "setting",
+    "name": "CH_835_INSURANCE_FILE_FOLDER",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.Deployment/SettingsFileGenerator.xml",
+    "bindingSet": "Cloud9.EDI.Deployment",
+    "valuesByEnvironment": {
+      "Default Values (DefaultSettings)": "C:\\BizTalkTest\\CH_835\\Insurance",
+      "Local Dev (LocalSettings)": "C:\\BizTalkTest\\CH_835\\Insurance",
+      "JGLISSON Development (JGLISSONSettings)": "C:\\BizTalkTest\\CH_835\\Insurance",
+      "LAB (LABSettings)": "\\\\10.2.1.1\\Development\\BizTalk1\\CH_835\\Insurance",
+      "LAB2 (LAB2Settings)": "\\\\10.2.1.1\\Development\\Lab2\\CH_835\\Insurance",
+      "LAB3 (LAB3Settings)": "\\\\10.2.1.1\\Development\\BizTalk3\\CH_835\\Insurance",
+      "PROD (C9Prod1_Settings)": "\\\\atl-nas2\\BizTalk\\CH_835\\Insurance",
+      "PROD (C9Prod2_Settings)": "\\\\us-ea1-fs1\\BizTalk\\CH_835\\Insurance",
+      "LAB (SDLab1_Settings)": "\\\\c9.smiledoctors.com\\c9\\cloud9-test\\BizTalk\\CH_835\\Insurance",
+      "PROD (SDProd1_Settings)": "\\\\c9.smiledoctors.com\\c9\\cloud9\\BizTalk\\CH_835\\Insurance"
+    }
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_CHC_Inbound_EDI",
+      "fromName": "RL_CHC_Inbound_EDI",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_CHC_Inbound_EDI.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}CHC835_Insurance_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}CHC835_Insurance_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}CHC835_Insurance_SFTP.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_CHC_Inbound_277_Unsolicitated_EDI",
+      "fromName": "RL_CHC_Inbound_277_Unsolicitated_EDI",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_CHC_Inbound_277_Unsolicitated_EDI.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}CHC227_Unsolicitated_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}CHC227_Unsolicitated_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}CHC227_Unsolicitated_SFTP.json"
+    }
+  ]
+}

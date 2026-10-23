@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "setting:Cloud9.Common.Deployment/SsoAppAdminGroup",
+    "type": "setting",
+    "name": "SsoAppAdminGroup",
+    "path": "Cloud9.BizTalk/Cloud9.Common.Deployment/SettingsFileGenerator.xml",
+    "bindingSet": "Cloud9.Common.Deployment",
+    "valuesByEnvironment": {
+      "Default Values": "BizTalk Server Administrators",
+      "Local Dev (LocalSettings)": "",
+      "AWARE Development (AWARESettings)": "BizTalk Server Administrators",
+      "LAB (LABSettings)": "CLOUD9\\BizTalk-PROD-SSO-Admins",
+      "LAB2 (LAB2Settings)": "CLOUD9\\BizTalk-PROD-SSO-Admins",
+      "LAB3 (LAB3Settings)": "CLOUD9\\BizTalk-PROD-SSO-Admins",
+      "PROD (C9Prod1_Settings)": "CLOUD9\\BizTalk-PROD-SSO-Admins",
+      "PROD (C9Prod2_Settings)": "CLOUD9\\BizTalk-PROD-SSO-Admins",
+      "LAB (SDLab1_Settings)": "C9\\test.BizTalk.SSO.Admins",
+      "PROD (SDProd1_Settings)": "C9\\prod.BizTalk.SSO.Admins"
+    }
+  },
+  "outgoing": [],
+  "incoming": []
+}

@@ -1,0 +1,226 @@
+{
+  "node": {
+    "id": "project:Cloud9.BizTalk.Central.Database",
+    "type": "project",
+    "name": "Cloud9.BizTalk.Central.Database",
+    "path": "Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/Cloud9.BizTalk.Central.Database.sqlproj",
+    "framework": "v4.5.2",
+    "kind": "sql-database",
+    "rootNamespace": "Cloud9.BizTalk.Central.Database",
+    "assemblyName": "Cloud9.BizTalk.Central.Database"
+  },
+  "outgoing": [
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored Procedures/CreateLogEntry.sql",
+      "toName": "CreateLogEntry.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Stored_Procedures_CreateLogEntry.sql.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored Procedures/GetApplicationLookupValue.sql",
+      "toName": "GetApplicationLookupValue.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Stored_Procedures_GetApplicationLookupValue.sql.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored Procedures/GetApplicationLookupValues.sql",
+      "toName": "GetApplicationLookupValues.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Stored_Procedures_GetApplicationLookupValues.sql.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored Procedures/GetIncomingMessageInfo.sql",
+      "toName": "GetIncomingMessageInfo.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Stored_Procedures_GetIncomingMessageInfo.sql.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored Procedures/GetOutgoingMessages.sql",
+      "toName": "GetOutgoingMessages.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Stored_Procedures_GetOutgoingMessages.sql.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored Procedures/GetPracticeConfiguration.sql",
+      "toName": "GetPracticeConfiguration.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Stored_Procedures_GetPracticeConfiguration.sql.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored Procedures/GetPracticeConfigurationByEmdeonUser.sql",
+      "toName": "GetPracticeConfigurationByEmdeonUser.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Stored_Procedures_GetPracticeConfigurationByEmdeonUser.sql.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored Procedures/GetPracticeConfigurationByName.sql",
+      "toName": "GetPracticeConfigurationByName.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Stored_Procedures_GetPracticeConfigurationByName.sql.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored Procedures/GetPracticeConfigurationForClaim.sql",
+      "toName": "GetPracticeConfigurationForClaim.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Stored_Procedures_GetPracticeConfigurationForClaim.sql.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored Procedures/GetProcessingStagingPatientMessages.sql",
+      "toName": "GetProcessingStagingPatientMessages.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Stored_Procedures_GetProcessingStagingPatientMessages.sql.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored Procedures/PollingIncomingMessages.sql",
+      "toName": "PollingIncomingMessages.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Stored_Procedures_PollingIncomingMessages.sql.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored Procedures/QueueProcessParameters.sql",
+      "toName": "QueueProcessParameters.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Stored_Procedures_QueueProcessParameters.sql.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored Procedures/QueueUnprocessedStagingPatientIDs.sql",
+      "toName": "QueueUnprocessedStagingPatientIDs.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Stored_Procedures_QueueUnprocessedStagingPatientIDs.sql.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored Procedures/SetStagingPatientMessageStatus.sql",
+      "toName": "SetStagingPatientMessageStatus.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Stored_Procedures_SetStagingPatientMessageStatus.sql.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored Procedures/UpdateProcessParameters.sql",
+      "toName": "UpdateProcessParameters.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Stored_Procedures_UpdateProcessParameters.sql.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Tables/ApplicationLookupValue.sql",
+      "toName": "ApplicationLookupValue.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Tables_ApplicationLookupValue.sql.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Tables/HL7InboundStaging.sql",
+      "toName": "HL7InboundStaging.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Tables_HL7InboundStaging.sql.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Tables/IncomingMessage.sql",
+      "toName": "IncomingMessage.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Tables_IncomingMessage.sql.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Tables/Log.sql",
+      "toName": "Log.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Tables_Log.sql.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Tables/OutgoingMessage.sql",
+      "toName": "OutgoingMessage.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Tables_OutgoingMessage.sql.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Tables/OutgoingMessageAttribute.sql",
+      "toName": "OutgoingMessageAttribute.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Tables_OutgoingMessageAttribute.sql.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Tables/PracticeConfig.sql",
+      "toName": "PracticeConfig.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Tables_PracticeConfig.sql.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Tables/PracticeConfigStatus.sql",
+      "toName": "PracticeConfigStatus.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Tables_PracticeConfigStatus.sql.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Tables/ProcessingError.sql",
+      "toName": "ProcessingError.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Tables_ProcessingError.sql.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Tables/ProcessParameter.sql",
+      "toName": "ProcessParameter.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Tables_ProcessParameter.sql.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Tables/StagingStatus.sql",
+      "toName": "StagingStatus.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Tables_StagingStatus.sql.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Tables/SubmittedClaim.sql",
+      "toName": "SubmittedClaim.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Tables_SubmittedClaim.sql.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/Security/BTS.sql",
+      "toName": "BTS.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_Security_BTS.sql.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/Storage/FileStreamGroup1.sql",
+      "toName": "FileStreamGroup1.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_Storage_FileStreamGroup1.sql.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "solution:Cloud9.BizTalk.Database",
+      "fromName": "Cloud9.BizTalk.Database",
+      "fromType": "solution",
+      "fromFile": "adjacency/solution/Cloud9.BizTalk.Database.json"
+    }
+  ]
+}

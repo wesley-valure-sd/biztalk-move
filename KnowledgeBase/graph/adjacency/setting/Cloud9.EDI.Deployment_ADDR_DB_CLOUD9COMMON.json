@@ -1,0 +1,80 @@
+{
+  "node": {
+    "id": "setting:Cloud9.EDI.Deployment/ADDR_DB_CLOUD9COMMON",
+    "type": "setting",
+    "name": "ADDR_DB_CLOUD9COMMON",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.Deployment/SettingsFileGenerator.xml",
+    "bindingSet": "Cloud9.EDI.Deployment",
+    "valuesByEnvironment": {
+      "Default Values (DefaultSettings)": "mssql://localhost//BizTalkCloud9Common",
+      "Local Dev (LocalSettings)": "mssql://localhost//BizTalkCloud9Common",
+      "JGLISSON Development (JGLISSONSettings)": "mssql://localhost//BizTalkCloud9Common",
+      "LAB (LABSettings)": "mssql://lab-db1/LABDB1INSTANCE/BizTalkCloud9Common",
+      "LAB2 (LAB2Settings)": "mssql://lab-db1/LABDB1INSTANCE/BizTalkCloud9Common",
+      "LAB3 (LAB3Settings)": "mssql://lab-db1/LABDB1INSTANCE/BizTalkCloud9Common",
+      "PROD (C9Prod1_Settings)": "mssql://atl-dbc1//BizTalkCloud9Common",
+      "PROD (C9Prod2_Settings)": "mssql://us-ea1-a2-dbs7/biztalk,1435/BizTalkCloud9Common",
+      "LAB (SDLab1_Settings)": "mssql://c9-t-sql-01//BizTalkCloud9Common",
+      "PROD (SDProd1_Settings)": "mssql://c9-p-sql-01//BizTalkCloud9Common"
+    }
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "usesSetting",
+      "from": "sendport:Cloud9.EDI.Deployment/SP_UpdateProcessParameters_WCF",
+      "fromName": "SP_UpdateProcessParameters_WCF",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.Deployment_SP_UpdateProcessParameters_WCF.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "sendport:Cloud9.EDI.Deployment/SP_BizTalkCloud9Common_WCF",
+      "fromName": "SP_BizTalkCloud9Common_WCF",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.Deployment_SP_BizTalkCloud9Common_WCF.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "sendport:Cloud9.EDI.Deployment/SP_GetPracticeConfigurationForEmdeon_WCF",
+      "fromName": "SP_GetPracticeConfigurationForEmdeon_WCF",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.Deployment_SP_GetPracticeConfigurationForEmdeon_WCF.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "sendport:Cloud9.EDI.Deployment/SP_SubmittedClaim_WCF",
+      "fromName": "SP_SubmittedClaim_WCF",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.Deployment_SP_SubmittedClaim_WCF.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "sendport:Cloud9.EDI.Deployment/SP_GetPracticeConfigurationForClaim_WCF",
+      "fromName": "SP_GetPracticeConfigurationForClaim_WCF",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.Deployment_SP_GetPracticeConfigurationForClaim_WCF.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_PROD_RL_}QueueClaimsToProcess",
+      "fromName": "${DO_NOT_START_PROD_RL_}QueueClaimsToProcess",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_PROD_RL_}QueueClaimsToProcess.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_PROD_RL_}CHCInboundToProcess",
+      "fromName": "${DO_NOT_START_PROD_RL_}CHCInboundToProcess",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_PROD_RL_}CHCInboundToProcess.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_OutgoingMessagesToProcess",
+      "fromName": "RL_OutgoingMessagesToProcess",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_OutgoingMessagesToProcess.json"
+    }
+  ]
+}

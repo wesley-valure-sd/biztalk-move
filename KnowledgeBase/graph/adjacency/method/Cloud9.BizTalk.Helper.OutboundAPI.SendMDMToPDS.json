@@ -1,0 +1,31 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.Helper.OutboundAPI.SendMDMToPDS",
+    "type": "method",
+    "name": "OutboundAPI.SendMDMToPDS",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/OutboundAPI.cs",
+    "class": "Cloud9.BizTalk.Helper.OutboundAPI",
+    "line": 201,
+    "signatures": [
+      "public static string SendMDMToPDS(string MDMMessage)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.Helper.OutboundAPI",
+      "fromName": "Cloud9.BizTalk.Helper.OutboundAPI",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.Helper.OutboundAPI.json"
+    },
+    {
+      "type": "callsMethod",
+      "from": "orchestration:Cloud9.BizTalk.Epic.SendTreatmentCardsToPDS",
+      "fromName": "SendTreatmentCardsToPDS",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.SendTreatmentCardsToPDS.json",
+      "line": 316
+    }
+  ]
+}

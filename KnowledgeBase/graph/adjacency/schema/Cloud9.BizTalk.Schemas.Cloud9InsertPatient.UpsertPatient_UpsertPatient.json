@@ -1,0 +1,29 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.Cloud9InsertPatient.UpsertPatient_UpsertPatient",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.Cloud9InsertPatient.UpsertPatient_UpsertPatient",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Cloud9InsertPatient/UpsertPatient_UpsertPatient.xsd",
+    "rootElements": [
+      "StoredProcedureResultSet0",
+      "ArrayOfStoredProcedureResultSet0",
+      "StoredProcedureResultSet1",
+      "ArrayOfStoredProcedureResultSet1",
+      "StoredProcedureResultSet2",
+      "ArrayOfStoredProcedureResultSet2"
+    ],
+    "kind": "wcf-sql-result-set",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/UpsertPatient",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Cloud9InsertPatient/UpsertPatient_UpsertPatient.xsd",
+      "toName": "UpsertPatient_UpsertPatient.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_Cloud9InsertPatient_UpsertPatient_UpsertPatient.xsd.json"
+    }
+  ],
+  "incoming": []
+}

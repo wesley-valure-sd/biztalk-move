@@ -1,0 +1,17 @@
+MAP: QueueProcessParametersTypedPolling_To_UpdateProcessParameters.btm
+PATH: Cloud9.BizTalk\Cloud9.BizTalk.Transforms\QueueProcessParametersTypedPolling_To_UpdateProcessParameters.btm
+SOURCE: Cloud9.BizTalk.Schemas.QPP_TypedPolling_QueueProcessParameters (root TypedPolling)
+TARGET: Cloud9.BizTalk.Schemas.UPP_TypedProcedure_BTS (root UpdateProcessParameters)
+SCRIPT PRECEDENCE (first match wins when a functoid has more than one script): CSharp > ExternalAssembly > VbNet > JScript > XsltCallTemplate > Xslt
+
+=== PAGE: Page 1 ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L1: TypedPolling/TypedPollingResultSet0/TypedPollingResultSet0/toDateTime -> UpdateProcessParameters/lastProcessed
+L2: TypedPolling/TypedPollingResultSet0/TypedPollingResultSet0/ppID -> UpdateProcessParameters/ppID
+L3: TypedPolling/TypedPollingResultSet0/TypedPollingResultSet0/processName -> UpdateProcessParameters/processName
+L4: F1 -> UpdateProcessParameters/ppStatus
+L5: F2 -> UpdateProcessParameters/ppGUID
+--- FUNCTOIDS ---
+F1 [String Concatenate] inputs: const:'2'
+F2 [FID 376] inputs: 
+

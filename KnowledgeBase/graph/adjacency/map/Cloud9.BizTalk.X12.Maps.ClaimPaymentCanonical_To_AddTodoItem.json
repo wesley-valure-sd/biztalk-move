@@ -1,0 +1,61 @@
+{
+  "node": {
+    "id": "map:Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_AddTodoItem",
+    "type": "map",
+    "name": "Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_AddTodoItem",
+    "readableSummary": "KnowledgeBase/map-summaries/ClaimPaymentCanonical_To_AddTodoItem.txt",
+    "targetSchema": "Cloud9.BizTalk.Schemas.AddTodoItemTypedProcedure_BTS",
+    "inlineScripts": [],
+    "functoidCount": 1,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/ClaimPaymentCanonical_To_AddTodoItem.btm",
+    "sourceSchema": "Cloud9.BizTalk.Schemas.Canonical.ClaimPayment",
+    "linkCount": 4,
+    "sourceRoot": "ClaimPayment",
+    "targetRoot": "AddTodoItem"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/ClaimPaymentCanonical_To_AddTodoItem.btm",
+      "toName": "ClaimPaymentCanonical_To_AddTodoItem.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_ClaimPaymentCanonical_To_AddTodoItem.btm.json"
+    },
+    {
+      "type": "sourceSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.Canonical.ClaimPayment",
+      "toName": "Cloud9.BizTalk.Schemas.Canonical.ClaimPayment",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.Canonical.ClaimPayment.json",
+      "root": "ClaimPayment"
+    },
+    {
+      "type": "targetSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.AddTodoItemTypedProcedure_BTS",
+      "toName": "Cloud9.BizTalk.Schemas.AddTodoItemTypedProcedure_BTS",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.AddTodoItemTypedProcedure_BTS.json",
+      "root": "AddTodoItem"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "usesMap",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_835Insurance",
+      "fromName": "Process_CHC_835Insurance",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_835Insurance.json",
+      "output": "AddTodoItemRequest.Body",
+      "input": "ClaimPaymentCanonical.Body",
+      "line": 1272
+    },
+    {
+      "type": "implementedBy",
+      "from": "flowstep:CHC-05-ReversalOrPost",
+      "fromName": "For each CLP: reversal to-do or insurance post",
+      "fromType": "flowstep",
+      "fromFile": "adjacency/flowstep/CHC-05-ReversalOrPost.json",
+      "curated": true
+    }
+  ]
+}

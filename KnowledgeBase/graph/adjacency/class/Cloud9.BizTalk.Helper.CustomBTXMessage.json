@@ -1,0 +1,21 @@
+{
+  "node": {
+    "id": "class:Cloud9.BizTalk.Helper.CustomBTXMessage",
+    "type": "class",
+    "name": "Cloud9.BizTalk.Helper.CustomBTXMessage",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/CustomBTXMessage.cs",
+    "visibility": "internal",
+    "kind": "class",
+    "line": 9
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/CustomBTXMessage.cs",
+      "fromName": "CustomBTXMessage.cs",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Helper_CustomBTXMessage.cs.json"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "node": {
+    "id": "map:Cloud9.BizTalk.X12.CHC_PracticeEDISettings_To_GetMailFileListReq",
+    "type": "map",
+    "name": "Cloud9.BizTalk.X12.CHC_PracticeEDISettings_To_GetMailFileListReq",
+    "readableSummary": "KnowledgeBase/map-summaries/CHC_PracticeEDISettings_To_GetMailFileListReq.txt",
+    "targetSchema": "Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonGetMailFileListRequest",
+    "inlineScripts": [],
+    "functoidCount": 2,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/CHC_PracticeEDISettings_To_GetMailFileListReq.btm",
+    "sourceSchema": "Cloud9.BizTalk.Schemas.GPE_TypedProcedure_BTS",
+    "linkCount": 6,
+    "sourceRoot": "GetPracticeEDISettingsResponse",
+    "targetRoot": "claim_submission_api"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/CHC_PracticeEDISettings_To_GetMailFileListReq.btm",
+      "toName": "CHC_PracticeEDISettings_To_GetMailFileListReq.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_CHC_PracticeEDISettings_To_GetMailFileListReq.btm.json"
+    },
+    {
+      "type": "sourceSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.GPE_TypedProcedure_BTS",
+      "toName": "Cloud9.BizTalk.Schemas.GPE_TypedProcedure_BTS",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.GPE_TypedProcedure_BTS.json",
+      "root": "GetPracticeEDISettingsResponse"
+    },
+    {
+      "type": "targetSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonGetMailFileListRequest",
+      "toName": "Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonGetMailFileListRequest",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonGetMailFileListRequest.json",
+      "root": "claim_submission_api"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "usesMap",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker",
+      "fromName": "Process_CHC_InboundFiles_Worker",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker.json",
+      "output": "msg_GetMailFileListReq.Body",
+      "input": "msg_GetPracticeEDISettingsResp.Body",
+      "line": 1506
+    }
+  ]
+}

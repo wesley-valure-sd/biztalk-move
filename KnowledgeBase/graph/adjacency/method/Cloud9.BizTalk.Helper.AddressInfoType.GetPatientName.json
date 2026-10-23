@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.Helper.AddressInfoType.GetPatientName",
+    "type": "method",
+    "name": "AddressInfoType.GetPatientName",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/ParseNameAddressBox.cs",
+    "class": "Cloud9.BizTalk.Helper.AddressInfoType",
+    "line": 207,
+    "signatures": [
+      "private static string GetPatientName(string lastFirstMiddle, PatientNameType whichName)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.Helper.AddressInfoType",
+      "fromName": "Cloud9.BizTalk.Helper.AddressInfoType",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.Helper.AddressInfoType.json"
+    }
+  ]
+}

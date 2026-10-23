@@ -1,0 +1,1398 @@
+MAP: ClaimCanonical_To_CHC_X12_5010_837D.btm
+PATH: Cloud9.BizTalk\Cloud9.BizTalk.X12\Maps\ClaimCanonical_To_CHC_X12_5010_837D.btm
+SOURCE: Cloud9.BizTalk.Schemas.Canonical.ClaimCanonical (root Claim)
+TARGET: Cloud9.BizTalk.X12.Schemas.CHC_X12_00501_837_D (root X12_00501_837_D)
+SCRIPT PRECEDENCE (first match wins when a functoid has more than one script): CSharp > ExternalAssembly > VbNet > JScript > XsltCallTemplate > Xslt
+
+=== PAGE: Header ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L1: F1 -> X12_00501_837_D/BHT_BeginningofHierarchicalTransaction/BHT01_HierarchicalStructureCode
+L2: F2 -> X12_00501_837_D/BHT_BeginningofHierarchicalTransaction/BHT02_TransactionSetPurposeCode
+L4: F5 -> X12_00501_837_D/BHT_BeginningofHierarchicalTransaction/BHT03_OriginatorApplicationTransactionIdentifier
+L5: F8 -> X12_00501_837_D/BHT_BeginningofHierarchicalTransaction/BHT04_TransactionSetCreationDate
+L8: F6 -> F8
+L6: F9 -> X12_00501_837_D/BHT_BeginningofHierarchicalTransaction/BHT05_TransactionSetCreationTime
+L10: F7 -> F9
+L11: F10 -> X12_00501_837_D/BHT_BeginningofHierarchicalTransaction/BHT06_ClaimorEncounterIdentifier
+L39: F28 -> X12_00501_837_D/TS837_2000A_Loop/HL_BillingProviderHierarchicalLevel/HL01_HierarchicalIDNumber
+L40: F28 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/HL_SubscriberHierarchicalLevel/HL01_HierarchicalIDNumber
+L42: F28 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/HL_PatientHierarchicalLevel/HL01_HierarchicalIDNumber
+L773: F356 -> X12_00501_837_D/ST/ST03_ImplementationGuideVersionName
+L774: F357 -> X12_00501_837_D/ST/ST01_TransactionSetIdentifierCode
+L775: F359 -> X12_00501_837_D/ST/ST02_TransactionSetControlNumber
+--- FUNCTOIDS ---
+F1 [String Concatenate] inputs: const:'0019'
+F2 [String Concatenate] inputs: const:'00'
+F5 [String Concatenate] inputs: const:'1'
+F6 [FID 123] inputs: 
+F7 [FID 124] inputs: 
+F8 [Scripting] inputs: L8
+    script language: CSharp
+    | public string StripDashes(string input)
+    | {
+    |     return input.Replace("-","");
+    | }
+    | 
+F9 [Scripting] inputs: L10
+    script language: CSharp
+    | public string ReplaceColon(string input)
+    | {
+    |     return input.Replace(":", "");
+    | }
+F10 [String Concatenate] inputs: const:'31'
+F27 [Scripting] inputs: 
+    script language: CSharp
+    | 
+    | 
+    | public int CurrentHL01()
+    | {
+    |     return _hl01;
+    | }
+    | 
+    | 
+F28 [Scripting] inputs: 
+    script language: CSharp
+    | int _hl01 =0;
+    | 
+    | public int GetHL01()
+    | {
+    |     return ++_hl01;
+    | }
+F356 [String Concatenate] inputs: const:'005010X224A2'
+F357 [String Concatenate] inputs: const:'837'
+F359 [String Concatenate] inputs: const:'0001'
+
+=== PAGE: 1000 ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L12: Claim/adaclaimBox48BillingDentistInfo -> F11
+L13: F11 -> X12_00501_837_D/NM1_SubLoop/TS837_1000A_Loop/NM1_SubmitterName/NM104_SubmitterFirstName
+L14: F12 -> X12_00501_837_D/NM1_SubLoop/TS837_1000A_Loop/NM1_SubmitterName/NM101_EntityIdentifierCode
+L15: F13 -> X12_00501_837_D/NM1_SubLoop/TS837_1000A_Loop/NM1_SubmitterName/NM102_EntityTypeQualifier
+L16: Claim/adaclaimBox48BillingDentistInfo -> F14
+L17: F14 -> X12_00501_837_D/NM1_SubLoop/TS837_1000A_Loop/NM1_SubmitterName/NM103_SubmitterLastorOrganizationName
+L18: F15 -> X12_00501_837_D/NM1_SubLoop/TS837_1000A_Loop/NM1_SubmitterName/NM108_IdentificationCodeQualifier
+L20: F17 -> X12_00501_837_D/NM1_SubLoop/TS837_1000A_Loop/NM1_SubmitterName/NM105_SubmitterMiddleNameorInitial
+L21: Claim/adaclaimBox48BillingDentistInfo -> F17
+L22: F18 -> X12_00501_837_D/NM1_SubLoop/TS837_1000A_Loop/NM1_SubmitterName/NM106_NamePrefix
+L23: Claim/adaclaimBox48BillingDentistInfo -> F18
+L24: F19 -> X12_00501_837_D/NM1_SubLoop/TS837_1000A_Loop/PER_SubmitterEDIContactInformation/PER01_ContactFunctionCode
+L25: Claim/adaclaimBox48BillingDentistInfo -> F20
+L26: F20 -> X12_00501_837_D/NM1_SubLoop/TS837_1000A_Loop/PER_SubmitterEDIContactInformation/PER02_SubmitterContactName
+L31: F22 -> X12_00501_837_D/NM1_SubLoop/TS837_1000B_Loop/NM1_ReceiverName/NM101_EntityIdentifierCode
+L32: F23 -> X12_00501_837_D/NM1_SubLoop/TS837_1000B_Loop/NM1_ReceiverName/NM102_EntityTypeQualifier
+L33: F24 -> X12_00501_837_D/NM1_SubLoop/TS837_1000B_Loop/NM1_ReceiverName/NM103_ReceiverName
+L34: F25 -> X12_00501_837_D/NM1_SubLoop/TS837_1000B_Loop/NM1_ReceiverName/NM108_IdentificationCodeQualifier
+L35: F26 -> X12_00501_837_D/NM1_SubLoop/TS837_1000B_Loop/NM1_ReceiverName/NM109_ReceiverPrimaryIdentifier
+L778: Claim/adaclaimBox52BillingDentistPhone -> F360
+L779: F360 -> F361
+L780: F361 -> X12_00501_837_D/NM1_SubLoop/TS837_1000A_Loop/PER_SubmitterEDIContactInformation/PER03_CommunicationNumberQualifier
+L781: F21 -> F361
+L782: F360 -> F362
+L783: F362 -> X12_00501_837_D/NM1_SubLoop/TS837_1000A_Loop/PER_SubmitterEDIContactInformation/PER04_CommunicationNumber
+L853: Claim/pracEmdeonSubmitterID -> X12_00501_837_D/NM1_SubLoop/TS837_1000A_Loop/NM1_SubmitterName/NM109_SubmitterIdentifier
+L913: Claim/adaclaimBox52BillingDentistPhone -> F419
+L914: F419 -> F362
+L918: F422 -> F419
+--- FUNCTOIDS ---
+F11 [Scripting] inputs: L12
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetFirstname [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F12 [String Concatenate] inputs: const:'41'
+F13 [String Concatenate] inputs: const:'1'
+F14 [Scripting] inputs: L16
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetLastname [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F15 [String Concatenate] inputs: const:'46'
+F17 [Scripting] inputs: L21
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetMiddleInitial [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F18 [Scripting] inputs: L23
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetTitle [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F19 [String Concatenate] inputs: const:'IC'
+F20 [Scripting] inputs: L25
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetName [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F21 [String Concatenate] inputs: const:'TE'
+F22 [String Concatenate] inputs: const:'40'
+F23 [String Concatenate] inputs: const:'2'
+F24 [String Concatenate] inputs: const:'Change Healthcare'
+F25 [String Concatenate] inputs: const:'46'
+F26 [String Concatenate] inputs: const:'0135WCH00'
+F360 [FID 317] inputs: L778
+F361 [Value Mapping] inputs: L779, L781
+F362 [Value Mapping] inputs: L782, L914
+F419 [Scripting] inputs: L913, L918
+    script ExternalAssembly: Cloud9.BizTalk.Helper.EDIClaimHelper.CleanPhoneNumber [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F422 [FID 112] inputs: const:'10'
+
+=== PAGE: 2000A ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L37: F29 -> X12_00501_837_D/TS837_2000A_Loop/HL_BillingProviderHierarchicalLevel/HL03_HierarchicalLevelCode
+L38: F30 -> X12_00501_837_D/TS837_2000A_Loop/HL_BillingProviderHierarchicalLevel/HL04_HierarchicalChildCode
+L43: F32 -> X12_00501_837_D/TS837_2000A_Loop/NM1_SubLoop_2/TS837_2010AA_Loop/NM1_BillingProviderName/NM101_EntityIdentifierCode
+L44: F33 -> X12_00501_837_D/TS837_2000A_Loop/NM1_SubLoop_2/TS837_2010AA_Loop/NM1_BillingProviderName/NM102_EntityTypeQualifier
+L45: Claim/orgName -> X12_00501_837_D/TS837_2000A_Loop/NM1_SubLoop_2/TS837_2010AA_Loop/NM1_BillingProviderName/NM103_BillingProviderLastorOrganizationalName
+L46: Claim/adaclaimBox48BillingDentistInfo -> F34
+L47: Claim/adaclaimBox48BillingDentistInfo -> F35
+L48: Claim/adaclaimBox48BillingDentistInfo -> F36
+L49: Claim/adaclaimBox48BillingDentistInfo -> F37
+L50: F34 -> X12_00501_837_D/TS837_2000A_Loop/NM1_SubLoop_2/TS837_2010AA_Loop/N3_BillingProviderAddress/N301_BillingProviderAddressLine
+L51: F35 -> X12_00501_837_D/TS837_2000A_Loop/NM1_SubLoop_2/TS837_2010AA_Loop/N3_BillingProviderAddress/N302_BillingProviderAddressLine
+L52: F36 -> X12_00501_837_D/TS837_2000A_Loop/NM1_SubLoop_2/TS837_2010AA_Loop/N4_BillingProviderCity_State_ZIPCode/N401_BillingProviderCityName
+L53: F37 -> X12_00501_837_D/TS837_2000A_Loop/NM1_SubLoop_2/TS837_2010AA_Loop/N4_BillingProviderCity_State_ZIPCode/N402_BillingProviderStateorProvinceCode
+L54: Claim/adaclaimBox48BillingDentistInfo -> F38
+L55: F38 -> X12_00501_837_D/TS837_2000A_Loop/NM1_SubLoop_2/TS837_2010AA_Loop/N4_BillingProviderCity_State_ZIPCode/N403_BillingProviderPostalZoneorZIPCode
+L279: F159 -> F162
+L280: F40 -> F162
+L58: F162 -> X12_00501_837_D/TS837_2000A_Loop/NM1_SubLoop_2/TS837_2010AA_Loop/REF_SubLoop/REF_BillingProviderUPIN_LicenseInformation/REF01_ReferenceIdentificationQualifier
+L282: F159 -> F163
+L284: F163 -> X12_00501_837_D/TS837_2000A_Loop/NM1_SubLoop_2/TS837_2010AA_Loop/REF_SubLoop/REF_BillingProviderUPIN_LicenseInformation/REF02_BillingProviderLicenseand_orUPINInformation
+L391: F221 -> X12_00501_837_D/TS837_2000A_Loop
+L392: Claim -> F221
+L787: F159 -> X12_00501_837_D/TS837_2000A_Loop/NM1_SubLoop_2/TS837_2010AA_Loop/REF_SubLoop/REF_BillingProviderUPIN_LicenseInformation
+L274: F39 -> X12_00501_837_D/TS837_2000A_Loop/NM1_SubLoop_2/TS837_2010AA_Loop/REF_SubLoop/REF_BillingProviderTaxIdentification/REF01_ReferenceIdentificationQualifier
+L862: F392 -> X12_00501_837_D/TS837_2000A_Loop/NM1_SubLoop_2/TS837_2010AA_Loop/PER_BillingProviderContactInformation/PER01_ContactFunctionCode
+L865: Claim/adaclaimBox48BillingDentistInfo -> F394
+L866: F394 -> X12_00501_837_D/TS837_2000A_Loop/NM1_SubLoop_2/TS837_2010AA_Loop/PER_BillingProviderContactInformation/PER02_BillingProviderContactName
+L878: F398 -> X12_00501_837_D/TS837_2000A_Loop/NM1_SubLoop_2/TS837_2010AA_Loop/NM1_BillingProviderName/NM108_IdentificationCodeQualifier
+L879: Claim/adaclaimBox52BillingDentistPhone -> F399
+L880: F399 -> F400
+L881: F402 -> F400
+L883: F400 -> X12_00501_837_D/TS837_2000A_Loop/NM1_SubLoop_2/TS837_2010AA_Loop/PER_BillingProviderContactInformation/PER03_CommunicationNumberQualifier
+L884: F401 -> X12_00501_837_D/TS837_2000A_Loop/NM1_SubLoop_2/TS837_2010AA_Loop/PER_BillingProviderContactInformation/PER04_CommunicationNumber
+L885: F399 -> F401
+L915: Claim/adaclaimBox52BillingDentistPhone -> F420
+L916: F420 -> F401
+L917: F421 -> F420
+L975: Claim/adaclaimBox49BillingDentistNPI -> X12_00501_837_D/TS837_2000A_Loop/NM1_SubLoop_2/TS837_2010AA_Loop/NM1_BillingProviderName/NM109_BillingProviderIdentifier
+L276: Claim/adaclaimBox51BillingDentistTIN -> X12_00501_837_D/TS837_2000A_Loop/NM1_SubLoop_2/TS837_2010AA_Loop/REF_SubLoop/REF_BillingProviderTaxIdentification/REF02_BillingProviderTaxIdentificationNumber
+L278: Claim/adaclaimBox55TreatingDentistLicenseNumber -> F159
+L283: Claim/adaclaimBox55TreatingDentistLicenseNumber -> F163
+--- FUNCTOIDS ---
+F29 [String Concatenate] inputs: const:'20'
+F30 [String Concatenate] inputs: const:'1'
+F32 [String Concatenate] inputs: const:'85'
+F33 [String Concatenate] inputs: const:'2'
+F34 [Scripting] inputs: L46
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetAddress1 [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F35 [Scripting] inputs: L47
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetAddress2 [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F36 [Scripting] inputs: L48
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetCity [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F37 [Scripting] inputs: L49
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetState [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F38 [Scripting] inputs: L54
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetZipcode [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F39 [String Concatenate] inputs: const:'EI'
+F40 [String Concatenate] inputs: const:'1G'
+F159 [FID 317] inputs: L278
+F162 [Value Mapping] inputs: L279, L280
+F163 [Value Mapping] inputs: L282, L283
+F221 [Looping] inputs: L392
+F392 [String Concatenate] inputs: const:'IC'
+F394 [Scripting] inputs: L865
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetName [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F398 [String Concatenate] inputs: const:'XX'
+F399 [FID 317] inputs: L879
+F400 [Value Mapping] inputs: L880, L881
+F401 [Value Mapping] inputs: L885, L916
+F402 [String Concatenate] inputs: const:'TE'
+F420 [Scripting] inputs: L915, L917
+    script ExternalAssembly: Cloud9.BizTalk.Helper.EDIClaimHelper.CleanPhoneNumber [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F421 [FID 112] inputs: const:'10'
+
+=== PAGE: 2000B ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L60: F41 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/HL_SubscriberHierarchicalLevel/HL02_HierarchicalParentIDNumber
+L61: F42 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/HL_SubscriberHierarchicalLevel/HL03_HierarchicalLevelCode
+L63: F44 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/SBR_SubscriberInformation/SBR01_PayerResponsibilitySequenceNumberCode
+L66: F46 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/SBR_SubscriberInformation/SBR02_IndividualRelationshipCode
+L68: F47 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/NM1_SubLoop_3/TS837_2010BA_Loop/NM1_SubscriberName/NM101_EntityIdentifierCode
+L69: F48 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/NM1_SubLoop_3/TS837_2010BA_Loop/NM1_SubscriberName/NM102_EntityTypeQualifier
+L71: Claim/adaclaimBox12SubscriberInfo -> F49
+L72: F49 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/NM1_SubLoop_3/TS837_2010BA_Loop/NM1_SubscriberName/NM103_SubscriberLastName
+L73: Claim/adaclaimBox12SubscriberInfo -> F50
+L74: Claim/adaclaimBox12SubscriberInfo -> F51
+L75: F50 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/NM1_SubLoop_3/TS837_2010BA_Loop/NM1_SubscriberName/NM104_SubscriberFirstName
+L76: F51 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/NM1_SubLoop_3/TS837_2010BA_Loop/NM1_SubscriberName/NM105_SubscriberMiddleNameorInitial
+L77: Claim/adaclaimBox12SubscriberInfo -> F52
+L78: F52 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/NM1_SubLoop_3/TS837_2010BA_Loop/NM1_SubscriberName/NM106_NamePrefix
+L79: F53 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/NM1_SubLoop_3/TS837_2010BA_Loop/NM1_SubscriberName/NM108_IdentificationCodeQualifier
+L80: Claim/adaclaimBox15SubscriberID -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/NM1_SubLoop_3/TS837_2010BA_Loop/NM1_SubscriberName/NM109_SubscriberPrimaryIdentifier
+L81: Claim/adaclaimBox12SubscriberInfo -> F54
+L82: Claim/adaclaimBox12SubscriberInfo -> F55
+L83: Claim/adaclaimBox12SubscriberInfo -> F56
+L84: Claim/adaclaimBox12SubscriberInfo -> F57
+L85: Claim/adaclaimBox12SubscriberInfo -> F58
+L86: F54 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/NM1_SubLoop_3/TS837_2010BA_Loop/N3_SubscriberAddress/N301_SubscriberAddressLine
+L87: F55 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/NM1_SubLoop_3/TS837_2010BA_Loop/N3_SubscriberAddress/N302_SubscriberAddressLine
+L88: F56 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/NM1_SubLoop_3/TS837_2010BA_Loop/N4_SubscriberCity_State_ZIPCode/N401_SubscriberCityName
+L89: F57 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/NM1_SubLoop_3/TS837_2010BA_Loop/N4_SubscriberCity_State_ZIPCode/N402_SubscriberStateCode
+L90: F58 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/NM1_SubLoop_3/TS837_2010BA_Loop/N4_SubscriberCity_State_ZIPCode/N403_SubscriberPostalZoneorZIPCode
+L91: F59 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/NM1_SubLoop_3/TS837_2010BA_Loop/DMG_SubscriberDemographicInformation/DMG01_DateTimePeriodFormatQualifier
+L92: Claim/adaclaimBox13SubscriberDOB -> F60
+L93: F60 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/NM1_SubLoop_3/TS837_2010BA_Loop/DMG_SubscriberDemographicInformation/DMG02_SubscriberBirthDate
+L94: Claim/adaclaimBox14SubscriberGender -> F61
+L95: F61 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/NM1_SubLoop_3/TS837_2010BA_Loop/DMG_SubscriberDemographicInformation/DMG03_SubscriberGenderCode
+L96: F62 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/NM1_SubLoop_3/TS837_2010BB_Loop/NM1_PayerName/NM101_EntityIdentifierCode
+L97: F63 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/NM1_SubLoop_3/TS837_2010BB_Loop/NM1_PayerName/NM102_EntityTypeQualifier
+L98: Claim/adaclaimBox3InsuranceCompanyInformation -> F64
+L99: F64 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/NM1_SubLoop_3/TS837_2010BB_Loop/NM1_PayerName/NM103_PayerName
+L102: Claim/adaclaimBox3InsuranceCompanyInformation -> F66
+L103: Claim/adaclaimBox3InsuranceCompanyInformation -> F67
+L104: Claim/adaclaimBox3InsuranceCompanyInformation -> F68
+L105: Claim/adaclaimBox3InsuranceCompanyInformation -> F69
+L106: Claim/adaclaimBox3InsuranceCompanyInformation -> F70
+L107: F66 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/NM1_SubLoop_3/TS837_2010BB_Loop/N3_PayerAddress/N301_PayerAddressLine
+L108: F67 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/NM1_SubLoop_3/TS837_2010BB_Loop/N3_PayerAddress/N302_PayerAddressLine
+L109: F68 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/NM1_SubLoop_3/TS837_2010BB_Loop/N4_PayerCity_State_ZIPCode/N401_PayerCityName
+L110: F69 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/NM1_SubLoop_3/TS837_2010BB_Loop/N4_PayerCity_State_ZIPCode/N402_PayerStateCode
+L111: F70 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/NM1_SubLoop_3/TS837_2010BB_Loop/N4_PayerCity_State_ZIPCode/N403_PayerPostalZoneorZIPCode
+L65: F85 -> F46
+L132: Claim/adaclaimBox18PatientRelationshipSelf -> F85
+L788: Claim/emdpayPayerId -> F363
+L789: F363 -> F364
+L790: F364 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/NM1_SubLoop_3/TS837_2010BB_Loop/NM1_PayerName/NM108_IdentificationCodeQualifier
+L791: F65 -> F364
+L792: F363 -> F365
+L793: Claim/emdpayPayerId -> F365
+L794: F365 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/NM1_SubLoop_3/TS837_2010BB_Loop/NM1_PayerName/NM109_PayerIdentifier
+L960: Claim/adaclaimBox16PlanGroupNumber -> F442
+L964: F442 -> F444
+L965: F444 -> F447
+L966: Claim/adaclaimBox17EmployerName -> F447
+L967: F447 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/SBR_SubscriberInformation/SBR04_SubscriberGroupName
+L67: Claim/adaclaimBox16PlanGroupNumber -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/SBR_SubscriberInformation/SBR03_SubscriberGrouporPolicyNumber
+L969: F448 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/HL_SubscriberHierarchicalLevel/HL04_HierarchicalChildCode
+L971: F449 -> F448
+L972: F449 -> F450
+L973: F450 -> F451
+L974: F451 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/HL_SubscriberHierarchicalLevel/HL04_HierarchicalChildCode
+L970: Claim/adaclaimBox18PatientRelationshipSelf -> F449
+--- FUNCTOIDS ---
+F41 [String Concatenate] inputs: const:'1'
+F42 [String Concatenate] inputs: const:'22'
+F44 [String Concatenate] inputs: const:'P'
+F46 [Value Mapping] inputs: L65, const:'18'
+F47 [String Concatenate] inputs: const:'IL'
+F48 [String Concatenate] inputs: const:'1'
+F49 [Scripting] inputs: L71
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetLastname [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F50 [Scripting] inputs: L73
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetFirstname [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F51 [Scripting] inputs: L74
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetMiddleInitial [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F52 [Scripting] inputs: L77
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetTitle [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F53 [String Concatenate] inputs: const:'MI'
+F54 [Scripting] inputs: L81
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetAddress1 [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F55 [Scripting] inputs: L82
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetAddress2 [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F56 [Scripting] inputs: L83
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetCity [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F57 [Scripting] inputs: L84
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetState [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F58 [Scripting] inputs: L85
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetZipcode [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F59 [String Concatenate] inputs: const:'D8'
+F60 [Scripting] inputs: L92
+    script ExternalAssembly: Cloud9.BizTalk.Helper.DateFormatConversion.ConvertSQLDateToEDIDate [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F61 [Scripting] inputs: L94
+    script ExternalAssembly: Cloud9.BizTalk.Helper.EDICodeConversion.ConvertGenderCodeFromC9ToEDI [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F62 [String Concatenate] inputs: const:'PR'
+F63 [String Concatenate] inputs: const:'2'
+F64 [Scripting] inputs: L98
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetName [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F65 [String Concatenate] inputs: const:'PI'
+F66 [Scripting] inputs: L102
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetAddress1 [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F67 [Scripting] inputs: L103
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetAddress2 [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F68 [Scripting] inputs: L104
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetCity [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F69 [Scripting] inputs: L105
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetState [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F70 [Scripting] inputs: L106
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetZipcode [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F85 [Equal (inferred)] inputs: L132, const:'true'
+F363 [FID 317] inputs: L788
+F364 [Value Mapping] inputs: L789, L791
+F365 [Value Mapping] inputs: L792, L793
+F442 [FID 701 (unknown: Nil Value or Logical Existence)] inputs: L960
+F444 [Logical NOT (inferred)] inputs: L964
+F447 [Value Mapping] inputs: L965, L966
+F448 [Value Mapping] inputs: L971, const:'0'
+F449 [Equal (inferred)] inputs: L970, const:'true'
+F450 [Logical NOT (inferred)] inputs: L972
+F451 [Value Mapping] inputs: L973, const:'1'
+
+=== PAGE: 2300 ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L434: Claim/adaclaimBox18PatientRelationshipSelf -> F241
+L435: F241 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop
+L438: Claim/adaclaimBox38PlaceOfTreatment -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/CLM_ClaimInformation/C023_HealthCareServiceLocationInformation/C02301_PlaceofServiceCode
+L444: Claim/adaclaimBox37Signature -> F244
+L445: F244 -> F245
+L446: F244 -> F247
+L448: F247 -> F246
+L452: F250 -> F251
+L453: F250 -> F253
+L454: F253 -> F252
+L457: Claim/adaclaimBox36Signature -> F250
+L458: Claim/adaclaimBox45TreatmentResultingFromOccupationalInjury -> F254
+L459: Claim/adaclaimBox45TreatmentResultingFromAutoAccident -> F255
+L460: Claim/adaclaimBox45TreatmentResultingFromOtherAccident -> F256
+L461: F254 -> F257
+L462: F254 -> F261
+L463: F254 -> F265
+L467: F255 -> F260
+L468: F255 -> F262
+L469: F255 -> F265
+L470: F255 -> F263
+L471: Claim/adaclaimBox47AutoAccidentState -> F260
+L473: F261 -> F262
+L474: F261 -> F264
+L475: F262 -> F258
+L476: F263 -> F264
+L477: F256 -> F264
+L478: F256 -> F267
+L479: F264 -> F259
+L480: F264 -> F290
+L481: F265 -> F266
+L483: F267 -> F268
+L485: Claim/adaclaimBox40TreatmentForOrthodonticsYes -> F269
+L488: Claim/adaclaimBox46DateOfAccident -> F272
+L489: Claim/adaclaimBox46DateOfAccident -> F273
+L490: F273 -> F274
+L491: F273 -> F275
+L492: F273 -> F276
+L496: F270 -> F274
+L497: F271 -> F275
+L498: F272 -> F276
+L499: F277 -> F281
+L500: F278 -> F282
+L501: F279 -> F283
+L502: F280 -> F281
+L503: F280 -> F282
+L504: F280 -> F283
+L505: Claim/adaclaimBox41DateAppliancesPlaced -> F280
+L506: Claim/adaclaimBox41DateAppliancesPlaced -> F279
+L510: Claim/adaclaimBox2PreauthorizationNumber -> F284
+L511: F284 -> F285
+L512: F284 -> F286
+L513: Claim/adaclaimBox2PreauthorizationNumber -> F286
+L530: F290 -> F267
+L531: F242 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/CLM_ClaimInformation/C023_HealthCareServiceLocationInformation/C02302_FacilityCodeQualifier
+L532: F243 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/CLM_ClaimInformation/C023_HealthCareServiceLocationInformation/C02303_ClaimFrequencyCode
+L533: F245 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/CLM_ClaimInformation/CLM06_ProviderorSupplierSignatureIndicator
+L534: F246 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/CLM_ClaimInformation/CLM06_ProviderorSupplierSignatureIndicator
+L535: F248 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/CLM_ClaimInformation/CLM07_AssignmentorPlanParticipationCode
+L536: F249 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/CLM_ClaimInformation/CLM08_BenefitsAssignmentCertificationIndicator
+L537: F251 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/CLM_ClaimInformation/CLM09_ReleaseofInformationCode
+L538: F252 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/CLM_ClaimInformation/CLM09_ReleaseofInformationCode
+L539: F257 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/CLM_ClaimInformation/C024_RelatedCausesInformation/C02401_RelatedCausesCode
+L540: F258 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/CLM_ClaimInformation/C024_RelatedCausesInformation/C02401_RelatedCausesCode
+L541: F259 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/CLM_ClaimInformation/C024_RelatedCausesInformation/C02401_RelatedCausesCode
+L542: F266 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/CLM_ClaimInformation/C024_RelatedCausesInformation/C02402_RelatedCausesCode
+L543: F268 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/CLM_ClaimInformation/C024_RelatedCausesInformation/C02403_Related_CausesCode
+L544: F260 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/CLM_ClaimInformation/C024_RelatedCausesInformation/C02404_AutoAccidentStateorProvinceCode
+L494: F275 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/DTP_SubLoop/DTP_Date_Accident/DTP02_DateTimePeriodFormatQualifier
+L495: F274 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/DTP_SubLoop/DTP_Date_Accident/DTP01_DateTimeQualifier
+L493: F276 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/DTP_SubLoop/DTP_Date_Accident/DTP03_AccidentDate
+L549: F281 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/DTP_SubLoop/DTP_Date_AppliancePlacement/DTP01_DateTimeQualifier
+L550: F282 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/DTP_SubLoop/DTP_Date_AppliancePlacement/DTP02_DateTimePeriodFormatQualifier
+L551: F283 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/DTP_SubLoop/DTP_Date_AppliancePlacement/DTP03_OrthodonticBandingDate
+L514: F285 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/REF_SubLoop_5/REF_PriorAuthorization/REF01_ReferenceIdentificationQualifier
+L515: F286 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/REF_SubLoop_5/REF_PriorAuthorization/REF02_PriorAuthorizationNumber
+L559: Claim/adaclaimBox34DiagnosisCodeListQualifier -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/HI_HealthCareDiagnosisCode/C022_HealthCareCodeInformation/C02201_CodeListQualifierCode
+L560: Claim/adaclaimBox34aDiagonosisCodeA -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/HI_HealthCareDiagnosisCode/C022_HealthCareCodeInformation/C02202_PrincipalDiagnosisCode
+L561: Claim/adaclaimBox34DiagnosisCodeListQualifier -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/HI_HealthCareDiagnosisCode/C022_HealthCareCodeInformation_2/C02201_CodeListQualifierCode
+L562: Claim/adaclaimBox34aDiagonosisCodeB -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/HI_HealthCareDiagnosisCode/C022_HealthCareCodeInformation_2/C02202_DiagnosisCode
+L563: Claim/adaclaimBox34DiagnosisCodeListQualifier -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/HI_HealthCareDiagnosisCode/C022_HealthCareCodeInformation_3/C02201_CodeListQualifierCode
+L564: Claim/adaclaimBox34aDiagonosisCodeC -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/HI_HealthCareDiagnosisCode/C022_HealthCareCodeInformation_3/C02202_DiagnosisCode
+L565: Claim/adaclaimBox34aDiagonosisCodeD -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/HI_HealthCareDiagnosisCode/C022_HealthCareCodeInformation_4/C02202_DiagnosisCode
+L566: Claim/adaclaimBox34DiagnosisCodeListQualifier -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/HI_HealthCareDiagnosisCode/C022_HealthCareCodeInformation_4/C02201_CodeListQualifierCode
+L795: F273 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/DTP_SubLoop/DTP_Date_Accident
+L796: F280 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/DTP_SubLoop/DTP_Date_AppliancePlacement
+L797: F284 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/REF_SubLoop_5/REF_PriorAuthorization
+L799: Claim/adaclaimBox34DiagnosisCodeListQualifier -> F366
+L800: F366 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/HI_HealthCareDiagnosisCode
+L841: F284 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/REF_SubLoop_5
+L844: F269 -> F382
+L845: F381 -> F382
+L552: F382 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/DN1_OrthodonticTotalMonthsofTreatment
+L888: F407 -> F404
+L889: F407 -> F406
+L890: Claim/Services/Service/acsrvProcedureDate -> F408
+L891: F408 -> F405
+L892: F403 -> F404
+L893: F408 -> F407
+L894: F404 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/DTP_SubLoop/DTP_Date_ServiceDate/DTP01_DateTimeQualifier
+L895: F405 -> F406
+L896: F406 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/DTP_SubLoop/DTP_Date_ServiceDate/DTP03_ServiceDate
+L897: F407 -> F409
+L898: F410 -> F409
+L899: F409 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/DTP_SubLoop/DTP_Date_ServiceDate/DTP02_DateTimePeriodFormatQualifier
+L919: Claim/adaclaimBox35Remarks -> F424
+L924: F424 -> F397
+L925: F397 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/NTE_ClaimNote
+L934: Claim/adaclaimTotal -> F433
+L935: F433 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/CLM_ClaimInformation/CLM02_TotalClaimChargeAmount
+L947: F440 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/CLM_ClaimInformation/CLM01_PatientControlNumber
+L949: Claim/adaclaimNumber -> F440
+L953: Claim/pracEmdeonUserID -> F440
+L995: Claim/totalMonths -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/DN1_OrthodonticTotalMonthsofTreatment/DN101_OrthodonticTreatmentMonthsCount
+L996: Claim/totalMonthsRemaining -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/DN1_OrthodonticTotalMonthsofTreatment/DN102_OrthodonticTreatmentMonthsRemainingCount
+L997: Claim/totalMonthsRemaining -> F381
+--- FUNCTOIDS ---
+F241 [Equal (inferred)] inputs: L434, const:'true'
+F242 [String Concatenate] inputs: const:'B'
+F243 [String Concatenate] inputs: const:'1'
+F244 [Equal (inferred)] inputs: L444, const:'SIGNATURE ON FILE'
+F245 [Value Mapping] inputs: L445, const:'Y'
+F246 [Value Mapping] inputs: L448, const:'N'
+F247 [Logical NOT (inferred)] inputs: L446
+F248 [String Concatenate] inputs: const:'A'
+F249 [String Concatenate] inputs: const:'Y'
+F250 [Equal (inferred)] inputs: L457, const:'SIGNATURE ON FILE'
+F251 [Value Mapping] inputs: L452, const:'Y'
+F252 [Value Mapping] inputs: L454, const:'I'
+F253 [Logical NOT (inferred)] inputs: L453
+F254 [Equal (inferred)] inputs: L458, const:'true'
+F255 [Equal (inferred)] inputs: L459, const:'true'
+F256 [Equal (inferred)] inputs: L460, const:'true'
+F257 [Value Mapping] inputs: L461, const:'EM'
+F258 [Value Mapping] inputs: L475, const:'AA'
+F259 [Value Mapping] inputs: L479, const:'OA'
+F260 [Value Mapping] inputs: L467, L471
+F261 [Logical NOT (inferred)] inputs: L462
+F262 [FID 321] inputs: L473, L468
+F263 [Logical NOT (inferred)] inputs: L470
+F264 [FID 321] inputs: L476, L477, L474
+F265 [FID 321] inputs: L463, L469
+F266 [Value Mapping] inputs: L481, const:'AA'
+F267 [FID 321] inputs: L530, L478
+F268 [Value Mapping] inputs: L483, const:'OA'
+F269 [Equal (inferred)] inputs: L485, const:'true'
+F270 [String Concatenate] inputs: const:'439'
+F271 [String Concatenate] inputs: const:'D8'
+F272 [Scripting] inputs: L488
+    script ExternalAssembly: Cloud9.BizTalk.Helper.DateFormatConversion.ConvertSQLDateToEDIDate [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F273 [FID 317] inputs: L489
+F274 [Value Mapping] inputs: L490, L496
+F275 [Value Mapping] inputs: L491, L497
+F276 [Value Mapping] inputs: L492, L498
+F277 [String Concatenate] inputs: const:'452'
+F278 [String Concatenate] inputs: const:'D8'
+F279 [Scripting] inputs: L506
+    script ExternalAssembly: Cloud9.BizTalk.Helper.DateFormatConversion.ConvertSQLDateToEDIDate [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F280 [FID 317] inputs: L505
+F281 [Value Mapping] inputs: L502, L499
+F282 [Value Mapping] inputs: L503, L500
+F283 [Value Mapping] inputs: L504, L501
+F284 [FID 317] inputs: L510
+F285 [Value Mapping] inputs: L511, const:'G1'
+F286 [Value Mapping] inputs: L512, L513
+F290 [Logical NOT (inferred)] inputs: L480
+F366 [FID 317] inputs: L799
+F381 [FID 317] inputs: L997
+F382 [FID 321] inputs: L844, L845
+F397 [Scripting] inputs: L924
+    script language: XsltCallTemplate
+    | <xsl:template name="NoteSplit" xmlns:ns0="http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC">
+    |     <xsl:param name="val" />
+    | 	<xsl:if test="(substring($val, 1, 80)) and ($val != '')">
+    | 	  <ns0:NTE_ClaimNote>
+    | 		  <NTE01_NoteReferenceCode>ADD</NTE01_NoteReferenceCode>
+    | 		  <NTE02_ClaimNoteText>
+    | 			<xsl:value-of select="substring($val, 1, 80)" />
+    | 		  </NTE02_ClaimNoteText>
+    | 	  </ns0:NTE_ClaimNote>
+    | 	</xsl:if>
+    | 	<xsl:if test="substring($val, 81, 160)">
+    | 	  <ns0:NTE_ClaimNote>
+    | 		  <NTE01_NoteReferenceCode>ADD</NTE01_NoteReferenceCode>
+    | 		  <NTE02_ClaimNoteText>
+    | 			<xsl:value-of select="substring($val, 81, 160)" />
+    | 		  </NTE02_ClaimNoteText>
+    | 	  </ns0:NTE_ClaimNote>
+    | 	</xsl:if>
+    | 	<xsl:if test="substring($val, 161, 240)">
+    | 	  <ns0:NTE_ClaimNote>
+    | 		  <NTE01_NoteReferenceCode>ADD</NTE01_NoteReferenceCode>
+    | 		  <NTE02_ClaimNoteText>
+    | 			<xsl:value-of select="substring($val, 161, 240)" />
+    | 		  </NTE02_ClaimNoteText>
+    | 	  </ns0:NTE_ClaimNote>
+    | 	</xsl:if>
+    | </xsl:template>
+F403 [String Concatenate] inputs: const:'472'
+F404 [Value Mapping] inputs: L888, L892
+F405 [Scripting] inputs: L891
+    script ExternalAssembly: Cloud9.BizTalk.Helper.DateFormatConversion.ConvertSQLDateToEDIDate [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F406 [Value Mapping] inputs: L889, L895
+F407 [FID 317] inputs: L893
+F408 [Index (inferred)] inputs: L890, const:'1'
+F409 [Value Mapping] inputs: L897, L898
+F410 [String Concatenate] inputs: const:'D8'
+F424 [FID 109] inputs: L919
+F433 [Scripting] inputs: L934
+    script ExternalAssembly: Cloud9.BizTalk.Helper.EDIClaimHelper.FormatDouble [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+    script language: CSharp
+    | ///*Uncomment the following code for a sample Inline C# function
+    | //that concatenates two inputs. Change the number of parameters of
+    | //this function to be equal to the number of inputs connected to this functoid.*/
+    | 
+    | public string FormatDouble2(string param1)
+    | {
+    |     double val = System.Convert.ToDouble(param1);
+    | 
+    |     return val.ToString("0.00");
+    | }
+F440 [Scripting] inputs: L953, L949
+    script language: CSharp
+    | public string FormatC9PatientControlNumber(string emdeonUserID, string ClaimNumber)
+    | {
+    |    // PMS ID 1 - 2 = C9
+    |    // Database #: 3-12 ("Emdeon" Username)
+    |    // Patient ID: 13 - 20
+    | 
+    |    string C9PatientControlNumber = "C9";
+    | 
+    |    try
+    |    {
+    |       C9PatientControlNumber = C9PatientControlNumber + emdeonUserID.PadLeft(10, '0') + ClaimNumber.PadLeft(8, '0') ;
+    |    }
+    | 
+    |    catch (System.Exception)
+    |    {
+    |       throw (new System.Exception(System.String.Format("FormatC9PatientControlNumber: Failure formatting Patient Control Number: {0}, {1}, {2}", 
+    |                                             emdeonUserID, ClaimNumber)));
+    |    }
+    | 
+    |    return C9PatientControlNumber;
+    | }
+
+=== PAGE: 2310 ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L569: Claim/adaclaimBox53TreatingDentistSignature -> F293
+L570: Claim/adaclaimBox56TreatingDentistInfo -> F293
+L571: F294 -> F293
+L572: F295 -> F293
+L573: F293 -> F296
+L574: F293 -> F297
+L575: F293 -> F298
+L576: F293 -> F299
+L581: Claim/adaclaimBox54TreatingDentistNPI -> F300
+L582: F300 -> F302
+L583: F300 -> F303
+L584: F301 -> F302
+L586: Claim/adaclaimBox54TreatingDentistNPI -> F303
+L588: Claim/adaclaimBox56ATreatingDentistProviderSpecialtyCode -> F304
+L589: F304 -> F305
+L590: F304 -> F306
+L591: F304 -> F307
+L594: Claim/adaclaimBox56ATreatingDentistProviderSpecialtyCode -> F307
+L596: Claim/adaclaimBox55TreatingDentistLicenseNumber -> F308
+L597: F308 -> F309
+L598: F308 -> F310
+L600: Claim/adaclaimBox55TreatingDentistLicenseNumber -> F310
+L602: F291 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/NM1_SubLoop_4/TS837_2310B_Loop/NM1_RenderingProviderName/NM101_EntityIdentifierCode
+L603: F292 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/NM1_SubLoop_4/TS837_2310B_Loop/NM1_RenderingProviderName/NM102_EntityTypeQualifier
+L604: F296 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/NM1_SubLoop_4/TS837_2310B_Loop/NM1_RenderingProviderName/NM103_RenderingProviderLastorOrganizationName
+L605: F297 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/NM1_SubLoop_4/TS837_2310B_Loop/NM1_RenderingProviderName/NM104_RenderingProviderFirstName
+L606: F298 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/NM1_SubLoop_4/TS837_2310B_Loop/NM1_RenderingProviderName/NM105_RenderingProviderMiddleNameorInitial
+L607: F299 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/NM1_SubLoop_4/TS837_2310B_Loop/NM1_RenderingProviderName/NM106_NamePrefix
+L608: F302 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/NM1_SubLoop_4/TS837_2310B_Loop/NM1_RenderingProviderName/NM108_IdentificationCodeQualifier
+L609: F303 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/NM1_SubLoop_4/TS837_2310B_Loop/NM1_RenderingProviderName/NM109_RenderingProviderIdentifier
+L610: F305 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/NM1_SubLoop_4/TS837_2310B_Loop/PRV_RenderingProviderSpecialtyInformation/PRV01_ProviderCode
+L611: F306 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/NM1_SubLoop_4/TS837_2310B_Loop/PRV_RenderingProviderSpecialtyInformation/PRV02_ReferenceIdentificationQualifier
+L612: F307 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/NM1_SubLoop_4/TS837_2310B_Loop/PRV_RenderingProviderSpecialtyInformation/PRV03_ProviderTaxonomyCode
+L613: F309 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/NM1_SubLoop_4/TS837_2310B_Loop/REF_RenderingProviderSecondaryIdentification/REF01_ReferenceIdentificationQualifier
+L614: F310 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/NM1_SubLoop_4/TS837_2310B_Loop/REF_RenderingProviderSecondaryIdentification/REF02_RenderingProviderSecondaryIdentifier
+L840: F308 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/NM1_SubLoop_4/TS837_2310B_Loop/REF_RenderingProviderSecondaryIdentification
+--- FUNCTOIDS ---
+F291 [String Concatenate] inputs: const:'82'
+F292 [String Concatenate] inputs: const:'1'
+F293 [String Concatenate] inputs: L569, L571, L572, L570
+F294 [FID 127] inputs: const:'13'
+F295 [FID 127] inputs: const:'10'
+F296 [Scripting] inputs: L573
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetLastname [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F297 [Scripting] inputs: L574
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetFirstname [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F298 [Scripting] inputs: L575
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetMiddleInitial [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F299 [Scripting] inputs: L576
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetTitle [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F300 [FID 317] inputs: L581
+F301 [String Concatenate] inputs: const:'XX'
+F302 [Value Mapping] inputs: L582, L584
+F303 [Value Mapping] inputs: L583, L586
+F304 [FID 317] inputs: L588
+F305 [Value Mapping] inputs: L589, const:'PE'
+F306 [Value Mapping] inputs: L590, const:'PXC'
+F307 [Value Mapping] inputs: L591, L594
+F308 [FID 317] inputs: L596
+F309 [Value Mapping] inputs: L597, const:'0B'
+F310 [Value Mapping] inputs: L598, L600
+
+=== PAGE: 2320/2330 ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L615: Claim -> F311
+L617: Claim/adaclaimBox4OtherCoverageMedical -> F312
+L618: Claim/adaclaimBox4OtherCoverageDental -> F313
+L619: F312 -> F314
+L620: F313 -> F314
+L623: Claim/adaclaimBox10OtherPatientRelationshipSelf -> F316
+L624: Claim/adaclaimBox10OtherPatientRelationshipSpouse -> F317
+L625: Claim/adaclaimBox10OtherPatientRelationshipDependent -> F318
+L626: Claim/adaclaimBox10OtherPatientRelationshipOther -> F319
+L627: F316 -> F320
+L629: F317 -> F321
+L631: F318 -> F322
+L633: F319 -> F323
+L636: Claim/adaclaimBox11OtherInsurancePlanInfo -> F324
+L642: Claim/adaclaimBox5OtherSubscriberName -> F330
+L643: Claim/adaclaimBox5OtherSubscriberName -> F327
+L646: Claim/adaclaimBox5OtherSubscriberName -> F331
+L652: Claim/adaclaimBox11OtherInsurancePlanInfo -> F335
+L656: Claim/adaclaimBox11OtherInsurancePlanInfo -> F337
+L657: Claim/adaclaimBox11OtherInsurancePlanInfo -> F338
+L658: Claim/adaclaimBox11OtherInsurancePlanInfo -> F339
+L659: Claim/adaclaimBox11OtherInsurancePlanInfo -> F340
+L660: Claim/adaclaimBox11OtherInsurancePlanInfo -> F341
+L668: F311 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2320_Loop
+L669: F314 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2320_Loop
+L670: F315 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2320_Loop/SBR_OtherSubscriberInformation/SBR01_PayerResponsibilitySequenceNumberCode
+L671: F320 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2320_Loop/SBR_OtherSubscriberInformation/SBR02_IndividualRelationshipCode
+L672: F321 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2320_Loop/SBR_OtherSubscriberInformation/SBR02_IndividualRelationshipCode
+L673: F322 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2320_Loop/SBR_OtherSubscriberInformation/SBR02_IndividualRelationshipCode
+L674: F323 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2320_Loop/SBR_OtherSubscriberInformation/SBR02_IndividualRelationshipCode
+L675: F324 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2320_Loop/SBR_OtherSubscriberInformation/SBR04_OtherInsuredGroupName
+L676: Claim/adaclaimBox9OtherPlanGroupNumber -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2320_Loop/SBR_OtherSubscriberInformation/SBR03_InsuredGrouporPolicyNumber
+L677: F325 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2320_Loop/OI_OtherInsuranceCoverageInformation/OI03_BenefitsAssignmentCertificationIndicator
+L679: F328 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2320_Loop/NM1_SubLoop_5/TS837_2330A_Loop/NM1_OtherSubscriberName/NM101_EntityIdentifierCode
+L680: F329 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2320_Loop/NM1_SubLoop_5/TS837_2330A_Loop/NM1_OtherSubscriberName/NM102_EntityTypeQualifier
+L681: F330 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2320_Loop/NM1_SubLoop_5/TS837_2330A_Loop/NM1_OtherSubscriberName/NM103_OtherInsuredLastName
+L682: F327 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2320_Loop/NM1_SubLoop_5/TS837_2330A_Loop/NM1_OtherSubscriberName/NM104_OtherInsuredFirstName
+L683: F331 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2320_Loop/NM1_SubLoop_5/TS837_2330A_Loop/NM1_OtherSubscriberName/NM105_OtherInsuredMiddleName
+L687: F333 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2320_Loop/NM1_SubLoop_5/TS837_2330B_Loop/NM1_OtherPayerName/NM101_EntityIdentifierCode
+L688: F334 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2320_Loop/NM1_SubLoop_5/TS837_2330B_Loop/NM1_OtherPayerName/NM102_EntityTypeQualifier
+L689: F335 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2320_Loop/NM1_SubLoop_5/TS837_2330B_Loop/NM1_OtherPayerName/NM103_OtherPayerLastorOrganizationName
+L691: F337 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2320_Loop/NM1_SubLoop_5/TS837_2330B_Loop/N3_OtherPayerAddress/N301_OtherPayerAddressLine
+L692: F338 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2320_Loop/NM1_SubLoop_5/TS837_2330B_Loop/N3_OtherPayerAddress/N302_OtherPayerAddressLine
+L693: F339 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2320_Loop/NM1_SubLoop_5/TS837_2330B_Loop/N4_OtherPayerCity_State_ZIPCode/N401_OtherPayerCityName
+L694: F340 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2320_Loop/NM1_SubLoop_5/TS837_2330B_Loop/N4_OtherPayerCity_State_ZIPCode/N402_OtherPayerStateCode
+L695: F341 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2320_Loop/NM1_SubLoop_5/TS837_2330B_Loop/N4_OtherPayerCity_State_ZIPCode/N403_OtherPayerPostalZoneorZIPCode
+L809: Claim/emdpayPayerId -> F368
+L810: F368 -> F369
+L812: Claim/emdpayPayerId -> F370
+L813: F370 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2320_Loop/NM1_SubLoop_5/TS837_2330B_Loop/NM1_OtherPayerName/NM109_OtherPayerPrimaryIdentifier
+L814: F369 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2320_Loop/NM1_SubLoop_5/TS837_2330B_Loop/NM1_OtherPayerName/NM108_IdentificationCodeQualifier
+L811: F336 -> F369
+L816: F368 -> F370
+L817: Claim/adaclaimBox8OtherSubscriberID -> F371
+L818: F371 -> F372
+L819: F371 -> F373
+L820: F332 -> F372
+L821: F372 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2320_Loop/NM1_SubLoop_5/TS837_2330A_Loop/NM1_OtherSubscriberName/NM108_IdentificationCodeQualifier
+L822: Claim/adaclaimBox8OtherSubscriberID -> F373
+L823: F373 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2320_Loop/NM1_SubLoop_5/TS837_2330A_Loop/NM1_OtherSubscriberName/NM109_OtherInsuredIdentifier
+L856: Claim/adaclaimBox36Signature -> F388
+L857: F388 -> F389
+L858: F389 -> F390
+L859: F388 -> F391
+L860: F390 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2320_Loop/OI_OtherInsuranceCoverageInformation/OI06_ReleaseofInformationCode
+L861: F391 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2320_Loop/OI_OtherInsuranceCoverageInformation/OI06_ReleaseofInformationCode
+L982: F456 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2320_Loop/SBR_OtherSubscriberInformation/SBR09_ClaimFilingIndicatorCode
+--- FUNCTOIDS ---
+F311 [Looping] inputs: L615
+F312 [Equal (inferred)] inputs: L617, const:'true'
+F313 [Equal (inferred)] inputs: L618, const:'true'
+F314 [Logical OR (inferred)] inputs: L619, L620
+F315 [String Concatenate] inputs: const:'S'
+F316 [Equal (inferred)] inputs: L623, const:'true'
+F317 [Equal (inferred)] inputs: L624, const:'true'
+F318 [Equal (inferred)] inputs: L625, const:'true'
+F319 [Equal (inferred)] inputs: L626, const:'true'
+F320 [Value Mapping] inputs: L627, const:'18'
+F321 [Value Mapping] inputs: L629, const:'01'
+F322 [Value Mapping] inputs: L631, const:'19'
+F323 [Value Mapping] inputs: L633, const:'G8'
+F324 [Scripting] inputs: L636
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetName [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F325 [String Concatenate] inputs: const:'N'
+F327 [Scripting] inputs: L643
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetFirstname [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F328 [String Concatenate] inputs: const:'IL'
+F329 [String Concatenate] inputs: const:'1'
+F330 [Scripting] inputs: L642
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetLastname [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F331 [Scripting] inputs: L646
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetMiddlename [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F332 [String Concatenate] inputs: const:'MI'
+F333 [String Concatenate] inputs: const:'PR'
+F334 [String Concatenate] inputs: const:'2'
+F335 [Scripting] inputs: L652
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetName [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F336 [String Concatenate] inputs: const:'PI'
+F337 [Scripting] inputs: L656
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetAddress1 [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F338 [Scripting] inputs: L657
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetAddress2 [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F339 [Scripting] inputs: L658
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetCity [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F340 [Scripting] inputs: L659
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetState [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F341 [Scripting] inputs: L660
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetZipcode [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F368 [FID 317] inputs: L809
+F369 [Value Mapping] inputs: L810, L811
+F370 [Value Mapping] inputs: L816, L812
+F371 [FID 317] inputs: L817
+F372 [Value Mapping] inputs: L818, L820
+F373 [Value Mapping] inputs: L819, L822
+F388 [Equal (inferred)] inputs: L856, const:'SIGNATURE ON FILE'
+F389 [Logical NOT (inferred)] inputs: L857
+F390 [Value Mapping] inputs: L858, const:'I'
+F391 [Value Mapping] inputs: L859, const:'Y'
+F456 [String Concatenate] inputs: const:'CI'
+
+=== PAGE: 2400 ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L705: Claim/Services/Service/acsrvToothSystem -> F344
+L709: Claim/Services/Service/acsrvProcedureDate -> F346
+L713: Claim/Services/Service/acsrvProcedureDate -> F349
+L716: Claim/adaclaimTotal -> F352
+L718: F353 -> F354
+L720: F354 -> F351
+L721: F354 -> F352
+L722: Claim/Services/Service -> F342
+L723: Claim/Services/Service -> F353
+L726: F342 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2400_Loop
+L727: Claim/Services/Service -> F355
+L728: F355 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2400_Loop/LX_ServiceLineCounter/LX01_AssignedNumber
+L729: F343 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2400_Loop/SV3_DentalService/C003_CompositeMedicalProcedureIdentifier/C00301_ProductorServiceIDQualifier
+L730: F351 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2400_Loop/SV3_DentalService/C003_CompositeMedicalProcedureIdentifier/C00302_ProcedureCode
+L731: Claim/Services/Service/acsrvProcedureCode -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2400_Loop/SV3_DentalService/C003_CompositeMedicalProcedureIdentifier/C00302_ProcedureCode
+L732: Claim/Services/Service/acsrvDescription -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2400_Loop/SV3_DentalService/C003_CompositeMedicalProcedureIdentifier/C00307_ProcedureCodeDescription
+L734: F352 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2400_Loop/SV3_DentalService/SV302_LineItemChargeAmount
+L735: Claim/Services/Service/acsrvAreaOfOralCavity -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2400_Loop/SV3_DentalService/C006_OralCavityDesignation/C00601_OralCavityDesignationCode
+L736: Claim/Services/Service/acsrvQuantity -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2400_Loop/SV3_DentalService/SV306_ProcedureCount
+L737: F344 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2400_Loop/TOO_ToothInformation
+L765: F345 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2400_Loop/TOO_ToothInformation/TOO01_CodeListQualifierCode
+L766: F346 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2400_Loop/DTP_SubLoop_2/DTP_Date_ServiceDate_2
+L767: F347 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2400_Loop/DTP_SubLoop_2/DTP_Date_ServiceDate_2/DTP01_DateTimeQualifier
+L768: F348 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2400_Loop/DTP_SubLoop_2/DTP_Date_ServiceDate_2/DTP02_DateTimePeriodFormatQualifier
+L769: F349 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2400_Loop/DTP_SubLoop_2/DTP_Date_ServiceDate_2/DTP03_ServiceDate
+L770: Claim/Services/Service/acsrvToothNumbers -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2400_Loop/TOO_ToothInformation/TOO02_ToothCode
+L771: Claim/Services/Service/acsrvToothSurface -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2400_Loop/TOO_ToothInformation/C005_ToothSurface/C00501_ToothSurfaceCode
+L772: Claim/Services/Service/acsrvDiagnosisPointer -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2400_Loop/SV3_DentalService/C004_CompositeDiagnosisCodePointer/C00401_DiagnosisCodePointer
+L936: Claim/Services/Service/acsrvFee -> F434
+L937: F434 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2400_Loop/SV3_DentalService/SV302_LineItemChargeAmount
+L940: Claim/Services/Service/acsrvProcedureCode -> F436
+L941: F436 -> F437
+L942: F437 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2300_Loop/TS837_2400_Loop
+--- FUNCTOIDS ---
+F342 [Looping] inputs: L722
+F343 [String Concatenate] inputs: const:'AD'
+F344 [FID 317] inputs: L705
+F345 [String Concatenate] inputs: const:'JP'
+F346 [FID 317] inputs: L709
+F347 [String Concatenate] inputs: const:'472'
+F348 [String Concatenate] inputs: const:'D8'
+F349 [Scripting] inputs: L713
+    script ExternalAssembly: Cloud9.BizTalk.Helper.DateFormatConversion.ConvertSQLDateToEDIDate [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F351 [Value Mapping] inputs: L720, const:'D1999'
+F352 [Value Mapping] inputs: L721, L716
+F353 [FID 701 (unknown: Nil Value or Logical Existence)] inputs: L723
+F354 [Logical NOT (inferred)] inputs: L718
+F355 [Iteration (inferred)] inputs: L727
+F434 [Scripting] inputs: L936
+    script ExternalAssembly: Cloud9.BizTalk.Helper.EDIClaimHelper.FormatDouble [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+    script language: CSharp
+    | ///*Uncomment the following code for a sample Inline C# function
+    | //that concatenates two inputs. Change the number of parameters of
+    | //this function to be equal to the number of inputs connected to this functoid.*/
+    | 
+    | public string FormatDouble2(string param1)
+    | {
+    |     double val = System.Convert.ToDouble(param1);
+    | 
+    |     return val.ToString("0.00");
+    | }
+F436 [String Size (inferred)] inputs: L940
+F437 [Greater Than (inferred)] inputs: L941, const:'0'
+
+=== PAGE: 2000C ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L116: F74 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/HL_PatientHierarchicalLevel/HL02_HierarchicalParentIDNumber
+L117: F75 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/HL_PatientHierarchicalLevel/HL03_HierarchicalLevelCode
+L118: F76 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/HL_PatientHierarchicalLevel/HL04_HierarchicalChildCode
+L121: F79 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/PAT_PatientInformation/PAT01_IndividualRelationshipCode
+L124: F81 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/PAT_PatientInformation/PAT01_IndividualRelationshipCode
+L127: F83 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/PAT_PatientInformation/PAT01_IndividualRelationshipCode
+L114: Claim/adaclaimBox18PatientRelationshipSelf -> F84
+L115: F84 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop
+L119: Claim/adaclaimBox18PatientRelationshipSpouse -> F86
+L120: F86 -> F79
+L123: Claim/adaclaimBox18PatientRelationshipDependent -> F87
+L122: F87 -> F81
+L126: Claim/adaclaimBox18PatientRelationshipOther -> F88
+L125: F88 -> F83
+L139: F89 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2010CA_Loop/NM1_PatientName/NM101_EntityIdentifierCode
+L140: F90 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2010CA_Loop/NM1_PatientName/NM102_EntityTypeQualifier
+L141: Claim/adaclaimBox20PatientInfo -> F91
+L142: F91 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2010CA_Loop/NM1_PatientName/NM103_PatientLastName
+L143: Claim/adaclaimBox20PatientInfo -> F92
+L144: F92 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2010CA_Loop/NM1_PatientName/NM104_PatientFirstName
+L145: Claim/adaclaimBox20PatientInfo -> F93
+L146: F93 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2010CA_Loop/NM1_PatientName/NM105_PatientMiddleNameorInitial
+L147: Claim/adaclaimBox20PatientInfo -> F94
+L148: F94 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2010CA_Loop/NM1_PatientName/NM106_NamePrefix
+L149: Claim/adaclaimBox20PatientInfo -> F95
+L150: Claim/adaclaimBox20PatientInfo -> F96
+L151: Claim/adaclaimBox20PatientInfo -> F97
+L152: Claim/adaclaimBox20PatientInfo -> F98
+L153: Claim/adaclaimBox20PatientInfo -> F99
+L154: F95 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2010CA_Loop/N3_PatientAddress/N301_PatientAddressLine
+L155: F96 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2010CA_Loop/N3_PatientAddress/N302_PatientAddressLine
+L156: F97 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2010CA_Loop/N4_PatientCity_State_ZIPCode/N401_PatientCityName
+L157: F98 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2010CA_Loop/N4_PatientCity_State_ZIPCode/N402_PatientStateCode
+L158: F99 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2010CA_Loop/N4_PatientCity_State_ZIPCode/N403_PatientPostalZoneorZIPCode
+L159: F100 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2010CA_Loop/DMG_PatientDemographicInformation/DMG01_DateTimePeriodFormatQualifier
+L160: Claim/adaclaimBox21PatientDOB -> F101
+L161: F101 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2010CA_Loop/DMG_PatientDemographicInformation/DMG02_PatientBirthDate
+L162: Claim/adaclaimBox22PatientGenderMale -> F102
+L163: F102 -> F104
+L164: F104 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2010CA_Loop/DMG_PatientDemographicInformation/DMG03_PatientGenderCode
+L166: F103 -> F105
+L167: F105 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2010CA_Loop/DMG_PatientDemographicInformation/DMG03_PatientGenderCode
+L168: Claim/adaclaimBox22PatientGenderFemale -> F103
+--- FUNCTOIDS ---
+F74 [String Concatenate] inputs: const:'2'
+F75 [String Concatenate] inputs: const:'23'
+F76 [String Concatenate] inputs: const:'0'
+F79 [Value Mapping] inputs: L120, const:'01'
+F81 [Value Mapping] inputs: L122, const:'19'
+F83 [Value Mapping] inputs: L125, const:'G8'
+F84 [Equal (inferred)] inputs: L114, const:'false'
+F86 [Equal (inferred)] inputs: L119, const:'true'
+F87 [Equal (inferred)] inputs: L123, const:'true'
+F88 [Equal (inferred)] inputs: L126, const:'true'
+F89 [String Concatenate] inputs: const:'QC'
+F90 [String Concatenate] inputs: const:'1'
+F91 [Scripting] inputs: L141
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetLastname [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F92 [Scripting] inputs: L143
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetFirstname [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F93 [Scripting] inputs: L145
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetMiddleInitial [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F94 [Scripting] inputs: L147
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetTitle [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F95 [Scripting] inputs: L149
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetAddress1 [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F96 [Scripting] inputs: L150
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetAddress2 [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F97 [Scripting] inputs: L151
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetCity [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F98 [Scripting] inputs: L152
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetState [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F99 [Scripting] inputs: L153
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetZipcode [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F100 [String Concatenate] inputs: const:'D8'
+F101 [Scripting] inputs: L160
+    script ExternalAssembly: Cloud9.BizTalk.Helper.DateFormatConversion.ConvertSQLDateToEDIDate [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F102 [Equal (inferred)] inputs: L162, const:'true'
+F103 [Equal (inferred)] inputs: L168, const:'true'
+F104 [Value Mapping] inputs: L163, const:'M'
+F105 [Value Mapping] inputs: L166, const:'F'
+
+=== PAGE: 2300 ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L171: F106 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/CLM_ClaimInformation_2/C023_HealthCareServiceLocationInformation_2/C02302_FacilityCodeQualifier
+L172: Claim/adaclaimBox38PlaceOfTreatment -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/CLM_ClaimInformation_2/C023_HealthCareServiceLocationInformation_2/C02301_PlaceofServiceCode
+L175: F109 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/CLM_ClaimInformation_2/C023_HealthCareServiceLocationInformation_2/C02303_ClaimFrequencyCode
+L176: Claim/adaclaimBox37Signature -> F110
+L177: F110 -> F111
+L178: F111 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/CLM_ClaimInformation_2/CLM06_ProviderorSupplierSignatureIndicator
+L179: F110 -> F113
+L180: F113 -> F112
+L181: F112 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/CLM_ClaimInformation_2/CLM06_ProviderorSupplierSignatureIndicator
+L182: F114 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/CLM_ClaimInformation_2/CLM07_AssignmentorPlanParticipationCode
+L183: F115 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/CLM_ClaimInformation_2/CLM08_BenefitsAssignmentCertificationIndicator
+L184: F116 -> F117
+L185: F116 -> F119
+L186: F119 -> F118
+L188: F117 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/CLM_ClaimInformation_2/CLM09_ReleaseofInformationCode
+L189: F118 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/CLM_ClaimInformation_2/CLM09_ReleaseofInformationCode
+L187: Claim/adaclaimBox36Signature -> F116
+L191: Claim/adaclaimBox45TreatmentResultingFromOccupationalInjury -> F120
+L192: Claim/adaclaimBox45TreatmentResultingFromAutoAccident -> F121
+L193: Claim/adaclaimBox45TreatmentResultingFromOtherAccident -> F122
+L194: F120 -> F123
+L195: F123 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/CLM_ClaimInformation_2/C024_RelatedCausesInformation_2/C02401_RelatedCausesCode
+L197: F124 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/CLM_ClaimInformation_2/C024_RelatedCausesInformation_2/C02401_RelatedCausesCode
+L199: F125 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/CLM_ClaimInformation_2/C024_RelatedCausesInformation_2/C02401_RelatedCausesCode
+L200: F121 -> F126
+L201: Claim/adaclaimBox47AutoAccidentState -> F126
+L202: F126 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/CLM_ClaimInformation_2/C024_RelatedCausesInformation_2/C02404_AutoAccidentStateorProvinceCode
+L203: F120 -> F127
+L204: F127 -> F128
+L196: F121 -> F128
+L206: F128 -> F124
+L208: F129 -> F130
+L198: F122 -> F130
+L210: F130 -> F125
+L211: F120 -> F131
+L212: F121 -> F131
+L213: F131 -> F132
+L214: F132 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/CLM_ClaimInformation_2/C024_RelatedCausesInformation_2/C02402_RelatedCausesCode
+L216: F122 -> F133
+L217: F133 -> F134
+L218: F134 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/CLM_ClaimInformation_2/C024_RelatedCausesInformation_2/C02403_Related_CausesCode
+L219: Claim/adaclaimBox40TreatmentForOrthodonticsYes -> F135
+L228: Claim/adaclaimBox46DateOfAccident -> F140
+L229: Claim/adaclaimBox46DateOfAccident -> F141
+L230: F141 -> F142
+L231: F141 -> F143
+L232: F141 -> F144
+L227: F144 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/DTP_SubLoop_3/DTP_Date_Accident_2/DTP03_AccidentDate
+L226: F143 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/DTP_SubLoop_3/DTP_Date_Accident_2/DTP02_DateTimePeriodFormatQualifier
+L225: F142 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/DTP_SubLoop_3/DTP_Date_Accident_2/DTP01_DateTimeQualifier
+L236: F138 -> F142
+L237: F139 -> F143
+L238: F140 -> F144
+L239: F145 -> F149
+L240: F146 -> F150
+L241: F147 -> F151
+L242: F148 -> F149
+L243: F148 -> F150
+L244: F148 -> F151
+L245: Claim/adaclaimBox41DateAppliancesPlaced -> F148
+L246: Claim/adaclaimBox41DateAppliancesPlaced -> F147
+L247: F149 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/DTP_SubLoop_3/DTP_Date_AppliancePlacement_3/DTP01_DateTimeQualifier
+L248: F150 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/DTP_SubLoop_3/DTP_Date_AppliancePlacement_3/DTP02_DateTimePeriodFormatQualifier
+L249: F151 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/DTP_SubLoop_3/DTP_Date_AppliancePlacement_3/DTP03_OrthodonticBandingDate
+L250: Claim/adaclaimBox2PreauthorizationNumber -> F152
+L251: F152 -> F153
+L252: F152 -> F154
+L253: Claim/adaclaimBox2PreauthorizationNumber -> F154
+L254: F153 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/REF_SubLoop_8/REF_PriorAuthorization_3/REF01_ReferenceIdentificationQualifier
+L255: F154 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/REF_SubLoop_8/REF_PriorAuthorization_3/REF02_PriorAuthorizationNumber
+L256: Claim/adaclaimBox34DiagnosisCodeListQualifier -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/HI_HealthCareDiagnosisCode_2/C022_HealthCareCodeInformation_13/C02201_CodeListQualifierCode
+L257: Claim/adaclaimBox34aDiagonosisCodeA -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/HI_HealthCareDiagnosisCode_2/C022_HealthCareCodeInformation_13/C02202_PrincipalDiagnosisCode
+L258: Claim/adaclaimBox34DiagnosisCodeListQualifier -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/HI_HealthCareDiagnosisCode_2/C022_HealthCareCodeInformation_14/C02201_CodeListQualifierCode
+L259: Claim/adaclaimBox34aDiagonosisCodeB -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/HI_HealthCareDiagnosisCode_2/C022_HealthCareCodeInformation_14/C02202_DiagnosisCode
+L260: Claim/adaclaimBox34DiagnosisCodeListQualifier -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/HI_HealthCareDiagnosisCode_2/C022_HealthCareCodeInformation_15/C02201_CodeListQualifierCode
+L261: Claim/adaclaimBox34aDiagonosisCodeC -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/HI_HealthCareDiagnosisCode_2/C022_HealthCareCodeInformation_15/C02202_DiagnosisCode
+L262: Claim/adaclaimBox34DiagnosisCodeListQualifier -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/HI_HealthCareDiagnosisCode_2/C022_HealthCareCodeInformation_16/C02201_CodeListQualifierCode
+L263: Claim/adaclaimBox34aDiagonosisCodeD -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/HI_HealthCareDiagnosisCode_2/C022_HealthCareCodeInformation_16/C02202_DiagnosisCode
+L207: F121 -> F129
+L286: F127 -> F130
+L287: F130 -> F164
+L288: F164 -> F133
+L801: Claim/adaclaimBox34DiagnosisCodeListQualifier -> F367
+L802: F367 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/HI_HealthCareDiagnosisCode_2
+L803: F141 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/DTP_SubLoop_3/DTP_Date_Accident_2
+L804: F148 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/DTP_SubLoop_3/DTP_Date_AppliancePlacement_3
+L805: F152 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/REF_SubLoop_8/REF_PriorAuthorization_3
+L842: F152 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/REF_SubLoop_8
+L220: F384 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/DN1_OrthodonticTotalMonthsofTreatment_2
+L849: F135 -> F384
+L850: F385 -> F384
+L872: F395 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/NTE_ClaimNote_2
+L900: F411 -> F412
+L901: F413 -> F414
+L902: F415 -> F412
+L903: F415 -> F414
+L904: F415 -> F417
+L905: F416 -> F413
+L906: F416 -> F415
+L907: F418 -> F417
+L908: Claim/Services/Service/acsrvProcedureDate -> F416
+L911: F417 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/DTP_SubLoop_3/DTP_Date_ServiceDate_3/DTP02_DateTimePeriodFormatQualifier
+L912: F414 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/DTP_SubLoop_3/DTP_Date_ServiceDate_3/DTP03_ServiceDate
+L926: Claim/adaclaimBox35Remarks -> F428
+L927: F428 -> F395
+L932: Claim/adaclaimTotal -> F432
+L933: F432 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/CLM_ClaimInformation_2/CLM02_TotalClaimChargeAmount
+L956: F441 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/CLM_ClaimInformation_2/CLM01_PatientControlNumber
+L957: Claim/pracEmdeonUserID -> F441
+L959: Claim/adaclaimNumber -> F441
+L910: F412 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/DTP_SubLoop_3/DTP_Date_ServiceDate_3/DTP01_DateTimeQualifier
+L993: Claim/totalMonthsRemaining -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/DN1_OrthodonticTotalMonthsofTreatment_2/DN102_OrthodonticTreatmentMonthsRemainingCount
+L994: Claim/totalMonths -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/DN1_OrthodonticTotalMonthsofTreatment_2/DN101_OrthodonticTreatmentMonthsCount
+L998: Claim/totalMonthsRemaining -> F385
+--- FUNCTOIDS ---
+F106 [String Concatenate] inputs: const:'B'
+F109 [String Concatenate] inputs: const:'1'
+F110 [Equal (inferred)] inputs: L176, const:'SIGNATURE ON FILE'
+F111 [Value Mapping] inputs: L177, const:'Y'
+F112 [Value Mapping] inputs: L180, const:'N'
+F113 [Logical NOT (inferred)] inputs: L179
+F114 [String Concatenate] inputs: const:'A'
+F115 [String Concatenate] inputs: const:'Y'
+F116 [Equal (inferred)] inputs: L187, const:'SIGNATURE ON FILE'
+F117 [Value Mapping] inputs: L184, const:'Y'
+F118 [Value Mapping] inputs: L186, const:'I'
+F119 [Logical NOT (inferred)] inputs: L185
+F120 [Equal (inferred)] inputs: L191, const:'true'
+F121 [Equal (inferred)] inputs: L192, const:'true'
+F122 [Equal (inferred)] inputs: L193, const:'true'
+F123 [Value Mapping] inputs: L194, const:'EM'
+F124 [Value Mapping] inputs: L206, const:'AA'
+F125 [Value Mapping] inputs: L210, const:'OA'
+F126 [Value Mapping] inputs: L200, L201
+F127 [Logical NOT (inferred)] inputs: L203
+F128 [FID 321] inputs: L204, L196
+F129 [Logical NOT (inferred)] inputs: L207
+F130 [FID 321] inputs: L208, L198, L286
+F131 [FID 321] inputs: L211, L212
+F132 [Value Mapping] inputs: L213, const:'AA'
+F133 [FID 321] inputs: L288, L216
+F134 [Value Mapping] inputs: L217, const:'OA'
+F135 [Equal (inferred)] inputs: L219, const:'true'
+F138 [String Concatenate] inputs: const:'439'
+F139 [String Concatenate] inputs: const:'D8'
+F140 [Scripting] inputs: L228
+    script ExternalAssembly: Cloud9.BizTalk.Helper.DateFormatConversion.ConvertSQLDateToEDIDate [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F141 [FID 317] inputs: L229
+F142 [Value Mapping] inputs: L230, L236
+F143 [Value Mapping] inputs: L231, L237
+F144 [Value Mapping] inputs: L232, L238
+F145 [String Concatenate] inputs: const:'452'
+F146 [String Concatenate] inputs: const:'D8'
+F147 [Scripting] inputs: L246
+    script ExternalAssembly: Cloud9.BizTalk.Helper.DateFormatConversion.ConvertSQLDateToEDIDate [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F148 [FID 317] inputs: L245
+F149 [Value Mapping] inputs: L242, L239
+F150 [Value Mapping] inputs: L243, L240
+F151 [Value Mapping] inputs: L244, L241
+F152 [FID 317] inputs: L250
+F153 [Value Mapping] inputs: L251, const:'G1'
+F154 [Value Mapping] inputs: L252, L253
+F164 [Logical NOT (inferred)] inputs: L287
+F367 [FID 317] inputs: L801
+F384 [FID 321] inputs: L849, L850
+F385 [FID 317] inputs: L998
+F395 [Scripting] inputs: L927
+    script language: XsltCallTemplate
+    | <xsl:template name="NoteSplit2" xmlns:ns0="http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC">
+    |     <xsl:param name="val" />
+    | 	<xsl:if test="(substring($val, 1, 80)) and ($val != '')">
+    | 	  <ns0:NTE_ClaimNote_2>
+    | 		  <NTE01_NoteReferenceCode>ADD</NTE01_NoteReferenceCode>
+    | 		  <NTE02_ClaimNoteText>
+    | 			<xsl:value-of select="substring($val, 1, 80)" />
+    | 		  </NTE02_ClaimNoteText>
+    | 	  </ns0:NTE_ClaimNote_2>
+    | 	</xsl:if>
+    | 	<xsl:if test="substring($val, 81, 160)">
+    | 	  <ns0:NTE_ClaimNote_2>
+    | 		  <NTE01_NoteReferenceCode>ADD</NTE01_NoteReferenceCode>
+    | 		  <NTE02_ClaimNoteText>
+    | 			<xsl:value-of select="substring($val, 81, 160)" />
+    | 		  </NTE02_ClaimNoteText>
+    | 	  </ns0:NTE_ClaimNote_2>
+    | 	</xsl:if>
+    | 	<xsl:if test="substring($val, 161, 240)">
+    | 	  <ns0:NTE_ClaimNote_2>
+    | 		  <NTE01_NoteReferenceCode>ADD</NTE01_NoteReferenceCode>
+    | 		  <NTE02_ClaimNoteText>
+    | 			<xsl:value-of select="substring($val, 161, 240)" />
+    | 		  </NTE02_ClaimNoteText>
+    | 	  </ns0:NTE_ClaimNote_2>
+    | 	</xsl:if>
+    | </xsl:template>
+F411 [String Concatenate] inputs: const:'472'
+F412 [Value Mapping] inputs: L902, L900
+F413 [Scripting] inputs: L905
+    script ExternalAssembly: Cloud9.BizTalk.Helper.DateFormatConversion.ConvertSQLDateToEDIDate [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F414 [Value Mapping] inputs: L903, L901
+F415 [FID 317] inputs: L906
+F416 [Index (inferred)] inputs: L908, const:'1'
+F417 [Value Mapping] inputs: L904, L907
+F418 [String Concatenate] inputs: const:'D8'
+F428 [FID 109] inputs: L926
+F432 [Scripting] inputs: L932
+    script ExternalAssembly: Cloud9.BizTalk.Helper.EDIClaimHelper.FormatDouble [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+    script language: CSharp
+    | ///*Uncomment the following code for a sample Inline C# function
+    | //that concatenates two inputs. Change the number of parameters of
+    | //this function to be equal to the number of inputs connected to this functoid.*/
+    | 
+    | public string FormatDouble2(string param1)
+    | {
+    |     double val = System.Convert.ToDouble(param1);
+    | 
+    |     return val.ToString("0.00");
+    | }
+F441 [Scripting] inputs: L957, L959
+    script language: CSharp
+    | public string FormatC9PatientControlNumber(string emdeonUserID, string ClaimNumber)
+    | {
+    |    // PMS ID 1 - 2 = C9
+    |    // Database #: 3-12 ("Emdeon" Username)
+    |    // Patient ID: 13 - 20
+    | 
+    |    string C9PatientControlNumber = "C9";
+    | 
+    |    try
+    |    {
+    |       C9PatientControlNumber = C9PatientControlNumber + emdeonUserID.PadLeft(10, '0') + ClaimNumber.PadLeft(8, '0') ;
+    |    }
+    | 
+    |    catch (System.Exception)
+    |    {
+    |       throw (new System.Exception(System.String.Format("FormatC9PatientControlNumber: Failure formatting Patient Control Number: {0}, {1}, {2}", 
+    |                                             emdeonUserID, ClaimNumber)));
+    |    }
+    | 
+    |    return C9PatientControlNumber;
+    | }
+
+=== PAGE: 2310 ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L289: F165 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/NM1_SubLoop_7/TS837_2310B_Loop1/NM1_RenderingProviderName_3/NM101_EntityIdentifierCode
+L290: F166 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/NM1_SubLoop_7/TS837_2310B_Loop1/NM1_RenderingProviderName_3/NM102_EntityTypeQualifier
+L291: Claim/adaclaimBox53TreatingDentistSignature -> F167
+L292: Claim/adaclaimBox56TreatingDentistInfo -> F167
+L293: F168 -> F167
+L294: F169 -> F167
+L295: F167 -> F170
+L297: F167 -> F171
+L298: F167 -> F172
+L296: F170 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/NM1_SubLoop_7/TS837_2310B_Loop1/NM1_RenderingProviderName_3/NM103_RenderingProviderLastorOrganizationName
+L300: F171 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/NM1_SubLoop_7/TS837_2310B_Loop1/NM1_RenderingProviderName_3/NM104_RenderingProviderFirstName
+L301: F172 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/NM1_SubLoop_7/TS837_2310B_Loop1/NM1_RenderingProviderName_3/NM105_RenderingProviderMiddleNameorInitial
+L304: Claim/adaclaimBox54TreatingDentistNPI -> F175
+L305: F175 -> F177
+L306: F175 -> F178
+L307: F176 -> F177
+L308: F177 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/NM1_SubLoop_7/TS837_2310B_Loop1/NM1_RenderingProviderName_3/NM108_IdentificationCodeQualifier
+L309: Claim/adaclaimBox54TreatingDentistNPI -> F178
+L310: F178 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/NM1_SubLoop_7/TS837_2310B_Loop1/NM1_RenderingProviderName_3/NM109_RenderingProviderIdentifier
+L311: Claim/adaclaimBox56ATreatingDentistProviderSpecialtyCode -> F179
+L312: F179 -> F180
+L313: F180 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/NM1_SubLoop_7/TS837_2310B_Loop1/PRV_RenderingProviderSpecialtyInformation_3/PRV01_ProviderCode
+L314: F179 -> F181
+L315: F181 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/NM1_SubLoop_7/TS837_2310B_Loop1/PRV_RenderingProviderSpecialtyInformation_3/PRV02_ReferenceIdentificationQualifier
+L316: F179 -> F182
+L317: Claim/adaclaimBox56ATreatingDentistProviderSpecialtyCode -> F182
+L318: F182 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/NM1_SubLoop_7/TS837_2310B_Loop1/PRV_RenderingProviderSpecialtyInformation_3/PRV03_ProviderTaxonomyCode
+L319: Claim/adaclaimBox55TreatingDentistLicenseNumber -> F183
+L320: F183 -> F184
+L321: F183 -> F185
+L322: F184 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/NM1_SubLoop_7/TS837_2310B_Loop1/REF_RenderingProviderSecondaryIdentification_3/REF01_ReferenceIdentificationQualifier
+L323: Claim/adaclaimBox55TreatingDentistLicenseNumber -> F185
+L324: F185 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/NM1_SubLoop_7/TS837_2310B_Loop1/REF_RenderingProviderSecondaryIdentification_3/REF02_RenderingProviderSecondaryIdentifier
+--- FUNCTOIDS ---
+F165 [String Concatenate] inputs: const:'82'
+F166 [String Concatenate] inputs: const:'1'
+F167 [String Concatenate] inputs: L291, L293, L294, L292
+F168 [FID 127] inputs: const:'13'
+F169 [FID 127] inputs: const:'10'
+F170 [Scripting] inputs: L295
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetLastname [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F171 [Scripting] inputs: L297
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetFirstname [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F172 [Scripting] inputs: L298
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetMiddleInitial [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F175 [FID 317] inputs: L304
+F176 [String Concatenate] inputs: const:'XX'
+F177 [Value Mapping] inputs: L305, L307
+F178 [Value Mapping] inputs: L306, L309
+F179 [FID 317] inputs: L311
+F180 [Value Mapping] inputs: L312, const:'PE'
+F181 [Value Mapping] inputs: L314, const:'PXC'
+F182 [Value Mapping] inputs: L316, L317
+F183 [FID 317] inputs: L319
+F184 [Value Mapping] inputs: L320, const:'0B'
+F185 [Value Mapping] inputs: L321, L323
+
+=== PAGE: 2320/2330 ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L325: Claim -> F186
+L326: F186 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2320_Loop1
+L327: Claim/adaclaimBox4OtherCoverageMedical -> F187
+L328: Claim/adaclaimBox4OtherCoverageDental -> F188
+L329: F187 -> F189
+L330: F188 -> F189
+L331: F189 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2320_Loop1
+L332: F190 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2320_Loop1/SBR_OtherSubscriberInformation_2/SBR01_PayerResponsibilitySequenceNumberCode
+L333: Claim/adaclaimBox10OtherPatientRelationshipSelf -> F192
+L334: Claim/adaclaimBox10OtherPatientRelationshipSpouse -> F193
+L335: Claim/adaclaimBox10OtherPatientRelationshipDependent -> F194
+L336: Claim/adaclaimBox10OtherPatientRelationshipOther -> F195
+L337: F192 -> F196
+L338: F196 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2320_Loop1/SBR_OtherSubscriberInformation_2/SBR02_IndividualRelationshipCode
+L339: F193 -> F197
+L340: F197 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2320_Loop1/SBR_OtherSubscriberInformation_2/SBR02_IndividualRelationshipCode
+L341: F194 -> F198
+L342: F198 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2320_Loop1/SBR_OtherSubscriberInformation_2/SBR02_IndividualRelationshipCode
+L343: F195 -> F199
+L344: F199 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2320_Loop1/SBR_OtherSubscriberInformation_2/SBR02_IndividualRelationshipCode
+L345: Claim/adaclaimBox9OtherPlanGroupNumber -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2320_Loop1/SBR_OtherSubscriberInformation_2/SBR03_InsuredGrouporPolicyNumber
+L346: Claim/adaclaimBox11OtherInsurancePlanInfo -> F200
+L347: F200 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2320_Loop1/SBR_OtherSubscriberInformation_2/SBR04_OtherInsuredGroupName
+L348: F201 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2320_Loop1/OI_OtherInsuranceCoverageInformation_2/OI03_BenefitsAssignmentCertificationIndicator
+L350: F204 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2320_Loop1/NM1_SubLoop_8/TS837_2330A_Loop1/NM1_OtherSubscriberName_2/NM101_EntityIdentifierCode
+L351: F205 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2320_Loop1/NM1_SubLoop_8/TS837_2330A_Loop1/NM1_OtherSubscriberName_2/NM102_EntityTypeQualifier
+L352: Claim/adaclaimBox5OtherSubscriberName -> F206
+L353: Claim/adaclaimBox5OtherSubscriberName -> F203
+L354: F206 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2320_Loop1/NM1_SubLoop_8/TS837_2330A_Loop1/NM1_OtherSubscriberName_2/NM103_OtherInsuredLastName
+L355: F203 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2320_Loop1/NM1_SubLoop_8/TS837_2330A_Loop1/NM1_OtherSubscriberName_2/NM104_OtherInsuredFirstName
+L356: Claim/adaclaimBox5OtherSubscriberName -> F207
+L357: F207 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2320_Loop1/NM1_SubLoop_8/TS837_2330A_Loop1/NM1_OtherSubscriberName_2/NM105_OtherInsuredMiddleName
+L360: F209 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2320_Loop1/NM1_SubLoop_8/TS837_2330B_Loop1/NM1_OtherPayerName_2/NM101_EntityIdentifierCode
+L361: F210 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2320_Loop1/NM1_SubLoop_8/TS837_2330B_Loop1/NM1_OtherPayerName_2/NM102_EntityTypeQualifier
+L362: Claim/adaclaimBox11OtherInsurancePlanInfo -> F211
+L363: F211 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2320_Loop1/NM1_SubLoop_8/TS837_2330B_Loop1/NM1_OtherPayerName_2/NM103_OtherPayerLastorOrganizationName
+L366: Claim/adaclaimBox11OtherInsurancePlanInfo -> F213
+L367: Claim/adaclaimBox11OtherInsurancePlanInfo -> F214
+L368: Claim/adaclaimBox11OtherInsurancePlanInfo -> F215
+L369: Claim/adaclaimBox11OtherInsurancePlanInfo -> F216
+L370: Claim/adaclaimBox11OtherInsurancePlanInfo -> F217
+L371: F213 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2320_Loop1/NM1_SubLoop_8/TS837_2330B_Loop1/N3_OtherPayerAddress_2/N301_OtherPayerAddressLine
+L372: F214 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2320_Loop1/NM1_SubLoop_8/TS837_2330B_Loop1/N3_OtherPayerAddress_2/N302_OtherPayerAddressLine
+L373: F215 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2320_Loop1/NM1_SubLoop_8/TS837_2330B_Loop1/N4_OtherPayerCity_State_ZIPCode_2/N401_OtherPayerCityName
+L374: F216 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2320_Loop1/NM1_SubLoop_8/TS837_2330B_Loop1/N4_OtherPayerCity_State_ZIPCode_2/N402_OtherPayerStateCode
+L375: F217 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2320_Loop1/NM1_SubLoop_8/TS837_2330B_Loop1/N4_OtherPayerCity_State_ZIPCode_2/N403_OtherPayerPostalZoneorZIPCode
+L824: Claim/adaclaimBox8OtherSubscriberID -> F374
+L825: F374 -> F375
+L826: F374 -> F376
+L827: F208 -> F375
+L828: F375 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2320_Loop1/NM1_SubLoop_8/TS837_2330A_Loop1/NM1_OtherSubscriberName_2/NM108_IdentificationCodeQualifier
+L829: Claim/adaclaimBox8OtherSubscriberID -> F376
+L830: F376 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2320_Loop1/NM1_SubLoop_8/TS837_2330A_Loop1/NM1_OtherSubscriberName_2/NM109_OtherInsuredIdentifier
+L831: F377 -> F378
+L832: F377 -> F379
+L833: Claim/emdpayPayerId -> F377
+L834: F212 -> F378
+L835: F378 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2320_Loop1/NM1_SubLoop_8/TS837_2330B_Loop1/NM1_OtherPayerName_2/NM108_IdentificationCodeQualifier
+L836: Claim/emdpayPayerId -> F379
+L837: F379 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2320_Loop1/NM1_SubLoop_8/TS837_2330B_Loop1/NM1_OtherPayerName_2/NM109_OtherPayerPrimaryIdentifier
+L976: F452 -> F453
+L977: F452 -> F455
+L978: F453 -> F454
+L979: Claim/adaclaimBox36Signature -> F452
+L980: F455 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2320_Loop1/OI_OtherInsuranceCoverageInformation_2/OI06_ReleaseofInformationCode
+L981: F454 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2320_Loop1/OI_OtherInsuranceCoverageInformation_2/OI06_ReleaseofInformationCode
+L983: F457 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2320_Loop1/SBR_OtherSubscriberInformation_2/SBR09_ClaimFilingIndicatorCode
+L984: F457 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/SBR_SubscriberInformation/SBR09_ClaimFilingIndicatorCode
+--- FUNCTOIDS ---
+F186 [Looping] inputs: L325
+F187 [Equal (inferred)] inputs: L327, const:'true'
+F188 [Equal (inferred)] inputs: L328, const:'true'
+F189 [Logical OR (inferred)] inputs: L329, L330
+F190 [String Concatenate] inputs: const:'S'
+F192 [Equal (inferred)] inputs: L333, const:'true'
+F193 [Equal (inferred)] inputs: L334, const:'true'
+F194 [Equal (inferred)] inputs: L335, const:'true'
+F195 [Equal (inferred)] inputs: L336, const:'true'
+F196 [Value Mapping] inputs: L337, const:'18'
+F197 [Value Mapping] inputs: L339, const:'01'
+F198 [Value Mapping] inputs: L341, const:'19'
+F199 [Value Mapping] inputs: L343, const:'G8'
+F200 [Scripting] inputs: L346
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetName [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F201 [String Concatenate] inputs: const:'N'
+F203 [Scripting] inputs: L353
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetFirstname [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F204 [String Concatenate] inputs: const:'IL'
+F205 [String Concatenate] inputs: const:'1'
+F206 [Scripting] inputs: L352
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetLastname [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F207 [Scripting] inputs: L356
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetMiddlename [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F208 [String Concatenate] inputs: const:'MI'
+F209 [String Concatenate] inputs: const:'PR'
+F210 [String Concatenate] inputs: const:'2'
+F211 [Scripting] inputs: L362
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetName [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F212 [String Concatenate] inputs: const:'PI'
+F213 [Scripting] inputs: L366
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetAddress1 [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F214 [Scripting] inputs: L367
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetAddress2 [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F215 [Scripting] inputs: L368
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetCity [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F216 [Scripting] inputs: L369
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetState [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F217 [Scripting] inputs: L370
+    script ExternalAssembly: Cloud9.BizTalk.Helper.ParseNameAddressBox.GetZipcode [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F374 [FID 317] inputs: L824
+F375 [Value Mapping] inputs: L825, L827
+F376 [Value Mapping] inputs: L826, L829
+F377 [FID 317] inputs: L833
+F378 [Value Mapping] inputs: L831, L834
+F379 [Value Mapping] inputs: L832, L836
+F452 [Equal (inferred)] inputs: L979, const:'SIGNATURE ON FILE'
+F453 [Logical NOT (inferred)] inputs: L976
+F454 [Value Mapping] inputs: L978, const:'I'
+F455 [Value Mapping] inputs: L977, const:'Y'
+F457 [String Concatenate] inputs: const:'CI'
+
+=== PAGE: 2400 ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L378: F218 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2400_Loop1
+L386: F220 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2400_Loop1/SV3_DentalService_2/C003_CompositeMedicalProcedureIdentifier_3/C00301_ProductorServiceIDQualifier
+L387: Claim/Services/Service/acsrvProcedureCode -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2400_Loop1/SV3_DentalService_2/C003_CompositeMedicalProcedureIdentifier_3/C00302_ProcedureCode
+L388: Claim/Services/Service/acsrvDescription -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2400_Loop1/SV3_DentalService_2/C003_CompositeMedicalProcedureIdentifier_3/C00307_ProcedureCodeDescription
+L393: Claim/Services/Service/acsrvAreaOfOralCavity -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2400_Loop1/SV3_DentalService_2/C006_OralCavityDesignation_2/C00601_OralCavityDesignationCode
+L394: Claim/Services/Service/acsrvQuantity -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2400_Loop1/SV3_DentalService_2/SV306_ProcedureCount
+L395: Claim/Services/Service/acsrvDiagnosisPointer -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2400_Loop1/SV3_DentalService_2/C004_CompositeDiagnosisCodePointer_2/C00401_DiagnosisCodePointer
+L397: Claim/Services/Service/acsrvToothSystem -> F222
+L398: F222 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2400_Loop1/TOO_ToothInformation_2
+L399: F223 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2400_Loop1/TOO_ToothInformation_2/TOO01_CodeListQualifierCode
+L401: Claim/Services/Service/acsrvToothSurface -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2400_Loop1/TOO_ToothInformation_2/C005_ToothSurface_2/C00501_ToothSurfaceCode
+L402: Claim/Services/Service/acsrvProcedureDate -> F224
+L403: F224 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2400_Loop1/DTP_SubLoop_4/DTP_Date_ServiceDate_4
+L404: F225 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2400_Loop1/DTP_SubLoop_4/DTP_Date_ServiceDate_4/DTP01_DateTimeQualifier
+L405: F226 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2400_Loop1/DTP_SubLoop_4/DTP_Date_ServiceDate_4/DTP02_DateTimePeriodFormatQualifier
+L406: Claim/Services/Service/acsrvProcedureDate -> F227
+L407: F227 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2400_Loop1/DTP_SubLoop_4/DTP_Date_ServiceDate_4/DTP03_ServiceDate
+L420: F232 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2400_Loop1/SV3_DentalService_2/C003_CompositeMedicalProcedureIdentifier_3/C00302_ProcedureCode
+L421: Claim/adaclaimTotal -> F233
+L422: F233 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2400_Loop1/SV3_DentalService_2/SV302_LineItemChargeAmount
+L429: F239 -> F240
+L432: F240 -> F232
+L433: F240 -> F233
+L381: Claim/Services/Service -> F218
+L428: Claim/Services/Service -> F239
+L400: Claim/Services/Service/acsrvToothNumbers -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2400_Loop1/TOO_ToothInformation_2/TOO02_ToothCode
+L938: Claim/Services/Service/acsrvFee -> F435
+L939: F435 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2400_Loop1/SV3_DentalService_2/SV302_LineItemChargeAmount
+L943: F438 -> F439
+L944: Claim/Services/Service/acsrvProcedureCode -> F438
+L945: F439 -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2400_Loop1
+L946: Claim/Services/Service/acsrvNumber -> X12_00501_837_D/TS837_2000A_Loop/TS837_2000B_Loop/TS837_2000C_Loop/TS837_2300_Loop1/TS837_2400_Loop1/LX_ServiceLineCounter_2/LX01_AssignedNumber
+--- FUNCTOIDS ---
+F218 [Looping] inputs: L381
+F220 [String Concatenate] inputs: const:'AD'
+F222 [FID 317] inputs: L397
+F223 [String Concatenate] inputs: const:'JP'
+F224 [FID 317] inputs: L402
+F225 [String Concatenate] inputs: const:'472'
+F226 [String Concatenate] inputs: const:'D8'
+F227 [Scripting] inputs: L406
+    script ExternalAssembly: Cloud9.BizTalk.Helper.DateFormatConversion.ConvertSQLDateToEDIDate [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F232 [Value Mapping] inputs: L432, const:'D1999'
+F233 [Value Mapping] inputs: L433, L421
+F239 [FID 701 (unknown: Nil Value or Logical Existence)] inputs: L428
+F240 [Logical NOT (inferred)] inputs: L429
+F435 [Scripting] inputs: L938
+    script ExternalAssembly: Cloud9.BizTalk.Helper.EDIClaimHelper.FormatDouble [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+    script language: CSharp
+    | ///*Uncomment the following code for a sample Inline C# function
+    | //that concatenates two inputs. Change the number of parameters of
+    | //this function to be equal to the number of inputs connected to this functoid.*/
+    | 
+    | public string FormatDouble2(string param1)
+    | {
+    |     double val = System.Convert.ToDouble(param1);
+    | 
+    |     return val.ToString("0.00");
+    | }
+F438 [String Size (inferred)] inputs: L944
+F439 [Greater Than (inferred)] inputs: L943, const:'0'
+

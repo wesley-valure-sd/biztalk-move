@@ -1,0 +1,41 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonGetMailFileListRequest",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonGetMailFileListRequest",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/CHC_Emdeon/EmdeonGetMailFileListRequest.xsd",
+    "rootElements": [
+      "claim_submission_api"
+    ],
+    "kind": "canonical-or-other",
+    "targetNamespace": "http://Cloud9.BizTalk.Schemas.Emdeon.EmdeonGetAllMailFilesRequest",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/CHC_Emdeon/EmdeonGetMailFileListRequest.xsd",
+      "toName": "EmdeonGetMailFileListRequest.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_CHC_Emdeon_EmdeonGetMailFileListRequest.xsd.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.X12.CHC_PracticeEDISettings_To_GetMailFileListReq",
+      "fromName": "Cloud9.BizTalk.X12.CHC_PracticeEDISettings_To_GetMailFileListReq",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.CHC_PracticeEDISettings_To_GetMailFileListReq.json",
+      "root": "claim_submission_api"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.MPType_GetMailFileListReq",
+      "fromName": "MPType_GetMailFileListReq",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.MPType_GetMailFileListReq.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonGetMailFileListRequest"
+    }
+  ]
+}

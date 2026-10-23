@@ -1,0 +1,26 @@
+{
+  "node": {
+    "id": "sqltable:PracticeDB.dbo.PersonPerson",
+    "type": "sqltable",
+    "name": "dbo.PersonPerson",
+    "database": "PracticeDB (one database per practice; not in this repo)",
+    "definedInRepo": false
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "queries",
+      "from": "sqlscript:Cloud9.BizTalk.Scripts/835BBVAPatientPaymentLockbox/GetInfoToReplaceOn835File.sql",
+      "fromName": "GetInfoToReplaceOn835File.sql",
+      "fromType": "sqlscript",
+      "fromFile": "adjacency/sqlscript/Cloud9.BizTalk.Scripts_835BBVAPatientPaymentLockbox_GetInfoToReplaceOn835File.sql.json"
+    },
+    {
+      "type": "queries",
+      "from": "sqlscript:Cloud9.BizTalk.Scripts/835SDWebPatientPayment/GetInfoToReplaceOn835File.sql",
+      "fromName": "GetInfoToReplaceOn835File.sql",
+      "fromType": "sqlscript",
+      "fromFile": "adjacency/sqlscript/Cloud9.BizTalk.Scripts_835SDWebPatientPayment_GetInfoToReplaceOn835File.sql.json"
+    }
+  ]
+}

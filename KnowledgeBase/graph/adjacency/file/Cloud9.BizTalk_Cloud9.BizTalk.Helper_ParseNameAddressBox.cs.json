@@ -1,0 +1,41 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/ParseNameAddressBox.cs",
+    "type": "file",
+    "name": "ParseNameAddressBox.cs",
+    "kind": "csharp",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/ParseNameAddressBox.cs"
+  },
+  "outgoing": [
+    {
+      "type": "defines",
+      "to": "class:Cloud9.BizTalk.Helper.ParseNameAddressBox",
+      "toName": "Cloud9.BizTalk.Helper.ParseNameAddressBox",
+      "toType": "class",
+      "toFile": "adjacency/class/Cloud9.BizTalk.Helper.ParseNameAddressBox.json"
+    },
+    {
+      "type": "defines",
+      "to": "class:Cloud9.BizTalk.Helper.PatientNameType",
+      "toName": "Cloud9.BizTalk.Helper.PatientNameType",
+      "toType": "class",
+      "toFile": "adjacency/class/Cloud9.BizTalk.Helper.PatientNameType.json"
+    },
+    {
+      "type": "defines",
+      "to": "class:Cloud9.BizTalk.Helper.AddressInfoType",
+      "toName": "Cloud9.BizTalk.Helper.AddressInfoType",
+      "toType": "class",
+      "toFile": "adjacency/class/Cloud9.BizTalk.Helper.AddressInfoType.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.Helper",
+      "fromName": "Cloud9.BizTalk.Helper",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.Helper.json"
+    }
+  ]
+}

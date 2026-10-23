@@ -1,0 +1,44 @@
+{
+  "node": {
+    "id": "businessrule:NoFileLevelTransaction",
+    "type": "businessrule",
+    "name": "No transaction across a file",
+    "curated": true,
+    "logic": "Each payment is a separate proc call with useAmbientTransaction=false and EnableTransaction=false. A failure in payment n does not roll back payments 1..n-1. BizTalk retry is disabled (RetryCount=0). Duplicate protection, if any, is inside the practice DB procs (not in this repo)."
+  },
+  "outgoing": [
+    {
+      "type": "appliesTo",
+      "to": "flow:BBVA-835-Patient-Lockbox",
+      "toName": "BBVA patient lockbox 835 -> patient payment transactions",
+      "toType": "flow",
+      "toFile": "adjacency/flow/BBVA-835-Patient-Lockbox.json",
+      "curated": true
+    },
+    {
+      "type": "appliesTo",
+      "to": "flow:SD-835-Web-Patient-Payment",
+      "toName": "Smile Doctors web payment 835 -> patient payment transactions (card / ACH / ACH return)",
+      "toType": "flow",
+      "toFile": "adjacency/flow/SD-835-Web-Patient-Payment.json",
+      "curated": true
+    },
+    {
+      "type": "appliesTo",
+      "to": "flow:BBVA-835-Insurance-Lockbox",
+      "toName": "BBVA insurance lockbox 835 -> insurance payment and PLB adjustment transactions",
+      "toType": "flow",
+      "toFile": "adjacency/flow/BBVA-835-Insurance-Lockbox.json",
+      "curated": true
+    },
+    {
+      "type": "appliesTo",
+      "to": "flow:CHC-835-Insurance-ERA",
+      "toName": "Change Healthcare ERA 835 -> insurance payment transactions or reversal to-do items",
+      "toType": "flow",
+      "toFile": "adjacency/flow/CHC-835-Insurance-ERA.json",
+      "curated": true
+    }
+  ],
+  "incoming": []
+}

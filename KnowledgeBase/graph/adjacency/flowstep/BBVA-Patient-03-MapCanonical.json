@@ -1,0 +1,31 @@
+{
+  "node": {
+    "id": "flowstep:BBVA-Patient-03-MapCanonical",
+    "type": "flowstep",
+    "name": "Map 835 to ClaimPaymentBatch (one ClaimPayment for each CLP loop)",
+    "order": 3,
+    "curated": true,
+    "logic": "See map summary. Key rules: patGUID source is NM1*QC NM109. ppGUID source is NM1*IL NM109. PaymentIdentifier = REF02 where REF01='F8'. TransactionNote = 'Deposit Date: <DTM02>, Check Date: <BPR16>, Lockbox: <REF*LB with check date and trailing underscore removed>'. Posted dates use the current date and time."
+  },
+  "outgoing": [
+    {
+      "type": "implementedBy",
+      "to": "map:Cloud9.BizTalk.X12.Maps.BBVA_835Patient_To_ClaimPaymentBatchCanonical",
+      "toName": "Cloud9.BizTalk.X12.Maps.BBVA_835Patient_To_ClaimPaymentBatchCanonical",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.BBVA_835Patient_To_ClaimPaymentBatchCanonical.json",
+      "curated": true
+    }
+  ],
+  "incoming": [
+    {
+      "type": "hasStep",
+      "from": "flow:BBVA-835-Patient-Lockbox",
+      "fromName": "BBVA patient lockbox 835 -> patient payment transactions",
+      "fromType": "flow",
+      "fromFile": "adjacency/flow/BBVA-835-Patient-Lockbox.json",
+      "order": 3,
+      "curated": true
+    }
+  ]
+}

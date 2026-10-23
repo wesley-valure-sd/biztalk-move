@@ -1,0 +1,51 @@
+{
+  "node": {
+    "id": "project:Cloud9.BizTalk.HelperTest",
+    "type": "project",
+    "name": "Cloud9.BizTalk.HelperTest",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.HelperTest/Cloud9.BizTalk.HelperTest.csproj",
+    "framework": "v4.6",
+    "kind": "csharp",
+    "rootNamespace": "Cloud9.BizTalk.HelperTest",
+    "assemblyName": "Cloud9.BizTalk.HelperTest"
+  },
+  "outgoing": [
+    {
+      "type": "references",
+      "to": "project:Cloud9.BizTalk.Helper",
+      "toName": "Cloud9.BizTalk.Helper",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.Helper.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.HelperTest/OutboundAPITest.cs",
+      "toName": "OutboundAPITest.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.HelperTest_OutboundAPITest.cs.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.HelperTest/ValidationTest.cs",
+      "toName": "ValidationTest.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.HelperTest_ValidationTest.cs.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "solution:Cloud9.EDI.PDS",
+      "fromName": "Cloud9.EDI.PDS",
+      "fromType": "solution",
+      "fromFile": "adjacency/solution/Cloud9.EDI.PDS.json"
+    },
+    {
+      "type": "contains",
+      "from": "solution:Cloud9.EDI",
+      "fromName": "Cloud9.EDI",
+      "fromType": "solution",
+      "fromFile": "adjacency/solution/Cloud9.EDI.json"
+    }
+  ]
+}

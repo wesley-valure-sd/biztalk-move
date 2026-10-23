@@ -1,0 +1,80 @@
+MAP: BBVA_835_To_AdjustmentClaimPaymentBatchCanonical.btm
+PATH: Cloud9.BizTalk\Cloud9.BizTalk.X12\Maps\BBVA_835_To_AdjustmentClaimPaymentBatchCanonical.btm
+SOURCE: Cloud9.BizTalk.X12.Schemas.BBVA_X12_00501_835 (root X12_00501_835)
+TARGET: Cloud9.BizTalk.Schemas.Canonical.ClaimPaymentBatch (root ClaimPaymentBatch)
+SCRIPT PRECEDENCE (first match wins when a functoid has more than one script): CSharp > ExternalAssembly > VbNet > JScript > XsltCallTemplate > Xslt
+
+=== PAGE: Links ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L4: X12_00501_835/BPR_FinancialInformation/BPR04_PaymentMethodCode -> ClaimPaymentBatch/ClaimPayment/PaymentMethodCode
+L5: X12_00501_835/BPR_FinancialInformation/BPR07_SenderDFIIdentifier -> ClaimPaymentBatch/ClaimPayment/SenderDFIIdentifier
+L8: X12_00501_835/TS835_2000_Loop/TS835_2100_Loop/CLP_ClaimPaymentInformation/CLP01_PatientControlNumber -> ClaimPaymentBatch/ClaimPayment/PatientControlNumber
+L9: X12_00501_835/TS835_2000_Loop/TS835_2100_Loop/NM1_SubLoop/NM1_PatientName/NM109_PatientIdentifier -> ClaimPaymentBatch/ClaimPayment/PatientIdentifier
+L11: X12_00501_835/TS835_2000_Loop/TS835_2100_Loop/CLP_ClaimPaymentInformation/CLP07_PayerClaimControlNumber -> ClaimPaymentBatch/ClaimPayment/PayerClaimControlNumber
+L12: X12_00501_835/DTM_ProductionDate/DTM02_ProductionDate -> ClaimPaymentBatch/ClaimPayment/PaymentDepositDate
+L15: X12_00501_835/TRN_ReassociationTraceNumber/TRN02_CheckorEFTTraceNumber -> ClaimPaymentBatch/ClaimPayment/CheckorEFTTraceNumber
+L10: X12_00501_835/TS835_2000_Loop/TS835_2100_Loop/NM1_SubLoop/NM1_ServiceProviderName/NM109_RenderingProviderIdentifier -> ClaimPaymentBatch/ClaimPayment/ProviderIdentifier
+L18: X12_00501_835/TS835_2000_Loop/TS835_2100_Loop/NM1_SubLoop/NM1_ServiceProviderName/NM103_RenderingProviderLastorOrganizationName -> ClaimPaymentBatch/ClaimPayment/ProviderLastName
+L19: X12_00501_835/TS835_2000_Loop/TS835_2100_Loop/NM1_SubLoop/NM1_ServiceProviderName/NM104_RenderingProviderFirstName -> ClaimPaymentBatch/ClaimPayment/ProviderFirstName
+L30: X12_00501_835/BPR_FinancialInformation/BPR16_CheckIssueorEFTEffectiveDate -> ClaimPaymentBatch/ClaimPayment/CheckDate
+L35: X12_00501_835/REF_SubLoop/REF_LockboxIdentification/REF02_ReceiverIdentifier -> ClaimPaymentBatch/ClaimPayment/LockboxNumber
+L44: X12_00501_835/TS835_2000_Loop/TS835_2100_Loop/REF_SubLoop_2/REF_InsurancePolicyIdentification/REF02_InsurancePolicyIdentifier -> ClaimPaymentBatch/ClaimPayment/pipGUID
+L45: X12_00501_835/TS835_2000_Loop/TS835_2100_Loop/REF_SubLoop_2/REF_PatientIdentification/REF02_PatientIdentifier -> ClaimPaymentBatch/ClaimPayment/patGUID
+L51: X12_00501_835/TRN_ReassociationTraceNumber/TRN04_OriginatingCompanySupplementalCode -> ClaimPaymentBatch/ClaimPayment/ClaimIdentifier
+L71: X12_00501_835/PLB_ProviderAdjustment/C042_AdjustmentIdentifier/C04201_AdjustmentReasonCode -> ClaimPaymentBatch/ClaimPayment/AdjustmentType
+--- FUNCTOIDS ---
+
+=== PAGE: Functoids ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L2: F1 -> ClaimPaymentBatch/ClaimPayment
+L21: F4 -> ClaimPaymentBatch/ClaimPayment/CheckIssueorEFTEffectiveDate
+L22: F4 -> ClaimPaymentBatch/ClaimPayment/PaymentPostedDate
+L33: X12_00501_835/BPR_FinancialInformation/BPR16_CheckIssueorEFTEffectiveDate -> F10
+L32: X12_00501_835/DTM_ProductionDate/DTM02_ProductionDate -> F10
+L34: X12_00501_835/TS835_2000_Loop/TS835_2100_Loop/CLP_ClaimPaymentInformation/CLP01_PatientControlNumber -> F10
+L40: F10 -> ClaimPaymentBatch/ClaimPayment/TransactionNote
+L39: F11 -> F10
+L42: X12_00501_835/REF_SubLoop/REF_LockboxIdentification/REF02_ReceiverIdentifier -> F11
+L43: X12_00501_835/DTM_ProductionDate/DTM02_ProductionDate -> F11
+L47: X12_00501_835/TS835_2000_Loop/TS835_2100_Loop/REF_SubLoop_2/REF_OtherClaimRelatedIdentification/REF01_ReferenceIdentificationQualifier -> F13
+L48: X12_00501_835/TS835_2000_Loop/TS835_2100_Loop/REF_SubLoop_2/REF_OtherClaimRelatedIdentification/REF02_OtherClaimRelatedIdentifier -> F12
+L49: F13 -> F12
+L50: F12 -> ClaimPaymentBatch/ClaimPayment/PaymentIdentifier
+L52: X12_00501_835/TS835_2000_Loop/TS835_2100_Loop/REF_SubLoop_2/REF_OtherClaimRelatedIdentification -> F14
+L53: F14 -> ClaimPaymentBatch/ClaimPayment/PaymentIdentifier
+L54: F13 -> ClaimPaymentBatch/ClaimPayment/PaymentIdentifier
+L58: X12_00501_835/TS835_2000_Loop/TS835_2100_Loop/REF_SubLoop_2/REF_PatientIdentification -> F17
+L59: F17 -> ClaimPaymentBatch/ClaimPayment/patGUID
+L60: X12_00501_835/TS835_2000_Loop/TS835_2100_Loop/REF_SubLoop_2/REF_InsurancePolicyIdentification -> F18
+L61: F18 -> ClaimPaymentBatch/ClaimPayment/pipGUID
+L62: X12_00501_835/PLB_ProviderAdjustment -> F1
+L63: X12_00501_835/PLB_ProviderAdjustment/C042_AdjustmentIdentifier/C04201_AdjustmentReasonCode -> F10
+L65: X12_00501_835/TRN_ReassociationTraceNumber/TRN02_CheckorEFTTraceNumber -> F19
+L66: F19 -> ClaimPaymentBatch/ClaimPayment/ReferenceIdentifier
+L67: X12_00501_835/PLB_ProviderAdjustment -> F21
+L68: F21 -> F19
+L69: X12_00501_835/PLB_ProviderAdjustment/PLB04_ProviderAdjustmentAmount -> F22
+L70: F22 -> ClaimPaymentBatch/ClaimPayment/TotalActualProviderPaymentAmount
+--- FUNCTOIDS ---
+F1 [Looping] inputs: L62
+F4 [Date and Time, current (inferred)] inputs: 
+F10 [String Concatenate] inputs: const:'Deposit Date: ', L32, const:', Check Date: ', L33, const:', Claim Number: ', L34, const:', Lockbox: ', L39, const:', Adj Reason: ', L63
+F11 [Scripting] inputs: L42, L43
+    script language: CSharp
+    | public string GetLockboxNumber(string lockboxCode, string checkDate)
+    | {
+    | 	if(lockboxCode.Contains(checkDate))
+    | 		lockboxCode = lockboxCode.Replace(checkDate, System.String.Empty);
+    | 	if(lockboxCode.EndsWith("_"))
+    | 		lockboxCode = lockboxCode.Substring(0, lockboxCode.Length - 1);
+    | 	return lockboxCode;
+    | }
+F12 [Value Mapping] inputs: L49, L48
+F13 [Equal (inferred)] inputs: L47, const:'F8'
+F14 [Looping] inputs: L52
+F17 [FID 701 (unknown: Nil Value or Logical Existence)] inputs: L58
+F18 [FID 701 (unknown: Nil Value or Logical Existence)] inputs: L60
+F19 [String Concatenate] inputs: const:'ADJ', L68, const:'-', L65
+F21 [Iteration (inferred)] inputs: L67
+F22 [Multiplication (inferred)] inputs: L69, const:'-1'
+

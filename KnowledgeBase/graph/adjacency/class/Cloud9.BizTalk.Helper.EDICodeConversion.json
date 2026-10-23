@@ -1,0 +1,29 @@
+{
+  "node": {
+    "id": "class:Cloud9.BizTalk.Helper.EDICodeConversion",
+    "type": "class",
+    "name": "Cloud9.BizTalk.Helper.EDICodeConversion",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/EDICodeConversion.cs",
+    "visibility": "public",
+    "kind": "class",
+    "line": 9
+  },
+  "outgoing": [
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.EDICodeConversion.ConvertGenderCodeFromC9ToEDI",
+      "toName": "EDICodeConversion.ConvertGenderCodeFromC9ToEDI",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.EDICodeConversion.ConvertGenderCodeFromC9ToEDI.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/EDICodeConversion.cs",
+      "fromName": "EDICodeConversion.cs",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Helper_EDICodeConversion.cs.json"
+    }
+  ]
+}

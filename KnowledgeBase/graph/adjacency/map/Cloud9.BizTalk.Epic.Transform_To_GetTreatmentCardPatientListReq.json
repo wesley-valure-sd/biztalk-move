@@ -1,0 +1,42 @@
+{
+  "node": {
+    "id": "map:Cloud9.BizTalk.Epic.Transform_To_GetTreatmentCardPatientListReq",
+    "type": "map",
+    "name": "Cloud9.BizTalk.Epic.Transform_To_GetTreatmentCardPatientListReq",
+    "readableSummary": "KnowledgeBase/map-summaries/Transform_To_GetTreatmentCardPatientListReq.txt",
+    "targetSchema": "Cloud9.BizTalk.Schemas.PTC_TypedProcedure_BTS",
+    "inlineScripts": [],
+    "functoidCount": 0,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/Transform_To_GetTreatmentCardPatientListReq.btm",
+    "sourceSchema": "Cloud9.BizTalk.Schemas.QPP_TypedPolling_QueueProcessParameters",
+    "linkCount": 2,
+    "sourceRoot": "TypedPollingResultSet0",
+    "targetRoot": "GetTreatmentCardPatientList"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/Transform_To_GetTreatmentCardPatientListReq.btm",
+      "toName": "Transform_To_GetTreatmentCardPatientListReq.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Maps_Transform_To_GetTreatmentCardPatientListReq.btm.json"
+    },
+    {
+      "type": "sourceSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.QPP_TypedPolling_QueueProcessParameters",
+      "toName": "Cloud9.BizTalk.Schemas.QPP_TypedPolling_QueueProcessParameters",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.QPP_TypedPolling_QueueProcessParameters.json",
+      "root": "TypedPollingResultSet0"
+    },
+    {
+      "type": "targetSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.PTC_TypedProcedure_BTS",
+      "toName": "Cloud9.BizTalk.Schemas.PTC_TypedProcedure_BTS",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.PTC_TypedProcedure_BTS.json",
+      "root": "GetTreatmentCardPatientList"
+    }
+  ],
+  "incoming": []
+}

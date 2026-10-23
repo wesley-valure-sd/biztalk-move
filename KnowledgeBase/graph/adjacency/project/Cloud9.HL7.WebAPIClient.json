@@ -1,0 +1,37 @@
+{
+  "node": {
+    "id": "project:Cloud9.HL7.WebAPIClient",
+    "type": "project",
+    "name": "Cloud9.HL7.WebAPIClient",
+    "path": "Cloud9.HL7.WebAPI/Cloud9.HL7.WebAPIClient/Cloud9.HL7.WebAPIClient.csproj",
+    "framework": "v4.5.1",
+    "kind": "csharp",
+    "rootNamespace": "Cloud9.HL7.WebAPIClient",
+    "assemblyName": "Cloud9.HL7.WebAPIClient"
+  },
+  "outgoing": [
+    {
+      "type": "contains",
+      "to": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.WebAPIClient/Program.cs",
+      "toName": "Program.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.HL7.WebAPI_Cloud9.HL7.WebAPIClient_Program.cs.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.WebAPIClient/Request.cs",
+      "toName": "Request.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.HL7.WebAPI_Cloud9.HL7.WebAPIClient_Request.cs.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "solution:Cloud9.HL7.WebAPI",
+      "fromName": "Cloud9.HL7.WebAPI",
+      "fromType": "solution",
+      "fromFile": "adjacency/solution/Cloud9.HL7.WebAPI.json"
+    }
+  ]
+}

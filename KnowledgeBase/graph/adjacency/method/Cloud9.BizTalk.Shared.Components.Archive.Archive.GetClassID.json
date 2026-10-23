@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.Shared.Components.Archive.Archive.GetClassID",
+    "type": "method",
+    "name": "Archive.GetClassID",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Shared.Components.Archive/Archive.cs",
+    "class": "Cloud9.BizTalk.Shared.Components.Archive.Archive",
+    "line": 137,
+    "signatures": [
+      "public void GetClassID(out System.Guid classid)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.Shared.Components.Archive.Archive",
+      "fromName": "Cloud9.BizTalk.Shared.Components.Archive.Archive",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.Shared.Components.Archive.Archive.json"
+    }
+  ]
+}

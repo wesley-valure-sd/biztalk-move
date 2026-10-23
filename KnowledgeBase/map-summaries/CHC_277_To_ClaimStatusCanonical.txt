@@ -1,0 +1,41 @@
+MAP: CHC_277_To_ClaimStatusCanonical.btm
+PATH: Cloud9.BizTalk\Cloud9.BizTalk.X12\Maps\CHC_277_To_ClaimStatusCanonical.btm
+SOURCE: Cloud9.BizTalk.X12.Schemas.CHC_X12_00501_277 (root X12_00501_277)
+TARGET: Cloud9.BizTalk.Schemas.Canonical.ClaimStatus (root ClaimStatus)
+SCRIPT PRECEDENCE (first match wins when a functoid has more than one script): CSharp > ExternalAssembly > VbNet > JScript > XsltCallTemplate > Xslt
+
+=== PAGE: Page 1 ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L10: F2 -> ClaimStatus/Patient/Claim
+L12: F4 -> ClaimStatus/Patient/Claim/ClaimControlNumber
+L14: X12_00501_277/BHT/BHT03 -> F4
+L15: X12_00501_277/HLLoop1/TRNLoop1/STC -> F2
+L16: X12_00501_277/HLLoop1/TRNLoop1/STC/C043/C04302 -> ClaimStatus/Patient/Claim/StatusCode
+--- FUNCTOIDS ---
+F2 [Looping] inputs: L15
+F4 [Scripting] inputs: L14
+    script language: CSharp
+    | public string ParseClaimNumber(string C9PatientControlNumber)
+    | {
+    |    // PMS ID 1 - 2 = C9
+    |    // Database #: 3-12 ("Emdeon" Username)
+    |    // Claim #: 13-20
+    |    string strClaimNumber = "";
+    | 
+    |    try
+    |    {
+    |       strClaimNumber = C9PatientControlNumber.Substring(12);
+    |       int claimNbr = Convert.ToInt32(strClaimNumber);
+    |       strClaimNumber = Convert.ToString(claimNbr);
+    | 
+    |    }
+    | 
+    |    catch (System.Exception)
+    |    {
+    |       throw (new System.Exception(System.String.Format("ParseClaimNumber: Parsing Claim Number: {0}",
+    |                                             C9PatientControlNumber)));
+    |    }
+    | 
+    |    return strClaimNumber;
+    | }
+

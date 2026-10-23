@@ -1,0 +1,69 @@
+{
+  "node": {
+    "id": "sqlproc:BizTalkCloud9Common.BTS.UpdateProcessParameters",
+    "type": "sqlproc",
+    "name": "BTS.UpdateProcessParameters",
+    "database": "BizTalkCloud9Common",
+    "definedInRepo": true,
+    "parameters": [
+      "@processName VARCHAR(25)",
+      "@lastProcessed DATETIME",
+      "@ppID BIGINT",
+      "@ppStatus SMALLINT",
+      "@ppGUID UNIQUEIDENTIFIER"
+    ],
+    "path": "Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored Procedures/UpdateProcessParameters.sql"
+  },
+  "outgoing": [
+    {
+      "type": "writes",
+      "to": "sqltable:BizTalkCloud9Common.BTS.ProcessParameter",
+      "toName": "BTS.ProcessParameter",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/BizTalkCloud9Common.BTS.ProcessParameter.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored Procedures/UpdateProcessParameters.sql",
+      "fromName": "UpdateProcessParameters.sql",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Stored_Procedures_UpdateProcessParameters.sql.json"
+    },
+    {
+      "type": "describesParametersOf",
+      "from": "schema:Cloud9.BizTalk.Schemas.UPP_TypedProcedure_BTS",
+      "fromName": "Cloud9.BizTalk.Schemas.UPP_TypedProcedure_BTS",
+      "fromType": "schema",
+      "fromFile": "adjacency/schema/Cloud9.BizTalk.Schemas.UPP_TypedProcedure_BTS.json"
+    },
+    {
+      "type": "invokesProc",
+      "from": "orchestration:Cloud9.BizTalk.Epic.ProcessTreatmentCardData_Controller",
+      "fromName": "ProcessTreatmentCardData_Controller",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.ProcessTreatmentCardData_Controller.json",
+      "line": 623,
+      "via": "static send port operation UpdateProcessParameters (BtsActionMapping)"
+    },
+    {
+      "type": "invokesProc",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_837Claims_Controller",
+      "fromName": "Process_CHC_837Claims_Controller",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_837Claims_Controller.json",
+      "line": 522,
+      "via": "static send port operation UpdateProcessParameters (BtsActionMapping)"
+    },
+    {
+      "type": "invokesProc",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Controller",
+      "fromName": "Process_CHC_InboundFiles_Controller",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Controller.json",
+      "line": 462,
+      "via": "static send port operation UpdateProcessParameters (BtsActionMapping)"
+    }
+  ]
+}

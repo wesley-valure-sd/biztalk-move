@@ -1,0 +1,63 @@
+{
+  "node": {
+    "id": "map:Cloud9.BizTalk.X12.Maps.InsuranceInformationCanonical_To_UpdatePatientInsurancePolicyByPipGUID",
+    "type": "map",
+    "name": "Cloud9.BizTalk.X12.Maps.InsuranceInformationCanonical_To_UpdatePatientInsurancePolicyByPipGUID",
+    "readableSummary": "KnowledgeBase/map-summaries/InsuranceInformationCanonical_To_UpdatePatientInsurancePolicyByPipGUID.txt",
+    "targetSchema": "Cloud9.BizTalk.Schemas.UPIP_TypedProcedure_BTS",
+    "inlineScripts": [],
+    "functoidCount": 160,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/InsuranceInformationCanonical_To_UpdatePatientInsurancePolicyByPipGUID.btm",
+    "sourceSchema": "Cloud9.BizTalk.Schemas.Canonical.InsuranceInformation",
+    "linkCount": 257,
+    "sourceRoot": "InsuranceInformation",
+    "targetRoot": "UpdatePatientInsurancePolicyByPipGUID"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/InsuranceInformationCanonical_To_UpdatePatientInsurancePolicyByPipGUID.btm",
+      "toName": "InsuranceInformationCanonical_To_UpdatePatientInsurancePolicyByPipGUID.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_InsuranceInformationCanonical_To_UpdatePatientInsurancePolicyByPipGUID.btm.json"
+    },
+    {
+      "type": "sourceSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.Canonical.InsuranceInformation",
+      "toName": "Cloud9.BizTalk.Schemas.Canonical.InsuranceInformation",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.Canonical.InsuranceInformation.json",
+      "root": "InsuranceInformation"
+    },
+    {
+      "type": "targetSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.UPIP_TypedProcedure_BTS",
+      "toName": "Cloud9.BizTalk.Schemas.UPIP_TypedProcedure_BTS",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.UPIP_TypedProcedure_BTS.json",
+      "root": "UpdatePatientInsurancePolicyByPipGUID"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "usesMap",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_ChannelHealth_271Eligibility",
+      "fromName": "Process_ChannelHealth_271Eligibility",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_ChannelHealth_271Eligibility.json",
+      "output": "UpdatePatientInsurancePolicyByPipGUID.Body",
+      "input": "InsuranceInformationCanonical.Body",
+      "line": 637
+    },
+    {
+      "type": "usesMap",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_271Eligibility",
+      "fromName": "Process_CHC_271Eligibility",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_271Eligibility.json",
+      "output": "UpdatePatientInsurancePolicyByPipGUID.Body",
+      "input": "InsuranceInformationCanonical.Body",
+      "line": 1145
+    }
+  ]
+}

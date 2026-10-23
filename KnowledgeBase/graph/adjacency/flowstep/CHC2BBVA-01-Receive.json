@@ -1,0 +1,22 @@
+{
+  "node": {
+    "id": "flowstep:CHC2BBVA-01-Receive",
+    "type": "flowstep",
+    "name": "Receive CHC 835 from CHC835ToBBVA folder",
+    "order": 1,
+    "curated": true,
+    "logic": "${CH_835_TO_BBVA_FILE_FOLDER}\\*.*, ReceiveEDIPipeline."
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasStep",
+      "from": "flow:CHC-835-To-BBVA-Passthrough",
+      "fromName": "Change Healthcare 835 pass-through to the BBVA/SD SFTP (no posting)",
+      "fromType": "flow",
+      "fromFile": "adjacency/flow/CHC-835-To-BBVA-Passthrough.json",
+      "order": 1,
+      "curated": true
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:array="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:ns3="http://schemas.microsoft.com/Sql/2008/05/Types/Tables/BTS" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/Sql/2008/05/TableOp/BTS/SubmittedClaim" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation=".\SC_Table.BTS.xsd" namespace="http://schemas.microsoft.com/Sql/2008/05/Types/Tables/BTS" />
+  <xs:import schemaLocation=".\SC_SimpleTypeArray.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:annotation>
+    <xs:appinfo>
+      <fileNameHint xmlns="http://schemas.microsoft.com/servicemodel/adapters/metadata/xsd">TableOperation.BTS.SubmittedClaim</fileNameHint>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Delete">
+    <xs:annotation>
+      <xs:documentation>
+        <doc:action xmlns:doc="http://schemas.microsoft.com/servicemodel/adapters/metadata/documentation">TableOp/Delete/BTS/SubmittedClaim</doc:action>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Rows" nillable="true" type="ns3:ArrayOfSubmittedClaim" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteResponse">
+    <xs:annotation>
+      <xs:documentation>
+        <doc:action xmlns:doc="http://schemas.microsoft.com/servicemodel/adapters/metadata/documentation">TableOp/Delete/BTS/SubmittedClaim/response</doc:action>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="DeleteResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Insert">
+    <xs:annotation>
+      <xs:documentation>
+        <doc:action xmlns:doc="http://schemas.microsoft.com/servicemodel/adapters/metadata/documentation">TableOp/Insert/BTS/SubmittedClaim</doc:action>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Rows" nillable="true" type="ns3:ArrayOfSubmittedClaim" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertResponse">
+    <xs:annotation>
+      <xs:documentation>
+        <doc:action xmlns:doc="http://schemas.microsoft.com/servicemodel/adapters/metadata/documentation">TableOp/Insert/BTS/SubmittedClaim/response</doc:action>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="InsertResult" nillable="true" type="array:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="RowPair">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="After" nillable="true" type="ns3:SubmittedClaim" />
+      <xs:element minOccurs="1" maxOccurs="1" name="Before" nillable="true" type="ns3:SubmittedClaim" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RowPair" nillable="true" xmlns:q1="http://schemas.microsoft.com/Sql/2008/05/TableOp/BTS/SubmittedClaim" type="q1:RowPair" />
+  <xs:complexType name="ArrayOfRowPair">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RowPair" xmlns:q2="http://schemas.microsoft.com/Sql/2008/05/TableOp/BTS/SubmittedClaim" type="q2:RowPair" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRowPair" nillable="true" xmlns:q3="http://schemas.microsoft.com/Sql/2008/05/TableOp/BTS/SubmittedClaim" type="q3:ArrayOfRowPair" />
+  <xs:element name="Update">
+    <xs:annotation>
+      <xs:documentation>
+        <doc:action xmlns:doc="http://schemas.microsoft.com/servicemodel/adapters/metadata/documentation">TableOp/Update/BTS/SubmittedClaim</doc:action>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="Rows" nillable="true" xmlns:q4="http://schemas.microsoft.com/Sql/2008/05/TableOp/BTS/SubmittedClaim" type="q4:ArrayOfRowPair" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateResponse">
+    <xs:annotation>
+      <xs:documentation>
+        <doc:action xmlns:doc="http://schemas.microsoft.com/servicemodel/adapters/metadata/documentation">TableOp/Update/BTS/SubmittedClaim/response</doc:action>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="UpdateResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

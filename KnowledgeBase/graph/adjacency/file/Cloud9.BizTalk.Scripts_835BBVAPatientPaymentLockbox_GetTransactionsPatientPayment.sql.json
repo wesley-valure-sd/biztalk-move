@@ -1,0 +1,19 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk.Scripts/835BBVAPatientPaymentLockbox/GetTransactionsPatientPayment.sql",
+    "type": "file",
+    "name": "GetTransactionsPatientPayment.sql",
+    "kind": "sql",
+    "path": "Cloud9.BizTalk.Scripts/835BBVAPatientPaymentLockbox/GetTransactionsPatientPayment.sql"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "definedIn",
+      "from": "sqlscript:Cloud9.BizTalk.Scripts/835BBVAPatientPaymentLockbox/GetTransactionsPatientPayment.sql",
+      "fromName": "GetTransactionsPatientPayment.sql",
+      "fromType": "sqlscript",
+      "fromFile": "adjacency/sqlscript/Cloud9.BizTalk.Scripts_835BBVAPatientPaymentLockbox_GetTransactionsPatientPayment.sql.json"
+    }
+  ]
+}

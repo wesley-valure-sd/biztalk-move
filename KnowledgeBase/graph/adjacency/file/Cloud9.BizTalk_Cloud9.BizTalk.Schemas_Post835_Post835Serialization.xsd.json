@@ -1,0 +1,26 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Post835/Post835Serialization.xsd",
+    "type": "file",
+    "name": "Post835Serialization.xsd",
+    "kind": "xsd",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Post835/Post835Serialization.xsd"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.Schemas",
+      "fromName": "Cloud9.BizTalk.Schemas",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.Schemas.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "schema:Cloud9.BizTalk.Schemas.Post835Serialization",
+      "fromName": "Cloud9.BizTalk.Schemas.Post835Serialization",
+      "fromType": "schema",
+      "fromFile": "adjacency/schema/Cloud9.BizTalk.Schemas.Post835Serialization.json"
+    }
+  ]
+}

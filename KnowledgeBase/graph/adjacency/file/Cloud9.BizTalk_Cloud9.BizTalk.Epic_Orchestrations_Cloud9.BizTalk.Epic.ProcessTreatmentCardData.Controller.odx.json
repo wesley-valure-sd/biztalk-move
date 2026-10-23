@@ -1,0 +1,76 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.ProcessTreatmentCardData.Controller.odx",
+    "type": "file",
+    "name": "Cloud9.BizTalk.Epic.ProcessTreatmentCardData.Controller.odx",
+    "kind": "odx",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.ProcessTreatmentCardData.Controller.odx"
+  },
+  "outgoing": [
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.Epic.MPType_QueueProcessParametersHeader",
+      "toName": "MPType_QueueProcessParametersHeader",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_QueueProcessParametersHeader.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.Epic.MPType_UpdateProcessParametersResp",
+      "toName": "MPType_UpdateProcessParametersResp",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_UpdateProcessParametersResp.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.Epic.MPType_QueueProcessParametersResp",
+      "toName": "MPType_QueueProcessParametersResp",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_QueueProcessParametersResp.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.Epic.MPType_QueueProcessParametersPracticeElement",
+      "toName": "MPType_QueueProcessParametersPracticeElement",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_QueueProcessParametersPracticeElement.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.Epic.MPType_UpdateProcessParametersReq",
+      "toName": "MPType_UpdateProcessParametersReq",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_UpdateProcessParametersReq.json"
+    },
+    {
+      "type": "defines",
+      "to": "porttype:Cloud9.BizTalk.Epic.PortType_Receive_QueueProcessParametersResp",
+      "toName": "PortType_Receive_QueueProcessParametersResp",
+      "toType": "porttype",
+      "toFile": "adjacency/porttype/Cloud9.BizTalk.Epic.PortType_Receive_QueueProcessParametersResp.json"
+    },
+    {
+      "type": "defines",
+      "to": "porttype:Cloud9.BizTalk.Epic.PortType__SendUpdateProcessParameters",
+      "toName": "PortType__SendUpdateProcessParameters",
+      "toType": "porttype",
+      "toFile": "adjacency/porttype/Cloud9.BizTalk.Epic.PortType__SendUpdateProcessParameters.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.Epic",
+      "fromName": "Cloud9.BizTalk.Epic",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.Epic.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "orchestration:Cloud9.BizTalk.Epic.ProcessTreatmentCardData_Controller",
+      "fromName": "ProcessTreatmentCardData_Controller",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.ProcessTreatmentCardData_Controller.json"
+    }
+  ]
+}

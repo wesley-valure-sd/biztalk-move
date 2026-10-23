@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.HL7.BLL.Managers.LocationManager.LocationExists",
+    "type": "method",
+    "name": "LocationManager.LocationExists",
+    "path": "Cloud9.HL7.WebAPI/Cloud9.HL7.BLL/Managers/LocationManager.cs",
+    "class": "Cloud9.HL7.BLL.Managers.LocationManager",
+    "line": 13,
+    "signatures": [
+      "public static bool LocationExists(string locationName)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.HL7.BLL.Managers.LocationManager",
+      "fromName": "Cloud9.HL7.BLL.Managers.LocationManager",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.HL7.BLL.Managers.LocationManager.json"
+    }
+  ]
+}

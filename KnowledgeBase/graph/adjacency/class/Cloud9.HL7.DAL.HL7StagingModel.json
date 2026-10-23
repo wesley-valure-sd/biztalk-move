@@ -1,0 +1,29 @@
+{
+  "node": {
+    "id": "class:Cloud9.HL7.DAL.HL7StagingModel",
+    "type": "class",
+    "name": "Cloud9.HL7.DAL.HL7StagingModel",
+    "path": "Cloud9.HL7.WebAPI/Cloud9.HL7.DAL/HL7StagingModel.cs",
+    "visibility": "public",
+    "kind": "class",
+    "line": 8
+  },
+  "outgoing": [
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.HL7.DAL.HL7StagingModel.OnModelCreating",
+      "toName": "HL7StagingModel.OnModelCreating",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.HL7.DAL.HL7StagingModel.OnModelCreating.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.DAL/HL7StagingModel.cs",
+      "fromName": "HL7StagingModel.cs",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.HL7.WebAPI_Cloud9.HL7.DAL_HL7StagingModel.cs.json"
+    }
+  ]
+}

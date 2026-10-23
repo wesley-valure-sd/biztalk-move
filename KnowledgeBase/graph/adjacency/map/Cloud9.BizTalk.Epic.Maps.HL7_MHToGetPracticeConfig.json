@@ -1,0 +1,42 @@
+{
+  "node": {
+    "id": "map:Cloud9.BizTalk.Epic.Maps.HL7_MHToGetPracticeConfig",
+    "type": "map",
+    "name": "Cloud9.BizTalk.Epic.Maps.HL7_MHToGetPracticeConfig",
+    "readableSummary": "KnowledgeBase/map-summaries/Cloud9.BizTalk.Epic.HL7_MHToGetPracticeConfig.txt",
+    "targetSchema": "Cloud9.BizTalk.Schemas.GPC_TypedProcedure_BTS",
+    "inlineScripts": [],
+    "functoidCount": 0,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/Cloud9.BizTalk.Epic.HL7_MHToGetPracticeConfig.btm",
+    "sourceSchema": "BTAHL7Schemas.MSH_25_GLO_DEF",
+    "linkCount": 1,
+    "sourceRoot": "MSH_25_GLO_DEF",
+    "targetRoot": "GetPracticeConfiguration"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/Cloud9.BizTalk.Epic.HL7_MHToGetPracticeConfig.btm",
+      "toName": "Cloud9.BizTalk.Epic.HL7_MHToGetPracticeConfig.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Maps_Cloud9.BizTalk.Epic.HL7_MHToGetPracticeConfig.btm.json"
+    },
+    {
+      "type": "sourceSchema",
+      "to": "schema:BTAHL7Schemas.MSH_25_GLO_DEF",
+      "toName": "BTAHL7Schemas.MSH_25_GLO_DEF",
+      "toType": "schema",
+      "toFile": "adjacency/schema/BTAHL7Schemas.MSH_25_GLO_DEF.json",
+      "root": "MSH_25_GLO_DEF"
+    },
+    {
+      "type": "targetSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.GPC_TypedProcedure_BTS",
+      "toName": "Cloud9.BizTalk.Schemas.GPC_TypedProcedure_BTS",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.GPC_TypedProcedure_BTS.json",
+      "root": "GetPracticeConfiguration"
+    }
+  ],
+  "incoming": []
+}

@@ -1,0 +1,149 @@
+{
+  "node": {
+    "id": "sendport:Cloud9.EDI.Deployment/SP_BizTalkCloud9Common_WCF",
+    "type": "sendport",
+    "name": "SP_BizTalkCloud9Common_WCF",
+    "sendPipeline": "Microsoft.BizTalk.DefaultPipelines.XMLTransmit",
+    "bindingSet": "Cloud9.EDI.Deployment",
+    "actionMappings": [
+      "GetPracticeConfigurationByName",
+      "GetIncomingMessageInfo",
+      "GetApplicationLookupValue",
+      "GetApplicationLookupValues"
+    ],
+    "isTwoWay": "true",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.Deployment/PortBindingsMaster.xml",
+    "address": "${ADDR_DB_CLOUD9COMMON}?",
+    "filter": [],
+    "isStatic": "true",
+    "transport": "WCF-Custom"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.EDI.Deployment/PortBindingsMaster.xml",
+      "toName": "PortBindingsMaster.xml",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.EDI.Deployment_PortBindingsMaster.xml.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.EDI.Deployment/ADDR_DB_CLOUD9COMMON",
+      "toName": "ADDR_DB_CLOUD9COMMON",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.EDI.Deployment_ADDR_DB_CLOUD9COMMON.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "boundToSendPort",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_BBVA_835Insurance",
+      "fromName": "Process_BBVA_835Insurance",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_BBVA_835Insurance.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "GetPracticeConfigurationByNamePort"
+    },
+    {
+      "type": "boundToSendPort",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_BBVA_835Patient",
+      "fromName": "Process_BBVA_835Patient",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_BBVA_835Patient.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "GetPracticeConfigurationByNamePort"
+    },
+    {
+      "type": "boundToSendPort",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_SD_835Patient",
+      "fromName": "Process_SD_835Patient",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_SD_835Patient.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "GetPracticeConfigurationByNamePort"
+    },
+    {
+      "type": "boundToSendPort",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_277ClaimsStatus",
+      "fromName": "Process_CHC_277ClaimsStatus",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_277ClaimsStatus.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "GetPracticeConfigurationByNamePort"
+    },
+    {
+      "type": "boundToSendPort",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_277AClaimsStatus",
+      "fromName": "Process_CHC_277AClaimsStatus",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_277AClaimsStatus.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "GetPracticeConfigurationByNamePort"
+    },
+    {
+      "type": "boundToSendPort",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_835Insurance",
+      "fromName": "Process_CHC_835Insurance",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_835Insurance.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "GetPracticeConfigurationByNamePort"
+    },
+    {
+      "type": "boundToSendPort",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_276ClaimStatus",
+      "fromName": "Process_CHC_276ClaimStatus",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_276ClaimStatus.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "Port_GetPracticeConfigurationByName"
+    },
+    {
+      "type": "boundToSendPort",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_ChannelHealth_271Eligibility",
+      "fromName": "Process_ChannelHealth_271Eligibility",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_ChannelHealth_271Eligibility.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "GetPracticeConfigurationByNamePort"
+    },
+    {
+      "type": "boundToSendPort",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_271Eligibility",
+      "fromName": "Process_CHC_271Eligibility",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_271Eligibility.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "GetIncomingMessageInfoPort"
+    },
+    {
+      "type": "boundToSendPort",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_837_To_BBVA",
+      "fromName": "Process_CHC_837_To_BBVA",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_837_To_BBVA.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "GetApplicationLookupValuesPort"
+    },
+    {
+      "type": "boundToSendPort",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_835_To_BBVA",
+      "fromName": "Process_CHC_835_To_BBVA",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_835_To_BBVA.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "GetApplicationLookupValuesPort"
+    }
+  ]
+}

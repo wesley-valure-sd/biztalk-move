@@ -1,0 +1,22 @@
+{
+  "node": {
+    "id": "setting:Cloud9.Common.PDS.Deployment/ADDR_FILE_ROOT",
+    "type": "setting",
+    "name": "ADDR_FILE_ROOT",
+    "path": "Cloud9.BizTalk/Cloud9.Common.PDS.Deployment/SettingsFileGenerator.xml",
+    "bindingSet": "Cloud9.Common.PDS.Deployment",
+    "valuesByEnvironment": {
+      "Default Values": "C:\\BizTalkTest",
+      "Local Dev (LocalSettings)": "C:\\BizTalkTest",
+      "LAB2 (LAB2Settings)": "\\\\10.2.1.1\\Development\\BizTalk",
+      "DEV (DEVSettings)": "\\\\awssgw01p02.pdsi.corp\\pacden-cloud9\\BIZ\\DEV",
+      "CFG (CFGSettings)": "\\\\awssgw01p02.pdsi.corp\\pacden-cloud9\\BIZ\\CFG",
+      "TST (TSTSettings)": "\\\\awssgw01p02.pdsi.corp\\pacden-cloud9\\BIZ\\TST",
+      "TRN (TrainingSettings)": "\\\\awssgw01p02.pdsi.corp\\pacden-cloud9\\BIZ\\TRN",
+      "STG (StagingSettings)": "\\\\awssgw01p02.pdsi.corp\\pacden-cloud9\\BIZ\\STG",
+      "PROD (ProdSettings)": "\\\\awssgw01p02.pdsi.corp\\pacden-cloud9\\BIZ\\PRD"
+    }
+  },
+  "outgoing": [],
+  "incoming": []
+}

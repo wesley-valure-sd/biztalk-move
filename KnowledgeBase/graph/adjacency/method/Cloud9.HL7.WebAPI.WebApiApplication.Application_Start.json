@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.HL7.WebAPI.WebApiApplication.Application_Start",
+    "type": "method",
+    "name": "WebApiApplication.Application_Start",
+    "path": "Cloud9.HL7.WebAPI/Cloud9.HL7.WebAPI/Global.asax.cs",
+    "class": "Cloud9.HL7.WebAPI.WebApiApplication",
+    "line": 12,
+    "signatures": [
+      "protected void Application_Start()"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.HL7.WebAPI.WebApiApplication",
+      "fromName": "Cloud9.HL7.WebAPI.WebApiApplication",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.HL7.WebAPI.WebApiApplication.json"
+    }
+  ]
+}

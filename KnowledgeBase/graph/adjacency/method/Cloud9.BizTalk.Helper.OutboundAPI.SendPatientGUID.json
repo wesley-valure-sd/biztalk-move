@@ -1,0 +1,31 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.Helper.OutboundAPI.SendPatientGUID",
+    "type": "method",
+    "name": "OutboundAPI.SendPatientGUID",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/OutboundAPI.cs",
+    "class": "Cloud9.BizTalk.Helper.OutboundAPI",
+    "line": 15,
+    "signatures": [
+      "public static string SendPatientGUID(string xCorrelationId, Guid patGUID)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.Helper.OutboundAPI",
+      "fromName": "Cloud9.BizTalk.Helper.OutboundAPI",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.Helper.OutboundAPI.json"
+    },
+    {
+      "type": "callsMethod",
+      "from": "orchestration:Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient",
+      "fromName": "ProcessHL7MessagesForPatient",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient.json",
+      "line": 2629
+    }
+  ]
+}

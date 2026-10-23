@@ -1,0 +1,44 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.ALV_Serialization",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.ALV_Serialization",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ApplicationLookupValue/ALV_Serialization.xsd",
+    "rootElements": [
+      "anyType",
+      "anyURI",
+      "base64Binary",
+      "boolean",
+      "byte",
+      "dateTime",
+      "decimal",
+      "double",
+      "float",
+      "int",
+      "long",
+      "QName",
+      "short",
+      "string",
+      "unsignedByte",
+      "unsignedInt",
+      "unsignedLong",
+      "unsignedShort",
+      "char",
+      "duration",
+      "guid"
+    ],
+    "kind": "wcf-serialization",
+    "targetNamespace": "http://schemas.microsoft.com/2003/10/Serialization/",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ApplicationLookupValue/ALV_Serialization.xsd",
+      "toName": "ALV_Serialization.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_ApplicationLookupValue_ALV_Serialization.xsd.json"
+    }
+  ],
+  "incoming": []
+}

@@ -1,0 +1,25 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.Cloud9UpsertAppointment.UPSA_TableType_BTS",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.Cloud9UpsertAppointment.UPSA_TableType_BTS",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Cloud9UpsertAppointment/UPSA_TableType.BTS.xsd",
+    "rootElements": [
+      "AppointmentTableType",
+      "ArrayOfAppointmentTableType"
+    ],
+    "kind": "wcf-sql-table",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/Types/TableTypes/BTS",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Cloud9UpsertAppointment/UPSA_TableType.BTS.xsd",
+      "toName": "UPSA_TableType.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_Cloud9UpsertAppointment_UPSA_TableType.BTS.xsd.json"
+    }
+  ],
+  "incoming": []
+}

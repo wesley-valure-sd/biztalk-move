@@ -1,0 +1,27 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/EDIClaimHelper.cs",
+    "type": "file",
+    "name": "EDIClaimHelper.cs",
+    "kind": "csharp",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/EDIClaimHelper.cs"
+  },
+  "outgoing": [
+    {
+      "type": "defines",
+      "to": "class:Cloud9.BizTalk.Helper.EDIClaimHelper",
+      "toName": "Cloud9.BizTalk.Helper.EDIClaimHelper",
+      "toType": "class",
+      "toFile": "adjacency/class/Cloud9.BizTalk.Helper.EDIClaimHelper.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.Helper",
+      "fromName": "Cloud9.BizTalk.Helper",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.Helper.json"
+    }
+  ]
+}

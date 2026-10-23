@@ -1,0 +1,25 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.GPCFC_ProcedureResultSet_BTS_GetPracticeConfigurationForClaim",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.GPCFC_ProcedureResultSet_BTS_GetPracticeConfigurationForClaim",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetPracticeConfigForClaim/GPCFC_ProcedureResultSet.BTS.GetPracticeConfigurationForClaim.xsd",
+    "rootElements": [
+      "StoredProcedureResultSet0",
+      "ArrayOfStoredProcedureResultSet0"
+    ],
+    "kind": "wcf-sql-result-set",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetPracticeConfigurationForClaim",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetPracticeConfigForClaim/GPCFC_ProcedureResultSet.BTS.GetPracticeConfigurationForClaim.xsd",
+      "toName": "GPCFC_ProcedureResultSet.BTS.GetPracticeConfigurationForClaim.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_GetPracticeConfigForClaim_GPCFC_ProcedureResultSet.BTS.GetPracticeConfigurationForClaim.xsd.json"
+    }
+  ],
+  "incoming": []
+}

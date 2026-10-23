@@ -1,0 +1,289 @@
+{
+  "node": {
+    "id": "project:Cloud9.BizTalk.Epic",
+    "type": "project",
+    "name": "Cloud9.BizTalk.Epic",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Cloud9.BizTalk.Epic.btproj",
+    "framework": "v4.6",
+    "kind": "biztalk",
+    "rootNamespace": "Cloud9.BizTalk.Epic",
+    "assemblyName": "Cloud9.BizTalk.Epic"
+  },
+  "outgoing": [
+    {
+      "type": "references",
+      "to": "project:Cloud9.BizTalk.Epic.BTAHL7V26Common.Schemas",
+      "toName": "Cloud9.BizTalk.Epic.BTAHL7V26Common.Schemas",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.Epic.BTAHL7V26Common.Schemas.json"
+    },
+    {
+      "type": "references",
+      "to": "project:Cloud9.BizTalk.Epic.BTAHL7V2XCommon.Schemas",
+      "toName": "Cloud9.BizTalk.Epic.BTAHL7V2XCommon.Schemas",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.Epic.BTAHL7V2XCommon.Schemas.json"
+    },
+    {
+      "type": "references",
+      "to": "project:Cloud9.BizTalk.Epic.BTAHL7_2_6.Schemas",
+      "toName": "Cloud9.BizTalk.Epic.BTAHL7_2_6.Schemas",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.Epic.BTAHL7_2_6.Schemas.json"
+    },
+    {
+      "type": "references",
+      "to": "project:Cloud9.BizTalk.Helper",
+      "toName": "Cloud9.BizTalk.Helper",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.Helper.json"
+    },
+    {
+      "type": "references",
+      "to": "project:Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings",
+      "toName": "Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.json"
+    },
+    {
+      "type": "references",
+      "to": "project:Cloud9.BizTalk.ReportGenerator",
+      "toName": "Cloud9.BizTalk.ReportGenerator",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.ReportGenerator.json"
+    },
+    {
+      "type": "references",
+      "to": "project:Cloud9.BizTalk.Reports",
+      "toName": "Cloud9.BizTalk.Reports",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.Reports.json"
+    },
+    {
+      "type": "references",
+      "to": "project:Cloud9.BizTalk.Schemas",
+      "toName": "Cloud9.BizTalk.Schemas",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.Schemas.json"
+    },
+    {
+      "type": "references",
+      "to": "project:Cloud9.BizTalk.SignalR.Helper",
+      "toName": "Cloud9.BizTalk.SignalR.Helper",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.SignalR.Helper.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Schemas/ADT_A28_A31_26_Canonical.xsd",
+      "toName": "ADT_A28_A31_26_Canonical.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Schemas_ADT_A28_A31_26_Canonical.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Schemas/SIU_Canonical.xsd",
+      "toName": "SIU_Canonical.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Schemas_SIU_Canonical.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/Cloud9.BizTalk.Epic.ADT_A28_A31_26_CanonicalToUpsertPatient.btm",
+      "toName": "Cloud9.BizTalk.Epic.ADT_A28_A31_26_CanonicalToUpsertPatient.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Maps_Cloud9.BizTalk.Epic.ADT_A28_A31_26_CanonicalToUpsertPatient.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/Cloud9.BizTalk.Epic.ErrorToInsertRequest.btm",
+      "toName": "Cloud9.BizTalk.Epic.ErrorToInsertRequest.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Maps_Cloud9.BizTalk.Epic.ErrorToInsertRequest.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/Cloud9.BizTalk.Epic.HeaderAndFileToProcessingError.btm",
+      "toName": "Cloud9.BizTalk.Epic.HeaderAndFileToProcessingError.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Maps_Cloud9.BizTalk.Epic.HeaderAndFileToProcessingError.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/Cloud9.BizTalk.Epic.HL7_MHToGetPracticeConfig.btm",
+      "toName": "Cloud9.BizTalk.Epic.HL7_MHToGetPracticeConfig.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Maps_Cloud9.BizTalk.Epic.HL7_MHToGetPracticeConfig.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/Cloud9.BizTalk.Epic.HL7InboundMessageToUpdateStatusFail.btm",
+      "toName": "Cloud9.BizTalk.Epic.HL7InboundMessageToUpdateStatusFail.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Maps_Cloud9.BizTalk.Epic.HL7InboundMessageToUpdateStatusFail.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/Cloud9.BizTalk.Epic.HL7InboundToStaging.btm",
+      "toName": "Cloud9.BizTalk.Epic.HL7InboundToStaging.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Maps_Cloud9.BizTalk.Epic.HL7InboundToStaging.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/Cloud9.BizTalk.Epic.IncomingMessageToUpdateStatusFail.btm",
+      "toName": "Cloud9.BizTalk.Epic.IncomingMessageToUpdateStatusFail.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Maps_Cloud9.BizTalk.Epic.IncomingMessageToUpdateStatusFail.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/Cloud9.BizTalk.Epic.IncomingMessageToUpdateStatusSuccess.btm",
+      "toName": "Cloud9.BizTalk.Epic.IncomingMessageToUpdateStatusSuccess.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Maps_Cloud9.BizTalk.Epic.IncomingMessageToUpdateStatusSuccess.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/Cloud9.BizTalk.Epic.MFN_M02ToUpsertEmployee.btm",
+      "toName": "Cloud9.BizTalk.Epic.MFN_M02ToUpsertEmployee.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Maps_Cloud9.BizTalk.Epic.MFN_M02ToUpsertEmployee.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/Cloud9.BizTalk.Epic.SUI_CanonicalToUpsertAppointment.btm",
+      "toName": "Cloud9.BizTalk.Epic.SUI_CanonicalToUpsertAppointment.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Maps_Cloud9.BizTalk.Epic.SUI_CanonicalToUpsertAppointment.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/PatientToProcess_To_GetProcessingStagingPatientMessages.btm",
+      "toName": "PatientToProcess_To_GetProcessingStagingPatientMessages.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Maps_PatientToProcess_To_GetProcessingStagingPatientMessages.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/ProcessingPatient_To_SetStagingPatientStatusReq.btm",
+      "toName": "ProcessingPatient_To_SetStagingPatientStatusReq.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Maps_ProcessingPatient_To_SetStagingPatientStatusReq.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/SIUMessageData_To_GetLocationTimezoneReq.btm",
+      "toName": "SIUMessageData_To_GetLocationTimezoneReq.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Maps_SIUMessageData_To_GetLocationTimezoneReq.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/TCForPatient_To_MDM_T02Body.btm",
+      "toName": "TCForPatient_To_MDM_T02Body.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Maps_TCForPatient_To_MDM_T02Body.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/Transform_QueueProcessParametersHeader_To_GetTreatmentCardPatientListReq.btm",
+      "toName": "Transform_QueueProcessParametersHeader_To_GetTreatmentCardPatientListReq.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Maps_Transform_QueueProcessParametersHeader_To_GetTreatmentCardPatientListReq.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/Transform_QueueProcParams_To_UpdateQueueProcParams.btm",
+      "toName": "Transform_QueueProcParams_To_UpdateQueueProcParams.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Maps_Transform_QueueProcParams_To_UpdateQueueProcParams.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/Transform_To_GetTreatmentCardPatientListReq.btm",
+      "toName": "Transform_To_GetTreatmentCardPatientListReq.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Maps_Transform_To_GetTreatmentCardPatientListReq.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Pipelines/ReceiveHL7Pipeline.btp",
+      "toName": "ReceiveHL7Pipeline.btp",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Pipelines_ReceiveHL7Pipeline.btp.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.AddLog.odx",
+      "toName": "Cloud9.BizTalk.Epic.AddLog.odx",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Orchestrations_Cloud9.BizTalk.Epic.AddLog.odx.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.HL7SQLReceive.odx",
+      "toName": "Cloud9.BizTalk.Epic.HL7SQLReceive.odx",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Orchestrations_Cloud9.BizTalk.Epic.HL7SQLReceive.odx.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.ProcessHL7.Inbound.odx",
+      "toName": "Cloud9.BizTalk.Epic.ProcessHL7.Inbound.odx",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Orchestrations_Cloud9.BizTalk.Epic.ProcessHL7.Inbound.odx.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient.odx",
+      "toName": "Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient.odx",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Orchestrations_Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient.odx.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.ProcessTreatmentCardData.Controller.odx",
+      "toName": "Cloud9.BizTalk.Epic.ProcessTreatmentCardData.Controller.odx",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Orchestrations_Cloud9.BizTalk.Epic.ProcessTreatmentCardData.Controller.odx.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.ProcessTreatmentCardData.Worker.odx",
+      "toName": "Cloud9.BizTalk.Epic.ProcessTreatmentCardData.Worker.odx",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Orchestrations_Cloud9.BizTalk.Epic.ProcessTreatmentCardData.Worker.odx.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.SendTreatmentCardsToPDS.odx",
+      "toName": "Cloud9.BizTalk.Epic.SendTreatmentCardsToPDS.odx",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Orchestrations_Cloud9.BizTalk.Epic.SendTreatmentCardsToPDS.odx.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.StageHL7.Inbound.odx",
+      "toName": "Cloud9.BizTalk.Epic.StageHL7.Inbound.odx",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Orchestrations_Cloud9.BizTalk.Epic.StageHL7.Inbound.odx.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "solution:Cloud9.BizTalk.PDS",
+      "fromName": "Cloud9.BizTalk.PDS",
+      "fromType": "solution",
+      "fromFile": "adjacency/solution/Cloud9.BizTalk.PDS.json"
+    },
+    {
+      "type": "contains",
+      "from": "solution:Cloud9.BizTalk",
+      "fromName": "Cloud9.BizTalk",
+      "fromType": "solution",
+      "fromFile": "adjacency/solution/Cloud9.BizTalk.json"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk.Scripts/IntegrationsCommon/GetImportLogsByMessageType.sql",
+    "type": "file",
+    "name": "GetImportLogsByMessageType.sql",
+    "kind": "sql",
+    "path": "Cloud9.BizTalk.Scripts/IntegrationsCommon/GetImportLogsByMessageType.sql"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "definedIn",
+      "from": "sqlscript:Cloud9.BizTalk.Scripts/IntegrationsCommon/GetImportLogsByMessageType.sql",
+      "fromName": "GetImportLogsByMessageType.sql",
+      "fromType": "sqlscript",
+      "fromFile": "adjacency/sqlscript/Cloud9.BizTalk.Scripts_IntegrationsCommon_GetImportLogsByMessageType.sql.json"
+    }
+  ]
+}

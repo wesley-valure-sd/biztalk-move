@@ -1,0 +1,24 @@
+{
+  "node": {
+    "id": "schema:BTAHL7Schemas.ADT_A31_26_GLO_DEF",
+    "type": "schema",
+    "name": "BTAHL7Schemas.ADT_A31_26_GLO_DEF",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic.BTAHL7_2_6.Schemas/ADT_A31_26_GLO_DEF.xsd",
+    "rootElements": [
+      "ADT_A31_26_GLO_DEF"
+    ],
+    "kind": "hl7",
+    "targetNamespace": "http://microsoft.com/HealthCare/HL7/2X",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic.BTAHL7_2_6.Schemas/ADT_A31_26_GLO_DEF.xsd",
+      "toName": "ADT_A31_26_GLO_DEF.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic.BTAHL7_2_6.Schemas_ADT_A31_26_GLO_DEF.xsd.json"
+    }
+  ],
+  "incoming": []
+}

@@ -1,0 +1,248 @@
+{
+  "node": {
+    "id": "orchestration:Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus",
+    "type": "orchestration",
+    "name": "Process_CHC_ClaimsStatus",
+    "ports": [
+      "Port_UpdateClaimStatuses (uses dynamic PortType_UpdateClaimStatuses)",
+      "Port_AddClaimErrors (uses dynamic PortType_AddClaimErrors)",
+      "Port_AddTodoItemForClaim (uses dynamic AddTodoItem_PortType)"
+    ],
+    "parameters": "message ClaimStatusCanonical_MMT ClaimStatusCanonical, System.String strServer",
+    "messages": [
+      "AddClaimErrorsResponse: AddClaimErrorsResponse_MMT",
+      "AddClaimErrorsRequest: AddClaimErrorsRequest_MMT",
+      "UpdateClaimStatusesResponse: UpdateClaimStatusesResponse_MMT",
+      "UpdateClaimStatusesRequest: UpdateClaimStatusesRequest_MMT",
+      "AddTodoItemRequest: AddTodoItemRequest_MMT",
+      "AddTodoItemResponse: AddTodoItemResponse_MMT"
+    ],
+    "visibility": "internal",
+    "module": "Cloud9.BizTalk.X12",
+    "invocation": "called/started by another orchestration",
+    "contextProperties": [
+      "BTS.RetryCount",
+      "BTS.RetryInterval",
+      "Microsoft.XLANGs.BaseTypes.Address",
+      "Microsoft.XLANGs.BaseTypes.TransportType",
+      "WCF.Action",
+      "WCF.BindingConfiguration",
+      "WCF.BindingType",
+      "WCF.EnableTransaction"
+    ],
+    "line": 437,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_ClaimsStatus.odx",
+    "bindingStates": {
+      "Cloud9.EDI.Deployment": "Started",
+      "Cloud9.EDI.PDS.Deployment": "Started"
+    }
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_ClaimsStatus.odx",
+      "toName": "Process_CHC_ClaimsStatus.odx",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Orchestrations_Process_CHC_ClaimsStatus.odx.json"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.AddClaimErrorsResponse_MMT",
+      "toName": "AddClaimErrorsResponse_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.AddClaimErrorsResponse_MMT.json",
+      "message": "AddClaimErrorsResponse"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.AddClaimErrorsRequest_MMT",
+      "toName": "AddClaimErrorsRequest_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.AddClaimErrorsRequest_MMT.json",
+      "message": "AddClaimErrorsRequest"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.UpdateClaimStatusesResponse_MMT",
+      "toName": "UpdateClaimStatusesResponse_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.UpdateClaimStatusesResponse_MMT.json",
+      "message": "UpdateClaimStatusesResponse"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.UpdateClaimStatusesRequest_MMT",
+      "toName": "UpdateClaimStatusesRequest_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.UpdateClaimStatusesRequest_MMT.json",
+      "message": "UpdateClaimStatusesRequest"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.AddTodoItemRequest_MMT",
+      "toName": "AddTodoItemRequest_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.AddTodoItemRequest_MMT.json",
+      "message": "AddTodoItemRequest"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.AddTodoItemResponse_MMT",
+      "toName": "AddTodoItemResponse_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.AddTodoItemResponse_MMT.json",
+      "message": "AddTodoItemResponse"
+    },
+    {
+      "type": "usesMap",
+      "to": "map:Cloud9.BizTalk.X12.Maps.ClaimStatusCanonical_To_UpdateClaimStatuses",
+      "toName": "Cloud9.BizTalk.X12.Maps.ClaimStatusCanonical_To_UpdateClaimStatuses",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.ClaimStatusCanonical_To_UpdateClaimStatuses.json",
+      "output": "UpdateClaimStatusesRequest.Body",
+      "input": "ClaimStatusCanonical.Body",
+      "line": 464
+    },
+    {
+      "type": "usesMap",
+      "to": "map:Cloud9.BizTalk.X12.Maps.ClaimStatusCanonical_To_AddClaimErrors",
+      "toName": "Cloud9.BizTalk.X12.Maps.ClaimStatusCanonical_To_AddClaimErrors",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.ClaimStatusCanonical_To_AddClaimErrors.json",
+      "output": "AddClaimErrorsRequest.Body",
+      "input": "ClaimStatusCanonical.Body",
+      "line": 485
+    },
+    {
+      "type": "usesMap",
+      "to": "map:Cloud9.BizTalk.X12.Maps.ClaimStatusCanonical_To_AddTodoItem",
+      "toName": "Cloud9.BizTalk.X12.Maps.ClaimStatusCanonical_To_AddTodoItem",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.ClaimStatusCanonical_To_AddTodoItem.json",
+      "output": "AddTodoItemRequest.Body",
+      "input": "ClaimStatusCanonical.Body",
+      "line": 511
+    },
+    {
+      "type": "invokesProc",
+      "to": "sqlproc:PracticeDB.BTS.UpdateClaimStatuses",
+      "toName": "BTS.UpdateClaimStatuses",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/PracticeDB.BTS.UpdateClaimStatuses.json",
+      "line": 467,
+      "via": "dynamic WCF-SQL send port (WCF.Action set in code)"
+    },
+    {
+      "type": "invokesProc",
+      "to": "sqlproc:PracticeDB.BTS.AddClaimErrors",
+      "toName": "BTS.AddClaimErrors",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/PracticeDB.BTS.AddClaimErrors.json",
+      "line": 488,
+      "via": "dynamic WCF-SQL send port (WCF.Action set in code)"
+    },
+    {
+      "type": "invokesProc",
+      "to": "sqlproc:PracticeDB.BTS.AddTodoItem",
+      "toName": "BTS.AddTodoItem",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/PracticeDB.BTS.AddTodoItem.json",
+      "line": 514,
+      "via": "dynamic WCF-SQL send port (WCF.Action set in code)"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus_Port_UpdateClaimStatuses_182f4e020577c79e",
+      "toName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus_Port_UpdateClaimStatuses_182f4e020577c79e",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus_Port_UpdateClaimStatuses_182f4e020577c79e.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "4",
+      "logicalPort": "Port_UpdateClaimStatuses"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus_Port_AddClaimErrors_182f4e020577c79e",
+      "toName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus_Port_AddClaimErrors_182f4e020577c79e",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus_Port_AddClaimErrors_182f4e020577c79e.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "4",
+      "logicalPort": "Port_AddClaimErrors"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus_Port_AddTodoItemForClaim_182f4e020577c79e",
+      "toName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus_Port_AddTodoItemForClaim_182f4e020577c79e",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus_Port_AddTodoItemForClaim_182f4e020577c79e.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "4",
+      "logicalPort": "Port_AddTodoItemForClaim"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.PDS.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus_Port_UpdateClaimStatuses_182f4e020577c79e",
+      "toName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus_Port_UpdateClaimStatuses_182f4e020577c79e",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.PDS.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus_Port_UpdateClaimStatuses_182f4e020577c79e.json",
+      "bindingSet": "Cloud9.EDI.PDS.Deployment",
+      "bindingOption": "4",
+      "logicalPort": "Port_UpdateClaimStatuses"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.PDS.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus_Port_AddClaimErrors_182f4e020577c79e",
+      "toName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus_Port_AddClaimErrors_182f4e020577c79e",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.PDS.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus_Port_AddClaimErrors_182f4e020577c79e.json",
+      "bindingSet": "Cloud9.EDI.PDS.Deployment",
+      "bindingOption": "4",
+      "logicalPort": "Port_AddClaimErrors"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.PDS.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus_Port_AddTodoItemForClaim_182f4e020577c79e",
+      "toName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus_Port_AddTodoItemForClaim_182f4e020577c79e",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.PDS.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus_Port_AddTodoItemForClaim_182f4e020577c79e.json",
+      "bindingSet": "Cloud9.EDI.PDS.Deployment",
+      "bindingOption": "4",
+      "logicalPort": "Port_AddTodoItemForClaim"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "callsOrchestration",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_276ClaimStatus",
+      "fromName": "Process_CHC_276ClaimStatus",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_276ClaimStatus.json",
+      "line": 828
+    },
+    {
+      "type": "callsOrchestration",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_277_Unsolicitated_ClaimsStatus",
+      "fromName": "Process_CHC_277_Unsolicitated_ClaimsStatus",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_277_Unsolicitated_ClaimsStatus.json",
+      "line": 552
+    },
+    {
+      "type": "callsOrchestration",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_277AClaimsStatus",
+      "fromName": "Process_CHC_277AClaimsStatus",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_277AClaimsStatus.json",
+      "line": 396
+    },
+    {
+      "type": "callsOrchestration",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_277ClaimsStatus",
+      "fromName": "Process_CHC_277ClaimsStatus",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_277ClaimsStatus.json",
+      "line": 637
+    }
+  ]
+}

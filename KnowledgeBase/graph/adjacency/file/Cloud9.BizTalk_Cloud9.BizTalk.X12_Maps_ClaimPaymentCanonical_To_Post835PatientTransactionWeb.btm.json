@@ -1,0 +1,33 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/ClaimPaymentCanonical_To_Post835PatientTransactionWeb.btm",
+    "type": "file",
+    "name": "ClaimPaymentCanonical_To_Post835PatientTransactionWeb.btm",
+    "kind": "btm",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/ClaimPaymentCanonical_To_Post835PatientTransactionWeb.btm"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.X12",
+      "fromName": "Cloud9.BizTalk.X12",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.X12.json"
+    },
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.X12.PDS",
+      "fromName": "Cloud9.BizTalk.X12.PDS",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.X12.PDS.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "map:Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835PatientTransactionWeb",
+      "fromName": "Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835PatientTransactionWeb",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835PatientTransactionWeb.json"
+    }
+  ]
+}

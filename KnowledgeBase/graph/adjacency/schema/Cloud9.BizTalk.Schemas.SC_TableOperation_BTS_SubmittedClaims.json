@@ -1,0 +1,60 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.SC_TableOperation_BTS_SubmittedClaims",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.SC_TableOperation_BTS_SubmittedClaims",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/SubmittedClaims/SC_TableOperation.BTS.SubmittedClaims.xsd",
+    "rootElements": [
+      "Delete",
+      "DeleteResponse",
+      "Insert",
+      "InsertResponse",
+      "RowPair",
+      "ArrayOfRowPair",
+      "Update",
+      "UpdateResponse"
+    ],
+    "kind": "wcf-sql-table",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/TableOp/BTS/SubmittedClaim",
+    "sqlActions": [
+      "TableOp/Delete/BTS/SubmittedClaim",
+      "TableOp/Insert/BTS/SubmittedClaim",
+      "TableOp/Update/BTS/SubmittedClaim"
+    ]
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/SubmittedClaims/SC_TableOperation.BTS.SubmittedClaims.xsd",
+      "toName": "SC_TableOperation.BTS.SubmittedClaims.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_SubmittedClaims_SC_TableOperation.BTS.SubmittedClaims.xsd.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.X12.C9ClaimToSubmittedClaimReq",
+      "fromName": "Cloud9.BizTalk.X12.C9ClaimToSubmittedClaimReq",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.C9ClaimToSubmittedClaimReq.json",
+      "root": "Insert"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.MPType_InsertSubmittedClaimsReq",
+      "fromName": "MPType_InsertSubmittedClaimsReq",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.MPType_InsertSubmittedClaimsReq.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.SC_TableOperation_BTS_SubmittedClaims.Insert"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.MPType_InsertSubmittedClaimsResp",
+      "fromName": "MPType_InsertSubmittedClaimsResp",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.MPType_InsertSubmittedClaimsResp.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.SC_TableOperation_BTS_SubmittedClaims.InsertResponse"
+    }
+  ]
+}

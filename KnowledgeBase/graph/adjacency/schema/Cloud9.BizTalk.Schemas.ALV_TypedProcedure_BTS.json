@@ -1,0 +1,77 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.ALV_TypedProcedure_BTS",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.ALV_TypedProcedure_BTS",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ApplicationLookupValue/ALV_TypedProcedure.BTS.xsd",
+    "rootElements": [
+      "GetApplicationLookupValue",
+      "GetApplicationLookupValueResponse",
+      "GetApplicationLookupValues",
+      "GetApplicationLookupValuesResponse"
+    ],
+    "kind": "wcf-sql-typed-procedure",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS",
+    "sqlActions": [
+      "TypedProcedure/BTS/GetApplicationLookupValue",
+      "TypedProcedure/BTS/GetApplicationLookupValues"
+    ]
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ApplicationLookupValue/ALV_TypedProcedure.BTS.xsd",
+      "toName": "ALV_TypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_ApplicationLookupValue_ALV_TypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "describesParametersOf",
+      "to": "sqlproc:BizTalkCloud9Common.BTS.GetApplicationLookupValue",
+      "toName": "BTS.GetApplicationLookupValue",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.GetApplicationLookupValue.json"
+    },
+    {
+      "type": "describesParametersOf",
+      "to": "sqlproc:BizTalkCloud9Common.BTS.GetApplicationLookupValues",
+      "toName": "BTS.GetApplicationLookupValues",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.GetApplicationLookupValues.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.GetApplicationLookupValue_MMT",
+      "fromName": "GetApplicationLookupValue_MMT",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.GetApplicationLookupValue_MMT.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.ALV_TypedProcedure_BTS.GetApplicationLookupValue"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.GetApplicationLookupValueResponse_MMT",
+      "fromName": "GetApplicationLookupValueResponse_MMT",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.GetApplicationLookupValueResponse_MMT.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.ALV_TypedProcedure_BTS.GetApplicationLookupValueResponse"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.GetApplicationLookupValues_MMT",
+      "fromName": "GetApplicationLookupValues_MMT",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.GetApplicationLookupValues_MMT.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.ALV_TypedProcedure_BTS.GetApplicationLookupValues"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.GetApplicationLookupValuesResponse_MMT",
+      "fromName": "GetApplicationLookupValuesResponse_MMT",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.GetApplicationLookupValuesResponse_MMT.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.ALV_TypedProcedure_BTS.GetApplicationLookupValuesResponse"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "node": {
+    "id": "class:Cloud9.BizTalk.Reports.ReportConnectionStringManager",
+    "type": "class",
+    "name": "Cloud9.BizTalk.Reports.ReportConnectionStringManager",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.ReportGenerator/Cloud9.BizTalk.Reports/ReportConnectionStringManager.cs",
+    "visibility": "public",
+    "kind": "class",
+    "line": 9
+  },
+  "outgoing": [
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Reports.ReportConnectionStringManager.UpdateReportSource",
+      "toName": "ReportConnectionStringManager.UpdateReportSource",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Reports.ReportConnectionStringManager.UpdateReportSource.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.ReportGenerator/Cloud9.BizTalk.Reports/ReportConnectionStringManager.cs",
+      "fromName": "ReportConnectionStringManager.cs",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.ReportGenerator_Cloud9.BizTalk.Reports_ReportConnectionStringManager.cs.json"
+    }
+  ]
+}

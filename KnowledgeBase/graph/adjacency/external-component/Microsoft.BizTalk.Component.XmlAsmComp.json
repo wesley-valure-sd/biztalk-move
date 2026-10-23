@@ -1,0 +1,18 @@
+{
+  "node": {
+    "id": "class:Microsoft.BizTalk.Component.XmlAsmComp",
+    "type": "external-component",
+    "name": "Microsoft.BizTalk.Component.XmlAsmComp",
+    "definedInRepo": false
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "usesComponent",
+      "from": "pipeline:Cloud9.BizTalk.X12.Pipelines.SendEmdeonXMLPipeline",
+      "fromName": "Cloud9.BizTalk.X12.Pipelines.SendEmdeonXMLPipeline",
+      "fromType": "pipeline",
+      "fromFile": "adjacency/pipeline/Cloud9.BizTalk.X12.Pipelines.SendEmdeonXMLPipeline.json"
+    }
+  ]
+}

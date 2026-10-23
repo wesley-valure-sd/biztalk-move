@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.HL7.WebAPI.Controllers.LocationController.PostLocation",
+    "type": "method",
+    "name": "LocationController.PostLocation",
+    "path": "Cloud9.HL7.WebAPI/Cloud9.HL7.WebAPI/Controllers/LocationController.cs",
+    "class": "Cloud9.HL7.WebAPI.Controllers.LocationController",
+    "line": 23,
+    "signatures": [
+      "public IHttpActionResult PostLocation(LocationDTO data)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.HL7.WebAPI.Controllers.LocationController",
+      "fromName": "Cloud9.HL7.WebAPI.Controllers.LocationController",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.HL7.WebAPI.Controllers.LocationController.json"
+    }
+  ]
+}

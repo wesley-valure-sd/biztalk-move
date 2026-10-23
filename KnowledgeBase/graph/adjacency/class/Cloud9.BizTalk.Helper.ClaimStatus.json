@@ -1,0 +1,29 @@
+{
+  "node": {
+    "id": "class:Cloud9.BizTalk.Helper.ClaimStatus",
+    "type": "class",
+    "name": "Cloud9.BizTalk.Helper.ClaimStatus",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/ClaimStatus.cs",
+    "visibility": "public",
+    "kind": "class",
+    "line": 9
+  },
+  "outgoing": [
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.ClaimStatus.ConvertEDIClaimStatus",
+      "toName": "ClaimStatus.ConvertEDIClaimStatus",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.ClaimStatus.ConvertEDIClaimStatus.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/ClaimStatus.cs",
+      "fromName": "ClaimStatus.cs",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Helper_ClaimStatus.cs.json"
+    }
+  ]
+}

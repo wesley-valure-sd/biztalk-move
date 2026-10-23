@@ -1,0 +1,11 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BizTalkCloud9Common.PostDeployment.sql",
+    "type": "file",
+    "name": "BizTalkCloud9Common.PostDeployment.sql",
+    "kind": "sql",
+    "path": "Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BizTalkCloud9Common.PostDeployment.sql"
+  },
+  "outgoing": [],
+  "incoming": []
+}

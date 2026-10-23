@@ -1,0 +1,31 @@
+{
+  "node": {
+    "id": "flowstep:CHC-03-Receive",
+    "type": "flowstep",
+    "name": "Receive CHC_Inbound file and route 835 by message type",
+    "order": 3,
+    "curated": true,
+    "logic": "RL_CHC_Inbound_EDI with ReceiveEDIPipeline. Agreement ChangeHealthcare_Cloud9 resolves the CHC namespace. Activation filter BTS.MessageType == 'http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC#X12_00501_835'."
+  },
+  "outgoing": [
+    {
+      "type": "implementedBy",
+      "to": "schema:Cloud9.BizTalk.X12.Schemas.CHC_X12_00501_835",
+      "toName": "Cloud9.BizTalk.X12.Schemas.CHC_X12_00501_835",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.X12.Schemas.CHC_X12_00501_835.json",
+      "curated": true
+    }
+  ],
+  "incoming": [
+    {
+      "type": "hasStep",
+      "from": "flow:CHC-835-Insurance-ERA",
+      "fromName": "Change Healthcare ERA 835 -> insurance payment transactions or reversal to-do items",
+      "fromType": "flow",
+      "fromFile": "adjacency/flow/CHC-835-Insurance-ERA.json",
+      "order": 3,
+      "curated": true
+    }
+  ]
+}

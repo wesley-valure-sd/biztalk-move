@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.HL7.DAL.PartnersEntities.PartnersEntities.OnModelCreating",
+    "type": "method",
+    "name": "PartnersEntities.OnModelCreating",
+    "path": "Cloud9.HL7.WebAPI/Cloud9.HL7.DAL/PartnersEntities/PartnersEntities.cs",
+    "class": "Cloud9.HL7.DAL.PartnersEntities.PartnersEntities",
+    "line": 19,
+    "signatures": [
+      "protected override void OnModelCreating(DbModelBuilder modelBuilder)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.HL7.DAL.PartnersEntities.PartnersEntities",
+      "fromName": "Cloud9.HL7.DAL.PartnersEntities.PartnersEntities",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.HL7.DAL.PartnersEntities.PartnersEntities.json"
+    }
+  ]
+}

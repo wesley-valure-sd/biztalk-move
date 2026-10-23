@@ -1,0 +1,68 @@
+{
+  "node": {
+    "id": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_ATLANTAMETRO_SFTP",
+    "type": "receivelocation",
+    "name": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_ATLANTAMETRO_SFTP",
+    "enabled": "false",
+    "bindingSet": "Cloud9.EDI.Deployment",
+    "receivePipeline": "Cloud9.BizTalk.X12.Pipelines.ReceiveEDIPipeline",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.Deployment/PortBindingsMaster.xml",
+    "archiveFolder": "${BBVA_835_PATIENT_FILE_FOLDER}\\ATLANTAMETRO\\Archive",
+    "address": "sftp://${BBVA_SFTP_HOST}${BBVA_835_PATIENT_FTP_FOLDER}/ATLANTAMETRO/*.*",
+    "serviceWindow": "2000-01-01T02:00:00 to 2000-01-01T05:00:00 (enabled=false)",
+    "pollingInterval": "15 Minutes",
+    "transport": "SFTP"
+  },
+  "outgoing": [
+    {
+      "type": "partOf",
+      "to": "receiveport:Cloud9.EDI.Deployment/RP_BBVA835_Patient",
+      "toName": "RP_BBVA835_Patient",
+      "toType": "receiveport",
+      "toFile": "adjacency/receiveport/Cloud9.EDI.Deployment_RP_BBVA835_Patient.json"
+    },
+    {
+      "type": "usesPipeline",
+      "to": "pipeline:Cloud9.BizTalk.X12.Pipelines.ReceiveEDIPipeline",
+      "toName": "Cloud9.BizTalk.X12.Pipelines.ReceiveEDIPipeline",
+      "toType": "pipeline",
+      "toFile": "adjacency/pipeline/Cloud9.BizTalk.X12.Pipelines.ReceiveEDIPipeline.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.EDI.Deployment/BBVA_SFTP_HOST",
+      "toName": "BBVA_SFTP_HOST",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.EDI.Deployment_BBVA_SFTP_HOST.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.EDI.Deployment/BBVA_835_PATIENT_FTP_FOLDER",
+      "toName": "BBVA_835_PATIENT_FTP_FOLDER",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.EDI.Deployment_BBVA_835_PATIENT_FTP_FOLDER.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.EDI.Deployment/BBVA_SFTP_USERNAME",
+      "toName": "BBVA_SFTP_USERNAME",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.EDI.Deployment_BBVA_SFTP_USERNAME.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.EDI.Deployment/BBVA_SFTP_PASSWORD",
+      "toName": "BBVA_SFTP_PASSWORD",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.EDI.Deployment_BBVA_SFTP_PASSWORD.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.EDI.Deployment/BBVA_835_PATIENT_FILE_FOLDER",
+      "toName": "BBVA_835_PATIENT_FILE_FOLDER",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.EDI.Deployment_BBVA_835_PATIENT_FILE_FOLDER.json"
+    }
+  ],
+  "incoming": []
+}

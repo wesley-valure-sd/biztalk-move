@@ -1,0 +1,36 @@
+{
+  "node": {
+    "id": "class:Cloud9.BizTalk.HelperTest.ValidationTest",
+    "type": "class",
+    "name": "Cloud9.BizTalk.HelperTest.ValidationTest",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.HelperTest/ValidationTest.cs",
+    "visibility": "public",
+    "kind": "class",
+    "line": 8
+  },
+  "outgoing": [
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.HelperTest.ValidationTest.Setup",
+      "toName": "ValidationTest.Setup",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.HelperTest.ValidationTest.Setup.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.HelperTest.ValidationTest.TestValidateClaimXML",
+      "toName": "ValidationTest.TestValidateClaimXML",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.HelperTest.ValidationTest.TestValidateClaimXML.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.HelperTest/ValidationTest.cs",
+      "fromName": "ValidationTest.cs",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.HelperTest_ValidationTest.cs.json"
+    }
+  ]
+}

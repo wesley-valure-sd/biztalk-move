@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.Helper.SHelpers.RemoveEmptyNodes",
+    "type": "method",
+    "name": "SHelpers.RemoveEmptyNodes",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/SignalRHelpers.cs",
+    "class": "Cloud9.BizTalk.Helper.SHelpers",
+    "line": 21,
+    "signatures": [
+      "public static void RemoveEmptyNodes(XLANGMessage msg, int part = 0)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.Helper.SHelpers",
+      "fromName": "Cloud9.BizTalk.Helper.SHelpers",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.Helper.SHelpers.json"
+    }
+  ]
+}

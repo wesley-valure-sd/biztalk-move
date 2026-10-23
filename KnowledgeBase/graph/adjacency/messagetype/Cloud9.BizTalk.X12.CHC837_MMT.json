@@ -1,0 +1,37 @@
+{
+  "node": {
+    "id": "messagetype:Cloud9.BizTalk.X12.CHC837_MMT",
+    "type": "messagetype",
+    "name": "CHC837_MMT",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_837_To_BBVA.odx",
+    "bodyType": "Schemas.CHC_X12_00501_837_D",
+    "module": "Cloud9.BizTalk.X12"
+  },
+  "outgoing": [
+    {
+      "type": "bodySchema",
+      "to": "schema:Cloud9.BizTalk.X12.Schemas.CHC_X12_00501_837_D",
+      "toName": "Cloud9.BizTalk.X12.Schemas.CHC_X12_00501_837_D",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.X12.Schemas.CHC_X12_00501_837_D.json",
+      "bodyType": "Schemas.CHC_X12_00501_837_D"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_837_To_BBVA.odx",
+      "fromName": "Process_CHC_837_To_BBVA.odx",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Orchestrations_Process_CHC_837_To_BBVA.odx.json"
+    },
+    {
+      "type": "usesMessageType",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_837_To_BBVA",
+      "fromName": "Process_CHC_837_To_BBVA",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_837_To_BBVA.json",
+      "message": "CHC837_Out"
+    }
+  ]
+}

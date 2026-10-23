@@ -1,0 +1,206 @@
+{
+  "node": {
+    "id": "orchestration:Cloud9.BizTalk.X12.Process_ChannelHealth_271Eligibility",
+    "type": "orchestration",
+    "name": "Process_ChannelHealth_271Eligibility",
+    "activation": "activate receive (ReceiveChannelHealth271Port.Operation_1, ChannelHealth271)",
+    "ports": [
+      "ReceiveChannelHealth271Port (implements ReceiveChannelHealth271PortType)",
+      "GetPracticeConfigurationByNamePort (uses PartnerConfigurationPortType)",
+      "UpdatePatientInsurancePolicyByPipGUIDPort (uses dynamic PortType_UpdatePatientInsurancePolicyByPipGUID)",
+      "AddImportLogPort (uses dynamic PortType_AddImportLog)"
+    ],
+    "messages": [
+      "GetPracticeConfigurationByNameResponse: GetPracticeConfigurationByNameResponse_MMT",
+      "GetPracticeConfigurationByName: GetPracticeConfigurationByName_MMT",
+      "AddImportLogResponse: AddImportLogResponse_MMT",
+      "AddImportLog: AddImportLogRequest_MMT",
+      "ChannelHealth271: ChannelHealth271_MMT",
+      "InsuranceInformationCanonical: InsuranceInformationCanonical_MMT",
+      "UpdatePatientInsurancePolicyByPipGUID: UpdatePatientInsurancePolicyByPipGUID_MMT",
+      "UpdatePatientInsurancePolicyByPipGUIDResposne: UpdatePatientInsurancePolicyByPipGUIDResposne_MMT"
+    ],
+    "visibility": "internal",
+    "module": "Cloud9.BizTalk.X12",
+    "contextProperties": [
+      "BTS.InboundTransportType",
+      "BTS.MessageID",
+      "BTS.RetryCount",
+      "BTS.RetryInterval",
+      "FILE.ReceivedFileName",
+      "FTP.ReceivedFileName",
+      "Microsoft.XLANGs.BaseTypes.Address",
+      "Microsoft.XLANGs.BaseTypes.TransportType",
+      "SFTP.ReceivedFileName",
+      "WCF.Action",
+      "WCF.BindingConfiguration",
+      "WCF.BindingType",
+      "WCF.EnableTransaction"
+    ],
+    "line": 532,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_ChannelHealth_271Eligibility.odx",
+    "bindingStates": {
+      "Cloud9.EDI.Deployment": "Unenlisted"
+    }
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_ChannelHealth_271Eligibility.odx",
+      "toName": "Process_ChannelHealth_271Eligibility.odx",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Orchestrations_Process_ChannelHealth_271Eligibility.odx.json"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.GetPracticeConfigurationByNameResponse_MMT",
+      "toName": "GetPracticeConfigurationByNameResponse_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.GetPracticeConfigurationByNameResponse_MMT.json",
+      "message": "GetPracticeConfigurationByNameResponse"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.GetPracticeConfigurationByName_MMT",
+      "toName": "GetPracticeConfigurationByName_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.GetPracticeConfigurationByName_MMT.json",
+      "message": "GetPracticeConfigurationByName"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.AddImportLogResponse_MMT",
+      "toName": "AddImportLogResponse_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.AddImportLogResponse_MMT.json",
+      "message": "AddImportLogResponse"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.AddImportLogRequest_MMT",
+      "toName": "AddImportLogRequest_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.AddImportLogRequest_MMT.json",
+      "message": "AddImportLog"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.ChannelHealth271_MMT",
+      "toName": "ChannelHealth271_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.ChannelHealth271_MMT.json",
+      "message": "ChannelHealth271"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.InsuranceInformationCanonical_MMT",
+      "toName": "InsuranceInformationCanonical_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.InsuranceInformationCanonical_MMT.json",
+      "message": "InsuranceInformationCanonical"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.UpdatePatientInsurancePolicyByPipGUID_MMT",
+      "toName": "UpdatePatientInsurancePolicyByPipGUID_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.UpdatePatientInsurancePolicyByPipGUID_MMT.json",
+      "message": "UpdatePatientInsurancePolicyByPipGUID"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.UpdatePatientInsurancePolicyByPipGUIDResposne_MMT",
+      "toName": "UpdatePatientInsurancePolicyByPipGUIDResposne_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.UpdatePatientInsurancePolicyByPipGUIDResposne_MMT.json",
+      "message": "UpdatePatientInsurancePolicyByPipGUIDResposne"
+    },
+    {
+      "type": "usesMap",
+      "to": "map:Cloud9.BizTalk.X12.Maps.ChannelHealth_X12_00501_271_To_InsuranceInformationCanonical",
+      "toName": "Cloud9.BizTalk.X12.Maps.ChannelHealth_X12_00501_271_To_InsuranceInformationCanonical",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.ChannelHealth_X12_00501_271_To_InsuranceInformationCanonical.json",
+      "output": "InsuranceInformationCanonical.Body",
+      "input": "ChannelHealth271.Body",
+      "line": 635
+    },
+    {
+      "type": "usesMap",
+      "to": "map:Cloud9.BizTalk.X12.Maps.InsuranceInformationCanonical_To_UpdatePatientInsurancePolicyByPipGUID",
+      "toName": "Cloud9.BizTalk.X12.Maps.InsuranceInformationCanonical_To_UpdatePatientInsurancePolicyByPipGUID",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.InsuranceInformationCanonical_To_UpdatePatientInsurancePolicyByPipGUID.json",
+      "output": "UpdatePatientInsurancePolicyByPipGUID.Body",
+      "input": "InsuranceInformationCanonical.Body",
+      "line": 637
+    },
+    {
+      "type": "invokesProc",
+      "to": "sqlproc:PracticeDB.BTS.UpdatePatientInsurancePolicyByPipGUID",
+      "toName": "BTS.UpdatePatientInsurancePolicyByPipGUID",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/PracticeDB.BTS.UpdatePatientInsurancePolicyByPipGUID.json",
+      "line": 639,
+      "via": "dynamic WCF-SQL send port (WCF.Action set in code)"
+    },
+    {
+      "type": "invokesProc",
+      "to": "sqlproc:PracticeDB.BTS.AddImportLog",
+      "toName": "BTS.AddImportLog",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/PracticeDB.BTS.AddImportLog.json",
+      "line": 700,
+      "via": "dynamic WCF-SQL send port (WCF.Action set in code)"
+    },
+    {
+      "type": "invokesProc",
+      "to": "sqlproc:BizTalkCloud9Common.BTS.GetPracticeConfigurationByName",
+      "toName": "BTS.GetPracticeConfigurationByName",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.GetPracticeConfigurationByName.json",
+      "line": 624,
+      "via": "static send port operation GetPracticeConfigurationByName (BtsActionMapping)"
+    },
+    {
+      "type": "boundToReceivePort",
+      "to": "receiveport:Cloud9.EDI.Deployment/RP_ChannelHealth271",
+      "toName": "RP_ChannelHealth271",
+      "toType": "receiveport",
+      "toFile": "adjacency/receiveport/Cloud9.EDI.Deployment_RP_ChannelHealth271.json",
+      "logicalPort": "ReceiveChannelHealth271Port",
+      "bindingSet": "Cloud9.EDI.Deployment"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.Deployment/SP_BizTalkCloud9Common_WCF",
+      "toName": "SP_BizTalkCloud9Common_WCF",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.Deployment_SP_BizTalkCloud9Common_WCF.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "GetPracticeConfigurationByNamePort"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_ChannelHealth_271Eligibility_UpdatePatientInsurancePolicyByPipGUIDPort_182f4e020577c79e",
+      "toName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_ChannelHealth_271Eligibility_UpdatePatientInsurancePolicyByPipGUIDPort_182f4e020577c79e",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_ChannelHealth_271Eligibility_UpdatePatientInsurancePolicyByPipGUIDPort_182f4e020577c79e.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "4",
+      "logicalPort": "UpdatePatientInsurancePolicyByPipGUIDPort"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_ChannelHealth_271Eligibility_AddImportLogPort_182f4e020577c79e",
+      "toName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_ChannelHealth_271Eligibility_AddImportLogPort_182f4e020577c79e",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_ChannelHealth_271Eligibility_AddImportLogPort_182f4e020577c79e.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "4",
+      "logicalPort": "AddImportLogPort"
+    }
+  ],
+  "incoming": []
+}

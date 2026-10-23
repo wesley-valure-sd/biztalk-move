@@ -1,0 +1,27 @@
+{
+  "node": {
+    "id": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.WebAPI/Controllers/LocationController.cs",
+    "type": "file",
+    "name": "LocationController.cs",
+    "kind": "csharp",
+    "path": "Cloud9.HL7.WebAPI/Cloud9.HL7.WebAPI/Controllers/LocationController.cs"
+  },
+  "outgoing": [
+    {
+      "type": "defines",
+      "to": "class:Cloud9.HL7.WebAPI.Controllers.LocationController",
+      "toName": "Cloud9.HL7.WebAPI.Controllers.LocationController",
+      "toType": "class",
+      "toFile": "adjacency/class/Cloud9.HL7.WebAPI.Controllers.LocationController.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.HL7.WebAPI",
+      "fromName": "Cloud9.HL7.WebAPI",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.HL7.WebAPI.json"
+    }
+  ]
+}

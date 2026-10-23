@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+  Deployment Framework for BizTalk
+  Copyright (C) 2008-15 Thomas F. Abraham, 2004-08 Scott Colestock
+-->
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Installer" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition="'$(Configuration)' == ''">Release</Configuration>
+    <Platform Condition="'$(Platform)' == ''">x86</Platform>
+    <SchemaVersion>1.2.2002.00</SchemaVersion>
+    <ProjectName>Cloud9.BizTalk</ProjectName>
+    <ProjectVersion>1.2.2002.00</ProjectVersion>
+    <IncludePipelines>False</IncludePipelines>
+    <IncludeComponents>True</IncludeComponents>
+    <IncludePipelineComponents>true</IncludePipelineComponents>
+    <IncludeTransforms>False</IncludeTransforms>
+    <IncludeOrchestrations>True</IncludeOrchestrations>
+    <IncludeSSO>True</IncludeSSO>
+    <IncludeInstallUtilForComponents>True</IncludeInstallUtilForComponents>
+    <UsingMasterBindings>True</UsingMasterBindings>
+    <RequireXmlPreprocessDirectives>False</RequireXmlPreprocessDirectives>
+    <ApplyXmlEscape>True</ApplyXmlEscape>
+    <DeployPDBsToGac>False</DeployPDBsToGac>
+    <EnableAllReceiveLocationsOnDeploy>False</EnableAllReceiveLocationsOnDeploy>
+    <StartReferencedApplicationsOnDeploy>False</StartReferencedApplicationsOnDeploy>
+	  <SkipIISReset>True</SkipIISReset>
+  </PropertyGroup>
+  <PropertyGroup>
+    <!-- Properties related to building an MSI for server deployments -->
+    <!-- BizTalk App Version Upgrade -->
+    <!--   For each new product release to be deployed to your BizTalk servers: -->
+    <!--     1) Increment ProductVersion -->
+    <!--     2) Generate a new GUID and update ProductId with the new GUID -->
+    <!--   This allows the new MSI to automatically uninstall (not undeploy!) the old MSI and install the new one. -->
+    <ProductVersion>1.2.2002.00</ProductVersion>
+    <ProductId>a15877e3-b421-476a-83f9-94d7815cd010</ProductId>
+    <!-- BizTalk App Version Upgrade -->
+    <ProductName>Cloud9.BizTalk $(ProductVersion)</ProductName>
+    <Manufacturer>Cloud9 Software</Manufacturer>
+    <PackageDescription>Cloud9.BizTalk</PackageDescription>
+    <!-- NEVER change the ProductUpgradeCode. -->
+    <ProductUpgradeCode>3C6B92A1-9743-4FB3-8428-CFD6264956C5</ProductUpgradeCode>
+  </PropertyGroup>
+  <!-- Under TFS Team Build, set CustomizableOutDir property to true in TFS 2005/2008/2010 UpgradeTemplate. -->
+  <!-- With a workflow build, copy the default template then modify the MSBuild task for the solution build. Set OutDir to blank and -->
+  <!-- CommandLineArguments to String.Format("/p:SkipInvalidConfigurations=true;TeamBuildOutDir=""{0}"" {1}", BinariesDirectory, MSBuildArguments). -->
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <DeploymentFrameworkTargetsPath>$(MSBuildExtensionsPath)\DeploymentFrameworkForBizTalk\5.0\</DeploymentFrameworkTargetsPath>
+    <OutputPath Condition="'$(TeamBuildOutDir)' == ''">bin\Release\</OutputPath>
+    <OutputPath Condition="'$(TeamBuildOutDir)' != ''">$(TeamBuildOutDir)</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Server'">
+    <DeploymentFrameworkTargetsPath>Framework\</DeploymentFrameworkTargetsPath>
+    <DeployPDBsToGac>false</DeployPDBsToGac>
+  </PropertyGroup>
+  <ItemGroup>
+    <PropsFromEnvSettings Include="SsoAppUserGroup;SsoAppAdminGroup" />
+  </ItemGroup>
+	<ItemGroup>
+	<Components Include="ICSharpCode.SharpZipLib.dll">
+	<LocationPath>..\ExternalAssemblies</LocationPath>
+	</Components>
+	<Components Include="$(ProjectName).Helper.dll">
+	<LocationPath>..\Cloud9.BizTalk.Epic\bin\$(Configuration)</LocationPath>
+	</Components>
+	<Components Include="SSOSettingsFileReader.dll">
+	<LocationPath>..\ExternalAssemblies</LocationPath>
+	</Components>
+	<Components Include="$(ProjectName).ReportGenerator.dll">
+	<LocationPath>..\Cloud9.BizTalk.Epic\bin\$(Configuration)</LocationPath>
+	</Components>
+	<Components Include="$(ProjectName).Reports.dll">
+	<LocationPath>..\Cloud9.BizTalk.Epic\bin\$(Configuration)</LocationPath>
+	</Components>
+	<Components Include="$(ProjectName).SignalR.Helper.dll">
+	<LocationPath>..\Cloud9.BizTalk.Epic\bin\$(Configuration)</LocationPath>
+	</Components>
+	<Orchestrations Include="Cloud9.BizTalk.Common.dll">
+	<LocationPath>..\Cloud9.BizTalk.Common\bin\$(Configuration)</LocationPath>
+	</Orchestrations>
+	<Components Include="Telerik.Reporting.dll">
+	<LocationPath>..\Cloud9.BizTalk.Epic\bin\$(Configuration)</LocationPath>
+	</Components>
+	<Components Include="RestSharp.dll">
+	<LocationPath>..\Cloud9.BizTalk.Helper\bin\$(Configuration)</LocationPath>
+	</Components>
+	<Components Include="Newtonsoft.Json.dll">
+	<LocationPath>..\Cloud9.BizTalk.Helper\bin\$(Configuration)</LocationPath>
+	</Components>
+	</ItemGroup>
+	<ItemGroup>
+	<Schemas Include="$(ProjectName).Epic.BTAHL7V2XCommon.Schemas.dll">
+	<LocationPath>..\Cloud9.BizTalk.Epic\bin\$(Configuration)</LocationPath>
+	</Schemas>
+	<Schemas Include="$(ProjectName).Epic.BTAHL7V26Common.Schemas.dll">
+	<LocationPath>..\Cloud9.BizTalk.Epic\bin\$(Configuration)</LocationPath>
+	</Schemas>
+	<Schemas Include="$(ProjectName).Epic.BTAHL7_2_6.Schemas.dll">
+	<LocationPath>..\Cloud9.BizTalk.Epic\bin\$(Configuration)</LocationPath>
+	</Schemas>
+	<Schemas Include="$(ProjectName).Schemas.dll">
+	<LocationPath>..\Cloud9.BizTalk.Epic\bin\$(Configuration)</LocationPath>
+	</Schemas>
+	</ItemGroup>
+	<ItemGroup>
+	<Orchestrations Include="$(ProjectName).Epic.dll">
+	<LocationPath>..\Cloud9.BizTalk.Epic\bin\$(Configuration)</LocationPath>
+	</Orchestrations>
+	</ItemGroup>
+  <ItemGroup>
+    <PipelineComponents Include="Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.dll">
+      <LocationPath>..\Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings\bin\$(Configuration)</LocationPath>
+    </PipelineComponents>
+  </ItemGroup>  
+  <ItemGroup>
+      <AppsToReference Include="Cloud9.Common"/>
+  </ItemGroup>  
+  <Import Project="$(DeploymentFrameworkTargetsPath)BizTalkDeploymentFramework.targets" />
+  <!--
+    The Deployment Framework automatically packages most files into the server install MSI.
+    However, if there are special folders that you need to include in the MSI, you can
+    copy them to the folder $(RedistDir) in the CustomRedist target.
+    To include individual files, add an ItemGroup with AdditionalFiles elements.
+  -->
+  <Target Name="CustomRedist">
+  </Target>
+</Project>

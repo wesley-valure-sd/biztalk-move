@@ -1,0 +1,21 @@
+{
+  "node": {
+    "id": "receiveport:Cloud9.EDI.PDS.Deployment/RP_BBVA835_Patient",
+    "type": "receiveport",
+    "name": "RP_BBVA835_Patient",
+    "note": "Bound here but not defined in this binding file. The port is defined in another binding set or exists only on the server.",
+    "bindingSet": "Cloud9.EDI.PDS.Deployment"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "boundToReceivePort",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_BBVA_835Patient",
+      "fromName": "Process_BBVA_835Patient",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_BBVA_835Patient.json",
+      "logicalPort": "ReceiveBBVA835PatientPort",
+      "bindingSet": "Cloud9.EDI.PDS.Deployment"
+    }
+  ]
+}

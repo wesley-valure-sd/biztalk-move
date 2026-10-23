@@ -1,0 +1,29 @@
+{
+  "node": {
+    "id": "class:Cloud9.HL7.WebAPI.WebApiConfig",
+    "type": "class",
+    "name": "Cloud9.HL7.WebAPI.WebApiConfig",
+    "path": "Cloud9.HL7.WebAPI/Cloud9.HL7.WebAPI/App_Start/WebApiConfig.cs",
+    "visibility": "public",
+    "kind": "class",
+    "line": 9
+  },
+  "outgoing": [
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.HL7.WebAPI.WebApiConfig.Register",
+      "toName": "WebApiConfig.Register",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.HL7.WebAPI.WebApiConfig.Register.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.WebAPI/App_Start/WebApiConfig.cs",
+      "fromName": "WebApiConfig.cs",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.HL7.WebAPI_Cloud9.HL7.WebAPI_App_Start_WebApiConfig.cs.json"
+    }
+  ]
+}

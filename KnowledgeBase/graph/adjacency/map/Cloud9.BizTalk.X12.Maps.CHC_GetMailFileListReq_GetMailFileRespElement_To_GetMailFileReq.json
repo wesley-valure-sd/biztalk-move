@@ -1,0 +1,44 @@
+{
+  "node": {
+    "id": "map:Cloud9.BizTalk.X12.Maps.CHC_GetMailFileListReq_GetMailFileRespElement_To_GetMailFileReq",
+    "type": "map",
+    "name": "Cloud9.BizTalk.X12.Maps.CHC_GetMailFileListReq_GetMailFileRespElement_To_GetMailFileReq",
+    "readableSummary": "KnowledgeBase/map-summaries/CHC_GetMailFileListReq_GetMailFileRespElement_To_GetMailFileReq.txt",
+    "targetSchema": "Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonGetMailFileRequest",
+    "inlineScripts": [],
+    "functoidCount": 3,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/CHC_GetMailFileListReq_GetMailFileRespElement_To_GetMailFileReq.btm",
+    "linkCount": 10,
+    "sourceRoot": "Root",
+    "targetRoot": "claim_submission_api"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/CHC_GetMailFileListReq_GetMailFileRespElement_To_GetMailFileReq.btm",
+      "toName": "CHC_GetMailFileListReq_GetMailFileRespElement_To_GetMailFileReq.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_CHC_GetMailFileListReq_GetMailFileRespElement_To_GetMailFileReq.btm.json"
+    },
+    {
+      "type": "targetSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonGetMailFileRequest",
+      "toName": "Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonGetMailFileRequest",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonGetMailFileRequest.json",
+      "root": "claim_submission_api"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "usesMap",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker",
+      "fromName": "Process_CHC_InboundFiles_Worker",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker.json",
+      "output": "msg_GetMailFileReq.Body",
+      "input": "msg_GetMailFileListReq.Body, msg_GetMailFileListElement.Body",
+      "line": 1571
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "node": {
+    "id": "sqlscript:Cloud9.BizTalk.Scripts/835BBVAInsurancePayment/GetImportLogsInsurancePaymentSuccess.sql",
+    "type": "sqlscript",
+    "name": "GetImportLogsInsurancePaymentSuccess.sql",
+    "path": "Cloud9.BizTalk.Scripts/835BBVAInsurancePayment/GetImportLogsInsurancePaymentSuccess.sql",
+    "purpose": "Get Import Logs for success Insurance Payments",
+    "folder": "835BBVAInsurancePayment",
+    "database": "PRACTICE-DB"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk.Scripts/835BBVAInsurancePayment/GetImportLogsInsurancePaymentSuccess.sql",
+      "toName": "GetImportLogsInsurancePaymentSuccess.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Scripts_835BBVAInsurancePayment_GetImportLogsInsurancePaymentSuccess.sql.json"
+    },
+    {
+      "type": "queries",
+      "to": "sqltable:PracticeDB.dbo.ImportLog",
+      "toName": "dbo.ImportLog",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/PracticeDB.dbo.ImportLog.json"
+    }
+  ],
+  "incoming": []
+}

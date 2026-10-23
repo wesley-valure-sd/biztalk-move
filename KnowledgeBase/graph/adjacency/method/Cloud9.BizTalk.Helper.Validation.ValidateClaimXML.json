@@ -1,0 +1,31 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.Helper.Validation.ValidateClaimXML",
+    "type": "method",
+    "name": "Validation.ValidateClaimXML",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/Validation.cs",
+    "class": "Cloud9.BizTalk.Helper.Validation",
+    "line": 13,
+    "signatures": [
+      "public static XmlDocument ValidateClaimXML(XmlDocument xml)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.Helper.Validation",
+      "fromName": "Cloud9.BizTalk.Helper.Validation",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.Helper.Validation.json"
+    },
+    {
+      "type": "callsMethod",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker",
+      "fromName": "Process_CHC_837Claims_Worker",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker.json",
+      "line": 1483
+    }
+  ]
+}

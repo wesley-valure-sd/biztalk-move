@@ -1,0 +1,28 @@
+{
+  "node": {
+    "id": "sqlscript:Cloud9.BizTalk.Scripts/837CHCtoBBVAPassthrough/GetApplicationLookupValues.sql",
+    "type": "sqlscript",
+    "name": "GetApplicationLookupValues.sql",
+    "path": "Cloud9.BizTalk.Scripts/837CHCtoBBVAPassthrough/GetApplicationLookupValues.sql",
+    "purpose": "Get Application Lookup values for 835 CHC to BBVA",
+    "folder": "837CHCtoBBVAPassthrough",
+    "database": "BizTalkCloud9Common"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk.Scripts/837CHCtoBBVAPassthrough/GetApplicationLookupValues.sql",
+      "toName": "GetApplicationLookupValues.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Scripts_837CHCtoBBVAPassthrough_GetApplicationLookupValues.sql.json"
+    },
+    {
+      "type": "queries",
+      "to": "sqltable:BizTalkCloud9Common.BTS.ApplicationLookupValue",
+      "toName": "BTS.ApplicationLookupValue",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/BizTalkCloud9Common.BTS.ApplicationLookupValue.json"
+    }
+  ],
+  "incoming": []
+}

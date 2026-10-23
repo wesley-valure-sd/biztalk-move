@@ -1,0 +1,43 @@
+{
+  "node": {
+    "id": "class:Cloud9.BizTalk.Helper.AddressInfoType",
+    "type": "class",
+    "name": "Cloud9.BizTalk.Helper.AddressInfoType",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/ParseNameAddressBox.cs",
+    "visibility": "private",
+    "kind": "enum",
+    "line": 202
+  },
+  "outgoing": [
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.AddressInfoType.GetPatientName",
+      "toName": "AddressInfoType.GetPatientName",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.AddressInfoType.GetPatientName.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.AddressInfoType.GetAddressInfo",
+      "toName": "AddressInfoType.GetAddressInfo",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.AddressInfoType.GetAddressInfo.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.AddressInfoType.RemoveTitle",
+      "toName": "AddressInfoType.RemoveTitle",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.AddressInfoType.RemoveTitle.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/ParseNameAddressBox.cs",
+      "fromName": "ParseNameAddressBox.cs",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Helper_ParseNameAddressBox.cs.json"
+    }
+  ]
+}

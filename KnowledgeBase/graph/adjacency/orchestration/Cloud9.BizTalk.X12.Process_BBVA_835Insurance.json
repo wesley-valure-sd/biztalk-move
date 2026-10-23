@@ -1,0 +1,289 @@
+{
+  "node": {
+    "id": "orchestration:Cloud9.BizTalk.X12.Process_BBVA_835Insurance",
+    "type": "orchestration",
+    "name": "Process_BBVA_835Insurance",
+    "activation": "activate receive (ReceiveBBVA835InsurancePort.Operation_1, BBVA835)",
+    "ports": [
+      "ReceiveBBVA835InsurancePort (implements ReceiveBBVA835PortType)",
+      "GetPracticeConfigurationByNamePort (uses PartnerConfigurationPortType)",
+      "AddImportLogPort (uses dynamic PortType_AddImportLog)",
+      "Post835TransactionPort (uses dynamic Post835TransactionPortType)"
+    ],
+    "messages": [
+      "AdjAddImportLogResponse: AddImportLogResponse_MMT",
+      "AdjAddImportLog: AddImportLogRequest_MMT",
+      "AdjPost835InsuranceTransactionResponse: Post835InsuranceTransactionResponse_MMT",
+      "AdjPost835InsuranceTransaction: Post835InsuranceTransaction_MMT",
+      "AdjClaimPayment: Cloud9.BizTalk.Schemas.Canonical.ClaimPayment",
+      "AdjClaimPaymentBatch: Cloud9.BizTalk.Schemas.Canonical.ClaimPaymentBatch",
+      "AddImportLogResponse: AddImportLogResponse_MMT",
+      "AddImportLog: AddImportLogRequest_MMT",
+      "GetPracticeConfigurationByNameResponse: GetPracticeConfigurationByNameResponse_MMT",
+      "GetPracticeConfigurationByName: GetPracticeConfigurationByName_MMT",
+      "Post835InsuranceTransactionResponse: Post835InsuranceTransactionResponse_MMT",
+      "BBVA835: BBVA835_MMT",
+      "Post835InsuranceTransaction: Post835InsuranceTransaction_MMT",
+      "ClaimPaymentBatch: Cloud9.BizTalk.Schemas.Canonical.ClaimPaymentBatch",
+      "ClaimPayment: Cloud9.BizTalk.Schemas.Canonical.ClaimPayment"
+    ],
+    "visibility": "internal",
+    "module": "Cloud9.BizTalk.X12",
+    "contextProperties": [
+      "BTS.InboundTransportLocation",
+      "BTS.InboundTransportType",
+      "BTS.MessageID",
+      "BTS.RetryCount",
+      "BTS.RetryInterval",
+      "FILE.ReceivedFileName",
+      "Microsoft.XLANGs.BaseTypes.Address",
+      "Microsoft.XLANGs.BaseTypes.TransportType",
+      "WCF.Action",
+      "WCF.BindingConfiguration",
+      "WCF.BindingType",
+      "WCF.EnableTransaction"
+    ],
+    "line": 884,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_BBVA_835Insurance.odx",
+    "bindingStates": {
+      "Cloud9.EDI.Deployment": "Started",
+      "Cloud9.EDI.PDS.Deployment": "Started"
+    }
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_BBVA_835Insurance.odx",
+      "toName": "Process_BBVA_835Insurance.odx",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Orchestrations_Process_BBVA_835Insurance.odx.json"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.AddImportLogResponse_MMT",
+      "toName": "AddImportLogResponse_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.AddImportLogResponse_MMT.json",
+      "message": "AdjAddImportLogResponse"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.AddImportLogRequest_MMT",
+      "toName": "AddImportLogRequest_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.AddImportLogRequest_MMT.json",
+      "message": "AdjAddImportLog"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.Post835InsuranceTransactionResponse_MMT",
+      "toName": "Post835InsuranceTransactionResponse_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.Post835InsuranceTransactionResponse_MMT.json",
+      "message": "AdjPost835InsuranceTransactionResponse"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.Post835InsuranceTransaction_MMT",
+      "toName": "Post835InsuranceTransaction_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.Post835InsuranceTransaction_MMT.json",
+      "message": "AdjPost835InsuranceTransaction"
+    },
+    {
+      "type": "usesSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.Canonical.ClaimPayment",
+      "toName": "Cloud9.BizTalk.Schemas.Canonical.ClaimPayment",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.Canonical.ClaimPayment.json",
+      "message": "AdjClaimPayment"
+    },
+    {
+      "type": "usesSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.Canonical.ClaimPaymentBatch",
+      "toName": "Cloud9.BizTalk.Schemas.Canonical.ClaimPaymentBatch",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.Canonical.ClaimPaymentBatch.json",
+      "message": "AdjClaimPaymentBatch"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.GetPracticeConfigurationByNameResponse_MMT",
+      "toName": "GetPracticeConfigurationByNameResponse_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.GetPracticeConfigurationByNameResponse_MMT.json",
+      "message": "GetPracticeConfigurationByNameResponse"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.GetPracticeConfigurationByName_MMT",
+      "toName": "GetPracticeConfigurationByName_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.GetPracticeConfigurationByName_MMT.json",
+      "message": "GetPracticeConfigurationByName"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.BBVA835_MMT",
+      "toName": "BBVA835_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.BBVA835_MMT.json",
+      "message": "BBVA835"
+    },
+    {
+      "type": "usesMap",
+      "to": "map:Cloud9.BizTalk.X12.Maps.Instantiate_GetPracticeConfigurationByName",
+      "toName": "Cloud9.BizTalk.X12.Maps.Instantiate_GetPracticeConfigurationByName",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.Instantiate_GetPracticeConfigurationByName.json",
+      "output": "GetPracticeConfigurationByName.Body",
+      "input": "BBVA835.Body",
+      "line": 967
+    },
+    {
+      "type": "usesMap",
+      "to": "map:Cloud9.BizTalk.X12.Maps.BBVA_835Insurance_To_ClaimPaymentBatchCanonical",
+      "toName": "Cloud9.BizTalk.X12.Maps.BBVA_835Insurance_To_ClaimPaymentBatchCanonical",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.BBVA_835Insurance_To_ClaimPaymentBatchCanonical.json",
+      "output": "ClaimPaymentBatch",
+      "input": "BBVA835.Body",
+      "line": 988
+    },
+    {
+      "type": "usesMap",
+      "to": "map:Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835InsuranceTransaction",
+      "toName": "Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835InsuranceTransaction",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835InsuranceTransaction.json",
+      "output": "Post835InsuranceTransaction.Body",
+      "input": "ClaimPayment",
+      "line": 1011
+    },
+    {
+      "type": "usesMap",
+      "to": "map:Cloud9.BizTalk.X12.Maps.BBVA_835_To_AdjustmentClaimPaymentBatchCanonical",
+      "toName": "Cloud9.BizTalk.X12.Maps.BBVA_835_To_AdjustmentClaimPaymentBatchCanonical",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.BBVA_835_To_AdjustmentClaimPaymentBatchCanonical.json",
+      "output": "AdjClaimPaymentBatch",
+      "input": "BBVA835.Body",
+      "line": 1097
+    },
+    {
+      "type": "invokesProc",
+      "to": "sqlproc:PracticeDB.BTS.Post835InsuranceTransaction",
+      "toName": "BTS.Post835InsuranceTransaction",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/PracticeDB.BTS.Post835InsuranceTransaction.json",
+      "line": 1013,
+      "via": "dynamic WCF-SQL send port (WCF.Action set in code)"
+    },
+    {
+      "type": "invokesProc",
+      "to": "sqlproc:PracticeDB.BTS.AddImportLog",
+      "toName": "BTS.AddImportLog",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/PracticeDB.BTS.AddImportLog.json",
+      "line": 1078,
+      "via": "dynamic WCF-SQL send port (WCF.Action set in code)"
+    },
+    {
+      "type": "invokesProc",
+      "to": "sqlproc:BizTalkCloud9Common.BTS.GetPracticeConfigurationByName",
+      "toName": "BTS.GetPracticeConfigurationByName",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.GetPracticeConfigurationByName.json",
+      "line": 972,
+      "via": "static send port operation GetPracticeConfigurationByName (BtsActionMapping)"
+    },
+    {
+      "type": "boundToReceivePort",
+      "to": "receiveport:Cloud9.EDI.Deployment/RP_BBVA835_Insurance",
+      "toName": "RP_BBVA835_Insurance",
+      "toType": "receiveport",
+      "toFile": "adjacency/receiveport/Cloud9.EDI.Deployment_RP_BBVA835_Insurance.json",
+      "logicalPort": "ReceiveBBVA835InsurancePort",
+      "bindingSet": "Cloud9.EDI.Deployment"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.Deployment/SP_BizTalkCloud9Common_WCF",
+      "toName": "SP_BizTalkCloud9Common_WCF",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.Deployment_SP_BizTalkCloud9Common_WCF.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "GetPracticeConfigurationByNamePort"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_BBVA_835Insurance_Post835TransactionPort_182f4e020577c79e",
+      "toName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_BBVA_835Insurance_Post835TransactionPort_182f4e020577c79e",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_BBVA_835Insurance_Post835TransactionPort_182f4e020577c79e.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "4",
+      "logicalPort": "Post835TransactionPort"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_BBVA_835Insurance_AddImportLogPort_182f4e020577c79e",
+      "toName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_BBVA_835Insurance_AddImportLogPort_182f4e020577c79e",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_BBVA_835Insurance_AddImportLogPort_182f4e020577c79e.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "4",
+      "logicalPort": "AddImportLogPort"
+    },
+    {
+      "type": "boundToReceivePort",
+      "to": "receiveport:Cloud9.EDI.PDS.Deployment/RP_BBVA835_Insurance",
+      "toName": "RP_BBVA835_Insurance",
+      "toType": "receiveport",
+      "toFile": "adjacency/receiveport/Cloud9.EDI.PDS.Deployment_RP_BBVA835_Insurance.json",
+      "logicalPort": "ReceiveBBVA835InsurancePort",
+      "bindingSet": "Cloud9.EDI.PDS.Deployment"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.PDS.Deployment/SP_BizTalkCloud9Common_WCF",
+      "toName": "SP_BizTalkCloud9Common_WCF",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.PDS.Deployment_SP_BizTalkCloud9Common_WCF.json",
+      "bindingSet": "Cloud9.EDI.PDS.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "GetPracticeConfigurationByNamePort"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.PDS.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_BBVA_835Insurance_Post835TransactionPort_182f4e020577c79e",
+      "toName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_BBVA_835Insurance_Post835TransactionPort_182f4e020577c79e",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.PDS.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_BBVA_835Insurance_Post835TransactionPort_182f4e020577c79e.json",
+      "bindingSet": "Cloud9.EDI.PDS.Deployment",
+      "bindingOption": "4",
+      "logicalPort": "Post835TransactionPort"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.PDS.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_BBVA_835Insurance_AddImportLogPort_182f4e020577c79e",
+      "toName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_BBVA_835Insurance_AddImportLogPort_182f4e020577c79e",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.PDS.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_BBVA_835Insurance_AddImportLogPort_182f4e020577c79e.json",
+      "bindingSet": "Cloud9.EDI.PDS.Deployment",
+      "bindingOption": "4",
+      "logicalPort": "AddImportLogPort"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "implementedBy",
+      "from": "flowstep:BBVA-Ins-02-Guard",
+      "fromName": "Guard: CLP and PLB counts",
+      "fromType": "flowstep",
+      "fromFile": "adjacency/flowstep/BBVA-Ins-02-Guard.json",
+      "curated": true
+    }
+  ]
+}

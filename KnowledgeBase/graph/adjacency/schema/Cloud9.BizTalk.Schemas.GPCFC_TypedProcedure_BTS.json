@@ -1,0 +1,59 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.GPCFC_TypedProcedure_BTS",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.GPCFC_TypedProcedure_BTS",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetPracticeConfigForClaim/GPCFC_TypedProcedure.BTS.xsd",
+    "rootElements": [
+      "GetPracticeConfigurationForClaim",
+      "GetPracticeConfigurationForClaimResponse"
+    ],
+    "kind": "wcf-sql-typed-procedure",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS",
+    "sqlActions": [
+      "TypedProcedure/BTS/GetPracticeConfigurationForClaim"
+    ]
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetPracticeConfigForClaim/GPCFC_TypedProcedure.BTS.xsd",
+      "toName": "GPCFC_TypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_GetPracticeConfigForClaim_GPCFC_TypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "describesParametersOf",
+      "to": "sqlproc:BizTalkCloud9Common.BTS.GetPracticeConfigurationForClaim",
+      "toName": "BTS.GetPracticeConfigurationForClaim",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.GetPracticeConfigurationForClaim.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.X12.ClaimPaymentCanonicalToGetPracticeByClaimNumber",
+      "fromName": "Cloud9.BizTalk.X12.ClaimPaymentCanonicalToGetPracticeByClaimNumber",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.ClaimPaymentCanonicalToGetPracticeByClaimNumber.json",
+      "root": "GetPracticeConfigurationForClaim"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.MPType_GetPracticeConfigurationForClaimResp",
+      "fromName": "MPType_GetPracticeConfigurationForClaimResp",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.MPType_GetPracticeConfigurationForClaimResp.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.GPCFC_TypedProcedure_BTS.GetPracticeConfigurationForClaimResponse"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.MPType_GetPracticeConfigurationForClaimReq",
+      "fromName": "MPType_GetPracticeConfigurationForClaimReq",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.MPType_GetPracticeConfigurationForClaimReq.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.GPCFC_TypedProcedure_BTS.GetPracticeConfigurationForClaim"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/ClaimCanonical_To_CHC_X12_5010_837D.btm",
+    "type": "file",
+    "name": "ClaimCanonical_To_CHC_X12_5010_837D.btm",
+    "kind": "btm",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/ClaimCanonical_To_CHC_X12_5010_837D.btm"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.X12",
+      "fromName": "Cloud9.BizTalk.X12",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.X12.json"
+    },
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.X12.PDS",
+      "fromName": "Cloud9.BizTalk.X12.PDS",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.X12.PDS.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "map:Cloud9.BizTalk.X12.Maps.ClaimCanonical_To_CHC_X12_5010_837D",
+      "fromName": "Cloud9.BizTalk.X12.Maps.ClaimCanonical_To_CHC_X12_5010_837D",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.ClaimCanonical_To_CHC_X12_5010_837D.json"
+    }
+  ]
+}

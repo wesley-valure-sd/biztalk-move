@@ -1,0 +1,272 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/EDITypes.odx",
+    "type": "file",
+    "name": "EDITypes.odx",
+    "kind": "odx",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/EDITypes.odx"
+  },
+  "outgoing": [
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.X12.CHC271_MMT",
+      "toName": "CHC271_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.CHC271_MMT.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.X12.SD835_MMT",
+      "toName": "SD835_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.SD835_MMT.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.X12.BBVA835_MMT",
+      "toName": "BBVA835_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.BBVA835_MMT.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.X12.Post835InsuranceTransaction_MMT",
+      "toName": "Post835InsuranceTransaction_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.Post835InsuranceTransaction_MMT.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.X12.Post835InsuranceTransactionResponse_MMT",
+      "toName": "Post835InsuranceTransactionResponse_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.Post835InsuranceTransactionResponse_MMT.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.X12.Post835PatientTransaction_MMT",
+      "toName": "Post835PatientTransaction_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.Post835PatientTransaction_MMT.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.X12.Post835PatientTransactionResponse_MMT",
+      "toName": "Post835PatientTransactionResponse_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.Post835PatientTransactionResponse_MMT.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.X12.GetPracticeConfigurationByName_MMT",
+      "toName": "GetPracticeConfigurationByName_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.GetPracticeConfigurationByName_MMT.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.X12.GetPracticeConfigurationByNameResponse_MMT",
+      "toName": "GetPracticeConfigurationByNameResponse_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.GetPracticeConfigurationByNameResponse_MMT.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.X12.AddImportLogRequest_MMT",
+      "toName": "AddImportLogRequest_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.AddImportLogRequest_MMT.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.X12.AddImportLogResponse_MMT",
+      "toName": "AddImportLogResponse_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.AddImportLogResponse_MMT.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.X12.GetADAClaimRequest_MMT",
+      "toName": "GetADAClaimRequest_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.GetADAClaimRequest_MMT.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.X12.GetADAClaimResponse_MMT",
+      "toName": "GetADAClaimResponse_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.GetADAClaimResponse_MMT.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.X12.CanonicalClaimInformation_MMT",
+      "toName": "CanonicalClaimInformation_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.CanonicalClaimInformation_MMT.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.X12.OutgoingMessage_MMT",
+      "toName": "OutgoingMessage_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.OutgoingMessage_MMT.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.X12.CHC276_MMT",
+      "toName": "CHC276_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.CHC276_MMT.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.X12.GetApplicationLookupValue_MMT",
+      "toName": "GetApplicationLookupValue_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.GetApplicationLookupValue_MMT.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.X12.GetApplicationLookupValueResponse_MMT",
+      "toName": "GetApplicationLookupValueResponse_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.GetApplicationLookupValueResponse_MMT.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.X12.GetApplicationLookupValues_MMT",
+      "toName": "GetApplicationLookupValues_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.GetApplicationLookupValues_MMT.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.X12.GetApplicationLookupValuesResponse_MMT",
+      "toName": "GetApplicationLookupValuesResponse_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.GetApplicationLookupValuesResponse_MMT.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.X12.CHC277_4010_MMT",
+      "toName": "CHC277_4010_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.CHC277_4010_MMT.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.X12.ChannelHealth271_MMT",
+      "toName": "ChannelHealth271_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.ChannelHealth271_MMT.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.X12.InsuranceInformationCanonical_MMT",
+      "toName": "InsuranceInformationCanonical_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.InsuranceInformationCanonical_MMT.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.X12.UpdatePatientInsurancePolicyByPipGUID_MMT",
+      "toName": "UpdatePatientInsurancePolicyByPipGUID_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.UpdatePatientInsurancePolicyByPipGUID_MMT.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.X12.UpdatePatientInsurancePolicyByPipGUIDResposne_MMT",
+      "toName": "UpdatePatientInsurancePolicyByPipGUIDResposne_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.UpdatePatientInsurancePolicyByPipGUIDResposne_MMT.json"
+    },
+    {
+      "type": "defines",
+      "to": "porttype:Cloud9.BizTalk.X12.ReceiveSD835PortType",
+      "toName": "ReceiveSD835PortType",
+      "toType": "porttype",
+      "toFile": "adjacency/porttype/Cloud9.BizTalk.X12.ReceiveSD835PortType.json"
+    },
+    {
+      "type": "defines",
+      "to": "porttype:Cloud9.BizTalk.X12.Post835TransactionPortType",
+      "toName": "Post835TransactionPortType",
+      "toType": "porttype",
+      "toFile": "adjacency/porttype/Cloud9.BizTalk.X12.Post835TransactionPortType.json"
+    },
+    {
+      "type": "defines",
+      "to": "porttype:Cloud9.BizTalk.X12.ReceiveBBVA835PortType",
+      "toName": "ReceiveBBVA835PortType",
+      "toType": "porttype",
+      "toFile": "adjacency/porttype/Cloud9.BizTalk.X12.ReceiveBBVA835PortType.json"
+    },
+    {
+      "type": "defines",
+      "to": "porttype:Cloud9.BizTalk.X12.PartnerConfigurationPortType",
+      "toName": "PartnerConfigurationPortType",
+      "toType": "porttype",
+      "toFile": "adjacency/porttype/Cloud9.BizTalk.X12.PartnerConfigurationPortType.json"
+    },
+    {
+      "type": "defines",
+      "to": "porttype:Cloud9.BizTalk.X12.PortType_AddImportLog",
+      "toName": "PortType_AddImportLog",
+      "toType": "porttype",
+      "toFile": "adjacency/porttype/Cloud9.BizTalk.X12.PortType_AddImportLog.json"
+    },
+    {
+      "type": "defines",
+      "to": "porttype:Cloud9.BizTalk.X12.PortType_OutgoingMessage",
+      "toName": "PortType_OutgoingMessage",
+      "toType": "porttype",
+      "toFile": "adjacency/porttype/Cloud9.BizTalk.X12.PortType_OutgoingMessage.json"
+    },
+    {
+      "type": "defines",
+      "to": "porttype:Cloud9.BizTalk.X12.PortType_GetApplicationLookupValue",
+      "toName": "PortType_GetApplicationLookupValue",
+      "toType": "porttype",
+      "toFile": "adjacency/porttype/Cloud9.BizTalk.X12.PortType_GetApplicationLookupValue.json"
+    },
+    {
+      "type": "defines",
+      "to": "porttype:Cloud9.BizTalk.X12.PortType_GetApplicationLookupValues",
+      "toName": "PortType_GetApplicationLookupValues",
+      "toType": "porttype",
+      "toFile": "adjacency/porttype/Cloud9.BizTalk.X12.PortType_GetApplicationLookupValues.json"
+    },
+    {
+      "type": "defines",
+      "to": "porttype:Cloud9.BizTalk.X12.PortType_UpdatePatientInsurancePolicyByPipGUID",
+      "toName": "PortType_UpdatePatientInsurancePolicyByPipGUID",
+      "toType": "porttype",
+      "toFile": "adjacency/porttype/Cloud9.BizTalk.X12.PortType_UpdatePatientInsurancePolicyByPipGUID.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.X12",
+      "fromName": "Cloud9.BizTalk.X12",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.X12.json"
+    },
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.X12.PDS",
+      "fromName": "Cloud9.BizTalk.X12.PDS",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.X12.PDS.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "orchestration:Cloud9.BizTalk.X12.EDITypes",
+      "fromName": "EDITypes",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.EDITypes.json"
+    }
+  ]
+}

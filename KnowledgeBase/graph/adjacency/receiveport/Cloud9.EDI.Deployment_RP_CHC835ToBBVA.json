@@ -1,0 +1,53 @@
+{
+  "node": {
+    "id": "receiveport:Cloud9.EDI.Deployment/RP_CHC835ToBBVA",
+    "type": "receiveport",
+    "name": "RP_CHC835ToBBVA",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.Deployment/PortBindingsMaster.xml",
+    "bindingSet": "Cloud9.EDI.Deployment",
+    "isTwoWay": "false",
+    "application": "Cloud9.EDI"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.EDI.Deployment/PortBindingsMaster.xml",
+      "toName": "PortBindingsMaster.xml",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.EDI.Deployment_PortBindingsMaster.xml.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "partOf",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_CHC835ToBBVA_FILE",
+      "fromName": "RL_CHC835ToBBVA_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_CHC835ToBBVA_FILE.json"
+    },
+    {
+      "type": "partOf",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}CHC835ToBBVA_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}CHC835ToBBVA_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}CHC835ToBBVA_SFTP.json"
+    },
+    {
+      "type": "boundToReceivePort",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_835_To_BBVA",
+      "fromName": "Process_CHC_835_To_BBVA",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_835_To_BBVA.json",
+      "logicalPort": "ReceiveCHC835Port",
+      "bindingSet": "Cloud9.EDI.Deployment"
+    },
+    {
+      "type": "entryPoint",
+      "from": "flow:CHC-835-To-BBVA-Passthrough",
+      "fromName": "Change Healthcare 835 pass-through to the BBVA/SD SFTP (no posting)",
+      "fromType": "flow",
+      "fromFile": "adjacency/flow/CHC-835-To-BBVA-Passthrough.json",
+      "curated": true
+    }
+  ]
+}

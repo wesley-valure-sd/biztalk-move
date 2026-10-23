@@ -1,0 +1,13 @@
+MAP: QueueClaimsResponseElement_To_UpdateClaimStatuses.btm
+PATH: Cloud9.BizTalk\Cloud9.BizTalk.X12\Maps\QueueClaimsResponseElement_To_UpdateClaimStatuses.btm
+SOURCE: Cloud9.BizTalk.Schemas.ClaimsProcessing.QC_ProcedureResultSet_BTS_QueueClaims (root StoredProcedureResultSet0)
+TARGET: Cloud9.BizTalk.Schemas.UCS_TypedProcedure_BTS (root UpdateClaimStatuses)
+SCRIPT PRECEDENCE (first match wins when a functoid has more than one script): CSharp > ExternalAssembly > VbNet > JScript > XsltCallTemplate > Xslt
+
+=== PAGE: Page 1 ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L2: F1 -> UpdateClaimStatuses/StatusCode
+L5: StoredProcedureResultSet0/adaclaimNumber -> UpdateClaimStatuses/adaclaimNumbers/IntListTableType/ID
+--- FUNCTOIDS ---
+F1 [String Concatenate] inputs: const:'SUBMITTED'
+

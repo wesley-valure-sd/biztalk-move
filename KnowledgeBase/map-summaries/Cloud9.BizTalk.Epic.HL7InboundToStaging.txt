@@ -1,0 +1,34 @@
+MAP: Cloud9.BizTalk.Epic.HL7InboundToStaging.btm
+PATH: Cloud9.BizTalk\Cloud9.BizTalk.Epic\Maps\Cloud9.BizTalk.Epic.HL7InboundToStaging.btm
+SOURCE:  (root Root)
+TARGET: Cloud9.BizTalk.Schemas.HIS_TableOperation_BTS_HL7InboundStaging (root Insert)
+SCRIPT PRECEDENCE (first match wins when a functoid has more than one script): CSharp > ExternalAssembly > VbNet > JScript > XsltCallTemplate > Xslt
+
+=== PAGE: Page 1 ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L3: Root/InputMessagePart_1/MSH_25_GLO_DEF/MSH/MSH.7_DateTimeOfMessage/TS.1 -> Insert/Rows/HL7InboundStaging/hisMSH_7_DateTimeOfMessage
+L4: Root/InputMessagePart_1/MSH_25_GLO_DEF/MSH/MSH.10_MessageControlId -> Insert/Rows/HL7InboundStaging/hisMSH_10_MessageControlId
+L5: F3 -> Insert/Rows/HL7InboundStaging/hisStatus
+L6: F1 -> Insert/Rows/HL7InboundStaging/hisCreatedDate
+L7: F1 -> Insert/Rows/HL7InboundStaging/hisLastModifiedDate
+L8: F6 -> Insert/Rows/HL7InboundStaging/hisLastModifiedBy
+L9: F6 -> Insert/Rows/HL7InboundStaging/hisCreatedBy
+L11: F7 -> Insert/Rows/HL7InboundStaging/hisMessageData
+L17: Root/InputMessagePart_0/HL7InboundMessage/MessageType -> Insert/Rows/HL7InboundStaging/hisMessageType
+L19: Root/InputMessagePart_0/HL7InboundMessage/EPICPatientID -> Insert/Rows/HL7InboundStaging/hisEPICPatientID
+L22: F8 -> F9
+L23: Root/InputMessagePart_0/HL7InboundMessage/Cloud9PatientID -> F9
+L24: F9 -> Insert/Rows/HL7InboundStaging/hisCloud9PatientID
+L25: Root/InputMessagePart_0/HL7InboundMessage/Cloud9PatientID -> F10
+L26: F10 -> F8
+L27: Root/InputMessagePart_0/HL7InboundMessage/PracticeID -> Insert/Rows/HL7InboundStaging/pcGUID
+L28: Root/InputMessagePart_0/HL7InboundMessage/MessageGUID -> Insert/Rows/HL7InboundStaging/imGUID
+--- FUNCTOIDS ---
+F1 [Date and Time, current (inferred)] inputs: 
+F6 [String Concatenate] inputs: const:'Cloud9_BizTalk_HL7InboundToStaging'
+F3 [String Concatenate] inputs: const:'0'
+F7 [String Concatenate] inputs: const:'setme'
+F8 [FID 316] inputs: L26, const:''
+F9 [Value Mapping] inputs: L22, L23
+F10 [FID 109] inputs: L25
+

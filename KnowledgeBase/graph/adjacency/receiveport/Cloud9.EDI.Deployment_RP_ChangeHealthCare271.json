@@ -1,0 +1,29 @@
+{
+  "node": {
+    "id": "receiveport:Cloud9.EDI.Deployment/RP_ChangeHealthCare271",
+    "type": "receiveport",
+    "name": "RP_ChangeHealthCare271",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.Deployment/PortBindingsMaster.xml",
+    "bindingSet": "Cloud9.EDI.Deployment",
+    "isTwoWay": "false",
+    "application": "Cloud9.EDI"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.EDI.Deployment/PortBindingsMaster.xml",
+      "toName": "PortBindingsMaster.xml",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.EDI.Deployment_PortBindingsMaster.xml.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "partOf",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_ChangeHealthCare271_FILE",
+      "fromName": "RL_ChangeHealthCare271_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_ChangeHealthCare271_FILE.json"
+    }
+  ]
+}

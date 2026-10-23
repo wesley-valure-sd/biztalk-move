@@ -1,0 +1,37 @@
+{
+  "node": {
+    "id": "setting:Cloud9.BizTalk.PDS.Deployment/ADDR_FILE_ROOT",
+    "type": "setting",
+    "name": "ADDR_FILE_ROOT",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.PDS.Deployment/SettingsFileGenerator.xml",
+    "bindingSet": "Cloud9.BizTalk.PDS.Deployment",
+    "valuesByEnvironment": {
+      "Default Values": "C:\\BizTalkTest",
+      "Local Dev (LocalSettings)": "C:\\BizTalkTest",
+      "LAB2 (LAB2Settings)": "\\\\10.2.1.1\\Development\\Lab2",
+      "DEV (DEVSettings)": "\\\\awssgw01p02.pdsi.corp\\pacden-cloud9\\BIZ\\DEV",
+      "CFG (CFGSettings)": "\\\\awssgw01p02.pdsi.corp\\pacden-cloud9\\BIZ\\CFG",
+      "TST (TSTSettings)": "\\\\awssgw01p02.pdsi.corp\\pacden-cloud9\\BIZ\\TST",
+      "TRN (TrainingSettings)": "\\\\awssgw01p02.pdsi.corp\\pacden-cloud9\\BIZ\\TRN",
+      "STG (StagingSettings)": "\\\\awssgw01p02.pdsi.corp\\pacden-cloud9\\BIZ\\STG",
+      "PROD (ProdSettings)": "\\\\awssgw01p02.pdsi.corp\\pacden-cloud9\\BIZ\\PRD"
+    }
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "usesSetting",
+      "from": "sendport:Cloud9.BizTalk.PDS.Deployment/SP.MDM_T02.Outbound",
+      "fromName": "SP.MDM_T02.Outbound",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.BizTalk.PDS.Deployment_SP.MDM_T02.Outbound.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.BizTalk.PDS.Deployment/RL.MDM_T02_To_PDS",
+      "fromName": "RL.MDM_T02_To_PDS",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.BizTalk.PDS.Deployment_RL.MDM_T02_To_PDS.json"
+    }
+  ]
+}

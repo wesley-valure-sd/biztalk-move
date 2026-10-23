@@ -1,0 +1,99 @@
+{
+  "node": {
+    "id": "flow:SD-835-Web-Patient-Payment",
+    "type": "flow",
+    "name": "Smile Doctors web payment 835 -> patient payment transactions (card / ACH / ACH return)",
+    "doc": "KnowledgeBase/docs/02-payments-835-end-to-end.md#flow-b-sd-web-patient-payment-835",
+    "replacementSpec": "KnowledgeBase/docs/03-replacement-guide.md",
+    "curated": true
+  },
+  "outgoing": [
+    {
+      "type": "source",
+      "to": "externalsystem:SmileDoctors-Web-SFTP",
+      "toName": "Smile Doctors web payment SFTP (OpenEdge / XWeb card and ACH payments)",
+      "toType": "externalsystem",
+      "toFile": "adjacency/externalsystem/SmileDoctors-Web-SFTP.json",
+      "curated": true
+    },
+    {
+      "type": "entryPoint",
+      "to": "receiveport:Cloud9.EDI.Deployment/RP_SD835_Patient",
+      "toName": "RP_SD835_Patient",
+      "toType": "receiveport",
+      "toFile": "adjacency/receiveport/Cloud9.EDI.Deployment_RP_SD835_Patient.json",
+      "curated": true
+    },
+    {
+      "type": "hasStep",
+      "to": "flowstep:SD-Web-01-Receive",
+      "toName": "Receive file from SD-<REGION> folder",
+      "toType": "flowstep",
+      "toFile": "adjacency/flowstep/SD-Web-01-Receive.json",
+      "order": 1,
+      "curated": true
+    },
+    {
+      "type": "hasStep",
+      "to": "flowstep:SD-Web-02-MapCanonical",
+      "toName": "Map SD 835 to ClaimPaymentBatch",
+      "toType": "flowstep",
+      "toFile": "adjacency/flowstep/SD-Web-02-MapCanonical.json",
+      "order": 2,
+      "curated": true
+    },
+    {
+      "type": "hasStep",
+      "to": "flowstep:SD-Web-03-PracticeLookup",
+      "toName": "Find practice database from folder name",
+      "toType": "flowstep",
+      "toFile": "adjacency/flowstep/SD-Web-03-PracticeLookup.json",
+      "order": 3,
+      "curated": true
+    },
+    {
+      "type": "hasStep",
+      "to": "flowstep:SD-Web-04-Post",
+      "toName": "Post each payment with BTS.Post835PatientTransaction (WEB)",
+      "toType": "flowstep",
+      "toFile": "adjacency/flowstep/SD-Web-04-Post.json",
+      "order": 4,
+      "curated": true
+    },
+    {
+      "type": "hasStep",
+      "to": "flowstep:SD-Web-05-ImportLog",
+      "toName": "Write ImportLog row (no external reference)",
+      "toType": "flowstep",
+      "toFile": "adjacency/flowstep/SD-Web-05-ImportLog.json",
+      "order": 5,
+      "curated": true
+    }
+  ],
+  "incoming": [
+    {
+      "type": "appliesTo",
+      "from": "businessrule:NoFileLevelTransaction",
+      "fromName": "No transaction across a file",
+      "fromType": "businessrule",
+      "fromFile": "adjacency/businessrule/NoFileLevelTransaction.json",
+      "curated": true
+    },
+    {
+      "type": "verifies",
+      "from": "sqlscript:Cloud9.BizTalk.Scripts/835SDWebPatientPayment/GetWebPatientPaymentType.sql",
+      "fromName": "GetWebPatientPaymentType.sql",
+      "fromType": "sqlscript",
+      "fromFile": "adjacency/sqlscript/Cloud9.BizTalk.Scripts_835SDWebPatientPayment_GetWebPatientPaymentType.sql.json",
+      "curated": true
+    },
+    {
+      "type": "verifies",
+      "from": "sqlscript:Cloud9.BizTalk.Scripts/835SDWebPatientPayment/GetTransactionsPatientPayment.sql",
+      "fromName": "GetTransactionsPatientPayment.sql",
+      "fromType": "sqlscript",
+      "fromFile": "adjacency/sqlscript/Cloud9.BizTalk.Scripts_835SDWebPatientPayment_GetTransactionsPatientPayment.sql.json",
+      "curated": true
+    }
+  ]
+}

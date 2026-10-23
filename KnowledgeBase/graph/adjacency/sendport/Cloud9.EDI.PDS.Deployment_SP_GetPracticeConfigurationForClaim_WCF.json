@@ -1,0 +1,35 @@
+{
+  "node": {
+    "id": "sendport:Cloud9.EDI.PDS.Deployment/SP_GetPracticeConfigurationForClaim_WCF",
+    "type": "sendport",
+    "name": "SP_GetPracticeConfigurationForClaim_WCF",
+    "sendPipeline": "Microsoft.BizTalk.DefaultPipelines.XMLTransmit",
+    "bindingSet": "Cloud9.EDI.PDS.Deployment",
+    "actionMappings": [
+      "GetPracticeConfigurationForClaim"
+    ],
+    "isTwoWay": "true",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.PDS.Deployment/PortBindingsMaster.xml",
+    "address": "${ADDR_DB_CLOUD9COMMON}?",
+    "filter": [],
+    "isStatic": "true",
+    "transport": "WCF-Custom"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.EDI.PDS.Deployment/PortBindingsMaster.xml",
+      "toName": "PortBindingsMaster.xml",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.EDI.PDS.Deployment_PortBindingsMaster.xml.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.EDI.PDS.Deployment/ADDR_DB_CLOUD9COMMON",
+      "toName": "ADDR_DB_CLOUD9COMMON",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.EDI.PDS.Deployment_ADDR_DB_CLOUD9COMMON.json"
+    }
+  ],
+  "incoming": []
+}

@@ -1,0 +1,33 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/CHC_X12_00501_271_To_InsuranceInformationCanonical.btm",
+    "type": "file",
+    "name": "CHC_X12_00501_271_To_InsuranceInformationCanonical.btm",
+    "kind": "btm",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/CHC_X12_00501_271_To_InsuranceInformationCanonical.btm"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.X12",
+      "fromName": "Cloud9.BizTalk.X12",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.X12.json"
+    },
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.X12.PDS",
+      "fromName": "Cloud9.BizTalk.X12.PDS",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.X12.PDS.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "map:Cloud9.BizTalk.X12.Maps.CHC_X12_00501_271_To_InsuranceInformationCanonical",
+      "fromName": "Cloud9.BizTalk.X12.Maps.CHC_X12_00501_271_To_InsuranceInformationCanonical",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.CHC_X12_00501_271_To_InsuranceInformationCanonical.json"
+    }
+  ]
+}

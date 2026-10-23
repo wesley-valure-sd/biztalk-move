@@ -1,0 +1,53 @@
+{
+  "node": {
+    "id": "map:Cloud9.BizTalk.Epic.SIUMessageData_To_GetLocationTimezoneReq",
+    "type": "map",
+    "name": "Cloud9.BizTalk.Epic.SIUMessageData_To_GetLocationTimezoneReq",
+    "readableSummary": "KnowledgeBase/map-summaries/SIUMessageData_To_GetLocationTimezoneReq.txt",
+    "targetSchema": "Cloud9.BizTalk.Schemas.GLT_TypedProcedure_BTS",
+    "inlineScripts": [],
+    "functoidCount": 0,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/SIUMessageData_To_GetLocationTimezoneReq.btm",
+    "sourceSchema": "..\\Schemas\\SIU_Canonical.xsd",
+    "linkCount": 1,
+    "sourceRoot": "SIU_Canonical",
+    "targetRoot": "GetLocationTimezone"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/SIUMessageData_To_GetLocationTimezoneReq.btm",
+      "toName": "SIUMessageData_To_GetLocationTimezoneReq.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Maps_SIUMessageData_To_GetLocationTimezoneReq.btm.json"
+    },
+    {
+      "type": "sourceSchema",
+      "to": "schema:Cloud9.BizTalk.Epic.Schemas.SIU_Canonical",
+      "toName": "Cloud9.BizTalk.Epic.Schemas.SIU_Canonical",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Epic.Schemas.SIU_Canonical.json",
+      "root": "SIU_Canonical"
+    },
+    {
+      "type": "targetSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.GLT_TypedProcedure_BTS",
+      "toName": "Cloud9.BizTalk.Schemas.GLT_TypedProcedure_BTS",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.GLT_TypedProcedure_BTS.json",
+      "root": "GetLocationTimezone"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "usesMap",
+      "from": "orchestration:Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient",
+      "fromName": "ProcessHL7MessagesForPatient",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient.json",
+      "output": "msg_GetLocationTimezoneReq.Body",
+      "input": "msg_SIUMessageData.Body",
+      "line": 2796
+    }
+  ]
+}

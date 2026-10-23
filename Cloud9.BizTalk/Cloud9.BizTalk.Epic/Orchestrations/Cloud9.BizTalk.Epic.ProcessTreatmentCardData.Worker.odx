@@ -1,0 +1,726 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="432bbc0e-0082-4d6a-8c9c-bf13c9286ab0" LowerBound="1.1" HigherBound="167.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Cloud9.BizTalk.Epic" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="ServiceDeclaration" OID="61d7e007-cab7-499c-be3a-36ef199acafb" ParentLink="Module_ServiceDeclaration" LowerBound="35.1" HigherBound="166.1">
+            <om:Property Name="InitializedTransactionType" Value="True" />
+            <om:Property Name="IsInvokable" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ProcessTreatmentCardData_Worker" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="24ed7b6b-d499-467d-bdd3-2bd11e1cbf83" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="46.1" HigherBound="47.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="InternalEntityID" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="4fa4e652-c192-4e62-bf55-9816d4a62e59" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="47.1" HigherBound="48.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ExternalEntityID" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="855ddc0a-3915-4d9d-961d-3706a699c741" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="48.1" HigherBound="49.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strProcessName" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="11b149eb-8494-41cf-b459-873ce49620cc" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="49.1" HigherBound="50.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strPracticeAddr" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="d8050c9a-be83-4179-bb47-c09e65f71d51" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="50.1" HigherBound="51.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strLogType" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="15787887-520a-43bc-b02a-35710f47b55e" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="51.1" HigherBound="52.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="imCorrelationId" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="4417bdb8-6798-4b1b-ac8d-b39aba6ce3a0" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="52.1" HigherBound="53.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strError" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="7ecfac3e-c050-4289-bf73-4f64fdfd8628" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="53.1" HigherBound="54.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strXPath" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="7fffaf2a-b1a2-4167-9c3b-54fda0bb34df" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="54.1" HigherBound="55.1">
+                <om:Property Name="InitialValue" Value="1" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="iPatientListIdx" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="36804efc-82d5-4e69-abd3-1353591777d8" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="55.1" HigherBound="56.1">
+                <om:Property Name="InitialValue" Value="0" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="iPatientListCount" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="7a2f5407-fb8c-449e-8eab-f647a5dbfdb9" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="56.1" HigherBound="57.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strPracticeURL" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="a51ccb68-d042-4f40-9413-4353574104af" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="57.1" HigherBound="58.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="tempXML" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="96049244-d701-4a3f-b145-8ff94175123c" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="58.1" HigherBound="59.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="tceGUID" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="87be3470-a663-496c-85b2-22b8ccda8cdb" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="59.1" HigherBound="60.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strBase64Report" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="bb6524bc-78e8-4e39-adee-18172b0b6b71" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="60.1" HigherBound="61.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strXML" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="LongRunningTransaction" OID="699af644-0927-44b5-9922-26a655df3753" ParentLink="ServiceDeclaration_Transaction" LowerBound="36.21" HigherBound="36.77">
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Transaction_1" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="c600bac3-16a3-4b7f-816f-6a0804c912fa" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="42.1" HigherBound="43.1">
+                <om:Property Name="Type" Value="Cloud9.BizTalk.Epic.MPType_GetTreatmentCardPatientListReq" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_GetTreatmentCardPatientListReq" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="fe5d8281-22c6-486a-aa9f-b5d1c21fa559" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="43.1" HigherBound="44.1">
+                <om:Property Name="Type" Value="Cloud9.BizTalk.Epic.MPType_GetTreatmentCardPatientListResp" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_GetTreatmentCardPatientListResp" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="4294e602-b800-4e22-ba89-e8b5f4b6f57d" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="44.1" HigherBound="45.1">
+                <om:Property Name="Type" Value="Cloud9.BizTalk.Epic.MPType_MDM_T02" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_MDM_T02" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="1e57a4b2-a285-4de7-aa2e-3afbc18e074c" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="45.1" HigherBound="46.1">
+                <om:Property Name="Type" Value="Cloud9.BizTalk.Epic.MPType_TCPatientListElement" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_TCPatientListElement" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="fb9ed679-2250-4724-a125-c4a1880c8a5e" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="VariableDeclaration" OID="2f8826fe-84ea-4805-bf08-6ec57a009c63" ParentLink="ServiceBody_Declaration" LowerBound="61.15" HigherBound="61.53">
+                    <om:Property Name="UseDefaultConstructor" Value="False" />
+                    <om:Property Name="Type" Value="System.String" />
+                    <om:Property Name="ParamDirection" Value="In" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="instanceConnectionString" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="MessageDeclaration" OID="1a0a1dc2-a47a-47e9-82a6-1233ce1fc91e" ParentLink="ServiceBody_Declaration" LowerBound="61.55" HigherBound="61.131">
+                    <om:Property Name="Type" Value="Cloud9.BizTalk.Epic.MPType_QueueProcessParametersHeader" />
+                    <om:Property Name="ParamDirection" Value="In" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="msg_QueueProcessParametersHeader" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="MessageDeclaration" OID="be09b82a-8ef8-4dfc-b1fe-6f021781f75e" ParentLink="ServiceBody_Declaration" LowerBound="61.133" HigherBound="61.219">
+                    <om:Property Name="Type" Value="Cloud9.BizTalk.Epic.MPType_QueueProcessParametersPracticeElement" />
+                    <om:Property Name="ParamDirection" Value="In" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="msg_QueueProcessParametersElement" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Scope" OID="67fdb730-1308-4d61-b6ad-b1ef8ad9b748" ParentLink="ServiceBody_Statement" LowerBound="78.1" HigherBound="164.1">
+                    <om:Property Name="InitializedTransactionType" Value="True" />
+                    <om:Property Name="IsSynchronized" Value="False" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Scope_ProcessTreatmentCardData_Worker" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="LongRunningTransaction" OID="87863611-c664-416d-92fa-881685c8a1ff" ParentLink="Scope_Transaction" LowerBound="79.18" HigherBound="79.56">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Transaction_2" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="VariableAssignment" OID="67264aa2-ece9-4f14-a1ec-01d079963609" ParentLink="ComplexStatement_Statement" LowerBound="83.1" HigherBound="87.1">
+                        <om:Property Name="Expression" Value="strPracticeURL = xpath(msg_QueueProcessParametersElement.Body, &quot;string(/*[local-name()='TypedPollingResultSet1' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/QueueProcessParameters']/*[local-name()='pcInstanceAddress' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/QueueProcessParameters'])&quot;);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Get_PracticeURL" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Construct" OID="28de62fd-5302-43d8-b5db-f80714b08a94" ParentLink="ComplexStatement_Statement" LowerBound="87.1" HigherBound="103.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Construct_msg_GetTreatmentCardPatientListReq" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="Transform" OID="f3866f07-b51e-455a-8dce-edee49c7a463" ParentLink="ComplexStatement_Statement" LowerBound="90.1" HigherBound="92.1">
+                            <om:Property Name="ClassName" Value="Cloud9.BizTalk.Epic.Transform_QueueProcessParametersHeader_To_GetTreatmentCardPatientListReq" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Transform_QueueProcessParametersHeader_To_GetTreatmentCardPatientListReq" />
+                            <om:Property Name="Signal" Value="False" />
+                            <om:Element Type="MessagePartRef" OID="81353bbf-4cc6-46ed-9ec1-8c3be20b728b" ParentLink="Transform_InputMessagePartRef" LowerBound="91.173" HigherBound="91.210">
+                                <om:Property Name="MessageRef" Value="msg_QueueProcessParametersHeader" />
+                                <om:Property Name="PartRef" Value="Body" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_1" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessagePartRef" OID="e5055fbb-bba3-4878-9f9a-0d30f7078f65" ParentLink="Transform_OutputMessagePartRef" LowerBound="91.36" HigherBound="91.75">
+                                <om:Property Name="MessageRef" Value="msg_GetTreatmentCardPatientListReq" />
+                                <om:Property Name="PartRef" Value="Body" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_2" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="MessageAssignment" OID="a135fd4a-98d1-42ee-bd09-8628b313ab2f" ParentLink="ComplexStatement_Statement" LowerBound="92.1" HigherBound="102.1">
+                            <om:Property Name="Expression" Value="msg_GetTreatmentCardPatientListReq(WCF.Action)=&quot;TypedProcedure/BTS/GetTreatmentCardPatientList&quot;;  &#xD;&#xA;msg_GetTreatmentCardPatientListReq(WCF.BindingType)=&quot;sqlBinding&quot;;&#xD;&#xA;msg_GetTreatmentCardPatientListReq(BTS.RetryCount) = 0;&#xD;&#xA;msg_GetTreatmentCardPatientListReq(BTS.RetryInterval) = 1; //(in minutes)&#xD;&#xA;msg_GetTreatmentCardPatientListReq(WCF.BindingConfiguration)=@&quot;&lt;binding name=&quot;&quot;SqlAdapterBinding&quot;&quot; useAmbientTransaction=&quot;&quot;false&quot;&quot;/&gt;&quot;;&#xD;&#xA;msg_GetTreatmentCardPatientListReq(WCF.EnableTransaction) = false; // Transaction is handled in the stored procedure&#xD;&#xA;&#xD;&#xA;Port_GetTreatmentCardPatientListDynamic(Microsoft.XLANGs.BaseTypes.Address)= strPracticeURL ;&#xD;&#xA;Port_GetTreatmentCardPatientListDynamic(Microsoft.XLANGs.BaseTypes.TransportType)=&quot;WCF-Custom&quot;;&#xD;&#xA;" />
+                            <om:Property Name="ReportToAnalyst" Value="False" />
+                            <om:Property Name="Name" Value="MessageAssignment_1" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="MessageRef" OID="d7f30f60-1d4a-4dc2-bd4b-424f4284b814" ParentLink="Construct_MessageRef" LowerBound="88.31" HigherBound="88.65">
+                            <om:Property Name="Ref" Value="msg_GetTreatmentCardPatientListReq" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Send" OID="949b82f5-e8a9-4392-a7d5-ecd3e199e96b" ParentLink="ComplexStatement_Statement" LowerBound="103.1" HigherBound="105.1">
+                        <om:Property Name="PortName" Value="Port_GetTreatmentCardPatientListDynamic" />
+                        <om:Property Name="MessageName" Value="msg_GetTreatmentCardPatientListReq" />
+                        <om:Property Name="OperationName" Value="GetTreatmentCardPatientList" />
+                        <om:Property Name="OperationMessageName" Value="Request" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Send_GetTreatmentCardPatientListReq" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Receive" OID="65bb72c0-d36a-43e3-9b75-c8f687e4582b" ParentLink="ComplexStatement_Statement" LowerBound="105.1" HigherBound="107.1">
+                        <om:Property Name="Activate" Value="False" />
+                        <om:Property Name="PortName" Value="Port_GetTreatmentCardPatientListDynamic" />
+                        <om:Property Name="MessageName" Value="msg_GetTreatmentCardPatientListResp" />
+                        <om:Property Name="OperationName" Value="GetTreatmentCardPatientList" />
+                        <om:Property Name="OperationMessageName" Value="Response" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Receive_GetTreatmentCardPatientListResp" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="VariableAssignment" OID="bb5f3484-db43-40a6-97ee-ac9bdfa98411" ParentLink="ComplexStatement_Statement" LowerBound="107.1" HigherBound="109.1">
+                        <om:Property Name="Expression" Value="iPatientListCount = xpath(msg_GetTreatmentCardPatientListResp.Body, &quot;count(/*[local-name()='GetTreatmentCardPatientListResponse' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS']/*[local-name()='StoredProcedureResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS']/*[local-name()='StoredProcedureResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetTreatmentCardPatientList'])&quot;);&#xD;&#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Get_PatientList_Count" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="While" OID="3e727f99-bc78-4eed-8518-72a27ebc418a" ParentLink="ComplexStatement_Statement" LowerBound="109.1" HigherBound="147.1">
+                        <om:Property Name="Expression" Value="iPatientListIdx &lt;= iPatientListCount" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Loop_PatientList" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="Construct" OID="40d3c069-52ef-423a-bd3a-50b5bb2f9a03" ParentLink="ComplexStatement_Statement" LowerBound="112.1" HigherBound="120.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Construct_msg_TCPatientListElement" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessageAssignment" OID="be3f5d1f-6d28-4ebb-8de9-8703874d62eb" ParentLink="ComplexStatement_Statement" LowerBound="115.1" HigherBound="119.1">
+                                <om:Property Name="Expression" Value="strXPath = System.String.Format(&quot;/*[local-name()='GetTreatmentCardPatientListResponse' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS']/*[local-name()='StoredProcedureResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS']/*[local-name()='StoredProcedureResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetTreatmentCardPatientList'][{0}]&quot;, iPatientListIdx);&#xD;&#xA;msg_TCPatientListElement.Body = xpath(msg_GetTreatmentCardPatientListResp.Body, strXPath);&#xD;&#xA;&#xD;&#xA;" />
+                                <om:Property Name="ReportToAnalyst" Value="False" />
+                                <om:Property Name="Name" Value="MessageAssignment_msg_TCPatientListElement" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="MessageRef" OID="0b8ecca1-dc75-41b4-ab9d-c04e4bab9ed5" ParentLink="Construct_MessageRef" LowerBound="113.35" HigherBound="113.59">
+                                <om:Property Name="Ref" Value="msg_TCPatientListElement" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="VariableAssignment" OID="f475acc8-c176-4ff2-aa79-26b110463741" ParentLink="ComplexStatement_Statement" LowerBound="120.1" HigherBound="125.1">
+                            <om:Property Name="Expression" Value="tceGUID = xpath(msg_TCPatientListElement.Body, &quot;string(/*[local-name()='StoredProcedureResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetTreatmentCardPatientList']/*[local-name()='tceGUID' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetTreatmentCardPatientList'])&quot;);&#xD;&#xA;&#xD;&#xA;strBase64Report = Cloud9.BizTalk.ReportGenerator.TreatmentCardRender.getBase64FromTreatmentCardPDF(instanceConnectionString, tceGUID);&#xD;&#xA;&#xD;&#xA;" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Get Treatment Card GUID and Generate Report" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="Construct" OID="8fc5ab39-8176-4d84-a278-df06cdaf783c" ParentLink="ComplexStatement_Statement" LowerBound="125.1" HigherBound="142.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Construct_msg_MDM_T02" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessageAssignment" OID="384d8b38-0058-4c3d-a349-436052e8d8cb" ParentLink="ComplexStatement_Statement" LowerBound="128.1" HigherBound="137.1">
+                                <om:Property Name="Expression" Value="tempXML = new System.Xml.XmlDocument();&#xD;&#xA;strXML = System.String.Format(&quot;&lt;ns0:MSH_25_GLO_DEF xmlns:ns0=\&quot;http://microsoft.com/HealthCare/HL7/2X\&quot;&gt;&lt;MSH&gt;&lt;MSH.2_EncodingCharacters&gt;^~\\&amp;amp;&lt;/MSH.2_EncodingCharacters&gt;&lt;MSH.3_SendingApplication&gt;&lt;HD.0_NamespaceId&gt;CLOUD9&lt;/HD.0_NamespaceId&gt;&lt;/MSH.3_SendingApplication&gt;&lt;MSH.4_SendingFacility&gt;&lt;HD.0_NamespaceId&gt;CLOUD9&lt;/HD.0_NamespaceId&gt;&lt;/MSH.4_SendingFacility&gt;&lt;MSH.5_ReceivingApplication&gt;&lt;HD.0_NamespaceId&gt;PDS&lt;/HD.0_NamespaceId&gt;&lt;/MSH.5_ReceivingApplication&gt;&lt;MSH.6_ReceivingFacility&gt;&lt;HD.0_NamespaceId&gt;PDS&lt;/HD.0_NamespaceId&gt;&lt;/MSH.6_ReceivingFacility&gt;&lt;MSH.7_DateTimeOfMessage&gt;&lt;TS.1&gt;{0}&lt;/TS.1&gt;&lt;/MSH.7_DateTimeOfMessage&gt;&lt;MSH.8_Security&gt;HHI&lt;/MSH.8_Security&gt;&lt;MSH.9_MessageType&gt;&lt;CM_MSG.0_MessageType&gt;MDM&lt;/CM_MSG.0_MessageType&gt;&lt;CM_MSG.1_TriggerEvent&gt;T02&lt;/CM_MSG.1_TriggerEvent&gt;&lt;/MSH.9_MessageType&gt;&lt;MSH.10_MessageControlId&gt;{0}&lt;/MSH.10_MessageControlId&gt;&lt;MSH.11_ProcessingId&gt;&lt;PT.0_ProcessingId&gt;P&lt;/PT.0_ProcessingId&gt;&lt;/MSH.11_ProcessingId&gt;&lt;MSH.12_VersionId&gt;&lt;VID_0_VersionId&gt;2.6&lt;/VID_0_VersionId&gt;&lt;/MSH.12_VersionId&gt;&lt;/MSH&gt;&lt;/ns0:MSH_25_GLO_DEF&gt;&quot;,&#xD;&#xA;System.DateTime.Now.ToString(&quot;yyyyMMddhhmmss&quot;));&#xD;&#xA;tempXML.LoadXml(strXML);&#xD;&#xA;msg_MDM_T02.MSHSegment = tempXML ;&#xD;&#xA;&#xD;&#xA;msg_MDM_T02.BodySegments = null ;&#xD;&#xA;msg_MDM_T02(BTAHL7Schemas.MessageEncoding)=65001;" />
+                                <om:Property Name="ReportToAnalyst" Value="False" />
+                                <om:Property Name="Name" Value="MessageAssignment_msg_MDM_T02" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="Transform" OID="e8445e71-816b-45e7-af11-8f51f4ca23c5" ParentLink="ComplexStatement_Statement" LowerBound="137.1" HigherBound="139.1">
+                                <om:Property Name="ClassName" Value="Cloud9.BizTalk.Epic.Maps.TCForPatient_To_MDM_T02Body" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Transform_msg_MDM_T02.BodySegments" />
+                                <om:Property Name="Signal" Value="False" />
+                                <om:Element Type="MessagePartRef" OID="11cf36e7-a305-4b4b-9b92-cdf925482c79" ParentLink="Transform_InputMessagePartRef" LowerBound="138.122" HigherBound="138.151">
+                                    <om:Property Name="MessageRef" Value="msg_TCPatientListElement" />
+                                    <om:Property Name="PartRef" Value="Body" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_3" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="MessagePartRef" OID="0bae0897-0a7d-4de6-9de1-316264aab909" ParentLink="Transform_OutputMessagePartRef" LowerBound="138.40" HigherBound="138.64">
+                                    <om:Property Name="MessageRef" Value="msg_MDM_T02" />
+                                    <om:Property Name="PartRef" Value="BodySegments" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_4" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="MessageAssignment" OID="9cfb7a10-604b-4bf0-bde0-740cee9b6163" ParentLink="ComplexStatement_Statement" LowerBound="139.1" HigherBound="141.1">
+                                <om:Property Name="Expression" Value="xpath(msg_MDM_T02.BodySegments, &quot;/*[local-name()='MDM_T02_26_GLO_DEF' and namespace-uri()='http://microsoft.com/HealthCare/HL7/2X']/*[local-name()='OBX_ObservationResult' and namespace-uri()='']/*[local-name()='OBX_5_ObservationValue' and namespace-uri()='']&quot;) = strBase64Report ;&#xD;&#xA;" />
+                                <om:Property Name="ReportToAnalyst" Value="False" />
+                                <om:Property Name="Name" Value="MessageAssignment_ObservationValue" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="MessageRef" OID="07e887a9-67bc-4773-9b40-e45c48052d46" ParentLink="Construct_MessageRef" LowerBound="126.35" HigherBound="126.46">
+                                <om:Property Name="Ref" Value="msg_MDM_T02" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="Send" OID="f8df085f-3bac-40db-a868-33180fec5e93" ParentLink="ComplexStatement_Statement" LowerBound="142.1" HigherBound="144.1">
+                            <om:Property Name="PortName" Value="Port_Send_MDM_T02" />
+                            <om:Property Name="MessageName" Value="msg_MDM_T02" />
+                            <om:Property Name="OperationName" Value="Send_MDM_T02" />
+                            <om:Property Name="OperationMessageName" Value="Request" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Send_MDM_T02" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="VariableAssignment" OID="0228691f-9037-4b8e-9330-73b01eee7d6f" ParentLink="ComplexStatement_Statement" LowerBound="144.1" HigherBound="146.1">
+                            <om:Property Name="Expression" Value="iPatientListIdx = iPatientListIdx + 1;" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Increment Patient List Index" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Catch" OID="70f5efa4-40c3-4cef-bfd4-64e69b26bffc" ParentLink="Scope_Catch" LowerBound="150.1" HigherBound="162.1">
+                        <om:Property Name="ExceptionName" Value="exc" />
+                        <om:Property Name="ExceptionType" Value="System.Exception" />
+                        <om:Property Name="IsFaultMessage" Value="False" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Catch_SystemException" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="VariableAssignment" OID="37c415c4-f797-42c3-ba5e-e435ab746b21" ParentLink="Catch_Statement" LowerBound="153.1" HigherBound="159.1">
+                            <om:Property Name="Expression" Value="strProcessName = &quot;ProcessTreatmentCardData_Worker&quot;;&#xD;&#xA;&#xD;&#xA;strLogType = &quot;Error&quot;;&#xD;&#xA;strPracticeAddr = &quot;&quot;;&#xD;&#xA;strError = exc.Message;" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Get Error Message" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="Exec" OID="adff2098-87f4-4b90-a6b0-3025c557268b" ParentLink="Catch_Statement" LowerBound="159.1" HigherBound="161.1">
+                            <om:Property Name="Invokee" Value="Cloud9.BizTalk.Epic.AddLog" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="StartOrchestration_ErrorReporting" />
+                            <om:Property Name="Signal" Value="False" />
+                            <om:Element Type="Parameter" OID="26b31d02-fa18-4298-8dfe-2b72ce11403d" ParentLink="InvokeStatement_Parameter">
+                                <om:Property Name="Direction" Value="In" />
+                                <om:Property Name="Name" Value="strPracticeAddr" />
+                                <om:Property Name="Type" Value="System.String" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="Parameter" OID="2e4d1193-191f-4da6-89a5-0e922c46ed9f" ParentLink="InvokeStatement_Parameter">
+                                <om:Property Name="Direction" Value="In" />
+                                <om:Property Name="Name" Value="strError" />
+                                <om:Property Name="Type" Value="System.String" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="Parameter" OID="8e1fffcf-df8b-42fd-aad3-8009fe88ea07" ParentLink="InvokeStatement_Parameter">
+                                <om:Property Name="Direction" Value="In" />
+                                <om:Property Name="Name" Value="strLogType" />
+                                <om:Property Name="Type" Value="System.String" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="Parameter" OID="7b24df17-a042-4d24-a1b7-e4c30142eec9" ParentLink="InvokeStatement_Parameter">
+                                <om:Property Name="Direction" Value="In" />
+                                <om:Property Name="Name" Value="strProcessName" />
+                                <om:Property Name="Type" Value="System.String" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="Parameter" OID="348bfdca-1dc5-4715-82d6-2882b164d5df" ParentLink="InvokeStatement_Parameter">
+                                <om:Property Name="Direction" Value="In" />
+                                <om:Property Name="Name" Value="InternalEntityID" />
+                                <om:Property Name="Type" Value="System.String" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="Parameter" OID="3edef30e-01a4-4d54-9221-e243a2669e01" ParentLink="InvokeStatement_Parameter">
+                                <om:Property Name="Direction" Value="In" />
+                                <om:Property Name="Name" Value="ExternalEntityID" />
+                                <om:Property Name="Type" Value="System.String" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="5b3f5871-84ee-46f8-b169-a0b32c2a922b" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="38.1" HigherBound="40.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="24" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Cloud9.BizTalk.Epic.PortType_GetTreatmentCardPatientList" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_GetTreatmentCardPatientListDynamic" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="PhysicalBindingAttribute" OID="263a83e7-dc29-45e8-a11f-8d577cb0ed5e" ParentLink="PortDeclaration_CLRAttribute" LowerBound="38.1" HigherBound="39.1">
+                    <om:Property Name="InPipeline" Value="Microsoft.BizTalk.DefaultPipelines.XMLReceive" />
+                    <om:Property Name="OutPipeline" Value="Microsoft.BizTalk.DefaultPipelines.XMLTransmit" />
+                    <om:Property Name="TransportType" Value="HTTP" />
+                    <om:Property Name="URI" Value="http://tempURI" />
+                    <om:Property Name="IsDynamic" Value="True" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="03473752-5517-4a30-8f1a-1353060c18e2" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="40.1" HigherBound="42.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="77" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Cloud9.BizTalk.Epic.PortType_Send_MDM_T02" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_Send_MDM_T02" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="ce481121-57ad-4b51-bf50-25bc94bcef9c" ParentLink="PortDeclaration_CLRAttribute" LowerBound="40.1" HigherBound="41.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="30409e13-ed6e-42bd-bd31-4427495fe901" ParentLink="Module_MessageType" LowerBound="4.1" HigherBound="9.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="MPType_MDM_T02" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="30e896c9-27c8-40d5-9bfe-e46e06ffd1f3" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="6.1" HigherBound="7.1">
+                <om:Property Name="ClassName" Value="BTAHL7Schemas.MDM_T02_26_GLO_DEF" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="BodySegments" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="PartDeclaration" OID="dcddfff7-7713-442d-ac3c-3e5249494644" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="7.1" HigherBound="8.1">
+                <om:Property Name="ClassName" Value="BTAHL7Schemas.MSH_25_GLO_DEF" />
+                <om:Property Name="IsBodyPart" Value="False" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MSHSegment" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="9324fdda-1c75-4352-9ebc-830e91fa5ffd" ParentLink="Module_MessageType" LowerBound="9.1" HigherBound="13.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="MPType_GetTreatmentCardPatientListReq" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="63d2e29d-febc-4303-a028-a11227904c0e" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="11.1" HigherBound="12.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.Schemas.PTC_TypedProcedure_BTS.GetTreatmentCardPatientList" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="0422a7d0-b36e-4c52-b467-a45d1642cf6e" ParentLink="Module_MessageType" LowerBound="13.1" HigherBound="17.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="MPType_GetTreatmentCardPatientListResp" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="05ab2f49-7452-4a1c-830e-7d35f1b7a30f" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="15.1" HigherBound="16.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.Schemas.PTC_TypedProcedure_BTS.GetTreatmentCardPatientListResponse" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="2f9de638-2b7e-463c-8438-9a7e3ad7b8a0" ParentLink="Module_MessageType" LowerBound="17.1" HigherBound="21.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="MPType_TCPatientListElement" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="e8c2514d-d478-4e7f-9ca8-87e3479aea39" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="19.1" HigherBound="20.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.Schemas.PTC_ProcedureResultSet_BTS_GetTreatmentCardPatientList.StoredProcedureResultSet0" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="ccc9e336-2427-4949-b829-dd3b963f635e" ParentLink="Module_PortType" LowerBound="21.1" HigherBound="28.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_GetTreatmentCardPatientList" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="f2f39865-8ad5-4aaa-acf6-325e7186ac68" ParentLink="PortType_OperationDeclaration" LowerBound="23.1" HigherBound="27.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="GetTreatmentCardPatientList" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="1ebc4328-6545-43b4-8c41-6f4bd3ab5581" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="25.13" HigherBound="25.50">
+                    <om:Property Name="Ref" Value="Cloud9.BizTalk.Epic.MPType_GetTreatmentCardPatientListReq" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="37a2e9ad-9be4-4707-9fbd-688cfa7e1a07" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="25.52" HigherBound="25.90">
+                    <om:Property Name="Ref" Value="Cloud9.BizTalk.Epic.MPType_GetTreatmentCardPatientListResp" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="cf3565b5-82c0-474b-a31c-df3abdfc296c" ParentLink="Module_PortType" LowerBound="28.1" HigherBound="35.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_Send_MDM_T02" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="f484b80d-afd6-4b95-8746-92e0d43ca146" ParentLink="PortType_OperationDeclaration" LowerBound="30.1" HigherBound="34.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Send_MDM_T02" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="a8ceceba-aef9-4bfc-93d8-fded89536ace" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="32.13" HigherBound="32.27">
+                    <om:Property Name="Ref" Value="Cloud9.BizTalk.Epic.MPType_MDM_T02" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Cloud9.BizTalk.Epic
+{
+    internal messagetype MPType_MDM_T02
+    {
+        body BTAHL7Schemas.MDM_T02_26_GLO_DEF BodySegments;
+        BTAHL7Schemas.MSH_25_GLO_DEF MSHSegment;
+    };
+    internal messagetype MPType_GetTreatmentCardPatientListReq
+    {
+        body Cloud9.BizTalk.Schemas.PTC_TypedProcedure_BTS.GetTreatmentCardPatientList Body;
+    };
+    internal messagetype MPType_GetTreatmentCardPatientListResp
+    {
+        body Cloud9.BizTalk.Schemas.PTC_TypedProcedure_BTS.GetTreatmentCardPatientListResponse Body;
+    };
+    internal messagetype MPType_TCPatientListElement
+    {
+        body Cloud9.BizTalk.Schemas.PTC_ProcedureResultSet_BTS_GetTreatmentCardPatientList.StoredProcedureResultSet0 Body;
+    };
+    internal porttype PortType_GetTreatmentCardPatientList
+    {
+        requestresponse GetTreatmentCardPatientList
+        {
+            MPType_GetTreatmentCardPatientListReq, MPType_GetTreatmentCardPatientListResp
+        };
+    };
+    internal porttype PortType_Send_MDM_T02
+    {
+        oneway Send_MDM_T02
+        {
+            MPType_MDM_T02
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service longrunning transaction ProcessTreatmentCardData_Worker
+    {
+        [Microsoft.XLANGs.BaseTypes.PhysicalBinding(typeof(Microsoft.BizTalk.DefaultPipelines.XMLReceive), typeof(Microsoft.BizTalk.DefaultPipelines.XMLTransmit))]
+        port uses dynamic PortType_GetTreatmentCardPatientList Port_GetTreatmentCardPatientListDynamic;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_Send_MDM_T02 Port_Send_MDM_T02;
+        message MPType_GetTreatmentCardPatientListReq msg_GetTreatmentCardPatientListReq;
+        message MPType_GetTreatmentCardPatientListResp msg_GetTreatmentCardPatientListResp;
+        message MPType_MDM_T02 msg_MDM_T02;
+        message MPType_TCPatientListElement msg_TCPatientListElement;
+        System.String InternalEntityID;
+        System.String ExternalEntityID;
+        System.String strProcessName;
+        System.String strPracticeAddr;
+        System.String strLogType;
+        System.String imCorrelationId;
+        System.String strError;
+        System.String strXPath;
+        System.Int32 iPatientListIdx;
+        System.Int32 iPatientListCount;
+        System.String strPracticeURL;
+        System.Xml.XmlDocument tempXML;
+        System.String tceGUID;
+        System.String strBase64Report;
+        System.String strXML;
+        body (System.String instanceConnectionString, message MPType_QueueProcessParametersHeader msg_QueueProcessParametersHeader, message MPType_QueueProcessParametersPracticeElement msg_QueueProcessParametersElement)
+        {
+            InternalEntityID = "";
+            ExternalEntityID = "";
+            strProcessName = "";
+            strPracticeAddr = "";
+            strLogType = "";
+            imCorrelationId = "";
+            strError = "";
+            strXPath = "";
+            iPatientListIdx = 1;
+            iPatientListCount = 0;
+            strPracticeURL = "";
+            tempXML = new System.Xml.XmlDocument();
+            tceGUID = "";
+            strBase64Report = "";
+            strXML = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("67fdb730-1308-4d61-b6ad-b1ef8ad9b748")]
+            scope longrunning transaction Transaction_2
+            {
+                body
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("67264aa2-ece9-4f14-a1ec-01d079963609")]
+                    strPracticeURL = xpath(msg_QueueProcessParametersElement.Body, "string(/*[local-name()='TypedPollingResultSet1' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/QueueProcessParameters']/*[local-name()='pcInstanceAddress' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/QueueProcessParameters'])");
+                    
+                    
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("28de62fd-5302-43d8-b5db-f80714b08a94")]
+                    construct msg_GetTreatmentCardPatientListReq
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("f3866f07-b51e-455a-8dce-edee49c7a463")]
+                        transform (msg_GetTreatmentCardPatientListReq.Body) = Cloud9.BizTalk.Epic.Transform_QueueProcessParametersHeader_To_GetTreatmentCardPatientListReq (msg_QueueProcessParametersHeader.Body);
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("a135fd4a-98d1-42ee-bd09-8628b313ab2f")]
+                        msg_GetTreatmentCardPatientListReq(WCF.Action)="TypedProcedure/BTS/GetTreatmentCardPatientList";  
+                        msg_GetTreatmentCardPatientListReq(WCF.BindingType)="sqlBinding";
+                        msg_GetTreatmentCardPatientListReq(BTS.RetryCount) = 0;
+                        msg_GetTreatmentCardPatientListReq(BTS.RetryInterval) = 1; //(in minutes)
+                        msg_GetTreatmentCardPatientListReq(WCF.BindingConfiguration)=@"<binding name=""SqlAdapterBinding"" useAmbientTransaction=""false""/>";
+                        msg_GetTreatmentCardPatientListReq(WCF.EnableTransaction) = false; // Transaction is handled in the stored procedure
+                        
+                        Port_GetTreatmentCardPatientListDynamic(Microsoft.XLANGs.BaseTypes.Address)= strPracticeURL ;
+                        Port_GetTreatmentCardPatientListDynamic(Microsoft.XLANGs.BaseTypes.TransportType)="WCF-Custom";
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("949b82f5-e8a9-4392-a7d5-ecd3e199e96b")]
+                    send (Port_GetTreatmentCardPatientListDynamic.GetTreatmentCardPatientList, msg_GetTreatmentCardPatientListReq);
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("65bb72c0-d36a-43e3-9b75-c8f687e4582b")]
+                    receive (Port_GetTreatmentCardPatientListDynamic.GetTreatmentCardPatientList, msg_GetTreatmentCardPatientListResp);
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("bb5f3484-db43-40a6-97ee-ac9bdfa98411")]
+                    iPatientListCount = xpath(msg_GetTreatmentCardPatientListResp.Body, "count(/*[local-name()='GetTreatmentCardPatientListResponse' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS']/*[local-name()='StoredProcedureResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS']/*[local-name()='StoredProcedureResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetTreatmentCardPatientList'])");
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("3e727f99-bc78-4eed-8518-72a27ebc418a")]
+                    while (iPatientListIdx <= iPatientListCount)
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("40d3c069-52ef-423a-bd3a-50b5bb2f9a03")]
+                        construct msg_TCPatientListElement
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("be3f5d1f-6d28-4ebb-8de9-8703874d62eb")]
+                            strXPath = System.String.Format("/*[local-name()='GetTreatmentCardPatientListResponse' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS']/*[local-name()='StoredProcedureResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS']/*[local-name()='StoredProcedureResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetTreatmentCardPatientList'][{0}]", iPatientListIdx);
+                            msg_TCPatientListElement.Body = xpath(msg_GetTreatmentCardPatientListResp.Body, strXPath);
+                            
+                        }
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("f475acc8-c176-4ff2-aa79-26b110463741")]
+                        tceGUID = xpath(msg_TCPatientListElement.Body, "string(/*[local-name()='StoredProcedureResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetTreatmentCardPatientList']/*[local-name()='tceGUID' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetTreatmentCardPatientList'])");
+                        
+                        strBase64Report = Cloud9.BizTalk.ReportGenerator.TreatmentCardRender.getBase64FromTreatmentCardPDF(instanceConnectionString, tceGUID);
+                        
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("8fc5ab39-8176-4d84-a278-df06cdaf783c")]
+                        construct msg_MDM_T02
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("384d8b38-0058-4c3d-a349-436052e8d8cb")]
+                            tempXML = new System.Xml.XmlDocument();
+                            strXML = System.String.Format("<ns0:MSH_25_GLO_DEF xmlns:ns0=\"http://microsoft.com/HealthCare/HL7/2X\"><MSH><MSH.2_EncodingCharacters>^~\\&amp;</MSH.2_EncodingCharacters><MSH.3_SendingApplication><HD.0_NamespaceId>CLOUD9</HD.0_NamespaceId></MSH.3_SendingApplication><MSH.4_SendingFacility><HD.0_NamespaceId>CLOUD9</HD.0_NamespaceId></MSH.4_SendingFacility><MSH.5_ReceivingApplication><HD.0_NamespaceId>PDS</HD.0_NamespaceId></MSH.5_ReceivingApplication><MSH.6_ReceivingFacility><HD.0_NamespaceId>PDS</HD.0_NamespaceId></MSH.6_ReceivingFacility><MSH.7_DateTimeOfMessage><TS.1>{0}</TS.1></MSH.7_DateTimeOfMessage><MSH.8_Security>HHI</MSH.8_Security><MSH.9_MessageType><CM_MSG.0_MessageType>MDM</CM_MSG.0_MessageType><CM_MSG.1_TriggerEvent>T02</CM_MSG.1_TriggerEvent></MSH.9_MessageType><MSH.10_MessageControlId>{0}</MSH.10_MessageControlId><MSH.11_ProcessingId><PT.0_ProcessingId>P</PT.0_ProcessingId></MSH.11_ProcessingId><MSH.12_VersionId><VID_0_VersionId>2.6</VID_0_VersionId></MSH.12_VersionId></MSH></ns0:MSH_25_GLO_DEF>",
+                            System.DateTime.Now.ToString("yyyyMMddhhmmss"));
+                            tempXML.LoadXml(strXML);
+                            msg_MDM_T02.MSHSegment = tempXML ;
+                            
+                            msg_MDM_T02.BodySegments = null ;
+                            msg_MDM_T02(BTAHL7Schemas.MessageEncoding)=65001;
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("e8445e71-816b-45e7-af11-8f51f4ca23c5")]
+                            transform (msg_MDM_T02.BodySegments) = Cloud9.BizTalk.Epic.Maps.TCForPatient_To_MDM_T02Body (msg_TCPatientListElement.Body);
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("9cfb7a10-604b-4bf0-bde0-740cee9b6163")]
+                            xpath(msg_MDM_T02.BodySegments, "/*[local-name()='MDM_T02_26_GLO_DEF' and namespace-uri()='http://microsoft.com/HealthCare/HL7/2X']/*[local-name()='OBX_ObservationResult' and namespace-uri()='']/*[local-name()='OBX_5_ObservationValue' and namespace-uri()='']") = strBase64Report ;
+                        }
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("f8df085f-3bac-40db-a868-33180fec5e93")]
+                        send (Port_Send_MDM_T02.Send_MDM_T02, msg_MDM_T02);
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("0228691f-9037-4b8e-9330-73b01eee7d6f")]
+                        iPatientListIdx = iPatientListIdx + 1;
+                    }
+                }
+                exceptions
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("70f5efa4-40c3-4cef-bfd4-64e69b26bffc")]
+                    catch (System.Exception exc)
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("37c415c4-f797-42c3-ba5e-e435ab746b21")]
+                        strProcessName = "ProcessTreatmentCardData_Worker";
+                        
+                        strLogType = "Error";
+                        strPracticeAddr = "";
+                        strError = exc.Message;
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("adff2098-87f4-4b90-a6b0-3025c557268b")]
+                        exec Cloud9.BizTalk.Epic.AddLog (strPracticeAddr, strError, strLogType, strProcessName, InternalEntityID, ExternalEntityID);
+                    }
+                }
+            }
+        }
+    }
+}
+

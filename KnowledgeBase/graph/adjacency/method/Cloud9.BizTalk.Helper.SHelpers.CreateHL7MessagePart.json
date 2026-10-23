@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.Helper.SHelpers.CreateHL7MessagePart",
+    "type": "method",
+    "name": "SHelpers.CreateHL7MessagePart",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/SignalRHelpers.cs",
+    "class": "Cloud9.BizTalk.Helper.SHelpers",
+    "line": 50,
+    "signatures": [
+      "private static HL7BTXMessage CreateHL7MessagePart(string message, string messageName, string messagePartName)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.Helper.SHelpers",
+      "fromName": "Cloud9.BizTalk.Helper.SHelpers",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.Helper.SHelpers.json"
+    }
+  ]
+}

@@ -1,0 +1,1061 @@
+{
+  "node": {
+    "id": "pipeline:Cloud9.BizTalk.X12.Pipelines.ReceiveEDIPipeline",
+    "type": "pipeline",
+    "name": "Cloud9.BizTalk.X12.Pipelines.ReceiveEDIPipeline",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Pipelines/ReceiveEDIPipeline.btp",
+    "components": [
+      "Cloud9.BizTalk.Shared.Components.Archive.Archive",
+      "Microsoft.BizTalk.Edi.Pipelines.EdiDisassembler"
+    ],
+    "direction": "receive"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Pipelines/ReceiveEDIPipeline.btp",
+      "toName": "ReceiveEDIPipeline.btp",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Pipelines_ReceiveEDIPipeline.btp.json"
+    },
+    {
+      "type": "usesComponent",
+      "to": "class:Cloud9.BizTalk.Shared.Components.Archive.Archive",
+      "toName": "Cloud9.BizTalk.Shared.Components.Archive.Archive",
+      "toType": "class",
+      "toFile": "adjacency/class/Cloud9.BizTalk.Shared.Components.Archive.Archive.json"
+    },
+    {
+      "type": "usesComponent",
+      "to": "class:Microsoft.BizTalk.Edi.Pipelines.EdiDisassembler",
+      "toName": "Microsoft.BizTalk.Edi.Pipelines.EdiDisassembler",
+      "toType": "external-component",
+      "toFile": "adjacency/external-component/Microsoft.BizTalk.Edi.Pipelines.EdiDisassembler.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_CHC835ToBBVA_FILE",
+      "fromName": "RL_CHC835ToBBVA_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_CHC835ToBBVA_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}CHC835ToBBVA_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}CHC835ToBBVA_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}CHC835ToBBVA_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Insurance_GULFCOAST_FILE",
+      "fromName": "RL_BBVA835_Insurance_GULFCOAST_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Insurance_GULFCOAST_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Insurance_MIDATLANTIC_FILE",
+      "fromName": "RL_BBVA835_Insurance_MIDATLANTIC_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Insurance_MIDATLANTIC_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_GULFCOAST_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_GULFCOAST_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_GULFCOAST_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_MIDATLANTIC_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_MIDATLANTIC_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_MIDATLANTIC_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Insurance_HOUSTONMETRO_FILE",
+      "fromName": "RL_BBVA835_Insurance_HOUSTONMETRO_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Insurance_HOUSTONMETRO_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_HOUSTONMETRO_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_HOUSTONMETRO_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_HOUSTONMETRO_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Insurance_ATLANTAMETRO_FILE",
+      "fromName": "RL_BBVA835_Insurance_ATLANTAMETRO_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Insurance_ATLANTAMETRO_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_ATLANTAMETRO_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_ATLANTAMETRO_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_ATLANTAMETRO_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Insurance_ATLANTAMETRO2_FILE",
+      "fromName": "RL_BBVA835_Insurance_ATLANTAMETRO2_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Insurance_ATLANTAMETRO2_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_ATLANTAMETRO2_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_ATLANTAMETRO2_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_ATLANTAMETRO2_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Insurance_CENTRALPLAINS_FILE",
+      "fromName": "RL_BBVA835_Insurance_CENTRALPLAINS_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Insurance_CENTRALPLAINS_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_CENTRALPLAINS_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_CENTRALPLAINS_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_CENTRALPLAINS_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Insurance_DALLASMETRO_FILE",
+      "fromName": "RL_BBVA835_Insurance_DALLASMETRO_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Insurance_DALLASMETRO_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_DALLASMETRO_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_DALLASMETRO_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_DALLASMETRO_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Insurance_DALLASMETRO2_FILE",
+      "fromName": "RL_BBVA835_Insurance_DALLASMETRO2_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Insurance_DALLASMETRO2_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_DALLASMETRO2_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_DALLASMETRO2_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_DALLASMETRO2_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Insurance_DNORTHO_FILE",
+      "fromName": "RL_BBVA835_Insurance_DNORTHO_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Insurance_DNORTHO_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_DNORTHO_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_DNORTHO_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_DNORTHO_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Insurance_INDIANA_FILE",
+      "fromName": "RL_BBVA835_Insurance_INDIANA_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Insurance_INDIANA_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_INDIANA_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_INDIANA_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_INDIANA_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Insurance_KNOXVILLEMETRO_FILE",
+      "fromName": "RL_BBVA835_Insurance_KNOXVILLEMETRO_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Insurance_KNOXVILLEMETRO_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_KNOXVILLEMETRO_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_KNOXVILLEMETRO_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_KNOXVILLEMETRO_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Insurance_MOUNTAINCENTRAL_FILE",
+      "fromName": "RL_BBVA835_Insurance_MOUNTAINCENTRAL_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Insurance_MOUNTAINCENTRAL_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_MOUNTAINCENTRAL_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_MOUNTAINCENTRAL_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_MOUNTAINCENTRAL_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Insurance_PRACTICASMILEDOCTORS_FILE",
+      "fromName": "RL_BBVA835_Insurance_PRACTICASMILEDOCTORS_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Insurance_PRACTICASMILEDOCTORS_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_PRACTICASMILEDOCTORS_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_PRACTICASMILEDOCTORS_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_PRACTICASMILEDOCTORS_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Insurance_SOUTHEAST_FILE",
+      "fromName": "RL_BBVA835_Insurance_SOUTHEAST_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Insurance_SOUTHEAST_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_SOUTHEAST_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_SOUTHEAST_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_SOUTHEAST_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Insurance_SOUTHWEST_FILE",
+      "fromName": "RL_BBVA835_Insurance_SOUTHWEST_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Insurance_SOUTHWEST_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_SOUTHWEST_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_SOUTHWEST_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_SOUTHWEST_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Insurance_AUSTINMETRO_FILE",
+      "fromName": "RL_BBVA835_Insurance_AUSTINMETRO_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Insurance_AUSTINMETRO_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_AUSTINMETRO_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_AUSTINMETRO_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_AUSTINMETRO_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Insurance_DALLASMETRO3_FILE",
+      "fromName": "RL_BBVA835_Insurance_DALLASMETRO3_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Insurance_DALLASMETRO3_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_DALLASMETRO3_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_DALLASMETRO3_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_DALLASMETRO3_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Insurance_GULFCOAST2_FILE",
+      "fromName": "RL_BBVA835_Insurance_GULFCOAST2_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Insurance_GULFCOAST2_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_GULFCOAST2_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_GULFCOAST2_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_GULFCOAST2_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Insurance_MIDWEST_FILE",
+      "fromName": "RL_BBVA835_Insurance_MIDWEST_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Insurance_MIDWEST_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_MIDWEST_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_MIDWEST_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_MIDWEST_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Insurance_MIDWEST2_FILE",
+      "fromName": "RL_BBVA835_Insurance_MIDWEST2_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Insurance_MIDWEST2_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_MIDWEST2_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_MIDWEST2_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_MIDWEST2_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Insurance_SOUTHEAST2_FILE",
+      "fromName": "RL_BBVA835_Insurance_SOUTHEAST2_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Insurance_SOUTHEAST2_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_SOUTHEAST2_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_SOUTHEAST2_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_SOUTHEAST2_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Insurance_SPILLERS_FILE",
+      "fromName": "RL_BBVA835_Insurance_SPILLERS_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Insurance_SPILLERS_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_SPILLERS_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_SPILLERS_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Insurance_SPILLERS_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_GULFCOAST_FILE",
+      "fromName": "RL_BBVA835_Patient_GULFCOAST_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_GULFCOAST_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_GULFCOAST_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_GULFCOAST_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_GULFCOAST_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_MIDATLANTIC_FILE",
+      "fromName": "RL_BBVA835_Patient_MIDATLANTIC_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_MIDATLANTIC_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_MIDATLANTIC_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_MIDATLANTIC_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_MIDATLANTIC_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_HOUSTONMETRO_FILE",
+      "fromName": "RL_BBVA835_Patient_HOUSTONMETRO_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_HOUSTONMETRO_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_HOUSTONMETRO_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_HOUSTONMETRO_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_HOUSTONMETRO_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_ATLANTAMETRO_FILE",
+      "fromName": "RL_BBVA835_Patient_ATLANTAMETRO_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_ATLANTAMETRO_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_ATLANTAMETRO_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_ATLANTAMETRO_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_ATLANTAMETRO_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_ATLANTAMETRO2_FILE",
+      "fromName": "RL_BBVA835_Patient_ATLANTAMETRO2_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_ATLANTAMETRO2_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_ATLANTAMETRO2_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_ATLANTAMETRO2_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_ATLANTAMETRO2_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_CENTRALPLAINS_FILE",
+      "fromName": "RL_BBVA835_Patient_CENTRALPLAINS_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_CENTRALPLAINS_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_CENTRALPLAINS_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_CENTRALPLAINS_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_CENTRALPLAINS_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_DALLASMETRO_FILE",
+      "fromName": "RL_BBVA835_Patient_DALLASMETRO_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_DALLASMETRO_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_DALLASMETRO_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_DALLASMETRO_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_DALLASMETRO_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_DALLASMETRO2_FILE",
+      "fromName": "RL_BBVA835_Patient_DALLASMETRO2_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_DALLASMETRO2_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_DALLASMETRO2_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_DALLASMETRO2_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_DALLASMETRO2_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_DNORTHO_FILE",
+      "fromName": "RL_BBVA835_Patient_DNORTHO_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_DNORTHO_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_DNORTHO_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_DNORTHO_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_DNORTHO_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_INDIANA_FILE",
+      "fromName": "RL_BBVA835_Patient_INDIANA_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_INDIANA_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_INDIANA_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_INDIANA_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_INDIANA_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_KNOXVILLEMETRO_FILE",
+      "fromName": "RL_BBVA835_Patient_KNOXVILLEMETRO_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_KNOXVILLEMETRO_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_KNOXVILLEMETRO_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_KNOXVILLEMETRO_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_KNOXVILLEMETRO_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_MOUNTAINCENTRAL_FILE",
+      "fromName": "RL_BBVA835_Patient_MOUNTAINCENTRAL_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_MOUNTAINCENTRAL_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_MOUNTAINCENTRAL_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_MOUNTAINCENTRAL_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_MOUNTAINCENTRAL_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_PRACTICASMILEDOCTORS_FILE",
+      "fromName": "RL_BBVA835_Patient_PRACTICASMILEDOCTORS_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_PRACTICASMILEDOCTORS_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_PRACTICASMILEDOCTORS_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_PRACTICASMILEDOCTORS_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_PRACTICASMILEDOCTORS_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_SOUTHEAST_FILE",
+      "fromName": "RL_BBVA835_Patient_SOUTHEAST_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_SOUTHEAST_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_SOUTHEAST_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_SOUTHEAST_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_SOUTHEAST_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_SOUTHWEST_FILE",
+      "fromName": "RL_BBVA835_Patient_SOUTHWEST_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_SOUTHWEST_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_SOUTHWEST_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_SOUTHWEST_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_SOUTHWEST_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_AUSTINMETRO_FILE",
+      "fromName": "RL_BBVA835_Patient_AUSTINMETRO_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_AUSTINMETRO_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_AUSTINMETRO_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_AUSTINMETRO_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_AUSTINMETRO_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_DALLASMETRO3_FILE",
+      "fromName": "RL_BBVA835_Patient_DALLASMETRO3_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_DALLASMETRO3_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_DALLASMETRO3_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_DALLASMETRO3_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_DALLASMETRO3_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_GULFCOAST2_FILE",
+      "fromName": "RL_BBVA835_Patient_GULFCOAST2_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_GULFCOAST2_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_GULFCOAST2_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_GULFCOAST2_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_GULFCOAST2_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_MIDWEST_FILE",
+      "fromName": "RL_BBVA835_Patient_MIDWEST_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_MIDWEST_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_MIDWEST_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_MIDWEST_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_MIDWEST_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_MIDWEST2_FILE",
+      "fromName": "RL_BBVA835_Patient_MIDWEST2_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_MIDWEST2_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_MIDWEST2_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_MIDWEST2_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_MIDWEST2_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_SOUTHEAST2_FILE",
+      "fromName": "RL_BBVA835_Patient_SOUTHEAST2_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_SOUTHEAST2_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_SOUTHEAST2_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_SOUTHEAST2_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_SOUTHEAST2_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_SPILLERS_FILE",
+      "fromName": "RL_BBVA835_Patient_SPILLERS_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_SPILLERS_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_SPILLERS_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_SPILLERS_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_SPILLERS_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_CHC_Inbound_EDI",
+      "fromName": "RL_CHC_Inbound_EDI",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_CHC_Inbound_EDI.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}CHC835_Insurance_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}CHC835_Insurance_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}CHC835_Insurance_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_CHC_Inbound_277_Unsolicitated_EDI",
+      "fromName": "RL_CHC_Inbound_277_Unsolicitated_EDI",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_CHC_Inbound_277_Unsolicitated_EDI.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}CHC227_Unsolicitated_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}CHC227_Unsolicitated_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}CHC227_Unsolicitated_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_SD_835_WEB_ATLANTAMETRO_FILE",
+      "fromName": "RL_SD_835_WEB_ATLANTAMETRO_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_SD_835_WEB_ATLANTAMETRO_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_ATLANTAMETRO_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_ATLANTAMETRO_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_ATLANTAMETRO_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_SD_835_WEB_ATLANTAMETRO2_FILE",
+      "fromName": "RL_SD_835_WEB_ATLANTAMETRO2_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_SD_835_WEB_ATLANTAMETRO2_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_ATLANTAMETRO2_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_ATLANTAMETRO2_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_ATLANTAMETRO2_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_SD_835_WEB_CENTRALPLAINS_FILE",
+      "fromName": "RL_SD_835_WEB_CENTRALPLAINS_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_SD_835_WEB_CENTRALPLAINS_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_CENTRALPLAINS_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_CENTRALPLAINS_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_CENTRALPLAINS_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_SD_835_WEB_DALLASMETRO_FILE",
+      "fromName": "RL_SD_835_WEB_DALLASMETRO_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_SD_835_WEB_DALLASMETRO_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_DALLASMETRO_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_DALLASMETRO_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_DALLASMETRO_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_SD_835_WEB_DALLASMETRO2_FILE",
+      "fromName": "RL_SD_835_WEB_DALLASMETRO2_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_SD_835_WEB_DALLASMETRO2_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_DALLASMETRO2_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_DALLASMETRO2_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_DALLASMETRO2_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_SD_835_WEB_DNORTHO_FILE",
+      "fromName": "RL_SD_835_WEB_DNORTHO_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_SD_835_WEB_DNORTHO_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_DNORTHO_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_DNORTHO_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_DNORTHO_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_SD_835_WEB_GULFCOAST_FILE",
+      "fromName": "RL_SD_835_WEB_GULFCOAST_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_SD_835_WEB_GULFCOAST_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_GULFCOAST_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_GULFCOAST_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_GULFCOAST_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_SD_835_WEB_HOUSTONMETRO_FILE",
+      "fromName": "RL_SD_835_WEB_HOUSTONMETRO_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_SD_835_WEB_HOUSTONMETRO_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_HOUSTONMETRO_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_HOUSTONMETRO_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_HOUSTONMETRO_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_SD_835_WEB_INDIANA_FILE",
+      "fromName": "RL_SD_835_WEB_INDIANA_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_SD_835_WEB_INDIANA_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_INDIANA_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_INDIANA_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_INDIANA_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_SD_835_WEB_KNOXVILLEMETRO_FILE",
+      "fromName": "RL_SD_835_WEB_KNOXVILLEMETRO_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_SD_835_WEB_KNOXVILLEMETRO_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_KNOXVILLEMETRO_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_KNOXVILLEMETRO_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_KNOXVILLEMETRO_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_SD_835_WEB_MIDATLANTIC_FILE",
+      "fromName": "RL_SD_835_WEB_MIDATLANTIC_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_SD_835_WEB_MIDATLANTIC_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_MIDATLANTIC_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_MIDATLANTIC_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_MIDATLANTIC_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_SD_835_WEB_MOUNTAINCENTRAL_FILE",
+      "fromName": "RL_SD_835_WEB_MOUNTAINCENTRAL_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_SD_835_WEB_MOUNTAINCENTRAL_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_MOUNTAINCENTRAL_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_MOUNTAINCENTRAL_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_MOUNTAINCENTRAL_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_SD_835_WEB_PRACTICASMILEDOCTORS_FILE",
+      "fromName": "RL_SD_835_WEB_PRACTICASMILEDOCTORS_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_SD_835_WEB_PRACTICASMILEDOCTORS_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_SMILEDOCTORS_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_SMILEDOCTORS_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_SMILEDOCTORS_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_SD_835_WEB_SOUTHEAST_FILE",
+      "fromName": "RL_SD_835_WEB_SOUTHEAST_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_SD_835_WEB_SOUTHEAST_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_SOUTHEAST_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_SOUTHEAST_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_SOUTHEAST_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_SD_835_WEB_SOUTHWEST_FILE",
+      "fromName": "RL_SD_835_WEB_SOUTHWEST_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_SD_835_WEB_SOUTHWEST_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_SOUTHWEST_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_SOUTHWEST_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_SOUTHWEST_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_SD_835_WEB_AUSTINMETRO_FILE",
+      "fromName": "RL_SD_835_WEB_AUSTINMETRO_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_SD_835_WEB_AUSTINMETRO_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_AUSTINMETRO_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_AUSTINMETRO_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_AUSTINMETRO_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_SD_835_WEB_DALLASMETRO3_FILE",
+      "fromName": "RL_SD_835_WEB_DALLASMETRO3_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_SD_835_WEB_DALLASMETRO3_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_DALLASMETRO3_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_DALLASMETRO3_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_DALLASMETRO3_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_SD_835_WEB_GULFCOAST2_FILE",
+      "fromName": "RL_SD_835_WEB_GULFCOAST2_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_SD_835_WEB_GULFCOAST2_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_GULFCOAST2_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_GULFCOAST2_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_GULFCOAST2_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_SD_835_WEB_MIDWEST_FILE",
+      "fromName": "RL_SD_835_WEB_MIDWEST_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_SD_835_WEB_MIDWEST_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_SD_835_WEB_MIDWEST2_FILE",
+      "fromName": "RL_SD_835_WEB_MIDWEST2_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_SD_835_WEB_MIDWEST2_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_MIDWEST_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_MIDWEST_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_MIDWEST_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_MIDWEST2_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_MIDWEST2_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_MIDWEST2_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_SD_835_WEB_SOUTHEAST2_FILE",
+      "fromName": "RL_SD_835_WEB_SOUTHEAST2_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_SD_835_WEB_SOUTHEAST2_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_SOUTHEAST2_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_SOUTHEAST2_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_SOUTHEAST2_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_SD_835_WEB_SPILLERS_FILE",
+      "fromName": "RL_SD_835_WEB_SPILLERS_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_SD_835_WEB_SPILLERS_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_SPILLERS_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_SPILLERS_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}SD_835_WEB_SPILLERS_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_ChannelHealth271_FILE",
+      "fromName": "RL_ChannelHealth271_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_ChannelHealth271_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}RL_ChannelHealth271_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}RL_ChannelHealth271_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}RL_ChannelHealth271_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_ChangeHealthCare271_FILE",
+      "fromName": "RL_ChangeHealthCare271_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_ChangeHealthCare271_FILE.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}RL_CHC837ToBBVA_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}RL_CHC837ToBBVA_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}RL_CHC837ToBBVA_SFTP.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_ChangeHealth_271",
+      "fromName": "RL_ChangeHealth_271",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_ChangeHealth_271.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.PDS.Deployment/RL_CHC_Inbound_EDI",
+      "fromName": "RL_CHC_Inbound_EDI",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.PDS.Deployment_RL_CHC_Inbound_EDI.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "receivelocation:Cloud9.EDI.PDS.Deployment/RL_ChangeHealth_271",
+      "fromName": "RL_ChangeHealth_271",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.PDS.Deployment_RL_ChangeHealth_271.json"
+    },
+    {
+      "type": "implementedBy",
+      "from": "flowstep:BBVA-Patient-01-Receive",
+      "fromName": "Receive file from region folder",
+      "fromType": "flowstep",
+      "fromFile": "adjacency/flowstep/BBVA-Patient-01-Receive.json",
+      "curated": true
+    }
+  ]
+}

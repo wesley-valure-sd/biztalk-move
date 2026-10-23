@@ -1,0 +1,47 @@
+{
+  "node": {
+    "id": "flowstep:SD-Web-03-PracticeLookup",
+    "type": "flowstep",
+    "name": "Find practice database from folder name",
+    "order": 3,
+    "curated": true,
+    "logic": "Same as BBVA, but the folder name keeps the 'SD-' prefix. PracticeConfig.pcName must equal the folder name (for example 'SD-GULFCOAST')."
+  },
+  "outgoing": [
+    {
+      "type": "implementedBy",
+      "to": "orchestration:Cloud9.BizTalk.X12.Process_SD_835Patient",
+      "toName": "Process_SD_835Patient",
+      "toType": "orchestration",
+      "toFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_SD_835Patient.json",
+      "curated": true
+    },
+    {
+      "type": "implementedBy",
+      "to": "sqlproc:BizTalkCloud9Common.BTS.GetPracticeConfigurationByName",
+      "toName": "BTS.GetPracticeConfigurationByName",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.GetPracticeConfigurationByName.json",
+      "curated": true
+    }
+  ],
+  "incoming": [
+    {
+      "type": "hasStep",
+      "from": "flow:SD-835-Web-Patient-Payment",
+      "fromName": "Smile Doctors web payment 835 -> patient payment transactions (card / ACH / ACH return)",
+      "fromType": "flow",
+      "fromFile": "adjacency/flow/SD-835-Web-Patient-Payment.json",
+      "order": 3,
+      "curated": true
+    },
+    {
+      "type": "appliesTo",
+      "from": "businessrule:PracticeResolution",
+      "fromName": "Practice database resolution",
+      "fromType": "businessrule",
+      "fromFile": "adjacency/businessrule/PracticeResolution.json",
+      "curated": true
+    }
+  ]
+}

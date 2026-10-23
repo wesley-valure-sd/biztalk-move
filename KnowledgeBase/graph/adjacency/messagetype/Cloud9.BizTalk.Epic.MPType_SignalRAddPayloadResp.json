@@ -1,0 +1,37 @@
+{
+  "node": {
+    "id": "messagetype:Cloud9.BizTalk.Epic.MPType_SignalRAddPayloadResp",
+    "type": "messagetype",
+    "name": "MPType_SignalRAddPayloadResp",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient.odx",
+    "bodyType": "Cloud9.BizTalk.Schemas.ASP_TypedProcedure_BTS.AddSignalRPayloadResponse",
+    "module": "Cloud9.BizTalk.Epic"
+  },
+  "outgoing": [
+    {
+      "type": "bodySchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.ASP_TypedProcedure_BTS",
+      "toName": "Cloud9.BizTalk.Schemas.ASP_TypedProcedure_BTS",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.ASP_TypedProcedure_BTS.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.ASP_TypedProcedure_BTS.AddSignalRPayloadResponse"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient.odx",
+      "fromName": "Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient.odx",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Orchestrations_Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient.odx.json"
+    },
+    {
+      "type": "usesMessageType",
+      "from": "orchestration:Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient",
+      "fromName": "ProcessHL7MessagesForPatient",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient.json",
+      "message": "msg_SignalRAddPayloadResp"
+    }
+  ]
+}

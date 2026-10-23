@@ -1,0 +1,53 @@
+MAP: Cloud9.BizTalk.Epic.ErrorToInsertRequest.btm
+PATH: Cloud9.BizTalk\Cloud9.BizTalk.Epic\Maps\Cloud9.BizTalk.Epic.ErrorToInsertRequest.btm
+SOURCE: Cloud9.BizTalk.Schemas.PE_Table_BTS (root ProcessingError)
+TARGET: Cloud9.BizTalk.Schemas.PE_TableOperation_BTS_ProcessingError (root Insert)
+SCRIPT PRECEDENCE (first match wins when a functoid has more than one script): CSharp > ExternalAssembly > VbNet > JScript > XsltCallTemplate > Xslt
+
+=== PAGE: Page 1 ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L5: F1 -> Insert/Rows/ProcessingError/peCreatedDate
+L6: F2 -> Insert/Rows/ProcessingError/peCreatedBy
+L8: ProcessingError/peMessageID -> F4
+L9: F4 -> F5
+L10: F5 -> Insert/Rows/ProcessingError/peMessageID
+L11: ProcessingError/peMessageID -> F5
+L12: F4 -> F7
+L13: F7 -> F6
+L14: F6 -> Insert/Rows/ProcessingError/peMessageID
+L15: ProcessingError/peErrorMessage -> F9
+L16: F9 -> Insert/Rows/ProcessingError/peErrorMessage
+L17: ProcessingError/peMessageType -> F8
+L18: F8 -> F10
+L19: ProcessingError/peMessageType -> F11
+L20: F11 -> F10
+L21: F10 -> Insert/Rows/ProcessingError/peMessageType
+L22: F8 -> F12
+L23: F12 -> F13
+L24: F13 -> Insert/Rows/ProcessingError/peMessageType
+L25: ProcessingError/ifGUID -> F14
+L26: F14 -> Insert/Rows/ProcessingError/ifGUID
+--- FUNCTOIDS ---
+F1 [Date and Time, current (inferred)] inputs: 
+F2 [String Concatenate] inputs: const:'BizTalk Process'
+F4 [FID 317] inputs: L8
+F5 [Value Mapping] inputs: L9, L11
+F6 [Value Mapping] inputs: L13, const:'Unknown'
+F7 [Logical NOT (inferred)] inputs: L12
+F8 [FID 317] inputs: L17
+F9 [String Left (inferred)] inputs: L15, const:'1000'
+F10 [Value Mapping] inputs: L18, L20
+F11 [String Left (inferred)] inputs: L19, const:'10'
+F12 [Logical NOT (inferred)] inputs: L22
+F13 [Value Mapping] inputs: L23, const:'Unknown'
+F14 [Scripting] inputs: L25
+    script language: CSharp
+    | public string ValidateGuid(string param1)
+    | {
+    |     Guid newGuid;
+    |     if (Guid.TryParse(param1, out newGuid))
+    |         return param1;
+    |     return "D3EB8480-4C89-436A-972A-FFA328A7E6EA"; // hard-code a GUID for table column validation
+    | }
+    | 
+

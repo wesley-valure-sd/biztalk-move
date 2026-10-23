@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ns0="http://microsoft.com/HealthCare/HL7/2X/2.6/Segments" xmlns:b="http://schemas.microsoft.com/BizTalk/2003" xmlns="http://microsoft.com/HealthCare/HL7/2X" targetNamespace="http://microsoft.com/HealthCare/HL7/2X" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="BTAHL7Schemas.segments_26" namespace="http://microsoft.com/HealthCare/HL7/2X/2.6/Segments" />
+  <xs:annotation>
+    <xs:appinfo>
+      <b:references>
+        <b:reference targetNameSpace="http://microsoft.com/HealthCare/HL7/2X/2.6/Segments" />
+        <b:reference targetNameSpace="http://microsoft.com/HealthCare/HL7/2X/2.6/DataTypes" />
+        <b:reference targetNameSpace="http://microsoft.com/HealthCare/HL7/2X/2.6/Tables" />
+      </b:references>
+      <b:schemaInfo standards_version="HL7.DBVersion.1_5" document_type="HL7 2X Schema" version="0.0.0.0.2.0" root_reference="ADT_A28_A31_26_Canonical" />
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ADT_A28_A31_26_Canonical">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="SFT_SoftwareSegment" type="ns0:SFT" />
+        <xs:element minOccurs="0" maxOccurs="1" name="UAC_UserAuthenticationCredentialSegment" type="ns0:UAC" />
+        <xs:element minOccurs="1" maxOccurs="1" name="EVN_EventType" type="ns0:EVN" />
+        <xs:element minOccurs="0" maxOccurs="1" name="ZVN_EventTypeAdditionalInformation" type="ns0:ZVN" />
+		<xs:element minOccurs="1" maxOccurs="1" name="PID_PatientIdentification" type="ns0:PID" />
+		<xs:element minOccurs="0" maxOccurs="1" name="ZPD_PatientIdentificationAdditionalInformation" type="ns0:ZPD" />
+		<xs:element minOccurs="0" maxOccurs="1" name="LAN_LanguageDetail" type="ns0:LAN" />
+        <xs:element minOccurs="0" maxOccurs="1" name="PD1_PatientAdditionalDemographic" type="ns0:PD1" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="ARV_AccessRestriction_1" type="ns0:ARV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="ROL_Role_1" type="ns0:ROL" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="NK1_NextOfKinAssociatedParties" type="ns0:NK1" />
+        <xs:element minOccurs="0" maxOccurs="1" name="PV1_PatientVisit" type="ns0:PV1" />
+        <xs:element minOccurs="0" maxOccurs="1" name="PV2_PatientVisitAdditionalInformation" type="ns0:PV2" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="ARV_AccessRestriction_2" type="ns0:ARV" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="ROL_Role_2" type="ns0:ROL" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="DB1_Disability" type="ns0:DB1" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="OBX_ObservationResult" type="ns0:OBX" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="AL1_PatientAllergyInformation" type="ns0:AL1" />
+		    <xs:element minOccurs="0" maxOccurs="unbounded" name="ZAL_PatientAdditionalAllergyInformation" type="ns0:ZAL" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="DG1_Diagnosis" type="ns0:DG1" />
+		    <xs:element minOccurs="0" maxOccurs="unbounded" name="NTE_NotesAndCommentsAllergySpecific" type="ns0:NTE" />
+        <xs:element minOccurs="0" maxOccurs="1" name="DRG_DiagnosisRelatedGroup" type="ns0:DRG" />
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:element minOccurs="1" maxOccurs="1" name="PR1_Procedures" type="ns0:PR1" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ROL_Role" type="ns0:ROL" />
+        </xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="GT1_Guarantor" type="ns0:GT1" />
+		    <xs:element minOccurs="0" maxOccurs="unbounded" name="ZG1_GuarantorAdditionalInformation" type="ns0:ZG1" />
+		    <xs:element minOccurs="0" maxOccurs="unbounded" name="NTE_NotesAndCommentsAccountSpecific" type="ns0:NTE" />
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:element minOccurs="1" maxOccurs="1" name="IN1_Insurance" type="ns0:IN1" />
+          <xs:element minOccurs="0" maxOccurs="1" name="IN2_InsuranceAdditionalInformation" type="ns0:IN2" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="IN3_InsuranceAdditionalInformationCertification" type="ns0:IN3" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="ROL_Role" type="ns0:ROL" />
+        </xs:sequence>
+		    <xs:element minOccurs="0" maxOccurs="unbounded" name="ZIN_InsuranceAdditionalInformationCustom" type="ns0:ZIN" />
+        <xs:element minOccurs="0" maxOccurs="1" name="ACC_Accident" type="ns0:ACC" />
+        <xs:element minOccurs="0" maxOccurs="1" name="UB1_Ub82" type="ns0:UB1" />
+        <xs:element minOccurs="0" maxOccurs="1" name="UB2_Ub92Data" type="ns0:UB2" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

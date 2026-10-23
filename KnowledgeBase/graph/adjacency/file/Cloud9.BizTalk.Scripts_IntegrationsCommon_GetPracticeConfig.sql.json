@@ -1,0 +1,19 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk.Scripts/IntegrationsCommon/GetPracticeConfig.sql",
+    "type": "file",
+    "name": "GetPracticeConfig.sql",
+    "kind": "sql",
+    "path": "Cloud9.BizTalk.Scripts/IntegrationsCommon/GetPracticeConfig.sql"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "definedIn",
+      "from": "sqlscript:Cloud9.BizTalk.Scripts/IntegrationsCommon/GetPracticeConfig.sql",
+      "fromName": "GetPracticeConfig.sql",
+      "fromType": "sqlscript",
+      "fromFile": "adjacency/sqlscript/Cloud9.BizTalk.Scripts_IntegrationsCommon_GetPracticeConfig.sql.json"
+    }
+  ]
+}

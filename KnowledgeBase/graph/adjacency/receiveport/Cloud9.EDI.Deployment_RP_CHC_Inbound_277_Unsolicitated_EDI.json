@@ -1,0 +1,45 @@
+{
+  "node": {
+    "id": "receiveport:Cloud9.EDI.Deployment/RP_CHC_Inbound_277_Unsolicitated_EDI",
+    "type": "receiveport",
+    "name": "RP_CHC_Inbound_277_Unsolicitated_EDI",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.Deployment/PortBindingsMaster.xml",
+    "bindingSet": "Cloud9.EDI.Deployment",
+    "isTwoWay": "false",
+    "application": "Cloud9.EDI"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.EDI.Deployment/PortBindingsMaster.xml",
+      "toName": "PortBindingsMaster.xml",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.EDI.Deployment_PortBindingsMaster.xml.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "partOf",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_CHC_Inbound_277_Unsolicitated_EDI",
+      "fromName": "RL_CHC_Inbound_277_Unsolicitated_EDI",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_CHC_Inbound_277_Unsolicitated_EDI.json"
+    },
+    {
+      "type": "partOf",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}CHC227_Unsolicitated_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}CHC227_Unsolicitated_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}CHC227_Unsolicitated_SFTP.json"
+    },
+    {
+      "type": "boundToReceivePort",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_277_Unsolicitated_ClaimsStatus",
+      "fromName": "Process_CHC_277_Unsolicitated_ClaimsStatus",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_277_Unsolicitated_ClaimsStatus.json",
+      "logicalPort": "ReceiveUnsolicitatedCHC277Port",
+      "bindingSet": "Cloud9.EDI.Deployment"
+    }
+  ]
+}

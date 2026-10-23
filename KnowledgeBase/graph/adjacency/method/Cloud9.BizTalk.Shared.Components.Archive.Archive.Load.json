@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.Shared.Components.Archive.Archive.Load",
+    "type": "method",
+    "name": "Archive.Load",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Shared.Components.Archive/Archive.cs",
+    "class": "Cloud9.BizTalk.Shared.Components.Archive.Archive",
+    "line": 154,
+    "signatures": [
+      "public virtual void Load(Microsoft.BizTalk.Component.Interop.IPropertyBag pb, int errlog)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.Shared.Components.Archive.Archive",
+      "fromName": "Cloud9.BizTalk.Shared.Components.Archive.Archive",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.Shared.Components.Archive.Archive.json"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "node": {
+    "id": "sqlproc:PracticeDB.BTS.GetTreatmentCardPatientList",
+    "type": "sqlproc",
+    "name": "BTS.GetTreatmentCardPatientList",
+    "database": "PracticeDB (one database per practice; resolved at run time from BTS.PracticeConfig.pcInstanceAddress)",
+    "definedInRepo": false
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "describesParametersOf",
+      "from": "schema:Cloud9.BizTalk.Schemas.PTC_TypedProcedure_BTS",
+      "fromName": "Cloud9.BizTalk.Schemas.PTC_TypedProcedure_BTS",
+      "fromType": "schema",
+      "fromFile": "adjacency/schema/Cloud9.BizTalk.Schemas.PTC_TypedProcedure_BTS.json"
+    },
+    {
+      "type": "invokesProc",
+      "from": "orchestration:Cloud9.BizTalk.Epic.ProcessTreatmentCardData_Worker",
+      "fromName": "ProcessTreatmentCardData_Worker",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.ProcessTreatmentCardData_Worker.json",
+      "line": 652,
+      "via": "dynamic WCF-SQL send port (WCF.Action set in code)"
+    }
+  ]
+}

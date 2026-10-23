@@ -1,0 +1,57 @@
+{
+  "node": {
+    "id": "class:Cloud9.BizTalk.Helper.OutboundAPI",
+    "type": "class",
+    "name": "Cloud9.BizTalk.Helper.OutboundAPI",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/OutboundAPI.cs",
+    "visibility": "public",
+    "kind": "class",
+    "line": 11
+  },
+  "outgoing": [
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.OutboundAPI.SendPatientGUID",
+      "toName": "OutboundAPI.SendPatientGUID",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.OutboundAPI.SendPatientGUID.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.OutboundAPI.SendProviderInformation",
+      "toName": "OutboundAPI.SendProviderInformation",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.OutboundAPI.SendProviderInformation.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.OutboundAPI.SendLocationGUID",
+      "toName": "OutboundAPI.SendLocationGUID",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.OutboundAPI.SendLocationGUID.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.OutboundAPI.SendException",
+      "toName": "OutboundAPI.SendException",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.OutboundAPI.SendException.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.OutboundAPI.SendMDMToPDS",
+      "toName": "OutboundAPI.SendMDMToPDS",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.OutboundAPI.SendMDMToPDS.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/OutboundAPI.cs",
+      "fromName": "OutboundAPI.cs",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Helper_OutboundAPI.cs.json"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "node": {
+    "id": "class:Cloud9.BizTalk.Helper.XLangMessageHelpers",
+    "type": "class",
+    "name": "Cloud9.BizTalk.Helper.XLangMessageHelpers",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/XLangMessageHelpers.cs",
+    "visibility": "public",
+    "kind": "class",
+    "line": 15
+  },
+  "outgoing": [
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.XLangMessageHelpers.RemoveEmptyNodes",
+      "toName": "XLangMessageHelpers.RemoveEmptyNodes",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.XLangMessageHelpers.RemoveEmptyNodes.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.XLangMessageHelpers.CreateStringFromXLANGMessage",
+      "toName": "XLangMessageHelpers.CreateStringFromXLANGMessage",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.XLangMessageHelpers.CreateStringFromXLANGMessage.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.XLangMessageHelpers.CreateHL7MessageFromString",
+      "toName": "XLangMessageHelpers.CreateHL7MessageFromString",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.XLangMessageHelpers.CreateHL7MessageFromString.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.XLangMessageHelpers.CreateHL7MessagePart",
+      "toName": "XLangMessageHelpers.CreateHL7MessagePart",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.XLangMessageHelpers.CreateHL7MessagePart.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.XLangMessageHelpers.CreateCustomBTXMessageFromString",
+      "toName": "XLangMessageHelpers.CreateCustomBTXMessageFromString",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.XLangMessageHelpers.CreateCustomBTXMessageFromString.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.XLangMessageHelpers.CreateCustomMessagePart",
+      "toName": "XLangMessageHelpers.CreateCustomMessagePart",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.XLangMessageHelpers.CreateCustomMessagePart.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.XLangMessageHelpers.GetReceiveLocationName",
+      "toName": "XLangMessageHelpers.GetReceiveLocationName",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.XLangMessageHelpers.GetReceiveLocationName.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.XLangMessageHelpers.GetXMessage",
+      "toName": "XLangMessageHelpers.GetXMessage",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.XLangMessageHelpers.GetXMessage.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/XLangMessageHelpers.cs",
+      "fromName": "XLangMessageHelpers.cs",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Helper_XLangMessageHelpers.cs.json"
+    }
+  ]
+}

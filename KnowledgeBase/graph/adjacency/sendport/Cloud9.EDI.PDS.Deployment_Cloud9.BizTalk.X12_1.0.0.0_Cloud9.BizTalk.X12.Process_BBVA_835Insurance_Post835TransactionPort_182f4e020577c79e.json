@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "sendport:Cloud9.EDI.PDS.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_BBVA_835Insurance_Post835TransactionPort_182f4e020577c79e",
+    "type": "sendport",
+    "name": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_BBVA_835Insurance_Post835TransactionPort_182f4e020577c79e",
+    "isStatic": "false",
+    "bindingSet": "Cloud9.EDI.PDS.Deployment",
+    "note": "Dynamic send port. BizTalk creates it at deploy time. The orchestration sets the address and transport at run time."
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "boundToSendPort",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_BBVA_835Insurance",
+      "fromName": "Process_BBVA_835Insurance",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_BBVA_835Insurance.json",
+      "bindingSet": "Cloud9.EDI.PDS.Deployment",
+      "bindingOption": "4",
+      "logicalPort": "Post835TransactionPort"
+    }
+  ]
+}

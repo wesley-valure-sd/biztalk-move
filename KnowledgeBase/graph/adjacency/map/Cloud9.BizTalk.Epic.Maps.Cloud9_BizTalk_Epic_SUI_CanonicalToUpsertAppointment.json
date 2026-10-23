@@ -1,0 +1,71 @@
+{
+  "node": {
+    "id": "map:Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_SUI_CanonicalToUpsertAppointment",
+    "type": "map",
+    "name": "Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_SUI_CanonicalToUpsertAppointment",
+    "readableSummary": "KnowledgeBase/map-summaries/Cloud9.BizTalk.Epic.SUI_CanonicalToUpsertAppointment.txt",
+    "targetSchema": "Cloud9.BizTalk.Schemas.Cloud9UpsertAppointment.UPSA_TypedProcedure_BTS",
+    "inlineScripts": [
+      "CSharp:GetAppDurationMinutes"
+    ],
+    "functoidCount": 13,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/Cloud9.BizTalk.Epic.SUI_CanonicalToUpsertAppointment.btm",
+    "sourceSchema": "..\\Schemas\\SIU_Canonical.xsd",
+    "linkCount": 37,
+    "sourceRoot": "SIU_Canonical",
+    "targetRoot": "UpsertAppointment"
+  },
+  "outgoing": [
+    {
+      "type": "callsMethod",
+      "to": "method:Cloud9.BizTalk.Helper.HL7TypeConversion.ConvertSIUMessageTypeToCloud9",
+      "toName": "HL7TypeConversion.ConvertSIUMessageTypeToCloud9",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.HL7TypeConversion.ConvertSIUMessageTypeToCloud9.json",
+      "via": "scripting functoid (ExternalAssembly)"
+    },
+    {
+      "type": "callsMethod",
+      "to": "method:Cloud9.BizTalk.Helper.HL7TypeConversion.ConvertSIUAppointmentStatusToCloud9",
+      "toName": "HL7TypeConversion.ConvertSIUAppointmentStatusToCloud9",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.HL7TypeConversion.ConvertSIUAppointmentStatusToCloud9.json",
+      "via": "scripting functoid (ExternalAssembly)"
+    },
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/Cloud9.BizTalk.Epic.SUI_CanonicalToUpsertAppointment.btm",
+      "toName": "Cloud9.BizTalk.Epic.SUI_CanonicalToUpsertAppointment.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Maps_Cloud9.BizTalk.Epic.SUI_CanonicalToUpsertAppointment.btm.json"
+    },
+    {
+      "type": "sourceSchema",
+      "to": "schema:Cloud9.BizTalk.Epic.Schemas.SIU_Canonical",
+      "toName": "Cloud9.BizTalk.Epic.Schemas.SIU_Canonical",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Epic.Schemas.SIU_Canonical.json",
+      "root": "SIU_Canonical"
+    },
+    {
+      "type": "targetSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.Cloud9UpsertAppointment.UPSA_TypedProcedure_BTS",
+      "toName": "Cloud9.BizTalk.Schemas.Cloud9UpsertAppointment.UPSA_TypedProcedure_BTS",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.Cloud9UpsertAppointment.UPSA_TypedProcedure_BTS.json",
+      "root": "UpsertAppointment"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "usesMap",
+      "from": "orchestration:Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient",
+      "fromName": "ProcessHL7MessagesForPatient",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient.json",
+      "output": "msg_UpsertAppointmentReq.Body",
+      "input": "msg_SIUMessageData.Body",
+      "line": 2833
+    }
+  ]
+}

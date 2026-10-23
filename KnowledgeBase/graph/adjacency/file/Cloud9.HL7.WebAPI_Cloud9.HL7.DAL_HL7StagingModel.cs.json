@@ -1,0 +1,19 @@
+{
+  "node": {
+    "id": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.DAL/HL7StagingModel.cs",
+    "type": "file",
+    "name": "HL7StagingModel.cs",
+    "kind": "csharp",
+    "path": "Cloud9.HL7.WebAPI/Cloud9.HL7.DAL/HL7StagingModel.cs"
+  },
+  "outgoing": [
+    {
+      "type": "defines",
+      "to": "class:Cloud9.HL7.DAL.HL7StagingModel",
+      "toName": "Cloud9.HL7.DAL.HL7StagingModel",
+      "toType": "class",
+      "toFile": "adjacency/class/Cloud9.HL7.DAL.HL7StagingModel.json"
+    }
+  ],
+  "incoming": []
+}

@@ -1,0 +1,40 @@
+{
+  "node": {
+    "id": "sqltable:PracticeDB.dbo.Transaction",
+    "type": "sqltable",
+    "name": "dbo.Transaction",
+    "database": "PracticeDB (one database per practice; not in this repo)",
+    "definedInRepo": false
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "queries",
+      "from": "sqlscript:Cloud9.BizTalk.Scripts/835BBVAInsurancePayment/GetTransactionsInsurancePayment.sql",
+      "fromName": "GetTransactionsInsurancePayment.sql",
+      "fromType": "sqlscript",
+      "fromFile": "adjacency/sqlscript/Cloud9.BizTalk.Scripts_835BBVAInsurancePayment_GetTransactionsInsurancePayment.sql.json"
+    },
+    {
+      "type": "queries",
+      "from": "sqlscript:Cloud9.BizTalk.Scripts/835BBVAPatientPaymentLockbox/GetTransactionsPatientPayment.sql",
+      "fromName": "GetTransactionsPatientPayment.sql",
+      "fromType": "sqlscript",
+      "fromFile": "adjacency/sqlscript/Cloud9.BizTalk.Scripts_835BBVAPatientPaymentLockbox_GetTransactionsPatientPayment.sql.json"
+    },
+    {
+      "type": "queries",
+      "from": "sqlscript:Cloud9.BizTalk.Scripts/835SDWebPatientPayment/GetTransactionsPatientPayment.sql",
+      "fromName": "GetTransactionsPatientPayment.sql",
+      "fromType": "sqlscript",
+      "fromFile": "adjacency/sqlscript/Cloud9.BizTalk.Scripts_835SDWebPatientPayment_GetTransactionsPatientPayment.sql.json"
+    },
+    {
+      "type": "queries",
+      "from": "sqlscript:Cloud9.BizTalk.Scripts/IntegrationsCommon/GetTransactionsMostRecents.sql",
+      "fromName": "GetTransactionsMostRecents.sql",
+      "fromType": "sqlscript",
+      "fromFile": "adjacency/sqlscript/Cloud9.BizTalk.Scripts_IntegrationsCommon_GetTransactionsMostRecents.sql.json"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetPracticeEDISettingsDynamic_182f4e020577c79e",
+    "type": "sendport",
+    "name": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetPracticeEDISettingsDynamic_182f4e020577c79e",
+    "isStatic": "false",
+    "bindingSet": "Cloud9.EDI.Deployment",
+    "note": "Dynamic send port. BizTalk creates it at deploy time. The orchestration sets the address and transport at run time."
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "boundToSendPort",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker",
+      "fromName": "Process_CHC_InboundFiles_Worker",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "4",
+      "logicalPort": "Port_GetPracticeEDISettingsDynamic"
+    }
+  ]
+}

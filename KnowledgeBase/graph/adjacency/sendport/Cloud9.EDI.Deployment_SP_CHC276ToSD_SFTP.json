@@ -1,0 +1,68 @@
+{
+  "node": {
+    "id": "sendport:Cloud9.EDI.Deployment/SP_CHC276ToSD_SFTP",
+    "type": "sendport",
+    "name": "SP_CHC276ToSD_SFTP",
+    "sendPipeline": "Microsoft.BizTalk.Edi.DefaultPipelines.EdiSend",
+    "bindingSet": "Cloud9.EDI.Deployment",
+    "actionMappings": [],
+    "isTwoWay": "false",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.Deployment/PortBindingsMaster.xml",
+    "address": "sftp://${SD_TO_C9_SFTP_HOST}/${SD_TO_C9_SFTP_FOLDER}/276/%MessageID%.edi",
+    "filter": [],
+    "isStatic": "true",
+    "transport": "SFTP"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.EDI.Deployment/PortBindingsMaster.xml",
+      "toName": "PortBindingsMaster.xml",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.EDI.Deployment_PortBindingsMaster.xml.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.EDI.Deployment/SD_TO_C9_SFTP_HOST",
+      "toName": "SD_TO_C9_SFTP_HOST",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.EDI.Deployment_SD_TO_C9_SFTP_HOST.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.EDI.Deployment/SD_TO_C9_SFTP_FOLDER",
+      "toName": "SD_TO_C9_SFTP_FOLDER",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.EDI.Deployment_SD_TO_C9_SFTP_FOLDER.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.EDI.Deployment/SD_TO_C9_SFTP_PASSWORD",
+      "toName": "SD_TO_C9_SFTP_PASSWORD",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.EDI.Deployment_SD_TO_C9_SFTP_PASSWORD.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.EDI.Deployment/SD_TO_C9_SFTP_USERNAME",
+      "toName": "SD_TO_C9_SFTP_USERNAME",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.EDI.Deployment_SD_TO_C9_SFTP_USERNAME.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.EDI.Deployment/SD_TO_C9_SFTP_PPK",
+      "toName": "SD_TO_C9_SFTP_PPK",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.EDI.Deployment_SD_TO_C9_SFTP_PPK.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.EDI.Deployment/SD_276_FILTERS",
+      "toName": "SD_276_FILTERS",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.EDI.Deployment_SD_276_FILTERS.json"
+    }
+  ],
+  "incoming": []
+}

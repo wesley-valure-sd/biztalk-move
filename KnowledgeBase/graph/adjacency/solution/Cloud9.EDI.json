@@ -1,0 +1,81 @@
+{
+  "node": {
+    "id": "solution:Cloud9.EDI",
+    "type": "solution",
+    "name": "Cloud9.EDI",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.sln"
+  },
+  "outgoing": [
+    {
+      "type": "contains",
+      "to": "project:Cloud9.BizTalk.X12",
+      "toName": "Cloud9.BizTalk.X12",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.X12.json"
+    },
+    {
+      "type": "contains",
+      "to": "project:Cloud9.BizTalk.Shared.Components.Archive",
+      "toName": "Cloud9.BizTalk.Shared.Components.Archive",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.Shared.Components.Archive.json"
+    },
+    {
+      "type": "contains",
+      "to": "project:Cloud9.BizTalk.X12.Schemas",
+      "toName": "Cloud9.BizTalk.X12.Schemas",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.X12.Schemas.json"
+    },
+    {
+      "type": "contains",
+      "to": "project:Cloud9.BizTalk.Helper",
+      "toName": "Cloud9.BizTalk.Helper",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.Helper.json"
+    },
+    {
+      "type": "contains",
+      "to": "project:Cloud9.BizTalk.Schemas",
+      "toName": "Cloud9.BizTalk.Schemas",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.Schemas.json"
+    },
+    {
+      "type": "contains",
+      "to": "project:Cloud9.BizTalk.Maps",
+      "toName": "Cloud9.BizTalk.Maps",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.Maps.json"
+    },
+    {
+      "type": "contains",
+      "to": "project:Cloud9.BizTalk.HelperTest",
+      "toName": "Cloud9.BizTalk.HelperTest",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.HelperTest.json"
+    },
+    {
+      "type": "contains",
+      "to": "project:Cloud9.BizTalk.Common",
+      "toName": "Cloud9.BizTalk.Common",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.Common.json"
+    },
+    {
+      "type": "contains",
+      "to": "project:Cloud9.BizTalk.PipelineComponent.EmdeonPayload",
+      "toName": "Cloud9.BizTalk.PipelineComponent.EmdeonPayload",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.PipelineComponent.EmdeonPayload.json"
+    },
+    {
+      "type": "contains",
+      "to": "project:Cloud9.BizTalk.PipelineComponent.CustomEncoder",
+      "toName": "Cloud9.BizTalk.PipelineComponent.CustomEncoder",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.PipelineComponent.CustomEncoder.json"
+    }
+  ],
+  "incoming": []
+}

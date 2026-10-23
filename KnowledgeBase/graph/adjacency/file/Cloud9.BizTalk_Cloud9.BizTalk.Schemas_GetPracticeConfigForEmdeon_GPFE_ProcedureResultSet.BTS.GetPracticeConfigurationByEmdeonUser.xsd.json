@@ -1,0 +1,26 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetPracticeConfigForEmdeon/GPFE_ProcedureResultSet.BTS.GetPracticeConfigurationByEmdeonUser.xsd",
+    "type": "file",
+    "name": "GPFE_ProcedureResultSet.BTS.GetPracticeConfigurationByEmdeonUser.xsd",
+    "kind": "xsd",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetPracticeConfigForEmdeon/GPFE_ProcedureResultSet.BTS.GetPracticeConfigurationByEmdeonUser.xsd"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.Schemas",
+      "fromName": "Cloud9.BizTalk.Schemas",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.Schemas.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "schema:Cloud9.BizTalk.Schemas.GPFE_ProcedureResultSet_BTS_GetPracticeConfigurationByEmdeonUser",
+      "fromName": "Cloud9.BizTalk.Schemas.GPFE_ProcedureResultSet_BTS_GetPracticeConfigurationByEmdeonUser",
+      "fromType": "schema",
+      "fromFile": "adjacency/schema/Cloud9.BizTalk.Schemas.GPFE_ProcedureResultSet_BTS_GetPracticeConfigurationByEmdeonUser.json"
+    }
+  ]
+}

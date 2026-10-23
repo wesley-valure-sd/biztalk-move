@@ -1,0 +1,37 @@
+{
+  "node": {
+    "id": "messagetype:Cloud9.BizTalk.Common.MPType_CreateLogEntryReq",
+    "type": "messagetype",
+    "name": "MPType_CreateLogEntryReq",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Common/Orchestrations/Cloud9.BizTalk.Common.AddLog.odx",
+    "bodyType": "Cloud9.BizTalk.Schemas.CLE_TypedProcedure_BTS.CreateLogEntry",
+    "module": "Cloud9.BizTalk.Common"
+  },
+  "outgoing": [
+    {
+      "type": "bodySchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.CLE_TypedProcedure_BTS",
+      "toName": "Cloud9.BizTalk.Schemas.CLE_TypedProcedure_BTS",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.CLE_TypedProcedure_BTS.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.CLE_TypedProcedure_BTS.CreateLogEntry"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.Common/Orchestrations/Cloud9.BizTalk.Common.AddLog.odx",
+      "fromName": "Cloud9.BizTalk.Common.AddLog.odx",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Common_Orchestrations_Cloud9.BizTalk.Common.AddLog.odx.json"
+    },
+    {
+      "type": "usesMessageType",
+      "from": "orchestration:Cloud9.BizTalk.Common.AddLog",
+      "fromName": "AddLog",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Common.AddLog.json",
+      "message": "msg_CreateLogEntryReq"
+    }
+  ]
+}

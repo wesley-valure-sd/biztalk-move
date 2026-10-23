@@ -1,0 +1,31 @@
+{
+  "node": {
+    "id": "setting:Cloud9.EDI.Deployment/CH_837_TO_BBVA_FTP_FOLDER",
+    "type": "setting",
+    "name": "CH_837_TO_BBVA_FTP_FOLDER",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.Deployment/SettingsFileGenerator.xml",
+    "bindingSet": "Cloud9.EDI.Deployment",
+    "valuesByEnvironment": {
+      "Default Values (DefaultSettings)": "/TESTfv_cloud9/From_CHC/x12/837_SmileD",
+      "Local Dev (LocalSettings)": "/TESTfv_cloud9/From_CHC/x12/837_SmileD",
+      "JGLISSON Development (JGLISSONSettings)": "/TESTfv_cloud9/From_CHC/x12/837_SmileD",
+      "LAB (LABSettings)": "/TESTfv_cloud9/From_CHC/x12/837_SmileD",
+      "LAB2 (LAB2Settings)": "/TESTfv_cloud9/From_CHC/x12/837_SmileD",
+      "LAB3 (LAB3Settings)": "/TESTfv_cloud9/From_CHC/x12/837_SmileD",
+      "PROD (C9Prod1_Settings)": "/fv_cloud9/From_CHC/x12/837_SmileD",
+      "PROD (C9Prod2_Settings)": "/fv_cloud9/From_CHC/x12/837_SmileD",
+      "LAB (SDLab1_Settings)": "/TESTfv_cloud9/From_CHC/x12/837_SmileD",
+      "PROD (SDProd1_Settings)": "/fv_cloud9/From_CHC/x12/837_SmileD"
+    }
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}RL_CHC837ToBBVA_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}RL_CHC837ToBBVA_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}RL_CHC837ToBBVA_SFTP.json"
+    }
+  ]
+}

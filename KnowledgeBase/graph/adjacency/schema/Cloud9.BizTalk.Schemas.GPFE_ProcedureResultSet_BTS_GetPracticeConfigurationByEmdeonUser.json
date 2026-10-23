@@ -1,0 +1,25 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.GPFE_ProcedureResultSet_BTS_GetPracticeConfigurationByEmdeonUser",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.GPFE_ProcedureResultSet_BTS_GetPracticeConfigurationByEmdeonUser",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetPracticeConfigForEmdeon/GPFE_ProcedureResultSet.BTS.GetPracticeConfigurationByEmdeonUser.xsd",
+    "rootElements": [
+      "StoredProcedureResultSet0",
+      "ArrayOfStoredProcedureResultSet0"
+    ],
+    "kind": "wcf-sql-result-set",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetPracticeConfigurationByEmdeonUser",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetPracticeConfigForEmdeon/GPFE_ProcedureResultSet.BTS.GetPracticeConfigurationByEmdeonUser.xsd",
+      "toName": "GPFE_ProcedureResultSet.BTS.GetPracticeConfigurationByEmdeonUser.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_GetPracticeConfigForEmdeon_GPFE_ProcedureResultSet.BTS.GetPracticeConfigurationByEmdeonUser.xsd.json"
+    }
+  ],
+  "incoming": []
+}

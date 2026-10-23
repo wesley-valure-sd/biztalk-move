@@ -1,0 +1,22 @@
+{
+  "node": {
+    "id": "setting:Cloud9.BizTalk.PDS.Deployment/AllergyCommentTypeGUID",
+    "type": "setting",
+    "name": "AllergyCommentTypeGUID",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.PDS.Deployment/SettingsFileGenerator.xml",
+    "bindingSet": "Cloud9.BizTalk.PDS.Deployment",
+    "valuesByEnvironment": {
+      "Default Values": "1CF618CC-33F1-4CEB-AD9B-120C907F64A8",
+      "Local Dev (LocalSettings)": "1CF618CC-33F1-4CEB-AD9B-120C907F64A8",
+      "LAB2 (LAB2Settings)": "1CF618CC-33F1-4CEB-AD9B-120C907F64A8",
+      "DEV (DEVSettings)": "1CF618CC-33F1-4CEB-AD9B-120C907F64A8",
+      "CFG (CFGSettings)": "1CF618CC-33F1-4CEB-AD9B-120C907F64A8",
+      "TST (TSTSettings)": "1CF618CC-33F1-4CEB-AD9B-120C907F64A8",
+      "TRN (TrainingSettings)": "1CF618CC-33F1-4CEB-AD9B-120C907F64A8",
+      "STG (StagingSettings)": "1CF618CC-33F1-4CEB-AD9B-120C907F64A8",
+      "PROD (ProdSettings)": "1CF618CC-33F1-4CEB-AD9B-120C907F64A8"
+    }
+  },
+  "outgoing": [],
+  "incoming": []
+}

@@ -1,0 +1,22 @@
+{
+  "node": {
+    "id": "porttype:Cloud9.BizTalk.X12.PortType_Receive_QueueProcessParametersResp",
+    "type": "porttype",
+    "name": "PortType_Receive_QueueProcessParametersResp",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_837Claims_Controller.odx",
+    "module": "Cloud9.BizTalk.X12",
+    "operations": [
+      "oneway Operation_Receive_QueueProcessParametersResp(MPType_QueueProcessParametersResp)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_837Claims_Controller.odx",
+      "fromName": "Process_CHC_837Claims_Controller.odx",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Orchestrations_Process_CHC_837Claims_Controller.odx.json"
+    }
+  ]
+}

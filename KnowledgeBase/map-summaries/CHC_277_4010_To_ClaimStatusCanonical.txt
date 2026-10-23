@@ -1,0 +1,41 @@
+MAP: CHC_277_4010_To_ClaimStatusCanonical.btm
+PATH: Cloud9.BizTalk\Cloud9.BizTalk.X12\Maps\CHC_277_4010_To_ClaimStatusCanonical.btm
+SOURCE: Cloud9.BizTalk.X12.Schemas.CHC_X12_00401_277 (root X12_00401_277)
+TARGET: Cloud9.BizTalk.Schemas.Canonical.ClaimStatus (root ClaimStatus)
+SCRIPT PRECEDENCE (first match wins when a functoid has more than one script): CSharp > ExternalAssembly > VbNet > JScript > XsltCallTemplate > Xslt
+
+=== PAGE: Page 1 ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L10: F2 -> ClaimStatus/Patient/Claim
+L11: X12_00401_277/TS277A1_2000A_Loop/TS277A1_2000B_Loop/TS277A1_2000C_Loop/TS277A1_2000D_Loop/TS277A1_2200D_Loop/TRN_ClaimSubmitterTraceNumber_TS277A1_2200D -> F2
+L12: X12_00401_277/TS277A1_2000A_Loop/TS277A1_2000B_Loop/TS277A1_2000C_Loop/TS277A1_2000D_Loop/TS277A1_2200D_Loop/STC_ClaimLevelStatusInformation_TS277A1_2200D/STC01_C043U79_TS277A1_2200D/STC01_C04302U81_HealthCareClaimStatusCode -> ClaimStatus/Patient/Claim/StatusCode
+L15: F4 -> ClaimStatus/Patient/Claim/ClaimControlNumber
+L16: X12_00401_277/BHT_BeginningOfHierarchicalTransaction_TS277A1/BHT03__OriginatorApplicationTransactionIdentifier -> F4
+--- FUNCTOIDS ---
+F2 [Looping] inputs: L11
+F4 [Scripting] inputs: L16
+    script language: CSharp
+    | public string ParseClaimNumber(string C9PatientControlNumber)
+    | {
+    |    // PMS ID 1 - 2 = C9
+    |    // Database #: 3-12 ("Emdeon" Username)
+    |    // Claim #: 13-20
+    |    string strClaimNumber = "";
+    | 
+    |    try
+    |    {
+    |       strClaimNumber = C9PatientControlNumber.Substring(12);
+    |       int claimNbr = Convert.ToInt32(strClaimNumber);
+    |       strClaimNumber = Convert.ToString(claimNbr);
+    | 
+    |    }
+    | 
+    |    catch (System.Exception)
+    |    {
+    |       throw (new System.Exception(System.String.Format("ParseClaimNumber: Parsing Claim Number: {0}",
+    |                                             C9PatientControlNumber)));
+    |    }
+    | 
+    |    return strClaimNumber;
+    | }
+

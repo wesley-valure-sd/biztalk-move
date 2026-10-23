@@ -1,0 +1,35 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.X12.Schemas.CHCEmdeonPropertySchema",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.X12.Schemas.CHCEmdeonPropertySchema",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Schemas/CHCEmdeonPropertySchema.xsd",
+    "rootElements": [
+      "user_id",
+      "password",
+      "trace_id",
+      "test_mode",
+      "file_name",
+      "file_format",
+      "file_size",
+      "file_encoding",
+      "field_list",
+      "msg_envelope",
+      "vendor_id",
+      "file_compression"
+    ],
+    "kind": "property-schema",
+    "targetNamespace": "https://Cloud9.BizTalk.X12.Schemas.CHCEmdeonPropertySchema",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Schemas/CHCEmdeonPropertySchema.xsd",
+      "toName": "CHCEmdeonPropertySchema.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Schemas_CHCEmdeonPropertySchema.xsd.json"
+    }
+  ],
+  "incoming": []
+}

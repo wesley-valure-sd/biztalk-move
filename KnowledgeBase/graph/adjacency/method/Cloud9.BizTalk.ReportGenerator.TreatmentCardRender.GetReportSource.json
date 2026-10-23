@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.ReportGenerator.TreatmentCardRender.GetReportSource",
+    "type": "method",
+    "name": "TreatmentCardRender.GetReportSource",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.ReportGenerator/Cloud9.BizTalk.ReportGenerator/TreatmentCardRender.cs",
+    "class": "Cloud9.BizTalk.ReportGenerator.TreatmentCardRender",
+    "line": 16,
+    "signatures": [
+      "private static ReportSource GetReportSource(string instanceConnectionString, string tceGUID)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.ReportGenerator.TreatmentCardRender",
+      "fromName": "Cloud9.BizTalk.ReportGenerator.TreatmentCardRender",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.ReportGenerator.TreatmentCardRender.json"
+    }
+  ]
+}

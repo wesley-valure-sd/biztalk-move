@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ns4="http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetIncomingMessageInfo" xmlns:ns3="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation=".\GIMI_Serialization.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation=".\GIMI_ProcedureResultSet.BTS.GetIncomingMessageInfo.xsd" namespace="http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetIncomingMessageInfo" />
+  <xs:annotation>
+    <xs:appinfo>
+      <fileNameHint xmlns="http://schemas.microsoft.com/servicemodel/adapters/metadata/xsd">TypedProcedure.BTS</fileNameHint>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="GetIncomingMessageInfo">
+    <xs:annotation>
+      <xs:documentation>
+        <doc:action xmlns:doc="http://schemas.microsoft.com/servicemodel/adapters/metadata/documentation">TypedProcedure/BTS/GetIncomingMessageInfo</doc:action>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="imGUID" nillable="true" type="ns3:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIncomingMessageInfoResponse">
+    <xs:annotation>
+      <xs:documentation>
+        <doc:action xmlns:doc="http://schemas.microsoft.com/servicemodel/adapters/metadata/documentation">TypedProcedure/BTS/GetIncomingMessageInfo/response</doc:action>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="StoredProcedureResultSet0" nillable="true" type="ns4:ArrayOfStoredProcedureResultSet0" />
+        <xs:element minOccurs="1" maxOccurs="1" name="ReturnValue" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,57 @@
+{
+  "node": {
+    "id": "flow:CHC-835-To-BBVA-Passthrough",
+    "type": "flow",
+    "name": "Change Healthcare 835 pass-through to the BBVA/SD SFTP (no posting)",
+    "doc": "KnowledgeBase/docs/02-payments-835-end-to-end.md#flow-e-chc-835-pass-through-to-bbva",
+    "replacementSpec": "KnowledgeBase/docs/03-replacement-guide.md",
+    "curated": true
+  },
+  "outgoing": [
+    {
+      "type": "entryPoint",
+      "to": "receiveport:Cloud9.EDI.Deployment/RP_CHC835ToBBVA",
+      "toName": "RP_CHC835ToBBVA",
+      "toType": "receiveport",
+      "toFile": "adjacency/receiveport/Cloud9.EDI.Deployment_RP_CHC835ToBBVA.json",
+      "curated": true
+    },
+    {
+      "type": "hasStep",
+      "to": "flowstep:CHC2BBVA-01-Receive",
+      "toName": "Receive CHC 835 from CHC835ToBBVA folder",
+      "toType": "flowstep",
+      "toFile": "adjacency/flowstep/CHC2BBVA-01-Receive.json",
+      "order": 1,
+      "curated": true
+    },
+    {
+      "type": "hasStep",
+      "to": "flowstep:CHC2BBVA-02-Lookup",
+      "toName": "Look up outbound agreement by payee ID",
+      "toType": "flowstep",
+      "toFile": "adjacency/flowstep/CHC2BBVA-02-Lookup.json",
+      "order": 2,
+      "curated": true
+    },
+    {
+      "type": "hasStep",
+      "to": "flowstep:CHC2BBVA-03-Send",
+      "toName": "Re-serialize as X12 and send by SFTP",
+      "toType": "flowstep",
+      "toFile": "adjacency/flowstep/CHC2BBVA-03-Send.json",
+      "order": 3,
+      "curated": true
+    }
+  ],
+  "incoming": [
+    {
+      "type": "verifies",
+      "from": "sqlscript:Cloud9.BizTalk.Scripts/835CHCtoBBVAPassthrough/GetApplicationLookupValues.sql",
+      "fromName": "GetApplicationLookupValues.sql",
+      "fromType": "sqlscript",
+      "fromFile": "adjacency/sqlscript/Cloud9.BizTalk.Scripts_835CHCtoBBVAPassthrough_GetApplicationLookupValues.sql.json",
+      "curated": true
+    }
+  ]
+}

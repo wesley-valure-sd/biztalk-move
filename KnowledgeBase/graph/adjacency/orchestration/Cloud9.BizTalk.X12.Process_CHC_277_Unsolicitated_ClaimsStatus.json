@@ -1,0 +1,125 @@
+{
+  "node": {
+    "id": "orchestration:Cloud9.BizTalk.X12.Process_CHC_277_Unsolicitated_ClaimsStatus",
+    "type": "orchestration",
+    "name": "Process_CHC_277_Unsolicitated_ClaimsStatus",
+    "activation": "activate receive (ReceiveUnsolicitatedCHC277Port.Operation_1, CHC227_Unsolicitate)",
+    "ports": [
+      "ReceiveUnsolicitatedCHC277Port (implements ReceiveUnsolicitatedCHC277PortType)",
+      "GetPracticeConfigurationByEmdeonPort (uses GetPracticeConfigurationByEmdeonPortType)",
+      "Send_277_Unsolicitated_BBVA (uses Send_277_Unsolicitated_BBVA_Type)"
+    ],
+    "messages": [
+      "CH277_BBVA: CHC277_MMT",
+      "ClaimStatusCanonical: ClaimStatusCanonical_MMT",
+      "GetPracticeConfigurationByEmdeonResponse: GetPracticeConfigurationByEmdeonResponse_MMT",
+      "GetPracticeConfigurationByEmdeonRequest: GetPracticeConfigurationByEmdeon_MMT",
+      "CHC227_Unsolicitate: CHC277_Unsolicitate_MMT",
+      "CHC227_Unsolicitate_BBVA: CHC277_Unsolicitate_MMT"
+    ],
+    "visibility": "internal",
+    "module": "Cloud9.BizTalk.X12",
+    "contextProperties": [],
+    "line": 481,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_277_Unsolicitated_ClaimsStatus.odx",
+    "bindingStates": {
+      "Cloud9.EDI.Deployment": "Started"
+    }
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_277_Unsolicitated_ClaimsStatus.odx",
+      "toName": "Process_CHC_277_Unsolicitated_ClaimsStatus.odx",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Orchestrations_Process_CHC_277_Unsolicitated_ClaimsStatus.odx.json"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.CHC277_MMT",
+      "toName": "CHC277_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.CHC277_MMT.json",
+      "message": "CH277_BBVA"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.ClaimStatusCanonical_MMT",
+      "toName": "ClaimStatusCanonical_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.ClaimStatusCanonical_MMT.json",
+      "message": "ClaimStatusCanonical"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.GetPracticeConfigurationByEmdeonResponse_MMT",
+      "toName": "GetPracticeConfigurationByEmdeonResponse_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.GetPracticeConfigurationByEmdeonResponse_MMT.json",
+      "message": "GetPracticeConfigurationByEmdeonResponse"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.GetPracticeConfigurationByEmdeon_MMT",
+      "toName": "GetPracticeConfigurationByEmdeon_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.GetPracticeConfigurationByEmdeon_MMT.json",
+      "message": "GetPracticeConfigurationByEmdeonRequest"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.CHC277_Unsolicitate_MMT",
+      "toName": "CHC277_Unsolicitate_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.CHC277_Unsolicitate_MMT.json",
+      "message": "CHC227_Unsolicitate"
+    },
+    {
+      "type": "usesMap",
+      "to": "map:Cloud9.BizTalk.X12.Maps.CHC_277_Unsolicited_To_ClaimStatusCanonical",
+      "toName": "Cloud9.BizTalk.X12.Maps.CHC_277_Unsolicited_To_ClaimStatusCanonical",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.CHC_277_Unsolicited_To_ClaimStatusCanonical.json",
+      "output": "ClaimStatusCanonical.Body",
+      "input": "CHC227_Unsolicitate.Body",
+      "line": 549
+    },
+    {
+      "type": "callsOrchestration",
+      "to": "orchestration:Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus",
+      "toName": "Process_CHC_ClaimsStatus",
+      "toType": "orchestration",
+      "toFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus.json",
+      "line": 552
+    },
+    {
+      "type": "invokesProc",
+      "to": "sqlproc:BizTalkCloud9Common.BTS.GetPracticeConfigurationByEmdeonUser",
+      "toName": "BTS.GetPracticeConfigurationByEmdeonUser",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.GetPracticeConfigurationByEmdeonUser.json",
+      "line": 537,
+      "via": "static send port operation GetPracticeConfigurationByEmdeonUser (BtsActionMapping)"
+    },
+    {
+      "type": "boundToReceivePort",
+      "to": "receiveport:Cloud9.EDI.Deployment/RP_CHC_Inbound_277_Unsolicitated_EDI",
+      "toName": "RP_CHC_Inbound_277_Unsolicitated_EDI",
+      "toType": "receiveport",
+      "toFile": "adjacency/receiveport/Cloud9.EDI.Deployment_RP_CHC_Inbound_277_Unsolicitated_EDI.json",
+      "logicalPort": "ReceiveUnsolicitatedCHC277Port",
+      "bindingSet": "Cloud9.EDI.Deployment"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.Deployment/SP_GetPracticeConfigurationForEmdeon_WCF",
+      "toName": "SP_GetPracticeConfigurationForEmdeon_WCF",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.Deployment_SP_GetPracticeConfigurationForEmdeon_WCF.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "GetPracticeConfigurationByEmdeonPort"
+    }
+  ],
+  "incoming": []
+}

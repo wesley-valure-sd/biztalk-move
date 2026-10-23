@@ -1,0 +1,19 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk.Scripts/835SDWebPatientPayment/GetImportLogsPatientPaymentSuccess.sql",
+    "type": "file",
+    "name": "GetImportLogsPatientPaymentSuccess.sql",
+    "kind": "sql",
+    "path": "Cloud9.BizTalk.Scripts/835SDWebPatientPayment/GetImportLogsPatientPaymentSuccess.sql"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "definedIn",
+      "from": "sqlscript:Cloud9.BizTalk.Scripts/835SDWebPatientPayment/GetImportLogsPatientPaymentSuccess.sql",
+      "fromName": "GetImportLogsPatientPaymentSuccess.sql",
+      "fromType": "sqlscript",
+      "fromFile": "adjacency/sqlscript/Cloud9.BizTalk.Scripts_835SDWebPatientPayment_GetImportLogsPatientPaymentSuccess.sql.json"
+    }
+  ]
+}

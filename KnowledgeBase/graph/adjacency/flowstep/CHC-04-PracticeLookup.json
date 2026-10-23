@@ -1,0 +1,39 @@
+{
+  "node": {
+    "id": "flowstep:CHC-04-PracticeLookup",
+    "type": "flowstep",
+    "name": "Find practice from the file name prefix",
+    "order": 4,
+    "curated": true,
+    "logic": "Practice name = FILE.ReceivedFileName after the last backslash, up to the first underscore. GetPracticeConfigurationByName. If pcInstanceAddress is empty, each claim logs 'Connection String not found for Claim {0} in File {1}' to BTS.Log through Common.AddLog."
+  },
+  "outgoing": [
+    {
+      "type": "implementedBy",
+      "to": "orchestration:Cloud9.BizTalk.X12.Process_CHC_835Insurance",
+      "toName": "Process_CHC_835Insurance",
+      "toType": "orchestration",
+      "toFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_835Insurance.json",
+      "curated": true
+    }
+  ],
+  "incoming": [
+    {
+      "type": "hasStep",
+      "from": "flow:CHC-835-Insurance-ERA",
+      "fromName": "Change Healthcare ERA 835 -> insurance payment transactions or reversal to-do items",
+      "fromType": "flow",
+      "fromFile": "adjacency/flow/CHC-835-Insurance-ERA.json",
+      "order": 4,
+      "curated": true
+    },
+    {
+      "type": "appliesTo",
+      "from": "businessrule:PracticeResolution",
+      "fromName": "Practice database resolution",
+      "fromType": "businessrule",
+      "fromFile": "adjacency/businessrule/PracticeResolution.json",
+      "curated": true
+    }
+  ]
+}

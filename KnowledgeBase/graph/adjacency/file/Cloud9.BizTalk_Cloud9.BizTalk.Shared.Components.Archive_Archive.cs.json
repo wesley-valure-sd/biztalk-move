@@ -1,0 +1,27 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.Shared.Components.Archive/Archive.cs",
+    "type": "file",
+    "name": "Archive.cs",
+    "kind": "csharp",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Shared.Components.Archive/Archive.cs"
+  },
+  "outgoing": [
+    {
+      "type": "defines",
+      "to": "class:Cloud9.BizTalk.Shared.Components.Archive.Archive",
+      "toName": "Cloud9.BizTalk.Shared.Components.Archive.Archive",
+      "toType": "class",
+      "toFile": "adjacency/class/Cloud9.BizTalk.Shared.Components.Archive.Archive.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.Shared.Components.Archive",
+      "fromName": "Cloud9.BizTalk.Shared.Components.Archive",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.Shared.Components.Archive.json"
+    }
+  ]
+}

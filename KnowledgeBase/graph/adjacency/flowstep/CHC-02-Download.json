@@ -1,0 +1,47 @@
+{
+  "node": {
+    "id": "flowstep:CHC-02-Download",
+    "type": "flowstep",
+    "name": "Download, decode and delete mailbox files",
+    "order": 2,
+    "curated": true,
+    "logic": "Worker: GetPracticeEDISettings (practice DB) -> GetMailFileList -> for each file GetMailFile -> DecodePayload (base64, optional PKZIP, UTF-8) -> write to ${ADDR_FILE_ROOT}\\CHC_Inbound\\<pcName>_<new GUID>.edi -> DeleteMailFile. All file types (835, 277, 277CA) land in the same folder."
+  },
+  "outgoing": [
+    {
+      "type": "implementedBy",
+      "to": "orchestration:Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker",
+      "toName": "Process_CHC_InboundFiles_Worker",
+      "toType": "orchestration",
+      "toFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker.json",
+      "curated": true
+    },
+    {
+      "type": "implementedBy",
+      "to": "method:Cloud9.BizTalk.Helper.EmdeonConversion.DecodePayload",
+      "toName": "EmdeonConversion.DecodePayload",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.EmdeonConversion.DecodePayload.json",
+      "curated": true
+    },
+    {
+      "type": "implementedBy",
+      "to": "sendport:Cloud9.EDI.Deployment/SP_CHC_Inbound",
+      "toName": "SP_CHC_Inbound",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.Deployment_SP_CHC_Inbound.json",
+      "curated": true
+    }
+  ],
+  "incoming": [
+    {
+      "type": "hasStep",
+      "from": "flow:CHC-835-Insurance-ERA",
+      "fromName": "Change Healthcare ERA 835 -> insurance payment transactions or reversal to-do items",
+      "fromType": "flow",
+      "fromFile": "adjacency/flow/CHC-835-Insurance-ERA.json",
+      "order": 2,
+      "curated": true
+    }
+  ]
+}

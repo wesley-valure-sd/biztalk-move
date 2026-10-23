@@ -1,0 +1,44 @@
+{
+  "node": {
+    "id": "sendport:Cloud9.EDI.PDS.Deployment/SP_CH276_HTTP",
+    "type": "sendport",
+    "name": "SP_CH276_HTTP",
+    "sendPipeline": "Microsoft.BizTalk.Edi.DefaultPipelines.EdiSend",
+    "bindingSet": "Cloud9.EDI.PDS.Deployment",
+    "actionMappings": [],
+    "isTwoWay": "true",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.PDS.Deployment/PortBindingsMaster.xml",
+    "address": "${CH_276_HTTP_ADDR}",
+    "filter": [],
+    "isStatic": "true",
+    "transport": "HTTP"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.EDI.PDS.Deployment/PortBindingsMaster.xml",
+      "toName": "PortBindingsMaster.xml",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.EDI.PDS.Deployment_PortBindingsMaster.xml.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.EDI.PDS.Deployment/CH_276_HTTP_ADDR",
+      "toName": "CH_276_HTTP_ADDR",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.EDI.PDS.Deployment_CH_276_HTTP_ADDR.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "boundToSendPort",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_276ClaimStatus",
+      "fromName": "Process_CHC_276ClaimStatus",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_276ClaimStatus.json",
+      "bindingSet": "Cloud9.EDI.PDS.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "SendCH276Port"
+    }
+  ]
+}

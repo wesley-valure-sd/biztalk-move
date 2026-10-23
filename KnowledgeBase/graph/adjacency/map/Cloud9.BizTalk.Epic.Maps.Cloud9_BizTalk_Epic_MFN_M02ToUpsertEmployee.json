@@ -1,0 +1,69 @@
+{
+  "node": {
+    "id": "map:Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_MFN_M02ToUpsertEmployee",
+    "type": "map",
+    "name": "Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_MFN_M02ToUpsertEmployee",
+    "readableSummary": "KnowledgeBase/map-summaries/Cloud9.BizTalk.Epic.MFN_M02ToUpsertEmployee.txt",
+    "targetSchema": "Cloud9.BizTalk.Schemas.Cloud9UpsertEmployee.UpsertEmployeeTypedProcedure_BTS",
+    "inlineScripts": [],
+    "functoidCount": 23,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/Cloud9.BizTalk.Epic.MFN_M02ToUpsertEmployee.btm",
+    "sourceSchema": "BTAHL7Schemas.MFN_M02_26_GLO_DEF",
+    "linkCount": 65,
+    "sourceRoot": "MFN_M02_26_GLO_DEF",
+    "targetRoot": "UpsertEmployee"
+  },
+  "outgoing": [
+    {
+      "type": "callsMethod",
+      "to": "method:Cloud9.BizTalk.Helper.HL7TypeConversion.ConvertCommunicationTypeFromHL7ToCloud9",
+      "toName": "HL7TypeConversion.ConvertCommunicationTypeFromHL7ToCloud9",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.HL7TypeConversion.ConvertCommunicationTypeFromHL7ToCloud9.json",
+      "via": "scripting functoid (ExternalAssembly)"
+    },
+    {
+      "type": "callsMethod",
+      "to": "method:Cloud9.BizTalk.Helper.DateFormatConversion.ConvertHL7DateToSQLDatetimeWithoutOffset",
+      "toName": "DateFormatConversion.ConvertHL7DateToSQLDatetimeWithoutOffset",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.DateFormatConversion.ConvertHL7DateToSQLDatetimeWithoutOffset.json",
+      "via": "scripting functoid (ExternalAssembly)"
+    },
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/Cloud9.BizTalk.Epic.MFN_M02ToUpsertEmployee.btm",
+      "toName": "Cloud9.BizTalk.Epic.MFN_M02ToUpsertEmployee.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Maps_Cloud9.BizTalk.Epic.MFN_M02ToUpsertEmployee.btm.json"
+    },
+    {
+      "type": "sourceSchema",
+      "to": "schema:BTAHL7Schemas.MFN_M02_26_GLO_DEF",
+      "toName": "BTAHL7Schemas.MFN_M02_26_GLO_DEF",
+      "toType": "schema",
+      "toFile": "adjacency/schema/BTAHL7Schemas.MFN_M02_26_GLO_DEF.json",
+      "root": "MFN_M02_26_GLO_DEF"
+    },
+    {
+      "type": "targetSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.Cloud9UpsertEmployee.UpsertEmployeeTypedProcedure_BTS",
+      "toName": "Cloud9.BizTalk.Schemas.Cloud9UpsertEmployee.UpsertEmployeeTypedProcedure_BTS",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.Cloud9UpsertEmployee.UpsertEmployeeTypedProcedure_BTS.json",
+      "root": "UpsertEmployee"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "usesMap",
+      "from": "orchestration:Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient",
+      "fromName": "ProcessHL7MessagesForPatient",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient.json",
+      "output": "msg_UpsertEmployeeReq.Body",
+      "input": "msg_MFNMessageData.Body",
+      "line": 2665
+    }
+  ]
+}

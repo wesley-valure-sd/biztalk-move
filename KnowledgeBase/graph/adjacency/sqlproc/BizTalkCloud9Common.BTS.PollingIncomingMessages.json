@@ -1,0 +1,39 @@
+{
+  "node": {
+    "id": "sqlproc:BizTalkCloud9Common.BTS.PollingIncomingMessages",
+    "type": "sqlproc",
+    "name": "BTS.PollingIncomingMessages",
+    "database": "BizTalkCloud9Common",
+    "definedInRepo": true,
+    "parameters": [
+      "@pageSize INT",
+      "@maxProcessing INT"
+    ],
+    "path": "Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored Procedures/PollingIncomingMessages.sql"
+  },
+  "outgoing": [
+    {
+      "type": "reads",
+      "to": "sqltable:BizTalkCloud9Common.BTS.IncomingMessage",
+      "toName": "BTS.IncomingMessage",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/BizTalkCloud9Common.BTS.IncomingMessage.json"
+    },
+    {
+      "type": "writes",
+      "to": "sqltable:BizTalkCloud9Common.BTS.IncomingMessage",
+      "toName": "BTS.IncomingMessage",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/BizTalkCloud9Common.BTS.IncomingMessage.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored Procedures/PollingIncomingMessages.sql",
+      "fromName": "PollingIncomingMessages.sql",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Stored_Procedures_PollingIncomingMessages.sql.json"
+    }
+  ]
+}

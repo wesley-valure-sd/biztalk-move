@@ -1,0 +1,314 @@
+{
+  "node": {
+    "id": "orchestration:Cloud9.BizTalk.X12.Process_CHC_276ClaimStatus",
+    "type": "orchestration",
+    "name": "Process_CHC_276ClaimStatus",
+    "activation": "activate receive (Port_OutgoingMessage.Receive, OutgoingMessage)",
+    "ports": [
+      "Port_OutgoingMessage (implements PortType_OutgoingMessage)",
+      "Port_GetPracticeConfigurationByName (uses PartnerConfigurationPortType)",
+      "SendCH276Port (uses SendCH276PortType)",
+      "Port_GetADAClaim (uses dynamic PortType_GetADAClaim)",
+      "CHC_277_Send_to_BBVA (uses CHC_277_Send_to_BBVA_Type)"
+    ],
+    "messages": [
+      "CH277_BBVA: CHC277_MMT",
+      "ClaimStatusCanonical: ClaimStatusCanonical_MMT",
+      "CH277Ext: CHC277_4010_MMT",
+      "GetPracticeConfigurationByNameResponse: GetPracticeConfigurationByNameResponse_MMT",
+      "GetPracticeConfigurationByNameRequest: GetPracticeConfigurationByName_MMT",
+      "OutgoingMessage: OutgoingMessage_MMT",
+      "GetADAClaim: GetADAClaimRequest_MMT",
+      "GetADAClaimResponse: GetADAClaimResponse_MMT",
+      "CanonicalClaimInformation: CanonicalClaimInformation_MMT",
+      "CHC276: CHC276_MMT",
+      "CH277: CHC277_MMT"
+    ],
+    "visibility": "internal",
+    "module": "Cloud9.BizTalk.X12",
+    "activationFilter": "(Cloud9.BizTalk.Schemas.OutgoingMessage.omMessageType == \"276\")",
+    "contextProperties": [
+      "BTS.RetryCount",
+      "BTS.RetryInterval",
+      "EDI.AgreementNameForSend",
+      "EDI.DestinationPartyReceiverIdentifier",
+      "EDI.DestinationPartyReceiverQualifier",
+      "EDI.DestinationPartySenderIdentifier",
+      "EDI.DestinationPartySenderQualifier",
+      "Microsoft.XLANGs.BaseTypes.Address",
+      "Microsoft.XLANGs.BaseTypes.TransportType",
+      "WCF.Action",
+      "WCF.BindingConfiguration",
+      "WCF.BindingType",
+      "WCF.EnableTransaction"
+    ],
+    "line": 691,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_276ClaimStatus.odx",
+    "bindingStates": {
+      "Cloud9.EDI.Deployment": "Started",
+      "Cloud9.EDI.PDS.Deployment": "Started"
+    }
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_276ClaimStatus.odx",
+      "toName": "Process_CHC_276ClaimStatus.odx",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Orchestrations_Process_CHC_276ClaimStatus.odx.json"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.CHC277_MMT",
+      "toName": "CHC277_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.CHC277_MMT.json",
+      "message": "CH277_BBVA"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.ClaimStatusCanonical_MMT",
+      "toName": "ClaimStatusCanonical_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.ClaimStatusCanonical_MMT.json",
+      "message": "ClaimStatusCanonical"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.CHC277_4010_MMT",
+      "toName": "CHC277_4010_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.CHC277_4010_MMT.json",
+      "message": "CH277Ext"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.GetPracticeConfigurationByNameResponse_MMT",
+      "toName": "GetPracticeConfigurationByNameResponse_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.GetPracticeConfigurationByNameResponse_MMT.json",
+      "message": "GetPracticeConfigurationByNameResponse"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.GetPracticeConfigurationByName_MMT",
+      "toName": "GetPracticeConfigurationByName_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.GetPracticeConfigurationByName_MMT.json",
+      "message": "GetPracticeConfigurationByNameRequest"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.OutgoingMessage_MMT",
+      "toName": "OutgoingMessage_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.OutgoingMessage_MMT.json",
+      "message": "OutgoingMessage"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.GetADAClaimRequest_MMT",
+      "toName": "GetADAClaimRequest_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.GetADAClaimRequest_MMT.json",
+      "message": "GetADAClaim"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.GetADAClaimResponse_MMT",
+      "toName": "GetADAClaimResponse_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.GetADAClaimResponse_MMT.json",
+      "message": "GetADAClaimResponse"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.CanonicalClaimInformation_MMT",
+      "toName": "CanonicalClaimInformation_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.CanonicalClaimInformation_MMT.json",
+      "message": "CanonicalClaimInformation"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.CHC276_MMT",
+      "toName": "CHC276_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.CHC276_MMT.json",
+      "message": "CHC276"
+    },
+    {
+      "type": "usesMap",
+      "to": "map:Cloud9.BizTalk.X12.Maps.GetADAClaimResponse_To_ClaimInformation",
+      "toName": "Cloud9.BizTalk.X12.Maps.GetADAClaimResponse_To_ClaimInformation",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.GetADAClaimResponse_To_ClaimInformation.json",
+      "output": "CanonicalClaimInformation.Body",
+      "input": "GetADAClaimResponse.Body",
+      "line": 796
+    },
+    {
+      "type": "usesMap",
+      "to": "map:Cloud9.BizTalk.X12.Maps.ClaimInformation_To_X12_00501_276",
+      "toName": "Cloud9.BizTalk.X12.Maps.ClaimInformation_To_X12_00501_276",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.ClaimInformation_To_X12_00501_276.json",
+      "output": "CHC276.Body",
+      "input": "CanonicalClaimInformation.Body",
+      "line": 802
+    },
+    {
+      "type": "usesMap",
+      "to": "map:Cloud9.BizTalk.X12.Maps.CHC_277_To_ClaimStatusCanonical",
+      "toName": "Cloud9.BizTalk.X12.Maps.CHC_277_To_ClaimStatusCanonical",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.CHC_277_To_ClaimStatusCanonical.json",
+      "output": "ClaimStatusCanonical.Body",
+      "input": "CH277.Body",
+      "line": 825
+    },
+    {
+      "type": "callsOrchestration",
+      "to": "orchestration:Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus",
+      "toName": "Process_CHC_ClaimsStatus",
+      "toType": "orchestration",
+      "toFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus.json",
+      "line": 828
+    },
+    {
+      "type": "invokesProc",
+      "to": "sqlproc:PracticeDB.dbo.GetADAClaim",
+      "toName": "dbo.GetADAClaim",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/PracticeDB.dbo.GetADAClaim.json",
+      "line": 778,
+      "via": "dynamic WCF-SQL send port (WCF.Action set in code)"
+    },
+    {
+      "type": "invokesProc",
+      "to": "sqlproc:BizTalkCloud9Common.BTS.GetPracticeConfigurationByName",
+      "toName": "BTS.GetPracticeConfigurationByName",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.GetPracticeConfigurationByName.json",
+      "line": 757,
+      "via": "static send port operation GetPracticeConfigurationByName (BtsActionMapping)"
+    },
+    {
+      "type": "callsMethod",
+      "to": "method:Cloud9.BizTalk.Helper.SSOClientHelper.Read",
+      "toName": "SSOClientHelper.Read",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.SSOClientHelper.Read.json",
+      "line": 741
+    },
+    {
+      "type": "boundToReceivePort",
+      "to": "receiveport:Cloud9.EDI.Deployment/RP_OutgoingMessagesToProcess",
+      "toName": "RP_OutgoingMessagesToProcess",
+      "toType": "receiveport",
+      "toFile": "adjacency/receiveport/Cloud9.EDI.Deployment_RP_OutgoingMessagesToProcess.json",
+      "logicalPort": "Port_OutgoingMessage",
+      "bindingSet": "Cloud9.EDI.Deployment"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.Deployment/SP_BizTalkCloud9Common_WCF",
+      "toName": "SP_BizTalkCloud9Common_WCF",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.Deployment_SP_BizTalkCloud9Common_WCF.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "Port_GetPracticeConfigurationByName"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_276ClaimStatus_Port_GetADAClaim_182f4e020577c79e",
+      "toName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_276ClaimStatus_Port_GetADAClaim_182f4e020577c79e",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_276ClaimStatus_Port_GetADAClaim_182f4e020577c79e.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "4",
+      "logicalPort": "Port_GetADAClaim"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.Deployment/SP_CH276_HTTP",
+      "toName": "SP_CH276_HTTP",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.Deployment_SP_CH276_HTTP.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "SendCH276Port"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.Deployment/SP_CH277_FILE",
+      "toName": "SP_CH277_FILE",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.Deployment_SP_CH277_FILE.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "SendCH277Port"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.Deployment/SP_CHC277ToSD_SFTP",
+      "toName": "SP_CHC277ToSD_SFTP",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.Deployment_SP_CHC277ToSD_SFTP.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "CHC_277_Send_to_BBVA"
+    },
+    {
+      "type": "boundToReceivePort",
+      "to": "receiveport:Cloud9.EDI.PDS.Deployment/RP_OutgoingMessagesToProcess",
+      "toName": "RP_OutgoingMessagesToProcess",
+      "toType": "receiveport",
+      "toFile": "adjacency/receiveport/Cloud9.EDI.PDS.Deployment_RP_OutgoingMessagesToProcess.json",
+      "logicalPort": "Port_OutgoingMessage",
+      "bindingSet": "Cloud9.EDI.PDS.Deployment"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.PDS.Deployment/SP_BizTalkCloud9Common_WCF",
+      "toName": "SP_BizTalkCloud9Common_WCF",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.PDS.Deployment_SP_BizTalkCloud9Common_WCF.json",
+      "bindingSet": "Cloud9.EDI.PDS.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "Port_GetPracticeConfigurationByName"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.PDS.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_276ClaimStatus_Port_GetADAClaim_182f4e020577c79e",
+      "toName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_276ClaimStatus_Port_GetADAClaim_182f4e020577c79e",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.PDS.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_276ClaimStatus_Port_GetADAClaim_182f4e020577c79e.json",
+      "bindingSet": "Cloud9.EDI.PDS.Deployment",
+      "bindingOption": "4",
+      "logicalPort": "Port_GetADAClaim"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.PDS.Deployment/SP_CH276_HTTP",
+      "toName": "SP_CH276_HTTP",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.PDS.Deployment_SP_CH276_HTTP.json",
+      "bindingSet": "Cloud9.EDI.PDS.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "SendCH276Port"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.PDS.Deployment/SP_CH277_FILE",
+      "toName": "SP_CH277_FILE",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.PDS.Deployment_SP_CH277_FILE.json",
+      "bindingSet": "Cloud9.EDI.PDS.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "SendCH277Port"
+    }
+  ],
+  "incoming": []
+}

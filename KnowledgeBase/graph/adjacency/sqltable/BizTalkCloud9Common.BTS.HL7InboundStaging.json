@@ -1,0 +1,57 @@
+{
+  "node": {
+    "id": "sqltable:BizTalkCloud9Common.BTS.HL7InboundStaging",
+    "type": "sqltable",
+    "name": "BTS.HL7InboundStaging",
+    "database": "BizTalkCloud9Common",
+    "columns": [
+      "hisStagingID BIGINT",
+      "hisGUID UNIQUEIDENTIFIER",
+      "imGUID UNIQUEIDENTIFIER",
+      "pcGUID UNIQUEIDENTIFIER",
+      "hisEPICPatientID NVARCHAR(100)",
+      "hisCloud9PatientID UNIQUEIDENTIFIER",
+      "hisMessageType NVARCHAR(10)",
+      "hisMSH_7_DateTimeOfMessage NVARCHAR(20)",
+      "hisMSH_10_MessageControlId NVARCHAR(20)",
+      "hisMessageData XML",
+      "hisStatus SMALLINT",
+      "hisCreatedDate DATETIME",
+      "hisCreatedBy NVARCHAR(50)",
+      "hisLastModifiedDate DATETIME",
+      "hisLastModifiedBy NVARCHAR(50)"
+    ],
+    "path": "Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Tables/HL7InboundStaging.sql"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Tables/HL7InboundStaging.sql",
+      "fromName": "HL7InboundStaging.sql",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Tables_HL7InboundStaging.sql.json"
+    },
+    {
+      "type": "reads",
+      "from": "sqlproc:BizTalkCloud9Common.BTS.GetProcessingStagingPatientMessages",
+      "fromName": "BTS.GetProcessingStagingPatientMessages",
+      "fromType": "sqlproc",
+      "fromFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.GetProcessingStagingPatientMessages.json"
+    },
+    {
+      "type": "reads",
+      "from": "sqlproc:BizTalkCloud9Common.BTS.QueueUnprocessedStagingPatientIDs",
+      "fromName": "BTS.QueueUnprocessedStagingPatientIDs",
+      "fromType": "sqlproc",
+      "fromFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.QueueUnprocessedStagingPatientIDs.json"
+    },
+    {
+      "type": "writes",
+      "from": "sqlproc:BizTalkCloud9Common.BTS.SetStagingPatientMessageStatus",
+      "fromName": "BTS.SetStagingPatientMessageStatus",
+      "fromType": "sqlproc",
+      "fromFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.SetStagingPatientMessageStatus.json"
+    }
+  ]
+}

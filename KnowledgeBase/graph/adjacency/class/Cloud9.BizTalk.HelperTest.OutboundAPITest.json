@@ -1,0 +1,57 @@
+{
+  "node": {
+    "id": "class:Cloud9.BizTalk.HelperTest.OutboundAPITest",
+    "type": "class",
+    "name": "Cloud9.BizTalk.HelperTest.OutboundAPITest",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.HelperTest/OutboundAPITest.cs",
+    "visibility": "public",
+    "kind": "class",
+    "line": 11
+  },
+  "outgoing": [
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.HelperTest.OutboundAPITest.Setup",
+      "toName": "OutboundAPITest.Setup",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.HelperTest.OutboundAPITest.Setup.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.HelperTest.OutboundAPITest.TestSendPatientGUID",
+      "toName": "OutboundAPITest.TestSendPatientGUID",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.HelperTest.OutboundAPITest.TestSendPatientGUID.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.HelperTest.OutboundAPITest.TestSendProviderGUID",
+      "toName": "OutboundAPITest.TestSendProviderGUID",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.HelperTest.OutboundAPITest.TestSendProviderGUID.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.HelperTest.OutboundAPITest.TestSendLocationGUID",
+      "toName": "OutboundAPITest.TestSendLocationGUID",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.HelperTest.OutboundAPITest.TestSendLocationGUID.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.HelperTest.OutboundAPITest.TestSendException",
+      "toName": "OutboundAPITest.TestSendException",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.HelperTest.OutboundAPITest.TestSendException.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.HelperTest/OutboundAPITest.cs",
+      "fromName": "OutboundAPITest.cs",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.HelperTest_OutboundAPITest.cs.json"
+    }
+  ]
+}

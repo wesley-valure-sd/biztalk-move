@@ -1,0 +1,61 @@
+{
+  "node": {
+    "id": "sqltable:BizTalkCloud9Common.BTS.IncomingMessage",
+    "type": "sqltable",
+    "name": "BTS.IncomingMessage",
+    "database": "BizTalkCloud9Common",
+    "columns": [
+      "imGUID UNIQUEIDENTIFIER",
+      "imCorrelationId VARCHAR(150)",
+      "imVendorUserName NVARCHAR(25)",
+      "imMessageType VARCHAR(12)",
+      "imMessageContents VARCHAR(MAX)",
+      "imStatus INT",
+      "imProcessImmediately BIT",
+      "imReceiveTime DATETIME2(7)",
+      "imProcessTime DATETIME2(7)",
+      "patGUID UNIQUEIDENTIFIER",
+      "pcGUID UNIQUEIDENTIFIER",
+      "imReceiveTime ASC"
+    ],
+    "path": "Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Tables/IncomingMessage.sql"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Tables/IncomingMessage.sql",
+      "fromName": "IncomingMessage.sql",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Tables_IncomingMessage.sql.json"
+    },
+    {
+      "type": "reads",
+      "from": "sqlproc:BizTalkCloud9Common.BTS.GetIncomingMessageInfo",
+      "fromName": "BTS.GetIncomingMessageInfo",
+      "fromType": "sqlproc",
+      "fromFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.GetIncomingMessageInfo.json"
+    },
+    {
+      "type": "reads",
+      "from": "sqlproc:BizTalkCloud9Common.BTS.GetProcessingStagingPatientMessages",
+      "fromName": "BTS.GetProcessingStagingPatientMessages",
+      "fromType": "sqlproc",
+      "fromFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.GetProcessingStagingPatientMessages.json"
+    },
+    {
+      "type": "reads",
+      "from": "sqlproc:BizTalkCloud9Common.BTS.PollingIncomingMessages",
+      "fromName": "BTS.PollingIncomingMessages",
+      "fromType": "sqlproc",
+      "fromFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.PollingIncomingMessages.json"
+    },
+    {
+      "type": "writes",
+      "from": "sqlproc:BizTalkCloud9Common.BTS.PollingIncomingMessages",
+      "fromName": "BTS.PollingIncomingMessages",
+      "fromType": "sqlproc",
+      "fromFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.PollingIncomingMessages.json"
+    }
+  ]
+}

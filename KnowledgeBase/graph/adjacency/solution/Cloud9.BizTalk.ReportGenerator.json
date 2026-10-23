@@ -1,0 +1,32 @@
+{
+  "node": {
+    "id": "solution:Cloud9.BizTalk.ReportGenerator",
+    "type": "solution",
+    "name": "Cloud9.BizTalk.ReportGenerator",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.ReportGenerator/Cloud9.BizTalk.ReportGenerator.sln"
+  },
+  "outgoing": [
+    {
+      "type": "contains",
+      "to": "project:Cloud9.BizTalk.ReportGenerator",
+      "toName": "Cloud9.BizTalk.ReportGenerator",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.ReportGenerator.json"
+    },
+    {
+      "type": "contains",
+      "to": "project:Cloud9.BizTalk.Reports",
+      "toName": "Cloud9.BizTalk.Reports",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.Reports.json"
+    },
+    {
+      "type": "contains",
+      "to": "project:Cloud9.BizTalk.ReportGenerator.ConsoleTest",
+      "toName": "Cloud9.BizTalk.ReportGenerator.ConsoleTest",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.ReportGenerator.ConsoleTest.json"
+    }
+  ],
+  "incoming": []
+}

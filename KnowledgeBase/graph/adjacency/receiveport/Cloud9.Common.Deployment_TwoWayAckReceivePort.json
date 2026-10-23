@@ -1,0 +1,29 @@
+{
+  "node": {
+    "id": "receiveport:Cloud9.Common.Deployment/TwoWayAckReceivePort",
+    "type": "receiveport",
+    "name": "TwoWayAckReceivePort",
+    "path": "Cloud9.BizTalk/Cloud9.Common.Deployment/PortBindingsMaster.xml",
+    "bindingSet": "Cloud9.Common.Deployment",
+    "isTwoWay": "false",
+    "application": "Cloud9.Common"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.Common.Deployment/PortBindingsMaster.xml",
+      "toName": "PortBindingsMaster.xml",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.Common.Deployment_PortBindingsMaster.xml.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "partOf",
+      "from": "receivelocation:Cloud9.Common.Deployment/DO_NOT_START_TwoWayAckReceiveLocation",
+      "fromName": "DO_NOT_START_TwoWayAckReceiveLocation",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.Common.Deployment_DO_NOT_START_TwoWayAckReceiveLocation.json"
+    }
+  ]
+}

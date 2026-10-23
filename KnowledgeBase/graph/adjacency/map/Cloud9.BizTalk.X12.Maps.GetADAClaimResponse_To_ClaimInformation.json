@@ -1,0 +1,62 @@
+{
+  "node": {
+    "id": "map:Cloud9.BizTalk.X12.Maps.GetADAClaimResponse_To_ClaimInformation",
+    "type": "map",
+    "name": "Cloud9.BizTalk.X12.Maps.GetADAClaimResponse_To_ClaimInformation",
+    "readableSummary": "KnowledgeBase/map-summaries/GetADAClaimResponse_To_ClaimInformation.txt",
+    "targetSchema": "Cloud9.BizTalk.Schemas.Canonical.ClaimInformation",
+    "inlineScripts": [
+      "CSharp:GetPayerName",
+      "CSharp:GetPatientFirstName",
+      "CSharp:GetPatientLastName",
+      "CSharp:GetPatientGender",
+      "CSharp:GetSubscriberFirstName",
+      "CSharp:GetSubscriberLastName",
+      "CSharp:GetSubscriberGender",
+      "CSharp:GetProviderName"
+    ],
+    "functoidCount": 15,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/GetADAClaimResponse_To_ClaimInformation.btm",
+    "sourceSchema": "Cloud9.BizTalk.Schemas.ADAClaimTypedProcedure_dbo",
+    "linkCount": 41,
+    "sourceRoot": "GetADAClaimResponse",
+    "targetRoot": "ClaimInformation"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/GetADAClaimResponse_To_ClaimInformation.btm",
+      "toName": "GetADAClaimResponse_To_ClaimInformation.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_GetADAClaimResponse_To_ClaimInformation.btm.json"
+    },
+    {
+      "type": "sourceSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.ADAClaimTypedProcedure_dbo",
+      "toName": "Cloud9.BizTalk.Schemas.ADAClaimTypedProcedure_dbo",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.ADAClaimTypedProcedure_dbo.json",
+      "root": "GetADAClaimResponse"
+    },
+    {
+      "type": "targetSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.Canonical.ClaimInformation",
+      "toName": "Cloud9.BizTalk.Schemas.Canonical.ClaimInformation",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.Canonical.ClaimInformation.json",
+      "root": "ClaimInformation"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "usesMap",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_276ClaimStatus",
+      "fromName": "Process_CHC_276ClaimStatus",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_276ClaimStatus.json",
+      "output": "CanonicalClaimInformation.Body",
+      "input": "GetADAClaimResponse.Body",
+      "line": 796
+    }
+  ]
+}

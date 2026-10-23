@@ -1,0 +1,45 @@
+{
+  "node": {
+    "id": "messagetype:Cloud9.BizTalk.X12.AddTodoItemResponse_MMT",
+    "type": "messagetype",
+    "name": "AddTodoItemResponse_MMT",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_ClaimsStatus.odx",
+    "bodyType": "Cloud9.BizTalk.Schemas.AddTodoItemTypedProcedure_BTS.AddTodoItemResponse",
+    "module": "Cloud9.BizTalk.X12"
+  },
+  "outgoing": [
+    {
+      "type": "bodySchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.AddTodoItemTypedProcedure_BTS",
+      "toName": "Cloud9.BizTalk.Schemas.AddTodoItemTypedProcedure_BTS",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.AddTodoItemTypedProcedure_BTS.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.AddTodoItemTypedProcedure_BTS.AddTodoItemResponse"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_ClaimsStatus.odx",
+      "fromName": "Process_CHC_ClaimsStatus.odx",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Orchestrations_Process_CHC_ClaimsStatus.odx.json"
+    },
+    {
+      "type": "usesMessageType",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_835Insurance",
+      "fromName": "Process_CHC_835Insurance",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_835Insurance.json",
+      "message": "AddTodoItemResponse"
+    },
+    {
+      "type": "usesMessageType",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus",
+      "fromName": "Process_CHC_ClaimsStatus",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus.json",
+      "message": "AddTodoItemResponse"
+    }
+  ]
+}

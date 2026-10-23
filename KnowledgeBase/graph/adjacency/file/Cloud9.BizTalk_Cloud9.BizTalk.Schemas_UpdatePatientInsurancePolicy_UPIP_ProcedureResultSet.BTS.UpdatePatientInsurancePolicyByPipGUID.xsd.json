@@ -1,0 +1,26 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/UpdatePatientInsurancePolicy/UPIP_ProcedureResultSet.BTS.UpdatePatientInsurancePolicyByPipGUID.xsd",
+    "type": "file",
+    "name": "UPIP_ProcedureResultSet.BTS.UpdatePatientInsurancePolicyByPipGUID.xsd",
+    "kind": "xsd",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/UpdatePatientInsurancePolicy/UPIP_ProcedureResultSet.BTS.UpdatePatientInsurancePolicyByPipGUID.xsd"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.Schemas",
+      "fromName": "Cloud9.BizTalk.Schemas",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.Schemas.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "schema:Cloud9.BizTalk.Schemas.UPIP_ProcedureResultSet_BTS_UpdatePatientInsurancePolicyByPipGUID",
+      "fromName": "Cloud9.BizTalk.Schemas.UPIP_ProcedureResultSet_BTS_UpdatePatientInsurancePolicyByPipGUID",
+      "fromType": "schema",
+      "fromFile": "adjacency/schema/Cloud9.BizTalk.Schemas.UPIP_ProcedureResultSet_BTS_UpdatePatientInsurancePolicyByPipGUID.json"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "node": {
+    "id": "map:Cloud9.BizTalk.X12.Maps.CHC_835_To_ClaimPaymentBatchCanonical",
+    "type": "map",
+    "name": "Cloud9.BizTalk.X12.Maps.CHC_835_To_ClaimPaymentBatchCanonical",
+    "readableSummary": "KnowledgeBase/map-summaries/CHC_835_To_ClaimPaymentBatchCanonical.txt",
+    "targetSchema": "Cloud9.BizTalk.Schemas.Canonical.ClaimPaymentBatch",
+    "inlineScripts": [
+      "CSharp:ParseClaimNumber"
+    ],
+    "functoidCount": 14,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/CHC_835_To_ClaimPaymentBatchCanonical.btm",
+    "sourceSchema": "Cloud9.BizTalk.X12.Schemas.CHC_X12_00501_835",
+    "linkCount": 27,
+    "sourceRoot": "X12_00501_835",
+    "targetRoot": "ClaimPaymentBatch"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/CHC_835_To_ClaimPaymentBatchCanonical.btm",
+      "toName": "CHC_835_To_ClaimPaymentBatchCanonical.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_CHC_835_To_ClaimPaymentBatchCanonical.btm.json"
+    },
+    {
+      "type": "sourceSchema",
+      "to": "schema:Cloud9.BizTalk.X12.Schemas.CHC_X12_00501_835",
+      "toName": "Cloud9.BizTalk.X12.Schemas.CHC_X12_00501_835",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.X12.Schemas.CHC_X12_00501_835.json",
+      "root": "X12_00501_835"
+    },
+    {
+      "type": "targetSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.Canonical.ClaimPaymentBatch",
+      "toName": "Cloud9.BizTalk.Schemas.Canonical.ClaimPaymentBatch",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.Canonical.ClaimPaymentBatch.json",
+      "root": "ClaimPaymentBatch"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "usesMap",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_835Insurance",
+      "fromName": "Process_CHC_835Insurance",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_835Insurance.json",
+      "output": "ClaimPaymentBatch.Body",
+      "input": "CHC835.Body",
+      "line": 1233
+    },
+    {
+      "type": "implementedBy",
+      "from": "flowstep:CHC-05-ReversalOrPost",
+      "fromName": "For each CLP: reversal to-do or insurance post",
+      "fromType": "flowstep",
+      "fromFile": "adjacency/flowstep/CHC-05-ReversalOrPost.json",
+      "curated": true
+    }
+  ]
+}

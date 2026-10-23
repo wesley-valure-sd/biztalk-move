@@ -1,0 +1,26 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/HL7InboundStaging/Cloud9.BizTalk.Schemas.HL7InboundMessage.xsd",
+    "type": "file",
+    "name": "Cloud9.BizTalk.Schemas.HL7InboundMessage.xsd",
+    "kind": "xsd",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/HL7InboundStaging/Cloud9.BizTalk.Schemas.HL7InboundMessage.xsd"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.Schemas",
+      "fromName": "Cloud9.BizTalk.Schemas",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.Schemas.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "schema:Cloud9.BizTalk.Schemas.HL7InboundMessage",
+      "fromName": "Cloud9.BizTalk.Schemas.HL7InboundMessage",
+      "fromType": "schema",
+      "fromFile": "adjacency/schema/Cloud9.BizTalk.Schemas.HL7InboundMessage.json"
+    }
+  ]
+}

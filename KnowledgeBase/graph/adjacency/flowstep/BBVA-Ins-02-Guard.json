@@ -1,0 +1,31 @@
+{
+  "node": {
+    "id": "flowstep:BBVA-Ins-02-Guard",
+    "type": "flowstep",
+    "name": "Guard: CLP and PLB counts",
+    "order": 2,
+    "curated": true,
+    "logic": "CLPCount = count of 2000 (LX) loops. PLBCount = count of PLB segments. Continue only if (CLPCount == 1) or (PLBCount == 0). Else write one failed ImportLog: 'There were {CLP} CLP payments and {PLB} PLB adjustments on transaction {ST02}' and post nothing."
+  },
+  "outgoing": [
+    {
+      "type": "implementedBy",
+      "to": "orchestration:Cloud9.BizTalk.X12.Process_BBVA_835Insurance",
+      "toName": "Process_BBVA_835Insurance",
+      "toType": "orchestration",
+      "toFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_BBVA_835Insurance.json",
+      "curated": true
+    }
+  ],
+  "incoming": [
+    {
+      "type": "hasStep",
+      "from": "flow:BBVA-835-Insurance-Lockbox",
+      "fromName": "BBVA insurance lockbox 835 -> insurance payment and PLB adjustment transactions",
+      "fromType": "flow",
+      "fromFile": "adjacency/flow/BBVA-835-Insurance-Lockbox.json",
+      "order": 2,
+      "curated": true
+    }
+  ]
+}

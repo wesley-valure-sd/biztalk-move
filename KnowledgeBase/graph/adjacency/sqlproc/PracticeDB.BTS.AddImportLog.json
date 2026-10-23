@@ -1,0 +1,105 @@
+{
+  "node": {
+    "id": "sqlproc:PracticeDB.BTS.AddImportLog",
+    "type": "sqlproc",
+    "name": "BTS.AddImportLog",
+    "database": "PracticeDB (one database per practice; resolved at run time from BTS.PracticeConfig.pcInstanceAddress)",
+    "definedInRepo": false
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "describesParametersOf",
+      "from": "schema:Cloud9.BizTalk.Schemas.ImportLogTypedProcedure_BTS",
+      "fromName": "Cloud9.BizTalk.Schemas.ImportLogTypedProcedure_BTS",
+      "fromType": "schema",
+      "fromFile": "adjacency/schema/Cloud9.BizTalk.Schemas.ImportLogTypedProcedure_BTS.json"
+    },
+    {
+      "type": "invokesProc",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_BBVA_835Insurance",
+      "fromName": "Process_BBVA_835Insurance",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_BBVA_835Insurance.json",
+      "line": 1078,
+      "via": "dynamic WCF-SQL send port (WCF.Action set in code)"
+    },
+    {
+      "type": "invokesProc",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_BBVA_835Patient",
+      "fromName": "Process_BBVA_835Patient",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_BBVA_835Patient.json",
+      "line": 759,
+      "via": "dynamic WCF-SQL send port (WCF.Action set in code)"
+    },
+    {
+      "type": "invokesProc",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_ChannelHealth_271Eligibility",
+      "fromName": "Process_ChannelHealth_271Eligibility",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_ChannelHealth_271Eligibility.json",
+      "line": 700,
+      "via": "dynamic WCF-SQL send port (WCF.Action set in code)"
+    },
+    {
+      "type": "invokesProc",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_271Eligibility",
+      "fromName": "Process_CHC_271Eligibility",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_271Eligibility.json",
+      "line": 1211,
+      "via": "dynamic WCF-SQL send port (WCF.Action set in code)"
+    },
+    {
+      "type": "invokesProc",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_835Insurance",
+      "fromName": "Process_CHC_835Insurance",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_835Insurance.json",
+      "line": 1412,
+      "via": "dynamic WCF-SQL send port (WCF.Action set in code)"
+    },
+    {
+      "type": "invokesProc",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_SD_835Patient",
+      "fromName": "Process_SD_835Patient",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_SD_835Patient.json",
+      "line": 748,
+      "via": "dynamic WCF-SQL send port (WCF.Action set in code)"
+    },
+    {
+      "type": "implementedBy",
+      "from": "flowstep:BBVA-Patient-05-ImportLog",
+      "fromName": "Write one ImportLog row for each payment",
+      "fromType": "flowstep",
+      "fromFile": "adjacency/flowstep/BBVA-Patient-05-ImportLog.json",
+      "curated": true
+    },
+    {
+      "type": "implementedBy",
+      "from": "flowstep:SD-Web-05-ImportLog",
+      "fromName": "Write ImportLog row (no external reference)",
+      "fromType": "flowstep",
+      "fromFile": "adjacency/flowstep/SD-Web-05-ImportLog.json",
+      "curated": true
+    },
+    {
+      "type": "implementedBy",
+      "from": "flowstep:BBVA-Ins-05-ImportLog",
+      "fromName": "Write ImportLog rows",
+      "fromType": "flowstep",
+      "fromFile": "adjacency/flowstep/BBVA-Ins-05-ImportLog.json",
+      "curated": true
+    },
+    {
+      "type": "implementedBy",
+      "from": "flowstep:CHC-06-Log",
+      "fromName": "ImportLog for each claim, BTS.Log for errors",
+      "fromType": "flowstep",
+      "fromFile": "adjacency/flowstep/CHC-06-Log.json",
+      "curated": true
+    }
+  ]
+}

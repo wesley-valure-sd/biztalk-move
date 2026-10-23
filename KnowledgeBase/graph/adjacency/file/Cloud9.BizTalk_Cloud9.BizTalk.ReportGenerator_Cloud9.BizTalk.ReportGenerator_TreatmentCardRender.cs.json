@@ -1,0 +1,27 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.ReportGenerator/Cloud9.BizTalk.ReportGenerator/TreatmentCardRender.cs",
+    "type": "file",
+    "name": "TreatmentCardRender.cs",
+    "kind": "csharp",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.ReportGenerator/Cloud9.BizTalk.ReportGenerator/TreatmentCardRender.cs"
+  },
+  "outgoing": [
+    {
+      "type": "defines",
+      "to": "class:Cloud9.BizTalk.ReportGenerator.TreatmentCardRender",
+      "toName": "Cloud9.BizTalk.ReportGenerator.TreatmentCardRender",
+      "toType": "class",
+      "toFile": "adjacency/class/Cloud9.BizTalk.ReportGenerator.TreatmentCardRender.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.ReportGenerator",
+      "fromName": "Cloud9.BizTalk.ReportGenerator",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.ReportGenerator.json"
+    }
+  ]
+}

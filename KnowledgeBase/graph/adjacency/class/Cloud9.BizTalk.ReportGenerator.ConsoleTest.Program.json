@@ -1,0 +1,20 @@
+{
+  "node": {
+    "id": "class:Cloud9.BizTalk.ReportGenerator.ConsoleTest.Program",
+    "type": "class",
+    "name": "Cloud9.BizTalk.ReportGenerator.ConsoleTest.Program",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.ReportGenerator/Cloud9.BizTalk.ReportGenerator.ConsoleTest/Program.cs",
+    "kind": "class",
+    "line": 9
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.ReportGenerator/Cloud9.BizTalk.ReportGenerator.ConsoleTest/Program.cs",
+      "fromName": "Program.cs",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.ReportGenerator_Cloud9.BizTalk.ReportGenerator.ConsoleTest_Program.cs.json"
+    }
+  ]
+}

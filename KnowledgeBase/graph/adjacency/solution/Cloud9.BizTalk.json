@@ -1,0 +1,95 @@
+{
+  "node": {
+    "id": "solution:Cloud9.BizTalk",
+    "type": "solution",
+    "name": "Cloud9.BizTalk",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.sln"
+  },
+  "outgoing": [
+    {
+      "type": "contains",
+      "to": "project:Cloud9.BizTalk.Epic.BTAHL7V2XCommon.Schemas",
+      "toName": "Cloud9.BizTalk.Epic.BTAHL7V2XCommon.Schemas",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.Epic.BTAHL7V2XCommon.Schemas.json"
+    },
+    {
+      "type": "contains",
+      "to": "project:Cloud9.BizTalk.Epic.BTAHL7V26Common.Schemas",
+      "toName": "Cloud9.BizTalk.Epic.BTAHL7V26Common.Schemas",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.Epic.BTAHL7V26Common.Schemas.json"
+    },
+    {
+      "type": "contains",
+      "to": "project:Cloud9.BizTalk.Epic.BTAHL7_2_6.Schemas",
+      "toName": "Cloud9.BizTalk.Epic.BTAHL7_2_6.Schemas",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.Epic.BTAHL7_2_6.Schemas.json"
+    },
+    {
+      "type": "contains",
+      "to": "project:Cloud9.BizTalk.Schemas",
+      "toName": "Cloud9.BizTalk.Schemas",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.Schemas.json"
+    },
+    {
+      "type": "contains",
+      "to": "project:Cloud9.BizTalk.Epic",
+      "toName": "Cloud9.BizTalk.Epic",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.Epic.json"
+    },
+    {
+      "type": "contains",
+      "to": "project:Cloud9.BizTalk.Helper",
+      "toName": "Cloud9.BizTalk.Helper",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.Helper.json"
+    },
+    {
+      "type": "contains",
+      "to": "project:Cloud9.BizTalk.Shared.Components.Archive",
+      "toName": "Cloud9.BizTalk.Shared.Components.Archive",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.Shared.Components.Archive.json"
+    },
+    {
+      "type": "contains",
+      "to": "project:Cloud9.BizTalk.ReportGenerator",
+      "toName": "Cloud9.BizTalk.ReportGenerator",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.ReportGenerator.json"
+    },
+    {
+      "type": "contains",
+      "to": "project:Cloud9.BizTalk.Reports",
+      "toName": "Cloud9.BizTalk.Reports",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.Reports.json"
+    },
+    {
+      "type": "contains",
+      "to": "project:Cloud9.BizTalk.SignalR.Helper",
+      "toName": "Cloud9.BizTalk.SignalR.Helper",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.SignalR.Helper.json"
+    },
+    {
+      "type": "contains",
+      "to": "project:Cloud9.BizTalk.Common",
+      "toName": "Cloud9.BizTalk.Common",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.Common.json"
+    },
+    {
+      "type": "contains",
+      "to": "project:Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings",
+      "toName": "Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.json"
+    }
+  ],
+  "incoming": []
+}

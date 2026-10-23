@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.Helper.DateFormatConversion.ConvertHL7DateToSQLTime",
+    "type": "method",
+    "name": "DateFormatConversion.ConvertHL7DateToSQLTime",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/DateFormatConversion.cs",
+    "class": "Cloud9.BizTalk.Helper.DateFormatConversion",
+    "line": 33,
+    "signatures": [
+      "public static string ConvertHL7DateToSQLTime(string hl7Datetime)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.Helper.DateFormatConversion",
+      "fromName": "Cloud9.BizTalk.Helper.DateFormatConversion",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.Helper.DateFormatConversion.json"
+    }
+  ]
+}

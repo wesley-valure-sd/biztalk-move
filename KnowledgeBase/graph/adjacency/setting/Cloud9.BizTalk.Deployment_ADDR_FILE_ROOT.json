@@ -1,0 +1,38 @@
+{
+  "node": {
+    "id": "setting:Cloud9.BizTalk.Deployment/ADDR_FILE_ROOT",
+    "type": "setting",
+    "name": "ADDR_FILE_ROOT",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Deployment/SettingsFileGenerator.xml",
+    "bindingSet": "Cloud9.BizTalk.Deployment",
+    "valuesByEnvironment": {
+      "Default Values": "C:\\BizTalkTest",
+      "Local Dev (LocalSettings)": "C:\\BizTalkTest",
+      "AWARE Development (AWARESettings)": "C:\\BizTalkTest",
+      "LAB (LABSettings)": "\\\\10.2.1.1\\Development\\BizTalk",
+      "LAB2 (LAB2Settings)": "\\\\10.2.1.1\\Development\\BizTalk",
+      "LAB3 (LAB3Settings)": "\\\\10.2.1.1\\Development\\BizTalk3",
+      "PROD (C9Prod1_Settings)": "\\\\atl-nas2\\Admin\\backups\\ATL-BIZTALK1",
+      "PROD (C9Prod2_Settings)": "\\\\us-ea1-fs1\\BizTalk",
+      "LAB (SDLab1_Settings)": "\\\\c9.smiledoctors.com\\c9\\cloud9-test\\BizTalk",
+      "PROD (SDProd1_Settings)": "\\\\c9.smiledoctors.com\\c9\\cloud9\\BizTalk"
+    }
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "usesSetting",
+      "from": "sendport:Cloud9.BizTalk.Deployment/SP.MDM_T02.Outbound",
+      "fromName": "SP.MDM_T02.Outbound",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.BizTalk.Deployment_SP.MDM_T02.Outbound.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.BizTalk.Deployment/RL.MDM_T02_To_PDS",
+      "fromName": "RL.MDM_T02_To_PDS",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.BizTalk.Deployment_RL.MDM_T02_To_PDS.json"
+    }
+  ]
+}

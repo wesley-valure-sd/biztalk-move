@@ -1,0 +1,99 @@
+{
+  "node": {
+    "id": "flow:BBVA-835-Insurance-Lockbox",
+    "type": "flow",
+    "name": "BBVA insurance lockbox 835 -> insurance payment and PLB adjustment transactions",
+    "doc": "KnowledgeBase/docs/02-payments-835-end-to-end.md#flow-c-bbva-insurance-lockbox-835",
+    "replacementSpec": "KnowledgeBase/docs/03-replacement-guide.md",
+    "curated": true
+  },
+  "outgoing": [
+    {
+      "type": "source",
+      "to": "externalsystem:BBVA-Lockbox-SFTP",
+      "toName": "BBVA / Navigant lockbox SFTP (RevenueMed host)",
+      "toType": "externalsystem",
+      "toFile": "adjacency/externalsystem/BBVA-Lockbox-SFTP.json",
+      "curated": true
+    },
+    {
+      "type": "entryPoint",
+      "to": "receiveport:Cloud9.EDI.Deployment/RP_BBVA835_Insurance",
+      "toName": "RP_BBVA835_Insurance",
+      "toType": "receiveport",
+      "toFile": "adjacency/receiveport/Cloud9.EDI.Deployment_RP_BBVA835_Insurance.json",
+      "curated": true
+    },
+    {
+      "type": "hasStep",
+      "to": "flowstep:BBVA-Ins-01-Receive",
+      "toName": "Receive file from insurance region folder",
+      "toType": "flowstep",
+      "toFile": "adjacency/flowstep/BBVA-Ins-01-Receive.json",
+      "order": 1,
+      "curated": true
+    },
+    {
+      "type": "hasStep",
+      "to": "flowstep:BBVA-Ins-02-Guard",
+      "toName": "Guard: CLP and PLB counts",
+      "toType": "flowstep",
+      "toFile": "adjacency/flowstep/BBVA-Ins-02-Guard.json",
+      "order": 2,
+      "curated": true
+    },
+    {
+      "type": "hasStep",
+      "to": "flowstep:BBVA-Ins-03-PostClaims",
+      "toName": "Post each CLP with BTS.Post835InsuranceTransaction",
+      "toType": "flowstep",
+      "toFile": "adjacency/flowstep/BBVA-Ins-03-PostClaims.json",
+      "order": 3,
+      "curated": true
+    },
+    {
+      "type": "hasStep",
+      "to": "flowstep:BBVA-Ins-04-PostPLB",
+      "toName": "Post each PLB as an adjustment",
+      "toType": "flowstep",
+      "toFile": "adjacency/flowstep/BBVA-Ins-04-PostPLB.json",
+      "order": 4,
+      "curated": true
+    },
+    {
+      "type": "hasStep",
+      "to": "flowstep:BBVA-Ins-05-ImportLog",
+      "toName": "Write ImportLog rows",
+      "toType": "flowstep",
+      "toFile": "adjacency/flowstep/BBVA-Ins-05-ImportLog.json",
+      "order": 5,
+      "curated": true
+    }
+  ],
+  "incoming": [
+    {
+      "type": "appliesTo",
+      "from": "businessrule:NoFileLevelTransaction",
+      "fromName": "No transaction across a file",
+      "fromType": "businessrule",
+      "fromFile": "adjacency/businessrule/NoFileLevelTransaction.json",
+      "curated": true
+    },
+    {
+      "type": "verifies",
+      "from": "sqlscript:Cloud9.BizTalk.Scripts/835BBVAInsurancePayment/GetInsurancePaymentType.sql",
+      "fromName": "GetInsurancePaymentType.sql",
+      "fromType": "sqlscript",
+      "fromFile": "adjacency/sqlscript/Cloud9.BizTalk.Scripts_835BBVAInsurancePayment_GetInsurancePaymentType.sql.json",
+      "curated": true
+    },
+    {
+      "type": "verifies",
+      "from": "sqlscript:Cloud9.BizTalk.Scripts/835BBVAInsurancePayment/GetUnmappedTransactionsInsurancePayment.sql",
+      "fromName": "GetUnmappedTransactionsInsurancePayment.sql",
+      "fromType": "sqlscript",
+      "fromFile": "adjacency/sqlscript/Cloud9.BizTalk.Scripts_835BBVAInsurancePayment_GetUnmappedTransactionsInsurancePayment.sql.json",
+      "curated": true
+    }
+  ]
+}

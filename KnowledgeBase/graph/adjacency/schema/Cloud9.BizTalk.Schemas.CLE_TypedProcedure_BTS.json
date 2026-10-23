@@ -1,0 +1,67 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.CLE_TypedProcedure_BTS",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.CLE_TypedProcedure_BTS",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/CreateLogEntry/CLE_TypedProcedure.BTS.xsd",
+    "rootElements": [
+      "CreateLogEntry",
+      "CreateLogEntryResponse"
+    ],
+    "kind": "wcf-sql-typed-procedure",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS",
+    "sqlActions": [
+      "TypedProcedure/BTS/CreateLogEntry"
+    ]
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/CreateLogEntry/CLE_TypedProcedure.BTS.xsd",
+      "toName": "CLE_TypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_CreateLogEntry_CLE_TypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "describesParametersOf",
+      "to": "sqlproc:BizTalkCloud9Common.BTS.CreateLogEntry",
+      "toName": "BTS.CreateLogEntry",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.CreateLogEntry.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.Common.MPType_CreateLogEntryResp",
+      "fromName": "MPType_CreateLogEntryResp",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.Common.MPType_CreateLogEntryResp.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.CLE_TypedProcedure_BTS.CreateLogEntryResponse"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.Common.MPType_CreateLogEntryReq",
+      "fromName": "MPType_CreateLogEntryReq",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.Common.MPType_CreateLogEntryReq.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.CLE_TypedProcedure_BTS.CreateLogEntry"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.Epic.MPType_CreateLogEntryReq",
+      "fromName": "MPType_CreateLogEntryReq",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_CreateLogEntryReq.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.CLE_TypedProcedure_BTS.CreateLogEntry"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.Epic.MPType_CreateLogEntryResp",
+      "fromName": "MPType_CreateLogEntryResp",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_CreateLogEntryResp.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.CLE_TypedProcedure_BTS.CreateLogEntryResponse"
+    }
+  ]
+}

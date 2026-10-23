@@ -1,0 +1,29 @@
+{
+  "node": {
+    "id": "receiveport:Cloud9.EDI.PDS.Deployment/RP_QueueClaimsToProcess",
+    "type": "receiveport",
+    "name": "RP_QueueClaimsToProcess",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.PDS.Deployment/PortBindingsMaster.xml",
+    "bindingSet": "Cloud9.EDI.PDS.Deployment",
+    "isTwoWay": "false",
+    "application": "Cloud9.EDI"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.EDI.PDS.Deployment/PortBindingsMaster.xml",
+      "toName": "PortBindingsMaster.xml",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.EDI.PDS.Deployment_PortBindingsMaster.xml.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "partOf",
+      "from": "receivelocation:Cloud9.EDI.PDS.Deployment/${DO_NOT_START_PROD_RL_}QueueClaimsToProcess",
+      "fromName": "${DO_NOT_START_PROD_RL_}QueueClaimsToProcess",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.PDS.Deployment_${DO_NOT_START_PROD_RL_}QueueClaimsToProcess.json"
+    }
+  ]
+}

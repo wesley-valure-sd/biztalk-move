@@ -1,0 +1,77 @@
+{
+  "node": {
+    "id": "orchestration:Cloud9.BizTalk.Epic.ProcessingHl7_Inbound",
+    "type": "orchestration",
+    "name": "ProcessingHl7_Inbound",
+    "ports": [],
+    "parameters": "System.String imGUID, System.String imCorrelationId, message System.Xml.XmlDocument msg_HL7_Received, message Cloud9.BizTalk.Schemas.Polling_IncomingMessage.TypedPollingResultSet0 msg_SqlRecord, out System.Boolean Status",
+    "messages": [
+      "msg_MessageInfo: Cloud9.BizTalk.Schemas.HL7InboundMessage",
+      "msg_HL7_Parsed: Orchestrations.MPType_HL7_Message",
+      "msg_HL7_Body: System.Xml.XmlDocument",
+      "msg_Header: BTAHL7Schemas.MSH_25_GLO_DEF"
+    ],
+    "transaction": "longrunning transaction",
+    "visibility": "internal",
+    "module": "Cloud9.BizTalk.Epic",
+    "invocation": "called/started by another orchestration",
+    "contextProperties": [],
+    "line": 414,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.ProcessHL7.Inbound.odx",
+    "bindingStates": {
+      "Cloud9.BizTalk.Deployment": "Unenlisted",
+      "Cloud9.BizTalk.PDS.Deployment": "Unenlisted"
+    }
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.ProcessHL7.Inbound.odx",
+      "toName": "Cloud9.BizTalk.Epic.ProcessHL7.Inbound.odx",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Orchestrations_Cloud9.BizTalk.Epic.ProcessHL7.Inbound.odx.json"
+    },
+    {
+      "type": "usesSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.HL7InboundMessage",
+      "toName": "Cloud9.BizTalk.Schemas.HL7InboundMessage",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.HL7InboundMessage.json",
+      "message": "msg_MessageInfo"
+    },
+    {
+      "type": "usesSchema",
+      "to": "schema:BTAHL7Schemas.MSH_25_GLO_DEF",
+      "toName": "BTAHL7Schemas.MSH_25_GLO_DEF",
+      "toType": "schema",
+      "toFile": "adjacency/schema/BTAHL7Schemas.MSH_25_GLO_DEF.json",
+      "message": "msg_Header"
+    },
+    {
+      "type": "startsOrchestration",
+      "to": "orchestration:Cloud9.BizTalk.Epic.StageHL7_Inbound",
+      "toName": "StageHL7_Inbound",
+      "toType": "orchestration",
+      "toFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.StageHL7_Inbound.json",
+      "line": 508
+    },
+    {
+      "type": "startsOrchestration",
+      "to": "orchestration:Cloud9.BizTalk.Epic.AddLog",
+      "toName": "AddLog",
+      "toType": "orchestration",
+      "toFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.AddLog.json",
+      "line": 529
+    }
+  ],
+  "incoming": [
+    {
+      "type": "callsOrchestration",
+      "from": "orchestration:Cloud9.BizTalk.Epic.Orchestrations.HL7SQLReceive",
+      "fromName": "HL7SQLReceive",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.Orchestrations.HL7SQLReceive.json",
+      "line": 887
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "node": {
+    "id": "messagetype:Cloud9.BizTalk.X12.UpdateClaimStatusesResponse_MMT",
+    "type": "messagetype",
+    "name": "UpdateClaimStatusesResponse_MMT",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_277ClaimsStatus.odx",
+    "bodyType": "Cloud9.BizTalk.Schemas.UCS_TypedProcedure_BTS.UpdateClaimStatusesResponse",
+    "module": "Cloud9.BizTalk.X12"
+  },
+  "outgoing": [
+    {
+      "type": "bodySchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.UCS_TypedProcedure_BTS",
+      "toName": "Cloud9.BizTalk.Schemas.UCS_TypedProcedure_BTS",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.UCS_TypedProcedure_BTS.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.UCS_TypedProcedure_BTS.UpdateClaimStatusesResponse"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_277ClaimsStatus.odx",
+      "fromName": "Process_CHC_277ClaimsStatus.odx",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Orchestrations_Process_CHC_277ClaimsStatus.odx.json"
+    },
+    {
+      "type": "usesMessageType",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_277AClaimsStatus",
+      "fromName": "Process_CHC_277AClaimsStatus",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_277AClaimsStatus.json",
+      "message": "UpdateClaimStatusesResponse"
+    },
+    {
+      "type": "usesMessageType",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_277ClaimsStatus",
+      "fromName": "Process_CHC_277ClaimsStatus",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_277ClaimsStatus.json",
+      "message": "UpdateClaimStatusesResponse"
+    },
+    {
+      "type": "usesMessageType",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus",
+      "fromName": "Process_CHC_ClaimsStatus",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus.json",
+      "message": "UpdateClaimStatusesResponse"
+    }
+  ]
+}

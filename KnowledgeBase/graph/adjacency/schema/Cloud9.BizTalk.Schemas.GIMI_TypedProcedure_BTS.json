@@ -1,0 +1,51 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.GIMI_TypedProcedure_BTS",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.GIMI_TypedProcedure_BTS",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetMessageInfo/GIMI_TypedProcedure.BTS.xsd",
+    "rootElements": [
+      "GetIncomingMessageInfo",
+      "GetIncomingMessageInfoResponse"
+    ],
+    "kind": "wcf-sql-typed-procedure",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS",
+    "sqlActions": [
+      "TypedProcedure/BTS/GetIncomingMessageInfo"
+    ]
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetMessageInfo/GIMI_TypedProcedure.BTS.xsd",
+      "toName": "GIMI_TypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_GetMessageInfo_GIMI_TypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "describesParametersOf",
+      "to": "sqlproc:BizTalkCloud9Common.BTS.GetIncomingMessageInfo",
+      "toName": "BTS.GetIncomingMessageInfo",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.GetIncomingMessageInfo.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.GetIncomingMessageInfoResponse_MMT",
+      "fromName": "GetIncomingMessageInfoResponse_MMT",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.GetIncomingMessageInfoResponse_MMT.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.GIMI_TypedProcedure_BTS.GetIncomingMessageInfoResponse"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.GetIncomingMessageInfo_MMT",
+      "fromName": "GetIncomingMessageInfo_MMT",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.GetIncomingMessageInfo_MMT.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.GIMI_TypedProcedure_BTS.GetIncomingMessageInfo"
+    }
+  ]
+}

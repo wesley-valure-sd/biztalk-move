@@ -1,0 +1,52 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.ClaimsProcessing.QC_ProcedureResultSet_BTS_QueueClaims",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.ClaimsProcessing.QC_ProcedureResultSet_BTS_QueueClaims",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ClaimsProcessing/QC_ProcedureResultSet.BTS.QueueClaims.xsd",
+    "rootElements": [
+      "StoredProcedureResultSet0",
+      "ArrayOfStoredProcedureResultSet0",
+      "StoredProcedureResultSet1",
+      "ArrayOfStoredProcedureResultSet1"
+    ],
+    "kind": "wcf-sql-result-set",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/QueueClaims",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ClaimsProcessing/QC_ProcedureResultSet.BTS.QueueClaims.xsd",
+      "toName": "QC_ProcedureResultSet.BTS.QueueClaims.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_ClaimsProcessing_QC_ProcedureResultSet.BTS.QueueClaims.xsd.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "sourceSchema",
+      "from": "map:Cloud9.BizTalk.X12.Maps.QueueClaimsResponseElement_To_UpdateClaimStatuses",
+      "fromName": "Cloud9.BizTalk.X12.Maps.QueueClaimsResponseElement_To_UpdateClaimStatuses",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.QueueClaimsResponseElement_To_UpdateClaimStatuses.json",
+      "root": "StoredProcedureResultSet0"
+    },
+    {
+      "type": "sourceSchema",
+      "from": "map:Cloud9.BizTalk.X12.Maps.QueueClaimsResponseElement_To_UpdateClaimStatusesRejected",
+      "fromName": "Cloud9.BizTalk.X12.Maps.QueueClaimsResponseElement_To_UpdateClaimStatusesRejected",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.QueueClaimsResponseElement_To_UpdateClaimStatusesRejected.json",
+      "root": "StoredProcedureResultSet0"
+    },
+    {
+      "type": "usesSchema",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker",
+      "fromName": "Process_CHC_837Claims_Worker",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker.json",
+      "message": "msg_UpdateClaimStatusRespElement"
+    }
+  ]
+}

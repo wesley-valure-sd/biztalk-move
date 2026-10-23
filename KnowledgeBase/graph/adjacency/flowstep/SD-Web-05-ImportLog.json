@@ -1,0 +1,31 @@
+{
+  "node": {
+    "id": "flowstep:SD-Web-05-ImportLog",
+    "type": "flowstep",
+    "name": "Write ImportLog row (no external reference)",
+    "order": 5,
+    "curated": true,
+    "logic": "Same as BBVA patient, ilProcess='Process_SD_835Patient'. ilExternalReference is not sent. Success message is the constant 'Processed successfully'."
+  },
+  "outgoing": [
+    {
+      "type": "implementedBy",
+      "to": "sqlproc:PracticeDB.BTS.AddImportLog",
+      "toName": "BTS.AddImportLog",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/PracticeDB.BTS.AddImportLog.json",
+      "curated": true
+    }
+  ],
+  "incoming": [
+    {
+      "type": "hasStep",
+      "from": "flow:SD-835-Web-Patient-Payment",
+      "fromName": "Smile Doctors web payment 835 -> patient payment transactions (card / ACH / ACH return)",
+      "fromType": "flow",
+      "fromFile": "adjacency/flow/SD-835-Web-Patient-Payment.json",
+      "order": 5,
+      "curated": true
+    }
+  ]
+}

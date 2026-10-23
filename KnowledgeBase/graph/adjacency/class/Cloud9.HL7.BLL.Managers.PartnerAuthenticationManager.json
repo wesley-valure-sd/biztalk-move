@@ -1,0 +1,29 @@
+{
+  "node": {
+    "id": "class:Cloud9.HL7.BLL.Managers.PartnerAuthenticationManager",
+    "type": "class",
+    "name": "Cloud9.HL7.BLL.Managers.PartnerAuthenticationManager",
+    "path": "Cloud9.HL7.WebAPI/Cloud9.HL7.BLL/Managers/PartnerAuthenticationManager.cs",
+    "visibility": "public",
+    "kind": "class",
+    "line": 12
+  },
+  "outgoing": [
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.HL7.BLL.Managers.PartnerAuthenticationManager.AuthenticateUser",
+      "toName": "PartnerAuthenticationManager.AuthenticateUser",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.HL7.BLL.Managers.PartnerAuthenticationManager.AuthenticateUser.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.BLL/Managers/PartnerAuthenticationManager.cs",
+      "fromName": "PartnerAuthenticationManager.cs",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.HL7.WebAPI_Cloud9.HL7.BLL_Managers_PartnerAuthenticationManager.cs.json"
+    }
+  ]
+}

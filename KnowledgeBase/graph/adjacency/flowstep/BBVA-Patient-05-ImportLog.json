@@ -1,0 +1,31 @@
+{
+  "node": {
+    "id": "flowstep:BBVA-Patient-05-ImportLog",
+    "type": "flowstep",
+    "name": "Write one ImportLog row for each payment",
+    "order": 5,
+    "curated": true,
+    "logic": "BTS.AddImportLog in the practice DB. ilProcess='Process_BBVA_835Patient'. ilLogLevel 2/'Finished' if ErrorCount='0', else 0/'Failed'. ilImportGUID = BizTalk MessageID. ilExternalReference = PaymentIdentifier. ilMessage = ResponseMessage. An exception stops the loop and writes only to the Windows event log."
+  },
+  "outgoing": [
+    {
+      "type": "implementedBy",
+      "to": "sqlproc:PracticeDB.BTS.AddImportLog",
+      "toName": "BTS.AddImportLog",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/PracticeDB.BTS.AddImportLog.json",
+      "curated": true
+    }
+  ],
+  "incoming": [
+    {
+      "type": "hasStep",
+      "from": "flow:BBVA-835-Patient-Lockbox",
+      "fromName": "BBVA patient lockbox 835 -> patient payment transactions",
+      "fromType": "flow",
+      "fromFile": "adjacency/flow/BBVA-835-Patient-Lockbox.json",
+      "order": 5,
+      "curated": true
+    }
+  ]
+}

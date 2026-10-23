@@ -1,0 +1,63 @@
+{
+  "node": {
+    "id": "flowstep:CHC-05-ReversalOrPost",
+    "type": "flowstep",
+    "name": "For each CLP: reversal to-do or insurance post",
+    "order": 5,
+    "curated": true,
+    "logic": "ReversalFlag = (CLP04 < 0) OR (CLP02 = '22') OR (any service CAS01 contains 'CR'). Reversal -> BTS.AddTodoItem(adaclaimNumber, message 'Payment for claim<n> needs reversal for amount $<CLP04>.'). Else -> BTS.Post835InsuranceTransaction. adaClaimNumber = int(CLP01.Substring(12)) (C9 claim numbers: 2-char PMS ID + 10-char Emdeon user + claim number)."
+  },
+  "outgoing": [
+    {
+      "type": "implementedBy",
+      "to": "map:Cloud9.BizTalk.X12.Maps.CHC_835_To_ClaimPaymentBatchCanonical",
+      "toName": "Cloud9.BizTalk.X12.Maps.CHC_835_To_ClaimPaymentBatchCanonical",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.CHC_835_To_ClaimPaymentBatchCanonical.json",
+      "curated": true
+    },
+    {
+      "type": "implementedBy",
+      "to": "map:Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_AddTodoItem",
+      "toName": "Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_AddTodoItem",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_AddTodoItem.json",
+      "curated": true
+    },
+    {
+      "type": "implementedBy",
+      "to": "map:Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835InsuranceTransaction",
+      "toName": "Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835InsuranceTransaction",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835InsuranceTransaction.json",
+      "curated": true
+    },
+    {
+      "type": "implementedBy",
+      "to": "sqlproc:PracticeDB.BTS.AddTodoItem",
+      "toName": "BTS.AddTodoItem",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/PracticeDB.BTS.AddTodoItem.json",
+      "curated": true
+    },
+    {
+      "type": "implementedBy",
+      "to": "sqlproc:PracticeDB.BTS.Post835InsuranceTransaction",
+      "toName": "BTS.Post835InsuranceTransaction",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/PracticeDB.BTS.Post835InsuranceTransaction.json",
+      "curated": true
+    }
+  ],
+  "incoming": [
+    {
+      "type": "hasStep",
+      "from": "flow:CHC-835-Insurance-ERA",
+      "fromName": "Change Healthcare ERA 835 -> insurance payment transactions or reversal to-do items",
+      "fromType": "flow",
+      "fromFile": "adjacency/flow/CHC-835-Insurance-ERA.json",
+      "order": 5,
+      "curated": true
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+MAP: CHC_835_To_ClaimPaymentCanonical.btm
+PATH: Cloud9.BizTalk\Cloud9.BizTalk.X12\Maps\CHC_835_To_ClaimPaymentCanonical.btm
+SOURCE: Cloud9.BizTalk.X12.Schemas.CHC_X12_00501_835 (root X12_00501_835)
+TARGET: Cloud9.BizTalk.Schemas.Canonical.ClaimPayment (root ClaimPayment)
+SCRIPT PRECEDENCE (first match wins when a functoid has more than one script): CSharp > ExternalAssembly > VbNet > JScript > XsltCallTemplate > Xslt
+
+=== PAGE: Page 1 ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L1: X12_00501_835/BPR_FinancialInformation/BPR02_TotalActualProviderPaymentAmount -> ClaimPayment/TotalActualProviderPaymentAmount
+L2: X12_00501_835/BPR_FinancialInformation/BPR04_PaymentMethodCode -> ClaimPayment/PaymentMethodCode
+L3: X12_00501_835/BPR_FinancialInformation/BPR07_SenderDFIIdentifier -> ClaimPayment/SenderDFIIdentifier
+L4: X12_00501_835/BPR_FinancialInformation/BPR16_CheckIssueorEFTEffectiveDate -> ClaimPayment/CheckIssueorEFTEffectiveDate
+L5: X12_00501_835/TRN_ReassociationTraceNumber/TRN02_CheckorEFTTraceNumber -> ClaimPayment/CheckorEFTTraceNumber
+L6: X12_00501_835/TS835_2000_Loop/TS835_2100_Loop/NM1_SubLoop/NM1_PatientName/NM109_PatientIdentifier -> F1
+L7: F1 -> ClaimPayment/PatientIdentifier
+L8: X12_00501_835/TS835_2000_Loop/TS835_2100_Loop/NM1_SubLoop/NM1_InsuredName/NM109_SubscriberIdentifier -> F2
+L9: F2 -> ClaimPayment/SubscriberIdentifier
+L10: X12_00501_835/TS835_2000_Loop/TS835_2100_Loop/CLP_ClaimPaymentInformation/CLP01_PatientControlNumber -> F3
+L12: F3 -> F4
+L13: F4 -> ClaimPayment/PatientControlNumber
+--- FUNCTOIDS ---
+F1 [Index (inferred)] inputs: L6, const:'1'
+F2 [Index (inferred)] inputs: L8, const:'1'
+F3 [Index (inferred)] inputs: L10, const:'1'
+F4 [Scripting] inputs: L12
+    script language: CSharp
+    | public string ParseClaimNumber(string C9PatientControlNumber)
+    | {
+    |    // PMS ID 1 - 2 = C9
+    |    // Database #: 3-12 ("Emdeon" Username)
+    |    // Claim #: 13-20
+    |    string strClaimNumber = "";
+    | 
+    |    try
+    |    {
+    |       strClaimNumber = C9PatientControlNumber.Substring(12);
+    |       int claimNbr = Convert.ToInt32(strClaimNumber);
+    |       strClaimNumber = Convert.ToString(claimNbr);
+    | 
+    |    }
+    | 
+    |    catch (System.Exception)
+    |    {
+    |       throw (new System.Exception(System.String.Format("ParseClaimNumber: Parsing Claim Number: {0}",
+    |                                             C9PatientControlNumber)));
+    |    }
+    | 
+    |    return strClaimNumber;
+    | }
+

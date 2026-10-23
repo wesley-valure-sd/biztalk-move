@@ -1,0 +1,44 @@
+{
+  "node": {
+    "id": "map:Cloud9.BizTalk.X12.Maps.CHC_277_4010_To_ClaimStatusCanonical",
+    "type": "map",
+    "name": "Cloud9.BizTalk.X12.Maps.CHC_277_4010_To_ClaimStatusCanonical",
+    "readableSummary": "KnowledgeBase/map-summaries/CHC_277_4010_To_ClaimStatusCanonical.txt",
+    "targetSchema": "Cloud9.BizTalk.Schemas.Canonical.ClaimStatus",
+    "inlineScripts": [
+      "CSharp:ParseClaimNumber"
+    ],
+    "functoidCount": 2,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/CHC_277_4010_To_ClaimStatusCanonical.btm",
+    "sourceSchema": "Cloud9.BizTalk.X12.Schemas.CHC_X12_00401_277",
+    "linkCount": 5,
+    "sourceRoot": "X12_00401_277",
+    "targetRoot": "ClaimStatus"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/CHC_277_4010_To_ClaimStatusCanonical.btm",
+      "toName": "CHC_277_4010_To_ClaimStatusCanonical.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_CHC_277_4010_To_ClaimStatusCanonical.btm.json"
+    },
+    {
+      "type": "sourceSchema",
+      "to": "schema:Cloud9.BizTalk.X12.Schemas.CHC_X12_00401_277",
+      "toName": "Cloud9.BizTalk.X12.Schemas.CHC_X12_00401_277",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.X12.Schemas.CHC_X12_00401_277.json",
+      "root": "X12_00401_277"
+    },
+    {
+      "type": "targetSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.Canonical.ClaimStatus",
+      "toName": "Cloud9.BizTalk.Schemas.Canonical.ClaimStatus",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.Canonical.ClaimStatus.json",
+      "root": "ClaimStatus"
+    }
+  ],
+  "incoming": []
+}

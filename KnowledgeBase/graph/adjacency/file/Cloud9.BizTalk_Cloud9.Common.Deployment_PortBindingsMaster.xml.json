@@ -1,0 +1,19 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.Common.Deployment/PortBindingsMaster.xml",
+    "type": "file",
+    "name": "PortBindingsMaster.xml",
+    "kind": "binding",
+    "path": "Cloud9.BizTalk/Cloud9.Common.Deployment/PortBindingsMaster.xml"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "definedIn",
+      "from": "receiveport:Cloud9.Common.Deployment/TwoWayAckReceivePort",
+      "fromName": "TwoWayAckReceivePort",
+      "fromType": "receiveport",
+      "fromFile": "adjacency/receiveport/Cloud9.Common.Deployment_TwoWayAckReceivePort.json"
+    }
+  ]
+}

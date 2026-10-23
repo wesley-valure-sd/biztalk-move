@@ -1,0 +1,40 @@
+{
+  "node": {
+    "id": "receivelocation:Cloud9.EDI.Deployment/RL_ChangeHealthCare271_FILE",
+    "type": "receivelocation",
+    "name": "RL_ChangeHealthCare271_FILE",
+    "enabled": "false",
+    "bindingSet": "Cloud9.EDI.Deployment",
+    "receivePipeline": "Cloud9.BizTalk.X12.Pipelines.ReceiveEDIPipeline",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.Deployment/PortBindingsMaster.xml",
+    "archiveFolder": "${ADDR_FILE_ROOT}\\ChangeHealthCare\\271\\Archive",
+    "address": "${ADDR_FILE_ROOT}\\ChangeHealthCare\\271\\*.*",
+    "serviceWindow": "2020-01-09T00:00:00 to 2020-01-09T23:59:59 (enabled=false)",
+    "pollingInterval": "60000",
+    "transport": "FILE"
+  },
+  "outgoing": [
+    {
+      "type": "partOf",
+      "to": "receiveport:Cloud9.EDI.Deployment/RP_ChangeHealthCare271",
+      "toName": "RP_ChangeHealthCare271",
+      "toType": "receiveport",
+      "toFile": "adjacency/receiveport/Cloud9.EDI.Deployment_RP_ChangeHealthCare271.json"
+    },
+    {
+      "type": "usesPipeline",
+      "to": "pipeline:Cloud9.BizTalk.X12.Pipelines.ReceiveEDIPipeline",
+      "toName": "Cloud9.BizTalk.X12.Pipelines.ReceiveEDIPipeline",
+      "toType": "pipeline",
+      "toFile": "adjacency/pipeline/Cloud9.BizTalk.X12.Pipelines.ReceiveEDIPipeline.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.EDI.Deployment/ADDR_FILE_ROOT",
+      "toName": "ADDR_FILE_ROOT",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.EDI.Deployment_ADDR_FILE_ROOT.json"
+    }
+  ],
+  "incoming": []
+}

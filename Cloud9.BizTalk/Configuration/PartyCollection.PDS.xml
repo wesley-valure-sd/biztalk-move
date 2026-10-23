@@ -1,0 +1,1219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="NoBindings" BoundEndpoints="0" TotalEndpoints="0">
+  <Timestamp>2020-03-19T07:56:23.0937141-04:00</Timestamp>
+  <ModuleRefCollection>
+    <ModuleRef Name="#" Version="0.0" Culture="neutral" PublicKeyToken="" FullName="#, Version=0.0, Culture=neutral, PublicKeyToken=">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+  </ModuleRefCollection>
+  <SendPortCollection />
+  <DistributionListCollection />
+  <ReceivePortCollection />
+  <PartyCollection>
+    <ArrayOfPartner xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.Deployment.B2B.PartnerManagement">
+      <Partner>
+        <BusinessProfiles>
+          <BusinessProfile>
+            <CustomSettings xmlns:d5p1="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+            <Identities xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" />
+            <Name>EPIC_Profile</Name>
+            <ProtocolSettings xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" />
+          </BusinessProfile>
+        </BusinessProfiles>
+        <CustomData>&lt;?xml version="1.0"?&gt;&lt;messageConfiguration&gt;&lt;messageValidation&gt;&lt;validateBodySegments&gt;True&lt;/validateBodySegments&gt;&lt;validateCustomDataTypes&gt;False&lt;/validateCustomDataTypes&gt;&lt;allowTrailingFieldDelimiters&gt;True&lt;/allowTrailingFieldDelimiters&gt;&lt;schemaNamespace&gt;http://microsoft.com/HealthCare/HL7/2X&lt;/schemaNamespace&gt;&lt;/messageValidation&gt;&lt;/messageConfiguration&gt;</CustomData>
+        <CustomSettings xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Collections.Generic">
+          <d3p1:KeyValuePairOfstringstring>
+            <d3p1:key>biztalk.HostParty</d3p1:key>
+            <d3p1:value>True</d3p1:value>
+          </d3p1:KeyValuePairOfstringstring>
+        </CustomSettings>
+        <Name>EPIC</Name>
+        <SendPortReferences xmlns:d3p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" />
+      </Partner>
+      <Partner>
+        <BusinessProfiles>
+          <BusinessProfile>
+            <CustomSettings xmlns:d5p1="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+            <Description>
+            </Description>
+            <Identities xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement">
+              <d5p1:BusinessIdentity z:Id="i1" i:type="d5p1:QualifierIdentity" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+                <d5p1:BusinessProfileReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d5p1:BusinessProfileReference>
+                <d5p1:FallbackAgreement1Reference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d5p1:FallbackAgreement1Reference>
+                <d5p1:FallbackAgreementReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d5p1:FallbackAgreementReference>
+                <d5p1:Name>QualifierIdentity</d5p1:Name>
+                <d5p1:version>AAAAAAAACng=</d5p1:version>
+                <d5p1:AdditionalData>x12</d5p1:AdditionalData>
+                <d5p1:Description>Mutually Defined (X12)</d5p1:Description>
+                <d5p1:Qualifier>ZZ</d5p1:Qualifier>
+                <d5p1:Value>271836984</d5p1:Value>
+              </d5p1:BusinessIdentity>
+              <d5p1:BusinessIdentity z:Id="i2" i:type="d5p1:QualifierIdentity" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+                <d5p1:BusinessProfileReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d5p1:BusinessProfileReference>
+                <d5p1:FallbackAgreement1Reference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d5p1:FallbackAgreement1Reference>
+                <d5p1:FallbackAgreementReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d5p1:FallbackAgreementReference>
+                <d5p1:Name>QualifierIdentity</d5p1:Name>
+                <d5p1:version>AAAAAAAACnk=</d5p1:version>
+                <d5p1:AdditionalData>x12</d5p1:AdditionalData>
+                <d5p1:Description>Mutually Defined (X12)</d5p1:Description>
+                <d5p1:Qualifier>ZZ</d5p1:Qualifier>
+                <d5p1:Value>CLOUD9</d5p1:Value>
+              </d5p1:BusinessIdentity>
+              <d5p1:BusinessIdentity z:Id="i3" i:type="d5p1:QualifierIdentity" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+                <d5p1:BusinessProfileReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d5p1:BusinessProfileReference>
+                <d5p1:FallbackAgreement1Reference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d5p1:FallbackAgreement1Reference>
+                <d5p1:FallbackAgreementReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d5p1:FallbackAgreementReference>
+                <d5p1:Name>QualifierIdentity</d5p1:Name>
+                <d5p1:version>AAAAAAAAXzE=</d5p1:version>
+                <d5p1:AdditionalData>x12</d5p1:AdditionalData>
+                <d5p1:Description>Mutually Defined (X12)</d5p1:Description>
+                <d5p1:Qualifier>ZZ</d5p1:Qualifier>
+                <d5p1:Value>462:TEST001</d5p1:Value>
+              </d5p1:BusinessIdentity>
+              <d5p1:BusinessIdentity z:Id="i4" i:type="d5p1:QualifierIdentity" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+                <d5p1:BusinessProfileReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d5p1:BusinessProfileReference>
+                <d5p1:FallbackAgreement1Reference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d5p1:FallbackAgreement1Reference>
+                <d5p1:FallbackAgreementReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d5p1:FallbackAgreementReference>
+                <d5p1:Name>QualifierIdentity</d5p1:Name>
+                <d5p1:version>AAAAAAAAwcI=</d5p1:version>
+                <d5p1:AdditionalData>x12</d5p1:AdditionalData>
+                <d5p1:Description>Mutually Defined (X12)</d5p1:Description>
+                <d5p1:Qualifier>ZZ</d5p1:Qualifier>
+                <d5p1:Value>462</d5p1:Value>
+              </d5p1:BusinessIdentity>
+              <d5p1:BusinessIdentity z:Id="i5" i:type="d5p1:QualifierIdentity" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+                <d5p1:BusinessProfileReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d5p1:BusinessProfileReference>
+                <d5p1:FallbackAgreement1Reference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d5p1:FallbackAgreement1Reference>
+                <d5p1:FallbackAgreementReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d5p1:FallbackAgreementReference>
+                <d5p1:Name>QualifierIdentity</d5p1:Name>
+                <d5p1:version>AAAAAAAAwcM=</d5p1:version>
+                <d5p1:AdditionalData>x12</d5p1:AdditionalData>
+                <d5p1:Description>Mutually Defined (X12)</d5p1:Description>
+                <d5p1:Qualifier>ZZ</d5p1:Qualifier>
+                <d5p1:Value>EPIC</d5p1:Value>
+              </d5p1:BusinessIdentity>
+            </Identities>
+            <Name>Cloud9_Profile</Name>
+            <ProtocolSettings xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" />
+          </BusinessProfile>
+          <BusinessProfile>
+            <CustomSettings xmlns:d5p1="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+            <Identities xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" />
+            <Name>PDS_Profile</Name>
+            <ProtocolSettings xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" />
+          </BusinessProfile>
+        </BusinessProfiles>
+        <CustomData>&lt;?xml version="1.0"?&gt;&lt;messageConfiguration&gt;&lt;messageValidation&gt;&lt;validateBodySegments&gt;True&lt;/validateBodySegments&gt;&lt;validateCustomDataTypes&gt;False&lt;/validateCustomDataTypes&gt;&lt;allowTrailingFieldDelimiters&gt;True&lt;/allowTrailingFieldDelimiters&gt;&lt;schemaNamespace&gt;http://microsoft.com/HealthCare/HL7/2X&lt;/schemaNamespace&gt;&lt;/messageValidation&gt;&lt;/messageConfiguration&gt;</CustomData>
+        <CustomSettings xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Collections.Generic">
+          <d3p1:KeyValuePairOfstringstring>
+            <d3p1:key>biztalk.HostParty</d3p1:key>
+            <d3p1:value>True</d3p1:value>
+          </d3p1:KeyValuePairOfstringstring>
+        </CustomSettings>
+        <Name>CLOUD9</Name>
+        <SendPortReferences xmlns:d3p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" />
+      </Partner>
+      <Partner>
+        <BusinessProfiles>
+          <BusinessProfile>
+            <CustomSettings xmlns:d5p1="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+            <Identities xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement">
+              <d5p1:BusinessIdentity z:Id="i6" i:type="d5p1:QualifierIdentity" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+                <d5p1:BusinessProfileReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d5p1:BusinessProfileReference>
+                <d5p1:FallbackAgreement1Reference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d5p1:FallbackAgreement1Reference>
+                <d5p1:FallbackAgreementReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d5p1:FallbackAgreementReference>
+                <d5p1:Name>QualifierIdentity</d5p1:Name>
+                <d5p1:version>AAAAAAAAjx4=</d5p1:version>
+                <d5p1:AdditionalData>x12</d5p1:AdditionalData>
+                <d5p1:Description>Health Industry Number</d5p1:Description>
+                <d5p1:Qualifier>20</d5p1:Qualifier>
+                <d5p1:Value>0135WCH00</d5p1:Value>
+              </d5p1:BusinessIdentity>
+              <d5p1:BusinessIdentity z:Id="i7" i:type="d5p1:QualifierIdentity" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+                <d5p1:BusinessProfileReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d5p1:BusinessProfileReference>
+                <d5p1:FallbackAgreement1Reference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d5p1:FallbackAgreement1Reference>
+                <d5p1:FallbackAgreementReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d5p1:FallbackAgreementReference>
+                <d5p1:Name>QualifierIdentity</d5p1:Name>
+                <d5p1:version>AAAAAAAAjx8=</d5p1:version>
+                <d5p1:AdditionalData>x12</d5p1:AdditionalData>
+                <d5p1:Description>Mutually Defined (X12)</d5p1:Description>
+                <d5p1:Qualifier>ZZ</d5p1:Qualifier>
+                <d5p1:Value>WEBMDDENTAL</d5p1:Value>
+              </d5p1:BusinessIdentity>
+              <d5p1:BusinessIdentity z:Id="i8" i:type="d5p1:QualifierIdentity" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+                <d5p1:BusinessProfileReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d5p1:BusinessProfileReference>
+                <d5p1:FallbackAgreement1Reference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d5p1:FallbackAgreement1Reference>
+                <d5p1:FallbackAgreementReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d5p1:FallbackAgreementReference>
+                <d5p1:Name>QualifierIdentity</d5p1:Name>
+                <d5p1:version>AAAAAAAAjyA=</d5p1:version>
+                <d5p1:AdditionalData>x12</d5p1:AdditionalData>
+                <d5p1:Description>Mutually Defined (X12)</d5p1:Description>
+                <d5p1:Qualifier>ZZ</d5p1:Qualifier>
+                <d5p1:Value>061267267</d5p1:Value>
+              </d5p1:BusinessIdentity>
+            </Identities>
+            <Name>ChangeHealthcare_Profile</Name>
+            <ProtocolSettings xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" />
+          </BusinessProfile>
+        </BusinessProfiles>
+        <CustomSettings xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Collections.Generic">
+          <d3p1:KeyValuePairOfstringstring>
+            <d3p1:key>biztalk.HostParty</d3p1:key>
+            <d3p1:value>True</d3p1:value>
+          </d3p1:KeyValuePairOfstringstring>
+        </CustomSettings>
+        <Name>ChangeHealthcare</Name>
+        <SendPortReferences xmlns:d3p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" />
+      </Partner>
+      <Partner>
+        <BusinessProfiles>
+          <BusinessProfile>
+            <CustomSettings xmlns:d5p1="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+            <Identities xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement">
+              <d5p1:BusinessIdentity z:Id="i9" i:type="d5p1:QualifierIdentity" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+                <d5p1:BusinessProfileReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d5p1:BusinessProfileReference>
+                <d5p1:FallbackAgreement1Reference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d5p1:FallbackAgreement1Reference>
+                <d5p1:FallbackAgreementReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d5p1:FallbackAgreementReference>
+                <d5p1:Name>QualifierIdentity</d5p1:Name>
+                <d5p1:version>AAAAAAAAwcQ=</d5p1:version>
+                <d5p1:AdditionalData>x12</d5p1:AdditionalData>
+                <d5p1:Description>Mutually Defined (X12)</d5p1:Description>
+                <d5p1:Qualifier>ZZ</d5p1:Qualifier>
+                <d5p1:Value>PDSEligibility</d5p1:Value>
+              </d5p1:BusinessIdentity>
+            </Identities>
+            <Name>PDS_Profile</Name>
+            <ProtocolSettings xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" />
+          </BusinessProfile>
+        </BusinessProfiles>
+        <CustomData>&lt;?xml version="1.0"?&gt;&lt;messageConfiguration&gt;&lt;messageValidation&gt;&lt;validateBodySegments&gt;True&lt;/validateBodySegments&gt;&lt;validateCustomDataTypes&gt;False&lt;/validateCustomDataTypes&gt;&lt;allowTrailingFieldDelimiters&gt;True&lt;/allowTrailingFieldDelimiters&gt;&lt;schemaNamespace&gt;http://microsoft.com/HealthCare/HL7/2X&lt;/schemaNamespace&gt;&lt;/messageValidation&gt;&lt;/messageConfiguration&gt;</CustomData>
+        <CustomSettings xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Collections.Generic">
+          <d3p1:KeyValuePairOfstringstring>
+            <d3p1:key>biztalk.HostParty</d3p1:key>
+            <d3p1:value>True</d3p1:value>
+          </d3p1:KeyValuePairOfstringstring>
+        </CustomSettings>
+        <Name>PDS</Name>
+        <SendPortReferences xmlns:d3p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" />
+      </Partner>
+    </ArrayOfPartner>
+    <ArrayOfPartnership xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.Deployment.B2B.PartnerManagement">
+      <Partnership>
+        <Agreements>
+          <Agreement>
+            <Contacts xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement">
+              <d5p1:Contact z:Id="i1" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+                <d5p1:Address>
+                </d5p1:Address>
+                <d5p1:AgreementReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d5p1:AgreementReference>
+                <d5p1:BusinessPhone>
+                </d5p1:BusinessPhone>
+                <d5p1:Company>
+                </d5p1:Company>
+                <d5p1:ContactId>36</d5p1:ContactId>
+                <d5p1:Email>
+                </d5p1:Email>
+                <d5p1:Fax>
+                </d5p1:Fax>
+                <d5p1:JobTitle>
+                </d5p1:JobTitle>
+                <d5p1:MobilePhone>
+                </d5p1:MobilePhone>
+                <d5p1:Name>
+                </d5p1:Name>
+                <d5p1:Notes>
+                </d5p1:Notes>
+                <d5p1:WebAddress>
+                </d5p1:WebAddress>
+                <d5p1:version>AAAAAAAAwcs=</d5p1:version>
+              </d5p1:Contact>
+            </Contacts>
+            <CustomSettings xmlns:d5p1="http://schemas.datacontract.org/2004/07/System.Collections.Generic">
+              <d5p1:KeyValuePairOfstringstring>
+                <d5p1:key>biztalk.LogErrors</d5p1:key>
+                <d5p1:value>True</d5p1:value>
+              </d5p1:KeyValuePairOfstringstring>
+              <d5p1:KeyValuePairOfstringstring>
+                <d5p1:key>biztalk.LogWarnings</d5p1:key>
+                <d5p1:value>True</d5p1:value>
+              </d5p1:KeyValuePairOfstringstring>
+              <d5p1:KeyValuePairOfstringstring>
+                <d5p1:key>biztalk.EnableReporting</d5p1:key>
+                <d5p1:value>True</d5p1:value>
+              </d5p1:KeyValuePairOfstringstring>
+              <d5p1:KeyValuePairOfstringstring>
+                <d5p1:key>biztalk.StoreMessages</d5p1:key>
+                <d5p1:value>True</d5p1:value>
+              </d5p1:KeyValuePairOfstringstring>
+            </CustomSettings>
+            <Description>
+            </Description>
+            <Enabled>true</Enabled>
+            <EndDate>9999-12-31T18:59:59.9999999-05:00</EndDate>
+            <Name>ChangeHealthcare_Cloud9</Name>
+            <OnewayAgreementAtoB>
+              <AgreementAliases xmlns:d6p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" />
+              <BatchDescriptions xmlns:d6p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" />
+              <ProtocolSettings xmlns:d6p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" z:Id="i2" i:type="d6p1:X12ProtocolSettings" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+                <d6p1:BusinessProfileReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d6p1:BusinessProfileReference>
+                <d6p1:FallbackAgreementReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d6p1:FallbackAgreementReference>
+                <d6p1:OnewayAgreementReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d6p1:OnewayAgreementReference>
+                <d6p1:ProtocolName>x12</d6p1:ProtocolName>
+                <d6p1:SettingsName>unspecified</d6p1:SettingsName>
+                <d6p1:AcknowledgementControlNumberLowerBound>1</d6p1:AcknowledgementControlNumberLowerBound>
+                <d6p1:AcknowledgementControlNumberRollover>true</d6p1:AcknowledgementControlNumberRollover>
+                <d6p1:AcknowledgementControlNumberUpperBound>999999999</d6p1:AcknowledgementControlNumberUpperBound>
+                <d6p1:AllowLeadingAndTrailingSpacesAndZeroes>false</d6p1:AllowLeadingAndTrailingSpacesAndZeroes>
+                <d6p1:AuthorizationQualifier>00</d6p1:AuthorizationQualifier>
+                <d6p1:BatchFunctionalAck>true</d6p1:BatchFunctionalAck>
+                <d6p1:BatchImplementationAck>true</d6p1:BatchImplementationAck>
+                <d6p1:BatchTechnicalAck>true</d6p1:BatchTechnicalAck>
+                <d6p1:CharacterSet>2</d6p1:CharacterSet>
+                <d6p1:CheckDuplicateGroupControlNumber>false</d6p1:CheckDuplicateGroupControlNumber>
+                <d6p1:CheckDuplicateInterchangeControlNumber>false</d6p1:CheckDuplicateInterchangeControlNumber>
+                <d6p1:CheckDuplicateTransactionSetControlNumber>false</d6p1:CheckDuplicateTransactionSetControlNumber>
+                <d6p1:ComponentSeparator>58</d6p1:ComponentSeparator>
+                <d6p1:ControlStandardsId>85</d6p1:ControlStandardsId>
+                <d6p1:ControlVersionNumber>00501</d6p1:ControlVersionNumber>
+                <d6p1:ConvertImpliedDecimal>false</d6p1:ConvertImpliedDecimal>
+                <d6p1:CreateEmptyXmlTagsForTrailingSeparators>true</d6p1:CreateEmptyXmlTagsForTrailingSeparators>
+                <d6p1:DataElementSeparator>42</d6p1:DataElementSeparator>
+                <d6p1:EnableDefaultGroupHeaders>true</d6p1:EnableDefaultGroupHeaders>
+                <d6p1:GenerateLoopForValidMessagesInAck>false</d6p1:GenerateLoopForValidMessagesInAck>
+                <d6p1:GeneratePatAK901>false</d6p1:GeneratePatAK901>
+                <d6p1:GroupControlNumberLowerBound>1</d6p1:GroupControlNumberLowerBound>
+                <d6p1:GroupControlNumberRollover>true</d6p1:GroupControlNumberRollover>
+                <d6p1:GroupControlNumberUpperBound>999999999</d6p1:GroupControlNumberUpperBound>
+                <d6p1:GroupDateFormat>1</d6p1:GroupDateFormat>
+                <d6p1:GroupHeaderVersion>00401</d6p1:GroupHeaderVersion>
+                <d6p1:GroupResponsibleAgencyCode>84</d6p1:GroupResponsibleAgencyCode>
+                <d6p1:GroupTimeFormat>0</d6p1:GroupTimeFormat>
+                <d6p1:InterchangeControlNumberLowerBound>1</d6p1:InterchangeControlNumberLowerBound>
+                <d6p1:InterchangeControlNumberRollover>true</d6p1:InterchangeControlNumberRollover>
+                <d6p1:InterchangeControlNumberUpperBound>999999999</d6p1:InterchangeControlNumberUpperBound>
+                <d6p1:InterchangeDuplicatesValidity>30</d6p1:InterchangeDuplicatesValidity>
+                <d6p1:MaskSecurityInfo>true</d6p1:MaskSecurityInfo>
+                <d6p1:MessageFilterType>1</d6p1:MessageFilterType>
+                <d6p1:NeedFunctionalAck>false</d6p1:NeedFunctionalAck>
+                <d6p1:NeedImplementationAck>false</d6p1:NeedImplementationAck>
+                <d6p1:NeedTechnicalAck>false</d6p1:NeedTechnicalAck>
+                <d6p1:PreserveInterchange>false</d6p1:PreserveInterchange>
+                <d6p1:ReceiverApplicationId>RECEIVE-APP</d6p1:ReceiverApplicationId>
+                <d6p1:ReplaceChar>32</d6p1:ReplaceChar>
+                <d6p1:ReplaceSeparatorsInPayload>true</d6p1:ReplaceSeparatorsInPayload>
+                <d6p1:RouteAcktoSendPipeline>true</d6p1:RouteAcktoSendPipeline>
+                <d6p1:RowVersion>AAAAAAAAwcw=</d6p1:RowVersion>
+                <d6p1:SchemaOverrides>
+                  <d6p1:X12SchemaOverrides z:Id="i4">
+                    <d6p1:InternalTargetNamespace>http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC</d6p1:InternalTargetNamespace>
+                    <d6p1:MessageId>835</d6p1:MessageId>
+                    <d6p1:OverridesId>103</d6p1:OverridesId>
+                    <d6p1:SenderApplicationId>HP</d6p1:SenderApplicationId>
+                    <d6p1:X12ProtocolSettings z:Ref="i2" />
+                    <d6p1:X12ProtocolSettingsReference xmlns:d9p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                    </d6p1:X12ProtocolSettingsReference>
+                    <d6p1:version>AAAAAAAAwc8=</d6p1:version>
+                  </d6p1:X12SchemaOverrides>
+                </d6p1:SchemaOverrides>
+                <d6p1:SecurityQualifier>00</d6p1:SecurityQualifier>
+                <d6p1:SegmentTerminator>126</d6p1:SegmentTerminator>
+                <d6p1:SegmentTerminatorSuffix>3</d6p1:SegmentTerminatorSuffix>
+                <d6p1:SenderApplicationId>BTS-SENDER</d6p1:SenderApplicationId>
+                <d6p1:SuspendInterchangeOnError>false</d6p1:SuspendInterchangeOnError>
+                <d6p1:TSApplyNewId>true</d6p1:TSApplyNewId>
+                <d6p1:TSControlNumberLowerBound>1</d6p1:TSControlNumberLowerBound>
+                <d6p1:TSControlNumberRollover>true</d6p1:TSControlNumberRollover>
+                <d6p1:TSControlNumberUpperBound>999999999</d6p1:TSControlNumberUpperBound>
+                <d6p1:TargetNamespace>http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC</d6p1:TargetNamespace>
+                <d6p1:TrailingSeparatorPolicy>0</d6p1:TrailingSeparatorPolicy>
+                <d6p1:TrimLeadingAndTrailingSpacesAndZeroes>false</d6p1:TrimLeadingAndTrailingSpacesAndZeroes>
+                <d6p1:UsageIndicator>2</d6p1:UsageIndicator>
+                <d6p1:UseControlStandardsIdAsRepSep>false</d6p1:UseControlStandardsIdAsRepSep>
+                <d6p1:UseDotAsDecimalSeparator>false</d6p1:UseDotAsDecimalSeparator>
+                <d6p1:ValidateCharacterSet>true</d6p1:ValidateCharacterSet>
+                <d6p1:ValidateEDITypes>false</d6p1:ValidateEDITypes>
+                <d6p1:ValidateExtended>false</d6p1:ValidateExtended>
+              </ProtocolSettings>
+              <ReceiverIdentity xmlns:d6p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" z:Id="i6" i:type="d6p1:QualifierIdentity" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+                <d6p1:BusinessProfileReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d6p1:BusinessProfileReference>
+                <d6p1:FallbackAgreement1Reference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d6p1:FallbackAgreement1Reference>
+                <d6p1:FallbackAgreementReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d6p1:FallbackAgreementReference>
+                <d6p1:Name>QualifierIdentity</d6p1:Name>
+                <d6p1:version>AAAAAAAACng=</d6p1:version>
+                <d6p1:AdditionalData>x12</d6p1:AdditionalData>
+                <d6p1:Description>Mutually Defined (X12)</d6p1:Description>
+                <d6p1:Qualifier>ZZ</d6p1:Qualifier>
+                <d6p1:Value>271836984</d6p1:Value>
+              </ReceiverIdentity>
+              <SendPorts xmlns:d6p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" />
+              <SenderIdentity xmlns:d6p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" z:Id="i7" i:type="d6p1:QualifierIdentity" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+                <d6p1:BusinessProfileReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d6p1:BusinessProfileReference>
+                <d6p1:FallbackAgreement1Reference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d6p1:FallbackAgreement1Reference>
+                <d6p1:FallbackAgreementReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d6p1:FallbackAgreementReference>
+                <d6p1:Name>QualifierIdentity</d6p1:Name>
+                <d6p1:version>AAAAAAAAjx4=</d6p1:version>
+                <d6p1:AdditionalData>x12</d6p1:AdditionalData>
+                <d6p1:Description>Health Industry Number</d6p1:Description>
+                <d6p1:Qualifier>20</d6p1:Qualifier>
+                <d6p1:Value>0135WCH00</d6p1:Value>
+              </SenderIdentity>
+            </OnewayAgreementAtoB>
+            <OnewayAgreementBtoA>
+              <AgreementAliases xmlns:d6p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" />
+              <BatchDescriptions xmlns:d6p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" />
+              <ProtocolSettings xmlns:d6p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" z:Id="i8" i:type="d6p1:X12ProtocolSettings" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+                <d6p1:BusinessProfileReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d6p1:BusinessProfileReference>
+                <d6p1:FallbackAgreementReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d6p1:FallbackAgreementReference>
+                <d6p1:OnewayAgreementReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d6p1:OnewayAgreementReference>
+                <d6p1:ProtocolName>x12</d6p1:ProtocolName>
+                <d6p1:SettingsName>unspecified</d6p1:SettingsName>
+                <d6p1:AcknowledgementControlNumberLowerBound>1</d6p1:AcknowledgementControlNumberLowerBound>
+                <d6p1:AcknowledgementControlNumberRollover>true</d6p1:AcknowledgementControlNumberRollover>
+                <d6p1:AcknowledgementControlNumberUpperBound>999999999</d6p1:AcknowledgementControlNumberUpperBound>
+                <d6p1:AllowLeadingAndTrailingSpacesAndZeroes>false</d6p1:AllowLeadingAndTrailingSpacesAndZeroes>
+                <d6p1:AuthorizationQualifier>00</d6p1:AuthorizationQualifier>
+                <d6p1:BatchFunctionalAck>true</d6p1:BatchFunctionalAck>
+                <d6p1:BatchImplementationAck>true</d6p1:BatchImplementationAck>
+                <d6p1:BatchTechnicalAck>true</d6p1:BatchTechnicalAck>
+                <d6p1:CharacterSet>2</d6p1:CharacterSet>
+                <d6p1:CheckDuplicateGroupControlNumber>false</d6p1:CheckDuplicateGroupControlNumber>
+                <d6p1:CheckDuplicateInterchangeControlNumber>false</d6p1:CheckDuplicateInterchangeControlNumber>
+                <d6p1:CheckDuplicateTransactionSetControlNumber>false</d6p1:CheckDuplicateTransactionSetControlNumber>
+                <d6p1:ComponentSeparator>58</d6p1:ComponentSeparator>
+                <d6p1:ControlStandardsId>94</d6p1:ControlStandardsId>
+                <d6p1:ControlVersionNumber>00501</d6p1:ControlVersionNumber>
+                <d6p1:ConvertImpliedDecimal>false</d6p1:ConvertImpliedDecimal>
+                <d6p1:CreateEmptyXmlTagsForTrailingSeparators>true</d6p1:CreateEmptyXmlTagsForTrailingSeparators>
+                <d6p1:DataElementSeparator>42</d6p1:DataElementSeparator>
+                <d6p1:EnableDefaultGroupHeaders>true</d6p1:EnableDefaultGroupHeaders>
+                <d6p1:EnvelopeOverrides>
+                  <d6p1:X12EnvelopeOverrides z:Id="i10">
+                    <d6p1:FunctionalIdentifierCode>HC</d6p1:FunctionalIdentifierCode>
+                    <d6p1:HeaderVersion>005010X224A2</d6p1:HeaderVersion>
+                    <d6p1:InternalDateFormat>0</d6p1:InternalDateFormat>
+                    <d6p1:InternalTimeFormat>0</d6p1:InternalTimeFormat>
+                    <d6p1:MessageId>837_D</d6p1:MessageId>
+                    <d6p1:OverridesId>13</d6p1:OverridesId>
+                    <d6p1:ProtocolVersion>05010</d6p1:ProtocolVersion>
+                    <d6p1:ReceiverApplicationId>0135WCH00</d6p1:ReceiverApplicationId>
+                    <d6p1:ResponsibleAgencyCodeInternal>88</d6p1:ResponsibleAgencyCodeInternal>
+                    <d6p1:SenderApplicationId>271836984</d6p1:SenderApplicationId>
+                    <d6p1:TargetNamespaceString>http://schemas.microsoft.com/Edi/X12</d6p1:TargetNamespaceString>
+                    <d6p1:X12ProtocolSettings z:Ref="i8" />
+                    <d6p1:X12ProtocolSettingsReference xmlns:d9p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                    </d6p1:X12ProtocolSettingsReference>
+                    <d6p1:version>AAAAAAAAwc4=</d6p1:version>
+                  </d6p1:X12EnvelopeOverrides>
+                </d6p1:EnvelopeOverrides>
+                <d6p1:FunctionalAckVersion>00401</d6p1:FunctionalAckVersion>
+                <d6p1:FunctionalGroupId>HC</d6p1:FunctionalGroupId>
+                <d6p1:GenerateLoopForValidMessagesInAck>false</d6p1:GenerateLoopForValidMessagesInAck>
+                <d6p1:GeneratePatAK901>false</d6p1:GeneratePatAK901>
+                <d6p1:GroupControlNumberLowerBound>1</d6p1:GroupControlNumberLowerBound>
+                <d6p1:GroupControlNumberRollover>true</d6p1:GroupControlNumberRollover>
+                <d6p1:GroupControlNumberUpperBound>999999999</d6p1:GroupControlNumberUpperBound>
+                <d6p1:GroupDateFormat>0</d6p1:GroupDateFormat>
+                <d6p1:GroupHeaderVersion>005010X224A2</d6p1:GroupHeaderVersion>
+                <d6p1:GroupResponsibleAgencyCode>88</d6p1:GroupResponsibleAgencyCode>
+                <d6p1:GroupTimeFormat>0</d6p1:GroupTimeFormat>
+                <d6p1:ImplementationAckVersion>00501</d6p1:ImplementationAckVersion>
+                <d6p1:InterchangeControlNumberLowerBound>1</d6p1:InterchangeControlNumberLowerBound>
+                <d6p1:InterchangeControlNumberRollover>true</d6p1:InterchangeControlNumberRollover>
+                <d6p1:InterchangeControlNumberUpperBound>999999999</d6p1:InterchangeControlNumberUpperBound>
+                <d6p1:InterchangeDuplicatesValidity>30</d6p1:InterchangeDuplicatesValidity>
+                <d6p1:MaskSecurityInfo>true</d6p1:MaskSecurityInfo>
+                <d6p1:MessageFilterType>1</d6p1:MessageFilterType>
+                <d6p1:NeedFunctionalAck>true</d6p1:NeedFunctionalAck>
+                <d6p1:NeedImplementationAck>false</d6p1:NeedImplementationAck>
+                <d6p1:NeedTechnicalAck>false</d6p1:NeedTechnicalAck>
+                <d6p1:PreserveInterchange>false</d6p1:PreserveInterchange>
+                <d6p1:ReceiverApplicationId>0135WCH00</d6p1:ReceiverApplicationId>
+                <d6p1:ReplaceChar>32</d6p1:ReplaceChar>
+                <d6p1:ReplaceSeparatorsInPayload>true</d6p1:ReplaceSeparatorsInPayload>
+                <d6p1:RouteAcktoSendPipeline>true</d6p1:RouteAcktoSendPipeline>
+                <d6p1:RowVersion>AAAAAAAAwc0=</d6p1:RowVersion>
+                <d6p1:SecurityQualifier>00</d6p1:SecurityQualifier>
+                <d6p1:SegmentTerminator>126</d6p1:SegmentTerminator>
+                <d6p1:SegmentTerminatorSuffix>3</d6p1:SegmentTerminatorSuffix>
+                <d6p1:SenderApplicationId>271836984</d6p1:SenderApplicationId>
+                <d6p1:SuspendInterchangeOnError>false</d6p1:SuspendInterchangeOnError>
+                <d6p1:TSApplyNewId>true</d6p1:TSApplyNewId>
+                <d6p1:TSControlNumberLowerBound>1</d6p1:TSControlNumberLowerBound>
+                <d6p1:TSControlNumberRollover>true</d6p1:TSControlNumberRollover>
+                <d6p1:TSControlNumberUpperBound>999999999</d6p1:TSControlNumberUpperBound>
+                <d6p1:TargetNamespace>http://schemas.microsoft.com/BizTalk/EDI/X12/2006</d6p1:TargetNamespace>
+                <d6p1:TrailingSeparatorPolicy>0</d6p1:TrailingSeparatorPolicy>
+                <d6p1:TrimLeadingAndTrailingSpacesAndZeroes>false</d6p1:TrimLeadingAndTrailingSpacesAndZeroes>
+                <d6p1:UsageIndicator>0</d6p1:UsageIndicator>
+                <d6p1:UseControlStandardsIdAsRepSep>true</d6p1:UseControlStandardsIdAsRepSep>
+                <d6p1:UseDotAsDecimalSeparator>false</d6p1:UseDotAsDecimalSeparator>
+                <d6p1:ValidateCharacterSet>true</d6p1:ValidateCharacterSet>
+                <d6p1:ValidateEDITypes>false</d6p1:ValidateEDITypes>
+                <d6p1:ValidateExtended>false</d6p1:ValidateExtended>
+              </ProtocolSettings>
+              <ReceiverIdentity xmlns:d6p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" z:Ref="i7" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+              <SendPorts xmlns:d6p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" />
+              <SenderIdentity xmlns:d6p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" z:Ref="i6" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+            </OnewayAgreementBtoA>
+            <ProfileA>ChangeHealthcare_Profile</ProfileA>
+            <ProfileB>Cloud9_Profile</ProfileB>
+            <Protocol>x12</Protocol>
+            <StartDate>2019-05-17T16:05:41.8015493-04:00</StartDate>
+          </Agreement>
+          <Agreement>
+            <Contacts xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement">
+              <d5p1:Contact z:Id="i12" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+                <d5p1:Address>
+                </d5p1:Address>
+                <d5p1:AgreementReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d5p1:AgreementReference>
+                <d5p1:BusinessPhone>
+                </d5p1:BusinessPhone>
+                <d5p1:Company>
+                </d5p1:Company>
+                <d5p1:ContactId>37</d5p1:ContactId>
+                <d5p1:Email>
+                </d5p1:Email>
+                <d5p1:Fax>
+                </d5p1:Fax>
+                <d5p1:JobTitle>
+                </d5p1:JobTitle>
+                <d5p1:MobilePhone>
+                </d5p1:MobilePhone>
+                <d5p1:Name>
+                </d5p1:Name>
+                <d5p1:Notes>
+                </d5p1:Notes>
+                <d5p1:WebAddress>
+                </d5p1:WebAddress>
+                <d5p1:version>AAAAAAAAwdQ=</d5p1:version>
+              </d5p1:Contact>
+            </Contacts>
+            <CustomSettings xmlns:d5p1="http://schemas.datacontract.org/2004/07/System.Collections.Generic">
+              <d5p1:KeyValuePairOfstringstring>
+                <d5p1:key>biztalk.LogErrors</d5p1:key>
+                <d5p1:value>True</d5p1:value>
+              </d5p1:KeyValuePairOfstringstring>
+              <d5p1:KeyValuePairOfstringstring>
+                <d5p1:key>biztalk.LogWarnings</d5p1:key>
+                <d5p1:value>True</d5p1:value>
+              </d5p1:KeyValuePairOfstringstring>
+              <d5p1:KeyValuePairOfstringstring>
+                <d5p1:key>biztalk.EnableReporting</d5p1:key>
+                <d5p1:value>False</d5p1:value>
+              </d5p1:KeyValuePairOfstringstring>
+              <d5p1:KeyValuePairOfstringstring>
+                <d5p1:key>biztalk.StoreMessages</d5p1:key>
+                <d5p1:value>False</d5p1:value>
+              </d5p1:KeyValuePairOfstringstring>
+            </CustomSettings>
+            <Description>
+            </Description>
+            <Enabled>true</Enabled>
+            <EndDate>9999-12-31T18:59:59.9999999-05:00</EndDate>
+            <Name>Cloud9_ChangeHealthcareHTTP</Name>
+            <OnewayAgreementAtoB>
+              <AgreementAliases xmlns:d6p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" />
+              <BatchDescriptions xmlns:d6p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" />
+              <ProtocolSettings xmlns:d6p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" z:Id="i13" i:type="d6p1:X12ProtocolSettings" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+                <d6p1:BusinessProfileReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d6p1:BusinessProfileReference>
+                <d6p1:FallbackAgreementReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d6p1:FallbackAgreementReference>
+                <d6p1:OnewayAgreementReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d6p1:OnewayAgreementReference>
+                <d6p1:ProtocolName>x12</d6p1:ProtocolName>
+                <d6p1:SettingsName>""</d6p1:SettingsName>
+                <d6p1:AcknowledgementControlNumberLowerBound>1</d6p1:AcknowledgementControlNumberLowerBound>
+                <d6p1:AcknowledgementControlNumberPrefix>
+                </d6p1:AcknowledgementControlNumberPrefix>
+                <d6p1:AcknowledgementControlNumberRollover>true</d6p1:AcknowledgementControlNumberRollover>
+                <d6p1:AcknowledgementControlNumberSuffix>
+                </d6p1:AcknowledgementControlNumberSuffix>
+                <d6p1:AcknowledgementControlNumberUpperBound>999999999</d6p1:AcknowledgementControlNumberUpperBound>
+                <d6p1:AllowLeadingAndTrailingSpacesAndZeroes>false</d6p1:AllowLeadingAndTrailingSpacesAndZeroes>
+                <d6p1:AuthorizationQualifier>00</d6p1:AuthorizationQualifier>
+                <d6p1:BatchFunctionalAck>true</d6p1:BatchFunctionalAck>
+                <d6p1:BatchImplementationAck>true</d6p1:BatchImplementationAck>
+                <d6p1:BatchTechnicalAck>true</d6p1:BatchTechnicalAck>
+                <d6p1:CharacterSet>2</d6p1:CharacterSet>
+                <d6p1:CheckDuplicateGroupControlNumber>false</d6p1:CheckDuplicateGroupControlNumber>
+                <d6p1:CheckDuplicateInterchangeControlNumber>false</d6p1:CheckDuplicateInterchangeControlNumber>
+                <d6p1:CheckDuplicateTransactionSetControlNumber>false</d6p1:CheckDuplicateTransactionSetControlNumber>
+                <d6p1:ComponentSeparator>58</d6p1:ComponentSeparator>
+                <d6p1:ControlStandardsId>85</d6p1:ControlStandardsId>
+                <d6p1:ControlVersionNumber>00401</d6p1:ControlVersionNumber>
+                <d6p1:ConvertImpliedDecimal>false</d6p1:ConvertImpliedDecimal>
+                <d6p1:CreateEmptyXmlTagsForTrailingSeparators>true</d6p1:CreateEmptyXmlTagsForTrailingSeparators>
+                <d6p1:DataElementSeparator>42</d6p1:DataElementSeparator>
+                <d6p1:EnableDefaultGroupHeaders>true</d6p1:EnableDefaultGroupHeaders>
+                <d6p1:GenerateLoopForValidMessagesInAck>false</d6p1:GenerateLoopForValidMessagesInAck>
+                <d6p1:GeneratePatAK901>false</d6p1:GeneratePatAK901>
+                <d6p1:GroupControlNumberLowerBound>1</d6p1:GroupControlNumberLowerBound>
+                <d6p1:GroupControlNumberRollover>true</d6p1:GroupControlNumberRollover>
+                <d6p1:GroupControlNumberUpperBound>999999999</d6p1:GroupControlNumberUpperBound>
+                <d6p1:GroupDateFormat>1</d6p1:GroupDateFormat>
+                <d6p1:GroupHeaderVersion>00401</d6p1:GroupHeaderVersion>
+                <d6p1:GroupResponsibleAgencyCode>84</d6p1:GroupResponsibleAgencyCode>
+                <d6p1:GroupTimeFormat>0</d6p1:GroupTimeFormat>
+                <d6p1:InterchangeControlNumberLowerBound>1</d6p1:InterchangeControlNumberLowerBound>
+                <d6p1:InterchangeControlNumberRollover>true</d6p1:InterchangeControlNumberRollover>
+                <d6p1:InterchangeControlNumberUpperBound>999999999</d6p1:InterchangeControlNumberUpperBound>
+                <d6p1:InterchangeDuplicatesValidity>30</d6p1:InterchangeDuplicatesValidity>
+                <d6p1:MaskSecurityInfo>true</d6p1:MaskSecurityInfo>
+                <d6p1:MessageFilterType>1</d6p1:MessageFilterType>
+                <d6p1:NeedFunctionalAck>false</d6p1:NeedFunctionalAck>
+                <d6p1:NeedImplementationAck>false</d6p1:NeedImplementationAck>
+                <d6p1:NeedTechnicalAck>false</d6p1:NeedTechnicalAck>
+                <d6p1:PreserveInterchange>false</d6p1:PreserveInterchange>
+                <d6p1:ReceiverApplicationId>RECEIVE-APP</d6p1:ReceiverApplicationId>
+                <d6p1:ReplaceChar>36</d6p1:ReplaceChar>
+                <d6p1:ReplaceSeparatorsInPayload>false</d6p1:ReplaceSeparatorsInPayload>
+                <d6p1:RouteAcktoSendPipeline>true</d6p1:RouteAcktoSendPipeline>
+                <d6p1:RowVersion>AAAAAAAAwdU=</d6p1:RowVersion>
+                <d6p1:SchemaOverrides>
+                  <d6p1:X12SchemaOverrides z:Id="i15">
+                    <d6p1:InternalTargetNamespace>http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC4010</d6p1:InternalTargetNamespace>
+                    <d6p1:MessageId>277</d6p1:MessageId>
+                    <d6p1:OverridesId>104</d6p1:OverridesId>
+                    <d6p1:SenderApplicationId>HN</d6p1:SenderApplicationId>
+                    <d6p1:X12ProtocolSettings z:Ref="i13" />
+                    <d6p1:X12ProtocolSettingsReference xmlns:d9p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                    </d6p1:X12ProtocolSettingsReference>
+                    <d6p1:version>AAAAAAAAwdc=</d6p1:version>
+                  </d6p1:X12SchemaOverrides>
+                </d6p1:SchemaOverrides>
+                <d6p1:SecurityQualifier>00</d6p1:SecurityQualifier>
+                <d6p1:SegmentTerminator>126</d6p1:SegmentTerminator>
+                <d6p1:SegmentTerminatorSuffix>0</d6p1:SegmentTerminatorSuffix>
+                <d6p1:SenderApplicationId>BTS-SENDER</d6p1:SenderApplicationId>
+                <d6p1:SuspendInterchangeOnError>false</d6p1:SuspendInterchangeOnError>
+                <d6p1:TSApplyNewId>true</d6p1:TSApplyNewId>
+                <d6p1:TSControlNumberLowerBound>1</d6p1:TSControlNumberLowerBound>
+                <d6p1:TSControlNumberRollover>true</d6p1:TSControlNumberRollover>
+                <d6p1:TSControlNumberUpperBound>999999999</d6p1:TSControlNumberUpperBound>
+                <d6p1:TargetNamespace>http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC4010</d6p1:TargetNamespace>
+                <d6p1:TrailingSeparatorPolicy>0</d6p1:TrailingSeparatorPolicy>
+                <d6p1:TrimLeadingAndTrailingSpacesAndZeroes>false</d6p1:TrimLeadingAndTrailingSpacesAndZeroes>
+                <d6p1:UsageIndicator>0</d6p1:UsageIndicator>
+                <d6p1:UseControlStandardsIdAsRepSep>false</d6p1:UseControlStandardsIdAsRepSep>
+                <d6p1:UseDotAsDecimalSeparator>false</d6p1:UseDotAsDecimalSeparator>
+                <d6p1:ValidateCharacterSet>true</d6p1:ValidateCharacterSet>
+                <d6p1:ValidateEDITypes>true</d6p1:ValidateEDITypes>
+                <d6p1:ValidateExtended>false</d6p1:ValidateExtended>
+              </ProtocolSettings>
+              <ReceiverIdentity xmlns:d6p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" z:Id="i17" i:type="d6p1:QualifierIdentity" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+                <d6p1:BusinessProfileReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d6p1:BusinessProfileReference>
+                <d6p1:FallbackAgreement1Reference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d6p1:FallbackAgreement1Reference>
+                <d6p1:FallbackAgreementReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d6p1:FallbackAgreementReference>
+                <d6p1:Name>QualifierIdentity</d6p1:Name>
+                <d6p1:version>AAAAAAAAXzE=</d6p1:version>
+                <d6p1:AdditionalData>x12</d6p1:AdditionalData>
+                <d6p1:Description>Mutually Defined (X12)</d6p1:Description>
+                <d6p1:Qualifier>ZZ</d6p1:Qualifier>
+                <d6p1:Value>462:TEST001</d6p1:Value>
+              </ReceiverIdentity>
+              <SendPorts xmlns:d6p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" />
+              <SenderIdentity xmlns:d6p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" z:Id="i18" i:type="d6p1:QualifierIdentity" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+                <d6p1:BusinessProfileReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d6p1:BusinessProfileReference>
+                <d6p1:FallbackAgreement1Reference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d6p1:FallbackAgreement1Reference>
+                <d6p1:FallbackAgreementReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d6p1:FallbackAgreementReference>
+                <d6p1:Name>QualifierIdentity</d6p1:Name>
+                <d6p1:version>AAAAAAAAjx8=</d6p1:version>
+                <d6p1:AdditionalData>x12</d6p1:AdditionalData>
+                <d6p1:Description>Mutually Defined (X12)</d6p1:Description>
+                <d6p1:Qualifier>ZZ</d6p1:Qualifier>
+                <d6p1:Value>WEBMDDENTAL</d6p1:Value>
+              </SenderIdentity>
+            </OnewayAgreementAtoB>
+            <OnewayAgreementBtoA>
+              <AgreementAliases xmlns:d6p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" />
+              <BatchDescriptions xmlns:d6p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" />
+              <ProtocolSettings xmlns:d6p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" z:Id="i19" i:type="d6p1:X12ProtocolSettings" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+                <d6p1:BusinessProfileReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d6p1:BusinessProfileReference>
+                <d6p1:FallbackAgreementReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d6p1:FallbackAgreementReference>
+                <d6p1:OnewayAgreementReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d6p1:OnewayAgreementReference>
+                <d6p1:ProtocolName>x12</d6p1:ProtocolName>
+                <d6p1:SettingsName>""</d6p1:SettingsName>
+                <d6p1:AcknowledgementControlNumberLowerBound>1</d6p1:AcknowledgementControlNumberLowerBound>
+                <d6p1:AcknowledgementControlNumberPrefix>
+                </d6p1:AcknowledgementControlNumberPrefix>
+                <d6p1:AcknowledgementControlNumberRollover>true</d6p1:AcknowledgementControlNumberRollover>
+                <d6p1:AcknowledgementControlNumberSuffix>
+                </d6p1:AcknowledgementControlNumberSuffix>
+                <d6p1:AcknowledgementControlNumberUpperBound>999999999</d6p1:AcknowledgementControlNumberUpperBound>
+                <d6p1:AllowLeadingAndTrailingSpacesAndZeroes>false</d6p1:AllowLeadingAndTrailingSpacesAndZeroes>
+                <d6p1:AuthorizationQualifier>00</d6p1:AuthorizationQualifier>
+                <d6p1:BatchFunctionalAck>true</d6p1:BatchFunctionalAck>
+                <d6p1:BatchImplementationAck>true</d6p1:BatchImplementationAck>
+                <d6p1:BatchTechnicalAck>true</d6p1:BatchTechnicalAck>
+                <d6p1:CharacterSet>2</d6p1:CharacterSet>
+                <d6p1:CheckDuplicateGroupControlNumber>false</d6p1:CheckDuplicateGroupControlNumber>
+                <d6p1:CheckDuplicateInterchangeControlNumber>false</d6p1:CheckDuplicateInterchangeControlNumber>
+                <d6p1:CheckDuplicateTransactionSetControlNumber>false</d6p1:CheckDuplicateTransactionSetControlNumber>
+                <d6p1:ComponentSeparator>58</d6p1:ComponentSeparator>
+                <d6p1:ControlStandardsId>85</d6p1:ControlStandardsId>
+                <d6p1:ControlVersionNumber>00401</d6p1:ControlVersionNumber>
+                <d6p1:ConvertImpliedDecimal>false</d6p1:ConvertImpliedDecimal>
+                <d6p1:CreateEmptyXmlTagsForTrailingSeparators>true</d6p1:CreateEmptyXmlTagsForTrailingSeparators>
+                <d6p1:DataElementSeparator>42</d6p1:DataElementSeparator>
+                <d6p1:EnableDefaultGroupHeaders>true</d6p1:EnableDefaultGroupHeaders>
+                <d6p1:GenerateLoopForValidMessagesInAck>false</d6p1:GenerateLoopForValidMessagesInAck>
+                <d6p1:GeneratePatAK901>false</d6p1:GeneratePatAK901>
+                <d6p1:GroupControlNumberLowerBound>1</d6p1:GroupControlNumberLowerBound>
+                <d6p1:GroupControlNumberRollover>true</d6p1:GroupControlNumberRollover>
+                <d6p1:GroupControlNumberUpperBound>999999999</d6p1:GroupControlNumberUpperBound>
+                <d6p1:GroupDateFormat>1</d6p1:GroupDateFormat>
+                <d6p1:GroupHeaderVersion>00401</d6p1:GroupHeaderVersion>
+                <d6p1:GroupResponsibleAgencyCode>84</d6p1:GroupResponsibleAgencyCode>
+                <d6p1:GroupTimeFormat>0</d6p1:GroupTimeFormat>
+                <d6p1:InterchangeControlNumberLowerBound>1</d6p1:InterchangeControlNumberLowerBound>
+                <d6p1:InterchangeControlNumberRollover>true</d6p1:InterchangeControlNumberRollover>
+                <d6p1:InterchangeControlNumberUpperBound>999999999</d6p1:InterchangeControlNumberUpperBound>
+                <d6p1:InterchangeDuplicatesValidity>30</d6p1:InterchangeDuplicatesValidity>
+                <d6p1:MaskSecurityInfo>true</d6p1:MaskSecurityInfo>
+                <d6p1:MessageFilterType>1</d6p1:MessageFilterType>
+                <d6p1:NeedFunctionalAck>false</d6p1:NeedFunctionalAck>
+                <d6p1:NeedImplementationAck>false</d6p1:NeedImplementationAck>
+                <d6p1:NeedTechnicalAck>false</d6p1:NeedTechnicalAck>
+                <d6p1:PreserveInterchange>false</d6p1:PreserveInterchange>
+                <d6p1:ReceiverApplicationId>RECEIVE-APP</d6p1:ReceiverApplicationId>
+                <d6p1:ReplaceChar>36</d6p1:ReplaceChar>
+                <d6p1:ReplaceSeparatorsInPayload>false</d6p1:ReplaceSeparatorsInPayload>
+                <d6p1:RouteAcktoSendPipeline>true</d6p1:RouteAcktoSendPipeline>
+                <d6p1:RowVersion>AAAAAAAAwdY=</d6p1:RowVersion>
+                <d6p1:SecurityQualifier>00</d6p1:SecurityQualifier>
+                <d6p1:SegmentTerminator>126</d6p1:SegmentTerminator>
+                <d6p1:SegmentTerminatorSuffix>0</d6p1:SegmentTerminatorSuffix>
+                <d6p1:SenderApplicationId>BTS-SENDER</d6p1:SenderApplicationId>
+                <d6p1:SuspendInterchangeOnError>false</d6p1:SuspendInterchangeOnError>
+                <d6p1:TSApplyNewId>true</d6p1:TSApplyNewId>
+                <d6p1:TSControlNumberLowerBound>1</d6p1:TSControlNumberLowerBound>
+                <d6p1:TSControlNumberRollover>true</d6p1:TSControlNumberRollover>
+                <d6p1:TSControlNumberUpperBound>999999999</d6p1:TSControlNumberUpperBound>
+                <d6p1:TargetNamespace>http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC4010</d6p1:TargetNamespace>
+                <d6p1:TrailingSeparatorPolicy>0</d6p1:TrailingSeparatorPolicy>
+                <d6p1:TrimLeadingAndTrailingSpacesAndZeroes>false</d6p1:TrimLeadingAndTrailingSpacesAndZeroes>
+                <d6p1:UsageIndicator>0</d6p1:UsageIndicator>
+                <d6p1:UseControlStandardsIdAsRepSep>false</d6p1:UseControlStandardsIdAsRepSep>
+                <d6p1:UseDotAsDecimalSeparator>false</d6p1:UseDotAsDecimalSeparator>
+                <d6p1:ValidateCharacterSet>true</d6p1:ValidateCharacterSet>
+                <d6p1:ValidateEDITypes>false</d6p1:ValidateEDITypes>
+                <d6p1:ValidateExtended>false</d6p1:ValidateExtended>
+              </ProtocolSettings>
+              <ReceiverIdentity xmlns:d6p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" z:Ref="i18" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+              <SendPorts xmlns:d6p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" />
+              <SenderIdentity xmlns:d6p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" z:Ref="i17" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+            </OnewayAgreementBtoA>
+            <ProfileA>ChangeHealthcare_Profile</ProfileA>
+            <ProfileB>Cloud9_Profile</ProfileB>
+            <Protocol>x12</Protocol>
+            <StartDate>2019-11-14T09:01:22.2298103-05:00</StartDate>
+          </Agreement>
+        </Agreements>
+        <PartnerA>ChangeHealthcare</PartnerA>
+        <PartnerB>CLOUD9</PartnerB>
+      </Partnership>
+      <Partnership>
+        <Agreements>
+          <Agreement>
+            <Contacts xmlns:d5p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement">
+              <d5p1:Contact z:Id="i21" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+                <d5p1:Address>
+                </d5p1:Address>
+                <d5p1:AgreementReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d5p1:AgreementReference>
+                <d5p1:BusinessPhone>
+                </d5p1:BusinessPhone>
+                <d5p1:Company>
+                </d5p1:Company>
+                <d5p1:ContactId>43</d5p1:ContactId>
+                <d5p1:Email>
+                </d5p1:Email>
+                <d5p1:Fax>
+                </d5p1:Fax>
+                <d5p1:JobTitle>
+                </d5p1:JobTitle>
+                <d5p1:MobilePhone>
+                </d5p1:MobilePhone>
+                <d5p1:Name>
+                </d5p1:Name>
+                <d5p1:Notes>
+                </d5p1:Notes>
+                <d5p1:WebAddress>
+                </d5p1:WebAddress>
+                <d5p1:version>AAAAAAAAwgw=</d5p1:version>
+              </d5p1:Contact>
+            </Contacts>
+            <CustomSettings xmlns:d5p1="http://schemas.datacontract.org/2004/07/System.Collections.Generic">
+              <d5p1:KeyValuePairOfstringstring>
+                <d5p1:key>biztalk.LogErrors</d5p1:key>
+                <d5p1:value>True</d5p1:value>
+              </d5p1:KeyValuePairOfstringstring>
+              <d5p1:KeyValuePairOfstringstring>
+                <d5p1:key>biztalk.LogWarnings</d5p1:key>
+                <d5p1:value>True</d5p1:value>
+              </d5p1:KeyValuePairOfstringstring>
+              <d5p1:KeyValuePairOfstringstring>
+                <d5p1:key>biztalk.EnableReporting</d5p1:key>
+                <d5p1:value>False</d5p1:value>
+              </d5p1:KeyValuePairOfstringstring>
+              <d5p1:KeyValuePairOfstringstring>
+                <d5p1:key>biztalk.StoreMessages</d5p1:key>
+                <d5p1:value>False</d5p1:value>
+              </d5p1:KeyValuePairOfstringstring>
+            </CustomSettings>
+            <Description>
+            </Description>
+            <Enabled>true</Enabled>
+            <EndDate>9999-12-31T18:59:59.9999999-05:00</EndDate>
+            <Name>CLOUD9_PDS_271</Name>
+            <OnewayAgreementAtoB>
+              <AgreementAliases xmlns:d6p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" />
+              <BatchDescriptions xmlns:d6p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" />
+              <ProtocolSettings xmlns:d6p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" z:Id="i22" i:type="d6p1:X12ProtocolSettings" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+                <d6p1:BusinessProfileReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d6p1:BusinessProfileReference>
+                <d6p1:FallbackAgreementReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d6p1:FallbackAgreementReference>
+                <d6p1:OnewayAgreementReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d6p1:OnewayAgreementReference>
+                <d6p1:ProtocolName>x12</d6p1:ProtocolName>
+                <d6p1:SettingsName>unspecified</d6p1:SettingsName>
+                <d6p1:AcknowledgementControlNumberLowerBound>1</d6p1:AcknowledgementControlNumberLowerBound>
+                <d6p1:AcknowledgementControlNumberRollover>true</d6p1:AcknowledgementControlNumberRollover>
+                <d6p1:AcknowledgementControlNumberUpperBound>999999999</d6p1:AcknowledgementControlNumberUpperBound>
+                <d6p1:AllowLeadingAndTrailingSpacesAndZeroes>false</d6p1:AllowLeadingAndTrailingSpacesAndZeroes>
+                <d6p1:AuthorizationQualifier>00</d6p1:AuthorizationQualifier>
+                <d6p1:BatchFunctionalAck>true</d6p1:BatchFunctionalAck>
+                <d6p1:BatchImplementationAck>true</d6p1:BatchImplementationAck>
+                <d6p1:BatchTechnicalAck>true</d6p1:BatchTechnicalAck>
+                <d6p1:CharacterSet>2</d6p1:CharacterSet>
+                <d6p1:CheckDuplicateGroupControlNumber>false</d6p1:CheckDuplicateGroupControlNumber>
+                <d6p1:CheckDuplicateInterchangeControlNumber>false</d6p1:CheckDuplicateInterchangeControlNumber>
+                <d6p1:CheckDuplicateTransactionSetControlNumber>false</d6p1:CheckDuplicateTransactionSetControlNumber>
+                <d6p1:ComponentSeparator>58</d6p1:ComponentSeparator>
+                <d6p1:ControlStandardsId>85</d6p1:ControlStandardsId>
+                <d6p1:ControlVersionNumber>00401</d6p1:ControlVersionNumber>
+                <d6p1:ConvertImpliedDecimal>false</d6p1:ConvertImpliedDecimal>
+                <d6p1:CreateEmptyXmlTagsForTrailingSeparators>true</d6p1:CreateEmptyXmlTagsForTrailingSeparators>
+                <d6p1:DataElementSeparator>42</d6p1:DataElementSeparator>
+                <d6p1:EnableDefaultGroupHeaders>true</d6p1:EnableDefaultGroupHeaders>
+                <d6p1:GenerateLoopForValidMessagesInAck>false</d6p1:GenerateLoopForValidMessagesInAck>
+                <d6p1:GeneratePatAK901>false</d6p1:GeneratePatAK901>
+                <d6p1:GroupControlNumberLowerBound>1</d6p1:GroupControlNumberLowerBound>
+                <d6p1:GroupControlNumberRollover>true</d6p1:GroupControlNumberRollover>
+                <d6p1:GroupControlNumberUpperBound>999999999</d6p1:GroupControlNumberUpperBound>
+                <d6p1:GroupDateFormat>1</d6p1:GroupDateFormat>
+                <d6p1:GroupHeaderVersion>00401</d6p1:GroupHeaderVersion>
+                <d6p1:GroupResponsibleAgencyCode>84</d6p1:GroupResponsibleAgencyCode>
+                <d6p1:GroupTimeFormat>0</d6p1:GroupTimeFormat>
+                <d6p1:InterchangeControlNumberLowerBound>1</d6p1:InterchangeControlNumberLowerBound>
+                <d6p1:InterchangeControlNumberRollover>true</d6p1:InterchangeControlNumberRollover>
+                <d6p1:InterchangeControlNumberUpperBound>999999999</d6p1:InterchangeControlNumberUpperBound>
+                <d6p1:InterchangeDuplicatesValidity>30</d6p1:InterchangeDuplicatesValidity>
+                <d6p1:MaskSecurityInfo>true</d6p1:MaskSecurityInfo>
+                <d6p1:MessageFilterType>1</d6p1:MessageFilterType>
+                <d6p1:NeedFunctionalAck>false</d6p1:NeedFunctionalAck>
+                <d6p1:NeedImplementationAck>false</d6p1:NeedImplementationAck>
+                <d6p1:NeedTechnicalAck>false</d6p1:NeedTechnicalAck>
+                <d6p1:PreserveInterchange>false</d6p1:PreserveInterchange>
+                <d6p1:ReceiverApplicationId>RECEIVE-APP</d6p1:ReceiverApplicationId>
+                <d6p1:ReplaceChar>36</d6p1:ReplaceChar>
+                <d6p1:ReplaceSeparatorsInPayload>false</d6p1:ReplaceSeparatorsInPayload>
+                <d6p1:RouteAcktoSendPipeline>true</d6p1:RouteAcktoSendPipeline>
+                <d6p1:RowVersion>AAAAAAAAwg8=</d6p1:RowVersion>
+                <d6p1:SecurityQualifier>00</d6p1:SecurityQualifier>
+                <d6p1:SegmentTerminator>126</d6p1:SegmentTerminator>
+                <d6p1:SegmentTerminatorSuffix>0</d6p1:SegmentTerminatorSuffix>
+                <d6p1:SenderApplicationId>BTS-SENDER</d6p1:SenderApplicationId>
+                <d6p1:SuspendInterchangeOnError>false</d6p1:SuspendInterchangeOnError>
+                <d6p1:TSApplyNewId>true</d6p1:TSApplyNewId>
+                <d6p1:TSControlNumberLowerBound>1</d6p1:TSControlNumberLowerBound>
+                <d6p1:TSControlNumberRollover>true</d6p1:TSControlNumberRollover>
+                <d6p1:TSControlNumberUpperBound>999999999</d6p1:TSControlNumberUpperBound>
+                <d6p1:TargetNamespace>http://schemas.microsoft.com/BizTalk/EDI/X12/2006</d6p1:TargetNamespace>
+                <d6p1:TrailingSeparatorPolicy>0</d6p1:TrailingSeparatorPolicy>
+                <d6p1:TrimLeadingAndTrailingSpacesAndZeroes>false</d6p1:TrimLeadingAndTrailingSpacesAndZeroes>
+                <d6p1:UsageIndicator>0</d6p1:UsageIndicator>
+                <d6p1:UseControlStandardsIdAsRepSep>false</d6p1:UseControlStandardsIdAsRepSep>
+                <d6p1:UseDotAsDecimalSeparator>false</d6p1:UseDotAsDecimalSeparator>
+                <d6p1:ValidateCharacterSet>true</d6p1:ValidateCharacterSet>
+                <d6p1:ValidateEDITypes>true</d6p1:ValidateEDITypes>
+                <d6p1:ValidateExtended>false</d6p1:ValidateExtended>
+              </ProtocolSettings>
+              <ReceiverIdentity xmlns:d6p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" z:Id="i24" i:type="d6p1:QualifierIdentity" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+                <d6p1:BusinessProfileReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d6p1:BusinessProfileReference>
+                <d6p1:FallbackAgreement1Reference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d6p1:FallbackAgreement1Reference>
+                <d6p1:FallbackAgreementReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d6p1:FallbackAgreementReference>
+                <d6p1:Name>QualifierIdentity</d6p1:Name>
+                <d6p1:version>AAAAAAAAwcQ=</d6p1:version>
+                <d6p1:AdditionalData>x12</d6p1:AdditionalData>
+                <d6p1:Description>Mutually Defined (X12)</d6p1:Description>
+                <d6p1:Qualifier>ZZ</d6p1:Qualifier>
+                <d6p1:Value>PDSEligibility</d6p1:Value>
+              </ReceiverIdentity>
+              <SendPorts xmlns:d6p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" />
+              <SenderIdentity xmlns:d6p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" z:Id="i25" i:type="d6p1:QualifierIdentity" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+                <d6p1:BusinessProfileReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d6p1:BusinessProfileReference>
+                <d6p1:FallbackAgreement1Reference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d6p1:FallbackAgreement1Reference>
+                <d6p1:FallbackAgreementReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d6p1:FallbackAgreementReference>
+                <d6p1:Name>QualifierIdentity</d6p1:Name>
+                <d6p1:version>AAAAAAAAwcM=</d6p1:version>
+                <d6p1:AdditionalData>x12</d6p1:AdditionalData>
+                <d6p1:Description>Mutually Defined (X12)</d6p1:Description>
+                <d6p1:Qualifier>ZZ</d6p1:Qualifier>
+                <d6p1:Value>EPIC</d6p1:Value>
+              </SenderIdentity>
+            </OnewayAgreementAtoB>
+            <OnewayAgreementBtoA>
+              <AgreementAliases xmlns:d6p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" />
+              <BatchDescriptions xmlns:d6p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" />
+              <ProtocolSettings xmlns:d6p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" z:Id="i26" i:type="d6p1:X12ProtocolSettings" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+                <d6p1:BusinessProfileReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d6p1:BusinessProfileReference>
+                <d6p1:FallbackAgreementReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d6p1:FallbackAgreementReference>
+                <d6p1:OnewayAgreementReference xmlns:d7p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                </d6p1:OnewayAgreementReference>
+                <d6p1:ProtocolName>x12</d6p1:ProtocolName>
+                <d6p1:SettingsName>unspecified</d6p1:SettingsName>
+                <d6p1:AcknowledgementControlNumberLowerBound>1</d6p1:AcknowledgementControlNumberLowerBound>
+                <d6p1:AcknowledgementControlNumberRollover>true</d6p1:AcknowledgementControlNumberRollover>
+                <d6p1:AcknowledgementControlNumberUpperBound>999999999</d6p1:AcknowledgementControlNumberUpperBound>
+                <d6p1:AllowLeadingAndTrailingSpacesAndZeroes>true</d6p1:AllowLeadingAndTrailingSpacesAndZeroes>
+                <d6p1:AuthorizationQualifier>00</d6p1:AuthorizationQualifier>
+                <d6p1:BatchFunctionalAck>true</d6p1:BatchFunctionalAck>
+                <d6p1:BatchImplementationAck>true</d6p1:BatchImplementationAck>
+                <d6p1:BatchTechnicalAck>true</d6p1:BatchTechnicalAck>
+                <d6p1:CharacterSet>2</d6p1:CharacterSet>
+                <d6p1:CheckDuplicateGroupControlNumber>false</d6p1:CheckDuplicateGroupControlNumber>
+                <d6p1:CheckDuplicateInterchangeControlNumber>false</d6p1:CheckDuplicateInterchangeControlNumber>
+                <d6p1:CheckDuplicateTransactionSetControlNumber>false</d6p1:CheckDuplicateTransactionSetControlNumber>
+                <d6p1:ComponentSeparator>58</d6p1:ComponentSeparator>
+                <d6p1:ControlStandardsId>94</d6p1:ControlStandardsId>
+                <d6p1:ControlVersionNumber>00401</d6p1:ControlVersionNumber>
+                <d6p1:ConvertImpliedDecimal>false</d6p1:ConvertImpliedDecimal>
+                <d6p1:CreateEmptyXmlTagsForTrailingSeparators>true</d6p1:CreateEmptyXmlTagsForTrailingSeparators>
+                <d6p1:DataElementSeparator>42</d6p1:DataElementSeparator>
+                <d6p1:EnableDefaultGroupHeaders>true</d6p1:EnableDefaultGroupHeaders>
+                <d6p1:GenerateLoopForValidMessagesInAck>false</d6p1:GenerateLoopForValidMessagesInAck>
+                <d6p1:GeneratePatAK901>false</d6p1:GeneratePatAK901>
+                <d6p1:GroupControlNumberLowerBound>1</d6p1:GroupControlNumberLowerBound>
+                <d6p1:GroupControlNumberRollover>true</d6p1:GroupControlNumberRollover>
+                <d6p1:GroupControlNumberUpperBound>999999999</d6p1:GroupControlNumberUpperBound>
+                <d6p1:GroupDateFormat>1</d6p1:GroupDateFormat>
+                <d6p1:GroupHeaderVersion>00401</d6p1:GroupHeaderVersion>
+                <d6p1:GroupResponsibleAgencyCode>84</d6p1:GroupResponsibleAgencyCode>
+                <d6p1:GroupTimeFormat>0</d6p1:GroupTimeFormat>
+                <d6p1:InterchangeControlNumberLowerBound>1</d6p1:InterchangeControlNumberLowerBound>
+                <d6p1:InterchangeControlNumberRollover>true</d6p1:InterchangeControlNumberRollover>
+                <d6p1:InterchangeControlNumberUpperBound>999999999</d6p1:InterchangeControlNumberUpperBound>
+                <d6p1:InterchangeDuplicatesValidity>30</d6p1:InterchangeDuplicatesValidity>
+                <d6p1:MaskSecurityInfo>true</d6p1:MaskSecurityInfo>
+                <d6p1:MessageFilterType>1</d6p1:MessageFilterType>
+                <d6p1:NeedFunctionalAck>false</d6p1:NeedFunctionalAck>
+                <d6p1:NeedImplementationAck>false</d6p1:NeedImplementationAck>
+                <d6p1:NeedTechnicalAck>false</d6p1:NeedTechnicalAck>
+                <d6p1:PreserveInterchange>false</d6p1:PreserveInterchange>
+                <d6p1:ReceiverApplicationId>RECEIVE-APP</d6p1:ReceiverApplicationId>
+                <d6p1:ReplaceChar>36</d6p1:ReplaceChar>
+                <d6p1:ReplaceSeparatorsInPayload>false</d6p1:ReplaceSeparatorsInPayload>
+                <d6p1:RouteAcktoSendPipeline>true</d6p1:RouteAcktoSendPipeline>
+                <d6p1:RowVersion>AAAAAAAAwhA=</d6p1:RowVersion>
+                <d6p1:SchemaOverrides>
+                  <d6p1:X12SchemaOverrides z:Id="i28">
+                    <d6p1:InternalTargetNamespace>http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC</d6p1:InternalTargetNamespace>
+                    <d6p1:MessageId>271</d6p1:MessageId>
+                    <d6p1:OverridesId>114</d6p1:OverridesId>
+                    <d6p1:SenderApplicationId>HB</d6p1:SenderApplicationId>
+                    <d6p1:X12ProtocolSettings z:Ref="i26" />
+                    <d6p1:X12ProtocolSettingsReference xmlns:d9p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+                    </d6p1:X12ProtocolSettingsReference>
+                    <d6p1:version>AAAAAAAAwhI=</d6p1:version>
+                  </d6p1:X12SchemaOverrides>
+                </d6p1:SchemaOverrides>
+                <d6p1:SecurityQualifier>00</d6p1:SecurityQualifier>
+                <d6p1:SegmentTerminator>126</d6p1:SegmentTerminator>
+                <d6p1:SegmentTerminatorSuffix>0</d6p1:SegmentTerminatorSuffix>
+                <d6p1:SenderApplicationId>BTS-SENDER</d6p1:SenderApplicationId>
+                <d6p1:SuspendInterchangeOnError>false</d6p1:SuspendInterchangeOnError>
+                <d6p1:TSApplyNewId>true</d6p1:TSApplyNewId>
+                <d6p1:TSControlNumberLowerBound>1</d6p1:TSControlNumberLowerBound>
+                <d6p1:TSControlNumberRollover>true</d6p1:TSControlNumberRollover>
+                <d6p1:TSControlNumberUpperBound>999999999</d6p1:TSControlNumberUpperBound>
+                <d6p1:TargetNamespace>http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC</d6p1:TargetNamespace>
+                <d6p1:TrailingSeparatorPolicy>1</d6p1:TrailingSeparatorPolicy>
+                <d6p1:TrimLeadingAndTrailingSpacesAndZeroes>false</d6p1:TrimLeadingAndTrailingSpacesAndZeroes>
+                <d6p1:UsageIndicator>0</d6p1:UsageIndicator>
+                <d6p1:UseControlStandardsIdAsRepSep>true</d6p1:UseControlStandardsIdAsRepSep>
+                <d6p1:UseDotAsDecimalSeparator>false</d6p1:UseDotAsDecimalSeparator>
+                <d6p1:ValidateCharacterSet>true</d6p1:ValidateCharacterSet>
+                <d6p1:ValidateEDITypes>true</d6p1:ValidateEDITypes>
+                <d6p1:ValidateExtended>false</d6p1:ValidateExtended>
+              </ProtocolSettings>
+              <ReceiverIdentity xmlns:d6p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" z:Ref="i25" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+              <SendPorts xmlns:d6p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" />
+              <SenderIdentity xmlns:d6p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" z:Ref="i24" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/" />
+            </OnewayAgreementBtoA>
+            <ProfileA>Cloud9_Profile</ProfileA>
+            <ProfileB>PDS_Profile</ProfileB>
+            <Protocol>x12</Protocol>
+            <StartDate>2020-03-19T07:45:16.4296862-04:00</StartDate>
+          </Agreement>
+        </Agreements>
+        <PartnerA>CLOUD9</PartnerA>
+        <PartnerB>PDS</PartnerB>
+      </Partnership>
+    </ArrayOfPartnership>
+  </PartyCollection>
+  <EdiGlobalProperties>
+    <FallbackData xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.Deployment.B2B.PartnerManagement">
+      <EdifactFallback>
+        <CustomSettings xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+        <ProtocolSettings xmlns:d3p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" z:Id="i1" i:type="d3p1:EDIFACTProtocolSettings" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+          <d3p1:BusinessProfileReference xmlns:d4p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+          </d3p1:BusinessProfileReference>
+          <d3p1:FallbackAgreementReference xmlns:d4p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+          </d3p1:FallbackAgreementReference>
+          <d3p1:OnewayAgreementReference xmlns:d4p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+          </d3p1:OnewayAgreementReference>
+          <d3p1:ProtocolName>edifact</d3p1:ProtocolName>
+          <d3p1:SettingsName>""</d3p1:SettingsName>
+          <d3p1:AcknowledgementControlNumberLowerBound>1</d3p1:AcknowledgementControlNumberLowerBound>
+          <d3p1:AcknowledgementControlNumberRollover>true</d3p1:AcknowledgementControlNumberRollover>
+          <d3p1:AcknowledgementControlNumberUpperBound>99999999999999</d3p1:AcknowledgementControlNumberUpperBound>
+          <d3p1:AllowLeadingAndTrailingSpacesAndZeroes>false</d3p1:AllowLeadingAndTrailingSpacesAndZeroes>
+          <d3p1:ApplyDelimiterStringAdvice>false</d3p1:ApplyDelimiterStringAdvice>
+          <d3p1:BatchFunctionalAck>false</d3p1:BatchFunctionalAck>
+          <d3p1:BatchTechnicalAck>false</d3p1:BatchTechnicalAck>
+          <d3p1:CharacterSet>0</d3p1:CharacterSet>
+          <d3p1:CheckDuplicateGroupControlNumber>false</d3p1:CheckDuplicateGroupControlNumber>
+          <d3p1:CheckDuplicateInterchangeControlNumber>false</d3p1:CheckDuplicateInterchangeControlNumber>
+          <d3p1:CheckDuplicateTransactionSetControlNumber>false</d3p1:CheckDuplicateTransactionSetControlNumber>
+          <d3p1:CommunicationAgreementId>
+          </d3p1:CommunicationAgreementId>
+          <d3p1:ComponentSeparator>58</d3p1:ComponentSeparator>
+          <d3p1:CreateEmptyXmlTagsForTrailingSeparators>true</d3p1:CreateEmptyXmlTagsForTrailingSeparators>
+          <d3p1:CreateGroupingSegments>false</d3p1:CreateGroupingSegments>
+          <d3p1:DataElementSeparator>43</d3p1:DataElementSeparator>
+          <d3p1:DecimalPointIndicator>0</d3p1:DecimalPointIndicator>
+          <d3p1:EnableDefaultGroupHeaders>false</d3p1:EnableDefaultGroupHeaders>
+          <d3p1:EnforceCharacterSet>true</d3p1:EnforceCharacterSet>
+          <d3p1:GenerateLoopForValidMessagesInAck>false</d3p1:GenerateLoopForValidMessagesInAck>
+          <d3p1:GroupControlNumberLowerBound>1</d3p1:GroupControlNumberLowerBound>
+          <d3p1:GroupControlNumberRollover>false</d3p1:GroupControlNumberRollover>
+          <d3p1:GroupControlNumberUpperBound>99999999999999</d3p1:GroupControlNumberUpperBound>
+          <d3p1:InterchangeControlNumberLowerBound>1</d3p1:InterchangeControlNumberLowerBound>
+          <d3p1:InterchangeControlNumberRollover>false</d3p1:InterchangeControlNumberRollover>
+          <d3p1:InterchangeControlNumberUpperBound>99999999999999</d3p1:InterchangeControlNumberUpperBound>
+          <d3p1:InterchangeDuplicatesValidity>30</d3p1:InterchangeDuplicatesValidity>
+          <d3p1:IsTestInterchange>false</d3p1:IsTestInterchange>
+          <d3p1:MaskSecurityInfo>true</d3p1:MaskSecurityInfo>
+          <d3p1:MessageFilterType>1</d3p1:MessageFilterType>
+          <d3p1:NeedFunctionalAck>false</d3p1:NeedFunctionalAck>
+          <d3p1:NeedTechnicalAck>false</d3p1:NeedTechnicalAck>
+          <d3p1:PreserveInterchange>false</d3p1:PreserveInterchange>
+          <d3p1:ProcessingPriorityCode>
+          </d3p1:ProcessingPriorityCode>
+          <d3p1:ProtocolVersion>1</d3p1:ProtocolVersion>
+          <d3p1:ReleaseIndicator>63</d3p1:ReleaseIndicator>
+          <d3p1:RepetitionSeparator>42</d3p1:RepetitionSeparator>
+          <d3p1:RouteAcktoSendPipeline>true</d3p1:RouteAcktoSendPipeline>
+          <d3p1:SegmentTerminator>39</d3p1:SegmentTerminator>
+          <d3p1:SegmentTerminatorSuffix>0</d3p1:SegmentTerminatorSuffix>
+          <d3p1:SuspendInterchangeOnError>false</d3p1:SuspendInterchangeOnError>
+          <d3p1:TSApplyNewId>true</d3p1:TSApplyNewId>
+          <d3p1:TSControlNumberLowerBound>1</d3p1:TSControlNumberLowerBound>
+          <d3p1:TSControlNumberRollover>true</d3p1:TSControlNumberRollover>
+          <d3p1:TSControlNumberUpperBound>99999999999999</d3p1:TSControlNumberUpperBound>
+          <d3p1:TargetNamespace>http://schemas.microsoft.com/BizTalk/EDI/EDIFACT/2006</d3p1:TargetNamespace>
+          <d3p1:TrailingSeparatorPolicy>0</d3p1:TrailingSeparatorPolicy>
+          <d3p1:TrimLeadingAndTrailingSpacesAndZeroes>false</d3p1:TrimLeadingAndTrailingSpacesAndZeroes>
+          <d3p1:UseDotAsDecimalSeparator>true</d3p1:UseDotAsDecimalSeparator>
+          <d3p1:ValidateEDITypes>true</d3p1:ValidateEDITypes>
+          <d3p1:ValidateXSDTypes>false</d3p1:ValidateXSDTypes>
+          <d3p1:version>AAAAAAAAwhw=</d3p1:version>
+        </ProtocolSettings>
+        <ReceiverIdentity xmlns:d3p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" z:Id="i3" i:type="d3p1:QualifierIdentity" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+          <d3p1:BusinessProfileReference xmlns:d4p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+          </d3p1:BusinessProfileReference>
+          <d3p1:FallbackAgreement1Reference xmlns:d4p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+          </d3p1:FallbackAgreement1Reference>
+          <d3p1:FallbackAgreementReference xmlns:d4p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+          </d3p1:FallbackAgreementReference>
+          <d3p1:Name>QualifierIdentity</d3p1:Name>
+          <d3p1:version>AAAAAAAAwho=</d3p1:version>
+          <d3p1:Qualifier>ZZZ</d3p1:Qualifier>
+          <d3p1:Value>RECEIVE-PARTNER</d3p1:Value>
+        </ReceiverIdentity>
+        <SenderIdentity xmlns:d3p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" z:Id="i4" i:type="d3p1:QualifierIdentity" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+          <d3p1:BusinessProfileReference xmlns:d4p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+          </d3p1:BusinessProfileReference>
+          <d3p1:FallbackAgreement1Reference xmlns:d4p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+          </d3p1:FallbackAgreement1Reference>
+          <d3p1:FallbackAgreementReference xmlns:d4p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+          </d3p1:FallbackAgreementReference>
+          <d3p1:Name>QualifierIdentity</d3p1:Name>
+          <d3p1:version>AAAAAAAAwhk=</d3p1:version>
+          <d3p1:Qualifier>ZZZ</d3p1:Qualifier>
+          <d3p1:Value>BTS-SENDER</d3p1:Value>
+        </SenderIdentity>
+      </EdifactFallback>
+      <X12Fallback>
+        <CustomSettings xmlns:d3p1="http://schemas.datacontract.org/2004/07/System.Collections.Generic" />
+        <ProtocolSettings xmlns:d3p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" z:Id="i5" i:type="d3p1:X12ProtocolSettings" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+          <d3p1:BusinessProfileReference xmlns:d4p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+          </d3p1:BusinessProfileReference>
+          <d3p1:FallbackAgreementReference xmlns:d4p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+          </d3p1:FallbackAgreementReference>
+          <d3p1:OnewayAgreementReference xmlns:d4p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+          </d3p1:OnewayAgreementReference>
+          <d3p1:ProtocolName>x12</d3p1:ProtocolName>
+          <d3p1:SettingsName>""</d3p1:SettingsName>
+          <d3p1:AcknowledgementControlNumberLowerBound>1</d3p1:AcknowledgementControlNumberLowerBound>
+          <d3p1:AcknowledgementControlNumberRollover>true</d3p1:AcknowledgementControlNumberRollover>
+          <d3p1:AcknowledgementControlNumberUpperBound>999999999</d3p1:AcknowledgementControlNumberUpperBound>
+          <d3p1:AllowLeadingAndTrailingSpacesAndZeroes>false</d3p1:AllowLeadingAndTrailingSpacesAndZeroes>
+          <d3p1:AuthorizationQualifier>00</d3p1:AuthorizationQualifier>
+          <d3p1:BatchFunctionalAck>false</d3p1:BatchFunctionalAck>
+          <d3p1:BatchImplementationAck>false</d3p1:BatchImplementationAck>
+          <d3p1:BatchTechnicalAck>false</d3p1:BatchTechnicalAck>
+          <d3p1:CharacterSet>2</d3p1:CharacterSet>
+          <d3p1:CheckDuplicateGroupControlNumber>false</d3p1:CheckDuplicateGroupControlNumber>
+          <d3p1:CheckDuplicateInterchangeControlNumber>false</d3p1:CheckDuplicateInterchangeControlNumber>
+          <d3p1:CheckDuplicateTransactionSetControlNumber>false</d3p1:CheckDuplicateTransactionSetControlNumber>
+          <d3p1:ComponentSeparator>58</d3p1:ComponentSeparator>
+          <d3p1:ControlStandardsId>85</d3p1:ControlStandardsId>
+          <d3p1:ControlVersionNumber>00401</d3p1:ControlVersionNumber>
+          <d3p1:ConvertImpliedDecimal>false</d3p1:ConvertImpliedDecimal>
+          <d3p1:CreateEmptyXmlTagsForTrailingSeparators>true</d3p1:CreateEmptyXmlTagsForTrailingSeparators>
+          <d3p1:DataElementSeparator>42</d3p1:DataElementSeparator>
+          <d3p1:EnableDefaultGroupHeaders>false</d3p1:EnableDefaultGroupHeaders>
+          <d3p1:GenerateLoopForValidMessagesInAck>false</d3p1:GenerateLoopForValidMessagesInAck>
+          <d3p1:GeneratePatAK901>false</d3p1:GeneratePatAK901>
+          <d3p1:GroupControlNumberLowerBound>1</d3p1:GroupControlNumberLowerBound>
+          <d3p1:GroupControlNumberRollover>true</d3p1:GroupControlNumberRollover>
+          <d3p1:GroupControlNumberUpperBound>999999999</d3p1:GroupControlNumberUpperBound>
+          <d3p1:GroupDateFormat>1</d3p1:GroupDateFormat>
+          <d3p1:GroupHeaderVersion>00401</d3p1:GroupHeaderVersion>
+          <d3p1:GroupResponsibleAgencyCode>84</d3p1:GroupResponsibleAgencyCode>
+          <d3p1:GroupTimeFormat>0</d3p1:GroupTimeFormat>
+          <d3p1:InterchangeControlNumberLowerBound>1</d3p1:InterchangeControlNumberLowerBound>
+          <d3p1:InterchangeControlNumberRollover>true</d3p1:InterchangeControlNumberRollover>
+          <d3p1:InterchangeControlNumberUpperBound>999999999</d3p1:InterchangeControlNumberUpperBound>
+          <d3p1:InterchangeDuplicatesValidity>30</d3p1:InterchangeDuplicatesValidity>
+          <d3p1:MaskSecurityInfo>true</d3p1:MaskSecurityInfo>
+          <d3p1:MessageFilterType>1</d3p1:MessageFilterType>
+          <d3p1:NeedFunctionalAck>false</d3p1:NeedFunctionalAck>
+          <d3p1:NeedImplementationAck>false</d3p1:NeedImplementationAck>
+          <d3p1:NeedTechnicalAck>false</d3p1:NeedTechnicalAck>
+          <d3p1:PreserveInterchange>false</d3p1:PreserveInterchange>
+          <d3p1:ReceiverApplicationId>RECEIVE-APP</d3p1:ReceiverApplicationId>
+          <d3p1:ReplaceChar>36</d3p1:ReplaceChar>
+          <d3p1:ReplaceSeparatorsInPayload>false</d3p1:ReplaceSeparatorsInPayload>
+          <d3p1:RouteAcktoSendPipeline>true</d3p1:RouteAcktoSendPipeline>
+          <d3p1:RowVersion>AAAAAAAAwhc=</d3p1:RowVersion>
+          <d3p1:SecurityQualifier>00</d3p1:SecurityQualifier>
+          <d3p1:SegmentTerminator>126</d3p1:SegmentTerminator>
+          <d3p1:SegmentTerminatorSuffix>0</d3p1:SegmentTerminatorSuffix>
+          <d3p1:SenderApplicationId>BTS-SENDER</d3p1:SenderApplicationId>
+          <d3p1:SuspendInterchangeOnError>false</d3p1:SuspendInterchangeOnError>
+          <d3p1:TSApplyNewId>true</d3p1:TSApplyNewId>
+          <d3p1:TSControlNumberLowerBound>1</d3p1:TSControlNumberLowerBound>
+          <d3p1:TSControlNumberRollover>true</d3p1:TSControlNumberRollover>
+          <d3p1:TSControlNumberUpperBound>999999999</d3p1:TSControlNumberUpperBound>
+          <d3p1:TargetNamespace>http://schemas.microsoft.com/BizTalk/EDI/X12/2006</d3p1:TargetNamespace>
+          <d3p1:TrailingSeparatorPolicy>0</d3p1:TrailingSeparatorPolicy>
+          <d3p1:TrimLeadingAndTrailingSpacesAndZeroes>false</d3p1:TrimLeadingAndTrailingSpacesAndZeroes>
+          <d3p1:UsageIndicator>0</d3p1:UsageIndicator>
+          <d3p1:UseControlStandardsIdAsRepSep>false</d3p1:UseControlStandardsIdAsRepSep>
+          <d3p1:UseDotAsDecimalSeparator>true</d3p1:UseDotAsDecimalSeparator>
+          <d3p1:ValidateCharacterSet>true</d3p1:ValidateCharacterSet>
+          <d3p1:ValidateEDITypes>true</d3p1:ValidateEDITypes>
+          <d3p1:ValidateExtended>false</d3p1:ValidateExtended>
+        </ProtocolSettings>
+        <ReceiverIdentity xmlns:d3p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" z:Id="i7" i:type="d3p1:QualifierIdentity" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+          <d3p1:BusinessProfileReference xmlns:d4p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+          </d3p1:BusinessProfileReference>
+          <d3p1:FallbackAgreement1Reference xmlns:d4p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+          </d3p1:FallbackAgreement1Reference>
+          <d3p1:FallbackAgreementReference xmlns:d4p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+          </d3p1:FallbackAgreementReference>
+          <d3p1:Name>QualifierIdentity</d3p1:Name>
+          <d3p1:version>AAAAAAAAwhQ=</d3p1:version>
+          <d3p1:Qualifier>ZZ</d3p1:Qualifier>
+          <d3p1:Value>RECEIVE-PARTNER</d3p1:Value>
+        </ReceiverIdentity>
+        <SenderIdentity xmlns:d3p1="http://schemas.datacontract.org/2004/07/Microsoft.BizTalk.B2B.PartnerManagement" z:Id="i8" i:type="d3p1:QualifierIdentity" xmlns:z="http://schemas.microsoft.com/2003/10/Serialization/">
+          <d3p1:BusinessProfileReference xmlns:d4p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+          </d3p1:BusinessProfileReference>
+          <d3p1:FallbackAgreement1Reference xmlns:d4p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+          </d3p1:FallbackAgreement1Reference>
+          <d3p1:FallbackAgreementReference xmlns:d4p1="http://schemas.datacontract.org/2004/07/System.Data.Objects.DataClasses">
+          </d3p1:FallbackAgreementReference>
+          <d3p1:Name>QualifierIdentity</d3p1:Name>
+          <d3p1:version>AAAAAAAAwhM=</d3p1:version>
+          <d3p1:Qualifier>ZZ</d3p1:Qualifier>
+          <d3p1:Value>BTS-SENDER</d3p1:Value>
+        </SenderIdentity>
+      </X12Fallback>
+    </FallbackData>
+  </EdiGlobalProperties>
+</BindingInfo>

@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.HL7.BLL.Managers.LocationManager.SaveLocation",
+    "type": "method",
+    "name": "LocationManager.SaveLocation",
+    "path": "Cloud9.HL7.WebAPI/Cloud9.HL7.BLL/Managers/LocationManager.cs",
+    "class": "Cloud9.HL7.BLL.Managers.LocationManager",
+    "line": 47,
+    "signatures": [
+      "public static string SaveLocation(string locationName)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.HL7.BLL.Managers.LocationManager",
+      "fromName": "Cloud9.HL7.BLL.Managers.LocationManager",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.HL7.BLL.Managers.LocationManager.json"
+    }
+  ]
+}

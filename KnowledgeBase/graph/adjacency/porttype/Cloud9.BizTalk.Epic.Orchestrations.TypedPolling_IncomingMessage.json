@@ -1,0 +1,22 @@
+{
+  "node": {
+    "id": "porttype:Cloud9.BizTalk.Epic.Orchestrations.TypedPolling_IncomingMessage",
+    "type": "porttype",
+    "name": "TypedPolling_IncomingMessage",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.HL7SQLReceive.odx",
+    "module": "Cloud9.BizTalk.Epic.Orchestrations",
+    "operations": [
+      "oneway TypedPolling(TypedPolling_IncomingMessage_TypedPolling_InputMessage)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.HL7SQLReceive.odx",
+      "fromName": "Cloud9.BizTalk.Epic.HL7SQLReceive.odx",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Orchestrations_Cloud9.BizTalk.Epic.HL7SQLReceive.odx.json"
+    }
+  ]
+}

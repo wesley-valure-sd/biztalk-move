@@ -1,0 +1,22 @@
+{
+  "node": {
+    "id": "project:_PatientTreatmentCard",
+    "type": "project",
+    "name": "_PatientTreatmentCard",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.ReportGenerator/Cloud9.BizTalk.Reports/_PatientTreatmentCard.csproj",
+    "framework": "v4.5.1",
+    "kind": "csharp",
+    "rootNamespace": "Practica",
+    "assemblyName": "_Patient Treatment Card"
+  },
+  "outgoing": [
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.ReportGenerator/Cloud9.BizTalk.Reports/_PatientTreatmentCard.cs",
+      "toName": "_PatientTreatmentCard.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.ReportGenerator_Cloud9.BizTalk.Reports__PatientTreatmentCard.cs.json"
+    }
+  ],
+  "incoming": []
+}

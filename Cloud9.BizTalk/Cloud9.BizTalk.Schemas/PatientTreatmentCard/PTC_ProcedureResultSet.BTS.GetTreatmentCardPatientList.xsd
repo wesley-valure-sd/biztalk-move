@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ns5="http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetTreatmentCardPatientList" xmlns:ns3="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetTreatmentCardPatientList" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation=".\PTC_Serialization.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:annotation>
+    <xs:appinfo>
+      <fileNameHint xmlns="http://schemas.microsoft.com/servicemodel/adapters/metadata/xsd">ProcedureResultSet.BTS.GetTreatmentCardPatientList</fileNameHint>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:complexType name="StoredProcedureResultSet0">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="patGUID" nillable="true" type="ns3:guid" />
+      <xs:element minOccurs="0" maxOccurs="1" name="tceGUID" nillable="true" type="ns3:guid" />
+      <xs:element minOccurs="0" maxOccurs="1" name="persLastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="persFirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="persMiddleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="persSuffix" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="apptGUID" nillable="true" type="ns3:guid" />
+      <xs:element minOccurs="0" maxOccurs="1" name="eiSourceID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProviderID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="tceDateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="tceType" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StoredProcedureResultSet0" nillable="true" type="ns5:StoredProcedureResultSet0" />
+  <xs:complexType name="ArrayOfStoredProcedureResultSet0">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StoredProcedureResultSet0" type="ns5:StoredProcedureResultSet0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStoredProcedureResultSet0" nillable="true" type="ns5:ArrayOfStoredProcedureResultSet0" />
+</xs:schema>

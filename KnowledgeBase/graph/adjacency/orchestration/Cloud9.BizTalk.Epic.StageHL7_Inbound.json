@@ -1,0 +1,216 @@
+{
+  "node": {
+    "id": "orchestration:Cloud9.BizTalk.Epic.StageHL7_Inbound",
+    "type": "orchestration",
+    "name": "StageHL7_Inbound",
+    "ports": [
+      "Port_ProcessingError (uses PortType_ProcessingError)",
+      "Port_SQL_Update (uses Orchestrations.TableOp_BTS_IncomingMessage)",
+      "Port_SendHL7StagingInsert (uses PortType_SendHL7StagingInsert)"
+    ],
+    "parameters": "System.String imGUID, message Cloud9.BizTalk.Schemas.HL7InboundMessage msg_FileInfo, message System.Xml.XmlDocument msgHL7_Inbound, message BTAHL7Schemas.MSH_25_GLO_DEF msgHeader, System.String strFileName",
+    "messages": [
+      "msg_UpdateResponse: Orchestrations.TableOp_BTS_IncomingMessage_Update_OutputMessage",
+      "msg_UpdateRequest: Orchestrations.TableOp_BTS_IncomingMessage_Update_InputMessage",
+      "msgStagingInsertResp: MPType_HL7StagingResp",
+      "msgStagingInsertReq: MPType_HL7StagingReq",
+      "msgGetPracticeConfigReq: MPType_GetPracticeConfigReq",
+      "msgGetPracticeConfigResp: MPType_GetPracticeConfigResp"
+    ],
+    "visibility": "internal",
+    "module": "Cloud9.BizTalk.Epic",
+    "invocation": "called/started by another orchestration",
+    "contextProperties": [
+      "BTS.RetryCount",
+      "BTS.RetryInterval",
+      "WCF.Action",
+      "WCF.BindingType"
+    ],
+    "line": 726,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.StageHL7.Inbound.odx",
+    "bindingStates": {
+      "Cloud9.BizTalk.Deployment": "Unenlisted",
+      "Cloud9.BizTalk.PDS.Deployment": "Unenlisted"
+    }
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.StageHL7.Inbound.odx",
+      "toName": "Cloud9.BizTalk.Epic.StageHL7.Inbound.odx",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Orchestrations_Cloud9.BizTalk.Epic.StageHL7.Inbound.odx.json"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.Epic.Orchestrations.TableOp_BTS_IncomingMessage_Update_OutputMessage",
+      "toName": "TableOp_BTS_IncomingMessage_Update_OutputMessage",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.Orchestrations.TableOp_BTS_IncomingMessage_Update_OutputMessage.json",
+      "message": "msg_UpdateResponse"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.Epic.Orchestrations.TableOp_BTS_IncomingMessage_Update_InputMessage",
+      "toName": "TableOp_BTS_IncomingMessage_Update_InputMessage",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.Orchestrations.TableOp_BTS_IncomingMessage_Update_InputMessage.json",
+      "message": "msg_UpdateRequest"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.Epic.MPType_HL7StagingResp",
+      "toName": "MPType_HL7StagingResp",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_HL7StagingResp.json",
+      "message": "msgStagingInsertResp"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.Epic.MPType_HL7StagingReq",
+      "toName": "MPType_HL7StagingReq",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_HL7StagingReq.json",
+      "message": "msgStagingInsertReq"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.Epic.MPType_GetPracticeConfigReq",
+      "toName": "MPType_GetPracticeConfigReq",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_GetPracticeConfigReq.json",
+      "message": "msgGetPracticeConfigReq"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.Epic.MPType_GetPracticeConfigResp",
+      "toName": "MPType_GetPracticeConfigResp",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_GetPracticeConfigResp.json",
+      "message": "msgGetPracticeConfigResp"
+    },
+    {
+      "type": "usesMap",
+      "to": "map:Cloud9.BizTalk.Epic.Maps.HL7InboundToStaging",
+      "toName": "Cloud9.BizTalk.Epic.Maps.HL7InboundToStaging",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.Epic.Maps.HL7InboundToStaging.json",
+      "output": "msgStagingInsertReq.Body",
+      "input": "msg_FileInfo, msgHeader",
+      "line": 788
+    },
+    {
+      "type": "usesMap",
+      "to": "map:Cloud9.BizTalk.Epic.Maps.HL7InboundMessageToUpdateStatusFail",
+      "toName": "Cloud9.BizTalk.Epic.Maps.HL7InboundMessageToUpdateStatusFail",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.Epic.Maps.HL7InboundMessageToUpdateStatusFail.json",
+      "output": "msg_UpdateRequest.parameters",
+      "input": "msg_FileInfo",
+      "line": 829
+    },
+    {
+      "type": "startsOrchestration",
+      "to": "orchestration:Cloud9.BizTalk.Epic.AddLog",
+      "toName": "AddLog",
+      "toType": "orchestration",
+      "toFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.AddLog.json",
+      "line": 824
+    },
+    {
+      "type": "invokesProc",
+      "to": "sqlproc:PracticeDB.Insert.BTS",
+      "toName": "Insert.BTS",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/PracticeDB.Insert.BTS.json",
+      "line": 792,
+      "via": "dynamic WCF-SQL send port (WCF.Action set in code)"
+    },
+    {
+      "type": "callsMethod",
+      "to": "method:Cloud9.BizTalk.Helper.Conversion.SetXMLNode",
+      "toName": "Conversion.SetXMLNode",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.Conversion.SetXMLNode.json",
+      "line": 790
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.BizTalk.Deployment/WCF_SQL_INSERT_HL7_STAGING",
+      "toName": "WCF_SQL_INSERT_HL7_STAGING",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.BizTalk.Deployment_WCF_SQL_INSERT_HL7_STAGING.json",
+      "bindingSet": "Cloud9.BizTalk.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "Port_SendHL7StagingInsert"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.BizTalk.Deployment/WCF_SQL_INSERT_PROCESSING_ERROR",
+      "toName": "WCF_SQL_INSERT_PROCESSING_ERROR",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.BizTalk.Deployment_WCF_SQL_INSERT_PROCESSING_ERROR.json",
+      "bindingSet": "Cloud9.BizTalk.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "Port_ProcessingError"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.BizTalk.Deployment/WCF_SQL_UPDATE_STATUS",
+      "toName": "WCF_SQL_UPDATE_STATUS",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.BizTalk.Deployment_WCF_SQL_UPDATE_STATUS.json",
+      "bindingSet": "Cloud9.BizTalk.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "Port_SQL_Update"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.BizTalk.PDS.Deployment/WCF_SQL_INSERT_HL7_STAGING",
+      "toName": "WCF_SQL_INSERT_HL7_STAGING",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.BizTalk.PDS.Deployment_WCF_SQL_INSERT_HL7_STAGING.json",
+      "bindingSet": "Cloud9.BizTalk.PDS.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "Port_SendHL7StagingInsert"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.BizTalk.PDS.Deployment/WCF_SQL_INSERT_PROCESSING_ERROR",
+      "toName": "WCF_SQL_INSERT_PROCESSING_ERROR",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.BizTalk.PDS.Deployment_WCF_SQL_INSERT_PROCESSING_ERROR.json",
+      "bindingSet": "Cloud9.BizTalk.PDS.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "Port_ProcessingError"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.BizTalk.PDS.Deployment/WCF_SQL_UPDATE_STATUS",
+      "toName": "WCF_SQL_UPDATE_STATUS",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.BizTalk.PDS.Deployment_WCF_SQL_UPDATE_STATUS.json",
+      "bindingSet": "Cloud9.BizTalk.PDS.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "Port_SQL_Update"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "startsOrchestration",
+      "from": "orchestration:Cloud9.BizTalk.Epic.Orchestrations.HL7FlatFileReceive",
+      "fromName": "HL7FlatFileReceive",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.Orchestrations.HL7FlatFileReceive.json",
+      "line": 751
+    },
+    {
+      "type": "startsOrchestration",
+      "from": "orchestration:Cloud9.BizTalk.Epic.ProcessingHl7_Inbound",
+      "fromName": "ProcessingHl7_Inbound",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.ProcessingHl7_Inbound.json",
+      "line": 508
+    }
+  ]
+}

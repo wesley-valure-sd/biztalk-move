@@ -1,0 +1,41 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Epic.Schemas.ADT_A28_A31_26_Canonical",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Epic.Schemas.ADT_A28_A31_26_Canonical",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Schemas/ADT_A28_A31_26_Canonical.xsd",
+    "rootElements": [
+      "ADT_A28_A31_26_Canonical"
+    ],
+    "kind": "hl7",
+    "targetNamespace": "http://microsoft.com/HealthCare/HL7/2X",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Schemas/ADT_A28_A31_26_Canonical.xsd",
+      "toName": "ADT_A28_A31_26_Canonical.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Schemas_ADT_A28_A31_26_Canonical.xsd.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "sourceSchema",
+      "from": "map:Cloud9.BizTalk.Epic.Maps.ADT_A28_A31_26_CanonicalToUpsertPatient",
+      "fromName": "Cloud9.BizTalk.Epic.Maps.ADT_A28_A31_26_CanonicalToUpsertPatient",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.Epic.Maps.ADT_A28_A31_26_CanonicalToUpsertPatient.json",
+      "root": "ADT_A28_A31_26_Canonical"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.Epic.MPType_ADT_A28_A31_Canonical",
+      "fromName": "MPType_ADT_A28_A31_Canonical",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_ADT_A28_A31_Canonical.json",
+      "bodyType": "Schemas.ADT_A28_A31_26_Canonical"
+    }
+  ]
+}

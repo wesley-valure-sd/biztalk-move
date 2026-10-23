@@ -1,0 +1,62 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.HL7SQLReceive.odx",
+    "type": "file",
+    "name": "Cloud9.BizTalk.Epic.HL7SQLReceive.odx",
+    "kind": "odx",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.HL7SQLReceive.odx"
+  },
+  "outgoing": [
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.Epic.Orchestrations.TypedPolling_IncomingMessage_TypedPolling_InputMessage",
+      "toName": "TypedPolling_IncomingMessage_TypedPolling_InputMessage",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.Orchestrations.TypedPolling_IncomingMessage_TypedPolling_InputMessage.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.Epic.Orchestrations.TableOp_BTS_IncomingMessage_Update_OutputMessage",
+      "toName": "TableOp_BTS_IncomingMessage_Update_OutputMessage",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.Orchestrations.TableOp_BTS_IncomingMessage_Update_OutputMessage.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.Epic.Orchestrations.TableOp_BTS_IncomingMessage_Update_InputMessage",
+      "toName": "TableOp_BTS_IncomingMessage_Update_InputMessage",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.Orchestrations.TableOp_BTS_IncomingMessage_Update_InputMessage.json"
+    },
+    {
+      "type": "defines",
+      "to": "porttype:Cloud9.BizTalk.Epic.Orchestrations.TypedPolling_IncomingMessage",
+      "toName": "TypedPolling_IncomingMessage",
+      "toType": "porttype",
+      "toFile": "adjacency/porttype/Cloud9.BizTalk.Epic.Orchestrations.TypedPolling_IncomingMessage.json"
+    },
+    {
+      "type": "defines",
+      "to": "porttype:Cloud9.BizTalk.Epic.Orchestrations.TableOp_BTS_IncomingMessage",
+      "toName": "TableOp_BTS_IncomingMessage",
+      "toType": "porttype",
+      "toFile": "adjacency/porttype/Cloud9.BizTalk.Epic.Orchestrations.TableOp_BTS_IncomingMessage.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.Epic",
+      "fromName": "Cloud9.BizTalk.Epic",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.Epic.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "orchestration:Cloud9.BizTalk.Epic.Orchestrations.HL7SQLReceive",
+      "fromName": "HL7SQLReceive",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.Orchestrations.HL7SQLReceive.json"
+    }
+  ]
+}

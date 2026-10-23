@@ -1,0 +1,18 @@
+{
+  "node": {
+    "id": "solution:Cloud9.Common.PDS",
+    "type": "solution",
+    "name": "Cloud9.Common.PDS",
+    "path": "Cloud9.BizTalk/Cloud9.Common.PDS.sln"
+  },
+  "outgoing": [
+    {
+      "type": "contains",
+      "to": "project:Cloud9.BizTalk.Shared.Components.Archive",
+      "toName": "Cloud9.BizTalk.Shared.Components.Archive",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.Shared.Components.Archive.json"
+    }
+  ],
+  "incoming": []
+}

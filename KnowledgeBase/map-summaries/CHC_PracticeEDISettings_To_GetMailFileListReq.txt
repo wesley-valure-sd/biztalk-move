@@ -1,0 +1,18 @@
+MAP: CHC_PracticeEDISettings_To_GetMailFileListReq.btm
+PATH: Cloud9.BizTalk\Cloud9.BizTalk.X12\Maps\CHC_PracticeEDISettings_To_GetMailFileListReq.btm
+SOURCE: Cloud9.BizTalk.Schemas.GPE_TypedProcedure_BTS (root GetPracticeEDISettingsResponse)
+TARGET: Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonGetMailFileListRequest (root claim_submission_api)
+SCRIPT PRECEDENCE (first match wins when a functoid has more than one script): CSharp > ExternalAssembly > VbNet > JScript > XsltCallTemplate > Xslt
+
+=== PAGE: Page 1 ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L1: GetPracticeEDISettingsResponse/StoredProcedureResultSet0/StoredProcedureResultSet0/pracEmdeonVendorID -> claim_submission_api/authentication/vendor_id
+L2: GetPracticeEDISettingsResponse/StoredProcedureResultSet0/StoredProcedureResultSet0/pracEmdeonUserID -> claim_submission_api/authentication/user_id
+L3: GetPracticeEDISettingsResponse/StoredProcedureResultSet0/StoredProcedureResultSet0/pracEmdeonPassword -> claim_submission_api/authentication/password
+L4: GetPracticeEDISettingsResponse/StoredProcedureResultSet0/StoredProcedureResultSet0/pracEmdeonLastTraceNumber -> claim_submission_api/transaction/trace_id
+L5: F1 -> claim_submission_api/transaction/trx_type
+L6: F3 -> claim_submission_api/revision
+--- FUNCTOIDS ---
+F1 [String Concatenate] inputs: const:'get_mail_list_request'
+F3 [String Concatenate] inputs: const:'001'
+

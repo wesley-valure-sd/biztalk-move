@@ -1,0 +1,18 @@
+{
+  "node": {
+    "id": "class:Microsoft.BizTalk.Component.XmlDasmComp",
+    "type": "external-component",
+    "name": "Microsoft.BizTalk.Component.XmlDasmComp",
+    "definedInRepo": false
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "usesComponent",
+      "from": "pipeline:Cloud9.BizTalk.X12.Pipelines.ReceiveEmdeonMailPipeline",
+      "fromName": "Cloud9.BizTalk.X12.Pipelines.ReceiveEmdeonMailPipeline",
+      "fromType": "pipeline",
+      "fromFile": "adjacency/pipeline/Cloud9.BizTalk.X12.Pipelines.ReceiveEmdeonMailPipeline.json"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+MAP: Transform_To_GetTreatmentCardPatientListReq.btm
+PATH: Cloud9.BizTalk\Cloud9.BizTalk.Epic\Maps\Transform_To_GetTreatmentCardPatientListReq.btm
+SOURCE: Cloud9.BizTalk.Schemas.QPP_TypedPolling_QueueProcessParameters (root TypedPollingResultSet0)
+TARGET: Cloud9.BizTalk.Schemas.PTC_TypedProcedure_BTS (root GetTreatmentCardPatientList)
+SCRIPT PRECEDENCE (first match wins when a functoid has more than one script): CSharp > ExternalAssembly > VbNet > JScript > XsltCallTemplate > Xslt
+
+=== PAGE: Page 1 ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L1: TypedPollingResultSet0/fromDateTime -> GetTreatmentCardPatientList/FromDateTime
+L2: TypedPollingResultSet0/toDateTime -> GetTreatmentCardPatientList/ToDateTime
+--- FUNCTOIDS ---
+

@@ -1,0 +1,111 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.QPP_TypedPolling_QueueProcessParameters",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.QPP_TypedPolling_QueueProcessParameters",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/QueueProcessParameters/QPP_TypedPolling.QueueProcessParameters.xsd",
+    "rootElements": [
+      "TypedPollingResultSet0",
+      "ArrayOfTypedPollingResultSet0",
+      "TypedPollingResultSet1",
+      "ArrayOfTypedPollingResultSet1",
+      "TypedPolling"
+    ],
+    "kind": "wcf-sql-typed-polling",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/TypedPolling/QueueProcessParameters",
+    "sqlActions": [
+      "TypedPolling"
+    ]
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/QueueProcessParameters/QPP_TypedPolling.QueueProcessParameters.xsd",
+      "toName": "QPP_TypedPolling.QueueProcessParameters.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_QueueProcessParameters_QPP_TypedPolling.QueueProcessParameters.xsd.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "sourceSchema",
+      "from": "map:Cloud9.BizTalk.Epic.Transform_QueueProcessParametersHeader_To_GetTreatmentCardPatientListReq",
+      "fromName": "Cloud9.BizTalk.Epic.Transform_QueueProcessParametersHeader_To_GetTreatmentCardPatientListReq",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.Epic.Transform_QueueProcessParametersHeader_To_GetTreatmentCardPatientListReq.json",
+      "root": "TypedPollingResultSet0"
+    },
+    {
+      "type": "sourceSchema",
+      "from": "map:Cloud9.BizTalk.Epic.Transform_QueueProcParams_To_UpdateQueueProcParams",
+      "fromName": "Cloud9.BizTalk.Epic.Transform_QueueProcParams_To_UpdateQueueProcParams",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.Epic.Transform_QueueProcParams_To_UpdateQueueProcParams.json",
+      "root": "TypedPolling"
+    },
+    {
+      "type": "sourceSchema",
+      "from": "map:Cloud9.BizTalk.Epic.Transform_To_GetTreatmentCardPatientListReq",
+      "fromName": "Cloud9.BizTalk.Epic.Transform_To_GetTreatmentCardPatientListReq",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.Epic.Transform_To_GetTreatmentCardPatientListReq.json",
+      "root": "TypedPollingResultSet0"
+    },
+    {
+      "type": "sourceSchema",
+      "from": "map:Cloud9.BizTalk.Maps.QueueProcessParametersTypedPolling_To_UpdateProcessParameters",
+      "fromName": "Cloud9.BizTalk.Maps.QueueProcessParametersTypedPolling_To_UpdateProcessParameters",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.Maps.QueueProcessParametersTypedPolling_To_UpdateProcessParameters.json",
+      "root": "TypedPolling"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.Epic.MPType_QueueProcessParametersHeader",
+      "fromName": "MPType_QueueProcessParametersHeader",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_QueueProcessParametersHeader.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.QPP_TypedPolling_QueueProcessParameters.TypedPollingResultSet0"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.Epic.MPType_QueueProcessParametersResp",
+      "fromName": "MPType_QueueProcessParametersResp",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_QueueProcessParametersResp.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.QPP_TypedPolling_QueueProcessParameters.TypedPolling"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.Epic.MPType_QueueProcessParametersPracticeElement",
+      "fromName": "MPType_QueueProcessParametersPracticeElement",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_QueueProcessParametersPracticeElement.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.QPP_TypedPolling_QueueProcessParameters.TypedPollingResultSet1"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.MPType_QueueProcessParametersHeader",
+      "fromName": "MPType_QueueProcessParametersHeader",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.MPType_QueueProcessParametersHeader.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.QPP_TypedPolling_QueueProcessParameters.TypedPollingResultSet0"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.MPType_QueueProcessParametersResp",
+      "fromName": "MPType_QueueProcessParametersResp",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.MPType_QueueProcessParametersResp.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.QPP_TypedPolling_QueueProcessParameters.TypedPolling"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.MPType_QueueProcessParametersPracticeElement",
+      "fromName": "MPType_QueueProcessParametersPracticeElement",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.MPType_QueueProcessParametersPracticeElement.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.QPP_TypedPolling_QueueProcessParameters.TypedPollingResultSet1"
+    }
+  ]
+}

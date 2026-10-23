@@ -1,0 +1,50 @@
+{
+  "node": {
+    "id": "class:Cloud9.BizTalk.Helper.EDIClaimHelper",
+    "type": "class",
+    "name": "Cloud9.BizTalk.Helper.EDIClaimHelper",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/EDIClaimHelper.cs",
+    "visibility": "public",
+    "kind": "class",
+    "line": 10
+  },
+  "outgoing": [
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.EDIClaimHelper.GetClaimNumberPrefix",
+      "toName": "EDIClaimHelper.GetClaimNumberPrefix",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.EDIClaimHelper.GetClaimNumberPrefix.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.EDIClaimHelper.GetClaimNumber",
+      "toName": "EDIClaimHelper.GetClaimNumber",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.EDIClaimHelper.GetClaimNumber.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.EDIClaimHelper.CleanPhoneNumber",
+      "toName": "EDIClaimHelper.CleanPhoneNumber",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.EDIClaimHelper.CleanPhoneNumber.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.EDIClaimHelper.FormatDouble",
+      "toName": "EDIClaimHelper.FormatDouble",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.EDIClaimHelper.FormatDouble.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/EDIClaimHelper.cs",
+      "fromName": "EDIClaimHelper.cs",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Helper_EDIClaimHelper.cs.json"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "node": {
+    "id": "pipeline:Cloud9.BizTalk.X12.Pipelines.ReceiveEmdeonMailPipeline",
+    "type": "pipeline",
+    "name": "Cloud9.BizTalk.X12.Pipelines.ReceiveEmdeonMailPipeline",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Pipelines/ReceiveEmdeonMailPipeline.btp",
+    "components": [
+      "Microsoft.Practices.ESB.Namespace.PipelineComponents.RemoveNamespace",
+      "Microsoft.Practices.ESB.Namespace.PipelineComponents.AddNamespace",
+      "Microsoft.BizTalk.Component.XmlDasmComp",
+      "Cloud9.BizTalk.Shared.Components.Archive.Archive"
+    ],
+    "direction": "receive"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Pipelines/ReceiveEmdeonMailPipeline.btp",
+      "toName": "ReceiveEmdeonMailPipeline.btp",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Pipelines_ReceiveEmdeonMailPipeline.btp.json"
+    },
+    {
+      "type": "usesComponent",
+      "to": "class:Microsoft.Practices.ESB.Namespace.PipelineComponents.RemoveNamespace",
+      "toName": "Microsoft.Practices.ESB.Namespace.PipelineComponents.RemoveNamespace",
+      "toType": "external-component",
+      "toFile": "adjacency/external-component/Microsoft.Practices.ESB.Namespace.PipelineComponents.RemoveNamespace.json"
+    },
+    {
+      "type": "usesComponent",
+      "to": "class:Microsoft.Practices.ESB.Namespace.PipelineComponents.AddNamespace",
+      "toName": "Microsoft.Practices.ESB.Namespace.PipelineComponents.AddNamespace",
+      "toType": "external-component",
+      "toFile": "adjacency/external-component/Microsoft.Practices.ESB.Namespace.PipelineComponents.AddNamespace.json"
+    },
+    {
+      "type": "usesComponent",
+      "to": "class:Microsoft.BizTalk.Component.XmlDasmComp",
+      "toName": "Microsoft.BizTalk.Component.XmlDasmComp",
+      "toType": "external-component",
+      "toFile": "adjacency/external-component/Microsoft.BizTalk.Component.XmlDasmComp.json"
+    },
+    {
+      "type": "usesComponent",
+      "to": "class:Cloud9.BizTalk.Shared.Components.Archive.Archive",
+      "toName": "Cloud9.BizTalk.Shared.Components.Archive.Archive",
+      "toType": "class",
+      "toFile": "adjacency/class/Cloud9.BizTalk.Shared.Components.Archive.Archive.json"
+    }
+  ],
+  "incoming": []
+}

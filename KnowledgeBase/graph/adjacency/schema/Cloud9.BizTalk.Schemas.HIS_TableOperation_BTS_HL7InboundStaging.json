@@ -1,0 +1,52 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.HIS_TableOperation_BTS_HL7InboundStaging",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.HIS_TableOperation_BTS_HL7InboundStaging",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/HL7InboundStaging/HIS_TableOperation.BTS.HL7InboundStaging.xsd",
+    "rootElements": [
+      "Insert",
+      "InsertResponse"
+    ],
+    "kind": "wcf-sql-table",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/TableOp/BTS/HL7InboundStaging",
+    "sqlActions": [
+      "TableOp/Insert/BTS/HL7InboundStaging"
+    ]
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/HL7InboundStaging/HIS_TableOperation.BTS.HL7InboundStaging.xsd",
+      "toName": "HIS_TableOperation.BTS.HL7InboundStaging.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_HL7InboundStaging_HIS_TableOperation.BTS.HL7InboundStaging.xsd.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.Epic.Maps.HL7InboundToStaging",
+      "fromName": "Cloud9.BizTalk.Epic.Maps.HL7InboundToStaging",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.Epic.Maps.HL7InboundToStaging.json",
+      "root": "Insert"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.Epic.MPType_HL7StagingReq",
+      "fromName": "MPType_HL7StagingReq",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_HL7StagingReq.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.HIS_TableOperation_BTS_HL7InboundStaging.Insert"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.Epic.MPType_HL7StagingResp",
+      "fromName": "MPType_HL7StagingResp",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_HL7StagingResp.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.HIS_TableOperation_BTS_HL7InboundStaging.InsertResponse"
+    }
+  ]
+}

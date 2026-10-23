@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "setting:Cloud9.BizTalk.Deployment/AllergyCommentTypeGUID",
+    "type": "setting",
+    "name": "AllergyCommentTypeGUID",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Deployment/SettingsFileGenerator.xml",
+    "bindingSet": "Cloud9.BizTalk.Deployment",
+    "valuesByEnvironment": {
+      "Default Values": "1CF618CC-33F1-4CEB-AD9B-120C907F64A8",
+      "Local Dev (LocalSettings)": "1CF618CC-33F1-4CEB-AD9B-120C907F64A8",
+      "AWARE Development (AWARESettings)": "1CF618CC-33F1-4CEB-AD9B-120C907F64A8",
+      "LAB (LABSettings)": "1CF618CC-33F1-4CEB-AD9B-120C907F64A8",
+      "LAB2 (LAB2Settings)": "1CF618CC-33F1-4CEB-AD9B-120C907F64A8",
+      "LAB3 (LAB3Settings)": "1CF618CC-33F1-4CEB-AD9B-120C907F64A8",
+      "PROD (C9Prod1_Settings)": "1CF618CC-33F1-4CEB-AD9B-120C907F64A8",
+      "PROD (C9Prod2_Settings)": "1CF618CC-33F1-4CEB-AD9B-120C907F64A8",
+      "LAB (SDLab1_Settings)": "1CF618CC-33F1-4CEB-AD9B-120C907F64A8",
+      "PROD (SDProd1_Settings)": "1CF618CC-33F1-4CEB-AD9B-120C907F64A8"
+    }
+  },
+  "outgoing": [],
+  "incoming": []
+}

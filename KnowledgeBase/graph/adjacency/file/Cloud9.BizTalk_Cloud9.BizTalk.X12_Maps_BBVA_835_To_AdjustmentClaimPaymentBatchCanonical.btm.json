@@ -1,0 +1,26 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/BBVA_835_To_AdjustmentClaimPaymentBatchCanonical.btm",
+    "type": "file",
+    "name": "BBVA_835_To_AdjustmentClaimPaymentBatchCanonical.btm",
+    "kind": "btm",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/BBVA_835_To_AdjustmentClaimPaymentBatchCanonical.btm"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.X12",
+      "fromName": "Cloud9.BizTalk.X12",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.X12.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "map:Cloud9.BizTalk.X12.Maps.BBVA_835_To_AdjustmentClaimPaymentBatchCanonical",
+      "fromName": "Cloud9.BizTalk.X12.Maps.BBVA_835_To_AdjustmentClaimPaymentBatchCanonical",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.BBVA_835_To_AdjustmentClaimPaymentBatchCanonical.json"
+    }
+  ]
+}

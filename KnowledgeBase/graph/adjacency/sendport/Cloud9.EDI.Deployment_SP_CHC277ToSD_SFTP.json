@@ -1,0 +1,79 @@
+{
+  "node": {
+    "id": "sendport:Cloud9.EDI.Deployment/SP_CHC277ToSD_SFTP",
+    "type": "sendport",
+    "name": "SP_CHC277ToSD_SFTP",
+    "sendPipeline": "Microsoft.BizTalk.Edi.DefaultPipelines.EdiSend",
+    "bindingSet": "Cloud9.EDI.Deployment",
+    "actionMappings": [],
+    "isTwoWay": "false",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.Deployment/PortBindingsMaster.xml",
+    "address": "sftp://${SD_TO_C9_SFTP_HOST}/${SD_TO_C9_SFTP_FOLDER}/277/%MessageID%.edi",
+    "filter": [],
+    "isStatic": "true",
+    "transport": "SFTP"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.EDI.Deployment/PortBindingsMaster.xml",
+      "toName": "PortBindingsMaster.xml",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.EDI.Deployment_PortBindingsMaster.xml.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.EDI.Deployment/SD_TO_C9_SFTP_HOST",
+      "toName": "SD_TO_C9_SFTP_HOST",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.EDI.Deployment_SD_TO_C9_SFTP_HOST.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.EDI.Deployment/SD_TO_C9_SFTP_FOLDER",
+      "toName": "SD_TO_C9_SFTP_FOLDER",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.EDI.Deployment_SD_TO_C9_SFTP_FOLDER.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.EDI.Deployment/SD_TO_C9_SFTP_PASSWORD",
+      "toName": "SD_TO_C9_SFTP_PASSWORD",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.EDI.Deployment_SD_TO_C9_SFTP_PASSWORD.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.EDI.Deployment/SD_TO_C9_SFTP_USERNAME",
+      "toName": "SD_TO_C9_SFTP_USERNAME",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.EDI.Deployment_SD_TO_C9_SFTP_USERNAME.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.EDI.Deployment/SD_TO_C9_SFTP_PPK",
+      "toName": "SD_TO_C9_SFTP_PPK",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.EDI.Deployment_SD_TO_C9_SFTP_PPK.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.EDI.Deployment/SD_277_FILTERS",
+      "toName": "SD_277_FILTERS",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.EDI.Deployment_SD_277_FILTERS.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "boundToSendPort",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_276ClaimStatus",
+      "fromName": "Process_CHC_276ClaimStatus",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_276ClaimStatus.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "CHC_277_Send_to_BBVA"
+    }
+  ]
+}

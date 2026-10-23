@@ -1,0 +1,22 @@
+{
+  "node": {
+    "id": "sendport:Cloud9.EDI.PDS.Deployment/WCF_UPDATE_PROCESS_PARAMETERS",
+    "type": "sendport",
+    "name": "WCF_UPDATE_PROCESS_PARAMETERS",
+    "note": "Bound here but not defined in this binding file.",
+    "bindingSet": "Cloud9.EDI.PDS.Deployment"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "boundToSendPort",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker",
+      "fromName": "Process_CHC_InboundFiles_Worker",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker.json",
+      "bindingSet": "Cloud9.EDI.PDS.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "Port_SendUpdateProcessParameters"
+    }
+  ]
+}

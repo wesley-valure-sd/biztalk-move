@@ -1,0 +1,44 @@
+{
+  "node": {
+    "id": "map:Cloud9.BizTalk.X12.Maps.CHC_835_To_ClaimPaymentCanonical",
+    "type": "map",
+    "name": "Cloud9.BizTalk.X12.Maps.CHC_835_To_ClaimPaymentCanonical",
+    "readableSummary": "KnowledgeBase/map-summaries/CHC_835_To_ClaimPaymentCanonical.txt",
+    "targetSchema": "Cloud9.BizTalk.Schemas.Canonical.ClaimPayment",
+    "inlineScripts": [
+      "CSharp:ParseClaimNumber"
+    ],
+    "functoidCount": 4,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/CHC_835_To_ClaimPaymentCanonical.btm",
+    "sourceSchema": "Cloud9.BizTalk.X12.Schemas.CHC_X12_00501_835",
+    "linkCount": 12,
+    "sourceRoot": "X12_00501_835",
+    "targetRoot": "ClaimPayment"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/CHC_835_To_ClaimPaymentCanonical.btm",
+      "toName": "CHC_835_To_ClaimPaymentCanonical.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_CHC_835_To_ClaimPaymentCanonical.btm.json"
+    },
+    {
+      "type": "sourceSchema",
+      "to": "schema:Cloud9.BizTalk.X12.Schemas.CHC_X12_00501_835",
+      "toName": "Cloud9.BizTalk.X12.Schemas.CHC_X12_00501_835",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.X12.Schemas.CHC_X12_00501_835.json",
+      "root": "X12_00501_835"
+    },
+    {
+      "type": "targetSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.Canonical.ClaimPayment",
+      "toName": "Cloud9.BizTalk.Schemas.Canonical.ClaimPayment",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.Canonical.ClaimPayment.json",
+      "root": "ClaimPayment"
+    }
+  ],
+  "incoming": []
+}

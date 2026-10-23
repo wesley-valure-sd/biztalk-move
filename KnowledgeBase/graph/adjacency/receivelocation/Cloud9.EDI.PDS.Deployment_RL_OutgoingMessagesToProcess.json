@@ -1,0 +1,31 @@
+{
+  "node": {
+    "id": "receivelocation:Cloud9.EDI.PDS.Deployment/RL_OutgoingMessagesToProcess",
+    "type": "receivelocation",
+    "name": "RL_OutgoingMessagesToProcess",
+    "enabled": "true",
+    "bindingSet": "Cloud9.EDI.PDS.Deployment",
+    "receivePipeline": "Microsoft.BizTalk.DefaultPipelines.XMLReceive",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.PDS.Deployment/PortBindingsMaster.xml",
+    "address": "${ADDR_DB_CLOUD9COMMON}?InboundId=GetOutgoingMessages&MyID=GetOutgoingMessages",
+    "serviceWindow": "2019-06-03T00:00:00 to 2019-06-03T23:59:59 (enabled=false)",
+    "transport": "WCF-Custom"
+  },
+  "outgoing": [
+    {
+      "type": "partOf",
+      "to": "receiveport:Cloud9.EDI.PDS.Deployment/RP_OutgoingMessagesToProcess",
+      "toName": "RP_OutgoingMessagesToProcess",
+      "toType": "receiveport",
+      "toFile": "adjacency/receiveport/Cloud9.EDI.PDS.Deployment_RP_OutgoingMessagesToProcess.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.EDI.PDS.Deployment/ADDR_DB_CLOUD9COMMON",
+      "toName": "ADDR_DB_CLOUD9COMMON",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.EDI.PDS.Deployment_ADDR_DB_CLOUD9COMMON.json"
+    }
+  ],
+  "incoming": []
+}

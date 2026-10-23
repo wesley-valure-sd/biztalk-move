@@ -1,0 +1,105 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.Canonical.ClaimPayment",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.Canonical.ClaimPayment",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Canonical/ClaimPayment.xsd",
+    "rootElements": [
+      "ClaimPayment"
+    ],
+    "kind": "canonical-or-other",
+    "targetNamespace": "http://Cloud9.BizTalk.Schemas.Canonical.ClaimPayment",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Canonical/ClaimPayment.xsd",
+      "toName": "ClaimPayment.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_Canonical_ClaimPayment.xsd.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.X12.Maps.CHC_835_To_ClaimPaymentCanonical",
+      "fromName": "Cloud9.BizTalk.X12.Maps.CHC_835_To_ClaimPaymentCanonical",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.CHC_835_To_ClaimPaymentCanonical.json",
+      "root": "ClaimPayment"
+    },
+    {
+      "type": "sourceSchema",
+      "from": "map:Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_AddTodoItem",
+      "fromName": "Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_AddTodoItem",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_AddTodoItem.json",
+      "root": "ClaimPayment"
+    },
+    {
+      "type": "sourceSchema",
+      "from": "map:Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835InsuranceTransaction",
+      "fromName": "Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835InsuranceTransaction",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835InsuranceTransaction.json",
+      "root": "ClaimPayment"
+    },
+    {
+      "type": "sourceSchema",
+      "from": "map:Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835PatientTransaction",
+      "fromName": "Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835PatientTransaction",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835PatientTransaction.json",
+      "root": "ClaimPayment"
+    },
+    {
+      "type": "sourceSchema",
+      "from": "map:Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835PatientTransactionWeb",
+      "fromName": "Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835PatientTransactionWeb",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835PatientTransactionWeb.json",
+      "root": "ClaimPayment"
+    },
+    {
+      "type": "sourceSchema",
+      "from": "map:Cloud9.BizTalk.X12.ClaimPaymentCanonicalToGetPracticeByClaimNumber",
+      "fromName": "Cloud9.BizTalk.X12.ClaimPaymentCanonicalToGetPracticeByClaimNumber",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.ClaimPaymentCanonicalToGetPracticeByClaimNumber.json",
+      "root": "ClaimPayment"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.ClaimPaymentCanonical_MMT",
+      "fromName": "ClaimPaymentCanonical_MMT",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.ClaimPaymentCanonical_MMT.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.Canonical.ClaimPayment"
+    },
+    {
+      "type": "usesSchema",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_BBVA_835Insurance",
+      "fromName": "Process_BBVA_835Insurance",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_BBVA_835Insurance.json",
+      "message": "AdjClaimPayment"
+    },
+    {
+      "type": "usesSchema",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_BBVA_835Patient",
+      "fromName": "Process_BBVA_835Patient",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_BBVA_835Patient.json",
+      "message": "ClaimPayment"
+    },
+    {
+      "type": "usesSchema",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_SD_835Patient",
+      "fromName": "Process_SD_835Patient",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_SD_835Patient.json",
+      "message": "ClaimPayment"
+    }
+  ]
+}

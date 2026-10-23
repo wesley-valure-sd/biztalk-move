@@ -1,0 +1,27 @@
+{
+  "node": {
+    "id": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.WebAPI/DTO/LocationDTO.cs",
+    "type": "file",
+    "name": "LocationDTO.cs",
+    "kind": "csharp",
+    "path": "Cloud9.HL7.WebAPI/Cloud9.HL7.WebAPI/DTO/LocationDTO.cs"
+  },
+  "outgoing": [
+    {
+      "type": "defines",
+      "to": "class:Cloud9.HL7.WebAPI.DTO.LocationDTO",
+      "toName": "Cloud9.HL7.WebAPI.DTO.LocationDTO",
+      "toType": "class",
+      "toFile": "adjacency/class/Cloud9.HL7.WebAPI.DTO.LocationDTO.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.HL7.WebAPI",
+      "fromName": "Cloud9.HL7.WebAPI",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.HL7.WebAPI.json"
+    }
+  ]
+}

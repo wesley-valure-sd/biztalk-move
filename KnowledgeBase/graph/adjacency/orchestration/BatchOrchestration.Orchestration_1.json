@@ -1,0 +1,14 @@
+{
+  "node": {
+    "id": "orchestration:BatchOrchestration.Orchestration_1",
+    "type": "orchestration",
+    "name": "Orchestration_1",
+    "definedInRepo": false,
+    "bindingStates": {
+      "Cloud9.Common.Deployment": "Unenlisted",
+      "Cloud9.Common.PDS.Deployment": "Unenlisted"
+    }
+  },
+  "outgoing": [],
+  "incoming": []
+}

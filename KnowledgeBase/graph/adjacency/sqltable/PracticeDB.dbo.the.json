@@ -1,0 +1,26 @@
+{
+  "node": {
+    "id": "sqltable:PracticeDB.dbo.the",
+    "type": "sqltable",
+    "name": "dbo.the",
+    "database": "PracticeDB (one database per practice; not in this repo)",
+    "definedInRepo": false
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "queries",
+      "from": "sqlscript:Cloud9.BizTalk.Scripts/835BBVAPatientPaymentLockbox/GetLockboxPaymentType.sql",
+      "fromName": "GetLockboxPaymentType.sql",
+      "fromType": "sqlscript",
+      "fromFile": "adjacency/sqlscript/Cloud9.BizTalk.Scripts_835BBVAPatientPaymentLockbox_GetLockboxPaymentType.sql.json"
+    },
+    {
+      "type": "queries",
+      "from": "sqlscript:Cloud9.BizTalk.Scripts/835SDWebPatientPayment/GetWebPatientPaymentType.sql",
+      "fromName": "GetWebPatientPaymentType.sql",
+      "fromType": "sqlscript",
+      "fromFile": "adjacency/sqlscript/Cloud9.BizTalk.Scripts_835SDWebPatientPayment_GetWebPatientPaymentType.sql.json"
+    }
+  ]
+}

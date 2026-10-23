@@ -1,0 +1,47 @@
+{
+  "node": {
+    "id": "flowstep:CHC-01-Poll",
+    "type": "flowstep",
+    "name": "Scheduled poll of the Change Healthcare mailbox for each practice",
+    "order": 1,
+    "curated": true,
+    "logic": "WCF-SQL polling receive location RP_CHCInboundToProcess runs EXEC BTS.QueueProcessParameters 'ProcessCHCInboundFiles' when BTS.ProcessParameter has a row with that name and ppStatus=0. Controller loops over every PracticeConfig row and calls the worker."
+  },
+  "outgoing": [
+    {
+      "type": "implementedBy",
+      "to": "receiveport:Cloud9.EDI.Deployment/RP_CHCInboundToProcess",
+      "toName": "RP_CHCInboundToProcess",
+      "toType": "receiveport",
+      "toFile": "adjacency/receiveport/Cloud9.EDI.Deployment_RP_CHCInboundToProcess.json",
+      "curated": true
+    },
+    {
+      "type": "implementedBy",
+      "to": "sqlproc:BizTalkCloud9Common.BTS.QueueProcessParameters",
+      "toName": "BTS.QueueProcessParameters",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.QueueProcessParameters.json",
+      "curated": true
+    },
+    {
+      "type": "implementedBy",
+      "to": "orchestration:Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Controller",
+      "toName": "Process_CHC_InboundFiles_Controller",
+      "toType": "orchestration",
+      "toFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Controller.json",
+      "curated": true
+    }
+  ],
+  "incoming": [
+    {
+      "type": "hasStep",
+      "from": "flow:CHC-835-Insurance-ERA",
+      "fromName": "Change Healthcare ERA 835 -> insurance payment transactions or reversal to-do items",
+      "fromType": "flow",
+      "fromFile": "adjacency/flow/CHC-835-Insurance-ERA.json",
+      "order": 1,
+      "curated": true
+    }
+  ]
+}

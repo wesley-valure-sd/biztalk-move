@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cloud9.BizTalk.ReportGenerator", "Cloud9.BizTalk.ReportGenerator\Cloud9.BizTalk.ReportGenerator.csproj", "{2D7AF5B8-66FF-489A-93C8-9576B704D527}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cloud9.BizTalk.Reports", "Cloud9.BizTalk.Reports\Cloud9.BizTalk.Reports.csproj", "{A9FCC58C-81D5-41F9-80CA-C44BD34D8D32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cloud9.BizTalk.ReportGenerator.ConsoleTest", "Cloud9.BizTalk.ReportGenerator.ConsoleTest\Cloud9.BizTalk.ReportGenerator.ConsoleTest.csproj", "{74275A0B-37EC-4F8A-B590-EB3E561EB30B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2D7AF5B8-66FF-489A-93C8-9576B704D527}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D7AF5B8-66FF-489A-93C8-9576B704D527}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D7AF5B8-66FF-489A-93C8-9576B704D527}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D7AF5B8-66FF-489A-93C8-9576B704D527}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9FCC58C-81D5-41F9-80CA-C44BD34D8D32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9FCC58C-81D5-41F9-80CA-C44BD34D8D32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9FCC58C-81D5-41F9-80CA-C44BD34D8D32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9FCC58C-81D5-41F9-80CA-C44BD34D8D32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74275A0B-37EC-4F8A-B590-EB3E561EB30B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74275A0B-37EC-4F8A-B590-EB3E561EB30B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74275A0B-37EC-4F8A-B590-EB3E561EB30B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74275A0B-37EC-4F8A-B590-EB3E561EB30B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

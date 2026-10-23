@@ -1,0 +1,29 @@
+{
+  "node": {
+    "id": "messagetype:Cloud9.BizTalk.X12.GetApplicationLookupValueResponse_MMT",
+    "type": "messagetype",
+    "name": "GetApplicationLookupValueResponse_MMT",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/EDITypes.odx",
+    "bodyType": "Cloud9.BizTalk.Schemas.ALV_TypedProcedure_BTS.GetApplicationLookupValueResponse",
+    "module": "Cloud9.BizTalk.X12"
+  },
+  "outgoing": [
+    {
+      "type": "bodySchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.ALV_TypedProcedure_BTS",
+      "toName": "Cloud9.BizTalk.Schemas.ALV_TypedProcedure_BTS",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.ALV_TypedProcedure_BTS.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.ALV_TypedProcedure_BTS.GetApplicationLookupValueResponse"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/EDITypes.odx",
+      "fromName": "EDITypes.odx",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Orchestrations_EDITypes.odx.json"
+    }
+  ]
+}

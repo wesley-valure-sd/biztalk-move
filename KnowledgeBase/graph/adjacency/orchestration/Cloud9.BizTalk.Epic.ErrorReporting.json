@@ -1,0 +1,74 @@
+{
+  "node": {
+    "id": "orchestration:Cloud9.BizTalk.Epic.ErrorReporting",
+    "type": "orchestration",
+    "name": "ErrorReporting",
+    "ports": [
+      "Port_InsertProcessingError (uses PortType_ProcessingError)"
+    ],
+    "parameters": "System.String imCorrelationId, System.String strMessageId, System.String strGuid, System.String strMessageType, System.String strMessage",
+    "messages": [
+      "msg_InsertError: MPType_ProcessingErrorReq",
+      "msg_InsertErrorResponse: MPType_ProcessingErrorResp",
+      "msg_Error: Cloud9.BizTalk.Schemas.PE_Table_BTS.ProcessingError"
+    ],
+    "visibility": "internal",
+    "module": "Cloud9.BizTalk.Epic",
+    "invocation": "called/started by another orchestration",
+    "contextProperties": [],
+    "line": 264,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.ErrorReporting.odx"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.ErrorReporting.odx",
+      "toName": "Cloud9.BizTalk.Epic.ErrorReporting.odx",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Orchestrations_Cloud9.BizTalk.Epic.ErrorReporting.odx.json"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.Epic.MPType_ProcessingErrorReq",
+      "toName": "MPType_ProcessingErrorReq",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_ProcessingErrorReq.json",
+      "message": "msg_InsertError"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.Epic.MPType_ProcessingErrorResp",
+      "toName": "MPType_ProcessingErrorResp",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_ProcessingErrorResp.json",
+      "message": "msg_InsertErrorResponse"
+    },
+    {
+      "type": "usesSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.PE_Table_BTS",
+      "toName": "Cloud9.BizTalk.Schemas.PE_Table_BTS",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.PE_Table_BTS.json",
+      "message": "msg_Error"
+    },
+    {
+      "type": "usesMap",
+      "to": "map:Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_ErrorToInsertRequest",
+      "toName": "Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_ErrorToInsertRequest",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_ErrorToInsertRequest.json",
+      "output": "msg_InsertError.Body",
+      "input": "msg_Error",
+      "line": 343
+    },
+    {
+      "type": "callsMethod",
+      "to": "method:Cloud9.BizTalk.Helper.OutboundAPI.SendException",
+      "toName": "OutboundAPI.SendException",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.OutboundAPI.SendException.json",
+      "line": 291
+    }
+  ],
+  "incoming": []
+}

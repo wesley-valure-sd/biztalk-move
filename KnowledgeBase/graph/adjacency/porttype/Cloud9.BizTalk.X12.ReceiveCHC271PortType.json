@@ -1,0 +1,22 @@
+{
+  "node": {
+    "id": "porttype:Cloud9.BizTalk.X12.ReceiveCHC271PortType",
+    "type": "porttype",
+    "name": "ReceiveCHC271PortType",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_271Eligibility.odx",
+    "module": "Cloud9.BizTalk.X12",
+    "operations": [
+      "oneway Operation_1(CHC271_MMT)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_271Eligibility.odx",
+      "fromName": "Process_CHC_271Eligibility.odx",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Orchestrations_Process_CHC_271Eligibility.odx.json"
+    }
+  ]
+}

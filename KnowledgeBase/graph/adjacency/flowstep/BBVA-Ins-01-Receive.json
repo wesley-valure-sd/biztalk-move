@@ -1,0 +1,22 @@
+{
+  "node": {
+    "id": "flowstep:BBVA-Ins-01-Receive",
+    "type": "flowstep",
+    "name": "Receive file from insurance region folder",
+    "order": 1,
+    "curated": true,
+    "logic": "${BBVA_835_INSURANCE_FILE_FOLDER}\\<REGION>\\*.*. Same pipeline and agreement as the patient flow. Receive port RP_BBVA835_Insurance decides that the file is insurance (both orchestrations use the same message type)."
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasStep",
+      "from": "flow:BBVA-835-Insurance-Lockbox",
+      "fromName": "BBVA insurance lockbox 835 -> insurance payment and PLB adjustment transactions",
+      "fromType": "flow",
+      "fromFile": "adjacency/flow/BBVA-835-Insurance-Lockbox.json",
+      "order": 1,
+      "curated": true
+    }
+  ]
+}

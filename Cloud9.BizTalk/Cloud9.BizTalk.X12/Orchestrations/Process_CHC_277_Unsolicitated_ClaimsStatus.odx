@@ -1,0 +1,578 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="ebe908e8-13c6-41ee-913d-ed30d7f5f2c6" LowerBound="1.1" HigherBound="139.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Cloud9.BizTalk.X12" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="cee05036-320c-4231-b09b-d9017d072ee7" ParentLink="Module_PortType" LowerBound="16.1" HigherBound="23.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ReceiveUnsolicitatedCHC277PortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="cbc66bcb-09e3-452e-a84d-5159ab00fbfb" ParentLink="PortType_OperationDeclaration" LowerBound="18.1" HigherBound="22.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="1116ddf5-d208-41a7-be60-9fd032f85e42" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="20.13" HigherBound="20.36">
+                    <om:Property Name="Ref" Value="Cloud9.BizTalk.X12.CHC277_Unsolicitate_MMT" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="54266c98-434c-4c6c-a3b2-c8c30d3e6c87" ParentLink="Module_PortType" LowerBound="23.1" HigherBound="30.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="Send_277_Unsolicitated_BBVA_Type" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="afcf06ee-1b17-4d21-a865-7b288cc81a30" ParentLink="PortType_OperationDeclaration" LowerBound="25.1" HigherBound="29.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="6478bb12-4350-4f90-9057-9671787a572a" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="27.13" HigherBound="27.36">
+                    <om:Property Name="Ref" Value="Cloud9.BizTalk.X12.CHC277_Unsolicitate_MMT" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="4e01bae5-8608-406d-8dca-51cea08cb5ad" ParentLink="Module_PortType" LowerBound="30.1" HigherBound="37.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="GetPracticeConfigurationByEmdeonPortType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="16945ef1-8e98-49a0-8880-731eae03d385" ParentLink="PortType_OperationDeclaration" LowerBound="32.1" HigherBound="36.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="GetPracticeConfigurationByEmdeonUser" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="c356b9c2-b89a-45fe-aca7-a42624b4149e" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="34.13" HigherBound="34.49">
+                    <om:Property Name="Ref" Value="Cloud9.BizTalk.X12.GetPracticeConfigurationByEmdeon_MMT" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="b30bf759-c2d5-4142-93c6-eeb46178c8b7" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="34.51" HigherBound="34.95">
+                    <om:Property Name="Ref" Value="Cloud9.BizTalk.X12.GetPracticeConfigurationByEmdeonResponse_MMT" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="b72fc2ae-dea9-47f6-956a-d5962ce679c2" ParentLink="Module_ServiceDeclaration" LowerBound="41.1" HigherBound="138.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="Process_CHC_277_Unsolicitated_ClaimsStatus" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="VariableDeclaration" OID="8a9d3308-039f-4861-b698-1b4a22ca8c09" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="57.1" HigherBound="58.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="xmlString" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="89e1371d-02b6-4e75-b132-900e414739c7" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="58.1" HigherBound="59.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="xmlDoc" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="2e259150-50ed-4ebe-be4a-05b05d64611d" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="59.1" HigherBound="60.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strPracticeName" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="5b5ee578-b421-45c9-a09e-cad5af107554" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="60.1" HigherBound="61.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strServer" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="2f47cbc5-3cc8-4dbd-b34d-f293f3677746" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="61.1" HigherBound="62.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strTransportLocation" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="CorrelationDeclaration" OID="0d15d1b7-f01f-4993-bfc4-d0d275018339" ParentLink="ServiceDeclaration_CorrelationDeclaration" LowerBound="50.1" HigherBound="51.1">
+                <om:Property Name="Type" Value="Cloud9.BizTalk.X12.UnsolicitedPracticeName" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="PracticeName" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="StatementRef" OID="903114e1-cbf9-40be-8e87-7269adbca709" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="122.94" HigherBound="122.117">
+                    <om:Property Name="Initializes" Value="True" />
+                    <om:Property Name="Ref" Value="4030b5b2-260d-432a-aa8a-ea86efc966ba" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="StatementRef_1" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="9b4ffab8-247f-43cd-9c9f-86c44963aa52" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="51.1" HigherBound="52.1">
+                <om:Property Name="Type" Value="Cloud9.BizTalk.X12.CHC277_MMT" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="CH277_BBVA" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="7f97eee9-ca4a-494a-9903-86b538cfd31b" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="52.1" HigherBound="53.1">
+                <om:Property Name="Type" Value="Cloud9.BizTalk.X12.ClaimStatusCanonical_MMT" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ClaimStatusCanonical" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="25306a7f-7663-41fb-8f7f-68f11605eaac" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="53.1" HigherBound="54.1">
+                <om:Property Name="Type" Value="Cloud9.BizTalk.X12.GetPracticeConfigurationByEmdeonResponse_MMT" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="GetPracticeConfigurationByEmdeonResponse" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="bafc4976-56f9-4449-89c7-c954d62d3d19" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="54.1" HigherBound="55.1">
+                <om:Property Name="Type" Value="Cloud9.BizTalk.X12.GetPracticeConfigurationByEmdeon_MMT" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="GetPracticeConfigurationByEmdeonRequest" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="63cdd77b-c12e-4eac-830e-039d4df9665b" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="55.1" HigherBound="56.1">
+                <om:Property Name="Type" Value="Cloud9.BizTalk.X12.CHC277_Unsolicitate_MMT" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="CHC227_Unsolicitate" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="662b8f39-23fa-4159-8e2e-9769f8bbe060" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="56.1" HigherBound="57.1">
+                <om:Property Name="Type" Value="Cloud9.BizTalk.X12.CHC277_Unsolicitate_MMT" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="CHC227_Unsolicitate_BBVA" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="75f8ba43-4d23-40e1-9339-8e0a27b55d09" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="56f09548-1954-4b1b-bd86-6245903ddec0" ParentLink="ServiceBody_Statement" LowerBound="64.1" HigherBound="71.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="ReceiveUnsolicitatedCHC277Port" />
+                    <om:Property Name="MessageName" Value="CHC227_Unsolicitate" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_CHC277_Unsolicitated" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Scope" OID="088071f1-de77-4834-9228-fbfb3dd8f296" ParentLink="ServiceBody_Statement" LowerBound="71.1" HigherBound="136.1">
+                    <om:Property Name="InitializedTransactionType" Value="True" />
+                    <om:Property Name="IsSynchronized" Value="False" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Scope_CHC_277_Unsolicitated" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="VariableAssignment" OID="2abe6666-44fd-46a6-b525-387a1afa3ef3" ParentLink="ComplexStatement_Statement" LowerBound="76.1" HigherBound="84.1">
+                        <om:Property Name="Expression" Value="strPracticeName = xpath(CHC227_Unsolicitate.Body, &quot;string(/*[local-name()='X12_00501_277_A']/*[local-name()='TS277_2000A_Loop']/*[local-name()='TS277_2000B_Loop']/*[local-name()='TS277_2000C_Loop']/*[local-name()='TS277_2000D_Loop']/*[local-name()='TS277_2200D_Loop']/*[local-name()='TRN_ClaimStatusTrackingNumber']/*[local-name()='TRN02_PatientControlNumber'][1])&quot;);&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;PatientControlNumber&quot;,strPracticeName); &#xA;// PMS ID 1 - 2 = C9&#xD;&#xA;// Database #: 3-12 (&quot;Emdeon&quot; Username)&#xD;&#xA;// Claim #: 13-20&#xA;strPracticeName=strPracticeName.Substring(2,10);//  To Read Emdeon from input 277 unsolicited file &#xA;System.Diagnostics.EventLog.WriteEntry(&quot;EmdeonUserID&quot;,strPracticeName); &#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Get Practice Name" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Construct" OID="c63ad2fb-110f-4b65-b6ef-ba6b785ea40e" ParentLink="ComplexStatement_Statement" LowerBound="84.1" HigherBound="97.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Construct_GetPracticeConfigurationByName" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessageRef" OID="169b51ce-2366-45a7-b1f1-f10c0c3f391c" ParentLink="Construct_MessageRef" LowerBound="85.31" HigherBound="85.70">
+                            <om:Property Name="Ref" Value="GetPracticeConfigurationByEmdeonRequest" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessageAssignment" OID="a2f67254-6500-4291-88d3-733ff1773dd2" ParentLink="ComplexStatement_Statement" LowerBound="87.1" HigherBound="96.1">
+                            <om:Property Name="Expression" Value="&#xD;&#xA;xmlDoc = new System.Xml.XmlDocument();&#xD;&#xA;xmlString = System.String.Format(@&quot;&lt;ns0:GetPracticeConfigurationByEmdeonUser xmlns:ns0='http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS'&gt;&lt;ns0:emdeonUserID&gt;{0}&lt;/ns0:emdeonUserID&gt;&lt;/ns0:GetPracticeConfigurationByEmdeonUser&gt;&quot;, strPracticeName);&#xD;&#xA;&#xD;&#xA;xmlDoc.LoadXml(xmlString);&#xD;&#xA;GetPracticeConfigurationByEmdeonRequest.Body = xmlDoc;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
+                            <om:Property Name="ReportToAnalyst" Value="False" />
+                            <om:Property Name="Name" Value="Assign_GetPracticeConfigurationByName" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Send" OID="adca6753-2d41-40b1-a4e3-05d91710aa04" ParentLink="ComplexStatement_Statement" LowerBound="97.1" HigherBound="99.1">
+                        <om:Property Name="PortName" Value="GetPracticeConfigurationByEmdeonPort" />
+                        <om:Property Name="MessageName" Value="GetPracticeConfigurationByEmdeonRequest" />
+                        <om:Property Name="OperationName" Value="GetPracticeConfigurationByEmdeonUser" />
+                        <om:Property Name="OperationMessageName" Value="Request" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Snd_GetPracticeConfigurationByEmdeonID" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Receive" OID="890459d3-164b-434d-a122-7dfc8d2bb9af" ParentLink="ComplexStatement_Statement" LowerBound="99.1" HigherBound="101.1">
+                        <om:Property Name="Activate" Value="False" />
+                        <om:Property Name="PortName" Value="GetPracticeConfigurationByEmdeonPort" />
+                        <om:Property Name="MessageName" Value="GetPracticeConfigurationByEmdeonResponse" />
+                        <om:Property Name="OperationName" Value="GetPracticeConfigurationByEmdeonUser" />
+                        <om:Property Name="OperationMessageName" Value="Response" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Rcv_GetPracticeConfigurationByEmdeonResponse" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="VariableAssignment" OID="73e02ad6-029c-42a0-b6ae-9b4df6cf7af6" ParentLink="ComplexStatement_Statement" LowerBound="101.1" HigherBound="106.1">
+                        <om:Property Name="Expression" Value="strServer = xpath(GetPracticeConfigurationByEmdeonResponse.Body, &quot;string(/*[local-name()='GetPracticeConfigurationByEmdeonUserResponse' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS']/*[local-name()='StoredProcedureResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS']/*[local-name()='StoredProcedureResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetPracticeConfigurationByEmdeonUser']/*[local-name()='pcInstanceAddress' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetPracticeConfigurationByEmdeonUser'])&quot;);&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;strServer&quot;,strServer);&#xD;&#xA;strPracticeName=xpath(GetPracticeConfigurationByEmdeonResponse.Body, &quot;string(/*[local-name()='GetPracticeConfigurationByEmdeonUserResponse' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS']/*[local-name()='StoredProcedureResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS']/*[local-name()='StoredProcedureResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetPracticeConfigurationByEmdeonUser']/*[local-name()='pcName' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetPracticeConfigurationByEmdeonUser'])&quot;);&#xD;&#xA;System.Diagnostics.EventLog.WriteEntry(&quot;strPracticeName&quot;,strPracticeName);" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Get Server Address" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="Construct" OID="2b521339-e8da-4146-83c8-77c9723c1c5a" ParentLink="ComplexStatement_Statement" LowerBound="106.1" HigherBound="112.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Construct Canonical" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessageRef" OID="29c9d783-a145-486f-948a-6d8c43be17de" ParentLink="Construct_MessageRef" LowerBound="107.31" HigherBound="107.51">
+                            <om:Property Name="Ref" Value="ClaimStatusCanonical" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="Transform" OID="958314b7-471b-4009-808b-a9571f03815f" ParentLink="ComplexStatement_Statement" LowerBound="109.1" HigherBound="111.1">
+                            <om:Property Name="ClassName" Value="Cloud9.BizTalk.X12.Maps.CHC_277_Unsolicited_To_ClaimStatusCanonical" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="To Claim Status Canonical" />
+                            <om:Property Name="Signal" Value="False" />
+                            <om:Element Type="MessagePartRef" OID="ccce3756-7be3-433a-b53b-6da5a3adbcdc" ParentLink="Transform_InputMessagePartRef" LowerBound="110.134" HigherBound="110.158">
+                                <om:Property Name="MessageRef" Value="CHC227_Unsolicitate" />
+                                <om:Property Name="PartRef" Value="Body" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_1" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessagePartRef" OID="2942e1f4-a8f1-4bcb-840e-4a253390dd98" ParentLink="Transform_OutputMessagePartRef" LowerBound="110.36" HigherBound="110.61">
+                                <om:Property Name="MessageRef" Value="ClaimStatusCanonical" />
+                                <om:Property Name="PartRef" Value="Body" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_2" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Call" OID="3ee9f9bb-0e21-4b89-8eba-570479f0cec1" ParentLink="ComplexStatement_Statement" LowerBound="112.1" HigherBound="114.1">
+                        <om:Property Name="Identifier" Value="CallProcessCanonical" />
+                        <om:Property Name="Invokee" Value="Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ProcessCanonical" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="Parameter" OID="393cb8fd-83e1-4d7c-99da-8345bf174618" ParentLink="InvokeStatement_Parameter">
+                            <om:Property Name="Direction" Value="In" />
+                            <om:Property Name="Name" Value="ClaimStatusCanonical" />
+                            <om:Property Name="Type" Value="Cloud9.BizTalk.X12.ClaimStatusCanonical_MMT" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="Parameter" OID="5b4e4997-b603-4a5b-b393-c86a48606a7a" ParentLink="InvokeStatement_Parameter">
+                            <om:Property Name="Direction" Value="In" />
+                            <om:Property Name="Name" Value="strServer" />
+                            <om:Property Name="Type" Value="System.String" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Construct" OID="245b570f-6c5d-488a-a64b-9be788a9573f" ParentLink="ComplexStatement_Statement" LowerBound="114.1" HigherBound="121.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Construct_CHC277" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessageRef" OID="0e647fd6-f88e-4231-a575-1c58c95babc8" ParentLink="Construct_MessageRef" LowerBound="115.31" HigherBound="115.55">
+                            <om:Property Name="Ref" Value="CHC227_Unsolicitate_BBVA" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessageAssignment" OID="652888ea-e728-4888-8376-77767faf9f76" ParentLink="ComplexStatement_Statement" LowerBound="117.1" HigherBound="120.1">
+                            <om:Property Name="Expression" Value="CHC227_Unsolicitate_BBVA=CHC227_Unsolicitate;&#xD;&#xA;CHC227_Unsolicitate_BBVA(Cloud9.BizTalk.X12.Schemas.PracticeName)=strPracticeName;&#xD;&#xA;" />
+                            <om:Property Name="ReportToAnalyst" Value="False" />
+                            <om:Property Name="Name" Value="Message_CH277" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Send" OID="4030b5b2-260d-432a-aa8a-ea86efc966ba" ParentLink="ComplexStatement_Statement" LowerBound="121.1" HigherBound="123.1">
+                        <om:Property Name="PortName" Value="Send_277_Unsolicitated_BBVA" />
+                        <om:Property Name="MessageName" Value="CHC227_Unsolicitate_BBVA" />
+                        <om:Property Name="OperationName" Value="Operation_1" />
+                        <om:Property Name="OperationMessageName" Value="Request" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Send_Unsolicitated_277_BBVA" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Catch" OID="1e060839-7a03-4f1e-a04c-875a6da2261b" ParentLink="Scope_Catch" LowerBound="126.1" HigherBound="134.1">
+                        <om:Property Name="ExceptionName" Value="ex" />
+                        <om:Property Name="ExceptionType" Value="System.Exception" />
+                        <om:Property Name="IsFaultMessage" Value="False" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="CatchException" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="VariableAssignment" OID="f21be8fc-d227-4496-9e6a-89d2fe7eba5b" ParentLink="Catch_Statement" LowerBound="129.1" HigherBound="131.1">
+                            <om:Property Name="Expression" Value="System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk.Process_CHC_277ClaimStatus&quot;, ex.ToString(), System.Diagnostics.EventLogEntryType.Error);" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Log Error" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="Suspend" OID="be5c83c5-2dde-46a8-a23b-042b3b569cf6" ParentLink="Catch_Statement" LowerBound="131.1" HigherBound="133.1">
+                            <om:Property Name="ErrorMessage" Value="ex.ToString();" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Suspend" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="0801b5e9-9d4a-4d3a-9574-e354919093ef" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="44.1" HigherBound="46.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Cloud9.BizTalk.X12.ReceiveUnsolicitatedCHC277PortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveUnsolicitatedCHC277Port" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="9eef0db7-b2b5-465c-9ed1-6406ec8a3e98" ParentLink="PortDeclaration_CLRAttribute" LowerBound="44.1" HigherBound="45.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="afcdc79b-5553-4011-a594-8237b178fda8" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="46.1" HigherBound="48.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="23" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Cloud9.BizTalk.X12.GetPracticeConfigurationByEmdeonPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="GetPracticeConfigurationByEmdeonPort" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="4cdf6184-cb26-4e8e-a903-81cce5e6215a" ParentLink="PortDeclaration_CLRAttribute" LowerBound="46.1" HigherBound="47.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="56e5b077-f38a-4706-abcc-de038fde4182" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="48.1" HigherBound="50.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="37" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Cloud9.BizTalk.X12.Send_277_Unsolicitated_BBVA_Type" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Send_277_Unsolicitated_BBVA" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="DirectBindingAttribute" OID="49a95911-6c9d-458e-8e94-18b11979fcdc" ParentLink="PortDeclaration_CLRAttribute" LowerBound="48.1" HigherBound="49.1">
+                    <om:Property Name="DirectBindingType" Value="MessageBox" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="688eaa50-0c34-4cfb-9c0f-0c1d2d21985d" ParentLink="Module_MessageType" LowerBound="4.1" HigherBound="8.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="CHC277_Unsolicitate_MMT" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="dc645152-266f-46c4-a97a-1ebce36c94ba" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="6.1" HigherBound="7.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.X12.Schemas.CHC_X12_00501_277_A" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="df39be83-641c-435c-b7dc-62a660581357" ParentLink="Module_MessageType" LowerBound="8.1" HigherBound="12.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="GetPracticeConfigurationByEmdeon_MMT" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="95e6c33d-404e-4b3c-bf23-f0582ffbc688" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="10.1" HigherBound="11.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.Schemas.GPFE_TypedProcedure_BTS.GetPracticeConfigurationByEmdeonUser" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="634f6ec2-d642-49c5-8e68-0991c72198b9" ParentLink="Module_MessageType" LowerBound="12.1" HigherBound="16.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="GetPracticeConfigurationByEmdeonResponse_MMT" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="2458d8c5-f851-4b66-9f88-0d98013a29ea" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="14.1" HigherBound="15.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.Schemas.GPFE_TypedProcedure_BTS.GetPracticeConfigurationByEmdeonUserResponse" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="CorrelationType" OID="554ca41c-1d55-4834-9fb4-9e956b4bd36a" ParentLink="Module_CorrelationType" LowerBound="37.1" HigherBound="41.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="UnsolicitedPracticeName" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PropertyRef" OID="03ad7f39-5bb8-4cf4-83a0-ded62bc4b85c" ParentLink="CorrelationType_PropertyRef" LowerBound="39.9" HigherBound="39.29">
+                <om:Property Name="Ref" Value="Cloud9.BizTalk.X12.Schemas.PracticeName" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="PropertyRef_1" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Cloud9.BizTalk.X12
+{
+    internal messagetype CHC277_Unsolicitate_MMT
+    {
+        body Schemas.CHC_X12_00501_277_A Body;
+    };
+    internal messagetype GetPracticeConfigurationByEmdeon_MMT
+    {
+        body Cloud9.BizTalk.Schemas.GPFE_TypedProcedure_BTS.GetPracticeConfigurationByEmdeonUser Body;
+    };
+    internal messagetype GetPracticeConfigurationByEmdeonResponse_MMT
+    {
+        body Cloud9.BizTalk.Schemas.GPFE_TypedProcedure_BTS.GetPracticeConfigurationByEmdeonUserResponse Body;
+    };
+    internal porttype ReceiveUnsolicitatedCHC277PortType
+    {
+        oneway Operation_1
+        {
+            CHC277_Unsolicitate_MMT
+        };
+    };
+    internal porttype Send_277_Unsolicitated_BBVA_Type
+    {
+        oneway Operation_1
+        {
+            CHC277_Unsolicitate_MMT
+        };
+    };
+    internal porttype GetPracticeConfigurationByEmdeonPortType
+    {
+        requestresponse GetPracticeConfigurationByEmdeonUser
+        {
+            GetPracticeConfigurationByEmdeon_MMT, GetPracticeConfigurationByEmdeonResponse_MMT
+        };
+    };
+    internal correlationtype UnsolicitedPracticeName
+    {
+        Schemas.PracticeName
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service Process_CHC_277_Unsolicitated_ClaimsStatus
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements ReceiveUnsolicitatedCHC277PortType ReceiveUnsolicitatedCHC277Port;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses GetPracticeConfigurationByEmdeonPortType GetPracticeConfigurationByEmdeonPort;
+        [Microsoft.XLANGs.BaseTypes.DirectBinding()]
+        port uses Send_277_Unsolicitated_BBVA_Type Send_277_Unsolicitated_BBVA;
+        correlation UnsolicitedPracticeName PracticeName;
+        message CHC277_MMT CH277_BBVA;
+        message ClaimStatusCanonical_MMT ClaimStatusCanonical;
+        message GetPracticeConfigurationByEmdeonResponse_MMT GetPracticeConfigurationByEmdeonResponse;
+        message GetPracticeConfigurationByEmdeon_MMT GetPracticeConfigurationByEmdeonRequest;
+        message CHC277_Unsolicitate_MMT CHC227_Unsolicitate;
+        message CHC277_Unsolicitate_MMT CHC227_Unsolicitate_BBVA;
+        System.String xmlString;
+        System.Xml.XmlDocument xmlDoc;
+        System.String strPracticeName;
+        System.String strServer;
+        System.String strTransportLocation;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("56f09548-1954-4b1b-bd86-6245903ddec0")]
+            activate receive (ReceiveUnsolicitatedCHC277Port.Operation_1, CHC227_Unsolicitate);
+            xmlString = "";
+            xmlDoc = new System.Xml.XmlDocument();
+            strPracticeName = "";
+            strServer = "";
+            strTransportLocation = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("088071f1-de77-4834-9228-fbfb3dd8f296")]
+            scope
+            {
+                body
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("2abe6666-44fd-46a6-b525-387a1afa3ef3")]
+                    strPracticeName = xpath(CHC227_Unsolicitate.Body, "string(/*[local-name()='X12_00501_277_A']/*[local-name()='TS277_2000A_Loop']/*[local-name()='TS277_2000B_Loop']/*[local-name()='TS277_2000C_Loop']/*[local-name()='TS277_2000D_Loop']/*[local-name()='TS277_2200D_Loop']/*[local-name()='TRN_ClaimStatusTrackingNumber']/*[local-name()='TRN02_PatientControlNumber'][1])");
+                    System.Diagnostics.EventLog.WriteEntry("PatientControlNumber",strPracticeName); 
+                    // PMS ID 1 - 2 = C9
+                    // Database #: 3-12 ("Emdeon" Username)
+                    // Claim #: 13-20
+                    strPracticeName=strPracticeName.Substring(2,10);//  To Read Emdeon from input 277 unsolicited file 
+                    System.Diagnostics.EventLog.WriteEntry("EmdeonUserID",strPracticeName); 
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("c63ad2fb-110f-4b65-b6ef-ba6b785ea40e")]
+                    construct GetPracticeConfigurationByEmdeonRequest
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("a2f67254-6500-4291-88d3-733ff1773dd2")]
+                        
+                        xmlDoc = new System.Xml.XmlDocument();
+                        xmlString = System.String.Format(@"<ns0:GetPracticeConfigurationByEmdeonUser xmlns:ns0='http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS'><ns0:emdeonUserID>{0}</ns0:emdeonUserID></ns0:GetPracticeConfigurationByEmdeonUser>", strPracticeName);
+                        
+                        xmlDoc.LoadXml(xmlString);
+                        GetPracticeConfigurationByEmdeonRequest.Body = xmlDoc;
+                        
+                        
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("adca6753-2d41-40b1-a4e3-05d91710aa04")]
+                    send (GetPracticeConfigurationByEmdeonPort.GetPracticeConfigurationByEmdeonUser, GetPracticeConfigurationByEmdeonRequest);
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("890459d3-164b-434d-a122-7dfc8d2bb9af")]
+                    receive (GetPracticeConfigurationByEmdeonPort.GetPracticeConfigurationByEmdeonUser, GetPracticeConfigurationByEmdeonResponse);
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("73e02ad6-029c-42a0-b6ae-9b4df6cf7af6")]
+                    strServer = xpath(GetPracticeConfigurationByEmdeonResponse.Body, "string(/*[local-name()='GetPracticeConfigurationByEmdeonUserResponse' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS']/*[local-name()='StoredProcedureResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS']/*[local-name()='StoredProcedureResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetPracticeConfigurationByEmdeonUser']/*[local-name()='pcInstanceAddress' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetPracticeConfigurationByEmdeonUser'])");
+                    System.Diagnostics.EventLog.WriteEntry("strServer",strServer);
+                    strPracticeName=xpath(GetPracticeConfigurationByEmdeonResponse.Body, "string(/*[local-name()='GetPracticeConfigurationByEmdeonUserResponse' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS']/*[local-name()='StoredProcedureResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS']/*[local-name()='StoredProcedureResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetPracticeConfigurationByEmdeonUser']/*[local-name()='pcName' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetPracticeConfigurationByEmdeonUser'])");
+                    System.Diagnostics.EventLog.WriteEntry("strPracticeName",strPracticeName);
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("2b521339-e8da-4146-83c8-77c9723c1c5a")]
+                    construct ClaimStatusCanonical
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("958314b7-471b-4009-808b-a9571f03815f")]
+                        transform (ClaimStatusCanonical.Body) = Cloud9.BizTalk.X12.Maps.CHC_277_Unsolicited_To_ClaimStatusCanonical (CHC227_Unsolicitate.Body);
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("3ee9f9bb-0e21-4b89-8eba-570479f0cec1")]
+                    call Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus (ClaimStatusCanonical, strServer);
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("245b570f-6c5d-488a-a64b-9be788a9573f")]
+                    construct CHC227_Unsolicitate_BBVA
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("652888ea-e728-4888-8376-77767faf9f76")]
+                        CHC227_Unsolicitate_BBVA=CHC227_Unsolicitate;
+                        CHC227_Unsolicitate_BBVA(Cloud9.BizTalk.X12.Schemas.PracticeName)=strPracticeName;
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("4030b5b2-260d-432a-aa8a-ea86efc966ba")]
+                    send (Send_277_Unsolicitated_BBVA.Operation_1, CHC227_Unsolicitate_BBVA, initialize PracticeName);
+                }
+                exceptions
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("1e060839-7a03-4f1e-a04c-875a6da2261b")]
+                    catch (System.Exception ex)
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("f21be8fc-d227-4496-9e6a-89d2fe7eba5b")]
+                        System.Diagnostics.EventLog.WriteEntry("BizTalk.Process_CHC_277ClaimStatus", ex.ToString(), System.Diagnostics.EventLogEntryType.Error);
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("be5c83c5-2dde-46a8-a23b-042b3b569cf6")]
+                        suspend ex.ToString();
+                    }
+                }
+            }
+        }
+    }
+}
+

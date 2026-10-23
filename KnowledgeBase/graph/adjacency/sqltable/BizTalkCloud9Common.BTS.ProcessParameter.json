@@ -1,0 +1,48 @@
+{
+  "node": {
+    "id": "sqltable:BizTalkCloud9Common.BTS.ProcessParameter",
+    "type": "sqltable",
+    "name": "BTS.ProcessParameter",
+    "database": "BizTalkCloud9Common",
+    "columns": [
+      "ppGUID uniqueidentifier",
+      "ppID bigint",
+      "ppProcessName varchar(25)",
+      "ppProcessLastRun datetime",
+      "ppStatus SMALLINT",
+      "ppGUID ASC"
+    ],
+    "path": "Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Tables/ProcessParameter.sql"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Tables/ProcessParameter.sql",
+      "fromName": "ProcessParameter.sql",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Tables_ProcessParameter.sql.json"
+    },
+    {
+      "type": "reads",
+      "from": "sqlproc:BizTalkCloud9Common.BTS.QueueProcessParameters",
+      "fromName": "BTS.QueueProcessParameters",
+      "fromType": "sqlproc",
+      "fromFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.QueueProcessParameters.json"
+    },
+    {
+      "type": "writes",
+      "from": "sqlproc:BizTalkCloud9Common.BTS.QueueProcessParameters",
+      "fromName": "BTS.QueueProcessParameters",
+      "fromType": "sqlproc",
+      "fromFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.QueueProcessParameters.json"
+    },
+    {
+      "type": "writes",
+      "from": "sqlproc:BizTalkCloud9Common.BTS.UpdateProcessParameters",
+      "fromName": "BTS.UpdateProcessParameters",
+      "fromType": "sqlproc",
+      "fromFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.UpdateProcessParameters.json"
+    }
+  ]
+}

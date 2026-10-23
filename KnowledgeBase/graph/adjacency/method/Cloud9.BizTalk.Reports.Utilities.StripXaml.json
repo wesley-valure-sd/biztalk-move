@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.Reports.Utilities.StripXaml",
+    "type": "method",
+    "name": "Utilities.StripXaml",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.ReportGenerator/Cloud9.BizTalk.Reports/Utilities.cs",
+    "class": "Cloud9.BizTalk.Reports.Utilities",
+    "line": 21,
+    "signatures": [
+      "public static string StripXaml(string xamlText)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.Reports.Utilities",
+      "fromName": "Cloud9.BizTalk.Reports.Utilities",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.Reports.Utilities.json"
+    }
+  ]
+}

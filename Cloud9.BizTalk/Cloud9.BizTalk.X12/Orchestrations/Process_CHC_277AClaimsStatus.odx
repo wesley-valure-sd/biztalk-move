@@ -1,0 +1,413 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="2371db56-6467-4ffb-a4cb-13343a18351d" LowerBound="1.1" HigherBound="98.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Cloud9.BizTalk.X12" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="430e9b51-f21d-421c-860e-e28d028934dd" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_ReceiveCHC277A" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="1e556cd2-e72a-4f47-a005-ebb6f00f40c6" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="cff335cd-f215-4c4e-acaf-c0a3dee93850" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.24">
+                    <om:Property Name="Ref" Value="Cloud9.BizTalk.X12.CHC277A_MMT" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="a5f6be9e-907a-4a48-a8fb-84faf5745266" ParentLink="Module_ServiceDeclaration" LowerBound="11.1" HigherBound="97.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="Process_CHC_277AClaimsStatus" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="VariableDeclaration" OID="7c711620-20f1-4782-bd27-1f69f2544575" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="26.1" HigherBound="27.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="xmlString" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="51c1d7bc-1313-41d7-a095-5a8eb1738ad2" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="27.1" HigherBound="28.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="xmlDoc" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="efa9dace-0317-452a-9b84-fd01a2c021bc" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="28.1" HigherBound="29.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strTransportLocation" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="81be1d6e-9cfd-4d0c-953d-93c33db88f26" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="29.1" HigherBound="30.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strServer" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="4d68746d-cec8-45b1-b35d-82f91fced270" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="30.1" HigherBound="31.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strPracticeName" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="8cc3eadf-9fce-4259-9047-7144dc6fe2f1" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="18.1" HigherBound="19.1">
+                <om:Property Name="Type" Value="Cloud9.BizTalk.X12.ClaimStatusCanonical_MMT" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ClaimStatusCanonical" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="e6712df5-67e7-450b-989f-9accc12e1c33" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="19.1" HigherBound="20.1">
+                <om:Property Name="Type" Value="Cloud9.BizTalk.X12.UpdateClaimStatusesResponse_MMT" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="UpdateClaimStatusesResponse" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="999d5d17-36be-41f6-aae0-a4b9ace00741" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="20.1" HigherBound="21.1">
+                <om:Property Name="Type" Value="Cloud9.BizTalk.X12.GetPracticeConfigurationByNameResponse_MMT" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="GetPracticeConfigurationByNameResponse" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="195e67f2-2fee-41f3-a0c7-0a75faf02356" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="21.1" HigherBound="22.1">
+                <om:Property Name="Type" Value="Cloud9.BizTalk.X12.UpdateClaimStatusesRequest_MMT" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="UpdateClaimStatusesRequest" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="fce43d17-5789-4f78-b371-d457960a2922" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="22.1" HigherBound="23.1">
+                <om:Property Name="Type" Value="Cloud9.BizTalk.X12.GetPracticeConfigurationByName_MMT" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="GetPracticeConfigurationByNameRequest" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="5f8337a0-68e9-46c1-8848-ddb81036505a" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="23.1" HigherBound="24.1">
+                <om:Property Name="Type" Value="Cloud9.BizTalk.X12.AddClaimErrorsResponse_MMT" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="AddClaimErrorsResponse" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="2ad5cd70-38ef-41ea-9833-4010055ab491" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="24.1" HigherBound="25.1">
+                <om:Property Name="Type" Value="Cloud9.BizTalk.X12.AddClaimErrorsRequest_MMT" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="AddClaimErrorsRequest" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="e35d9df1-113f-41d2-8842-d6599c9048d0" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
+                <om:Property Name="Type" Value="Cloud9.BizTalk.X12.CHC277A_MMT" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="CHC227A" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="f058713f-41fa-40fd-a63b-a1079d1854ee" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="341521e8-a7df-4900-817e-f2a20a04f0f2" ParentLink="ServiceBody_Statement" LowerBound="33.1" HigherBound="40.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="ReceiveCHC277APort" />
+                    <om:Property Name="MessageName" Value="CHC227A" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive 277A" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="DNFPredicate" OID="6e56d962-f226-45a6-9081-5696d5865c17" ParentLink="Receive_DNFPredicate">
+                        <om:Property Name="LHS" Value="BTS.MessageType" />
+                        <om:Property Name="RHS" Value="&quot;http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC#X12_00501_277_A&quot;" />
+                        <om:Property Name="Grouping" Value="AND" />
+                        <om:Property Name="Operator" Value="Equals" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Scope" OID="769f0180-73db-4e06-a725-f49e681794fc" ParentLink="ServiceBody_Statement" LowerBound="40.1" HigherBound="95.1">
+                    <om:Property Name="InitializedTransactionType" Value="True" />
+                    <om:Property Name="IsSynchronized" Value="False" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Scope_CHC_277" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="VariableAssignment" OID="e56a8868-9420-4314-9ab4-8bf213c76deb" ParentLink="ComplexStatement_Statement" LowerBound="45.1" HigherBound="52.1">
+                        <om:Property Name="Expression" Value="&#xD;&#xA;strTransportLocation = CHC227A(FILE.ReceivedFileName);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Init" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="VariableAssignment" OID="8e866014-bffb-431a-a0cf-4f77d725b2e3" ParentLink="ComplexStatement_Statement" LowerBound="52.1" HigherBound="55.1">
+                        <om:Property Name="Expression" Value="strPracticeName = strTransportLocation.Substring(strTransportLocation.LastIndexOf('\\') + 1);&#xD;&#xA;strPracticeName = strPracticeName.Substring(0, strPracticeName.IndexOf('_'));&#xD;&#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Get Practice Name" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="Construct" OID="ce971514-fd73-4725-b056-3e1b7122b17a" ParentLink="ComplexStatement_Statement" LowerBound="55.1" HigherBound="68.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Construct_GetPracticeConfigurationByName" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessageRef" OID="6ad756e6-6380-47f9-bcb7-71c125e22b12" ParentLink="Construct_MessageRef" LowerBound="56.31" HigherBound="56.68">
+                            <om:Property Name="Ref" Value="GetPracticeConfigurationByNameRequest" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessageAssignment" OID="d6de97c4-f1b7-4a8d-8122-1b1eba182aa1" ParentLink="ComplexStatement_Statement" LowerBound="58.1" HigherBound="67.1">
+                            <om:Property Name="Expression" Value="&#xD;&#xA;xmlDoc = new System.Xml.XmlDocument();&#xD;&#xA;xmlString = System.String.Format(@&quot;&lt;ns0:GetPracticeConfigurationByName xmlns:ns0='http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS'&gt;&lt;ns0:pcName&gt;{0}&lt;/ns0:pcName&gt;&lt;/ns0:GetPracticeConfigurationByName&gt;&quot;, strPracticeName);&#xD;&#xA;&#xD;&#xA;xmlDoc.LoadXml(xmlString);&#xD;&#xA;GetPracticeConfigurationByNameRequest.Body = xmlDoc;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" />
+                            <om:Property Name="ReportToAnalyst" Value="False" />
+                            <om:Property Name="Name" Value="Assign_GetPracticeConfigurationByName" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Send" OID="9513a6ba-ea42-491f-b166-91eeeb20e8bd" ParentLink="ComplexStatement_Statement" LowerBound="68.1" HigherBound="70.1">
+                        <om:Property Name="PortName" Value="GetPracticeConfigurationByNamePort" />
+                        <om:Property Name="MessageName" Value="GetPracticeConfigurationByNameRequest" />
+                        <om:Property Name="OperationName" Value="GetPracticeConfigurationByName" />
+                        <om:Property Name="OperationMessageName" Value="Request" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Snd_GetPracticeConfigurationByName" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Receive" OID="6a64becf-35ff-40fc-846b-6541ff11d409" ParentLink="ComplexStatement_Statement" LowerBound="70.1" HigherBound="72.1">
+                        <om:Property Name="Activate" Value="False" />
+                        <om:Property Name="PortName" Value="GetPracticeConfigurationByNamePort" />
+                        <om:Property Name="MessageName" Value="GetPracticeConfigurationByNameResponse" />
+                        <om:Property Name="OperationName" Value="GetPracticeConfigurationByName" />
+                        <om:Property Name="OperationMessageName" Value="Response" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Rcv_GetPracticeConfigurationByNameResponse" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="VariableAssignment" OID="f814772a-79b9-44bb-bfd7-ae29b7c8ae0c" ParentLink="ComplexStatement_Statement" LowerBound="72.1" HigherBound="74.1">
+                        <om:Property Name="Expression" Value="strServer = xpath(GetPracticeConfigurationByNameResponse.Body, &quot;string(/*[local-name()='GetPracticeConfigurationByNameResponse' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS']/*[local-name()='StoredProcedureResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS']/*[local-name()='StoredProcedureResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetPracticeConfigurationByName']/*[local-name()='pcInstanceAddress' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetPracticeConfigurationByName'])&quot;);" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Get Server Address" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="Construct" OID="a14d6db3-3515-4d77-a288-2498df9d0aeb" ParentLink="ComplexStatement_Statement" LowerBound="74.1" HigherBound="80.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Construct Canonical" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="Transform" OID="3169e335-c034-4c76-b9df-d2ce7f33c2fe" ParentLink="ComplexStatement_Statement" LowerBound="77.1" HigherBound="79.1">
+                            <om:Property Name="ClassName" Value="Cloud9.BizTalk.X12.Maps.CHC_277A_To_ClaimStatusCanonical" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="To Claim Status Canonical" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessagePartRef" OID="48f222a2-6f49-4c34-add9-f4f188bbe7b2" ParentLink="Transform_InputMessagePartRef" LowerBound="78.123" HigherBound="78.135">
+                                <om:Property Name="MessageRef" Value="CHC227A" />
+                                <om:Property Name="PartRef" Value="Body" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_5" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessagePartRef" OID="a8d83f5d-b24f-420d-99a3-d3fec0b984c5" ParentLink="Transform_OutputMessagePartRef" LowerBound="78.36" HigherBound="78.61">
+                                <om:Property Name="MessageRef" Value="ClaimStatusCanonical" />
+                                <om:Property Name="PartRef" Value="Body" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="MessagePartReference_6" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="MessageRef" OID="06f0601e-18e7-4e03-9c43-8121b8917cc1" ParentLink="Construct_MessageRef" LowerBound="75.31" HigherBound="75.51">
+                            <om:Property Name="Ref" Value="ClaimStatusCanonical" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Call" OID="dcf3eba4-d122-424b-afd0-82e0a4a0ab87" ParentLink="ComplexStatement_Statement" LowerBound="80.1" HigherBound="82.1">
+                        <om:Property Name="Identifier" Value="CallProcessCanonical" />
+                        <om:Property Name="Invokee" Value="Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ProcessCanonical" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="Parameter" OID="02948d6e-ceea-488c-9a63-ccf8fd0621ea" ParentLink="InvokeStatement_Parameter">
+                            <om:Property Name="Direction" Value="In" />
+                            <om:Property Name="Name" Value="ClaimStatusCanonical" />
+                            <om:Property Name="Type" Value="Cloud9.BizTalk.X12.ClaimStatusCanonical_MMT" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="Parameter" OID="9fd21f92-d884-4624-8e9d-4c2b879f02cc" ParentLink="InvokeStatement_Parameter">
+                            <om:Property Name="Direction" Value="In" />
+                            <om:Property Name="Name" Value="strServer" />
+                            <om:Property Name="Type" Value="System.String" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Catch" OID="16f1937a-4ada-45de-90f3-9db1a646a105" ParentLink="Scope_Catch" LowerBound="85.1" HigherBound="93.1">
+                        <om:Property Name="ExceptionName" Value="ex" />
+                        <om:Property Name="ExceptionType" Value="System.Exception" />
+                        <om:Property Name="IsFaultMessage" Value="False" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="CatchException" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="VariableAssignment" OID="e105504e-c638-45ec-a7e6-4e04228a52c0" ParentLink="Catch_Statement" LowerBound="88.1" HigherBound="90.1">
+                            <om:Property Name="Expression" Value="System.Diagnostics.EventLog.WriteEntry(&quot;BizTalk.Process_CHC_277AClaimStatus&quot;, ex.ToString(), System.Diagnostics.EventLogEntryType.Error);" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Log Error" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="Suspend" OID="f0bde948-15c3-4eda-b09d-45ecfd59349f" ParentLink="Catch_Statement" LowerBound="90.1" HigherBound="92.1">
+                            <om:Property Name="ErrorMessage" Value="ex.ToString();" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Suspend" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="050db793-deba-4da0-97fa-a8beef99162b" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="14.1" HigherBound="16.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="7" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Cloud9.BizTalk.X12.PortType_ReceiveCHC277A" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReceiveCHC277APort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="dc68a415-e9b6-4404-b87f-be2b09339523" ParentLink="PortDeclaration_CLRAttribute" LowerBound="14.1" HigherBound="15.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="a3d436c5-170b-4f63-ba03-1029e02f4b6e" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="16.1" HigherBound="18.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="23" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Cloud9.BizTalk.X12.PartnerConfigurationPortType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="GetPracticeConfigurationByNamePort" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="2c769fd9-246f-40bd-a305-4536521806dc" ParentLink="PortDeclaration_CLRAttribute" LowerBound="16.1" HigherBound="17.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Cloud9.BizTalk.X12
+{
+    internal porttype PortType_ReceiveCHC277A
+    {
+        oneway Operation_1
+        {
+            CHC277A_MMT
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service Process_CHC_277AClaimsStatus
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements PortType_ReceiveCHC277A ReceiveCHC277APort;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PartnerConfigurationPortType GetPracticeConfigurationByNamePort;
+        message ClaimStatusCanonical_MMT ClaimStatusCanonical;
+        message UpdateClaimStatusesResponse_MMT UpdateClaimStatusesResponse;
+        message GetPracticeConfigurationByNameResponse_MMT GetPracticeConfigurationByNameResponse;
+        message UpdateClaimStatusesRequest_MMT UpdateClaimStatusesRequest;
+        message GetPracticeConfigurationByName_MMT GetPracticeConfigurationByNameRequest;
+        message AddClaimErrorsResponse_MMT AddClaimErrorsResponse;
+        message AddClaimErrorsRequest_MMT AddClaimErrorsRequest;
+        message CHC277A_MMT CHC227A;
+        System.String xmlString;
+        System.Xml.XmlDocument xmlDoc;
+        System.String strTransportLocation;
+        System.String strServer;
+        System.String strPracticeName;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("341521e8-a7df-4900-817e-f2a20a04f0f2")]
+            activate ((BTS.MessageType == "http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC#X12_00501_277_A"))receive (ReceiveCHC277APort.Operation_1, CHC227A);
+            xmlString = "";
+            xmlDoc = new System.Xml.XmlDocument();
+            strTransportLocation = "";
+            strServer = "";
+            strPracticeName = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("769f0180-73db-4e06-a725-f49e681794fc")]
+            scope
+            {
+                body
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("e56a8868-9420-4314-9ab4-8bf213c76deb")]
+                    
+                    strTransportLocation = CHC227A(FILE.ReceivedFileName);
+                    
+                    
+                    
+                    
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("8e866014-bffb-431a-a0cf-4f77d725b2e3")]
+                    strPracticeName = strTransportLocation.Substring(strTransportLocation.LastIndexOf('\\') + 1);
+                    strPracticeName = strPracticeName.Substring(0, strPracticeName.IndexOf('_'));
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("ce971514-fd73-4725-b056-3e1b7122b17a")]
+                    construct GetPracticeConfigurationByNameRequest
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("d6de97c4-f1b7-4a8d-8122-1b1eba182aa1")]
+                        
+                        xmlDoc = new System.Xml.XmlDocument();
+                        xmlString = System.String.Format(@"<ns0:GetPracticeConfigurationByName xmlns:ns0='http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS'><ns0:pcName>{0}</ns0:pcName></ns0:GetPracticeConfigurationByName>", strPracticeName);
+                        
+                        xmlDoc.LoadXml(xmlString);
+                        GetPracticeConfigurationByNameRequest.Body = xmlDoc;
+                        
+                        
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("9513a6ba-ea42-491f-b166-91eeeb20e8bd")]
+                    send (GetPracticeConfigurationByNamePort.GetPracticeConfigurationByName, GetPracticeConfigurationByNameRequest);
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("6a64becf-35ff-40fc-846b-6541ff11d409")]
+                    receive (GetPracticeConfigurationByNamePort.GetPracticeConfigurationByName, GetPracticeConfigurationByNameResponse);
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("f814772a-79b9-44bb-bfd7-ae29b7c8ae0c")]
+                    strServer = xpath(GetPracticeConfigurationByNameResponse.Body, "string(/*[local-name()='GetPracticeConfigurationByNameResponse' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS']/*[local-name()='StoredProcedureResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS']/*[local-name()='StoredProcedureResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetPracticeConfigurationByName']/*[local-name()='pcInstanceAddress' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetPracticeConfigurationByName'])");
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("a14d6db3-3515-4d77-a288-2498df9d0aeb")]
+                    construct ClaimStatusCanonical
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("3169e335-c034-4c76-b9df-d2ce7f33c2fe")]
+                        transform (ClaimStatusCanonical.Body) = Cloud9.BizTalk.X12.Maps.CHC_277A_To_ClaimStatusCanonical (CHC227A.Body);
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("dcf3eba4-d122-424b-afd0-82e0a4a0ab87")]
+                    call Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus (ClaimStatusCanonical, strServer);
+                }
+                exceptions
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("16f1937a-4ada-45de-90f3-9db1a646a105")]
+                    catch (System.Exception ex)
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("e105504e-c638-45ec-a7e6-4e04228a52c0")]
+                        System.Diagnostics.EventLog.WriteEntry("BizTalk.Process_CHC_277AClaimStatus", ex.ToString(), System.Diagnostics.EventLogEntryType.Error);
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("f0bde948-15c3-4eda-b09d-45ecfd59349f")]
+                        suspend ex.ToString();
+                    }
+                }
+            }
+        }
+    }
+}
+

@@ -1,0 +1,174 @@
+{
+  "node": {
+    "id": "orchestration:Cloud9.BizTalk.Epic.ProcessTreatmentCardData_Worker",
+    "type": "orchestration",
+    "name": "ProcessTreatmentCardData_Worker",
+    "ports": [
+      "Port_GetTreatmentCardPatientListDynamic (uses dynamic PortType_GetTreatmentCardPatientList)",
+      "Port_Send_MDM_T02 (uses PortType_Send_MDM_T02)"
+    ],
+    "parameters": "System.String instanceConnectionString, message MPType_QueueProcessParametersHeader msg_QueueProcessParametersHeader, message MPType_QueueProcessParametersPracticeElement msg_QueueProcessParametersElement",
+    "messages": [
+      "msg_GetTreatmentCardPatientListReq: MPType_GetTreatmentCardPatientListReq",
+      "msg_GetTreatmentCardPatientListResp: MPType_GetTreatmentCardPatientListResp",
+      "msg_MDM_T02: MPType_MDM_T02",
+      "msg_TCPatientListElement: MPType_TCPatientListElement"
+    ],
+    "transaction": "longrunning transaction",
+    "visibility": "internal",
+    "module": "Cloud9.BizTalk.Epic",
+    "invocation": "called/started by another orchestration",
+    "contextProperties": [
+      "BTS.RetryCount",
+      "BTS.RetryInterval",
+      "Microsoft.XLANGs.BaseTypes.Address",
+      "Microsoft.XLANGs.BaseTypes.TransportType",
+      "WCF.Action",
+      "WCF.BindingConfiguration",
+      "WCF.BindingType",
+      "WCF.EnableTransaction"
+    ],
+    "line": 595,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.ProcessTreatmentCardData.Worker.odx",
+    "bindingStates": {
+      "Cloud9.BizTalk.Deployment": "Unenlisted",
+      "Cloud9.BizTalk.PDS.Deployment": "Unenlisted"
+    }
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.ProcessTreatmentCardData.Worker.odx",
+      "toName": "Cloud9.BizTalk.Epic.ProcessTreatmentCardData.Worker.odx",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Orchestrations_Cloud9.BizTalk.Epic.ProcessTreatmentCardData.Worker.odx.json"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.Epic.MPType_GetTreatmentCardPatientListReq",
+      "toName": "MPType_GetTreatmentCardPatientListReq",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_GetTreatmentCardPatientListReq.json",
+      "message": "msg_GetTreatmentCardPatientListReq"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.Epic.MPType_GetTreatmentCardPatientListResp",
+      "toName": "MPType_GetTreatmentCardPatientListResp",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_GetTreatmentCardPatientListResp.json",
+      "message": "msg_GetTreatmentCardPatientListResp"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.Epic.MPType_MDM_T02",
+      "toName": "MPType_MDM_T02",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_MDM_T02.json",
+      "message": "msg_MDM_T02"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.Epic.MPType_TCPatientListElement",
+      "toName": "MPType_TCPatientListElement",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_TCPatientListElement.json",
+      "message": "msg_TCPatientListElement"
+    },
+    {
+      "type": "usesMap",
+      "to": "map:Cloud9.BizTalk.Epic.Transform_QueueProcessParametersHeader_To_GetTreatmentCardPatientListReq",
+      "toName": "Cloud9.BizTalk.Epic.Transform_QueueProcessParametersHeader_To_GetTreatmentCardPatientListReq",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.Epic.Transform_QueueProcessParametersHeader_To_GetTreatmentCardPatientListReq.json",
+      "output": "msg_GetTreatmentCardPatientListReq.Body",
+      "input": "msg_QueueProcessParametersHeader.Body",
+      "line": 650
+    },
+    {
+      "type": "usesMap",
+      "to": "map:Cloud9.BizTalk.Epic.Maps.TCForPatient_To_MDM_T02Body",
+      "toName": "Cloud9.BizTalk.Epic.Maps.TCForPatient_To_MDM_T02Body",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.Epic.Maps.TCForPatient_To_MDM_T02Body.json",
+      "output": "msg_MDM_T02.BodySegments",
+      "input": "msg_TCPatientListElement.Body",
+      "line": 697
+    },
+    {
+      "type": "startsOrchestration",
+      "to": "orchestration:Cloud9.BizTalk.Epic.AddLog",
+      "toName": "AddLog",
+      "toType": "orchestration",
+      "toFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.AddLog.json",
+      "line": 719
+    },
+    {
+      "type": "invokesProc",
+      "to": "sqlproc:PracticeDB.BTS.GetTreatmentCardPatientList",
+      "toName": "BTS.GetTreatmentCardPatientList",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/PracticeDB.BTS.GetTreatmentCardPatientList.json",
+      "line": 652,
+      "via": "dynamic WCF-SQL send port (WCF.Action set in code)"
+    },
+    {
+      "type": "callsMethod",
+      "to": "method:Cloud9.BizTalk.ReportGenerator.TreatmentCardRender.getBase64FromTreatmentCardPDF",
+      "toName": "TreatmentCardRender.getBase64FromTreatmentCardPDF",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.ReportGenerator.TreatmentCardRender.getBase64FromTreatmentCardPDF.json",
+      "line": 682
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.BizTalk.Deployment/Cloud9.BizTalk.Epic_1.0.0.0_Cloud9.BizTalk.Epic.ProcessTreatmentCardData_Worker_Port_GetTreatmentCardPatientListDynamic_182f4e020577c79e",
+      "toName": "Cloud9.BizTalk.Epic_1.0.0.0_Cloud9.BizTalk.Epic.ProcessTreatmentCardData_Worker_Port_GetTreatmentCardPatientListDynamic_182f4e020577c79e",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.BizTalk.Deployment_Cloud9.BizTalk.Epic_1.0.0.0_Cloud9.BizTalk.Epic.ProcessTreatmentCardData_Worker_Port_GetTreatmentCardPatientListDynamic_182f4e020577c79e.json",
+      "bindingSet": "Cloud9.BizTalk.Deployment",
+      "bindingOption": "4",
+      "logicalPort": "Port_GetTreatmentCardPatientListDynamic"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.BizTalk.Deployment/SP.MDM_T02.Outbound",
+      "toName": "SP.MDM_T02.Outbound",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.BizTalk.Deployment_SP.MDM_T02.Outbound.json",
+      "bindingSet": "Cloud9.BizTalk.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "Port_Send_MDM_T02"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.BizTalk.PDS.Deployment/Cloud9.BizTalk.Epic_1.0.0.0_Cloud9.BizTalk.Epic.ProcessTreatmentCardData_Worker_Port_GetTreatmentCardPatientListDynamic_182f4e020577c79e",
+      "toName": "Cloud9.BizTalk.Epic_1.0.0.0_Cloud9.BizTalk.Epic.ProcessTreatmentCardData_Worker_Port_GetTreatmentCardPatientListDynamic_182f4e020577c79e",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.BizTalk.PDS.Deployment_Cloud9.BizTalk.Epic_1.0.0.0_Cloud9.BizTalk.Epic.ProcessTreatmentCardData_Worker_Port_GetTreatmentCardPatientListDynamic_182f4e020577c79e.json",
+      "bindingSet": "Cloud9.BizTalk.PDS.Deployment",
+      "bindingOption": "4",
+      "logicalPort": "Port_GetTreatmentCardPatientListDynamic"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.BizTalk.PDS.Deployment/SP.MDM_T02.Outbound",
+      "toName": "SP.MDM_T02.Outbound",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.BizTalk.PDS.Deployment_SP.MDM_T02.Outbound.json",
+      "bindingSet": "Cloud9.BizTalk.PDS.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "Port_Send_MDM_T02"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "callsOrchestration",
+      "from": "orchestration:Cloud9.BizTalk.Epic.ProcessTreatmentCardData_Controller",
+      "fromName": "ProcessTreatmentCardData_Controller",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.ProcessTreatmentCardData_Controller.json",
+      "line": 612
+    }
+  ]
+}

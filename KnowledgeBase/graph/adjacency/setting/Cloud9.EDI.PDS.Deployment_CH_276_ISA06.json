@@ -1,0 +1,22 @@
+{
+  "node": {
+    "id": "setting:Cloud9.EDI.PDS.Deployment/CH_276_ISA06",
+    "type": "setting",
+    "name": "CH_276_ISA06",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.PDS.Deployment/SettingsFileGenerator.xml",
+    "bindingSet": "Cloud9.EDI.PDS.Deployment",
+    "valuesByEnvironment": {
+      "Default Values": "462:TEST001",
+      "Local Dev (LocalSettings)": "462:TEST001",
+      "LAB2 (LAB2Settings)": "462:TEST001",
+      "DEV (DEVSettings)": "462:TEST001",
+      "CFG (CFGSettings)": "462:TEST001",
+      "TST (TSTSettings)": "462:TEST001",
+      "TRN (TrainingSettings)": "462:TEST001",
+      "STG (StagingSettings)": "462:TEST001",
+      "PROD (ProdSettings)": "462:TEST001"
+    }
+  },
+  "outgoing": [],
+  "incoming": []
+}

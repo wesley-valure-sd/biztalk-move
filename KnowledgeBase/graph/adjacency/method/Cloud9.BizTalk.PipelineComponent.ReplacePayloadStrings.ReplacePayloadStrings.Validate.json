@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.ReplacePayloadStrings.Validate",
+    "type": "method",
+    "name": "ReplacePayloadStrings.Validate",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings/ReplacePayloadStrings.cs",
+    "class": "Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.ReplacePayloadStrings",
+    "line": 198,
+    "signatures": [
+      "public System.Collections.IEnumerator Validate(object obj)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.ReplacePayloadStrings",
+      "fromName": "Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.ReplacePayloadStrings",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.ReplacePayloadStrings.json"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "node": {
+    "id": "messagetype:Cloud9.BizTalk.X12.MPType_QueueProcessParametersResp",
+    "type": "messagetype",
+    "name": "MPType_QueueProcessParametersResp",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_837Claims_Controller.odx",
+    "bodyType": "Cloud9.BizTalk.Schemas.QPP_TypedPolling_QueueProcessParameters.TypedPolling",
+    "module": "Cloud9.BizTalk.X12"
+  },
+  "outgoing": [
+    {
+      "type": "bodySchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.QPP_TypedPolling_QueueProcessParameters",
+      "toName": "Cloud9.BizTalk.Schemas.QPP_TypedPolling_QueueProcessParameters",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.QPP_TypedPolling_QueueProcessParameters.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.QPP_TypedPolling_QueueProcessParameters.TypedPolling"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_837Claims_Controller.odx",
+      "fromName": "Process_CHC_837Claims_Controller.odx",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Orchestrations_Process_CHC_837Claims_Controller.odx.json"
+    },
+    {
+      "type": "usesMessageType",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_837Claims_Controller",
+      "fromName": "Process_CHC_837Claims_Controller",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_837Claims_Controller.json",
+      "message": "msg_QueueProcessParametersResp"
+    },
+    {
+      "type": "usesMessageType",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Controller",
+      "fromName": "Process_CHC_InboundFiles_Controller",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Controller.json",
+      "message": "msg_QueueProcessParametersResp"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "node": {
+    "id": "class:Cloud9.BizTalk.Helper.DateFormatConversion",
+    "type": "class",
+    "name": "Cloud9.BizTalk.Helper.DateFormatConversion",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/DateFormatConversion.cs",
+    "visibility": "public",
+    "kind": "class",
+    "line": 10
+  },
+  "outgoing": [
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.DateFormatConversion.ConvertHL7DateToSQLDate",
+      "toName": "DateFormatConversion.ConvertHL7DateToSQLDate",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.DateFormatConversion.ConvertHL7DateToSQLDate.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.DateFormatConversion.ConvertHL7DateToSQLDatetimeWithoutOffset",
+      "toName": "DateFormatConversion.ConvertHL7DateToSQLDatetimeWithoutOffset",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.DateFormatConversion.ConvertHL7DateToSQLDatetimeWithoutOffset.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.DateFormatConversion.ConvertHL7DateToSQLTime",
+      "toName": "DateFormatConversion.ConvertHL7DateToSQLTime",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.DateFormatConversion.ConvertHL7DateToSQLTime.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.DateFormatConversion.ConvertSQLDateToHL7Time",
+      "toName": "DateFormatConversion.ConvertSQLDateToHL7Time",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.DateFormatConversion.ConvertSQLDateToHL7Time.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.DateFormatConversion.ConvertSQLDateToEDIDate",
+      "toName": "DateFormatConversion.ConvertSQLDateToEDIDate",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.DateFormatConversion.ConvertSQLDateToEDIDate.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.DateFormatConversion.ConvertEPICDateTimeToSQLTime",
+      "toName": "DateFormatConversion.ConvertEPICDateTimeToSQLTime",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.DateFormatConversion.ConvertEPICDateTimeToSQLTime.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/DateFormatConversion.cs",
+      "fromName": "DateFormatConversion.cs",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Helper_DateFormatConversion.cs.json"
+    }
+  ]
+}

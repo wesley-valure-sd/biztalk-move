@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ns4="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:ns3="http://schemas.microsoft.com/Sql/2008/05/Types/Tables/BTS" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/Sql/2008/05/Types/Tables/BTS" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation=".\SC_Serialization.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:annotation>
+    <xs:appinfo>
+      <fileNameHint xmlns="http://schemas.microsoft.com/servicemodel/adapters/metadata/xsd">Table.BTS</fileNameHint>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:complexType name="SubmittedClaim">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="scGUID" nillable="false" type="ns4:guid" />
+      <xs:element minOccurs="0" maxOccurs="1" name="pcGUID" nillable="false" type="ns4:guid" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaClaimGUID" nillable="true" type="ns4:guid" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox23PatientAccountID" nillable="true">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimTotal" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="pracTIN" nillable="true">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="pracProviderNumber" nillable="true">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="pracLicenseNumber" nillable="true">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="50" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SubmittedClaim" nillable="true" type="ns3:SubmittedClaim" />
+  <xs:complexType name="ArrayOfSubmittedClaim">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SubmittedClaim" type="ns3:SubmittedClaim" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSubmittedClaim" nillable="true" type="ns3:ArrayOfSubmittedClaim" />
+</xs:schema>

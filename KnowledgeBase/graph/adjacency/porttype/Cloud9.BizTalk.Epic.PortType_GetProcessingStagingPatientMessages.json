@@ -1,0 +1,22 @@
+{
+  "node": {
+    "id": "porttype:Cloud9.BizTalk.Epic.PortType_GetProcessingStagingPatientMessages",
+    "type": "porttype",
+    "name": "PortType_GetProcessingStagingPatientMessages",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient.odx",
+    "module": "Cloud9.BizTalk.Epic",
+    "operations": [
+      "requestresponse GetProcessingStagingPatientMessages(MPType_GetProcessingStagingPatientMessagesReq, MPType_GetProcessingStagingPatientMessagesResp)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient.odx",
+      "fromName": "Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient.odx",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Orchestrations_Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient.odx.json"
+    }
+  ]
+}

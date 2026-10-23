@@ -1,0 +1,19 @@
+MAP: Cloud9.BizTalk.Epic.HeaderAndFileToProcessingError.btm
+PATH: Cloud9.BizTalk\Cloud9.BizTalk.Epic\Maps\Cloud9.BizTalk.Epic.HeaderAndFileToProcessingError.btm
+SOURCE: Cloud9.BizTalk.Schemas.HL7InboundMessage (root HL7InboundMessage)
+TARGET: Cloud9.BizTalk.Schemas.PE_TableOperation_BTS_ProcessingError (root Insert)
+SCRIPT PRECEDENCE (first match wins when a functoid has more than one script): CSharp > ExternalAssembly > VbNet > JScript > XsltCallTemplate > Xslt
+
+=== PAGE: Page 1 ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L4: F1 -> Insert/Rows/ProcessingError/peCreatedDate
+L6: F6 -> Insert/Rows/ProcessingError/peCreatedBy
+L9: HL7InboundMessage/MessageType -> Insert/Rows/ProcessingError/peMessageType
+L11: F4 -> Insert/Rows/ProcessingError/peErrorMessage
+L12: HL7InboundMessage/MessageGUID -> Insert/Rows/ProcessingError/ifGUID
+L14: HL7InboundMessage/MessageGUID -> Insert/Rows/ProcessingError/peMessageID
+--- FUNCTOIDS ---
+F4 [String Concatenate] inputs: const:'setme'
+F1 [Date and Time, current (inferred)] inputs: 
+F6 [String Concatenate] inputs: const:'HeaderAndFileToProcessingError'
+

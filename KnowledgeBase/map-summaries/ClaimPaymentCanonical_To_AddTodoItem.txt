@@ -1,0 +1,15 @@
+MAP: ClaimPaymentCanonical_To_AddTodoItem.btm
+PATH: Cloud9.BizTalk\Cloud9.BizTalk.X12\Maps\ClaimPaymentCanonical_To_AddTodoItem.btm
+SOURCE: Cloud9.BizTalk.Schemas.Canonical.ClaimPayment (root ClaimPayment)
+TARGET: Cloud9.BizTalk.Schemas.AddTodoItemTypedProcedure_BTS (root AddTodoItem)
+SCRIPT PRECEDENCE (first match wins when a functoid has more than one script): CSharp > ExternalAssembly > VbNet > JScript > XsltCallTemplate > Xslt
+
+=== PAGE: Page 1 ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L1: ClaimPayment/PatientControlNumber -> AddTodoItem/adaclaimNumber
+L5: ClaimPayment/PatientControlNumber -> F2
+L6: F2 -> AddTodoItem/message
+L7: ClaimPayment/TotalActualProviderPaymentAmount -> F2
+--- FUNCTOIDS ---
+F2 [String Concatenate] inputs: const:'Payment for claim', L5, const:' needs reversal for amount $', L7, const:'.'
+

@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "setting:Cloud9.EDI.Deployment/CH_276_ISA06",
+    "type": "setting",
+    "name": "CH_276_ISA06",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.Deployment/SettingsFileGenerator.xml",
+    "bindingSet": "Cloud9.EDI.Deployment",
+    "valuesByEnvironment": {
+      "Default Values (DefaultSettings)": "462:TEST001",
+      "Local Dev (LocalSettings)": "462:TEST001",
+      "JGLISSON Development (JGLISSONSettings)": "462:TEST001",
+      "LAB (LABSettings)": "462:TEST001",
+      "LAB2 (LAB2Settings)": "462:TEST001",
+      "LAB3 (LAB3Settings)": "462:TEST001",
+      "PROD (C9Prod1_Settings)": "462:TEST001",
+      "PROD (C9Prod2_Settings)": "462:TEST001",
+      "LAB (SDLab1_Settings)": "462:TEST001",
+      "PROD (SDProd1_Settings)": "462:TEST001"
+    }
+  },
+  "outgoing": [],
+  "incoming": []
+}

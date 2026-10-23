@@ -1,0 +1,51 @@
+{
+  "node": {
+    "id": "project:Cloud9.BizTalk.PipelineComponent.CustomEncoder",
+    "type": "project",
+    "name": "Cloud9.BizTalk.PipelineComponent.CustomEncoder",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.PipelineComponent.CustomEncoder/Cloud9.BizTalk.PipelineComponent.CustomEncoder.csproj",
+    "framework": "v4.5.2",
+    "kind": "csharp",
+    "rootNamespace": "Cloud9.BizTalk.PipelineComponent.CustomEncoder",
+    "assemblyName": "Cloud9.BizTalk.PipelineComponent.CustomEncoder"
+  },
+  "outgoing": [
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.PipelineComponent.CustomEncoder/CustomEncoder.cs",
+      "toName": "CustomEncoder.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.PipelineComponent.CustomEncoder_CustomEncoder.cs.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "references",
+      "from": "project:Cloud9.BizTalk.X12",
+      "fromName": "Cloud9.BizTalk.X12",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.X12.json"
+    },
+    {
+      "type": "references",
+      "from": "project:Cloud9.BizTalk.X12.PDS",
+      "fromName": "Cloud9.BizTalk.X12.PDS",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.X12.PDS.json"
+    },
+    {
+      "type": "contains",
+      "from": "solution:Cloud9.EDI.PDS",
+      "fromName": "Cloud9.EDI.PDS",
+      "fromType": "solution",
+      "fromFile": "adjacency/solution/Cloud9.EDI.PDS.json"
+    },
+    {
+      "type": "contains",
+      "from": "solution:Cloud9.EDI",
+      "fromName": "Cloud9.EDI",
+      "fromType": "solution",
+      "fromFile": "adjacency/solution/Cloud9.EDI.json"
+    }
+  ]
+}

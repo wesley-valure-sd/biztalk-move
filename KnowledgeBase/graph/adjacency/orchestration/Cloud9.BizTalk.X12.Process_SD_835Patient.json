@@ -1,0 +1,271 @@
+{
+  "node": {
+    "id": "orchestration:Cloud9.BizTalk.X12.Process_SD_835Patient",
+    "type": "orchestration",
+    "name": "Process_SD_835Patient",
+    "activation": "activate receive (ReceiveSD835PatientPort.Operation_1, SD_835)",
+    "ports": [
+      "ReceiveSD835PatientPort (implements ReceiveSD835PortType)",
+      "AddImportLogPort (uses dynamic PortType_AddImportLog)",
+      "GetPracticeConfigurationByNamePort (uses PartnerConfigurationPortType)",
+      "Post835TransactionPort (uses dynamic Post835TransactionPortType)"
+    ],
+    "messages": [
+      "SD_835: SD835_MMT",
+      "ClaimPaymentBatch: Cloud9.BizTalk.Schemas.Canonical.ClaimPaymentBatch",
+      "ClaimPayment: Cloud9.BizTalk.Schemas.Canonical.ClaimPayment",
+      "AddImportLogResponse: AddImportLogResponse_MMT",
+      "Post835PatientTransaction: Post835PatientTransaction_MMT",
+      "Post835PatientTransactionResponse: Post835PatientTransactionResponse_MMT",
+      "GetPracticeConfigurationByName: GetPracticeConfigurationByName_MMT",
+      "GetPracticeConfigurationByNameResponse: GetPracticeConfigurationByNameResponse_MMT",
+      "AddImportLog: AddImportLogRequest_MMT"
+    ],
+    "visibility": "internal",
+    "module": "Cloud9.BizTalk.X12",
+    "contextProperties": [
+      "BTS.InboundTransportLocation",
+      "BTS.InboundTransportType",
+      "BTS.MessageID",
+      "BTS.RetryCount",
+      "BTS.RetryInterval",
+      "FILE.ReceivedFileName",
+      "Microsoft.XLANGs.BaseTypes.Address",
+      "Microsoft.XLANGs.BaseTypes.TransportType",
+      "WCF.Action",
+      "WCF.BindingConfiguration",
+      "WCF.BindingType",
+      "WCF.EnableTransaction"
+    ],
+    "line": 557,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_SD_835Patient.odx",
+    "bindingStates": {
+      "Cloud9.EDI.Deployment": "Started",
+      "Cloud9.EDI.PDS.Deployment": "Started"
+    }
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_SD_835Patient.odx",
+      "toName": "Process_SD_835Patient.odx",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Orchestrations_Process_SD_835Patient.odx.json"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.SD835_MMT",
+      "toName": "SD835_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.SD835_MMT.json",
+      "message": "SD_835"
+    },
+    {
+      "type": "usesSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.Canonical.ClaimPaymentBatch",
+      "toName": "Cloud9.BizTalk.Schemas.Canonical.ClaimPaymentBatch",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.Canonical.ClaimPaymentBatch.json",
+      "message": "ClaimPaymentBatch"
+    },
+    {
+      "type": "usesSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.Canonical.ClaimPayment",
+      "toName": "Cloud9.BizTalk.Schemas.Canonical.ClaimPayment",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.Canonical.ClaimPayment.json",
+      "message": "ClaimPayment"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.AddImportLogResponse_MMT",
+      "toName": "AddImportLogResponse_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.AddImportLogResponse_MMT.json",
+      "message": "AddImportLogResponse"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.Post835PatientTransaction_MMT",
+      "toName": "Post835PatientTransaction_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.Post835PatientTransaction_MMT.json",
+      "message": "Post835PatientTransaction"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.Post835PatientTransactionResponse_MMT",
+      "toName": "Post835PatientTransactionResponse_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.Post835PatientTransactionResponse_MMT.json",
+      "message": "Post835PatientTransactionResponse"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.GetPracticeConfigurationByName_MMT",
+      "toName": "GetPracticeConfigurationByName_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.GetPracticeConfigurationByName_MMT.json",
+      "message": "GetPracticeConfigurationByName"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.GetPracticeConfigurationByNameResponse_MMT",
+      "toName": "GetPracticeConfigurationByNameResponse_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.GetPracticeConfigurationByNameResponse_MMT.json",
+      "message": "GetPracticeConfigurationByNameResponse"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.AddImportLogRequest_MMT",
+      "toName": "AddImportLogRequest_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.AddImportLogRequest_MMT.json",
+      "message": "AddImportLog"
+    },
+    {
+      "type": "usesMap",
+      "to": "map:Cloud9.BizTalk.X12.Maps.SD_835WebPayment_To_ClaimPaymentBatchCanonical",
+      "toName": "Cloud9.BizTalk.X12.Maps.SD_835WebPayment_To_ClaimPaymentBatchCanonical",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.SD_835WebPayment_To_ClaimPaymentBatchCanonical.json",
+      "output": "ClaimPaymentBatch",
+      "input": "SD_835.Body",
+      "line": 643
+    },
+    {
+      "type": "usesMap",
+      "to": "map:Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835PatientTransactionWeb",
+      "toName": "Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835PatientTransactionWeb",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835PatientTransactionWeb.json",
+      "output": "Post835PatientTransaction.Body",
+      "input": "ClaimPayment",
+      "line": 680
+    },
+    {
+      "type": "invokesProc",
+      "to": "sqlproc:PracticeDB.BTS.Post835PatientTransaction",
+      "toName": "BTS.Post835PatientTransaction",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/PracticeDB.BTS.Post835PatientTransaction.json",
+      "line": 686,
+      "via": "dynamic WCF-SQL send port (WCF.Action set in code)"
+    },
+    {
+      "type": "invokesProc",
+      "to": "sqlproc:PracticeDB.BTS.AddImportLog",
+      "toName": "BTS.AddImportLog",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/PracticeDB.BTS.AddImportLog.json",
+      "line": 748,
+      "via": "dynamic WCF-SQL send port (WCF.Action set in code)"
+    },
+    {
+      "type": "invokesProc",
+      "to": "sqlproc:BizTalkCloud9Common.BTS.GetPracticeConfigurationByName",
+      "toName": "BTS.GetPracticeConfigurationByName",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.GetPracticeConfigurationByName.json",
+      "line": 656,
+      "via": "static send port operation GetPracticeConfigurationByName (BtsActionMapping)"
+    },
+    {
+      "type": "callsMethod",
+      "to": "method:Cloud9.BizTalk.Helper.XLangMessageHelpers.GetReceiveLocationName",
+      "toName": "XLangMessageHelpers.GetReceiveLocationName",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.XLangMessageHelpers.GetReceiveLocationName.json",
+      "line": 636
+    },
+    {
+      "type": "boundToReceivePort",
+      "to": "receiveport:Cloud9.EDI.Deployment/RP_SD835_Patient",
+      "toName": "RP_SD835_Patient",
+      "toType": "receiveport",
+      "toFile": "adjacency/receiveport/Cloud9.EDI.Deployment_RP_SD835_Patient.json",
+      "logicalPort": "ReceiveSD835PatientPort",
+      "bindingSet": "Cloud9.EDI.Deployment"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.Deployment/SP_BizTalkCloud9Common_WCF",
+      "toName": "SP_BizTalkCloud9Common_WCF",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.Deployment_SP_BizTalkCloud9Common_WCF.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "GetPracticeConfigurationByNamePort"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_SD_835Patient_Post835TransactionPort_182f4e020577c79e",
+      "toName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_SD_835Patient_Post835TransactionPort_182f4e020577c79e",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_SD_835Patient_Post835TransactionPort_182f4e020577c79e.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "4",
+      "logicalPort": "Post835TransactionPort"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_SD_835Patient_AddImportLogPort_182f4e020577c79e",
+      "toName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_SD_835Patient_AddImportLogPort_182f4e020577c79e",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_SD_835Patient_AddImportLogPort_182f4e020577c79e.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "4",
+      "logicalPort": "AddImportLogPort"
+    },
+    {
+      "type": "boundToReceivePort",
+      "to": "receiveport:Cloud9.EDI.PDS.Deployment/RP_SD835_Patient",
+      "toName": "RP_SD835_Patient",
+      "toType": "receiveport",
+      "toFile": "adjacency/receiveport/Cloud9.EDI.PDS.Deployment_RP_SD835_Patient.json",
+      "logicalPort": "ReceiveSD835PatientPort",
+      "bindingSet": "Cloud9.EDI.PDS.Deployment"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.PDS.Deployment/SP_BizTalkCloud9Common_WCF",
+      "toName": "SP_BizTalkCloud9Common_WCF",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.PDS.Deployment_SP_BizTalkCloud9Common_WCF.json",
+      "bindingSet": "Cloud9.EDI.PDS.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "GetPracticeConfigurationByNamePort"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.PDS.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_SD_835Patient_Post835TransactionPort_182f4e020577c79e",
+      "toName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_SD_835Patient_Post835TransactionPort_182f4e020577c79e",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.PDS.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_SD_835Patient_Post835TransactionPort_182f4e020577c79e.json",
+      "bindingSet": "Cloud9.EDI.PDS.Deployment",
+      "bindingOption": "4",
+      "logicalPort": "Post835TransactionPort"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.PDS.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_SD_835Patient_AddImportLogPort_182f4e020577c79e",
+      "toName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_SD_835Patient_AddImportLogPort_182f4e020577c79e",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.PDS.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_SD_835Patient_AddImportLogPort_182f4e020577c79e.json",
+      "bindingSet": "Cloud9.EDI.PDS.Deployment",
+      "bindingOption": "4",
+      "logicalPort": "AddImportLogPort"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "implementedBy",
+      "from": "flowstep:SD-Web-03-PracticeLookup",
+      "fromName": "Find practice database from folder name",
+      "fromType": "flowstep",
+      "fromFile": "adjacency/flowstep/SD-Web-03-PracticeLookup.json",
+      "curated": true
+    }
+  ]
+}

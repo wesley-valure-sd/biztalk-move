@@ -1,0 +1,60 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.PE_TableOperation_BTS_ProcessingError",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.PE_TableOperation_BTS_ProcessingError",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ProcessingErrors/PE_TableOperation.BTS.ProcessingError.xsd",
+    "rootElements": [
+      "Insert",
+      "InsertResponse"
+    ],
+    "kind": "wcf-sql-table",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/TableOp/BTS/ProcessingError",
+    "sqlActions": [
+      "TableOp/Insert/BTS/ProcessingError"
+    ]
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ProcessingErrors/PE_TableOperation.BTS.ProcessingError.xsd",
+      "toName": "PE_TableOperation.BTS.ProcessingError.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_ProcessingErrors_PE_TableOperation.BTS.ProcessingError.xsd.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_ErrorToInsertRequest",
+      "fromName": "Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_ErrorToInsertRequest",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_ErrorToInsertRequest.json",
+      "root": "Insert"
+    },
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.Epic.HeaderAndFileToProcessingError",
+      "fromName": "Cloud9.BizTalk.Epic.HeaderAndFileToProcessingError",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.Epic.HeaderAndFileToProcessingError.json",
+      "root": "Insert"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.Epic.MPType_ProcessingErrorReq",
+      "fromName": "MPType_ProcessingErrorReq",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_ProcessingErrorReq.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.PE_TableOperation_BTS_ProcessingError.Insert"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.Epic.MPType_ProcessingErrorResp",
+      "fromName": "MPType_ProcessingErrorResp",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_ProcessingErrorResp.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.PE_TableOperation_BTS_ProcessingError.InsertResponse"
+    }
+  ]
+}

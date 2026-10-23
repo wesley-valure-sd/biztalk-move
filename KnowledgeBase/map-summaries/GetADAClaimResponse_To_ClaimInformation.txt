@@ -1,0 +1,223 @@
+MAP: GetADAClaimResponse_To_ClaimInformation.btm
+PATH: Cloud9.BizTalk\Cloud9.BizTalk.X12\Maps\GetADAClaimResponse_To_ClaimInformation.btm
+SOURCE: Cloud9.BizTalk.Schemas.ADAClaimTypedProcedure_dbo (root GetADAClaimResponse)
+TARGET: Cloud9.BizTalk.Schemas.Canonical.ClaimInformation (root ClaimInformation)
+SCRIPT PRECEDENCE (first match wins when a functoid has more than one script): CSharp > ExternalAssembly > VbNet > JScript > XsltCallTemplate > Xslt
+
+=== PAGE: Links ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L2: GetADAClaimResponse/StoredProcedureResultSet0/StoredProcedureResultSet0/adaclaimGUID -> ClaimInformation/ClaimIdentifier
+L5: GetADAClaimResponse/StoredProcedureResultSet0/StoredProcedureResultSet0/adaclaimStatus -> ClaimInformation/ClaimStatus
+L6: GetADAClaimResponse/StoredProcedureResultSet0/StoredProcedureResultSet0/adaclaimTotal -> ClaimInformation/ClaimAmount
+L11: GetADAClaimResponse/StoredProcedureResultSet0/StoredProcedureResultSet0/adaclaimBox13SubscriberDOB -> ClaimInformation/SubscriberDOB
+L35: GetADAClaimResponse/StoredProcedureResultSet0/StoredProcedureResultSet0/adaclaimDateTime -> ClaimInformation/ClaimDateTime
+L38: GetADAClaimResponse/StoredProcedureResultSet0/StoredProcedureResultSet0/adaclaimBox21PatientDOB -> ClaimInformation/PatientDOB
+L57: GetADAClaimResponse/StoredProcedureResultSet0/StoredProcedureResultSet0/adaclaimNumber -> ClaimInformation/ClaimNumber
+L59: GetADAClaimResponse/StoredProcedureResultSet0/StoredProcedureResultSet0/pracEmdeonUserID -> ClaimInformation/pracEmdeonUserID
+L60: GetADAClaimResponse/StoredProcedureResultSet0/StoredProcedureResultSet0/patID -> ClaimInformation/patID
+--- FUNCTOIDS ---
+
+=== PAGE: Functoids ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L16: GetADAClaimResponse/StoredProcedureResultSet0/StoredProcedureResultSet0/adaclaimBox3InsuranceCompanyInformation -> F1
+L17: F1 -> ClaimInformation/PayerName
+L18: GetADAClaimResponse/StoredProcedureResultSet0/StoredProcedureResultSet0/adaclaimBox20PatientInfo -> F2
+L19: F2 -> ClaimInformation/PatientFirstName
+L20: GetADAClaimResponse/StoredProcedureResultSet0/StoredProcedureResultSet0/adaclaimBox20PatientInfo -> F3
+L21: F3 -> ClaimInformation/PatientLastName
+L22: GetADAClaimResponse/StoredProcedureResultSet0/StoredProcedureResultSet0/adaclaimBox22PatientGenderMale -> F4
+L23: GetADAClaimResponse/StoredProcedureResultSet0/StoredProcedureResultSet0/adaclaimBox22PatientGenderFemale -> F4
+L24: F4 -> ClaimInformation/PatientGender
+L25: GetADAClaimResponse/StoredProcedureResultSet0/StoredProcedureResultSet0/adaclaimBox12SubscriberInfo -> F5
+L26: GetADAClaimResponse/StoredProcedureResultSet0/StoredProcedureResultSet0/adaclaimBox12SubscriberInfo -> F6
+L27: F5 -> ClaimInformation/SubscriberFirstName
+L28: F6 -> ClaimInformation/SubscriberLastName
+L29: GetADAClaimResponse/StoredProcedureResultSet0/StoredProcedureResultSet0/adaclaimBox14SubscriberGenderMale -> F7
+L30: GetADAClaimResponse/StoredProcedureResultSet0/StoredProcedureResultSet0/adaclaimBox14SubscriberGenderFemale -> F7
+L31: F7 -> ClaimInformation/SubscriberGender
+L32: GetADAClaimResponse/StoredProcedureResultSet0/StoredProcedureResultSet0/adaclaimBox48BillingDentistInfo -> F8
+L33: F8 -> ClaimInformation/ProviderName
+--- FUNCTOIDS ---
+F1 [Scripting] inputs: L16
+    script language: CSharp
+    | public string GetPayerName(string inputString)
+    | {
+    | 	if(!System.String.IsNullOrEmpty(inputString))
+    | 	{
+    | 		// Normalize CR/LF values before parsing the string
+    | 		inputString = inputString.Replace("\n", "");
+    | 		inputString = inputString.Replace("\r", "\r\n");
+    | 
+    | 		var parts = inputString.Split(new string[] { "\r\n" }, System.StringSplitOptions.None);
+    | 
+    | 		// The first section of the CR/LF delimited string is the insurance company name
+    | 		if(parts != null && parts.Length > 0)
+    | 			return parts[0].Trim();
+    | 		else
+    | 			return System.String.Empty;
+    | 	}
+    | 	else
+    | 	{
+    | 		return System.String.Empty;
+    | 	}
+    | }
+F2 [Scripting] inputs: L18
+    script language: CSharp
+    | public string GetPatientFirstName(string inputString)
+    | {
+    | 	if(!System.String.IsNullOrEmpty(inputString))
+    | 	{
+    | 		// Normalize CR/LF values before parsing the string
+    | 		inputString = inputString.Replace("\n", "");
+    | 		inputString = inputString.Replace("\r", "\r\n");
+    | 
+    | 		var parts = inputString.Split(new string[] { "\r\n" }, System.StringSplitOptions.None);
+    | 
+    | 		if(parts != null && parts.Length > 0)
+    | 			return parts[0].Substring(parts[0].IndexOf(",")).Replace(",", "").Trim();
+    | 		else
+    | 			return System.String.Empty;
+    | 	}
+    | 	else
+    | 	{
+    | 		return System.String.Empty;
+    | 	}
+    | }
+F3 [Scripting] inputs: L20
+    script language: CSharp
+    | public string GetPatientLastName(string inputString)
+    | {
+    | 	if(!System.String.IsNullOrEmpty(inputString))
+    | 	{
+    | 		// Normalize CR/LF values before parsing the string
+    | 		inputString = inputString.Replace("\n", "");
+    | 		inputString = inputString.Replace("\r", "\r\n");
+    | 
+    | 		var parts = inputString.Split(new string[] { "\r\n" }, System.StringSplitOptions.None);
+    | 
+    | 		if(parts != null && parts.Length > 0)
+    | 			return parts[0].Substring(0, parts[0].IndexOf(",")).Trim();
+    | 		else
+    | 			return System.String.Empty;
+    | 	}
+    | 	else
+    | 	{
+    | 		return System.String.Empty;
+    | 	}
+    | }
+F4 [Scripting] inputs: L22, L23
+    script language: CSharp
+    | public string GetPatientGender(string patientMale, string patientFemale)
+    | {
+    | if(patientMale =="true")
+    | return "M";
+    | 
+    | if(patientFemale == "true")
+    | return "F";
+    | 
+    | return System.String.Empty;
+    | }
+F5 [Scripting] inputs: L25
+    script language: CSharp
+    | public string GetSubscriberFirstName(string inputString)
+    | {
+    | 	if(!System.String.IsNullOrEmpty(inputString))
+    | 	{
+    | 		// Normalize CR/LF values before parsing the string
+    | 		inputString = inputString.Replace("\n", "");
+    | 		inputString = inputString.Replace("\r", "\r\n");
+    | 
+    | 		var parts = inputString.Split(new string[] { "\r\n" }, System.StringSplitOptions.None);
+    | 
+    | 		if(parts != null && parts.Length > 0)
+    | 			return parts[0].Substring(parts[0].IndexOf(",")).Replace(",", "").Trim();
+    | 		else
+    | 			return System.String.Empty;
+    | 	}
+    | 	else
+    | 	{
+    | 		return System.String.Empty;
+    | 	}
+    | }
+F6 [Scripting] inputs: L26
+    script language: CSharp
+    | public string GetSubscriberLastName(string inputString)
+    | {
+    | 	if(!System.String.IsNullOrEmpty(inputString))
+    | 	{
+    | 		// Normalize CR/LF values before parsing the string
+    | 		inputString = inputString.Replace("\n", "");
+    | 		inputString = inputString.Replace("\r", "\r\n");
+    | 
+    | 		var parts = inputString.Split(new string[] { "\r\n" }, System.StringSplitOptions.None);
+    | 
+    | 		if(parts != null && parts.Length > 0)
+    | 			return parts[0].Substring(0, parts[0].IndexOf(",")).Trim();
+    | 		else
+    | 			return System.String.Empty;
+    | 	}
+    | 	else
+    | 	{
+    | 		return System.String.Empty;
+    | 	}
+    | }
+F7 [Scripting] inputs: L29, L30
+    script language: CSharp
+    | public string GetSubscriberGender(string patientMale, string patientFemale)
+    | {
+    | if(patientMale =="true")
+    | return "M";
+    | 
+    | if(patientFemale == "true")
+    | return "F";
+    | 
+    | return System.String.Empty;
+    | }
+F8 [Scripting] inputs: L32
+    script language: CSharp
+    | public string GetProviderName(string inputString)
+    | {
+    | 	if(!System.String.IsNullOrEmpty(inputString))
+    | 	{
+    | 		// Normalize CR/LF values before parsing the string
+    | 		inputString = inputString.Replace("\n", "");
+    | 		inputString = inputString.Replace("\r", "\r\n");
+    | 
+    | 		var parts = inputString.Split(new string[] { "\r\n" }, System.StringSplitOptions.None);
+    | 
+    | 		if(parts != null && parts.Length > 0)
+    | 			return parts[0];
+    | 		else
+    | 			return System.String.Empty;
+    | 	}
+    | 	else
+    | 	{
+    | 		return System.String.Empty;
+    | 	}
+    | }
+
+=== PAGE: Trim ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L48: F12 -> ClaimInformation/ProviderLicenseNumber
+L13: GetADAClaimResponse/StoredProcedureResultSet0/StoredProcedureResultSet0/adaclaimBox50BillingDentistLicenseNumber -> F12
+L50: F13 -> ClaimInformation/ProviderTaxID
+L14: GetADAClaimResponse/StoredProcedureResultSet0/StoredProcedureResultSet0/adaclaimBox51BillingDentistTIN -> F13
+L46: F14 -> ClaimInformation/ProviderNPI
+L12: GetADAClaimResponse/StoredProcedureResultSet0/StoredProcedureResultSet0/adaclaimBox49BillingDentistNPI -> F14
+L52: F15 -> ClaimInformation/SubscriberIdentifier
+L10: GetADAClaimResponse/StoredProcedureResultSet0/StoredProcedureResultSet0/adaclaimBox15SubscriberID -> F15
+L42: F10 -> ClaimInformation/PolicyNumber
+L34: GetADAClaimResponse/StoredProcedureResultSet0/StoredProcedureResultSet0/adaclaimBox15SubscriberID -> F10
+L44: F11 -> ClaimInformation/GroupNumber
+L7: GetADAClaimResponse/StoredProcedureResultSet0/StoredProcedureResultSet0/adaclaimBox16PlanGroupNumber -> F11
+L40: F9 -> ClaimInformation/PatientIdentifier
+L8: GetADAClaimResponse/StoredProcedureResultSet0/StoredProcedureResultSet0/adaclaimBox23PatientAccountID -> F9
+--- FUNCTOIDS ---
+F12 [FID 109] inputs: L13
+F13 [FID 109] inputs: L14
+F14 [FID 109] inputs: L12
+F15 [FID 109] inputs: L10
+F10 [FID 109] inputs: L34
+F11 [FID 109] inputs: L7
+F9 [FID 109] inputs: L8
+

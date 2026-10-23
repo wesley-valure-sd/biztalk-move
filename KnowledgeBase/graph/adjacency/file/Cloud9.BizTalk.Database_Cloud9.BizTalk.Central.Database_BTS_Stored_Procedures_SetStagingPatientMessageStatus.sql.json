@@ -1,0 +1,27 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored Procedures/SetStagingPatientMessageStatus.sql",
+    "type": "file",
+    "name": "SetStagingPatientMessageStatus.sql",
+    "kind": "sql",
+    "path": "Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored Procedures/SetStagingPatientMessageStatus.sql"
+  },
+  "outgoing": [
+    {
+      "type": "defines",
+      "to": "sqlproc:BizTalkCloud9Common.BTS.SetStagingPatientMessageStatus",
+      "toName": "BTS.SetStagingPatientMessageStatus",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.SetStagingPatientMessageStatus.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.Central.Database",
+      "fromName": "Cloud9.BizTalk.Central.Database",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.Central.Database.json"
+    }
+  ]
+}

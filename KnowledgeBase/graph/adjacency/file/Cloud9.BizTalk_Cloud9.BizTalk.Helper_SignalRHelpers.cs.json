@@ -1,0 +1,19 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/SignalRHelpers.cs",
+    "type": "file",
+    "name": "SignalRHelpers.cs",
+    "kind": "csharp",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/SignalRHelpers.cs"
+  },
+  "outgoing": [
+    {
+      "type": "defines",
+      "to": "class:Cloud9.BizTalk.Helper.SHelpers",
+      "toName": "Cloud9.BizTalk.Helper.SHelpers",
+      "toType": "class",
+      "toFile": "adjacency/class/Cloud9.BizTalk.Helper.SHelpers.json"
+    }
+  ],
+  "incoming": []
+}

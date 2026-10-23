@@ -1,0 +1,27 @@
+{
+  "node": {
+    "id": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.BLL/ViewModels/Security.cs",
+    "type": "file",
+    "name": "Security.cs",
+    "kind": "csharp",
+    "path": "Cloud9.HL7.WebAPI/Cloud9.HL7.BLL/ViewModels/Security.cs"
+  },
+  "outgoing": [
+    {
+      "type": "defines",
+      "to": "class:Cloud9.PartnersShared.ViewModels.Security",
+      "toName": "Cloud9.PartnersShared.ViewModels.Security",
+      "toType": "class",
+      "toFile": "adjacency/class/Cloud9.PartnersShared.ViewModels.Security.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.HL7.BLL",
+      "fromName": "Cloud9.HL7.BLL",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.HL7.BLL.json"
+    }
+  ]
+}

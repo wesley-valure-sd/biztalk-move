@@ -1,0 +1,57 @@
+{
+  "node": {
+    "id": "class:Cloud9.BizTalk.Helper.Authorization",
+    "type": "class",
+    "name": "Cloud9.BizTalk.Helper.Authorization",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/Authorization.cs",
+    "visibility": "public",
+    "kind": "class",
+    "line": 18
+  },
+  "outgoing": [
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.Authorization.GetOktaBearerToken",
+      "toName": "Authorization.GetOktaBearerToken",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.Authorization.GetOktaBearerToken.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.Authorization.GetOktaSessionToken",
+      "toName": "Authorization.GetOktaSessionToken",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.Authorization.GetOktaSessionToken.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.Authorization.GetOktaAuthorizationCode",
+      "toName": "Authorization.GetOktaAuthorizationCode",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.Authorization.GetOktaAuthorizationCode.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.Authorization.GetOktaAccessToken",
+      "toName": "Authorization.GetOktaAccessToken",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.Authorization.GetOktaAccessToken.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.Authorization.GetUserInformationFromToken",
+      "toName": "Authorization.GetUserInformationFromToken",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.Authorization.GetUserInformationFromToken.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/Authorization.cs",
+      "fromName": "Authorization.cs",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Helper_Authorization.cs.json"
+    }
+  ]
+}

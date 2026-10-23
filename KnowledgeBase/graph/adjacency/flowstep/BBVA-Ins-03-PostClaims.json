@@ -1,0 +1,47 @@
+{
+  "node": {
+    "id": "flowstep:BBVA-Ins-03-PostClaims",
+    "type": "flowstep",
+    "name": "Post each CLP with BTS.Post835InsuranceTransaction",
+    "order": 3,
+    "curated": true,
+    "logic": "Map BBVA_835Insurance_To_ClaimPaymentBatchCanonical then ClaimPaymentCanonical_To_Post835InsuranceTransaction. patGUID = REF*EJ, pipGUID = REF*69, pipPolicyNumber = NM1*QC NM109, adaClaimNumber = CLP01, ptPaymentTypeCode = BPR04, ClaimIdentifier = TRN04, amount = CLP04 * -1. If BPR04='NON' the note also lists claim and service CAS adjustments (max 250 chars)."
+  },
+  "outgoing": [
+    {
+      "type": "implementedBy",
+      "to": "map:Cloud9.BizTalk.X12.Maps.BBVA_835Insurance_To_ClaimPaymentBatchCanonical",
+      "toName": "Cloud9.BizTalk.X12.Maps.BBVA_835Insurance_To_ClaimPaymentBatchCanonical",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.BBVA_835Insurance_To_ClaimPaymentBatchCanonical.json",
+      "curated": true
+    },
+    {
+      "type": "implementedBy",
+      "to": "map:Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835InsuranceTransaction",
+      "toName": "Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835InsuranceTransaction",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835InsuranceTransaction.json",
+      "curated": true
+    },
+    {
+      "type": "implementedBy",
+      "to": "sqlproc:PracticeDB.BTS.Post835InsuranceTransaction",
+      "toName": "BTS.Post835InsuranceTransaction",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/PracticeDB.BTS.Post835InsuranceTransaction.json",
+      "curated": true
+    }
+  ],
+  "incoming": [
+    {
+      "type": "hasStep",
+      "from": "flow:BBVA-835-Insurance-Lockbox",
+      "fromName": "BBVA insurance lockbox 835 -> insurance payment and PLB adjustment transactions",
+      "fromType": "flow",
+      "fromFile": "adjacency/flow/BBVA-835-Insurance-Lockbox.json",
+      "order": 3,
+      "curated": true
+    }
+  ]
+}

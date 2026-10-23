@@ -1,0 +1,28 @@
+{
+  "node": {
+    "id": "sqlproc:PracticeDB.BTS.UpsertPatient",
+    "type": "sqlproc",
+    "name": "BTS.UpsertPatient",
+    "database": "PracticeDB (one database per practice; resolved at run time from BTS.PracticeConfig.pcInstanceAddress)",
+    "definedInRepo": false
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "describesParametersOf",
+      "from": "schema:Cloud9.BizTalk.Schemas.Cloud9InsertPatient.UpsertPatient_BTS",
+      "fromName": "Cloud9.BizTalk.Schemas.Cloud9InsertPatient.UpsertPatient_BTS",
+      "fromType": "schema",
+      "fromFile": "adjacency/schema/Cloud9.BizTalk.Schemas.Cloud9InsertPatient.UpsertPatient_BTS.json"
+    },
+    {
+      "type": "invokesProc",
+      "from": "orchestration:Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient",
+      "fromName": "ProcessHL7MessagesForPatient",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient.json",
+      "line": 2586,
+      "via": "dynamic WCF-SQL send port (WCF.Action set in code)"
+    }
+  ]
+}

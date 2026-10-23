@@ -1,0 +1,19 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk.Scripts/271ChannelHealthEligibility/GetImportLogsEligibilityFailed.sql",
+    "type": "file",
+    "name": "GetImportLogsEligibilityFailed.sql",
+    "kind": "sql",
+    "path": "Cloud9.BizTalk.Scripts/271ChannelHealthEligibility/GetImportLogsEligibilityFailed.sql"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "definedIn",
+      "from": "sqlscript:Cloud9.BizTalk.Scripts/271ChannelHealthEligibility/GetImportLogsEligibilityFailed.sql",
+      "fromName": "GetImportLogsEligibilityFailed.sql",
+      "fromType": "sqlscript",
+      "fromFile": "adjacency/sqlscript/Cloud9.BizTalk.Scripts_271ChannelHealthEligibility_GetImportLogsEligibilityFailed.sql.json"
+    }
+  ]
+}

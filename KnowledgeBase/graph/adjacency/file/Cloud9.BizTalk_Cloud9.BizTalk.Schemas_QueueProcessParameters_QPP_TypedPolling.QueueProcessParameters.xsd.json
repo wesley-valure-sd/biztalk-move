@@ -1,0 +1,26 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/QueueProcessParameters/QPP_TypedPolling.QueueProcessParameters.xsd",
+    "type": "file",
+    "name": "QPP_TypedPolling.QueueProcessParameters.xsd",
+    "kind": "xsd",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/QueueProcessParameters/QPP_TypedPolling.QueueProcessParameters.xsd"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.Schemas",
+      "fromName": "Cloud9.BizTalk.Schemas",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.Schemas.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "schema:Cloud9.BizTalk.Schemas.QPP_TypedPolling_QueueProcessParameters",
+      "fromName": "Cloud9.BizTalk.Schemas.QPP_TypedPolling_QueueProcessParameters",
+      "fromType": "schema",
+      "fromFile": "adjacency/schema/Cloud9.BizTalk.Schemas.QPP_TypedPolling_QueueProcessParameters.json"
+    }
+  ]
+}

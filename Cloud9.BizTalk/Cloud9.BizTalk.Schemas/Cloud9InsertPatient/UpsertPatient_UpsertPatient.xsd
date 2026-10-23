@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<schema xmlns:ns5="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:ns4="http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/UpsertPatient" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/UpsertPatient" version="1.0" xmlns="http://www.w3.org/2001/XMLSchema">
+  <import schemaLocation=".\UpsertPatient_Serialization.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <annotation>
+    <appinfo>
+      <fileNameHint xmlns="http://schemas.microsoft.com/servicemodel/adapters/metadata/xsd">ProcedureResultSet.BTS.UpsertPatient</fileNameHint>
+    </appinfo>
+  </annotation>
+  <complexType name="StoredProcedureResultSet0">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="patGUID" nillable="true" type="ns5:guid" />
+      <element minOccurs="0" maxOccurs="1" name="ErrorMessage" nillable="true" type="string" />
+    </sequence>
+  </complexType>
+  <element name="StoredProcedureResultSet0" nillable="true" type="ns4:StoredProcedureResultSet0" />
+  <complexType name="ArrayOfStoredProcedureResultSet0">
+    <sequence>
+      <element minOccurs="0" maxOccurs="unbounded" name="StoredProcedureResultSet0" type="ns4:StoredProcedureResultSet0" />
+    </sequence>
+  </complexType>
+  <element name="ArrayOfStoredProcedureResultSet0" nillable="true" type="ns4:ArrayOfStoredProcedureResultSet0" />
+  <complexType name="StoredProcedureResultSet1">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="UnNamedColumn0" nillable="true" type="ns5:guid" />
+    </sequence>
+  </complexType>
+  <element name="StoredProcedureResultSet1" nillable="true" type="ns4:StoredProcedureResultSet1" />
+  <complexType name="ArrayOfStoredProcedureResultSet1">
+    <sequence>
+      <element minOccurs="0" maxOccurs="unbounded" name="StoredProcedureResultSet1" type="ns4:StoredProcedureResultSet1" />
+    </sequence>
+  </complexType>
+  <element name="ArrayOfStoredProcedureResultSet1" nillable="true" type="ns4:ArrayOfStoredProcedureResultSet1" />
+  <complexType name="StoredProcedureResultSet2">
+    <sequence>
+      <element minOccurs="0" maxOccurs="1" name="PersonGuid" nillable="true" type="string" />
+    </sequence>
+  </complexType>
+  <element name="StoredProcedureResultSet2" nillable="true" type="ns4:StoredProcedureResultSet2" />
+  <complexType name="ArrayOfStoredProcedureResultSet2">
+    <sequence>
+      <element minOccurs="0" maxOccurs="unbounded" name="StoredProcedureResultSet2" type="ns4:StoredProcedureResultSet2" />
+    </sequence>
+  </complexType>
+  <element name="ArrayOfStoredProcedureResultSet2" nillable="true" type="ns4:ArrayOfStoredProcedureResultSet2" />
+</schema>

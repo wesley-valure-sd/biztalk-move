@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.HL7.WebAPI.Handlers.CorrelationIdHandler.SendAsync",
+    "type": "method",
+    "name": "CorrelationIdHandler.SendAsync",
+    "path": "Cloud9.HL7.WebAPI/Cloud9.HL7.WebAPI/Handlers/CorrelationIdHandler.cs",
+    "class": "Cloud9.HL7.WebAPI.Handlers.CorrelationIdHandler",
+    "line": 15,
+    "signatures": [
+      "protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.HL7.WebAPI.Handlers.CorrelationIdHandler",
+      "fromName": "Cloud9.HL7.WebAPI.Handlers.CorrelationIdHandler",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.HL7.WebAPI.Handlers.CorrelationIdHandler.json"
+    }
+  ]
+}

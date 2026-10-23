@@ -1,0 +1,100 @@
+{
+  "node": {
+    "id": "map:Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835InsuranceTransaction",
+    "type": "map",
+    "name": "Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835InsuranceTransaction",
+    "readableSummary": "KnowledgeBase/map-summaries/ClaimPaymentCanonical_To_Post835InsuranceTransaction.txt",
+    "targetSchema": "Cloud9.BizTalk.Schemas.Post835TypedProcedure_BTS",
+    "inlineScripts": [
+      "CSharp:GetNote",
+      "CSharp:GetDateTime",
+      "CSharp:GetTransGUID",
+      "CSharp:GetDateTimePosted"
+    ],
+    "functoidCount": 8,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/ClaimPaymentCanonical_To_Post835InsuranceTransaction.btm",
+    "sourceSchema": "Cloud9.BizTalk.Schemas.Canonical.ClaimPayment",
+    "linkCount": 29,
+    "sourceRoot": "ClaimPayment",
+    "targetRoot": "Post835InsuranceTransaction"
+  },
+  "outgoing": [
+    {
+      "type": "callsMethod",
+      "to": "method:Cloud9.BizTalk.Helper.DateFormatConversion.ConvertHL7DateToSQLDatetimeWithoutOffset",
+      "toName": "DateFormatConversion.ConvertHL7DateToSQLDatetimeWithoutOffset",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.DateFormatConversion.ConvertHL7DateToSQLDatetimeWithoutOffset.json",
+      "via": "scripting functoid (ExternalAssembly)"
+    },
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/ClaimPaymentCanonical_To_Post835InsuranceTransaction.btm",
+      "toName": "ClaimPaymentCanonical_To_Post835InsuranceTransaction.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_ClaimPaymentCanonical_To_Post835InsuranceTransaction.btm.json"
+    },
+    {
+      "type": "sourceSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.Canonical.ClaimPayment",
+      "toName": "Cloud9.BizTalk.Schemas.Canonical.ClaimPayment",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.Canonical.ClaimPayment.json",
+      "root": "ClaimPayment"
+    },
+    {
+      "type": "targetSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.Post835TypedProcedure_BTS",
+      "toName": "Cloud9.BizTalk.Schemas.Post835TypedProcedure_BTS",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.Post835TypedProcedure_BTS.json",
+      "root": "Post835InsuranceTransaction"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "usesMap",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_BBVA_835Insurance",
+      "fromName": "Process_BBVA_835Insurance",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_BBVA_835Insurance.json",
+      "output": "Post835InsuranceTransaction.Body",
+      "input": "ClaimPayment",
+      "line": 1011
+    },
+    {
+      "type": "usesMap",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_835Insurance",
+      "fromName": "Process_CHC_835Insurance",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_835Insurance.json",
+      "output": "Post835InsuranceTransaction.Body",
+      "input": "ClaimPaymentCanonical.Body",
+      "line": 1318
+    },
+    {
+      "type": "implementedBy",
+      "from": "flowstep:BBVA-Ins-03-PostClaims",
+      "fromName": "Post each CLP with BTS.Post835InsuranceTransaction",
+      "fromType": "flowstep",
+      "fromFile": "adjacency/flowstep/BBVA-Ins-03-PostClaims.json",
+      "curated": true
+    },
+    {
+      "type": "implementedBy",
+      "from": "flowstep:CHC-05-ReversalOrPost",
+      "fromName": "For each CLP: reversal to-do or insurance post",
+      "fromType": "flowstep",
+      "fromFile": "adjacency/flowstep/CHC-05-ReversalOrPost.json",
+      "curated": true
+    },
+    {
+      "type": "appliesTo",
+      "from": "businessrule:AmountSign",
+      "fromName": "Payments are posted as negative amounts",
+      "fromType": "businessrule",
+      "fromFile": "adjacency/businessrule/AmountSign.json",
+      "curated": true
+    }
+  ]
+}

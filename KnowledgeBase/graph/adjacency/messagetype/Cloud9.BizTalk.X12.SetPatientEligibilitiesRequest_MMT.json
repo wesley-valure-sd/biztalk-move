@@ -1,0 +1,37 @@
+{
+  "node": {
+    "id": "messagetype:Cloud9.BizTalk.X12.SetPatientEligibilitiesRequest_MMT",
+    "type": "messagetype",
+    "name": "SetPatientEligibilitiesRequest_MMT",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_271Eligibility.odx",
+    "bodyType": "Cloud9.BizTalk.Schemas.TypedProcedure_BTS.SetPatientInsuranceEligibility",
+    "module": "Cloud9.BizTalk.X12"
+  },
+  "outgoing": [
+    {
+      "type": "bodySchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.TypedProcedure_BTS",
+      "toName": "Cloud9.BizTalk.Schemas.TypedProcedure_BTS",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.TypedProcedure_BTS.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.TypedProcedure_BTS.SetPatientInsuranceEligibility"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_271Eligibility.odx",
+      "fromName": "Process_CHC_271Eligibility.odx",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Orchestrations_Process_CHC_271Eligibility.odx.json"
+    },
+    {
+      "type": "usesMessageType",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_271Eligibility",
+      "fromName": "Process_CHC_271Eligibility",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_271Eligibility.json",
+      "message": "msgSetPatientEligibilities"
+    }
+  ]
+}

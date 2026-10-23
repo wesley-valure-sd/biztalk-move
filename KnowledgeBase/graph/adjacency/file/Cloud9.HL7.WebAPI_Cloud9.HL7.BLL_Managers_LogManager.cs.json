@@ -1,0 +1,27 @@
+{
+  "node": {
+    "id": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.BLL/Managers/LogManager.cs",
+    "type": "file",
+    "name": "LogManager.cs",
+    "kind": "csharp",
+    "path": "Cloud9.HL7.WebAPI/Cloud9.HL7.BLL/Managers/LogManager.cs"
+  },
+  "outgoing": [
+    {
+      "type": "defines",
+      "to": "class:Cloud9.HL7.BLL.Managers.LogManager",
+      "toName": "Cloud9.HL7.BLL.Managers.LogManager",
+      "toType": "class",
+      "toFile": "adjacency/class/Cloud9.HL7.BLL.Managers.LogManager.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.HL7.BLL",
+      "fromName": "Cloud9.HL7.BLL",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.HL7.BLL.json"
+    }
+  ]
+}

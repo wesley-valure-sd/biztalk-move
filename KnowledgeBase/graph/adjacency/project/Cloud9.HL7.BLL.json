@@ -1,0 +1,100 @@
+{
+  "node": {
+    "id": "project:Cloud9.HL7.BLL",
+    "type": "project",
+    "name": "Cloud9.HL7.BLL",
+    "path": "Cloud9.HL7.WebAPI/Cloud9.HL7.BLL/Cloud9.HL7.BLL.csproj",
+    "framework": "v4.5.1",
+    "kind": "csharp",
+    "rootNamespace": "Cloud9.HL7.BLL",
+    "assemblyName": "Cloud9.HL7.BLL"
+  },
+  "outgoing": [
+    {
+      "type": "references",
+      "to": "project:Cloud9.HL7.DAL",
+      "toName": "Cloud9.HL7.DAL",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.HL7.DAL.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.BLL/Constants/Constants.cs",
+      "toName": "Constants.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.HL7.WebAPI_Cloud9.HL7.BLL_Constants_Constants.cs.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.BLL/Converters/PartnerPasswordHasher.cs",
+      "toName": "PartnerPasswordHasher.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.HL7.WebAPI_Cloud9.HL7.BLL_Converters_PartnerPasswordHasher.cs.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.BLL/Items/IncomingMessageItem.cs",
+      "toName": "IncomingMessageItem.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.HL7.WebAPI_Cloud9.HL7.BLL_Items_IncomingMessageItem.cs.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.BLL/Managers/IncomingMessageManager.cs",
+      "toName": "IncomingMessageManager.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.HL7.WebAPI_Cloud9.HL7.BLL_Managers_IncomingMessageManager.cs.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.BLL/Managers/LocationManager.cs",
+      "toName": "LocationManager.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.HL7.WebAPI_Cloud9.HL7.BLL_Managers_LocationManager.cs.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.BLL/Managers/LogManager.cs",
+      "toName": "LogManager.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.HL7.WebAPI_Cloud9.HL7.BLL_Managers_LogManager.cs.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.BLL/Managers/PartnerAuthenticationManager.cs",
+      "toName": "PartnerAuthenticationManager.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.HL7.WebAPI_Cloud9.HL7.BLL_Managers_PartnerAuthenticationManager.cs.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.BLL/Shared/AuthenticationResponseCode.cs",
+      "toName": "AuthenticationResponseCode.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.HL7.WebAPI_Cloud9.HL7.BLL_Shared_AuthenticationResponseCode.cs.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.BLL/ViewModels/Security.cs",
+      "toName": "Security.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.HL7.WebAPI_Cloud9.HL7.BLL_ViewModels_Security.cs.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "references",
+      "from": "project:Cloud9.HL7.WebAPI",
+      "fromName": "Cloud9.HL7.WebAPI",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.HL7.WebAPI.json"
+    },
+    {
+      "type": "contains",
+      "from": "solution:Cloud9.HL7.WebAPI",
+      "fromName": "Cloud9.HL7.WebAPI",
+      "fromType": "solution",
+      "fromFile": "adjacency/solution/Cloud9.HL7.WebAPI.json"
+    }
+  ]
+}

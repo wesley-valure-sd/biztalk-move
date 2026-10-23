@@ -1,0 +1,65 @@
+{
+  "node": {
+    "id": "project:Cloud9.BizTalk.Epic.BTAHL7V2XCommon.Schemas",
+    "type": "project",
+    "name": "Cloud9.BizTalk.Epic.BTAHL7V2XCommon.Schemas",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic.BTAHL7V2XCommon.Schemas/Cloud9.BizTalk.Epic.BTAHL7V2XCommon.Schemas.btproj",
+    "framework": "v4.6",
+    "kind": "biztalk",
+    "rootNamespace": "BTAHL7Schemas",
+    "assemblyName": "Cloud9.BizTalk.Epic.BTAHL7V2XCommon.Schemas"
+  },
+  "outgoing": [
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic.BTAHL7V2XCommon.Schemas/ACK_24_GLO_DEF.xsd",
+      "toName": "ACK_24_GLO_DEF.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic.BTAHL7V2XCommon.Schemas_ACK_24_GLO_DEF.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic.BTAHL7V2XCommon.Schemas/ACK_25_GLO_DEF.xsd",
+      "toName": "ACK_25_GLO_DEF.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic.BTAHL7V2XCommon.Schemas_ACK_25_GLO_DEF.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic.BTAHL7V2XCommon.Schemas/ACK_26_GLO_DEF.xsd",
+      "toName": "ACK_26_GLO_DEF.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic.BTAHL7V2XCommon.Schemas_ACK_26_GLO_DEF.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic.BTAHL7V2XCommon.Schemas/MSH_25_GLO_DEF.xsd",
+      "toName": "MSH_25_GLO_DEF.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic.BTAHL7V2XCommon.Schemas_MSH_25_GLO_DEF.xsd.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "references",
+      "from": "project:Cloud9.BizTalk.Epic",
+      "fromName": "Cloud9.BizTalk.Epic",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.Epic.json"
+    },
+    {
+      "type": "contains",
+      "from": "solution:Cloud9.BizTalk.PDS",
+      "fromName": "Cloud9.BizTalk.PDS",
+      "fromType": "solution",
+      "fromFile": "adjacency/solution/Cloud9.BizTalk.PDS.json"
+    },
+    {
+      "type": "contains",
+      "from": "solution:Cloud9.BizTalk",
+      "fromName": "Cloud9.BizTalk",
+      "fromType": "solution",
+      "fromFile": "adjacency/solution/Cloud9.BizTalk.json"
+    }
+  ]
+}

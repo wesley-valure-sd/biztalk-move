@@ -1,0 +1,61 @@
+{
+  "node": {
+    "id": "map:Cloud9.BizTalk.X12.Maps.ClaimInformation_To_X12_00501_276",
+    "type": "map",
+    "name": "Cloud9.BizTalk.X12.Maps.ClaimInformation_To_X12_00501_276",
+    "readableSummary": "KnowledgeBase/map-summaries/ClaimInformation_To_X12_00501_276.txt",
+    "targetSchema": "Cloud9.BizTalk.X12.Schemas.X12_00501_276",
+    "inlineScripts": [
+      "CSharp:GetDateString",
+      "CSharp:GetTimeString",
+      "XsltCallTemplate:CreateHLSegments",
+      "XsltCallTemplate:OutputHLSegment",
+      "XsltCallTemplate:OutputNM1Segment",
+      "XsltCallTemplate:prepend-pad",
+      "CSharp:FormatC9PatientControlNumber"
+    ],
+    "functoidCount": 9,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/ClaimInformation_To_X12_00501_276.btm",
+    "sourceSchema": "Cloud9.BizTalk.Schemas.Canonical.ClaimInformation",
+    "linkCount": 13,
+    "sourceRoot": "ClaimInformation",
+    "targetRoot": "X12_00501_276"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/ClaimInformation_To_X12_00501_276.btm",
+      "toName": "ClaimInformation_To_X12_00501_276.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_ClaimInformation_To_X12_00501_276.btm.json"
+    },
+    {
+      "type": "sourceSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.Canonical.ClaimInformation",
+      "toName": "Cloud9.BizTalk.Schemas.Canonical.ClaimInformation",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.Canonical.ClaimInformation.json",
+      "root": "ClaimInformation"
+    },
+    {
+      "type": "targetSchema",
+      "to": "schema:Cloud9.BizTalk.X12.Schemas.X12_00501_276",
+      "toName": "Cloud9.BizTalk.X12.Schemas.X12_00501_276",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.X12.Schemas.X12_00501_276.json",
+      "root": "X12_00501_276"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "usesMap",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_276ClaimStatus",
+      "fromName": "Process_CHC_276ClaimStatus",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_276ClaimStatus.json",
+      "output": "CHC276.Body",
+      "input": "CanonicalClaimInformation.Body",
+      "line": 802
+    }
+  ]
+}

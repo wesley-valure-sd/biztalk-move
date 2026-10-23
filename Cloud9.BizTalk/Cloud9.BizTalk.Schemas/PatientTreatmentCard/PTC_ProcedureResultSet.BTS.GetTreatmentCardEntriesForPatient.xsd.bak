@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ns4="http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetTreatmentCardEntriesForPatient" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetTreatmentCardEntriesForPatient" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:annotation>
+    <xs:appinfo>
+      <fileNameHint xmlns="http://schemas.microsoft.com/servicemodel/adapters/metadata/xsd">ProcedureResultSet.BTS.GetTreatmentCardEntriesForPatient</fileNameHint>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:complexType name="StoredProcedureResultSet0">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="tceGUID" nillable="true" type="ns3:guid" />
+      <xs:element minOccurs="0" maxOccurs="1" name="tclGUID" nillable="true" type="ns3:guid" />
+      <xs:element minOccurs="0" maxOccurs="1" name="tceDateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="tceType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="locGUID" nillable="true" type="ns3:guid" />
+      <xs:element minOccurs="0" maxOccurs="1" name="tccHeader" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="entryData" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StoredProcedureResultSet0" nillable="true" type="ns4:StoredProcedureResultSet0" />
+  <xs:complexType name="ArrayOfStoredProcedureResultSet0">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StoredProcedureResultSet0" type="ns4:StoredProcedureResultSet0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStoredProcedureResultSet0" nillable="true" type="ns4:ArrayOfStoredProcedureResultSet0" />
+  <xs:complexType name="StoredProcedureResultSet1">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="errorMessage" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StoredProcedureResultSet1" nillable="true" type="ns4:StoredProcedureResultSet1" />
+  <xs:complexType name="ArrayOfStoredProcedureResultSet1">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StoredProcedureResultSet1" type="ns4:StoredProcedureResultSet1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStoredProcedureResultSet1" nillable="true" type="ns4:ArrayOfStoredProcedureResultSet1" />
+</xs:schema>

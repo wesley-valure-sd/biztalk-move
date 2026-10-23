@@ -1,0 +1,60 @@
+{
+  "node": {
+    "id": "pipeline:Cloud9.BizTalk.X12.Pipelines.SendEmdeonEDIPipeline",
+    "type": "pipeline",
+    "name": "Cloud9.BizTalk.X12.Pipelines.SendEmdeonEDIPipeline",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Pipelines/SendEmdeonEDIPipeline.btp",
+    "components": [
+      "Microsoft.BizTalk.Edi.Pipelines.EdiAssembler",
+      "Cloud9.BizTalk.PipelineComponent.EmdeonPayload.EmdeonPayload",
+      "Cloud9.BizTalk.Shared.Components.Archive.Archive"
+    ],
+    "direction": "send"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Pipelines/SendEmdeonEDIPipeline.btp",
+      "toName": "SendEmdeonEDIPipeline.btp",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Pipelines_SendEmdeonEDIPipeline.btp.json"
+    },
+    {
+      "type": "usesComponent",
+      "to": "class:Microsoft.BizTalk.Edi.Pipelines.EdiAssembler",
+      "toName": "Microsoft.BizTalk.Edi.Pipelines.EdiAssembler",
+      "toType": "external-component",
+      "toFile": "adjacency/external-component/Microsoft.BizTalk.Edi.Pipelines.EdiAssembler.json"
+    },
+    {
+      "type": "usesComponent",
+      "to": "class:Cloud9.BizTalk.PipelineComponent.EmdeonPayload.EmdeonPayload",
+      "toName": "Cloud9.BizTalk.PipelineComponent.EmdeonPayload.EmdeonPayload",
+      "toType": "class",
+      "toFile": "adjacency/class/Cloud9.BizTalk.PipelineComponent.EmdeonPayload.EmdeonPayload.json"
+    },
+    {
+      "type": "usesComponent",
+      "to": "class:Cloud9.BizTalk.Shared.Components.Archive.Archive",
+      "toName": "Cloud9.BizTalk.Shared.Components.Archive.Archive",
+      "toType": "class",
+      "toFile": "adjacency/class/Cloud9.BizTalk.Shared.Components.Archive.Archive.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "usesPipeline",
+      "from": "sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_SendClaim_HTTP_Dynamic_182f4e020577c79e",
+      "fromName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_SendClaim_HTTP_Dynamic_182f4e020577c79e",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_SendClaim_HTTP_Dynamic_182f4e020577c79e.json"
+    },
+    {
+      "type": "usesPipeline",
+      "from": "sendport:Cloud9.EDI.PDS.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_SendClaim_HTTP_Dynamic_182f4e020577c79e",
+      "fromName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_SendClaim_HTTP_Dynamic_182f4e020577c79e",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.PDS.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_SendClaim_HTTP_Dynamic_182f4e020577c79e.json"
+    }
+  ]
+}

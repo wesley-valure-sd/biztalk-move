@@ -1,0 +1,27 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.Cloud9UpsertEmployee.UpsertEmployeeTableType_BTS",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.Cloud9UpsertEmployee.UpsertEmployeeTableType_BTS",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Cloud9UpsertEmployee/UpsertEmployeeTableType.BTS.xsd",
+    "rootElements": [
+      "EmployeeEntityTableType",
+      "ArrayOfEmployeeEntityTableType",
+      "ContactInfoTableType",
+      "ArrayOfContactInfoTableType"
+    ],
+    "kind": "wcf-sql-table",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/Types/TableTypes/BTS",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Cloud9UpsertEmployee/UpsertEmployeeTableType.BTS.xsd",
+      "toName": "UpsertEmployeeTableType.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_Cloud9UpsertEmployee_UpsertEmployeeTableType.BTS.xsd.json"
+    }
+  ],
+  "incoming": []
+}

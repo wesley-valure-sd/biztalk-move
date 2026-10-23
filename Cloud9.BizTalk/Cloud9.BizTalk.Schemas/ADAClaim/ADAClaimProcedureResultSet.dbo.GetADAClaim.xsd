@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ns4="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:ns3="http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/dbo/GetADAClaim" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/dbo/GetADAClaim" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation=".\ADAClaimSerialization.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:annotation>
+    <xs:appinfo>
+      <fileNameHint xmlns="http://schemas.microsoft.com/servicemodel/adapters/metadata/xsd">ProcedureResultSet.dbo.GetADAClaim</fileNameHint>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:complexType name="StoredProcedureResultSet0">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimGUID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimDateTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="patGUID" nillable="true" type="ns4:guid" />
+      <xs:element minOccurs="0" maxOccurs="1" name="pipGUID" nillable="true" type="ns4:guid" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox1TransactionTypeActualService" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox1TransactionTypePredetermination" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox1TransactionTypeEPSDT" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox2PreauthorizationNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox3InsuranceCompanyInformation" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox4OtherCoverageMedical" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox4OtherCoverageDental" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox5OtherSubscriberName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox6OtherSubscriberDOB" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox7OtherSubscriberGender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox8OtherSubscriberID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox9OtherPlanGroupNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox10OtherPatientRelationshipSelf" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox10OtherPatientRelationshipSpouse" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox10OtherPatientRelationshipDependent" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox10OtherPatientRelationshipOther" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox11OtherInsurancePlanInfo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox12SubscriberInfo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox13SubscriberDOB" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox14SubscriberGender" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox15SubscriberID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox16PlanGroupNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox17EmployerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox18PatientRelationshipSelf" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox18PatientRelationshipSpouse" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox18PatientRelationshipDependent" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox18PatientRelationshipOther" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox19PatientStudentStatusFT" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox19PatientStudentStatusPT" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox20PatientInfo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox7OtherSubscriberGenderMale" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox7OtherSubscriberGenderFemale" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox14SubscriberGenderMale" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox14SubscriberGenderFemale" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox21PatientDOB" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox22PatientGenderMale" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox22PatientGenderFemale" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox23PatientAccountID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox31aOtherFee1" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox31aOtherFee2" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox32TotalFee" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox34DiagnosisCodeListQualifier" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox34aDiagonosisCodeA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox34aDiagonosisCodeB" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox34aDiagonosisCodeC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox34aDiagonosisCodeD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox35Remarks" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox36Signature" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox36SignatureDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox37Signature" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox37SignatureDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox38PlaceOfTreatment" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox39Enclosures" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox40TreatmentForOrthodonticsNo" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox40TreatmentForOrthodonticsYes" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox41DateAppliancesPlaced" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox42MonthsTreatmentRemaining" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox43ReplacementOfProsthesisNo" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox43ReplacementOfProsthesisYes" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox44DatePriorPlacement" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox45TreatmentResultingFromOccupationalInjury" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox45TreatmentResultingFromAutoAccident" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox45TreatmentResultingFromOtherAccident" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox46DateOfAccident" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox47AutoAccidentState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox48BillingDentistInfo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox49BillingDentistNPI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox50BillingDentistLicenseNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox51BillingDentistTIN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox52BillingDentistPhone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox52ABillingDentistAdditionalProviderID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox53TreatingDentistSignature" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox53TreatingDentistSignatureDate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox54TreatingDentistNPI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox55TreatingDentistLicenseNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox56TreatingDentistInfo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox56ATreatingDentistProviderSpecialtyCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox57TreatingDentistPhone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimBox58TreatingDentistAdditionalProviderID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimTotal" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimSelected" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimLastModified" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" maxOccurs="1" name="tfipGUID" nillable="true" type="ns4:guid" />
+      <xs:element minOccurs="0" maxOccurs="1" name="adaclaimNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="csGUID" nillable="true" type="ns4:guid" />
+      <xs:element minOccurs="0" maxOccurs="1" name="empGUIDModified" nillable="true" type="ns4:guid" />
+      <xs:element minOccurs="0" maxOccurs="1" name="pracTIN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="pracProviderNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="pracLicenseNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="pracEmdeonUserID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="patID" nillable="true" type="xs:string" />
+   </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StoredProcedureResultSet0" nillable="true" type="ns3:StoredProcedureResultSet0" />
+  <xs:complexType name="ArrayOfStoredProcedureResultSet0">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StoredProcedureResultSet0" type="ns3:StoredProcedureResultSet0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStoredProcedureResultSet0" nillable="true" type="ns3:ArrayOfStoredProcedureResultSet0" />
+</xs:schema>

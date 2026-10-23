@@ -1,0 +1,56 @@
+{
+  "node": {
+    "id": "sendport:Cloud9.EDI.PDS.Deployment/SP_UpdateProcessParameters_WCF",
+    "type": "sendport",
+    "name": "SP_UpdateProcessParameters_WCF",
+    "sendPipeline": "Microsoft.BizTalk.DefaultPipelines.XMLTransmit",
+    "bindingSet": "Cloud9.EDI.PDS.Deployment",
+    "actionMappings": [
+      "UpdateProcessParameters"
+    ],
+    "isTwoWay": "true",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.PDS.Deployment/PortBindingsMaster.xml",
+    "address": "${ADDR_DB_CLOUD9COMMON}?",
+    "filter": [],
+    "isStatic": "true",
+    "transport": "WCF-Custom"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.EDI.PDS.Deployment/PortBindingsMaster.xml",
+      "toName": "PortBindingsMaster.xml",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.EDI.PDS.Deployment_PortBindingsMaster.xml.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.EDI.PDS.Deployment/ADDR_DB_CLOUD9COMMON",
+      "toName": "ADDR_DB_CLOUD9COMMON",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.EDI.PDS.Deployment_ADDR_DB_CLOUD9COMMON.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "boundToSendPort",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_837Claims_Controller",
+      "fromName": "Process_CHC_837Claims_Controller",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_837Claims_Controller.json",
+      "bindingSet": "Cloud9.EDI.PDS.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "Port_SendUpdateProcessParameters"
+    },
+    {
+      "type": "boundToSendPort",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Controller",
+      "fromName": "Process_CHC_InboundFiles_Controller",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Controller.json",
+      "bindingSet": "Cloud9.EDI.PDS.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "Port_SendUpdateProcessParameters"
+    }
+  ]
+}

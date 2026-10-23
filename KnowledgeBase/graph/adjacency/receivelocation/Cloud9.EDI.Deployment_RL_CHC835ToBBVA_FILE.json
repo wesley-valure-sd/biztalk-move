@@ -1,0 +1,40 @@
+{
+  "node": {
+    "id": "receivelocation:Cloud9.EDI.Deployment/RL_CHC835ToBBVA_FILE",
+    "type": "receivelocation",
+    "name": "RL_CHC835ToBBVA_FILE",
+    "enabled": "true",
+    "bindingSet": "Cloud9.EDI.Deployment",
+    "receivePipeline": "Cloud9.BizTalk.X12.Pipelines.ReceiveEDIPipeline",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.Deployment/PortBindingsMaster.xml",
+    "archiveFolder": "${CH_835_TO_BBVA_FILE_FOLDER}\\Archive",
+    "address": "${CH_835_TO_BBVA_FILE_FOLDER}\\*.*",
+    "serviceWindow": "2019-11-01T00:00:00 to 2019-11-01T23:59:59 (enabled=false)",
+    "pollingInterval": "60000",
+    "transport": "FILE"
+  },
+  "outgoing": [
+    {
+      "type": "partOf",
+      "to": "receiveport:Cloud9.EDI.Deployment/RP_CHC835ToBBVA",
+      "toName": "RP_CHC835ToBBVA",
+      "toType": "receiveport",
+      "toFile": "adjacency/receiveport/Cloud9.EDI.Deployment_RP_CHC835ToBBVA.json"
+    },
+    {
+      "type": "usesPipeline",
+      "to": "pipeline:Cloud9.BizTalk.X12.Pipelines.ReceiveEDIPipeline",
+      "toName": "Cloud9.BizTalk.X12.Pipelines.ReceiveEDIPipeline",
+      "toType": "pipeline",
+      "toFile": "adjacency/pipeline/Cloud9.BizTalk.X12.Pipelines.ReceiveEDIPipeline.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.EDI.Deployment/CH_835_TO_BBVA_FILE_FOLDER",
+      "toName": "CH_835_TO_BBVA_FILE_FOLDER",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.EDI.Deployment_CH_835_TO_BBVA_FILE_FOLDER.json"
+    }
+  ],
+  "incoming": []
+}

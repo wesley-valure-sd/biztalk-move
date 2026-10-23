@@ -1,0 +1,22 @@
+{
+  "node": {
+    "id": "porttype:Cloud9.BizTalk.Epic.PortType_SendHL7StagingInsert",
+    "type": "porttype",
+    "name": "PortType_SendHL7StagingInsert",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.StageHL7.Inbound.odx",
+    "module": "Cloud9.BizTalk.Epic",
+    "operations": [
+      "requestresponse Insert(MPType_HL7StagingReq, MPType_HL7StagingResp)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.StageHL7.Inbound.odx",
+      "fromName": "Cloud9.BizTalk.Epic.StageHL7.Inbound.odx",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Orchestrations_Cloud9.BizTalk.Epic.StageHL7.Inbound.odx.json"
+    }
+  ]
+}

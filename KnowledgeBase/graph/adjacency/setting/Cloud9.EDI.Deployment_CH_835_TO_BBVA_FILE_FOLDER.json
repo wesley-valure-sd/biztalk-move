@@ -1,0 +1,45 @@
+{
+  "node": {
+    "id": "setting:Cloud9.EDI.Deployment/CH_835_TO_BBVA_FILE_FOLDER",
+    "type": "setting",
+    "name": "CH_835_TO_BBVA_FILE_FOLDER",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.Deployment/SettingsFileGenerator.xml",
+    "bindingSet": "Cloud9.EDI.Deployment",
+    "valuesByEnvironment": {
+      "Default Values (DefaultSettings)": "C:\\BizTalkTest\\CH_835\\BBVA",
+      "Local Dev (LocalSettings)": "C:\\BizTalkTest\\CH_835\\BBVA",
+      "JGLISSON Development (JGLISSONSettings)": "C:\\BizTalkTest\\CH_835\\BBVA",
+      "LAB (LABSettings)": "\\\\10.2.1.1\\Development\\BizTalk1\\CH_835\\BBVA",
+      "LAB2 (LAB2Settings)": "\\\\10.2.1.1\\Development\\Lab2\\CH_835\\BBVA",
+      "LAB3 (LAB3Settings)": "\\\\10.2.1.1\\Development\\BizTalk3\\CH_835\\BBVA",
+      "PROD (C9Prod1_Settings)": "\\\\atl-nas2\\BizTalk\\CH_835\\BBVA",
+      "PROD (C9Prod2_Settings)": "\\\\us-ea1-fs1\\BizTalk\\CH_835\\BBVA",
+      "LAB (SDLab1_Settings)": "\\\\c9.smiledoctors.com\\c9\\cloud9-test\\BizTalk\\CH_835\\BBVA",
+      "PROD (SDProd1_Settings)": "\\\\c9.smiledoctors.com\\c9\\cloud9\\BizTalk\\CH_835\\BBVA"
+    }
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "usesSetting",
+      "from": "sendport:Cloud9.EDI.Deployment/SP_CHC835ToBBVA_FILE",
+      "fromName": "SP_CHC835ToBBVA_FILE",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.Deployment_SP_CHC835ToBBVA_FILE.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_CHC835ToBBVA_FILE",
+      "fromName": "RL_CHC835ToBBVA_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_CHC835ToBBVA_FILE.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}CHC835ToBBVA_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}CHC835ToBBVA_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}CHC835ToBBVA_SFTP.json"
+    }
+  ]
+}

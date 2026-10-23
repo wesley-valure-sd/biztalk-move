@@ -1,0 +1,73 @@
+{
+  "node": {
+    "id": "sendport:Cloud9.EDI.Deployment/SP_CHC835ToSD_SFTP",
+    "type": "sendport",
+    "name": "SP_CHC835ToSD_SFTP",
+    "sendPipeline": "Microsoft.BizTalk.Edi.DefaultPipelines.EdiSend",
+    "bindingSet": "Cloud9.EDI.Deployment",
+    "actionMappings": [],
+    "isTwoWay": "false",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.Deployment/PortBindingsMaster.xml",
+    "address": "sftp://${SD_SFTP_HOST_BBVA}/${SD_SFTP_FOLDER_BBVA}/835/835_%MessageID%.edi",
+    "filter": [],
+    "isStatic": "true",
+    "transport": "SFTP"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.EDI.Deployment/PortBindingsMaster.xml",
+      "toName": "PortBindingsMaster.xml",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.EDI.Deployment_PortBindingsMaster.xml.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.EDI.Deployment/SD_SFTP_HOST_BBVA",
+      "toName": "SD_SFTP_HOST_BBVA",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.EDI.Deployment_SD_SFTP_HOST_BBVA.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.EDI.Deployment/SD_SFTP_FOLDER_BBVA",
+      "toName": "SD_SFTP_FOLDER_BBVA",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.EDI.Deployment_SD_SFTP_FOLDER_BBVA.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.EDI.Deployment/SD_SFTP_USERNAME_BBVA",
+      "toName": "SD_SFTP_USERNAME_BBVA",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.EDI.Deployment_SD_SFTP_USERNAME_BBVA.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.EDI.Deployment/SD_SFTP_PASSWORD_BBVA",
+      "toName": "SD_SFTP_PASSWORD_BBVA",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.EDI.Deployment_SD_SFTP_PASSWORD_BBVA.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "boundToSendPort",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_835_To_BBVA",
+      "fromName": "Process_CHC_835_To_BBVA",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_835_To_BBVA.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "SendCHC835ToBBVAPort"
+    },
+    {
+      "type": "implementedBy",
+      "from": "flowstep:CHC2BBVA-03-Send",
+      "fromName": "Re-serialize as X12 and send by SFTP",
+      "fromType": "flowstep",
+      "fromFile": "adjacency/flowstep/CHC2BBVA-03-Send.json",
+      "curated": true
+    }
+  ]
+}

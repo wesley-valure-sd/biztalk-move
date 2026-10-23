@@ -1,0 +1,22 @@
+{
+  "node": {
+    "id": "porttype:Cloud9.BizTalk.Epic.PortType_ReceiveTreatmentCard",
+    "type": "porttype",
+    "name": "PortType_ReceiveTreatmentCard",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.SendTreatmentCardsToPDS.odx",
+    "module": "Cloud9.BizTalk.Epic",
+    "operations": [
+      "oneway ReceiveTreatmentCard(System.Xml.XmlDocument)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.SendTreatmentCardsToPDS.odx",
+      "fromName": "Cloud9.BizTalk.Epic.SendTreatmentCardsToPDS.odx",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Orchestrations_Cloud9.BizTalk.Epic.SendTreatmentCardsToPDS.odx.json"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.Helper.HL7TypeConversion.ConvertCommunicationTypeFromHL7ToCloud9",
+    "type": "method",
+    "name": "HL7TypeConversion.ConvertCommunicationTypeFromHL7ToCloud9",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/HL7TypeConversion.cs",
+    "class": "Cloud9.BizTalk.Helper.HL7TypeConversion",
+    "line": 20,
+    "signatures": [
+      "public static string ConvertCommunicationTypeFromHL7ToCloud9(string hl7type)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.Helper.HL7TypeConversion",
+      "fromName": "Cloud9.BizTalk.Helper.HL7TypeConversion",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.Helper.HL7TypeConversion.json"
+    },
+    {
+      "type": "callsMethod",
+      "from": "map:Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_MFN_M02ToUpsertEmployee",
+      "fromName": "Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_MFN_M02ToUpsertEmployee",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_MFN_M02ToUpsertEmployee.json",
+      "via": "scripting functoid (ExternalAssembly)"
+    }
+  ]
+}

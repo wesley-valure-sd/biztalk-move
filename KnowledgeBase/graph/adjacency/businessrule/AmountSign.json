@@ -1,0 +1,36 @@
+{
+  "node": {
+    "id": "businessrule:AmountSign",
+    "type": "businessrule",
+    "name": "Payments are posted as negative amounts",
+    "curated": true,
+    "logic": "Every Post835 map sets transAmount, transDueNowAmount and transTotalDueAmount to the 835 amount multiplied by -1. transProductionAmount and transClaimAmount are '0'. transIsGroup is '0'. transStatus is 'N'."
+  },
+  "outgoing": [
+    {
+      "type": "appliesTo",
+      "to": "map:Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835PatientTransaction",
+      "toName": "Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835PatientTransaction",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835PatientTransaction.json",
+      "curated": true
+    },
+    {
+      "type": "appliesTo",
+      "to": "map:Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835PatientTransactionWeb",
+      "toName": "Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835PatientTransactionWeb",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835PatientTransactionWeb.json",
+      "curated": true
+    },
+    {
+      "type": "appliesTo",
+      "to": "map:Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835InsuranceTransaction",
+      "toName": "Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835InsuranceTransaction",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835InsuranceTransaction.json",
+      "curated": true
+    }
+  ],
+  "incoming": []
+}

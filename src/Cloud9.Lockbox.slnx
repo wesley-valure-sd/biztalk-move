@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="Cloud9.Lockbox.Cli/Cloud9.Lockbox.Cli.csproj" />
+  <Project Path="Cloud9.Lockbox.Core/Cloud9.Lockbox.Core.csproj" />
+  <Project Path="Cloud9.Lockbox.Tests/Cloud9.Lockbox.Tests.csproj" />
+</Solution>

@@ -1,0 +1,31 @@
+{
+  "node": {
+    "id": "flowstep:CHC2BBVA-03-Send",
+    "type": "flowstep",
+    "name": "Re-serialize as X12 and send by SFTP",
+    "order": 3,
+    "curated": true,
+    "logic": "If all three values exist, set EDI.*ForSend context properties and send through EdiSend pipeline to sftp://${SD_SFTP_HOST_BBVA}/${SD_SFTP_FOLDER_BBVA}/835/835_<MessageID>.edi. Else the message is dropped without a log. Orchestration state is Unenlisted in the Cloud9.EDI binding (Started in the PDS binding)."
+  },
+  "outgoing": [
+    {
+      "type": "implementedBy",
+      "to": "sendport:Cloud9.EDI.Deployment/SP_CHC835ToSD_SFTP",
+      "toName": "SP_CHC835ToSD_SFTP",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.Deployment_SP_CHC835ToSD_SFTP.json",
+      "curated": true
+    }
+  ],
+  "incoming": [
+    {
+      "type": "hasStep",
+      "from": "flow:CHC-835-To-BBVA-Passthrough",
+      "fromName": "Change Healthcare 835 pass-through to the BBVA/SD SFTP (no posting)",
+      "fromType": "flow",
+      "fromFile": "adjacency/flow/CHC-835-To-BBVA-Passthrough.json",
+      "order": 3,
+      "curated": true
+    }
+  ]
+}

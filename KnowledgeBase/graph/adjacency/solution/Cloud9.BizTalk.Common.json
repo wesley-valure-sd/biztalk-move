@@ -1,0 +1,18 @@
+{
+  "node": {
+    "id": "solution:Cloud9.BizTalk.Common",
+    "type": "solution",
+    "name": "Cloud9.BizTalk.Common",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Common/Cloud9.BizTalk.Common.sln"
+  },
+  "outgoing": [
+    {
+      "type": "contains",
+      "to": "project:Cloud9.BizTalk.Common",
+      "toName": "Cloud9.BizTalk.Common",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.Common.json"
+    }
+  ],
+  "incoming": []
+}

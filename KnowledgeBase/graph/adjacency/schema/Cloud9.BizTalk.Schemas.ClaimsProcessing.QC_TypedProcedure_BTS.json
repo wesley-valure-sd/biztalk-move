@@ -1,0 +1,59 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.ClaimsProcessing.QC_TypedProcedure_BTS",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.ClaimsProcessing.QC_TypedProcedure_BTS",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ClaimsProcessing/QC_TypedProcedure.BTS.xsd",
+    "rootElements": [
+      "QueueClaims",
+      "QueueClaimsResponse"
+    ],
+    "kind": "wcf-sql-typed-procedure",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS",
+    "sqlActions": [
+      "TypedProcedure/BTS/QueueClaims"
+    ]
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ClaimsProcessing/QC_TypedProcedure.BTS.xsd",
+      "toName": "QC_TypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_ClaimsProcessing_QC_TypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "describesParametersOf",
+      "to": "sqlproc:PracticeDB.BTS.QueueClaims",
+      "toName": "BTS.QueueClaims",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/PracticeDB.BTS.QueueClaims.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "sourceSchema",
+      "from": "map:Cloud9.BizTalk.X12.Maps.QueueClaimsResponse_To_ClaimsCanonical",
+      "fromName": "Cloud9.BizTalk.X12.Maps.QueueClaimsResponse_To_ClaimsCanonical",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.QueueClaimsResponse_To_ClaimsCanonical.json",
+      "root": "QueueClaimsResponse"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.MPType_QueueClaimsResp",
+      "fromName": "MPType_QueueClaimsResp",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.MPType_QueueClaimsResp.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.ClaimsProcessing.QC_TypedProcedure_BTS.QueueClaimsResponse"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.MPType_QueueClaimsReq",
+      "fromName": "MPType_QueueClaimsReq",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.MPType_QueueClaimsReq.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.ClaimsProcessing.QC_TypedProcedure_BTS.QueueClaims"
+    }
+  ]
+}

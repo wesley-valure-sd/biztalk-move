@@ -1,0 +1,29 @@
+{
+  "node": {
+    "id": "externalsystem:BBVA-Lockbox-SFTP",
+    "type": "externalsystem",
+    "name": "BBVA / Navigant lockbox SFTP (RevenueMed host)",
+    "doc": "KnowledgeBase/docs/02-payments-835-end-to-end.md",
+    "detail": "Sends patient lockbox 835 files and insurance lockbox 835 files. One folder for each practice region. X12 sender ZZ:BBVANAV, receiver ZZ:SMILE DOCTORS. Settings BBVA_SFTP_HOST, BBVA_835_PATIENT_FTP_FOLDER, BBVA_835_INSURANCE_FTP_FOLDER.",
+    "curated": true
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "source",
+      "from": "flow:BBVA-835-Patient-Lockbox",
+      "fromName": "BBVA patient lockbox 835 -> patient payment transactions",
+      "fromType": "flow",
+      "fromFile": "adjacency/flow/BBVA-835-Patient-Lockbox.json",
+      "curated": true
+    },
+    {
+      "type": "source",
+      "from": "flow:BBVA-835-Insurance-Lockbox",
+      "fromName": "BBVA insurance lockbox 835 -> insurance payment and PLB adjustment transactions",
+      "fromType": "flow",
+      "fromFile": "adjacency/flow/BBVA-835-Insurance-Lockbox.json",
+      "curated": true
+    }
+  ]
+}

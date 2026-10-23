@@ -1,0 +1,28 @@
+{
+  "node": {
+    "id": "sqlscript:Cloud9.BizTalk.Scripts/IntegrationsCommon/GetImportLogsByMessageType.sql",
+    "type": "sqlscript",
+    "name": "GetImportLogsByMessageType.sql",
+    "path": "Cloud9.BizTalk.Scripts/IntegrationsCommon/GetImportLogsByMessageType.sql",
+    "purpose": "Get Import Logs by Process Type",
+    "folder": "IntegrationsCommon",
+    "database": "InternalSd-gulfcoast"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk.Scripts/IntegrationsCommon/GetImportLogsByMessageType.sql",
+      "toName": "GetImportLogsByMessageType.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Scripts_IntegrationsCommon_GetImportLogsByMessageType.sql.json"
+    },
+    {
+      "type": "queries",
+      "to": "sqltable:PracticeDB.dbo.ImportLog",
+      "toName": "dbo.ImportLog",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/PracticeDB.dbo.ImportLog.json"
+    }
+  ],
+  "incoming": []
+}

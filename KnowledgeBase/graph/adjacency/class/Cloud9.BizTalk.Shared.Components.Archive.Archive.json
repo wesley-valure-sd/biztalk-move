@@ -1,0 +1,148 @@
+{
+  "node": {
+    "id": "class:Cloud9.BizTalk.Shared.Components.Archive.Archive",
+    "type": "class",
+    "name": "Cloud9.BizTalk.Shared.Components.Archive.Archive",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Shared.Components.Archive/Archive.cs",
+    "visibility": "public",
+    "kind": "class",
+    "line": 12
+  },
+  "outgoing": [
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Shared.Components.Archive.Archive.GetClassID",
+      "toName": "Archive.GetClassID",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Shared.Components.Archive.Archive.GetClassID.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Shared.Components.Archive.Archive.InitNew",
+      "toName": "Archive.InitNew",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Shared.Components.Archive.Archive.InitNew.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Shared.Components.Archive.Archive.Load",
+      "toName": "Archive.Load",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Shared.Components.Archive.Archive.Load.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Shared.Components.Archive.Archive.Save",
+      "toName": "Archive.Save",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Shared.Components.Archive.Archive.Save.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Shared.Components.Archive.Archive.ReadPropertyBag",
+      "toName": "Archive.ReadPropertyBag",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Shared.Components.Archive.Archive.ReadPropertyBag.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Shared.Components.Archive.Archive.WritePropertyBag",
+      "toName": "Archive.WritePropertyBag",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Shared.Components.Archive.Archive.WritePropertyBag.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Shared.Components.Archive.Archive.Validate",
+      "toName": "Archive.Validate",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Shared.Components.Archive.Archive.Validate.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Shared.Components.Archive.Archive.Execute",
+      "toName": "Archive.Execute",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Shared.Components.Archive.Archive.Execute.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Shared.Components.Archive.Archive.ProcessDateTimeMacros",
+      "toName": "Archive.ProcessDateTimeMacros",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Shared.Components.Archive.Archive.ProcessDateTimeMacros.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Shared.Components.Archive.Archive.ProcessFilePropertiesMacros",
+      "toName": "Archive.ProcessFilePropertiesMacros",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Shared.Components.Archive.Archive.ProcessFilePropertiesMacros.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Shared.Components.Archive.Archive.ProcessSFTPPropertiesMacros",
+      "toName": "Archive.ProcessSFTPPropertiesMacros",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Shared.Components.Archive.Archive.ProcessSFTPPropertiesMacros.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Shared.Components.Archive.Archive.ProcessFTPPropertiesMacros",
+      "toName": "Archive.ProcessFTPPropertiesMacros",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Shared.Components.Archive.Archive.ProcessFTPPropertiesMacros.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Shared.Components.Archive.Archive.ProcessMessageMacros",
+      "toName": "Archive.ProcessMessageMacros",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Shared.Components.Archive.Archive.ProcessMessageMacros.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Shared.Components.Archive.Archive.ProcessSystemPropertiesMacros",
+      "toName": "Archive.ProcessSystemPropertiesMacros",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Shared.Components.Archive.Archive.ProcessSystemPropertiesMacros.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.Shared.Components.Archive/Archive.cs",
+      "fromName": "Archive.cs",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Shared.Components.Archive_Archive.cs.json"
+    },
+    {
+      "type": "usesComponent",
+      "from": "pipeline:Cloud9.BizTalk.X12.Pipelines.ReceiveEDIPipeline",
+      "fromName": "Cloud9.BizTalk.X12.Pipelines.ReceiveEDIPipeline",
+      "fromType": "pipeline",
+      "fromFile": "adjacency/pipeline/Cloud9.BizTalk.X12.Pipelines.ReceiveEDIPipeline.json"
+    },
+    {
+      "type": "usesComponent",
+      "from": "pipeline:Cloud9.BizTalk.X12.Pipelines.ReceiveEmdeonMailPipeline",
+      "fromName": "Cloud9.BizTalk.X12.Pipelines.ReceiveEmdeonMailPipeline",
+      "fromType": "pipeline",
+      "fromFile": "adjacency/pipeline/Cloud9.BizTalk.X12.Pipelines.ReceiveEmdeonMailPipeline.json"
+    },
+    {
+      "type": "usesComponent",
+      "from": "pipeline:Cloud9.BizTalk.X12.Pipelines.SendEmdeonEDIPipeline",
+      "fromName": "Cloud9.BizTalk.X12.Pipelines.SendEmdeonEDIPipeline",
+      "fromType": "pipeline",
+      "fromFile": "adjacency/pipeline/Cloud9.BizTalk.X12.Pipelines.SendEmdeonEDIPipeline.json"
+    },
+    {
+      "type": "usesComponent",
+      "from": "pipeline:Cloud9.BizTalk.X12.Pipelines.SendEmdeonXMLPipeline",
+      "fromName": "Cloud9.BizTalk.X12.Pipelines.SendEmdeonXMLPipeline",
+      "fromType": "pipeline",
+      "fromFile": "adjacency/pipeline/Cloud9.BizTalk.X12.Pipelines.SendEmdeonXMLPipeline.json"
+    }
+  ]
+}

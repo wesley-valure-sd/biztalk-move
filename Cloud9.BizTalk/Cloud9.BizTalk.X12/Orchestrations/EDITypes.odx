@@ -1,0 +1,751 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="7d6dd7f8-a981-4647-9765-07f18dea2e4c" LowerBound="1.1" HigherBound="179.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Cloud9.BizTalk.X12" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="0e8980d2-6e89-46e9-80e2-e18ccabd1311" ParentLink="Module_PortType" LowerBound="104.1" HigherBound="111.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ReceiveSD835PortType" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="ab66e818-6a50-4a1d-aa58-49ca93f52f23" ParentLink="PortType_OperationDeclaration" LowerBound="106.1" HigherBound="110.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="9afe0fb1-e5fa-41ee-b96a-6f1e6630a3eb" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="108.13" HigherBound="108.22">
+                    <om:Property Name="Ref" Value="Cloud9.BizTalk.X12.SD835_MMT" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="e5338d52-938f-4ebf-abf9-347bc01b5855" ParentLink="Module_PortType" LowerBound="111.1" HigherBound="122.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="Post835TransactionPortType" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="a380a3d8-3199-47fe-854a-4f63f5fd19f2" ParentLink="PortType_OperationDeclaration" LowerBound="113.1" HigherBound="117.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Post835InsuranceTransaction" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="e0fe239e-3eac-4c77-afdb-bd9a976f450a" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="115.46" HigherBound="115.85">
+                    <om:Property Name="Ref" Value="Cloud9.BizTalk.X12.Post835InsuranceTransactionResponse_MMT" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="b9bdec18-c24a-495c-8957-54e03ed65432" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="115.13" HigherBound="115.44">
+                    <om:Property Name="Ref" Value="Cloud9.BizTalk.X12.Post835InsuranceTransaction_MMT" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="OperationDeclaration" OID="d0eb52b6-5876-4689-a151-63a71830640a" ParentLink="PortType_OperationDeclaration" LowerBound="117.1" HigherBound="121.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Post835PatientTransaction" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="edebfe1a-0531-43bd-904a-4f3da906c81e" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="119.44" HigherBound="119.81">
+                    <om:Property Name="Ref" Value="Cloud9.BizTalk.X12.Post835PatientTransactionResponse_MMT" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="313f4c61-7808-4330-b30d-38603011b711" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="119.13" HigherBound="119.42">
+                    <om:Property Name="Ref" Value="Cloud9.BizTalk.X12.Post835PatientTransaction_MMT" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="7a3b1f69-744b-4622-a54c-2394bb888a9c" ParentLink="Module_PortType" LowerBound="122.1" HigherBound="129.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ReceiveBBVA835PortType" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="25e74f94-92bb-4220-b20f-7fb98cac1698" ParentLink="PortType_OperationDeclaration" LowerBound="124.1" HigherBound="128.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="10973cbb-cd6f-412b-8d1f-029623f7f50e" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="126.13" HigherBound="126.24">
+                    <om:Property Name="Ref" Value="Cloud9.BizTalk.X12.BBVA835_MMT" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="1def0f04-8b4b-4e76-944a-54aca2b55197" ParentLink="Module_PortType" LowerBound="129.1" HigherBound="136.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PartnerConfigurationPortType" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="a5ecca2d-652f-4565-a442-871e5e14bda8" ParentLink="PortType_OperationDeclaration" LowerBound="131.1" HigherBound="135.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="GetPracticeConfigurationByName" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="1833feef-7a66-4213-bfc1-d709805bff99" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="133.13" HigherBound="133.47">
+                    <om:Property Name="Ref" Value="Cloud9.BizTalk.X12.GetPracticeConfigurationByName_MMT" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="46c069c2-0be9-4ff1-af4c-f69df01defd9" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="133.49" HigherBound="133.91">
+                    <om:Property Name="Ref" Value="Cloud9.BizTalk.X12.GetPracticeConfigurationByNameResponse_MMT" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="4e26aaef-d4ba-4fe4-bdb6-661740c33aeb" ParentLink="Module_PortType" LowerBound="136.1" HigherBound="143.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_AddImportLog" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="4d268fc3-7508-4231-9513-5252dfd5dbbf" ParentLink="PortType_OperationDeclaration" LowerBound="138.1" HigherBound="142.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="AddImportLog" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="17197c11-4328-4947-a429-6a1aac39d063" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="140.13" HigherBound="140.36">
+                    <om:Property Name="Ref" Value="Cloud9.BizTalk.X12.AddImportLogRequest_MMT" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="3b148cf7-8d2d-4329-8e87-f128e650ba92" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="140.38" HigherBound="140.62">
+                    <om:Property Name="Ref" Value="Cloud9.BizTalk.X12.AddImportLogResponse_MMT" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="c91240d1-48cc-45b1-be1c-364b1fb1ce95" ParentLink="Module_PortType" LowerBound="143.1" HigherBound="150.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_OutgoingMessage" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="ab13cfdf-dfea-4c52-b84b-4acead2ab595" ParentLink="PortType_OperationDeclaration" LowerBound="145.1" HigherBound="149.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Receive" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="d729840a-fd29-4b5a-bbc2-4c05977ad823" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="147.13" HigherBound="147.32">
+                    <om:Property Name="Ref" Value="Cloud9.BizTalk.X12.OutgoingMessage_MMT" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="7016e3d0-fb0f-46d0-8775-3246502ad9e9" ParentLink="Module_PortType" LowerBound="150.1" HigherBound="157.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_GetApplicationLookupValue" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="f8e7c04d-35d3-4d5e-975c-1e9c8a777bd0" ParentLink="PortType_OperationDeclaration" LowerBound="152.1" HigherBound="156.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="GetApplicationLookupValue" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="c56ab1cb-3c45-4ef9-856f-8d7d72e51fe0" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="154.13" HigherBound="154.42">
+                    <om:Property Name="Ref" Value="Cloud9.BizTalk.X12.GetApplicationLookupValue_MMT" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="96f1e08d-4224-4788-8b39-822433aa091c" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="154.44" HigherBound="154.81">
+                    <om:Property Name="Ref" Value="Cloud9.BizTalk.X12.GetApplicationLookupValueResponse_MMT" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="973b04bd-c4fe-456e-98a3-a0e86a534ac1" ParentLink="Module_PortType" LowerBound="157.1" HigherBound="164.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_GetApplicationLookupValues" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="be165f8a-64c1-41d3-a6c7-fe949b07af21" ParentLink="PortType_OperationDeclaration" LowerBound="159.1" HigherBound="163.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="GetApplicationLookupValues" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="75e075e9-9c75-429c-b030-e9b30ad243ba" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="161.13" HigherBound="161.43">
+                    <om:Property Name="Ref" Value="Cloud9.BizTalk.X12.GetApplicationLookupValues_MMT" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="72b72405-b0a6-4001-886b-c33ea324ab34" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="161.45" HigherBound="161.83">
+                    <om:Property Name="Ref" Value="Cloud9.BizTalk.X12.GetApplicationLookupValuesResponse_MMT" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="84054344-e420-4b14-8fe7-502af1c5e4c1" ParentLink="Module_PortType" LowerBound="164.1" HigherBound="171.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_UpdatePatientInsurancePolicyByPipGUID" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="05e8cb66-357e-4723-a5bc-57daa42b562c" ParentLink="PortType_OperationDeclaration" LowerBound="166.1" HigherBound="170.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="UpdatePatientInsurancePolicyByPipGUID" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="07c58911-3eb1-4617-a14e-4e713626d1a2" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="168.13" HigherBound="168.54">
+                    <om:Property Name="Ref" Value="Cloud9.BizTalk.X12.UpdatePatientInsurancePolicyByPipGUID_MMT" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="3e66ad40-809d-4c7a-8680-6d5c7dccad17" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="168.56" HigherBound="168.105">
+                    <om:Property Name="Ref" Value="Cloud9.BizTalk.X12.UpdatePatientInsurancePolicyByPipGUIDResposne_MMT" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="f371a6be-1d0c-4dfe-ae53-bd7ce13ccc0c" ParentLink="Module_MessageType" LowerBound="4.1" HigherBound="8.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="CHC271_MMT" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="57f84d96-c8d0-41ad-b7c7-50e65aa49c18" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="6.1" HigherBound="7.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.X12.Schemas.CHC_X12_00501_271" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="d71976cc-b934-4aac-ac80-f420cbc46fb5" ParentLink="Module_MessageType" LowerBound="8.1" HigherBound="12.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="SD835_MMT" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="fc07551c-fe18-4bcc-b790-19a570354324" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="10.1" HigherBound="11.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.X12.Schemas.SD_X12_00501_835" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="1c1a419e-3b22-45b0-81d4-9219041deae3" ParentLink="Module_MessageType" LowerBound="12.1" HigherBound="16.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="BBVA835_MMT" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="01ea0da6-5bee-486f-af98-4ba69fec0b45" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="14.1" HigherBound="15.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.X12.Schemas.BBVA_X12_00501_835" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="1e1af6c2-2378-45da-b5a2-ef03cce40ea4" ParentLink="Module_MessageType" LowerBound="16.1" HigherBound="20.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="Post835InsuranceTransaction_MMT" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="04753968-a1e5-42b7-a0c1-c6e8a6a01ec0" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="18.1" HigherBound="19.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.Schemas.Post835TypedProcedure_BTS.Post835InsuranceTransaction" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="a3417ad5-8e84-4642-ab06-b4a5457c6e0f" ParentLink="Module_MessageType" LowerBound="20.1" HigherBound="24.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="Post835InsuranceTransactionResponse_MMT" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="cda8cbbc-3054-4f65-8016-736353dfb3aa" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="22.1" HigherBound="23.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.Schemas.Post835TypedProcedure_BTS.Post835InsuranceTransactionResponse" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="ec152283-25e7-4ae3-b20e-d3fe9d4cfff8" ParentLink="Module_MessageType" LowerBound="24.1" HigherBound="28.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="Post835PatientTransaction_MMT" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="90ff0e5a-4dea-44fd-99c7-6e53b609ff05" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="26.1" HigherBound="27.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.Schemas.Post835TypedProcedure_BTS.Post835PatientTransaction" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="a6651e47-cfc7-4fa1-b3f1-dcd01161a531" ParentLink="Module_MessageType" LowerBound="28.1" HigherBound="32.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="Post835PatientTransactionResponse_MMT" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="ab6fc633-ab8e-431d-88c1-b34974f519c3" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="30.1" HigherBound="31.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.Schemas.Post835TypedProcedure_BTS.Post835PatientTransactionResponse" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="cb392ed6-bee8-4901-8247-d35530e3e3f7" ParentLink="Module_MessageType" LowerBound="32.1" HigherBound="36.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="GetPracticeConfigurationByName_MMT" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="37e0f134-2fdf-4bd5-a21a-8c2dd906b01b" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="34.1" HigherBound="35.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.Schemas.GPC_TypedProcedure_BTS.GetPracticeConfigurationByName" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="9695232a-c186-41b6-a04f-6ffae15471aa" ParentLink="Module_MessageType" LowerBound="36.1" HigherBound="40.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="GetPracticeConfigurationByNameResponse_MMT" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="d9e9240b-2067-405a-9ae9-933f12535836" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="38.1" HigherBound="39.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.Schemas.GPC_TypedProcedure_BTS.GetPracticeConfigurationByNameResponse" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="2b3e1037-0b3a-4b77-858c-10d8aba2b6fa" ParentLink="Module_MessageType" LowerBound="40.1" HigherBound="44.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="AddImportLogRequest_MMT" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="afbfcbd6-7127-420b-af75-0dc40b8baf9e" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="42.1" HigherBound="43.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.Schemas.ImportLogTypedProcedure_BTS.AddImportLog" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="c6ce92c1-41fe-497d-92e8-3369194c0505" ParentLink="Module_MessageType" LowerBound="44.1" HigherBound="48.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="AddImportLogResponse_MMT" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="8ec488cd-2cf1-45f7-b40d-11009187bbda" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="46.1" HigherBound="47.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.Schemas.ImportLogTypedProcedure_BTS.AddImportLogResponse" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="8247eedf-e74d-441c-941e-17545e2e40d3" ParentLink="Module_MessageType" LowerBound="48.1" HigherBound="52.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="GetADAClaimRequest_MMT" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="03ede354-e1f6-4d88-96ec-5de4c7f4c666" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="50.1" HigherBound="51.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.Schemas.ADAClaimTypedProcedure_dbo.GetADAClaim" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="c36a006d-a26c-4325-9c7a-4d57b2924312" ParentLink="Module_MessageType" LowerBound="52.1" HigherBound="56.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="GetADAClaimResponse_MMT" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="6e9c21ea-db6f-4fb1-aee5-809a61b3128a" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="54.1" HigherBound="55.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.Schemas.ADAClaimTypedProcedure_dbo.GetADAClaimResponse" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="49f9567b-d560-4246-ad15-f524821852e8" ParentLink="Module_MessageType" LowerBound="56.1" HigherBound="60.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="CanonicalClaimInformation_MMT" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="003e734e-d737-4b7e-b496-a44d9d625522" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="58.1" HigherBound="59.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.Schemas.Canonical.ClaimInformation" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="e9cb10a1-19e2-4e46-bc8a-14f9ebf8afbe" ParentLink="Module_MessageType" LowerBound="60.1" HigherBound="64.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="OutgoingMessage_MMT" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="8ed59d5f-00a0-48e3-a1df-115c05e5ef5a" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="62.1" HigherBound="63.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.Schemas.OutgoingMessage.OutgoingMessage" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="f64e0a11-ac60-4642-b5f6-85dc41e0c36e" ParentLink="Module_MessageType" LowerBound="64.1" HigherBound="68.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="CHC276_MMT" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="c87efa1f-474c-48ea-bed3-3bd084c52809" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="66.1" HigherBound="67.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.X12.Schemas.X12_00501_276" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="a5478265-cead-4c3d-8c2b-c985c3c9bef0" ParentLink="Module_MessageType" LowerBound="68.1" HigherBound="72.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="GetApplicationLookupValue_MMT" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="d967e38c-d984-4414-8e45-6ae000948337" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="70.1" HigherBound="71.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.Schemas.ALV_TypedProcedure_BTS.GetApplicationLookupValue" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="8c1741c1-bf15-4c52-b36b-0f07198104ea" ParentLink="Module_MessageType" LowerBound="72.1" HigherBound="76.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="GetApplicationLookupValueResponse_MMT" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="c51fb635-de9d-4be2-a62d-db3ca8208589" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="74.1" HigherBound="75.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.Schemas.ALV_TypedProcedure_BTS.GetApplicationLookupValueResponse" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="9326abc8-656f-4067-ba90-1eb1469ac5f3" ParentLink="Module_MessageType" LowerBound="76.1" HigherBound="80.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="GetApplicationLookupValues_MMT" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="fcdfc4f7-3cb3-472e-8d3e-1385b99e96a6" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="78.1" HigherBound="79.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.Schemas.ALV_TypedProcedure_BTS.GetApplicationLookupValues" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="aa9ff013-0c1a-4b4f-99f6-8c51e0071f5b" ParentLink="Module_MessageType" LowerBound="80.1" HigherBound="84.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="GetApplicationLookupValuesResponse_MMT" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="3c25b205-a5ec-4f3e-a05e-c122e78a8214" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="82.1" HigherBound="83.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.Schemas.ALV_TypedProcedure_BTS.GetApplicationLookupValuesResponse" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="d7ee8a45-4243-4b17-82de-329a0be50bb7" ParentLink="Module_MessageType" LowerBound="84.1" HigherBound="88.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="CHC277_4010_MMT" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="312f003b-fe5a-402e-af9d-71791dc56fc0" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="86.1" HigherBound="87.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.X12.Schemas.CHC_X12_00401_277" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="52f7cfb8-f981-46f8-9663-84b3af3190c6" ParentLink="Module_MessageType" LowerBound="88.1" HigherBound="92.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ChannelHealth271_MMT" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="fb6b082a-c35d-429b-a8c4-56a455d8c1ea" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="90.1" HigherBound="91.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.X12.Schemas.ChannelHealth_X12_00501_271" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="45614d7c-de82-4269-9c29-f7a3ade3e120" ParentLink="Module_MessageType" LowerBound="92.1" HigherBound="96.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="InsuranceInformationCanonical_MMT" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="8e1ef6d0-678f-4280-9f5a-0b1a8d3cb4d9" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="94.1" HigherBound="95.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.Schemas.Canonical.InsuranceInformation" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="2ee290d7-1229-4be1-9504-066d181a4be6" ParentLink="Module_MessageType" LowerBound="96.1" HigherBound="100.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="UpdatePatientInsurancePolicyByPipGUID_MMT" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="fc2902bc-8e0f-45b1-a7b2-0bf405e616df" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="98.1" HigherBound="99.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.Schemas.UPIP_TypedProcedure_BTS.UpdatePatientInsurancePolicyByPipGUID" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="0e28dba3-d03f-402a-add8-b3360e72456d" ParentLink="Module_MessageType" LowerBound="100.1" HigherBound="104.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="UpdatePatientInsurancePolicyByPipGUIDResposne_MMT" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="a6abae24-2d0a-48bc-b90f-5eac9818772e" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="102.1" HigherBound="103.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.Schemas.UPIP_TypedProcedure_BTS.UpdatePatientInsurancePolicyByPipGUIDResponse" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="ab11f48a-b625-46b3-97ef-6bc63dac4307" ParentLink="Module_ServiceDeclaration" LowerBound="171.1" HigherBound="178.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="EDITypes" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="ServiceBody" OID="fb591f86-55d4-4f5c-a4e5-1417f6cd841c" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Cloud9.BizTalk.X12
+{
+    internal messagetype CHC271_MMT
+    {
+        body Schemas.CHC_X12_00501_271 Body;
+    };
+    internal messagetype SD835_MMT
+    {
+        body Schemas.SD_X12_00501_835 Body;
+    };
+    internal messagetype BBVA835_MMT
+    {
+        body Schemas.BBVA_X12_00501_835 Body;
+    };
+    internal messagetype Post835InsuranceTransaction_MMT
+    {
+        body Cloud9.BizTalk.Schemas.Post835TypedProcedure_BTS.Post835InsuranceTransaction Body;
+    };
+    internal messagetype Post835InsuranceTransactionResponse_MMT
+    {
+        body Cloud9.BizTalk.Schemas.Post835TypedProcedure_BTS.Post835InsuranceTransactionResponse Body;
+    };
+    internal messagetype Post835PatientTransaction_MMT
+    {
+        body Cloud9.BizTalk.Schemas.Post835TypedProcedure_BTS.Post835PatientTransaction Body;
+    };
+    internal messagetype Post835PatientTransactionResponse_MMT
+    {
+        body Cloud9.BizTalk.Schemas.Post835TypedProcedure_BTS.Post835PatientTransactionResponse Body;
+    };
+    internal messagetype GetPracticeConfigurationByName_MMT
+    {
+        body Cloud9.BizTalk.Schemas.GPC_TypedProcedure_BTS.GetPracticeConfigurationByName Body;
+    };
+    internal messagetype GetPracticeConfigurationByNameResponse_MMT
+    {
+        body Cloud9.BizTalk.Schemas.GPC_TypedProcedure_BTS.GetPracticeConfigurationByNameResponse Body;
+    };
+    internal messagetype AddImportLogRequest_MMT
+    {
+        body Cloud9.BizTalk.Schemas.ImportLogTypedProcedure_BTS.AddImportLog Body;
+    };
+    internal messagetype AddImportLogResponse_MMT
+    {
+        body Cloud9.BizTalk.Schemas.ImportLogTypedProcedure_BTS.AddImportLogResponse Body;
+    };
+    internal messagetype GetADAClaimRequest_MMT
+    {
+        body Cloud9.BizTalk.Schemas.ADAClaimTypedProcedure_dbo.GetADAClaim Body;
+    };
+    internal messagetype GetADAClaimResponse_MMT
+    {
+        body Cloud9.BizTalk.Schemas.ADAClaimTypedProcedure_dbo.GetADAClaimResponse Body;
+    };
+    internal messagetype CanonicalClaimInformation_MMT
+    {
+        body Cloud9.BizTalk.Schemas.Canonical.ClaimInformation Body;
+    };
+    internal messagetype OutgoingMessage_MMT
+    {
+        body Cloud9.BizTalk.Schemas.OutgoingMessage.OutgoingMessage Body;
+    };
+    internal messagetype CHC276_MMT
+    {
+        body Schemas.X12_00501_276 Body;
+    };
+    internal messagetype GetApplicationLookupValue_MMT
+    {
+        body Cloud9.BizTalk.Schemas.ALV_TypedProcedure_BTS.GetApplicationLookupValue Body;
+    };
+    internal messagetype GetApplicationLookupValueResponse_MMT
+    {
+        body Cloud9.BizTalk.Schemas.ALV_TypedProcedure_BTS.GetApplicationLookupValueResponse Body;
+    };
+    internal messagetype GetApplicationLookupValues_MMT
+    {
+        body Cloud9.BizTalk.Schemas.ALV_TypedProcedure_BTS.GetApplicationLookupValues Body;
+    };
+    internal messagetype GetApplicationLookupValuesResponse_MMT
+    {
+        body Cloud9.BizTalk.Schemas.ALV_TypedProcedure_BTS.GetApplicationLookupValuesResponse Body;
+    };
+    internal messagetype CHC277_4010_MMT
+    {
+        body Schemas.CHC_X12_00401_277 Body;
+    };
+    internal messagetype ChannelHealth271_MMT
+    {
+        body Schemas.ChannelHealth_X12_00501_271 Body;
+    };
+    internal messagetype InsuranceInformationCanonical_MMT
+    {
+        body Cloud9.BizTalk.Schemas.Canonical.InsuranceInformation Body;
+    };
+    internal messagetype UpdatePatientInsurancePolicyByPipGUID_MMT
+    {
+        body Cloud9.BizTalk.Schemas.UPIP_TypedProcedure_BTS.UpdatePatientInsurancePolicyByPipGUID Body;
+    };
+    internal messagetype UpdatePatientInsurancePolicyByPipGUIDResposne_MMT
+    {
+        body Cloud9.BizTalk.Schemas.UPIP_TypedProcedure_BTS.UpdatePatientInsurancePolicyByPipGUIDResponse Body;
+    };
+    internal porttype ReceiveSD835PortType
+    {
+        oneway Operation_1
+        {
+            SD835_MMT
+        };
+    };
+    internal porttype Post835TransactionPortType
+    {
+        requestresponse Post835InsuranceTransaction
+        {
+            Post835InsuranceTransaction_MMT, Post835InsuranceTransactionResponse_MMT
+        };
+        requestresponse Post835PatientTransaction
+        {
+            Post835PatientTransaction_MMT, Post835PatientTransactionResponse_MMT
+        };
+    };
+    internal porttype ReceiveBBVA835PortType
+    {
+        oneway Operation_1
+        {
+            BBVA835_MMT
+        };
+    };
+    internal porttype PartnerConfigurationPortType
+    {
+        requestresponse GetPracticeConfigurationByName
+        {
+            GetPracticeConfigurationByName_MMT, GetPracticeConfigurationByNameResponse_MMT
+        };
+    };
+    internal porttype PortType_AddImportLog
+    {
+        requestresponse AddImportLog
+        {
+            AddImportLogRequest_MMT, AddImportLogResponse_MMT
+        };
+    };
+    internal porttype PortType_OutgoingMessage
+    {
+        oneway Receive
+        {
+            OutgoingMessage_MMT
+        };
+    };
+    internal porttype PortType_GetApplicationLookupValue
+    {
+        requestresponse GetApplicationLookupValue
+        {
+            GetApplicationLookupValue_MMT, GetApplicationLookupValueResponse_MMT
+        };
+    };
+    internal porttype PortType_GetApplicationLookupValues
+    {
+        requestresponse GetApplicationLookupValues
+        {
+            GetApplicationLookupValues_MMT, GetApplicationLookupValuesResponse_MMT
+        };
+    };
+    internal porttype PortType_UpdatePatientInsurancePolicyByPipGUID
+    {
+        requestresponse UpdatePatientInsurancePolicyByPipGUID
+        {
+            UpdatePatientInsurancePolicyByPipGUID_MMT, UpdatePatientInsurancePolicyByPipGUIDResposne_MMT
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service EDITypes
+    {
+        body ()
+        {
+        }
+    }
+}
+

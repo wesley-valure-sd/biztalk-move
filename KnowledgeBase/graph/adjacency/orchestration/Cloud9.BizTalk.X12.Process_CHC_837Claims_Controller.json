@@ -1,0 +1,126 @@
+{
+  "node": {
+    "id": "orchestration:Cloud9.BizTalk.X12.Process_CHC_837Claims_Controller",
+    "type": "orchestration",
+    "name": "Process_CHC_837Claims_Controller",
+    "activation": "activate receive (Port_Receive_QueueProcessParametersResp.Operation_Receive_QueueProcessParametersResp, msg_QueueProcessParametersResp)",
+    "ports": [
+      "Port_Receive_QueueProcessParametersResp (implements PortType_Receive_QueueProcessParametersResp)",
+      "Port_SendUpdateProcessParameters (uses PortType__SendUpdateProcessParameters)"
+    ],
+    "messages": [
+      "msg_QueueProcessParametersHeader: MPType_QueueProcessParametersHeader",
+      "msg_QueueProcessParametersResp: MPType_QueueProcessParametersResp",
+      "msg_QueueProcessParametersPracticeElement: MPType_QueueProcessParametersPracticeElement",
+      "msg_UpdateProcessParametersReq: MPType_UpdateProcessParametersReq",
+      "msg_UpdateProcessParametersResp: MPType_UpdateProcessParametersResp"
+    ],
+    "visibility": "internal",
+    "module": "Cloud9.BizTalk.X12",
+    "activationFilter": "(Cloud9.BizTalk.Schemas.PropertySchema.processName == \"ProcessClaims\")",
+    "contextProperties": [],
+    "line": 460,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_837Claims_Controller.odx",
+    "bindingStates": {
+      "Cloud9.EDI.Deployment": "Unenlisted",
+      "Cloud9.EDI.PDS.Deployment": "Unenlisted"
+    }
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_837Claims_Controller.odx",
+      "toName": "Process_CHC_837Claims_Controller.odx",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Orchestrations_Process_CHC_837Claims_Controller.odx.json"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.MPType_QueueProcessParametersHeader",
+      "toName": "MPType_QueueProcessParametersHeader",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.MPType_QueueProcessParametersHeader.json",
+      "message": "msg_QueueProcessParametersHeader"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.MPType_QueueProcessParametersResp",
+      "toName": "MPType_QueueProcessParametersResp",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.MPType_QueueProcessParametersResp.json",
+      "message": "msg_QueueProcessParametersResp"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.MPType_QueueProcessParametersPracticeElement",
+      "toName": "MPType_QueueProcessParametersPracticeElement",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.MPType_QueueProcessParametersPracticeElement.json",
+      "message": "msg_QueueProcessParametersPracticeElement"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.MPType_UpdateProcessParametersReq",
+      "toName": "MPType_UpdateProcessParametersReq",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.MPType_UpdateProcessParametersReq.json",
+      "message": "msg_UpdateProcessParametersReq"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.MPType_UpdateProcessParametersResp",
+      "toName": "MPType_UpdateProcessParametersResp",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.MPType_UpdateProcessParametersResp.json",
+      "message": "msg_UpdateProcessParametersResp"
+    },
+    {
+      "type": "usesMap",
+      "to": "map:Cloud9.BizTalk.Maps.QueueProcessParametersTypedPolling_To_UpdateProcessParameters",
+      "toName": "Cloud9.BizTalk.Maps.QueueProcessParametersTypedPolling_To_UpdateProcessParameters",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.Maps.QueueProcessParametersTypedPolling_To_UpdateProcessParameters.json",
+      "output": "msg_UpdateProcessParametersReq.Body",
+      "input": "msg_QueueProcessParametersResp.Body",
+      "line": 519
+    },
+    {
+      "type": "callsOrchestration",
+      "to": "orchestration:Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker",
+      "toName": "Process_CHC_837Claims_Worker",
+      "toType": "orchestration",
+      "toFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker.json",
+      "line": 511
+    },
+    {
+      "type": "invokesProc",
+      "to": "sqlproc:BizTalkCloud9Common.BTS.UpdateProcessParameters",
+      "toName": "BTS.UpdateProcessParameters",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.UpdateProcessParameters.json",
+      "line": 522,
+      "via": "static send port operation UpdateProcessParameters (BtsActionMapping)"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.Deployment/SP_UpdateProcessParameters_WCF",
+      "toName": "SP_UpdateProcessParameters_WCF",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.Deployment_SP_UpdateProcessParameters_WCF.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "Port_SendUpdateProcessParameters"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.PDS.Deployment/SP_UpdateProcessParameters_WCF",
+      "toName": "SP_UpdateProcessParameters_WCF",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.PDS.Deployment_SP_UpdateProcessParameters_WCF.json",
+      "bindingSet": "Cloud9.EDI.PDS.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "Port_SendUpdateProcessParameters"
+    }
+  ],
+  "incoming": []
+}

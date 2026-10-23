@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "setting:Cloud9.EDI.Deployment/CH_837_SENDPORT",
+    "type": "setting",
+    "name": "CH_837_SENDPORT",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.Deployment/SettingsFileGenerator.xml",
+    "bindingSet": "Cloud9.EDI.Deployment",
+    "valuesByEnvironment": {
+      "Default Values (DefaultSettings)": "SP_CH_837_FILE",
+      "Local Dev (LocalSettings)": "SP_CH_837_FILE",
+      "JGLISSON Development (JGLISSONSettings)": "SP_CH_837_FILE",
+      "LAB (LABSettings)": "SP_CH_837_FILE",
+      "LAB2 (LAB2Settings)": "SP_CH_837_FILE",
+      "LAB3 (LAB3Settings)": "SP_CH_837_FILE",
+      "PROD (C9Prod1_Settings)": "SP_CH_837_SFTP",
+      "PROD (C9Prod2_Settings)": "SP_CH_837_SFTP",
+      "LAB (SDLab1_Settings)": "SP_CH_837_SFTP",
+      "PROD (SDProd1_Settings)": "SP_CH_837_SFTP"
+    }
+  },
+  "outgoing": [],
+  "incoming": []
+}

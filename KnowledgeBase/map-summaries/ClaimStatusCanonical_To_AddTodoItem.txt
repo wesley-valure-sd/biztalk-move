@@ -1,0 +1,23 @@
+MAP: ClaimStatusCanonical_To_AddTodoItem.btm
+PATH: Cloud9.BizTalk\Cloud9.BizTalk.X12\Maps\ClaimStatusCanonical_To_AddTodoItem.btm
+SOURCE: Cloud9.BizTalk.Schemas.Canonical.ClaimStatus (root ClaimStatus)
+TARGET: Cloud9.BizTalk.Schemas.AddTodoItemTypedProcedure_BTS (root AddTodoItem)
+SCRIPT PRECEDENCE (first match wins when a functoid has more than one script): CSharp > ExternalAssembly > VbNet > JScript > XsltCallTemplate > Xslt
+
+=== PAGE: Page 1 ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L1: ClaimStatus/Patient/Claim/ClaimControlNumber -> AddTodoItem/adaclaimNumber
+L3: ClaimStatus/Patient/Claim/StatusCode -> F1
+L4: F1 -> AddTodoItem/errorCode
+L5: F2 -> AddTodoItem/message
+L6: ClaimStatus/Patient/Claim/ClaimControlNumber -> F2
+L7: ClaimStatus/Patient/Claim/StatusCode -> F2
+--- FUNCTOIDS ---
+F1 [Scripting] inputs: L3
+    script language: CSharp
+    | public string PaddingClaimStatusCode(string code)
+    | {
+    |     return code.PadLeft(4, '0');
+    | }
+F2 [String Concatenate] inputs: const:'Claim number ', L6, const:' needs reversal.', L7
+

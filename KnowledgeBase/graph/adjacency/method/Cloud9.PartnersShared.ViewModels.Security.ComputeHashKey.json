@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.PartnersShared.ViewModels.Security.ComputeHashKey",
+    "type": "method",
+    "name": "Security.ComputeHashKey",
+    "path": "Cloud9.HL7.WebAPI/Cloud9.HL7.BLL/ViewModels/Security.cs",
+    "class": "Cloud9.PartnersShared.ViewModels.Security",
+    "line": 12,
+    "signatures": [
+      "internal static void ComputeHashKey(string hashKey)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.PartnersShared.ViewModels.Security",
+      "fromName": "Cloud9.PartnersShared.ViewModels.Security",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.PartnersShared.ViewModels.Security.json"
+    }
+  ]
+}

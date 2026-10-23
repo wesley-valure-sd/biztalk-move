@@ -1,0 +1,28 @@
+{
+  "node": {
+    "id": "sqlscript:Cloud9.BizTalk.Scripts/835SDWebPatientPayment/GetImportLogsPatientPaymentFailed.sql",
+    "type": "sqlscript",
+    "name": "GetImportLogsPatientPaymentFailed.sql",
+    "path": "Cloud9.BizTalk.Scripts/835SDWebPatientPayment/GetImportLogsPatientPaymentFailed.sql",
+    "purpose": "Get Import Logs for failed SD Web Patient Payments",
+    "folder": "835SDWebPatientPayment",
+    "database": "PRACTICE-DB"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk.Scripts/835SDWebPatientPayment/GetImportLogsPatientPaymentFailed.sql",
+      "toName": "GetImportLogsPatientPaymentFailed.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Scripts_835SDWebPatientPayment_GetImportLogsPatientPaymentFailed.sql.json"
+    },
+    {
+      "type": "queries",
+      "to": "sqltable:PracticeDB.dbo.ImportLog",
+      "toName": "dbo.ImportLog",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/PracticeDB.dbo.ImportLog.json"
+    }
+  ],
+  "incoming": []
+}

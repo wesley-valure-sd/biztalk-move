@@ -1,0 +1,42 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.PE_Table_BTS",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.PE_Table_BTS",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ProcessingErrors/PE_Table.BTS.xsd",
+    "rootElements": [
+      "ProcessingError",
+      "ArrayOfProcessingError"
+    ],
+    "kind": "wcf-sql-table",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/Types/Tables/BTS",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ProcessingErrors/PE_Table.BTS.xsd",
+      "toName": "PE_Table.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_ProcessingErrors_PE_Table.BTS.xsd.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "sourceSchema",
+      "from": "map:Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_ErrorToInsertRequest",
+      "fromName": "Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_ErrorToInsertRequest",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_ErrorToInsertRequest.json",
+      "root": "ProcessingError"
+    },
+    {
+      "type": "usesSchema",
+      "from": "orchestration:Cloud9.BizTalk.Epic.ErrorReporting",
+      "fromName": "ErrorReporting",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.ErrorReporting.json",
+      "message": "msg_Error"
+    }
+  ]
+}

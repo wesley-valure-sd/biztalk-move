@@ -1,0 +1,18 @@
+{
+  "node": {
+    "id": "class:Microsoft.BizTalk.Edi.Pipelines.EdiDisassembler",
+    "type": "external-component",
+    "name": "Microsoft.BizTalk.Edi.Pipelines.EdiDisassembler",
+    "definedInRepo": false
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "usesComponent",
+      "from": "pipeline:Cloud9.BizTalk.X12.Pipelines.ReceiveEDIPipeline",
+      "fromName": "Cloud9.BizTalk.X12.Pipelines.ReceiveEDIPipeline",
+      "fromType": "pipeline",
+      "fromFile": "adjacency/pipeline/Cloud9.BizTalk.X12.Pipelines.ReceiveEDIPipeline.json"
+    }
+  ]
+}

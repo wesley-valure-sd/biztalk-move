@@ -1,0 +1,45 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.QUSP_TypedPolling_QueueUnprocessedStagingPatientIDs",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.QUSP_TypedPolling_QueueUnprocessedStagingPatientIDs",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/QueueUnprocessedStagingPatientIDs/QUSP_TypedPolling.QueueUnprocessedStagingPatientIDs.xsd",
+    "rootElements": [
+      "TypedPollingResultSet0",
+      "ArrayOfTypedPollingResultSet0",
+      "TypedPolling"
+    ],
+    "kind": "wcf-sql-typed-polling",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/TypedPolling/QueueUnprocessedStagingPatientIDs",
+    "sqlActions": [
+      "TypedPolling"
+    ]
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/QueueUnprocessedStagingPatientIDs/QUSP_TypedPolling.QueueUnprocessedStagingPatientIDs.xsd",
+      "toName": "QUSP_TypedPolling.QueueUnprocessedStagingPatientIDs.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_QueueUnprocessedStagingPatientIDs_QUSP_TypedPolling.QueueUnprocessedStagingPatientIDs.xsd.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "sourceSchema",
+      "from": "map:Cloud9.BizTalk.Epic.PatientToProcess_To_GetProcessingStagingPatientMessages",
+      "fromName": "Cloud9.BizTalk.Epic.PatientToProcess_To_GetProcessingStagingPatientMessages",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.Epic.PatientToProcess_To_GetProcessingStagingPatientMessages.json",
+      "root": "TypedPollingResultSet0"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.Epic.MPType_PatientPolling",
+      "fromName": "MPType_PatientPolling",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_PatientPolling.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.QUSP_TypedPolling_QueueUnprocessedStagingPatientIDs.TypedPollingResultSet0"
+    }
+  ]
+}

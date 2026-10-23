@@ -1,0 +1,31 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.Helper.DateFormatConversion.ConvertEPICDateTimeToSQLTime",
+    "type": "method",
+    "name": "DateFormatConversion.ConvertEPICDateTimeToSQLTime",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/DateFormatConversion.cs",
+    "class": "Cloud9.BizTalk.Helper.DateFormatConversion",
+    "line": 65,
+    "signatures": [
+      "public static string ConvertEPICDateTimeToSQLTime(string inputDateTime, string toTimeZone)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.Helper.DateFormatConversion",
+      "fromName": "Cloud9.BizTalk.Helper.DateFormatConversion",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.Helper.DateFormatConversion.json"
+    },
+    {
+      "type": "callsMethod",
+      "from": "orchestration:Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient",
+      "fromName": "ProcessHL7MessagesForPatient",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient.json",
+      "line": 2819
+    }
+  ]
+}

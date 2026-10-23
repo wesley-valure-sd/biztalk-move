@@ -1,0 +1,45 @@
+{
+  "node": {
+    "id": "messagetype:Cloud9.BizTalk.X12.GetApplicationLookupValues_MMT",
+    "type": "messagetype",
+    "name": "GetApplicationLookupValues_MMT",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/EDITypes.odx",
+    "bodyType": "Cloud9.BizTalk.Schemas.ALV_TypedProcedure_BTS.GetApplicationLookupValues",
+    "module": "Cloud9.BizTalk.X12"
+  },
+  "outgoing": [
+    {
+      "type": "bodySchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.ALV_TypedProcedure_BTS",
+      "toName": "Cloud9.BizTalk.Schemas.ALV_TypedProcedure_BTS",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.ALV_TypedProcedure_BTS.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.ALV_TypedProcedure_BTS.GetApplicationLookupValues"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/EDITypes.odx",
+      "fromName": "EDITypes.odx",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Orchestrations_EDITypes.odx.json"
+    },
+    {
+      "type": "usesMessageType",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_835_To_BBVA",
+      "fromName": "Process_CHC_835_To_BBVA",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_835_To_BBVA.json",
+      "message": "GetApplicationLookupValues"
+    },
+    {
+      "type": "usesMessageType",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_837_To_BBVA",
+      "fromName": "Process_CHC_837_To_BBVA",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_837_To_BBVA.json",
+      "message": "GetApplicationLookupValues"
+    }
+  ]
+}

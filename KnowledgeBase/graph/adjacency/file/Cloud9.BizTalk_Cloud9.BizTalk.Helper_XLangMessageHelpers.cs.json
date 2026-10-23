@@ -1,0 +1,34 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/XLangMessageHelpers.cs",
+    "type": "file",
+    "name": "XLangMessageHelpers.cs",
+    "kind": "csharp",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/XLangMessageHelpers.cs"
+  },
+  "outgoing": [
+    {
+      "type": "defines",
+      "to": "class:Cloud9.BizTalk.Helper.XLangMessageHelpers",
+      "toName": "Cloud9.BizTalk.Helper.XLangMessageHelpers",
+      "toType": "class",
+      "toFile": "adjacency/class/Cloud9.BizTalk.Helper.XLangMessageHelpers.json"
+    },
+    {
+      "type": "defines",
+      "to": "class:Cloud9.BizTalk.Helper.XMessageExtensionMethods",
+      "toName": "Cloud9.BizTalk.Helper.XMessageExtensionMethods",
+      "toType": "class",
+      "toFile": "adjacency/class/Cloud9.BizTalk.Helper.XMessageExtensionMethods.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.Helper",
+      "fromName": "Cloud9.BizTalk.Helper",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.Helper.json"
+    }
+  ]
+}

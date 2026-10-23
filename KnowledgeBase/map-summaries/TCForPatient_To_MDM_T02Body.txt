@@ -1,0 +1,42 @@
+MAP: TCForPatient_To_MDM_T02Body.btm
+PATH: Cloud9.BizTalk\Cloud9.BizTalk.Epic\Maps\TCForPatient_To_MDM_T02Body.btm
+SOURCE: Cloud9.BizTalk.Schemas.PTC_ProcedureResultSet_BTS_GetTreatmentCardPatientList (root StoredProcedureResultSet0)
+TARGET: BTAHL7Schemas.MDM_T02_26_GLO_DEF (root MDM_T02_26_GLO_DEF)
+SCRIPT PRECEDENCE (first match wins when a functoid has more than one script): CSharp > ExternalAssembly > VbNet > JScript > XsltCallTemplate > Xslt
+
+=== PAGE: Page 1 ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L4: F3 -> MDM_T02_26_GLO_DEF/PID_PatientIdentification/PID_3_PatientIdentifierList/CX_3_AssigningAuthority/CX_3_0_NamespaceId
+L5: Root/InputMessagePart_0/StoredProcedureResultSet0/patGUID -> MDM_T02_26_GLO_DEF/PID_PatientIdentification/PID_3_PatientIdentifierList/CX_0_IdNumber
+L6: Root/InputMessagePart_0/StoredProcedureResultSet0/persLastName -> MDM_T02_26_GLO_DEF/PID_PatientIdentification/PID_5_PatientName/XPN_0_FamilyName/XPN_0_0_Surname
+L7: Root/InputMessagePart_0/StoredProcedureResultSet0/persFirstName -> MDM_T02_26_GLO_DEF/PID_PatientIdentification/PID_5_PatientName/XPN_1_GivenName
+L8: Root/InputMessagePart_0/StoredProcedureResultSet0/persMiddleName -> MDM_T02_26_GLO_DEF/PID_PatientIdentification/PID_5_PatientName/XPN_2_SecondAndFurtherGivenNamesOrInitialsThereof
+L9: Root/InputMessagePart_0/StoredProcedureResultSet0/persSuffix -> MDM_T02_26_GLO_DEF/PID_PatientIdentification/PID_5_PatientName/XPN_3_SuffixEGJrOrIii
+L11: Root/InputMessagePart_0/StoredProcedureResultSet0/ProviderID -> MDM_T02_26_GLO_DEF/PV1_PatientVisit/PV1_7_AttendingDoctor/XCN_0_IdNumber
+L14: Root/InputMessagePart_0/StoredProcedureResultSet0/ProviderID -> MDM_T02_26_GLO_DEF/TXA_TranscriptionDocumentHeader/TXA_5_PrimaryActivityProviderCodeName/XCN_0_IdNumber
+L16: F4 -> MDM_T02_26_GLO_DEF/TXA_TranscriptionDocumentHeader/TXA_17_DocumentCompletionStatus
+L22: F7 -> MDM_T02_26_GLO_DEF/<Sequence>/OBX_ObservationResult/OBX_2_ValueType
+L23: F8 -> MDM_T02_26_GLO_DEF/PV1_PatientVisit/PV1_2_PatientClass/CWE_0_Identifier
+L34: Root/InputMessagePart_0/StoredProcedureResultSet0/tceGUID -> MDM_T02_26_GLO_DEF/TXA_TranscriptionDocumentHeader/TXA_12_UniqueDocumentNumber/EI_0_EntityIdentifier
+L35: F13 -> MDM_T02_26_GLO_DEF/<Sequence>/OBX_ObservationResult/OBX_1_SetIdObx
+L36: F14 -> MDM_T02_26_GLO_DEF/<Sequence>/OBX_ObservationResult/OBX_5_ObservationValue
+L37: StoredProcedureResultSet0/tceDateTime -> F15
+L38: F15 -> MDM_T02_26_GLO_DEF/TXA_TranscriptionDocumentHeader/TXA_4_ActivityDateTime
+L40: StoredProcedureResultSet0/eiSourceID -> MDM_T02_26_GLO_DEF/PV1_PatientVisit/PV1_19_VisitNumber/CX_0_IdNumber
+L42: F16 -> MDM_T02_26_GLO_DEF/PV1_PatientVisit/PV1_19_VisitNumber/CX_5_AssigningFacility/CX_5_0_NamespaceId
+L43: F17 -> MDM_T02_26_GLO_DEF/EVN_EventType/EVN_1_EventTypeCode
+L44: F15 -> MDM_T02_26_GLO_DEF/EVN_EventType/EVN_2_RecordedDateTime
+L45: F18 -> MDM_T02_26_GLO_DEF/TXA_TranscriptionDocumentHeader/TXA_2_DocumentType
+--- FUNCTOIDS ---
+F3 [String Concatenate] inputs: const:'CLOUD9'
+F4 [String Concatenate] inputs: const:'DO'
+F7 [String Concatenate] inputs: const:'FT'
+F8 [String Concatenate] inputs: const:'O'
+F13 [String Concatenate] inputs: const:'1'
+F14 [String Concatenate] inputs: const:'setme'
+F15 [Scripting] inputs: L37
+    script ExternalAssembly: Cloud9.BizTalk.Helper.DateFormatConversion.ConvertSQLDateToHL7Time [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F16 [String Concatenate] inputs: const:'EPIC'
+F17 [String Concatenate] inputs: const:'PCB'
+F18 [String Concatenate] inputs: const:'Orthodontic Treatment Summary'
+

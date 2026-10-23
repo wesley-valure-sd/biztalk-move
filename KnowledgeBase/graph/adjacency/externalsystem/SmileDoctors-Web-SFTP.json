@@ -1,0 +1,21 @@
+{
+  "node": {
+    "id": "externalsystem:SmileDoctors-Web-SFTP",
+    "type": "externalsystem",
+    "name": "Smile Doctors web payment SFTP (OpenEdge / XWeb card and ACH payments)",
+    "doc": "KnowledgeBase/docs/02-payments-835-end-to-end.md",
+    "detail": "Sends 835-shaped files for web credit card, ACH and ACH-return payments. One folder SD-<REGION> for each practice. X12 sender ZZ:SMILE DOCTORS, receiver ZZ:CLOUD9. Settings SD_SFTP_HOST, SD_835_WEB_FTP_FOLDER.",
+    "curated": true
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "source",
+      "from": "flow:SD-835-Web-Patient-Payment",
+      "fromName": "Smile Doctors web payment 835 -> patient payment transactions (card / ACH / ACH return)",
+      "fromType": "flow",
+      "fromFile": "adjacency/flow/SD-835-Web-Patient-Payment.json",
+      "curated": true
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "node": {
+    "id": "messagetype:Cloud9.BizTalk.X12.Post835InsuranceTransactionResponse_MMT",
+    "type": "messagetype",
+    "name": "Post835InsuranceTransactionResponse_MMT",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/EDITypes.odx",
+    "bodyType": "Cloud9.BizTalk.Schemas.Post835TypedProcedure_BTS.Post835InsuranceTransactionResponse",
+    "module": "Cloud9.BizTalk.X12"
+  },
+  "outgoing": [
+    {
+      "type": "bodySchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.Post835TypedProcedure_BTS",
+      "toName": "Cloud9.BizTalk.Schemas.Post835TypedProcedure_BTS",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.Post835TypedProcedure_BTS.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.Post835TypedProcedure_BTS.Post835InsuranceTransactionResponse"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/EDITypes.odx",
+      "fromName": "EDITypes.odx",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Orchestrations_EDITypes.odx.json"
+    },
+    {
+      "type": "usesMessageType",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_BBVA_835Insurance",
+      "fromName": "Process_BBVA_835Insurance",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_BBVA_835Insurance.json",
+      "message": "AdjPost835InsuranceTransactionResponse"
+    },
+    {
+      "type": "usesMessageType",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_835Insurance",
+      "fromName": "Process_CHC_835Insurance",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_835Insurance.json",
+      "message": "Post835InsuranceTransactionResponse"
+    }
+  ]
+}

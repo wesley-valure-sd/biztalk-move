@@ -1,0 +1,40 @@
+{
+  "node": {
+    "id": "receivelocation:Cloud9.EDI.PDS.Deployment/RL_CHC_Inbound_EDI",
+    "type": "receivelocation",
+    "name": "RL_CHC_Inbound_EDI",
+    "enabled": "true",
+    "bindingSet": "Cloud9.EDI.PDS.Deployment",
+    "receivePipeline": "Cloud9.BizTalk.X12.Pipelines.ReceiveEDIPipeline",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.PDS.Deployment/PortBindingsMaster.xml",
+    "archiveFolder": "${ADDR_FILE_ROOT}\\CHC_Inbound\\Archive",
+    "address": "${ADDR_FILE_ROOT}\\CHC_Inbound\\*.*",
+    "serviceWindow": "2019-06-19T04:00:00 to 2019-06-20T03:59:59 (enabled=false)",
+    "pollingInterval": "60000",
+    "transport": "FILE"
+  },
+  "outgoing": [
+    {
+      "type": "partOf",
+      "to": "receiveport:Cloud9.EDI.PDS.Deployment/RP_CHC_Inbound_EDI",
+      "toName": "RP_CHC_Inbound_EDI",
+      "toType": "receiveport",
+      "toFile": "adjacency/receiveport/Cloud9.EDI.PDS.Deployment_RP_CHC_Inbound_EDI.json"
+    },
+    {
+      "type": "usesPipeline",
+      "to": "pipeline:Cloud9.BizTalk.X12.Pipelines.ReceiveEDIPipeline",
+      "toName": "Cloud9.BizTalk.X12.Pipelines.ReceiveEDIPipeline",
+      "toType": "pipeline",
+      "toFile": "adjacency/pipeline/Cloud9.BizTalk.X12.Pipelines.ReceiveEDIPipeline.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.EDI.PDS.Deployment/ADDR_FILE_ROOT",
+      "toName": "ADDR_FILE_ROOT",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.EDI.PDS.Deployment_ADDR_FILE_ROOT.json"
+    }
+  ],
+  "incoming": []
+}

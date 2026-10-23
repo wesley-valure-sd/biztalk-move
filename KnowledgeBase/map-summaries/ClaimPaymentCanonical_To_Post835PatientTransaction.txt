@@ -1,0 +1,77 @@
+MAP: ClaimPaymentCanonical_To_Post835PatientTransaction.btm
+PATH: Cloud9.BizTalk\Cloud9.BizTalk.X12\Maps\ClaimPaymentCanonical_To_Post835PatientTransaction.btm
+SOURCE: Cloud9.BizTalk.Schemas.Canonical.ClaimPayment (root ClaimPayment)
+TARGET: Cloud9.BizTalk.Schemas.Post835TypedProcedure_BTS (root Post835PatientTransaction)
+SCRIPT PRECEDENCE (first match wins when a functoid has more than one script): CSharp > ExternalAssembly > VbNet > JScript > XsltCallTemplate > Xslt
+
+=== PAGE: Links ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L64: ClaimPayment/PatientIdentifier -> Post835PatientTransaction/patGUID
+L66: ClaimPayment/SubscriberIdentifier -> Post835PatientTransaction/ppGUID
+L67: ClaimPayment/SenderDFIIdentifier -> Post835PatientTransaction/transRouting
+L68: ClaimPayment/PaymentMethodCode -> Post835PatientTransaction/lbcLockboxCode
+L75: ClaimPayment/ReferenceIdentifier -> Post835PatientTransaction/transReference
+L77: ClaimPayment/PaymentIdentifier -> Post835PatientTransaction/PaymentIdentifier
+L80: ClaimPayment/CheckorEFTTraceNumber -> Post835PatientTransaction/transCheckNumber
+--- FUNCTOIDS ---
+
+=== PAGE: Functoids ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L3: F3 -> Post835PatientTransaction/transStatus
+L4: F4 -> Post835PatientTransaction/transProductionAmount
+L5: F4 -> Post835PatientTransaction/transClaimAmount
+L6: F5 -> Post835PatientTransaction/transIsGroup
+L14: F6 -> Post835PatientTransaction/transDueNowAmount
+L15: F6 -> Post835PatientTransaction/transTotalDueAmount
+L63: F6 -> Post835PatientTransaction/transAmount
+L71: ClaimPayment/TotalActualProviderPaymentAmount -> F6
+L2: F22 -> Post835PatientTransaction/transGUID
+L72: F23 -> Post835PatientTransaction/lbcLockboxCodeType
+L73: ClaimPayment/CheckIssueorEFTEffectiveDate -> F24
+L74: F24 -> Post835PatientTransaction/transDateTime
+L76: ClaimPayment/TransactionNote -> Post835PatientTransaction/transNote
+L78: ClaimPayment/PaymentPostedDate -> F25
+L79: F25 -> Post835PatientTransaction/transDateTimePosted
+--- FUNCTOIDS ---
+F3 [String Concatenate] inputs: const:'N'
+F4 [String Concatenate] inputs: const:'0'
+F5 [String Concatenate] inputs: const:'0'
+F6 [Multiplication (inferred)] inputs: L71, const:'-1'
+F22 [Scripting] inputs: 
+    script language: CSharp
+    | public string GetTransGUID()
+    | {
+    | return System.Guid.NewGuid().ToString();
+    | }
+F23 [String Concatenate] inputs: const:'setme'
+F24 [Scripting] inputs: L73
+    script ExternalAssembly: Cloud9.BizTalk.Helper.DateFormatConversion.ConvertHL7DateToSQLDatetimeWithoutOffset [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+    script language: CSharp
+    | public string FormatDate(string inputDate)
+    | {
+    | 	if(inputDate.Length == 8)
+    | 	{
+    | 		return System.DateTime.ParseExact(inputDate, "yyyyMMdd", System.Globalization.CultureInfo.InvariantCulture).ToString("yyyy-MM-dd");
+    | 	}
+    | 	else
+    | 	{
+    | 		return System.DateTime.Parse(inputDate).ToString("yyyy-MM-ddTHH:mm:ss");
+    | 	}
+    | 	
+    | }
+F25 [Scripting] inputs: L78
+    script ExternalAssembly: Cloud9.BizTalk.Helper.DateFormatConversion.ConvertHL7DateToSQLDatetimeWithoutOffset [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+    script language: CSharp
+    | public string FormatDateTimePosted(string inputDate)
+    | {
+    | 	if(inputDate.Length == 8)
+    | 	{
+    | 		return System.DateTime.ParseExact(inputDate, "yyyyMMdd", System.Globalization.CultureInfo.InvariantCulture).ToString("yyyy-MM-dd");
+    | 	}
+    | 	else
+    | 	{
+    | 		return System.DateTime.Parse(inputDate).ToString("yyyy-MM-ddTHH:mm:ss");
+    | 	}
+    | 	
+    | }
+

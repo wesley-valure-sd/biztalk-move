@@ -1,0 +1,31 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.Helper.Conversion.SetXMLNode",
+    "type": "method",
+    "name": "Conversion.SetXMLNode",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/Cloud9.BizTalk.Helper.cs",
+    "class": "Cloud9.BizTalk.Helper.Conversion",
+    "line": 25,
+    "signatures": [
+      "public static void SetXMLNode(System.Xml.XmlDocument outerMsg, System.String nodeXpath, System.String strInnerXmlStr)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.Helper.Conversion",
+      "fromName": "Cloud9.BizTalk.Helper.Conversion",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.Helper.Conversion.json"
+    },
+    {
+      "type": "callsMethod",
+      "from": "orchestration:Cloud9.BizTalk.Epic.StageHL7_Inbound",
+      "fromName": "StageHL7_Inbound",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.StageHL7_Inbound.json",
+      "line": 790
+    }
+  ]
+}

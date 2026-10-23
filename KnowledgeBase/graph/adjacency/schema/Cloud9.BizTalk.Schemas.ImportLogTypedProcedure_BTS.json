@@ -1,0 +1,51 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.ImportLogTypedProcedure_BTS",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.ImportLogTypedProcedure_BTS",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ImportLog/ImportLogTypedProcedure.BTS.xsd",
+    "rootElements": [
+      "AddImportLog",
+      "AddImportLogResponse"
+    ],
+    "kind": "wcf-sql-typed-procedure",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS",
+    "sqlActions": [
+      "TypedProcedure/BTS/AddImportLog"
+    ]
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ImportLog/ImportLogTypedProcedure.BTS.xsd",
+      "toName": "ImportLogTypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_ImportLog_ImportLogTypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "describesParametersOf",
+      "to": "sqlproc:PracticeDB.BTS.AddImportLog",
+      "toName": "BTS.AddImportLog",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/PracticeDB.BTS.AddImportLog.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.AddImportLogRequest_MMT",
+      "fromName": "AddImportLogRequest_MMT",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.AddImportLogRequest_MMT.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.ImportLogTypedProcedure_BTS.AddImportLog"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.AddImportLogResponse_MMT",
+      "fromName": "AddImportLogResponse_MMT",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.AddImportLogResponse_MMT.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.ImportLogTypedProcedure_BTS.AddImportLogResponse"
+    }
+  ]
+}

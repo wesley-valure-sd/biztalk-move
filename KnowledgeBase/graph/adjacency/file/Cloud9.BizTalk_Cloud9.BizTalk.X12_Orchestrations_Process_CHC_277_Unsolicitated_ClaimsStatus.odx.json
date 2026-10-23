@@ -1,0 +1,69 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_277_Unsolicitated_ClaimsStatus.odx",
+    "type": "file",
+    "name": "Process_CHC_277_Unsolicitated_ClaimsStatus.odx",
+    "kind": "odx",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_277_Unsolicitated_ClaimsStatus.odx"
+  },
+  "outgoing": [
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.X12.CHC277_Unsolicitate_MMT",
+      "toName": "CHC277_Unsolicitate_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.CHC277_Unsolicitate_MMT.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.X12.GetPracticeConfigurationByEmdeon_MMT",
+      "toName": "GetPracticeConfigurationByEmdeon_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.GetPracticeConfigurationByEmdeon_MMT.json"
+    },
+    {
+      "type": "defines",
+      "to": "messagetype:Cloud9.BizTalk.X12.GetPracticeConfigurationByEmdeonResponse_MMT",
+      "toName": "GetPracticeConfigurationByEmdeonResponse_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.GetPracticeConfigurationByEmdeonResponse_MMT.json"
+    },
+    {
+      "type": "defines",
+      "to": "porttype:Cloud9.BizTalk.X12.ReceiveUnsolicitatedCHC277PortType",
+      "toName": "ReceiveUnsolicitatedCHC277PortType",
+      "toType": "porttype",
+      "toFile": "adjacency/porttype/Cloud9.BizTalk.X12.ReceiveUnsolicitatedCHC277PortType.json"
+    },
+    {
+      "type": "defines",
+      "to": "porttype:Cloud9.BizTalk.X12.Send_277_Unsolicitated_BBVA_Type",
+      "toName": "Send_277_Unsolicitated_BBVA_Type",
+      "toType": "porttype",
+      "toFile": "adjacency/porttype/Cloud9.BizTalk.X12.Send_277_Unsolicitated_BBVA_Type.json"
+    },
+    {
+      "type": "defines",
+      "to": "porttype:Cloud9.BizTalk.X12.GetPracticeConfigurationByEmdeonPortType",
+      "toName": "GetPracticeConfigurationByEmdeonPortType",
+      "toType": "porttype",
+      "toFile": "adjacency/porttype/Cloud9.BizTalk.X12.GetPracticeConfigurationByEmdeonPortType.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.X12",
+      "fromName": "Cloud9.BizTalk.X12",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.X12.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_277_Unsolicitated_ClaimsStatus",
+      "fromName": "Process_CHC_277_Unsolicitated_ClaimsStatus",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_277_Unsolicitated_ClaimsStatus.json"
+    }
+  ]
+}

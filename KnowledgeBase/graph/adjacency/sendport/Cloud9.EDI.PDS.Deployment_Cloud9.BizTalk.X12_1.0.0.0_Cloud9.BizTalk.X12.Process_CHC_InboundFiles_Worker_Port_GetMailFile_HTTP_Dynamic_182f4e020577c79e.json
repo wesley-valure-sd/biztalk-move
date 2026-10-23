@@ -1,0 +1,42 @@
+{
+  "node": {
+    "id": "sendport:Cloud9.EDI.PDS.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetMailFile_HTTP_Dynamic_182f4e020577c79e",
+    "type": "sendport",
+    "name": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetMailFile_HTTP_Dynamic_182f4e020577c79e",
+    "sendPipeline": "Cloud9.BizTalk.X12.Pipelines.SendEmdeonXMLPipeline",
+    "bindingSet": "Cloud9.EDI.PDS.Deployment",
+    "actionMappings": [],
+    "isTwoWay": "true",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.PDS.Deployment/PortBindingsMaster.xml",
+    "filter": [],
+    "isStatic": "false"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.EDI.PDS.Deployment/PortBindingsMaster.xml",
+      "toName": "PortBindingsMaster.xml",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.EDI.PDS.Deployment_PortBindingsMaster.xml.json"
+    },
+    {
+      "type": "usesPipeline",
+      "to": "pipeline:Cloud9.BizTalk.X12.Pipelines.SendEmdeonXMLPipeline",
+      "toName": "Cloud9.BizTalk.X12.Pipelines.SendEmdeonXMLPipeline",
+      "toType": "pipeline",
+      "toFile": "adjacency/pipeline/Cloud9.BizTalk.X12.Pipelines.SendEmdeonXMLPipeline.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "boundToSendPort",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker",
+      "fromName": "Process_CHC_InboundFiles_Worker",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker.json",
+      "bindingSet": "Cloud9.EDI.PDS.Deployment",
+      "bindingOption": "4",
+      "logicalPort": "Port_GetMailFile_HTTP_Dynamic"
+    }
+  ]
+}

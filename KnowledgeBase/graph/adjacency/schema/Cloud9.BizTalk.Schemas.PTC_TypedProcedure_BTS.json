@@ -1,0 +1,67 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.PTC_TypedProcedure_BTS",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.PTC_TypedProcedure_BTS",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/PatientTreatmentCard/PTC_TypedProcedure.BTS.xsd",
+    "rootElements": [
+      "GetTreatmentCardPatientList",
+      "GetTreatmentCardPatientListResponse"
+    ],
+    "kind": "wcf-sql-typed-procedure",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS",
+    "sqlActions": [
+      "TypedProcedure/BTS/GetTreatmentCardPatientList"
+    ]
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/PatientTreatmentCard/PTC_TypedProcedure.BTS.xsd",
+      "toName": "PTC_TypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_PatientTreatmentCard_PTC_TypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "describesParametersOf",
+      "to": "sqlproc:PracticeDB.BTS.GetTreatmentCardPatientList",
+      "toName": "BTS.GetTreatmentCardPatientList",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/PracticeDB.BTS.GetTreatmentCardPatientList.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.Epic.Transform_QueueProcessParametersHeader_To_GetTreatmentCardPatientListReq",
+      "fromName": "Cloud9.BizTalk.Epic.Transform_QueueProcessParametersHeader_To_GetTreatmentCardPatientListReq",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.Epic.Transform_QueueProcessParametersHeader_To_GetTreatmentCardPatientListReq.json",
+      "root": "GetTreatmentCardPatientList"
+    },
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.Epic.Transform_To_GetTreatmentCardPatientListReq",
+      "fromName": "Cloud9.BizTalk.Epic.Transform_To_GetTreatmentCardPatientListReq",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.Epic.Transform_To_GetTreatmentCardPatientListReq.json",
+      "root": "GetTreatmentCardPatientList"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.Epic.MPType_GetTreatmentCardPatientListReq",
+      "fromName": "MPType_GetTreatmentCardPatientListReq",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_GetTreatmentCardPatientListReq.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.PTC_TypedProcedure_BTS.GetTreatmentCardPatientList"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.Epic.MPType_GetTreatmentCardPatientListResp",
+      "fromName": "MPType_GetTreatmentCardPatientListResp",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_GetTreatmentCardPatientListResp.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.PTC_TypedProcedure_BTS.GetTreatmentCardPatientListResponse"
+    }
+  ]
+}

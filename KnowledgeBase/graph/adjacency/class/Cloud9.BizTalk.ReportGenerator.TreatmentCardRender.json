@@ -1,0 +1,50 @@
+{
+  "node": {
+    "id": "class:Cloud9.BizTalk.ReportGenerator.TreatmentCardRender",
+    "type": "class",
+    "name": "Cloud9.BizTalk.ReportGenerator.TreatmentCardRender",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.ReportGenerator/Cloud9.BizTalk.ReportGenerator/TreatmentCardRender.cs",
+    "visibility": "public",
+    "kind": "class",
+    "line": 13
+  },
+  "outgoing": [
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.ReportGenerator.TreatmentCardRender.GetReportSource",
+      "toName": "TreatmentCardRender.GetReportSource",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.ReportGenerator.TreatmentCardRender.GetReportSource.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.ReportGenerator.TreatmentCardRender.RenderReport",
+      "toName": "TreatmentCardRender.RenderReport",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.ReportGenerator.TreatmentCardRender.RenderReport.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.ReportGenerator.TreatmentCardRender.createTreatmentCardPDF",
+      "toName": "TreatmentCardRender.createTreatmentCardPDF",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.ReportGenerator.TreatmentCardRender.createTreatmentCardPDF.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.ReportGenerator.TreatmentCardRender.getBase64FromTreatmentCardPDF",
+      "toName": "TreatmentCardRender.getBase64FromTreatmentCardPDF",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.ReportGenerator.TreatmentCardRender.getBase64FromTreatmentCardPDF.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.ReportGenerator/Cloud9.BizTalk.ReportGenerator/TreatmentCardRender.cs",
+      "fromName": "TreatmentCardRender.cs",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.ReportGenerator_Cloud9.BizTalk.ReportGenerator_TreatmentCardRender.cs.json"
+    }
+  ]
+}

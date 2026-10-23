@@ -1,0 +1,38 @@
+{
+  "node": {
+    "id": "setting:Cloud9.EDI.Deployment/SD_SFTP_HOST_BBVA",
+    "type": "setting",
+    "name": "SD_SFTP_HOST_BBVA",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.Deployment/SettingsFileGenerator.xml",
+    "bindingSet": "Cloud9.EDI.Deployment",
+    "valuesByEnvironment": {
+      "Default Values (DefaultSettings)": "localhost",
+      "Local Dev (LocalSettings)": "localhost",
+      "JGLISSON Development (JGLISSONSettings)": "localhost",
+      "LAB (LABSettings)": "sftp.smiledoctors.com",
+      "LAB2 (LAB2Settings)": "sftp.smiledoctors.com",
+      "LAB3 (LAB3Settings)": "sftp.smiledoctors.com",
+      "PROD (C9Prod1_Settings)": "sftp.smiledoctors.com",
+      "PROD (C9Prod2_Settings)": "sftp.smiledoctors.com",
+      "LAB (SDLab1_Settings)": "sftp.smiledoctors.com",
+      "PROD (SDProd1_Settings)": "sftp.smiledoctors.com"
+    }
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "usesSetting",
+      "from": "sendport:Cloud9.EDI.Deployment/SP_CHC837ToSD_SFTP",
+      "fromName": "SP_CHC837ToSD_SFTP",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.Deployment_SP_CHC837ToSD_SFTP.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "sendport:Cloud9.EDI.Deployment/SP_CHC835ToSD_SFTP",
+      "fromName": "SP_CHC835ToSD_SFTP",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.Deployment_SP_CHC835ToSD_SFTP.json"
+    }
+  ]
+}

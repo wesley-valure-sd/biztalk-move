@@ -1,0 +1,65 @@
+{
+  "node": {
+    "id": "project:Cloud9.BizTalk.ReportGenerator",
+    "type": "project",
+    "name": "Cloud9.BizTalk.ReportGenerator",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.ReportGenerator/Cloud9.BizTalk.ReportGenerator/Cloud9.BizTalk.ReportGenerator.csproj",
+    "framework": "v4.5.2",
+    "kind": "csharp",
+    "rootNamespace": "Cloud9.BizTalk.ReportGenerator",
+    "assemblyName": "Cloud9.BizTalk.ReportGenerator"
+  },
+  "outgoing": [
+    {
+      "type": "references",
+      "to": "project:Cloud9.BizTalk.Reports",
+      "toName": "Cloud9.BizTalk.Reports",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.Reports.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.ReportGenerator/Cloud9.BizTalk.ReportGenerator/TreatmentCardRender.cs",
+      "toName": "TreatmentCardRender.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.ReportGenerator_Cloud9.BizTalk.ReportGenerator_TreatmentCardRender.cs.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "references",
+      "from": "project:Cloud9.BizTalk.Epic",
+      "fromName": "Cloud9.BizTalk.Epic",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.Epic.json"
+    },
+    {
+      "type": "references",
+      "from": "project:Cloud9.BizTalk.ReportGenerator.ConsoleTest",
+      "fromName": "Cloud9.BizTalk.ReportGenerator.ConsoleTest",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.ReportGenerator.ConsoleTest.json"
+    },
+    {
+      "type": "contains",
+      "from": "solution:Cloud9.BizTalk.PDS",
+      "fromName": "Cloud9.BizTalk.PDS",
+      "fromType": "solution",
+      "fromFile": "adjacency/solution/Cloud9.BizTalk.PDS.json"
+    },
+    {
+      "type": "contains",
+      "from": "solution:Cloud9.BizTalk",
+      "fromName": "Cloud9.BizTalk",
+      "fromType": "solution",
+      "fromFile": "adjacency/solution/Cloud9.BizTalk.json"
+    },
+    {
+      "type": "contains",
+      "from": "solution:Cloud9.BizTalk.ReportGenerator",
+      "fromName": "Cloud9.BizTalk.ReportGenerator",
+      "fromType": "solution",
+      "fromFile": "adjacency/solution/Cloud9.BizTalk.ReportGenerator.json"
+    }
+  ]
+}

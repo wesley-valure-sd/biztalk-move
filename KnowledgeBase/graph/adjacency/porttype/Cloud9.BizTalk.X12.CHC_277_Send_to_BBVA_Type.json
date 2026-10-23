@@ -1,0 +1,22 @@
+{
+  "node": {
+    "id": "porttype:Cloud9.BizTalk.X12.CHC_277_Send_to_BBVA_Type",
+    "type": "porttype",
+    "name": "CHC_277_Send_to_BBVA_Type",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_276ClaimStatus.odx",
+    "module": "Cloud9.BizTalk.X12",
+    "operations": [
+      "oneway Operation_1(CHC277_MMT)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_276ClaimStatus.odx",
+      "fromName": "Process_CHC_276ClaimStatus.odx",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Orchestrations_Process_CHC_276ClaimStatus.odx.json"
+    }
+  ]
+}

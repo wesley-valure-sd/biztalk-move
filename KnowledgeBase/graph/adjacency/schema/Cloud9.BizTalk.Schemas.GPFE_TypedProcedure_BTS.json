@@ -1,0 +1,51 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.GPFE_TypedProcedure_BTS",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.GPFE_TypedProcedure_BTS",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetPracticeConfigForEmdeon/GPFE_TypedProcedure.BTS.xsd",
+    "rootElements": [
+      "GetPracticeConfigurationByEmdeonUser",
+      "GetPracticeConfigurationByEmdeonUserResponse"
+    ],
+    "kind": "wcf-sql-typed-procedure",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS",
+    "sqlActions": [
+      "TypedProcedure/BTS/GetPracticeConfigurationByEmdeonUser"
+    ]
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetPracticeConfigForEmdeon/GPFE_TypedProcedure.BTS.xsd",
+      "toName": "GPFE_TypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_GetPracticeConfigForEmdeon_GPFE_TypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "describesParametersOf",
+      "to": "sqlproc:BizTalkCloud9Common.BTS.GetPracticeConfigurationByEmdeonUser",
+      "toName": "BTS.GetPracticeConfigurationByEmdeonUser",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.GetPracticeConfigurationByEmdeonUser.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.GetPracticeConfigurationByEmdeon_MMT",
+      "fromName": "GetPracticeConfigurationByEmdeon_MMT",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.GetPracticeConfigurationByEmdeon_MMT.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.GPFE_TypedProcedure_BTS.GetPracticeConfigurationByEmdeonUser"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.GetPracticeConfigurationByEmdeonResponse_MMT",
+      "fromName": "GetPracticeConfigurationByEmdeonResponse_MMT",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.GetPracticeConfigurationByEmdeonResponse_MMT.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.GPFE_TypedProcedure_BTS.GetPracticeConfigurationByEmdeonUserResponse"
+    }
+  ]
+}

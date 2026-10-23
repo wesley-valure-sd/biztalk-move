@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.HelperTest.ValidationTest.Setup",
+    "type": "method",
+    "name": "ValidationTest.Setup",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.HelperTest/ValidationTest.cs",
+    "class": "Cloud9.BizTalk.HelperTest.ValidationTest",
+    "line": 14,
+    "signatures": [
+      "public void Setup()"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.HelperTest.ValidationTest",
+      "fromName": "Cloud9.BizTalk.HelperTest.ValidationTest",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.HelperTest.ValidationTest.json"
+    }
+  ]
+}

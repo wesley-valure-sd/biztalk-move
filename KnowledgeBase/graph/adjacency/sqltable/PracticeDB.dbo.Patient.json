@@ -1,0 +1,47 @@
+{
+  "node": {
+    "id": "sqltable:PracticeDB.dbo.Patient",
+    "type": "sqltable",
+    "name": "dbo.Patient",
+    "database": "PracticeDB (one database per practice; not in this repo)",
+    "definedInRepo": false
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "queries",
+      "from": "sqlscript:Cloud9.BizTalk.Scripts/271ChannelHealthEligibility/GetCurrentEligibilityBenefits.sql",
+      "fromName": "GetCurrentEligibilityBenefits.sql",
+      "fromType": "sqlscript",
+      "fromFile": "adjacency/sqlscript/Cloud9.BizTalk.Scripts_271ChannelHealthEligibility_GetCurrentEligibilityBenefits.sql.json"
+    },
+    {
+      "type": "queries",
+      "from": "sqlscript:Cloud9.BizTalk.Scripts/271ChannelHealthEligibility/GetInfoToReplaceOn271File.sql",
+      "fromName": "GetInfoToReplaceOn271File.sql",
+      "fromType": "sqlscript",
+      "fromFile": "adjacency/sqlscript/Cloud9.BizTalk.Scripts_271ChannelHealthEligibility_GetInfoToReplaceOn271File.sql.json"
+    },
+    {
+      "type": "queries",
+      "from": "sqlscript:Cloud9.BizTalk.Scripts/835BBVAInsurancePayment/GetInfoToReplaceOn835File.sql",
+      "fromName": "GetInfoToReplaceOn835File.sql",
+      "fromType": "sqlscript",
+      "fromFile": "adjacency/sqlscript/Cloud9.BizTalk.Scripts_835BBVAInsurancePayment_GetInfoToReplaceOn835File.sql.json"
+    },
+    {
+      "type": "queries",
+      "from": "sqlscript:Cloud9.BizTalk.Scripts/835BBVAPatientPaymentLockbox/GetInfoToReplaceOn835File.sql",
+      "fromName": "GetInfoToReplaceOn835File.sql",
+      "fromType": "sqlscript",
+      "fromFile": "adjacency/sqlscript/Cloud9.BizTalk.Scripts_835BBVAPatientPaymentLockbox_GetInfoToReplaceOn835File.sql.json"
+    },
+    {
+      "type": "queries",
+      "from": "sqlscript:Cloud9.BizTalk.Scripts/835SDWebPatientPayment/GetInfoToReplaceOn835File.sql",
+      "fromName": "GetInfoToReplaceOn835File.sql",
+      "fromType": "sqlscript",
+      "fromFile": "adjacency/sqlscript/Cloud9.BizTalk.Scripts_835SDWebPatientPayment_GetInfoToReplaceOn835File.sql.json"
+    }
+  ]
+}

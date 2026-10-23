@@ -1,0 +1,19 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk.Scripts/835BBVAInsurancePayment/GetInfoToReplaceOn835File.sql",
+    "type": "file",
+    "name": "GetInfoToReplaceOn835File.sql",
+    "kind": "sql",
+    "path": "Cloud9.BizTalk.Scripts/835BBVAInsurancePayment/GetInfoToReplaceOn835File.sql"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "definedIn",
+      "from": "sqlscript:Cloud9.BizTalk.Scripts/835BBVAInsurancePayment/GetInfoToReplaceOn835File.sql",
+      "fromName": "GetInfoToReplaceOn835File.sql",
+      "fromType": "sqlscript",
+      "fromFile": "adjacency/sqlscript/Cloud9.BizTalk.Scripts_835BBVAInsurancePayment_GetInfoToReplaceOn835File.sql.json"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.GPE_TypedProcedure_BTS",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.GPE_TypedProcedure_BTS",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetPracticeEDISettings/GPE_TypedProcedure.BTS.xsd",
+    "rootElements": [
+      "GetPracticeEDISettings",
+      "GetPracticeEDISettingsResponse"
+    ],
+    "kind": "wcf-sql-typed-procedure",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS",
+    "sqlActions": [
+      "TypedProcedure/BTS/GetPracticeEDISettings"
+    ]
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetPracticeEDISettings/GPE_TypedProcedure.BTS.xsd",
+      "toName": "GPE_TypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_GetPracticeEDISettings_GPE_TypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "describesParametersOf",
+      "to": "sqlproc:PracticeDB.BTS.GetPracticeEDISettings",
+      "toName": "BTS.GetPracticeEDISettings",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/PracticeDB.BTS.GetPracticeEDISettings.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "sourceSchema",
+      "from": "map:Cloud9.BizTalk.X12.CHC_PracticeEDISettings_To_GetMailFileListReq",
+      "fromName": "Cloud9.BizTalk.X12.CHC_PracticeEDISettings_To_GetMailFileListReq",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.CHC_PracticeEDISettings_To_GetMailFileListReq.json",
+      "root": "GetPracticeEDISettingsResponse"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.MPType_GetPracticeEDISettingsResp",
+      "fromName": "MPType_GetPracticeEDISettingsResp",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.MPType_GetPracticeEDISettingsResp.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.GPE_TypedProcedure_BTS.GetPracticeEDISettingsResponse"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.MPType_GetPracticeEDISettingsReq",
+      "fromName": "MPType_GetPracticeEDISettingsReq",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.MPType_GetPracticeEDISettingsReq.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.GPE_TypedProcedure_BTS.GetPracticeEDISettings"
+    }
+  ]
+}

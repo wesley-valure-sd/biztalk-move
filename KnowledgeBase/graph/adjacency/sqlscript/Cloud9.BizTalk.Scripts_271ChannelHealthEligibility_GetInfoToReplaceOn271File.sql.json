@@ -1,0 +1,49 @@
+{
+  "node": {
+    "id": "sqlscript:Cloud9.BizTalk.Scripts/271ChannelHealthEligibility/GetInfoToReplaceOn271File.sql",
+    "type": "sqlscript",
+    "name": "GetInfoToReplaceOn271File.sql",
+    "path": "Cloud9.BizTalk.Scripts/271ChannelHealthEligibility/GetInfoToReplaceOn271File.sql",
+    "purpose": "Get Insurance Eligibility info to replace on 271 EDI File",
+    "folder": "271ChannelHealthEligibility",
+    "database": "PRACTICE-DB"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk.Scripts/271ChannelHealthEligibility/GetInfoToReplaceOn271File.sql",
+      "toName": "GetInfoToReplaceOn271File.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Scripts_271ChannelHealthEligibility_GetInfoToReplaceOn271File.sql.json"
+    },
+    {
+      "type": "queries",
+      "to": "sqltable:PracticeDB.dbo.Person",
+      "toName": "dbo.Person",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/PracticeDB.dbo.Person.json"
+    },
+    {
+      "type": "queries",
+      "to": "sqltable:PracticeDB.dbo.Patient",
+      "toName": "dbo.Patient",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/PracticeDB.dbo.Patient.json"
+    },
+    {
+      "type": "queries",
+      "to": "sqltable:PracticeDB.dbo.PatientInsurancePolicy",
+      "toName": "dbo.PatientInsurancePolicy",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/PracticeDB.dbo.PatientInsurancePolicy.json"
+    },
+    {
+      "type": "queries",
+      "to": "sqltable:PracticeDB.dbo.ADAClaim",
+      "toName": "dbo.ADAClaim",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/PracticeDB.dbo.ADAClaim.json"
+    }
+  ],
+  "incoming": []
+}

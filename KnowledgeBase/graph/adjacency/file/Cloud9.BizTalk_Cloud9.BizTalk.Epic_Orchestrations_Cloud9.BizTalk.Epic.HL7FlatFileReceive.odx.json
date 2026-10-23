@@ -1,0 +1,34 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.HL7FlatFileReceive.odx",
+    "type": "file",
+    "name": "Cloud9.BizTalk.Epic.HL7FlatFileReceive.odx",
+    "kind": "odx",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.HL7FlatFileReceive.odx"
+  },
+  "outgoing": [
+    {
+      "type": "defines",
+      "to": "porttype:Cloud9.BizTalk.Epic.Orchestrations.PortType_Receive_HL7_FlatFile",
+      "toName": "PortType_Receive_HL7_FlatFile",
+      "toType": "porttype",
+      "toFile": "adjacency/porttype/Cloud9.BizTalk.Epic.Orchestrations.PortType_Receive_HL7_FlatFile.json"
+    },
+    {
+      "type": "defines",
+      "to": "porttype:Cloud9.BizTalk.Epic.Orchestrations.PortType_ArchiveFile",
+      "toName": "PortType_ArchiveFile",
+      "toType": "porttype",
+      "toFile": "adjacency/porttype/Cloud9.BizTalk.Epic.Orchestrations.PortType_ArchiveFile.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "definedIn",
+      "from": "orchestration:Cloud9.BizTalk.Epic.Orchestrations.HL7FlatFileReceive",
+      "fromName": "HL7FlatFileReceive",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.Orchestrations.HL7FlatFileReceive.json"
+    }
+  ]
+}

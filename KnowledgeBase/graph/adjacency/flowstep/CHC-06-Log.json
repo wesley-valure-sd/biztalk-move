@@ -1,0 +1,39 @@
+{
+  "node": {
+    "id": "flowstep:CHC-06-Log",
+    "type": "flowstep",
+    "name": "ImportLog for each claim, BTS.Log for errors",
+    "order": 6,
+    "curated": true,
+    "logic": "AddImportLog with ilProcess='Process_CHC_835Insurance' when a connection exists. Exceptions inside a claim go to BTS.Log (CreateLogEntry) and the loop continues with the next claim."
+  },
+  "outgoing": [
+    {
+      "type": "implementedBy",
+      "to": "orchestration:Cloud9.BizTalk.Common.AddLog",
+      "toName": "AddLog",
+      "toType": "orchestration",
+      "toFile": "adjacency/orchestration/Cloud9.BizTalk.Common.AddLog.json",
+      "curated": true
+    },
+    {
+      "type": "implementedBy",
+      "to": "sqlproc:PracticeDB.BTS.AddImportLog",
+      "toName": "BTS.AddImportLog",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/PracticeDB.BTS.AddImportLog.json",
+      "curated": true
+    }
+  ],
+  "incoming": [
+    {
+      "type": "hasStep",
+      "from": "flow:CHC-835-Insurance-ERA",
+      "fromName": "Change Healthcare ERA 835 -> insurance payment transactions or reversal to-do items",
+      "fromType": "flow",
+      "fromFile": "adjacency/flow/CHC-835-Insurance-ERA.json",
+      "order": 6,
+      "curated": true
+    }
+  ]
+}

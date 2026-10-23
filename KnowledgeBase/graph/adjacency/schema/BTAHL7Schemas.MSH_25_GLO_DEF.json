@@ -1,0 +1,57 @@
+{
+  "node": {
+    "id": "schema:BTAHL7Schemas.MSH_25_GLO_DEF",
+    "type": "schema",
+    "name": "BTAHL7Schemas.MSH_25_GLO_DEF",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic.BTAHL7V2XCommon.Schemas/MSH_25_GLO_DEF.xsd",
+    "rootElements": [
+      "MSH_25_GLO_DEF"
+    ],
+    "kind": "hl7",
+    "targetNamespace": "http://microsoft.com/HealthCare/HL7/2X",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic.BTAHL7V2XCommon.Schemas/MSH_25_GLO_DEF.xsd",
+      "toName": "MSH_25_GLO_DEF.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic.BTAHL7V2XCommon.Schemas_MSH_25_GLO_DEF.xsd.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "sourceSchema",
+      "from": "map:Cloud9.BizTalk.Epic.Maps.HL7_MHToGetPracticeConfig",
+      "fromName": "Cloud9.BizTalk.Epic.Maps.HL7_MHToGetPracticeConfig",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.Epic.Maps.HL7_MHToGetPracticeConfig.json",
+      "root": "MSH_25_GLO_DEF"
+    },
+    {
+      "type": "usesSchema",
+      "from": "orchestration:Cloud9.BizTalk.Epic.Orchestrations.HL7FlatFileReceive",
+      "fromName": "HL7FlatFileReceive",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.Orchestrations.HL7FlatFileReceive.json",
+      "message": "msg_Header"
+    },
+    {
+      "type": "usesSchema",
+      "from": "orchestration:Cloud9.BizTalk.Epic.Orchestrations.HL7SQLReceive",
+      "fromName": "HL7SQLReceive",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.Orchestrations.HL7SQLReceive.json",
+      "message": "msg_Header"
+    },
+    {
+      "type": "usesSchema",
+      "from": "orchestration:Cloud9.BizTalk.Epic.ProcessingHl7_Inbound",
+      "fromName": "ProcessingHl7_Inbound",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.ProcessingHl7_Inbound.json",
+      "message": "msg_Header"
+    }
+  ]
+}

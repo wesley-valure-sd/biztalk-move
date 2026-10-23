@@ -1,0 +1,31 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.Helper.DateFormatConversion.ConvertSQLDateToEDIDate",
+    "type": "method",
+    "name": "DateFormatConversion.ConvertSQLDateToEDIDate",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/DateFormatConversion.cs",
+    "class": "Cloud9.BizTalk.Helper.DateFormatConversion",
+    "line": 55,
+    "signatures": [
+      "public static string ConvertSQLDateToEDIDate(string sqlDatetime)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.Helper.DateFormatConversion",
+      "fromName": "Cloud9.BizTalk.Helper.DateFormatConversion",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.Helper.DateFormatConversion.json"
+    },
+    {
+      "type": "callsMethod",
+      "from": "map:Cloud9.BizTalk.X12.Maps.ClaimCanonical_To_CHC_X12_5010_837D",
+      "fromName": "Cloud9.BizTalk.X12.Maps.ClaimCanonical_To_CHC_X12_5010_837D",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.ClaimCanonical_To_CHC_X12_5010_837D.json",
+      "via": "scripting functoid (ExternalAssembly)"
+    }
+  ]
+}

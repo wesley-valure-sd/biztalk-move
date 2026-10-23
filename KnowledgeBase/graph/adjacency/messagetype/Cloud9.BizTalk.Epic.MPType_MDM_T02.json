@@ -1,0 +1,37 @@
+{
+  "node": {
+    "id": "messagetype:Cloud9.BizTalk.Epic.MPType_MDM_T02",
+    "type": "messagetype",
+    "name": "MPType_MDM_T02",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.ProcessTreatmentCardData.Worker.odx",
+    "bodyType": "BTAHL7Schemas.MDM_T02_26_GLO_DEF",
+    "module": "Cloud9.BizTalk.Epic"
+  },
+  "outgoing": [
+    {
+      "type": "bodySchema",
+      "to": "schema:BTAHL7Schemas.MDM_T02_26_GLO_DEF",
+      "toName": "BTAHL7Schemas.MDM_T02_26_GLO_DEF",
+      "toType": "schema",
+      "toFile": "adjacency/schema/BTAHL7Schemas.MDM_T02_26_GLO_DEF.json",
+      "bodyType": "BTAHL7Schemas.MDM_T02_26_GLO_DEF"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.ProcessTreatmentCardData.Worker.odx",
+      "fromName": "Cloud9.BizTalk.Epic.ProcessTreatmentCardData.Worker.odx",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Orchestrations_Cloud9.BizTalk.Epic.ProcessTreatmentCardData.Worker.odx.json"
+    },
+    {
+      "type": "usesMessageType",
+      "from": "orchestration:Cloud9.BizTalk.Epic.ProcessTreatmentCardData_Worker",
+      "fromName": "ProcessTreatmentCardData_Worker",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.ProcessTreatmentCardData_Worker.json",
+      "message": "msg_MDM_T02"
+    }
+  ]
+}

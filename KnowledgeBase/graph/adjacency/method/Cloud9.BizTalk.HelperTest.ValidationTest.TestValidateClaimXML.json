@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.HelperTest.ValidationTest.TestValidateClaimXML",
+    "type": "method",
+    "name": "ValidationTest.TestValidateClaimXML",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.HelperTest/ValidationTest.cs",
+    "class": "Cloud9.BizTalk.HelperTest.ValidationTest",
+    "line": 32,
+    "signatures": [
+      "public void TestValidateClaimXML()"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.HelperTest.ValidationTest",
+      "fromName": "Cloud9.BizTalk.HelperTest.ValidationTest",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.HelperTest.ValidationTest.json"
+    }
+  ]
+}

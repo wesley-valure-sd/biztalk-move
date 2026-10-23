@@ -1,0 +1,50 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.Canonical.PatientEligibilities",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.Canonical.PatientEligibilities",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Canonical/PatientEligibilityInfo.xsd",
+    "rootElements": [
+      "Eligibility",
+      "PatientEligibilityInfo"
+    ],
+    "kind": "canonical-or-other",
+    "targetNamespace": "http://Cloud9.BizTalk.Schemas.Canonical",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Canonical/PatientEligibilityInfo.xsd",
+      "toName": "PatientEligibilityInfo.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_Canonical_PatientEligibilityInfo.xsd.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.X12.Maps.CHC_X12_00501_271_To_PatientEligibilitiesCanonical",
+      "fromName": "Cloud9.BizTalk.X12.Maps.CHC_X12_00501_271_To_PatientEligibilitiesCanonical",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.CHC_X12_00501_271_To_PatientEligibilitiesCanonical.json",
+      "root": "PatientEligibilityInfo"
+    },
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.X12.Maps.CHC_X12_00501_271SelfSubscr_To_PatientEligibilitiesCanonical",
+      "fromName": "Cloud9.BizTalk.X12.Maps.CHC_X12_00501_271SelfSubscr_To_PatientEligibilitiesCanonical",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.CHC_X12_00501_271SelfSubscr_To_PatientEligibilitiesCanonical.json",
+      "root": "PatientEligibilityInfo"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.PatientEligibilities_MMT",
+      "fromName": "PatientEligibilities_MMT",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.PatientEligibilities_MMT.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.Canonical.PatientEligibilities.PatientEligibilityInfo"
+    }
+  ]
+}

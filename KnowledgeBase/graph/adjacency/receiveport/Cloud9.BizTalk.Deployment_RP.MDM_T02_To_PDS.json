@@ -1,0 +1,38 @@
+{
+  "node": {
+    "id": "receiveport:Cloud9.BizTalk.Deployment/RP.MDM_T02_To_PDS",
+    "type": "receiveport",
+    "name": "RP.MDM_T02_To_PDS",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Deployment/PortBindingsMaster.xml",
+    "bindingSet": "Cloud9.BizTalk.Deployment",
+    "isTwoWay": "false",
+    "application": "Cloud9.BizTalk"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Deployment/PortBindingsMaster.xml",
+      "toName": "PortBindingsMaster.xml",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Deployment_PortBindingsMaster.xml.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "partOf",
+      "from": "receivelocation:Cloud9.BizTalk.Deployment/RL.MDM_T02_To_PDS",
+      "fromName": "RL.MDM_T02_To_PDS",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.BizTalk.Deployment_RL.MDM_T02_To_PDS.json"
+    },
+    {
+      "type": "boundToReceivePort",
+      "from": "orchestration:Cloud9.BizTalk.Epic.SendTreatmentCardsToPDS",
+      "fromName": "SendTreatmentCardsToPDS",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.SendTreatmentCardsToPDS.json",
+      "logicalPort": "Port_ReceiveTreatmentCard",
+      "bindingSet": "Cloud9.BizTalk.Deployment"
+    }
+  ]
+}

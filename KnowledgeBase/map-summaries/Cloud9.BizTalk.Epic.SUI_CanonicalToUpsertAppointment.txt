@@ -1,0 +1,72 @@
+MAP: Cloud9.BizTalk.Epic.SUI_CanonicalToUpsertAppointment.btm
+PATH: Cloud9.BizTalk\Cloud9.BizTalk.Epic\Maps\Cloud9.BizTalk.Epic.SUI_CanonicalToUpsertAppointment.btm
+SOURCE: ..\Schemas\SIU_Canonical.xsd (root SIU_Canonical)
+TARGET: Cloud9.BizTalk.Schemas.Cloud9UpsertAppointment.UPSA_TypedProcedure_BTS (root UpsertAppointment)
+SCRIPT PRECEDENCE (first match wins when a functoid has more than one script): CSharp > ExternalAssembly > VbNet > JScript > XsltCallTemplate > Xslt
+
+=== PAGE: Page 1 ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L6: SIU_Canonical/SCH_SchedulingActivityInformation/SCH_9_AppointmentDuration -> F1
+L7: SIU_Canonical/SCH_SchedulingActivityInformation/SCH_10_AppointmentDurationUnits/CNE_0_Identifier -> F1
+L4: F1 -> UpsertAppointment/Appointment/AppointmentTableType/apptMinutes
+L11: SIU_Canonical/NTE_NotesAndComments/NTE_3_Comment -> UpsertAppointment/Appointment/AppointmentTableType/apptNote
+L13: F36 -> UpsertAppointment/Appointment/AppointmentTableType/patGUID
+L15: F37 -> UpsertAppointment/Appointment/AppointmentTableType/patGUID
+L18: SIU_Canonical/<Sequence>/<Sequence>/AIP_AppointmentInformationPersonnelResource -> F39
+L33: SIU_Canonical/<Sequence>/PV1_PatientVisit/PV1_3_AssignedPatientLocation/PL_0_PointOfCare -> UpsertAppointment/Appointment/AppointmentTableType/AppointmentLocation
+L34: SIU_Canonical/<Sequence>/PV1_PatientVisit/PV1_3_AssignedPatientLocation/PL_1_Room -> UpsertAppointment/Appointment/AppointmentTableType/ChairName
+L35: SIU_Canonical/SCH_SchedulingActivityInformation/SCH_12_PlacerContactPerson/XCN_1_FamilyName/XCN_1_0_Surname -> F44
+L36: SIU_Canonical/SCH_SchedulingActivityInformation/SCH_12_PlacerContactPerson/XCN_2_GivenName -> F44
+L37: F44 -> UpsertAppointment/Appointment/AppointmentTableType/Creator
+L12: SIU_Canonical/<Sequence>/PID_PatientIdentification/PID_3_PatientIdentifierList -> F36
+L16: SIU_Canonical/<Sequence>/PID_PatientIdentification/PID_3_PatientIdentifierList/CX_0_IdNumber -> UpsertAppointment/Appointment/AppointmentTableType/patGUID
+L14: SIU_Canonical/<Sequence>/PID_PatientIdentification/PID_3_PatientIdentifierList/CX_3_AssigningAuthority/CX_3_0_NamespaceId -> F37
+L50: SIU_Canonical/<Sequence>/PV1_PatientVisit/PV1_3_AssignedPatientLocation/PL_3_Facility/PL_3_0_NamespaceId -> F49
+L51: F49 -> F50
+L52: SIU_Canonical/<Sequence>/PV1_PatientVisit/PV1_3_AssignedPatientLocation/PL_3_Facility/PL_3_0_NamespaceId -> F50
+L53: F49 -> F52
+L54: F52 -> F51
+L55: F50 -> UpsertAppointment/Appointment/AppointmentTableType/AppointmentScheduleView
+L56: F51 -> UpsertAppointment/Appointment/AppointmentTableType/AppointmentScheduleView
+L43: SIU_Canonical/MessageType -> F53
+L48: F53 -> UpsertAppointment/MessageType
+L58: SIU_Canonical/VendorUserName -> UpsertAppointment/VendorUserName
+L61: SIU_Canonical/SCH_SchedulingActivityInformation/SCH_2_FillerAppointmentId/EI_0_EntityIdentifier -> UpsertAppointment/Appointment/AppointmentTableType/eiApptID
+L66: F39 -> UpsertAppointment/Appointment/AppointmentTableType/OrthodontistGUID
+L22: SIU_Canonical/<Sequence>/<Sequence>/AIP_AppointmentInformationPersonnelResource/AIP_4_ResourceType/CWE_1_Text -> F40
+L69: SIU_Canonical/<Sequence>/<Sequence>/AIP_AppointmentInformationPersonnelResource/AIP_3_PersonnelResourceId/XCN_0_IdNumber -> UpsertAppointment/Appointment/AppointmentTableType/OrthodontistGUID
+L70: F40 -> UpsertAppointment/Appointment/AppointmentTableType/OrthodontistGUID
+L73: SIU_Canonical/<Sequence>/PV1_PatientVisit/PV1_3_AssignedPatientLocation/PL_0_PointOfCare -> UpsertAppointment/Appointment/AppointmentTableType/LocationGUID
+L74: SIU_Canonical/SCH_SchedulingActivityInformation/SCH_25_FillerStatusCode/CWE_1_Text -> F56
+L75: F56 -> UpsertAppointment/Appointment/AppointmentTableType/AppointmentStatusCode
+L76: SIU_Canonical/SCH_SchedulingActivityInformation/SCH_8_AppointmentType/CWE_0_Identifier -> UpsertAppointment/Appointment/AppointmentTableType/AppointmentTypeCode
+L79: SIU_Canonical/<Sequence>/PV1_PatientVisit/PV1_19_VisitNumber/CX_0_IdNumber -> UpsertAppointment/Appointment/AppointmentTableType/eiApptSecondaryID
+L80: SIU_Canonical/SCH_SchedulingActivityInformation/SCH_11_AppointmentTimingQuantity/TQ_3_StartDateTime -> UpsertAppointment/Appointment/AppointmentTableType/apptDateTime
+L82: F57 -> UpsertAppointment/Appointment/AppointmentTableType/checkinDateTime
+--- FUNCTOIDS ---
+F1 [Scripting] inputs: L6, L7
+    script language: CSharp
+    | public int GetAppDurationMinutes(int duration, string unit)
+    | {
+    |     if(unit == "MIN")
+    |         return duration;
+    |     else if (unit == "HRS")
+    |         return duration * 60;
+    | 
+    |     return 0;
+    | }
+F36 [Looping] inputs: L12
+F37 [Equal (inferred)] inputs: L14, const:'CLOUD9'
+F39 [Looping] inputs: L18
+F40 [Equal (inferred)] inputs: L22, const:'DDS'
+F44 [String Concatenate] inputs: L35, const:', ', L36
+F49 [FID 317] inputs: L50
+F50 [Value Mapping] inputs: L51, L52
+F51 [Value Mapping] inputs: L54, const:'Anywhere'
+F52 [Logical NOT (inferred)] inputs: L53
+F53 [Scripting] inputs: L43
+    script ExternalAssembly: Cloud9.BizTalk.Helper.HL7TypeConversion.ConvertSIUMessageTypeToCloud9 [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F56 [Scripting] inputs: L74
+    script ExternalAssembly: Cloud9.BizTalk.Helper.HL7TypeConversion.ConvertSIUAppointmentStatusToCloud9 [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F57 [String Concatenate] inputs: const:'set me'
+

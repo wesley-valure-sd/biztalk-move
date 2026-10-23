@@ -1,0 +1,44 @@
+{
+  "node": {
+    "id": "sendport:Cloud9.BizTalk.PDS.Deployment/SP.MDM_T02.Outbound",
+    "type": "sendport",
+    "name": "SP.MDM_T02.Outbound",
+    "sendPipeline": "BTAHL72XPipelines.BTAHL72XSendPipeline",
+    "bindingSet": "Cloud9.BizTalk.PDS.Deployment",
+    "actionMappings": [],
+    "isTwoWay": "false",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.PDS.Deployment/PortBindingsMaster.xml",
+    "address": "${ADDR_FILE_ROOT}\\MDM_T02\\%MessageID%.txt",
+    "filter": [],
+    "isStatic": "true",
+    "transport": "FILE"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.PDS.Deployment/PortBindingsMaster.xml",
+      "toName": "PortBindingsMaster.xml",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.PDS.Deployment_PortBindingsMaster.xml.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.BizTalk.PDS.Deployment/ADDR_FILE_ROOT",
+      "toName": "ADDR_FILE_ROOT",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.BizTalk.PDS.Deployment_ADDR_FILE_ROOT.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "boundToSendPort",
+      "from": "orchestration:Cloud9.BizTalk.Epic.ProcessTreatmentCardData_Worker",
+      "fromName": "ProcessTreatmentCardData_Worker",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.ProcessTreatmentCardData_Worker.json",
+      "bindingSet": "Cloud9.BizTalk.PDS.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "Port_Send_MDM_T02"
+    }
+  ]
+}

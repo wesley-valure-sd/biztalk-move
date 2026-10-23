@@ -1,0 +1,61 @@
+{
+  "node": {
+    "id": "map:Cloud9.BizTalk.Epic.Maps.TCForPatient_To_MDM_T02Body",
+    "type": "map",
+    "name": "Cloud9.BizTalk.Epic.Maps.TCForPatient_To_MDM_T02Body",
+    "readableSummary": "KnowledgeBase/map-summaries/TCForPatient_To_MDM_T02Body.txt",
+    "targetSchema": "BTAHL7Schemas.MDM_T02_26_GLO_DEF",
+    "inlineScripts": [],
+    "functoidCount": 10,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/TCForPatient_To_MDM_T02Body.btm",
+    "sourceSchema": "Cloud9.BizTalk.Schemas.PTC_ProcedureResultSet_BTS_GetTreatmentCardPatientList",
+    "linkCount": 21,
+    "sourceRoot": "StoredProcedureResultSet0",
+    "targetRoot": "MDM_T02_26_GLO_DEF"
+  },
+  "outgoing": [
+    {
+      "type": "callsMethod",
+      "to": "method:Cloud9.BizTalk.Helper.DateFormatConversion.ConvertSQLDateToHL7Time",
+      "toName": "DateFormatConversion.ConvertSQLDateToHL7Time",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.DateFormatConversion.ConvertSQLDateToHL7Time.json",
+      "via": "scripting functoid (ExternalAssembly)"
+    },
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/TCForPatient_To_MDM_T02Body.btm",
+      "toName": "TCForPatient_To_MDM_T02Body.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Maps_TCForPatient_To_MDM_T02Body.btm.json"
+    },
+    {
+      "type": "sourceSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.PTC_ProcedureResultSet_BTS_GetTreatmentCardPatientList",
+      "toName": "Cloud9.BizTalk.Schemas.PTC_ProcedureResultSet_BTS_GetTreatmentCardPatientList",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.PTC_ProcedureResultSet_BTS_GetTreatmentCardPatientList.json",
+      "root": "StoredProcedureResultSet0"
+    },
+    {
+      "type": "targetSchema",
+      "to": "schema:BTAHL7Schemas.MDM_T02_26_GLO_DEF",
+      "toName": "BTAHL7Schemas.MDM_T02_26_GLO_DEF",
+      "toType": "schema",
+      "toFile": "adjacency/schema/BTAHL7Schemas.MDM_T02_26_GLO_DEF.json",
+      "root": "MDM_T02_26_GLO_DEF"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "usesMap",
+      "from": "orchestration:Cloud9.BizTalk.Epic.ProcessTreatmentCardData_Worker",
+      "fromName": "ProcessTreatmentCardData_Worker",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.ProcessTreatmentCardData_Worker.json",
+      "output": "msg_MDM_T02.BodySegments",
+      "input": "msg_TCPatientListElement.Body",
+      "line": 697
+    }
+  ]
+}

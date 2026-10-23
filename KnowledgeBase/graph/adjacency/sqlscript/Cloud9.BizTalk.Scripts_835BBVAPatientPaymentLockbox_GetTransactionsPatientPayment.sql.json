@@ -1,0 +1,36 @@
+{
+  "node": {
+    "id": "sqlscript:Cloud9.BizTalk.Scripts/835BBVAPatientPaymentLockbox/GetTransactionsPatientPayment.sql",
+    "type": "sqlscript",
+    "name": "GetTransactionsPatientPayment.sql",
+    "path": "Cloud9.BizTalk.Scripts/835BBVAPatientPaymentLockbox/GetTransactionsPatientPayment.sql",
+    "purpose": "Get Patient Payment Transactions (Using Lockbox)",
+    "folder": "835BBVAPatientPaymentLockbox",
+    "database": "PRACTICE-DB"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk.Scripts/835BBVAPatientPaymentLockbox/GetTransactionsPatientPayment.sql",
+      "toName": "GetTransactionsPatientPayment.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Scripts_835BBVAPatientPaymentLockbox_GetTransactionsPatientPayment.sql.json"
+    },
+    {
+      "type": "queries",
+      "to": "sqltable:PracticeDB.dbo.Transaction",
+      "toName": "dbo.Transaction",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/PracticeDB.dbo.Transaction.json"
+    },
+    {
+      "type": "verifies",
+      "to": "flow:BBVA-835-Patient-Lockbox",
+      "toName": "BBVA patient lockbox 835 -> patient payment transactions",
+      "toType": "flow",
+      "toFile": "adjacency/flow/BBVA-835-Patient-Lockbox.json",
+      "curated": true
+    }
+  ],
+  "incoming": []
+}

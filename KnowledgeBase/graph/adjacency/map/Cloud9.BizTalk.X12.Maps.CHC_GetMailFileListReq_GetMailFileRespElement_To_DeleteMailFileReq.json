@@ -1,0 +1,44 @@
+{
+  "node": {
+    "id": "map:Cloud9.BizTalk.X12.Maps.CHC_GetMailFileListReq_GetMailFileRespElement_To_DeleteMailFileReq",
+    "type": "map",
+    "name": "Cloud9.BizTalk.X12.Maps.CHC_GetMailFileListReq_GetMailFileRespElement_To_DeleteMailFileReq",
+    "readableSummary": "KnowledgeBase/map-summaries/CHC_GetMailFileListReq_GetMailFileRespElement_To_DeleteMailFileReq.txt",
+    "targetSchema": "Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonDeleteFileRequest",
+    "inlineScripts": [],
+    "functoidCount": 1,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/CHC_GetMailFileListReq_GetMailFileRespElement_To_DeleteMailFileReq.btm",
+    "linkCount": 8,
+    "sourceRoot": "Root",
+    "targetRoot": "claim_submission_api"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/CHC_GetMailFileListReq_GetMailFileRespElement_To_DeleteMailFileReq.btm",
+      "toName": "CHC_GetMailFileListReq_GetMailFileRespElement_To_DeleteMailFileReq.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_CHC_GetMailFileListReq_GetMailFileRespElement_To_DeleteMailFileReq.btm.json"
+    },
+    {
+      "type": "targetSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonDeleteFileRequest",
+      "toName": "Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonDeleteFileRequest",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonDeleteFileRequest.json",
+      "root": "claim_submission_api"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "usesMap",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker",
+      "fromName": "Process_CHC_InboundFiles_Worker",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker.json",
+      "output": "msg_DeleteMailFileReq.Body",
+      "input": "msg_GetMailFileListReq.Body, msg_GetMailFileListElement.Body",
+      "line": 1621
+    }
+  ]
+}

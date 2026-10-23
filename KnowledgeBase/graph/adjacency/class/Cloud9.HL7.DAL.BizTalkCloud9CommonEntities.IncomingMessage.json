@@ -1,0 +1,21 @@
+{
+  "node": {
+    "id": "class:Cloud9.HL7.DAL.BizTalkCloud9CommonEntities.IncomingMessage",
+    "type": "class",
+    "name": "Cloud9.HL7.DAL.BizTalkCloud9CommonEntities.IncomingMessage",
+    "path": "Cloud9.HL7.WebAPI/Cloud9.HL7.DAL/BizTalkCloud9CommonEntities/IncomingMessage.cs",
+    "visibility": "public",
+    "kind": "class",
+    "line": 9
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.DAL/BizTalkCloud9CommonEntities/IncomingMessage.cs",
+      "fromName": "IncomingMessage.cs",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.HL7.WebAPI_Cloud9.HL7.DAL_BizTalkCloud9CommonEntities_IncomingMessage.cs.json"
+    }
+  ]
+}

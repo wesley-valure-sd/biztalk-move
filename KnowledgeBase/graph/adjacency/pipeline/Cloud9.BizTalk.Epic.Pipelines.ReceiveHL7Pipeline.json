@@ -1,0 +1,37 @@
+{
+  "node": {
+    "id": "pipeline:Cloud9.BizTalk.Epic.Pipelines.ReceiveHL7Pipeline",
+    "type": "pipeline",
+    "name": "Cloud9.BizTalk.Epic.Pipelines.ReceiveHL7Pipeline",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Pipelines/ReceiveHL7Pipeline.btp",
+    "components": [
+      "Microsoft.Solutions.BTAHL7.Pipelines.HL72fDasm",
+      "Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.ReplacePayloadStrings"
+    ],
+    "direction": "receive"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Pipelines/ReceiveHL7Pipeline.btp",
+      "toName": "ReceiveHL7Pipeline.btp",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Pipelines_ReceiveHL7Pipeline.btp.json"
+    },
+    {
+      "type": "usesComponent",
+      "to": "class:Microsoft.Solutions.BTAHL7.Pipelines.HL72fDasm",
+      "toName": "Microsoft.Solutions.BTAHL7.Pipelines.HL72fDasm",
+      "toType": "external-component",
+      "toFile": "adjacency/external-component/Microsoft.Solutions.BTAHL7.Pipelines.HL72fDasm.json"
+    },
+    {
+      "type": "usesComponent",
+      "to": "class:Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.ReplacePayloadStrings",
+      "toName": "Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.ReplacePayloadStrings",
+      "toType": "class",
+      "toFile": "adjacency/class/Cloud9.BizTalk.PipelineComponent.ReplacePayloadStrings.ReplacePayloadStrings.json"
+    }
+  ],
+  "incoming": []
+}

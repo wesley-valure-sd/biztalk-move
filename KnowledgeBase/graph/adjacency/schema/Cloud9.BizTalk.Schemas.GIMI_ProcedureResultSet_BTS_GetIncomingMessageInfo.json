@@ -1,0 +1,25 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.GIMI_ProcedureResultSet_BTS_GetIncomingMessageInfo",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.GIMI_ProcedureResultSet_BTS_GetIncomingMessageInfo",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetMessageInfo/GIMI_ProcedureResultSet.BTS.GetIncomingMessageInfo.xsd",
+    "rootElements": [
+      "StoredProcedureResultSet0",
+      "ArrayOfStoredProcedureResultSet0"
+    ],
+    "kind": "wcf-sql-result-set",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetIncomingMessageInfo",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetMessageInfo/GIMI_ProcedureResultSet.BTS.GetIncomingMessageInfo.xsd",
+      "toName": "GIMI_ProcedureResultSet.BTS.GetIncomingMessageInfo.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_GetMessageInfo_GIMI_ProcedureResultSet.BTS.GetIncomingMessageInfo.xsd.json"
+    }
+  ],
+  "incoming": []
+}

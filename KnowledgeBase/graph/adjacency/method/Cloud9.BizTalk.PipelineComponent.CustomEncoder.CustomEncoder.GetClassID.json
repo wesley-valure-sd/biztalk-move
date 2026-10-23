@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.PipelineComponent.CustomEncoder.CustomEncoder.GetClassID",
+    "type": "method",
+    "name": "CustomEncoder.GetClassID",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.PipelineComponent.CustomEncoder/CustomEncoder.cs",
+    "class": "Cloud9.BizTalk.PipelineComponent.CustomEncoder.CustomEncoder",
+    "line": 62,
+    "signatures": [
+      "public void GetClassID(out System.Guid classid)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.PipelineComponent.CustomEncoder.CustomEncoder",
+      "fromName": "Cloud9.BizTalk.PipelineComponent.CustomEncoder.CustomEncoder",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.PipelineComponent.CustomEncoder.CustomEncoder.json"
+    }
+  ]
+}

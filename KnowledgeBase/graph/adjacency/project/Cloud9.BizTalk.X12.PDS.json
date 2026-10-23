@@ -1,0 +1,394 @@
+{
+  "node": {
+    "id": "project:Cloud9.BizTalk.X12.PDS",
+    "type": "project",
+    "name": "Cloud9.BizTalk.X12.PDS",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Cloud9.BizTalk.X12.PDS.btproj",
+    "framework": "v4.6",
+    "kind": "biztalk",
+    "rootNamespace": "Cloud9.BizTalk.X12",
+    "assemblyName": "Cloud9.BizTalk.X12"
+  },
+  "outgoing": [
+    {
+      "type": "references",
+      "to": "project:Cloud9.BizTalk.Common",
+      "toName": "Cloud9.BizTalk.Common",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.Common.json"
+    },
+    {
+      "type": "references",
+      "to": "project:Cloud9.BizTalk.Helper",
+      "toName": "Cloud9.BizTalk.Helper",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.Helper.json"
+    },
+    {
+      "type": "references",
+      "to": "project:Cloud9.BizTalk.PipelineComponent.CustomEncoder",
+      "toName": "Cloud9.BizTalk.PipelineComponent.CustomEncoder",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.PipelineComponent.CustomEncoder.json"
+    },
+    {
+      "type": "references",
+      "to": "project:Cloud9.BizTalk.PipelineComponent.EmdeonPayload",
+      "toName": "Cloud9.BizTalk.PipelineComponent.EmdeonPayload",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.PipelineComponent.EmdeonPayload.json"
+    },
+    {
+      "type": "references",
+      "to": "project:Cloud9.BizTalk.Schemas",
+      "toName": "Cloud9.BizTalk.Schemas",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.Schemas.json"
+    },
+    {
+      "type": "references",
+      "to": "project:Cloud9.BizTalk.Shared.Components.Archive",
+      "toName": "Cloud9.BizTalk.Shared.Components.Archive",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.Shared.Components.Archive.json"
+    },
+    {
+      "type": "references",
+      "to": "project:Cloud9.BizTalk.Maps",
+      "toName": "Cloud9.BizTalk.Maps",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.Maps.json"
+    },
+    {
+      "type": "references",
+      "to": "project:Cloud9.BizTalk.X12.Schemas",
+      "toName": "Cloud9.BizTalk.X12.Schemas",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.X12.Schemas.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Schemas/CHCEmdeonPropertySchema.xsd",
+      "toName": "CHCEmdeonPropertySchema.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Schemas_CHCEmdeonPropertySchema.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Schemas/EDIPropertySchema.xsd",
+      "toName": "EDIPropertySchema.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Schemas_EDIPropertySchema.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/C9ClaimToSubmittedClaimReq.btm",
+      "toName": "C9ClaimToSubmittedClaimReq.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_C9ClaimToSubmittedClaimReq.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/CHC_277_4010_To_ClaimStatusCanonical.btm",
+      "toName": "CHC_277_4010_To_ClaimStatusCanonical.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_CHC_277_4010_To_ClaimStatusCanonical.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/CHC_277_To_ClaimStatusCanonical.btm",
+      "toName": "CHC_277_To_ClaimStatusCanonical.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_CHC_277_To_ClaimStatusCanonical.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/CHC_277A_To_ClaimStatusCanonical.btm",
+      "toName": "CHC_277A_To_ClaimStatusCanonical.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_CHC_277A_To_ClaimStatusCanonical.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/CHC_835_To_ClaimPaymentBatchCanonical.btm",
+      "toName": "CHC_835_To_ClaimPaymentBatchCanonical.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_CHC_835_To_ClaimPaymentBatchCanonical.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/CHC_835_To_ClaimPaymentCanonical.btm",
+      "toName": "CHC_835_To_ClaimPaymentCanonical.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_CHC_835_To_ClaimPaymentCanonical.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/CHC_GetMailFileListReq_GetMailFileRespElement_To_DeleteMailFileReq.btm",
+      "toName": "CHC_GetMailFileListReq_GetMailFileRespElement_To_DeleteMailFileReq.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_CHC_GetMailFileListReq_GetMailFileRespElement_To_DeleteMailFileReq.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/CHC_GetMailFileListReq_GetMailFileRespElement_To_GetMailFileReq.btm",
+      "toName": "CHC_GetMailFileListReq_GetMailFileRespElement_To_GetMailFileReq.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_CHC_GetMailFileListReq_GetMailFileRespElement_To_GetMailFileReq.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/CHC_PracticeEDISettings_To_GetMailFileListReq.btm",
+      "toName": "CHC_PracticeEDISettings_To_GetMailFileListReq.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_CHC_PracticeEDISettings_To_GetMailFileListReq.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/CHC_X12_00501_271_To_InsuranceInformationCanonical.btm",
+      "toName": "CHC_X12_00501_271_To_InsuranceInformationCanonical.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_CHC_X12_00501_271_To_InsuranceInformationCanonical.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/CHC_X12_00501_271_To_PatientEligibilitiesCanonical.btm",
+      "toName": "CHC_X12_00501_271_To_PatientEligibilitiesCanonical.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_CHC_X12_00501_271_To_PatientEligibilitiesCanonical.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/CHC_X12_00501_271SelfSubscr_To_PatientEligibilitiesCanonical.btm",
+      "toName": "CHC_X12_00501_271SelfSubscr_To_PatientEligibilitiesCanonical.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_CHC_X12_00501_271SelfSubscr_To_PatientEligibilitiesCanonical.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/ClaimCanonical_To_CHC_X12_5010_837D.btm",
+      "toName": "ClaimCanonical_To_CHC_X12_5010_837D.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_ClaimCanonical_To_CHC_X12_5010_837D.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/ClaimInformation_To_X12_00501_276.btm",
+      "toName": "ClaimInformation_To_X12_00501_276.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_ClaimInformation_To_X12_00501_276.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/ClaimPaymentCanonical_To_AddTodoItem.btm",
+      "toName": "ClaimPaymentCanonical_To_AddTodoItem.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_ClaimPaymentCanonical_To_AddTodoItem.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/ClaimPaymentCanonical_To_Post835InsuranceTransaction.btm",
+      "toName": "ClaimPaymentCanonical_To_Post835InsuranceTransaction.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_ClaimPaymentCanonical_To_Post835InsuranceTransaction.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/ClaimPaymentCanonical_To_Post835PatientTransaction.btm",
+      "toName": "ClaimPaymentCanonical_To_Post835PatientTransaction.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_ClaimPaymentCanonical_To_Post835PatientTransaction.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/ClaimPaymentCanonical_To_Post835PatientTransactionWeb.btm",
+      "toName": "ClaimPaymentCanonical_To_Post835PatientTransactionWeb.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_ClaimPaymentCanonical_To_Post835PatientTransactionWeb.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/ClaimPaymentCanonicalToGetPracticeByClaimNumber.btm",
+      "toName": "ClaimPaymentCanonicalToGetPracticeByClaimNumber.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_ClaimPaymentCanonicalToGetPracticeByClaimNumber.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/ClaimStatusCanonical_To_AddClaimErrors.btm",
+      "toName": "ClaimStatusCanonical_To_AddClaimErrors.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_ClaimStatusCanonical_To_AddClaimErrors.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/ClaimStatusCanonical_To_AddTodoItem.btm",
+      "toName": "ClaimStatusCanonical_To_AddTodoItem.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_ClaimStatusCanonical_To_AddTodoItem.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/ClaimStatusCanonical_To_UpdateClaimStatuses.btm",
+      "toName": "ClaimStatusCanonical_To_UpdateClaimStatuses.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_ClaimStatusCanonical_To_UpdateClaimStatuses.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/GetADAClaimResponse_To_ClaimInformation.btm",
+      "toName": "GetADAClaimResponse_To_ClaimInformation.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_GetADAClaimResponse_To_ClaimInformation.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/Instantiate_GetPracticeConfigurationByName.btm",
+      "toName": "Instantiate_GetPracticeConfigurationByName.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_Instantiate_GetPracticeConfigurationByName.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/InsuranceInformationCanonical_To_UpdatePatientInsurancePolicyByPipGUID.btm",
+      "toName": "InsuranceInformationCanonical_To_UpdatePatientInsurancePolicyByPipGUID.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_InsuranceInformationCanonical_To_UpdatePatientInsurancePolicyByPipGUID.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/QueueClaimsResponse_To_ClaimsCanonical.btm",
+      "toName": "QueueClaimsResponse_To_ClaimsCanonical.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_QueueClaimsResponse_To_ClaimsCanonical.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/QueueClaimsResponseElement_To_UpdateClaimStatuses.btm",
+      "toName": "QueueClaimsResponseElement_To_UpdateClaimStatuses.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_QueueClaimsResponseElement_To_UpdateClaimStatuses.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/QueueClaimsResponseElement_To_UpdateClaimStatusesRejected.btm",
+      "toName": "QueueClaimsResponseElement_To_UpdateClaimStatusesRejected.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_QueueClaimsResponseElement_To_UpdateClaimStatusesRejected.btm.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Pipelines/ReceiveEDIPipeline.btp",
+      "toName": "ReceiveEDIPipeline.btp",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Pipelines_ReceiveEDIPipeline.btp.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Pipelines/ReceiveEmdeonMailPipeline.btp",
+      "toName": "ReceiveEmdeonMailPipeline.btp",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Pipelines_ReceiveEmdeonMailPipeline.btp.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Pipelines/SendEmdeonEDIPipeline.btp",
+      "toName": "SendEmdeonEDIPipeline.btp",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Pipelines_SendEmdeonEDIPipeline.btp.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Pipelines/SendEmdeonXMLPipeline.btp",
+      "toName": "SendEmdeonXMLPipeline.btp",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Pipelines_SendEmdeonXMLPipeline.btp.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/EDITypes.odx",
+      "toName": "EDITypes.odx",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Orchestrations_EDITypes.odx.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_271Eligibility.odx",
+      "toName": "Process_CHC_271Eligibility.odx",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Orchestrations_Process_CHC_271Eligibility.odx.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_276ClaimStatus.odx",
+      "toName": "Process_CHC_276ClaimStatus.odx",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Orchestrations_Process_CHC_276ClaimStatus.odx.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_277AClaimsStatus.odx",
+      "toName": "Process_CHC_277AClaimsStatus.odx",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Orchestrations_Process_CHC_277AClaimsStatus.odx.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_277ClaimsStatus.odx",
+      "toName": "Process_CHC_277ClaimsStatus.odx",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Orchestrations_Process_CHC_277ClaimsStatus.odx.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_835Insurance.odx",
+      "toName": "Process_CHC_835Insurance.odx",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Orchestrations_Process_CHC_835Insurance.odx.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_837Claims_Controller.odx",
+      "toName": "Process_CHC_837Claims_Controller.odx",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Orchestrations_Process_CHC_837Claims_Controller.odx.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_837Claims_Worker.odx",
+      "toName": "Process_CHC_837Claims_Worker.odx",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Orchestrations_Process_CHC_837Claims_Worker.odx.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_ClaimsStatus.odx",
+      "toName": "Process_CHC_ClaimsStatus.odx",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Orchestrations_Process_CHC_ClaimsStatus.odx.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_InboundFiles_Controller.odx",
+      "toName": "Process_CHC_InboundFiles_Controller.odx",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Orchestrations_Process_CHC_InboundFiles_Controller.odx.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_InboundFiles_Worker.odx",
+      "toName": "Process_CHC_InboundFiles_Worker.odx",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Orchestrations_Process_CHC_InboundFiles_Worker.odx.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "solution:Cloud9.EDI.PDS",
+      "fromName": "Cloud9.EDI.PDS",
+      "fromType": "solution",
+      "fromFile": "adjacency/solution/Cloud9.EDI.PDS.json"
+    }
+  ]
+}

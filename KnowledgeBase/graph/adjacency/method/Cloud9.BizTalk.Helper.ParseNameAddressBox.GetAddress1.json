@@ -1,0 +1,31 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.Helper.ParseNameAddressBox.GetAddress1",
+    "type": "method",
+    "name": "ParseNameAddressBox.GetAddress1",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/ParseNameAddressBox.cs",
+    "class": "Cloud9.BizTalk.Helper.ParseNameAddressBox",
+    "line": 126,
+    "signatures": [
+      "public static string GetAddress1(string input)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.Helper.ParseNameAddressBox",
+      "fromName": "Cloud9.BizTalk.Helper.ParseNameAddressBox",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.Helper.ParseNameAddressBox.json"
+    },
+    {
+      "type": "callsMethod",
+      "from": "map:Cloud9.BizTalk.X12.Maps.ClaimCanonical_To_CHC_X12_5010_837D",
+      "fromName": "Cloud9.BizTalk.X12.Maps.ClaimCanonical_To_CHC_X12_5010_837D",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.ClaimCanonical_To_CHC_X12_5010_837D.json",
+      "via": "scripting functoid (ExternalAssembly)"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "node": {
+    "id": "sqltable:BizTalkCloud9Common.BTS.SubmittedClaim",
+    "type": "sqltable",
+    "name": "BTS.SubmittedClaim",
+    "database": "BizTalkCloud9Common",
+    "columns": [
+      "scGUID UNIQUEIDENTIFIER",
+      "pcGUID UNIQUEIDENTIFIER",
+      "adaClaimGUID UNIQUEIDENTIFIER",
+      "adaclaimBox23PatientAccountID NVARCHAR(30)",
+      "adaclaimTotal MONEY",
+      "adaclaimNumber INT",
+      "pracTIN NVARCHAR(50)",
+      "pracProviderNumber NVARCHAR(50)",
+      "pracLicenseNumber NVARCHAR(50)"
+    ],
+    "path": "Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Tables/SubmittedClaim.sql"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Tables/SubmittedClaim.sql",
+      "fromName": "SubmittedClaim.sql",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Tables_SubmittedClaim.sql.json"
+    },
+    {
+      "type": "reads",
+      "from": "sqlproc:BizTalkCloud9Common.BTS.GetPracticeConfigurationForClaim",
+      "fromName": "BTS.GetPracticeConfigurationForClaim",
+      "fromType": "sqlproc",
+      "fromFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.GetPracticeConfigurationForClaim.json"
+    }
+  ]
+}

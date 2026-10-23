@@ -1,0 +1,59 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.UPIP_TypedProcedure_BTS",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.UPIP_TypedProcedure_BTS",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/UpdatePatientInsurancePolicy/UPIP_TypedProcedure.BTS.xsd",
+    "rootElements": [
+      "UpdatePatientInsurancePolicyByPipGUID",
+      "UpdatePatientInsurancePolicyByPipGUIDResponse"
+    ],
+    "kind": "wcf-sql-typed-procedure",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS",
+    "sqlActions": [
+      "TypedProcedure/BTS/UpdatePatientInsurancePolicyByPipGUID"
+    ]
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/UpdatePatientInsurancePolicy/UPIP_TypedProcedure.BTS.xsd",
+      "toName": "UPIP_TypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_UpdatePatientInsurancePolicy_UPIP_TypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "describesParametersOf",
+      "to": "sqlproc:PracticeDB.BTS.UpdatePatientInsurancePolicyByPipGUID",
+      "toName": "BTS.UpdatePatientInsurancePolicyByPipGUID",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/PracticeDB.BTS.UpdatePatientInsurancePolicyByPipGUID.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.X12.Maps.InsuranceInformationCanonical_To_UpdatePatientInsurancePolicyByPipGUID",
+      "fromName": "Cloud9.BizTalk.X12.Maps.InsuranceInformationCanonical_To_UpdatePatientInsurancePolicyByPipGUID",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.InsuranceInformationCanonical_To_UpdatePatientInsurancePolicyByPipGUID.json",
+      "root": "UpdatePatientInsurancePolicyByPipGUID"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.UpdatePatientInsurancePolicyByPipGUID_MMT",
+      "fromName": "UpdatePatientInsurancePolicyByPipGUID_MMT",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.UpdatePatientInsurancePolicyByPipGUID_MMT.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.UPIP_TypedProcedure_BTS.UpdatePatientInsurancePolicyByPipGUID"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.UpdatePatientInsurancePolicyByPipGUIDResposne_MMT",
+      "fromName": "UpdatePatientInsurancePolicyByPipGUIDResposne_MMT",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.UpdatePatientInsurancePolicyByPipGUIDResposne_MMT.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.UPIP_TypedProcedure_BTS.UpdatePatientInsurancePolicyByPipGUIDResponse"
+    }
+  ]
+}

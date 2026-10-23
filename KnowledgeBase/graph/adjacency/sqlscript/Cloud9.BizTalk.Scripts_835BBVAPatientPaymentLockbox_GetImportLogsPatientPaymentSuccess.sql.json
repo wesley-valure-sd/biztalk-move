@@ -1,0 +1,28 @@
+{
+  "node": {
+    "id": "sqlscript:Cloud9.BizTalk.Scripts/835BBVAPatientPaymentLockbox/GetImportLogsPatientPaymentSuccess.sql",
+    "type": "sqlscript",
+    "name": "GetImportLogsPatientPaymentSuccess.sql",
+    "path": "Cloud9.BizTalk.Scripts/835BBVAPatientPaymentLockbox/GetImportLogsPatientPaymentSuccess.sql",
+    "purpose": "Get Import Logs for success Patient Payments",
+    "folder": "835BBVAPatientPaymentLockbox",
+    "database": "PRACTICE-DB"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk.Scripts/835BBVAPatientPaymentLockbox/GetImportLogsPatientPaymentSuccess.sql",
+      "toName": "GetImportLogsPatientPaymentSuccess.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Scripts_835BBVAPatientPaymentLockbox_GetImportLogsPatientPaymentSuccess.sql.json"
+    },
+    {
+      "type": "queries",
+      "to": "sqltable:PracticeDB.dbo.ImportLog",
+      "toName": "dbo.ImportLog",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/PracticeDB.dbo.ImportLog.json"
+    }
+  ],
+  "incoming": []
+}

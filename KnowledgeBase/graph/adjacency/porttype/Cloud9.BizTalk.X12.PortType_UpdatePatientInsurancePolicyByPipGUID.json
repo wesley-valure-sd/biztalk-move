@@ -1,0 +1,22 @@
+{
+  "node": {
+    "id": "porttype:Cloud9.BizTalk.X12.PortType_UpdatePatientInsurancePolicyByPipGUID",
+    "type": "porttype",
+    "name": "PortType_UpdatePatientInsurancePolicyByPipGUID",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/EDITypes.odx",
+    "module": "Cloud9.BizTalk.X12",
+    "operations": [
+      "requestresponse UpdatePatientInsurancePolicyByPipGUID(UpdatePatientInsurancePolicyByPipGUID_MMT, UpdatePatientInsurancePolicyByPipGUIDResposne_MMT)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/EDITypes.odx",
+      "fromName": "EDITypes.odx",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Orchestrations_EDITypes.odx.json"
+    }
+  ]
+}

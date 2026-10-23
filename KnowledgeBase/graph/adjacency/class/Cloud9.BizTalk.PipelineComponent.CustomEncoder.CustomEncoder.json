@@ -1,0 +1,85 @@
+{
+  "node": {
+    "id": "class:Cloud9.BizTalk.PipelineComponent.CustomEncoder.CustomEncoder",
+    "type": "class",
+    "name": "Cloud9.BizTalk.PipelineComponent.CustomEncoder.CustomEncoder",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.PipelineComponent.CustomEncoder/CustomEncoder.cs",
+    "visibility": "public",
+    "kind": "class",
+    "line": 12
+  },
+  "outgoing": [
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.PipelineComponent.CustomEncoder.CustomEncoder.GetClassID",
+      "toName": "CustomEncoder.GetClassID",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.PipelineComponent.CustomEncoder.CustomEncoder.GetClassID.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.PipelineComponent.CustomEncoder.CustomEncoder.InitNew",
+      "toName": "CustomEncoder.InitNew",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.PipelineComponent.CustomEncoder.CustomEncoder.InitNew.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.PipelineComponent.CustomEncoder.CustomEncoder.Load",
+      "toName": "CustomEncoder.Load",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.PipelineComponent.CustomEncoder.CustomEncoder.Load.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.PipelineComponent.CustomEncoder.CustomEncoder.Save",
+      "toName": "CustomEncoder.Save",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.PipelineComponent.CustomEncoder.CustomEncoder.Save.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.PipelineComponent.CustomEncoder.CustomEncoder.ReadPropertyBag",
+      "toName": "CustomEncoder.ReadPropertyBag",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.PipelineComponent.CustomEncoder.CustomEncoder.ReadPropertyBag.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.PipelineComponent.CustomEncoder.CustomEncoder.WritePropertyBag",
+      "toName": "CustomEncoder.WritePropertyBag",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.PipelineComponent.CustomEncoder.CustomEncoder.WritePropertyBag.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.PipelineComponent.CustomEncoder.CustomEncoder.Validate",
+      "toName": "CustomEncoder.Validate",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.PipelineComponent.CustomEncoder.CustomEncoder.Validate.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.PipelineComponent.CustomEncoder.CustomEncoder.Execute",
+      "toName": "CustomEncoder.Execute",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.PipelineComponent.CustomEncoder.CustomEncoder.Execute.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.PipelineComponent.CustomEncoder/CustomEncoder.cs",
+      "fromName": "CustomEncoder.cs",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.PipelineComponent.CustomEncoder_CustomEncoder.cs.json"
+    },
+    {
+      "type": "usesComponent",
+      "from": "pipeline:Cloud9.BizTalk.X12.Pipelines.SendEmdeonXMLPipeline",
+      "fromName": "Cloud9.BizTalk.X12.Pipelines.SendEmdeonXMLPipeline",
+      "fromType": "pipeline",
+      "fromFile": "adjacency/pipeline/Cloud9.BizTalk.X12.Pipelines.SendEmdeonXMLPipeline.json"
+    }
+  ]
+}

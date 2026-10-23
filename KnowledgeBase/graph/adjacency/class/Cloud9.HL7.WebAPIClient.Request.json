@@ -1,0 +1,21 @@
+{
+  "node": {
+    "id": "class:Cloud9.HL7.WebAPIClient.Request",
+    "type": "class",
+    "name": "Cloud9.HL7.WebAPIClient.Request",
+    "path": "Cloud9.HL7.WebAPI/Cloud9.HL7.WebAPIClient/Request.cs",
+    "visibility": "public",
+    "kind": "class",
+    "line": 10
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.WebAPIClient/Request.cs",
+      "fromName": "Request.cs",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.HL7.WebAPI_Cloud9.HL7.WebAPIClient_Request.cs.json"
+    }
+  ]
+}

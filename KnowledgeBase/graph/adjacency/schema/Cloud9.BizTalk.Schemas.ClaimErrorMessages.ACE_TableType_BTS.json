@@ -1,0 +1,25 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.ClaimErrorMessages.ACE_TableType_BTS",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.ClaimErrorMessages.ACE_TableType_BTS",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ClaimErrorMessages/ACE_TableType.BTS.xsd",
+    "rootElements": [
+      "MessageListTableType",
+      "ArrayOfMessageListTableType"
+    ],
+    "kind": "wcf-sql-table",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/Types/TableTypes/BTS",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ClaimErrorMessages/ACE_TableType.BTS.xsd",
+      "toName": "ACE_TableType.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_ClaimErrorMessages_ACE_TableType.BTS.xsd.json"
+    }
+  ],
+  "incoming": []
+}

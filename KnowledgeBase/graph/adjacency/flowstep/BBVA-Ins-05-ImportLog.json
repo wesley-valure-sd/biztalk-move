@@ -1,0 +1,31 @@
+{
+  "node": {
+    "id": "flowstep:BBVA-Ins-05-ImportLog",
+    "type": "flowstep",
+    "name": "Write ImportLog rows",
+    "order": 5,
+    "curated": true,
+    "logic": "ilProcess='Process_BBVA_835Insurance'. One row for each claim and each PLB. Unhandled exception: event log then suspend the instance (resumable in BizTalk)."
+  },
+  "outgoing": [
+    {
+      "type": "implementedBy",
+      "to": "sqlproc:PracticeDB.BTS.AddImportLog",
+      "toName": "BTS.AddImportLog",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/PracticeDB.BTS.AddImportLog.json",
+      "curated": true
+    }
+  ],
+  "incoming": [
+    {
+      "type": "hasStep",
+      "from": "flow:BBVA-835-Insurance-Lockbox",
+      "fromName": "BBVA insurance lockbox 835 -> insurance payment and PLB adjustment transactions",
+      "fromType": "flow",
+      "fromFile": "adjacency/flow/BBVA-835-Insurance-Lockbox.json",
+      "order": 5,
+      "curated": true
+    }
+  ]
+}

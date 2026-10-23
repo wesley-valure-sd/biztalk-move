@@ -1,0 +1,11 @@
+MAP: SIUMessageData_To_GetLocationTimezoneReq.btm
+PATH: Cloud9.BizTalk\Cloud9.BizTalk.Epic\Maps\SIUMessageData_To_GetLocationTimezoneReq.btm
+SOURCE: ..\Schemas\SIU_Canonical.xsd (root SIU_Canonical)
+TARGET: Cloud9.BizTalk.Schemas.GLT_TypedProcedure_BTS (root GetLocationTimezone)
+SCRIPT PRECEDENCE (first match wins when a functoid has more than one script): CSharp > ExternalAssembly > VbNet > JScript > XsltCallTemplate > Xslt
+
+=== PAGE: Page 1 ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L1: SIU_Canonical/<Sequence>/PV1_PatientVisit/PV1_3_AssignedPatientLocation/PL_0_PointOfCare -> GetLocationTimezone/locGUID
+--- FUNCTOIDS ---
+

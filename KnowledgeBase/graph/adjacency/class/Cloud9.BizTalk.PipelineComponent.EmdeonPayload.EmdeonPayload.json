@@ -1,0 +1,85 @@
+{
+  "node": {
+    "id": "class:Cloud9.BizTalk.PipelineComponent.EmdeonPayload.EmdeonPayload",
+    "type": "class",
+    "name": "Cloud9.BizTalk.PipelineComponent.EmdeonPayload.EmdeonPayload",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.PipelineComponent.EmdeonPayload/EmdeonPayload.cs",
+    "visibility": "public",
+    "kind": "class",
+    "line": 12
+  },
+  "outgoing": [
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.PipelineComponent.EmdeonPayload.EmdeonPayload.GetClassID",
+      "toName": "EmdeonPayload.GetClassID",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.PipelineComponent.EmdeonPayload.EmdeonPayload.GetClassID.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.PipelineComponent.EmdeonPayload.EmdeonPayload.InitNew",
+      "toName": "EmdeonPayload.InitNew",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.PipelineComponent.EmdeonPayload.EmdeonPayload.InitNew.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.PipelineComponent.EmdeonPayload.EmdeonPayload.Load",
+      "toName": "EmdeonPayload.Load",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.PipelineComponent.EmdeonPayload.EmdeonPayload.Load.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.PipelineComponent.EmdeonPayload.EmdeonPayload.Save",
+      "toName": "EmdeonPayload.Save",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.PipelineComponent.EmdeonPayload.EmdeonPayload.Save.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.PipelineComponent.EmdeonPayload.EmdeonPayload.ReadPropertyBag",
+      "toName": "EmdeonPayload.ReadPropertyBag",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.PipelineComponent.EmdeonPayload.EmdeonPayload.ReadPropertyBag.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.PipelineComponent.EmdeonPayload.EmdeonPayload.WritePropertyBag",
+      "toName": "EmdeonPayload.WritePropertyBag",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.PipelineComponent.EmdeonPayload.EmdeonPayload.WritePropertyBag.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.PipelineComponent.EmdeonPayload.EmdeonPayload.Validate",
+      "toName": "EmdeonPayload.Validate",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.PipelineComponent.EmdeonPayload.EmdeonPayload.Validate.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.PipelineComponent.EmdeonPayload.EmdeonPayload.Execute",
+      "toName": "EmdeonPayload.Execute",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.PipelineComponent.EmdeonPayload.EmdeonPayload.Execute.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.PipelineComponent.EmdeonPayload/EmdeonPayload.cs",
+      "fromName": "EmdeonPayload.cs",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.PipelineComponent.EmdeonPayload_EmdeonPayload.cs.json"
+    },
+    {
+      "type": "usesComponent",
+      "from": "pipeline:Cloud9.BizTalk.X12.Pipelines.SendEmdeonEDIPipeline",
+      "fromName": "Cloud9.BizTalk.X12.Pipelines.SendEmdeonEDIPipeline",
+      "fromType": "pipeline",
+      "fromFile": "adjacency/pipeline/Cloud9.BizTalk.X12.Pipelines.SendEmdeonEDIPipeline.json"
+    }
+  ]
+}

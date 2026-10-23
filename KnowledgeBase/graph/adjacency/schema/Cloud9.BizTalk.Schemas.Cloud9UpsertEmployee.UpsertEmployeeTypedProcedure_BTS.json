@@ -1,0 +1,59 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.Cloud9UpsertEmployee.UpsertEmployeeTypedProcedure_BTS",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.Cloud9UpsertEmployee.UpsertEmployeeTypedProcedure_BTS",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Cloud9UpsertEmployee/UpsertEmployeeTypedProcedure.BTS.xsd",
+    "rootElements": [
+      "UpsertEmployee",
+      "UpsertEmployeeResponse"
+    ],
+    "kind": "wcf-sql-typed-procedure",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS",
+    "sqlActions": [
+      "TypedProcedure/BTS/UpsertEmployee"
+    ]
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Cloud9UpsertEmployee/UpsertEmployeeTypedProcedure.BTS.xsd",
+      "toName": "UpsertEmployeeTypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_Cloud9UpsertEmployee_UpsertEmployeeTypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "describesParametersOf",
+      "to": "sqlproc:PracticeDB.BTS.UpsertEmployee",
+      "toName": "BTS.UpsertEmployee",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/PracticeDB.BTS.UpsertEmployee.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_MFN_M02ToUpsertEmployee",
+      "fromName": "Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_MFN_M02ToUpsertEmployee",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_MFN_M02ToUpsertEmployee.json",
+      "root": "UpsertEmployee"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.Epic.MPType_UpsertEmployeeReq",
+      "fromName": "MPType_UpsertEmployeeReq",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_UpsertEmployeeReq.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.Cloud9UpsertEmployee.UpsertEmployeeTypedProcedure_BTS.UpsertEmployee"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.Epic.MPType_UpsertEmployeeResp",
+      "fromName": "MPType_UpsertEmployeeResp",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_UpsertEmployeeResp.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.Cloud9UpsertEmployee.UpsertEmployeeTypedProcedure_BTS.UpsertEmployeeResponse"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "node": {
+    "id": "map:Cloud9.BizTalk.Epic.Maps.HL7InboundMessageToUpdateStatusFail",
+    "type": "map",
+    "name": "Cloud9.BizTalk.Epic.Maps.HL7InboundMessageToUpdateStatusFail",
+    "readableSummary": "KnowledgeBase/map-summaries/Cloud9.BizTalk.Epic.HL7InboundMessageToUpdateStatusFail.txt",
+    "targetSchema": "Cloud9.BizTalk.Schemas.Table_IncomingMessage",
+    "inlineScripts": [],
+    "functoidCount": 2,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/Cloud9.BizTalk.Epic.HL7InboundMessageToUpdateStatusFail.btm",
+    "sourceSchema": "Cloud9.BizTalk.Schemas.HL7InboundMessage",
+    "linkCount": 4,
+    "sourceRoot": "HL7InboundMessage",
+    "targetRoot": "Update"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/Cloud9.BizTalk.Epic.HL7InboundMessageToUpdateStatusFail.btm",
+      "toName": "Cloud9.BizTalk.Epic.HL7InboundMessageToUpdateStatusFail.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Maps_Cloud9.BizTalk.Epic.HL7InboundMessageToUpdateStatusFail.btm.json"
+    },
+    {
+      "type": "sourceSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.HL7InboundMessage",
+      "toName": "Cloud9.BizTalk.Schemas.HL7InboundMessage",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.HL7InboundMessage.json",
+      "root": "HL7InboundMessage"
+    },
+    {
+      "type": "targetSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.Table_IncomingMessage",
+      "toName": "Cloud9.BizTalk.Schemas.Table_IncomingMessage",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.Table_IncomingMessage.json",
+      "root": "Update"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "usesMap",
+      "from": "orchestration:Cloud9.BizTalk.Epic.StageHL7_Inbound",
+      "fromName": "StageHL7_Inbound",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.StageHL7_Inbound.json",
+      "output": "msg_UpdateRequest.parameters",
+      "input": "msg_FileInfo",
+      "line": 829
+    }
+  ]
+}

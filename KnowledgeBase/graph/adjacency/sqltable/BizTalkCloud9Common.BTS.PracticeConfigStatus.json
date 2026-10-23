@@ -1,0 +1,24 @@
+{
+  "node": {
+    "id": "sqltable:BizTalkCloud9Common.BTS.PracticeConfigStatus",
+    "type": "sqltable",
+    "name": "BTS.PracticeConfigStatus",
+    "database": "BizTalkCloud9Common",
+    "columns": [
+      "pcsStatusID smallint",
+      "pcsStatusDescription nvarchar(100)",
+      "pcsStatusID ASC"
+    ],
+    "path": "Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Tables/PracticeConfigStatus.sql"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Tables/PracticeConfigStatus.sql",
+      "fromName": "PracticeConfigStatus.sql",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Tables_PracticeConfigStatus.sql.json"
+    }
+  ]
+}

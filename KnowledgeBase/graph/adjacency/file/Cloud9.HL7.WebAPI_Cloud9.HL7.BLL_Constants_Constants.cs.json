@@ -1,0 +1,41 @@
+{
+  "node": {
+    "id": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.BLL/Constants/Constants.cs",
+    "type": "file",
+    "name": "Constants.cs",
+    "kind": "csharp",
+    "path": "Cloud9.HL7.WebAPI/Cloud9.HL7.BLL/Constants/Constants.cs"
+  },
+  "outgoing": [
+    {
+      "type": "defines",
+      "to": "class:Cloud9.HL7.BLL.Constants.MessageType",
+      "toName": "Cloud9.HL7.BLL.Constants.MessageType",
+      "toType": "class",
+      "toFile": "adjacency/class/Cloud9.HL7.BLL.Constants.MessageType.json"
+    },
+    {
+      "type": "defines",
+      "to": "class:Cloud9.HL7.BLL.Constants.Status",
+      "toName": "Cloud9.HL7.BLL.Constants.Status",
+      "toType": "class",
+      "toFile": "adjacency/class/Cloud9.HL7.BLL.Constants.Status.json"
+    },
+    {
+      "type": "defines",
+      "to": "class:Cloud9.HL7.BLL.Constants.AppConfigKey",
+      "toName": "Cloud9.HL7.BLL.Constants.AppConfigKey",
+      "toType": "class",
+      "toFile": "adjacency/class/Cloud9.HL7.BLL.Constants.AppConfigKey.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.HL7.BLL",
+      "fromName": "Cloud9.HL7.BLL",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.HL7.BLL.json"
+    }
+  ]
+}

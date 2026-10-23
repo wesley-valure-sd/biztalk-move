@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<xs:schema xmlns="http://schemas.xmlsoap.org/wsdl/" elementFormDefault="qualified" targetNamespace="http://www.caqh.org/SOAP/WSDL/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation=".\Core_www_caqh_org_SOAP_WSDL_CORERule2_2_0.xsd" namespace="http://www.caqh.org/SOAP/WSDL/CORERule2.2.0.xsd" />
+</xs:schema>

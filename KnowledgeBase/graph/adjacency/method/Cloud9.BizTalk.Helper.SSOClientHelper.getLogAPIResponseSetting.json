@@ -1,0 +1,31 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.Helper.SSOClientHelper.getLogAPIResponseSetting",
+    "type": "method",
+    "name": "SSOClientHelper.getLogAPIResponseSetting",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/SSOClientHelper.cs",
+    "class": "Cloud9.BizTalk.Helper.SSOClientHelper",
+    "line": 87,
+    "signatures": [
+      "public static string getLogAPIResponseSetting()"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.Helper.SSOClientHelper",
+      "fromName": "Cloud9.BizTalk.Helper.SSOClientHelper",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.Helper.SSOClientHelper.json"
+    },
+    {
+      "type": "callsMethod",
+      "from": "orchestration:Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient",
+      "fromName": "ProcessHL7MessagesForPatient",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient.json",
+      "line": 2631
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "node": {
+    "id": "class:Cloud9.BizTalk.Helper.EmdeonConversion",
+    "type": "class",
+    "name": "Cloud9.BizTalk.Helper.EmdeonConversion",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/EmdeonHelper.cs",
+    "visibility": "public",
+    "kind": "class",
+    "line": 13
+  },
+  "outgoing": [
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.EmdeonConversion.DecompressBytes",
+      "toName": "EmdeonConversion.DecompressBytes",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.EmdeonConversion.DecompressBytes.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.EmdeonConversion.CompressBytes",
+      "toName": "EmdeonConversion.CompressBytes",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.EmdeonConversion.CompressBytes.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.EmdeonConversion.DecodePayload",
+      "toName": "EmdeonConversion.DecodePayload",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.EmdeonConversion.DecodePayload.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/EmdeonHelper.cs",
+      "fromName": "EmdeonHelper.cs",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Helper_EmdeonHelper.cs.json"
+    }
+  ]
+}

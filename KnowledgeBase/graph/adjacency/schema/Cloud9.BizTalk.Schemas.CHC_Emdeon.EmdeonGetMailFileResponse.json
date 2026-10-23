@@ -1,0 +1,33 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonGetMailFileResponse",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonGetMailFileResponse",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/CHC_Emdeon/EmdeonGetMailFileResponse.xsd",
+    "rootElements": [
+      "claim_submission_api"
+    ],
+    "kind": "canonical-or-other",
+    "targetNamespace": "http://Cloud9.BizTalk.Schemas.Emdeon.EmdeonGetMailFileResponse",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/CHC_Emdeon/EmdeonGetMailFileResponse.xsd",
+      "toName": "EmdeonGetMailFileResponse.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_CHC_Emdeon_EmdeonGetMailFileResponse.xsd.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.MPType_GetMailFileResp",
+      "fromName": "MPType_GetMailFileResp",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.MPType_GetMailFileResp.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonGetMailFileResponse"
+    }
+  ]
+}

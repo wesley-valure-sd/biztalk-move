@@ -1,0 +1,326 @@
+{
+  "node": {
+    "id": "orchestration:Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker",
+    "type": "orchestration",
+    "name": "Process_CHC_837Claims_Worker",
+    "ports": [
+      "Port_QueueClaimsDynamic (uses dynamic PortType_QueueClaims)",
+      "Port_SendClaim_HTTP_Dynamic (uses dynamic PortType_SendClaim_HTTP_Dynamic)",
+      "Port_AddClaimErrorsDynamic (uses dynamic PortType_AddClaimErrorsDynamic)",
+      "Port_SendClaimStatusUpdateDynamic (uses dynamic PortType_SendClaimStatusUpdate)"
+    ],
+    "parameters": "System.String instanceConnectionString, message MPType_QueueProcessParametersHeader msg_QueueProcessParametersHeader, message MPType_QueueProcessParametersPracticeElement msg_QueueProcessParametersElement",
+    "messages": [
+      "msg_837ClaimResp: MPType_SubmitClaimResp",
+      "msg_UpdateProcessParametersResp: MPType_UpdateProcessParametersResp",
+      "msg_UpdateProcessParametersReq: MPType_UpdateProcessParametersReq",
+      "msg_UpdateClaimStatusResp2: MPType_UpdateClaimStatusResp",
+      "msg_UpdateClaimStatusRejected: MPType_UpdateClaimStatusReq",
+      "msg_UpdateClaimStatusRespElement: Cloud9.BizTalk.Schemas.ClaimsProcessing.QC_ProcedureResultSet_BTS_QueueClaims.StoredProcedureResultSet0",
+      "msg_AddClaimErrorsResp: Cloud9.BizTalk.Schemas.ClaimErrorMessages.ACE_TypedProcedure_BTS.AddClaimErrorsResponse",
+      "msg_UpdateClaimStatusResp: MPType_UpdateClaimStatusResp",
+      "msg_UpdateClaimStatusReq: MPType_UpdateClaimStatusReq",
+      "msg_C9Claim: Cloud9.BizTalk.Schemas.Canonical.ClaimCanonical.Claim",
+      "msg_QueueClaimsReq: MPType_QueueClaimsReq",
+      "msg_QueueClaimsResp: MPType_QueueClaimsResp",
+      "msg_C9Claims: Cloud9.BizTalk.Schemas.Canonical.ClaimCanonical.Root",
+      "msg_837Claim: Schemas.CHC_X12_00501_837_D",
+      "msg_AddClaimErrorsReq: Cloud9.BizTalk.Schemas.ClaimErrorMessages.ACE_TypedProcedure_BTS.AddClaimErrors",
+      "msg_SubmittedClaimReq: MPType_InsertSubmittedClaimsReq",
+      "msg_SubmittedClaimResp: MPType_InsertSubmittedClaimsResp"
+    ],
+    "visibility": "internal",
+    "module": "Cloud9.BizTalk.X12",
+    "invocation": "called/started by another orchestration",
+    "contextProperties": [
+      "BTS.RetryCount",
+      "BTS.RetryInterval",
+      "EDI.DestinationPartyReceiverIdentifier",
+      "EDI.DestinationPartyReceiverQualifier",
+      "EDI.DestinationPartySenderIdentifier",
+      "EDI.DestinationPartySenderQualifier",
+      "FILE.ReceivedFileName",
+      "FILE.TargetFileName",
+      "Microsoft.XLANGs.BaseTypes.Address",
+      "Microsoft.XLANGs.BaseTypes.TransportType",
+      "WCF.Action",
+      "WCF.BindingConfiguration",
+      "WCF.BindingType",
+      "WCF.EnableTransaction"
+    ],
+    "line": 1317,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_837Claims_Worker.odx",
+    "bindingStates": {
+      "Cloud9.EDI.Deployment": "Started",
+      "Cloud9.EDI.PDS.Deployment": "Started"
+    }
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_837Claims_Worker.odx",
+      "toName": "Process_CHC_837Claims_Worker.odx",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Orchestrations_Process_CHC_837Claims_Worker.odx.json"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.MPType_SubmitClaimResp",
+      "toName": "MPType_SubmitClaimResp",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.MPType_SubmitClaimResp.json",
+      "message": "msg_837ClaimResp"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.MPType_UpdateProcessParametersResp",
+      "toName": "MPType_UpdateProcessParametersResp",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.MPType_UpdateProcessParametersResp.json",
+      "message": "msg_UpdateProcessParametersResp"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.MPType_UpdateProcessParametersReq",
+      "toName": "MPType_UpdateProcessParametersReq",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.MPType_UpdateProcessParametersReq.json",
+      "message": "msg_UpdateProcessParametersReq"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.MPType_UpdateClaimStatusResp",
+      "toName": "MPType_UpdateClaimStatusResp",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.MPType_UpdateClaimStatusResp.json",
+      "message": "msg_UpdateClaimStatusResp2"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.MPType_UpdateClaimStatusReq",
+      "toName": "MPType_UpdateClaimStatusReq",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.MPType_UpdateClaimStatusReq.json",
+      "message": "msg_UpdateClaimStatusRejected"
+    },
+    {
+      "type": "usesSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.ClaimsProcessing.QC_ProcedureResultSet_BTS_QueueClaims",
+      "toName": "Cloud9.BizTalk.Schemas.ClaimsProcessing.QC_ProcedureResultSet_BTS_QueueClaims",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.ClaimsProcessing.QC_ProcedureResultSet_BTS_QueueClaims.json",
+      "message": "msg_UpdateClaimStatusRespElement"
+    },
+    {
+      "type": "usesSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.ClaimErrorMessages.ACE_TypedProcedure_BTS",
+      "toName": "Cloud9.BizTalk.Schemas.ClaimErrorMessages.ACE_TypedProcedure_BTS",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.ClaimErrorMessages.ACE_TypedProcedure_BTS.json",
+      "message": "msg_AddClaimErrorsResp"
+    },
+    {
+      "type": "usesSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.Canonical.ClaimCanonical",
+      "toName": "Cloud9.BizTalk.Schemas.Canonical.ClaimCanonical",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.Canonical.ClaimCanonical.json",
+      "message": "msg_C9Claim"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.MPType_QueueClaimsReq",
+      "toName": "MPType_QueueClaimsReq",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.MPType_QueueClaimsReq.json",
+      "message": "msg_QueueClaimsReq"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.MPType_QueueClaimsResp",
+      "toName": "MPType_QueueClaimsResp",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.MPType_QueueClaimsResp.json",
+      "message": "msg_QueueClaimsResp"
+    },
+    {
+      "type": "usesSchema",
+      "to": "schema:Cloud9.BizTalk.X12.Schemas.CHC_X12_00501_837_D",
+      "toName": "Cloud9.BizTalk.X12.Schemas.CHC_X12_00501_837_D",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.X12.Schemas.CHC_X12_00501_837_D.json",
+      "message": "msg_837Claim"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.MPType_InsertSubmittedClaimsReq",
+      "toName": "MPType_InsertSubmittedClaimsReq",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.MPType_InsertSubmittedClaimsReq.json",
+      "message": "msg_SubmittedClaimReq"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.MPType_InsertSubmittedClaimsResp",
+      "toName": "MPType_InsertSubmittedClaimsResp",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.MPType_InsertSubmittedClaimsResp.json",
+      "message": "msg_SubmittedClaimResp"
+    },
+    {
+      "type": "usesMap",
+      "to": "map:Cloud9.BizTalk.X12.Maps.QueueClaimsResponse_To_ClaimsCanonical",
+      "toName": "Cloud9.BizTalk.X12.Maps.QueueClaimsResponse_To_ClaimsCanonical",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.QueueClaimsResponse_To_ClaimsCanonical.json",
+      "output": "msg_C9Claims",
+      "input": "msg_QueueClaimsResp.Body",
+      "line": 1459
+    },
+    {
+      "type": "usesMap",
+      "to": "map:Cloud9.BizTalk.X12.Maps.ClaimCanonical_To_CHC_X12_5010_837D",
+      "toName": "Cloud9.BizTalk.X12.Maps.ClaimCanonical_To_CHC_X12_5010_837D",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.ClaimCanonical_To_CHC_X12_5010_837D.json",
+      "output": "msg_837Claim",
+      "input": "msg_C9Claim",
+      "line": 1549
+    },
+    {
+      "type": "usesMap",
+      "to": "map:Cloud9.BizTalk.X12.Maps.QueueClaimsResponseElement_To_UpdateClaimStatuses",
+      "toName": "Cloud9.BizTalk.X12.Maps.QueueClaimsResponseElement_To_UpdateClaimStatuses",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.QueueClaimsResponseElement_To_UpdateClaimStatuses.json",
+      "output": "msg_UpdateClaimStatusReq.Body",
+      "input": "msg_UpdateClaimStatusRespElement",
+      "line": 1627
+    },
+    {
+      "type": "invokesProc",
+      "to": "sqlproc:PracticeDB.BTS.QueueClaims",
+      "toName": "BTS.QueueClaims",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/PracticeDB.BTS.QueueClaims.json",
+      "line": 1436,
+      "via": "dynamic WCF-SQL send port (WCF.Action set in code)"
+    },
+    {
+      "type": "invokesProc",
+      "to": "sqlproc:PracticeDB.BTS.AddClaimErrors",
+      "toName": "BTS.AddClaimErrors",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/PracticeDB.BTS.AddClaimErrors.json",
+      "line": 1492,
+      "via": "dynamic WCF-SQL send port (WCF.Action set in code)"
+    },
+    {
+      "type": "invokesProc",
+      "to": "sqlproc:PracticeDB.BTS.UpdateClaimStatuses",
+      "toName": "BTS.UpdateClaimStatuses",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/PracticeDB.BTS.UpdateClaimStatuses.json",
+      "line": 1629,
+      "via": "dynamic WCF-SQL send port (WCF.Action set in code)"
+    },
+    {
+      "type": "callsMethod",
+      "to": "method:Cloud9.BizTalk.Helper.Validation.ValidateClaimXML",
+      "toName": "Validation.ValidateClaimXML",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.Validation.ValidateClaimXML.json",
+      "line": 1483
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_QueueClaimsDynamic_182f4e020577c79e",
+      "toName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_QueueClaimsDynamic_182f4e020577c79e",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_QueueClaimsDynamic_182f4e020577c79e.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "4",
+      "logicalPort": "Port_QueueClaimsDynamic"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_AddClaimErrorsDynamic_182f4e020577c79e",
+      "toName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_AddClaimErrorsDynamic_182f4e020577c79e",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_AddClaimErrorsDynamic_182f4e020577c79e.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "4",
+      "logicalPort": "Port_AddClaimErrorsDynamic"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_SendClaim_HTTP_Dynamic_182f4e020577c79e",
+      "toName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_SendClaim_HTTP_Dynamic_182f4e020577c79e",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_SendClaim_HTTP_Dynamic_182f4e020577c79e.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "4",
+      "logicalPort": "Port_SendClaim_HTTP_Dynamic"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_SendClaimStatusUpdateDynamic_182f4e020577c79e",
+      "toName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_SendClaimStatusUpdateDynamic_182f4e020577c79e",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_SendClaimStatusUpdateDynamic_182f4e020577c79e.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "4",
+      "logicalPort": "Port_SendClaimStatusUpdateDynamic"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.PDS.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_QueueClaimsDynamic_182f4e020577c79e",
+      "toName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_QueueClaimsDynamic_182f4e020577c79e",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.PDS.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_QueueClaimsDynamic_182f4e020577c79e.json",
+      "bindingSet": "Cloud9.EDI.PDS.Deployment",
+      "bindingOption": "4",
+      "logicalPort": "Port_QueueClaimsDynamic"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.PDS.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_AddClaimErrorsDynamic_182f4e020577c79e",
+      "toName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_AddClaimErrorsDynamic_182f4e020577c79e",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.PDS.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_AddClaimErrorsDynamic_182f4e020577c79e.json",
+      "bindingSet": "Cloud9.EDI.PDS.Deployment",
+      "bindingOption": "4",
+      "logicalPort": "Port_AddClaimErrorsDynamic"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.PDS.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_SendClaim_HTTP_Dynamic_182f4e020577c79e",
+      "toName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_SendClaim_HTTP_Dynamic_182f4e020577c79e",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.PDS.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_SendClaim_HTTP_Dynamic_182f4e020577c79e.json",
+      "bindingSet": "Cloud9.EDI.PDS.Deployment",
+      "bindingOption": "4",
+      "logicalPort": "Port_SendClaim_HTTP_Dynamic"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.PDS.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_SendClaimStatusUpdateDynamic_182f4e020577c79e",
+      "toName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_SendClaimStatusUpdateDynamic_182f4e020577c79e",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.PDS.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_SendClaimStatusUpdateDynamic_182f4e020577c79e.json",
+      "bindingSet": "Cloud9.EDI.PDS.Deployment",
+      "bindingOption": "4",
+      "logicalPort": "Port_SendClaimStatusUpdateDynamic"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "callsOrchestration",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_837Claims_Controller",
+      "fromName": "Process_CHC_837Claims_Controller",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_837Claims_Controller.json",
+      "line": 511
+    }
+  ]
+}

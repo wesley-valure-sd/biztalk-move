@@ -1,0 +1,11 @@
+MAP: Cloud9.BizTalk.Epic.HL7_MHToGetPracticeConfig.btm
+PATH: Cloud9.BizTalk\Cloud9.BizTalk.Epic\Maps\Cloud9.BizTalk.Epic.HL7_MHToGetPracticeConfig.btm
+SOURCE: BTAHL7Schemas.MSH_25_GLO_DEF (root MSH_25_GLO_DEF)
+TARGET: Cloud9.BizTalk.Schemas.GPC_TypedProcedure_BTS (root GetPracticeConfiguration)
+SCRIPT PRECEDENCE (first match wins when a functoid has more than one script): 
+
+=== PAGE: Page 1 ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L3: MSH_25_GLO_DEF/MSH/MSH.6_ReceivingFacility/HD.0_NamespaceId -> GetPracticeConfiguration/pcGUID
+--- FUNCTOIDS ---
+

@@ -1,0 +1,22 @@
+{
+  "node": {
+    "id": "setting:Cloud9.Common.PDS.Deployment/ADDR_DB_CLOUD9COMMON",
+    "type": "setting",
+    "name": "ADDR_DB_CLOUD9COMMON",
+    "path": "Cloud9.BizTalk/Cloud9.Common.PDS.Deployment/SettingsFileGenerator.xml",
+    "bindingSet": "Cloud9.Common.PDS.Deployment",
+    "valuesByEnvironment": {
+      "Default Values": "mssql://localhost//BizTalkCloud9Common",
+      "Local Dev (LocalSettings)": "mssql://localhost//BizTalkCloud9Common",
+      "LAB2 (LAB2Settings)": "mssql://lab-db1/LABDB1INSTANCE/BizTalkCloud9Common",
+      "DEV (DEVSettings)": "mssql://awssql04d01.pdsi.corp//BizTalkCloud9Common",
+      "CFG (CFGSettings)": "mssql://AWSSQL09C01.pdsi.corp//BizTalkCloud9Common",
+      "TST (TSTSettings)": "mssql://awssql05t01.pdsi.corp//BizTalkCloud9Common",
+      "TRN (TrainingSettings)": "mssql://awssql07t01.pdsi.corp//BizTalkCloud9Common",
+      "STG (StagingSettings)": "mssql://awssql06s01.pdsi.corp//BizTalkCloud9Common",
+      "PROD (ProdSettings)": "WILL CHANGE mssql://awssql09p01.pdsi.corp//BizTalkCloud9Common"
+    }
+  },
+  "outgoing": [],
+  "incoming": []
+}

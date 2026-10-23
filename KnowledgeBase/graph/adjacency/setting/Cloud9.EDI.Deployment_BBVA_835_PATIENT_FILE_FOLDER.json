@@ -1,0 +1,332 @@
+{
+  "node": {
+    "id": "setting:Cloud9.EDI.Deployment/BBVA_835_PATIENT_FILE_FOLDER",
+    "type": "setting",
+    "name": "BBVA_835_PATIENT_FILE_FOLDER",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.Deployment/SettingsFileGenerator.xml",
+    "bindingSet": "Cloud9.EDI.Deployment",
+    "valuesByEnvironment": {
+      "Default Values (DefaultSettings)": "C:\\BizTalkTest\\BBVA_835\\Patient",
+      "Local Dev (LocalSettings)": "C:\\BizTalkTest\\BBVA_835\\Patient",
+      "JGLISSON Development (JGLISSONSettings)": "C:\\BizTalkTest\\BBVA_835\\Patient",
+      "LAB (LABSettings)": "\\\\10.2.1.1\\Development\\BizTalk1\\BBVA_835\\Patient",
+      "LAB2 (LAB2Settings)": "\\\\10.2.1.1\\Development\\Lab2\\BBVA_835\\Patient",
+      "LAB3 (LAB3Settings)": "\\\\10.2.1.1\\Development\\BizTalk3\\BBVA_835\\Patient",
+      "PROD (C9Prod1_Settings)": "\\\\atl-nas2\\BizTalk\\BBVA_835\\Patient",
+      "PROD (C9Prod2_Settings)": "\\\\us-ea1-fs1\\BizTalk\\BBVA_835\\Patient",
+      "LAB (SDLab1_Settings)": "\\\\c9.smiledoctors.com\\c9\\cloud9-test\\BizTalk\\BBVA_835\\Patient",
+      "PROD (SDProd1_Settings)": "\\\\c9.smiledoctors.com\\c9\\cloud9\\BizTalk\\BBVA_835\\Patient"
+    }
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_GULFCOAST_FILE",
+      "fromName": "RL_BBVA835_Patient_GULFCOAST_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_GULFCOAST_FILE.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_GULFCOAST_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_GULFCOAST_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_GULFCOAST_SFTP.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_MIDATLANTIC_FILE",
+      "fromName": "RL_BBVA835_Patient_MIDATLANTIC_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_MIDATLANTIC_FILE.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_MIDATLANTIC_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_MIDATLANTIC_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_MIDATLANTIC_SFTP.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_HOUSTONMETRO_FILE",
+      "fromName": "RL_BBVA835_Patient_HOUSTONMETRO_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_HOUSTONMETRO_FILE.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_HOUSTONMETRO_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_HOUSTONMETRO_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_HOUSTONMETRO_SFTP.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_ATLANTAMETRO_FILE",
+      "fromName": "RL_BBVA835_Patient_ATLANTAMETRO_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_ATLANTAMETRO_FILE.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_ATLANTAMETRO_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_ATLANTAMETRO_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_ATLANTAMETRO_SFTP.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_ATLANTAMETRO2_FILE",
+      "fromName": "RL_BBVA835_Patient_ATLANTAMETRO2_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_ATLANTAMETRO2_FILE.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_ATLANTAMETRO2_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_ATLANTAMETRO2_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_ATLANTAMETRO2_SFTP.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_CENTRALPLAINS_FILE",
+      "fromName": "RL_BBVA835_Patient_CENTRALPLAINS_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_CENTRALPLAINS_FILE.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_CENTRALPLAINS_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_CENTRALPLAINS_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_CENTRALPLAINS_SFTP.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_DALLASMETRO_FILE",
+      "fromName": "RL_BBVA835_Patient_DALLASMETRO_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_DALLASMETRO_FILE.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_DALLASMETRO_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_DALLASMETRO_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_DALLASMETRO_SFTP.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_DALLASMETRO2_FILE",
+      "fromName": "RL_BBVA835_Patient_DALLASMETRO2_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_DALLASMETRO2_FILE.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_DALLASMETRO2_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_DALLASMETRO2_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_DALLASMETRO2_SFTP.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_DNORTHO_FILE",
+      "fromName": "RL_BBVA835_Patient_DNORTHO_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_DNORTHO_FILE.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_DNORTHO_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_DNORTHO_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_DNORTHO_SFTP.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_INDIANA_FILE",
+      "fromName": "RL_BBVA835_Patient_INDIANA_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_INDIANA_FILE.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_INDIANA_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_INDIANA_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_INDIANA_SFTP.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_KNOXVILLEMETRO_FILE",
+      "fromName": "RL_BBVA835_Patient_KNOXVILLEMETRO_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_KNOXVILLEMETRO_FILE.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_KNOXVILLEMETRO_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_KNOXVILLEMETRO_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_KNOXVILLEMETRO_SFTP.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_MOUNTAINCENTRAL_FILE",
+      "fromName": "RL_BBVA835_Patient_MOUNTAINCENTRAL_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_MOUNTAINCENTRAL_FILE.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_MOUNTAINCENTRAL_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_MOUNTAINCENTRAL_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_MOUNTAINCENTRAL_SFTP.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_PRACTICASMILEDOCTORS_FILE",
+      "fromName": "RL_BBVA835_Patient_PRACTICASMILEDOCTORS_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_PRACTICASMILEDOCTORS_FILE.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_PRACTICASMILEDOCTORS_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_PRACTICASMILEDOCTORS_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_PRACTICASMILEDOCTORS_SFTP.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_SOUTHEAST_FILE",
+      "fromName": "RL_BBVA835_Patient_SOUTHEAST_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_SOUTHEAST_FILE.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_SOUTHEAST_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_SOUTHEAST_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_SOUTHEAST_SFTP.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_SOUTHWEST_FILE",
+      "fromName": "RL_BBVA835_Patient_SOUTHWEST_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_SOUTHWEST_FILE.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_SOUTHWEST_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_SOUTHWEST_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_SOUTHWEST_SFTP.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_AUSTINMETRO_FILE",
+      "fromName": "RL_BBVA835_Patient_AUSTINMETRO_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_AUSTINMETRO_FILE.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_AUSTINMETRO_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_AUSTINMETRO_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_AUSTINMETRO_SFTP.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_DALLASMETRO3_FILE",
+      "fromName": "RL_BBVA835_Patient_DALLASMETRO3_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_DALLASMETRO3_FILE.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_DALLASMETRO3_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_DALLASMETRO3_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_DALLASMETRO3_SFTP.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_GULFCOAST2_FILE",
+      "fromName": "RL_BBVA835_Patient_GULFCOAST2_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_GULFCOAST2_FILE.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_GULFCOAST2_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_GULFCOAST2_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_GULFCOAST2_SFTP.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_MIDWEST_FILE",
+      "fromName": "RL_BBVA835_Patient_MIDWEST_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_MIDWEST_FILE.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_MIDWEST_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_MIDWEST_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_MIDWEST_SFTP.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_MIDWEST2_FILE",
+      "fromName": "RL_BBVA835_Patient_MIDWEST2_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_MIDWEST2_FILE.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_MIDWEST2_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_MIDWEST2_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_MIDWEST2_SFTP.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_SOUTHEAST2_FILE",
+      "fromName": "RL_BBVA835_Patient_SOUTHEAST2_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_SOUTHEAST2_FILE.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_SOUTHEAST2_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_SOUTHEAST2_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_SOUTHEAST2_SFTP.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/RL_BBVA835_Patient_SPILLERS_FILE",
+      "fromName": "RL_BBVA835_Patient_SPILLERS_FILE",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_RL_BBVA835_Patient_SPILLERS_FILE.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_SPILLERS_SFTP",
+      "fromName": "${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_SPILLERS_SFTP",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.Deployment_${DO_NOT_START_SANDBOX_SFTP}BBVA_835_Patient_SPILLERS_SFTP.json"
+    }
+  ]
+}

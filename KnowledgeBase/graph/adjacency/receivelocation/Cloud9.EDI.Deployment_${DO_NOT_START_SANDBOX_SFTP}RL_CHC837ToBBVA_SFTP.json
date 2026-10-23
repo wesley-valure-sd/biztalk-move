@@ -1,0 +1,67 @@
+{
+  "node": {
+    "id": "receivelocation:Cloud9.EDI.Deployment/${DO_NOT_START_SANDBOX_SFTP}RL_CHC837ToBBVA_SFTP",
+    "type": "receivelocation",
+    "name": "${DO_NOT_START_SANDBOX_SFTP}RL_CHC837ToBBVA_SFTP",
+    "enabled": "false",
+    "bindingSet": "Cloud9.EDI.Deployment",
+    "receivePipeline": "Cloud9.BizTalk.X12.Pipelines.ReceiveEDIPipeline",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.Deployment/PortBindingsMaster.xml",
+    "address": "sftp://${CH_SFTP_HOST}:${CH_SFTP_PORT}${CH_837_TO_BBVA_FTP_FOLDER}/*.*",
+    "serviceWindow": "2000-01-01T04:00:00 to 2000-01-01T03:59:59 (enabled=false)",
+    "pollingInterval": "5 Seconds",
+    "transport": "SFTP"
+  },
+  "outgoing": [
+    {
+      "type": "partOf",
+      "to": "receiveport:Cloud9.EDI.Deployment/RP_CHC837ToBBVA",
+      "toName": "RP_CHC837ToBBVA",
+      "toType": "receiveport",
+      "toFile": "adjacency/receiveport/Cloud9.EDI.Deployment_RP_CHC837ToBBVA.json"
+    },
+    {
+      "type": "usesPipeline",
+      "to": "pipeline:Cloud9.BizTalk.X12.Pipelines.ReceiveEDIPipeline",
+      "toName": "Cloud9.BizTalk.X12.Pipelines.ReceiveEDIPipeline",
+      "toType": "pipeline",
+      "toFile": "adjacency/pipeline/Cloud9.BizTalk.X12.Pipelines.ReceiveEDIPipeline.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.EDI.Deployment/CH_SFTP_HOST",
+      "toName": "CH_SFTP_HOST",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.EDI.Deployment_CH_SFTP_HOST.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.EDI.Deployment/CH_SFTP_PORT",
+      "toName": "CH_SFTP_PORT",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.EDI.Deployment_CH_SFTP_PORT.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.EDI.Deployment/CH_837_TO_BBVA_FTP_FOLDER",
+      "toName": "CH_837_TO_BBVA_FTP_FOLDER",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.EDI.Deployment_CH_837_TO_BBVA_FTP_FOLDER.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.EDI.Deployment/CH_SFTP_USERNAME",
+      "toName": "CH_SFTP_USERNAME",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.EDI.Deployment_CH_SFTP_USERNAME.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.EDI.Deployment/CH_SFTP_PASSWORD",
+      "toName": "CH_SFTP_PASSWORD",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.EDI.Deployment_CH_SFTP_PASSWORD.json"
+    }
+  ],
+  "incoming": []
+}

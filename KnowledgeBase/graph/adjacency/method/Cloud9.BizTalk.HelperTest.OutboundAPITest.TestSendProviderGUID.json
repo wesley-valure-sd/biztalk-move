@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.HelperTest.OutboundAPITest.TestSendProviderGUID",
+    "type": "method",
+    "name": "OutboundAPITest.TestSendProviderGUID",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.HelperTest/OutboundAPITest.cs",
+    "class": "Cloud9.BizTalk.HelperTest.OutboundAPITest",
+    "line": 34,
+    "signatures": [
+      "public void TestSendProviderGUID()"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.HelperTest.OutboundAPITest",
+      "fromName": "Cloud9.BizTalk.HelperTest.OutboundAPITest",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.HelperTest.OutboundAPITest.json"
+    }
+  ]
+}

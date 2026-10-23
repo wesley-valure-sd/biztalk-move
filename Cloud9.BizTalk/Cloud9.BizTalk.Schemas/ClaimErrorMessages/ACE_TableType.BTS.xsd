@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ns3="http://schemas.microsoft.com/Sql/2008/05/Types/TableTypes/BTS" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/Sql/2008/05/Types/TableTypes/BTS" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:annotation>
+    <xs:appinfo>
+      <fileNameHint xmlns="http://schemas.microsoft.com/servicemodel/adapters/metadata/xsd">TableType.BTS</fileNameHint>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:complexType name="MessageListTableType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Code" nillable="true">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="10" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MessageListTableType" nillable="true" type="ns3:MessageListTableType" />
+  <xs:complexType name="ArrayOfMessageListTableType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MessageListTableType" type="ns3:MessageListTableType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMessageListTableType" nillable="true" type="ns3:ArrayOfMessageListTableType" />
+</xs:schema>

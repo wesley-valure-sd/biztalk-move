@@ -1,0 +1,22 @@
+MAP: ClaimPaymentCanonicalToGetPracticeByClaimNumber.btm
+PATH: Cloud9.BizTalk\Cloud9.BizTalk.X12\Maps\ClaimPaymentCanonicalToGetPracticeByClaimNumber.btm
+SOURCE: Cloud9.BizTalk.Schemas.Canonical.ClaimPayment (root ClaimPayment)
+TARGET: Cloud9.BizTalk.Schemas.GPCFC_TypedProcedure_BTS (root GetPracticeConfigurationForClaim)
+SCRIPT PRECEDENCE (first match wins when a functoid has more than one script): CSharp > ExternalAssembly > VbNet > JScript > XsltCallTemplate > Xslt
+
+=== PAGE: Page 1 ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L11: ClaimPayment/PatientAccountID -> GetPracticeConfigurationForClaim/adaclaimBox23PatientAccountID
+L12: ClaimPayment/PracticeLicenseNumber -> GetPracticeConfigurationForClaim/pracLicenseNumber
+L13: ClaimPayment/PracticeProviderNumber -> GetPracticeConfigurationForClaim/pracProviderNumber
+L14: ClaimPayment/PracticeTIN -> GetPracticeConfigurationForClaim/pracTIN
+L17: F2 -> GetPracticeConfigurationForClaim/pcRoutingPrefix
+L18: F3 -> GetPracticeConfigurationForClaim/adaclaimNumber
+L19: ClaimPayment/PatientControlNumber -> F2
+L20: ClaimPayment/PatientControlNumber -> F3
+--- FUNCTOIDS ---
+F2 [Scripting] inputs: L19
+    script ExternalAssembly: Cloud9.BizTalk.Helper.EDIClaimHelper.GetClaimNumberPrefix [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F3 [Scripting] inputs: L20
+    script ExternalAssembly: Cloud9.BizTalk.Helper.EDIClaimHelper.GetClaimNumber [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+

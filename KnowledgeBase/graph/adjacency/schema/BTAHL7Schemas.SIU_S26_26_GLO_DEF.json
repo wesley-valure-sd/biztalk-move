@@ -1,0 +1,24 @@
+{
+  "node": {
+    "id": "schema:BTAHL7Schemas.SIU_S26_26_GLO_DEF",
+    "type": "schema",
+    "name": "BTAHL7Schemas.SIU_S26_26_GLO_DEF",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic.BTAHL7_2_6.Schemas/SIU_S26_26_GLO_DEF.xsd",
+    "rootElements": [
+      "SIU_S26_26_GLO_DEF"
+    ],
+    "kind": "hl7",
+    "targetNamespace": "http://microsoft.com/HealthCare/HL7/2X",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic.BTAHL7_2_6.Schemas/SIU_S26_26_GLO_DEF.xsd",
+      "toName": "SIU_S26_26_GLO_DEF.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic.BTAHL7_2_6.Schemas_SIU_S26_26_GLO_DEF.xsd.json"
+    }
+  ],
+  "incoming": []
+}

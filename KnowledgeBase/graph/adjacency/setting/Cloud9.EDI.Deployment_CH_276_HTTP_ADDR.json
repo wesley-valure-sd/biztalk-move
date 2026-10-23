@@ -1,0 +1,31 @@
+{
+  "node": {
+    "id": "setting:Cloud9.EDI.Deployment/CH_276_HTTP_ADDR",
+    "type": "setting",
+    "name": "CH_276_HTTP_ADDR",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.Deployment/SettingsFileGenerator.xml",
+    "bindingSet": "Cloud9.EDI.Deployment",
+    "valuesByEnvironment": {
+      "Default Values (DefaultSettings)": "https://claimservices.webmddental.com/WebMD_ClaimStatus_002/Request_002.aspx",
+      "Local Dev (LocalSettings)": "https://claimservices.webmddental.com/WebMD_ClaimStatus_002/Request_002.aspx",
+      "JGLISSON Development (JGLISSONSettings)": "https://claimservices.webmddental.com/WebMD_ClaimStatus_002/Request_002.aspx",
+      "LAB (LABSettings)": "https://claimservices.webmddental.com/WebMD_ClaimStatus_002/Request_002.aspx",
+      "LAB2 (LAB2Settings)": "https://claimservices.webmddental.com/WebMD_ClaimStatus_002/Request_002.aspx",
+      "LAB3 (LAB3Settings)": "https://claimservices.webmddental.com/WebMD_ClaimStatus_002/Request_002.aspx",
+      "PROD (C9Prod1_Settings)": "https://claimservices.webmddental.com/WebMD_ClaimStatus_002/Request_002.aspx",
+      "PROD (C9Prod2_Settings)": "https://claimservices.webmddental.com/WebMD_ClaimStatus_002/Request_002.aspx",
+      "LAB (SDLab1_Settings)": "https://claimservices.webmddental.com/WebMD_ClaimStatus_002/Request_002.aspx",
+      "PROD (SDProd1_Settings)": "https://claimservices.webmddental.com/WebMD_ClaimStatus_002/Request_002.aspx"
+    }
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "usesSetting",
+      "from": "sendport:Cloud9.EDI.Deployment/SP_CH276_HTTP",
+      "fromName": "SP_CH276_HTTP",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.Deployment_SP_CH276_HTTP.json"
+    }
+  ]
+}

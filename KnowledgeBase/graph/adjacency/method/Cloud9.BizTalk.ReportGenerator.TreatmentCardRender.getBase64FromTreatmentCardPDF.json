@@ -1,0 +1,31 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.ReportGenerator.TreatmentCardRender.getBase64FromTreatmentCardPDF",
+    "type": "method",
+    "name": "TreatmentCardRender.getBase64FromTreatmentCardPDF",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.ReportGenerator/Cloud9.BizTalk.ReportGenerator/TreatmentCardRender.cs",
+    "class": "Cloud9.BizTalk.ReportGenerator.TreatmentCardRender",
+    "line": 98,
+    "signatures": [
+      "public static string getBase64FromTreatmentCardPDF(string instanceConnectionString, string tceGUID)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.ReportGenerator.TreatmentCardRender",
+      "fromName": "Cloud9.BizTalk.ReportGenerator.TreatmentCardRender",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.ReportGenerator.TreatmentCardRender.json"
+    },
+    {
+      "type": "callsMethod",
+      "from": "orchestration:Cloud9.BizTalk.Epic.ProcessTreatmentCardData_Worker",
+      "fromName": "ProcessTreatmentCardData_Worker",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.ProcessTreatmentCardData_Worker.json",
+      "line": 682
+    }
+  ]
+}

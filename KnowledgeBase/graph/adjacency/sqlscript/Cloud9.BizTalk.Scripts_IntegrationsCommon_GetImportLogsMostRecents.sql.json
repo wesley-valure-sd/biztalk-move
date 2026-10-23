@@ -1,0 +1,28 @@
+{
+  "node": {
+    "id": "sqlscript:Cloud9.BizTalk.Scripts/IntegrationsCommon/GetImportLogsMostRecents.sql",
+    "type": "sqlscript",
+    "name": "GetImportLogsMostRecents.sql",
+    "path": "Cloud9.BizTalk.Scripts/IntegrationsCommon/GetImportLogsMostRecents.sql",
+    "purpose": "Get Most Recent Import Logs",
+    "folder": "IntegrationsCommon",
+    "database": "LocalDemo-Trunk"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk.Scripts/IntegrationsCommon/GetImportLogsMostRecents.sql",
+      "toName": "GetImportLogsMostRecents.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Scripts_IntegrationsCommon_GetImportLogsMostRecents.sql.json"
+    },
+    {
+      "type": "queries",
+      "to": "sqltable:PracticeDB.dbo.ImportLog",
+      "toName": "dbo.ImportLog",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/PracticeDB.dbo.ImportLog.json"
+    }
+  ],
+  "incoming": []
+}

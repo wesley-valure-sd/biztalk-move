@@ -1,0 +1,26 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic.BTAHL7V26Common.Schemas/datatypes_26.xsd",
+    "type": "file",
+    "name": "datatypes_26.xsd",
+    "kind": "xsd",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic.BTAHL7V26Common.Schemas/datatypes_26.xsd"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.Epic.BTAHL7V26Common.Schemas",
+      "fromName": "Cloud9.BizTalk.Epic.BTAHL7V26Common.Schemas",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.Epic.BTAHL7V26Common.Schemas.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "schema:BTAHL7Schemas.datatypes_26",
+      "fromName": "BTAHL7Schemas.datatypes_26",
+      "fromType": "schema",
+      "fromFile": "adjacency/schema/BTAHL7Schemas.datatypes_26.json"
+    }
+  ]
+}

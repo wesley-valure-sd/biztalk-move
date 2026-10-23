@@ -1,0 +1,173 @@
+{
+  "node": {
+    "id": "orchestration:Cloud9.BizTalk.Epic.Orchestrations.HL7SQLReceive",
+    "type": "orchestration",
+    "name": "HL7SQLReceive",
+    "activation": "activate receive (Port_PollingIncomingMessage.TypedPolling, msg_IncomingMessage)",
+    "ports": [
+      "Port_PollingIncomingMessage (implements TypedPolling_IncomingMessage)",
+      "Port_SQL_Update (uses TableOp_BTS_IncomingMessage)"
+    ],
+    "messages": [
+      "msg_HL7_Received: System.Xml.XmlDocument",
+      "msg_HL7_Parsed: MPType_HL7_Message",
+      "msg_HL7_Body: System.Xml.XmlDocument",
+      "msg_Header: BTAHL7Schemas.MSH_25_GLO_DEF",
+      "msg_MessageInfo: Cloud9.BizTalk.Schemas.HL7InboundMessage",
+      "msg_IncomingMessage: TypedPolling_IncomingMessage_TypedPolling_InputMessage",
+      "msg_Record: Cloud9.BizTalk.Schemas.Polling_IncomingMessage.TypedPollingResultSet0",
+      "msg_UpdateRequest: TableOp_BTS_IncomingMessage_Update_InputMessage",
+      "msg_UpdateResponse: TableOp_BTS_IncomingMessage_Update_OutputMessage"
+    ],
+    "transaction": "longrunning transaction",
+    "visibility": "internal",
+    "module": "Cloud9.BizTalk.Epic.Orchestrations",
+    "contextProperties": [],
+    "line": 785,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.HL7SQLReceive.odx",
+    "bindingStates": {
+      "Cloud9.BizTalk.Deployment": "Unenlisted",
+      "Cloud9.BizTalk.PDS.Deployment": "Unenlisted"
+    }
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.HL7SQLReceive.odx",
+      "toName": "Cloud9.BizTalk.Epic.HL7SQLReceive.odx",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Orchestrations_Cloud9.BizTalk.Epic.HL7SQLReceive.odx.json"
+    },
+    {
+      "type": "usesSchema",
+      "to": "schema:BTAHL7Schemas.MSH_25_GLO_DEF",
+      "toName": "BTAHL7Schemas.MSH_25_GLO_DEF",
+      "toType": "schema",
+      "toFile": "adjacency/schema/BTAHL7Schemas.MSH_25_GLO_DEF.json",
+      "message": "msg_Header"
+    },
+    {
+      "type": "usesSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.HL7InboundMessage",
+      "toName": "Cloud9.BizTalk.Schemas.HL7InboundMessage",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.HL7InboundMessage.json",
+      "message": "msg_MessageInfo"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.Epic.Orchestrations.TypedPolling_IncomingMessage_TypedPolling_InputMessage",
+      "toName": "TypedPolling_IncomingMessage_TypedPolling_InputMessage",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.Orchestrations.TypedPolling_IncomingMessage_TypedPolling_InputMessage.json",
+      "message": "msg_IncomingMessage"
+    },
+    {
+      "type": "usesSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.Polling_IncomingMessage",
+      "toName": "Cloud9.BizTalk.Schemas.Polling_IncomingMessage",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.Polling_IncomingMessage.json",
+      "message": "msg_Record"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.Epic.Orchestrations.TableOp_BTS_IncomingMessage_Update_InputMessage",
+      "toName": "TableOp_BTS_IncomingMessage_Update_InputMessage",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.Orchestrations.TableOp_BTS_IncomingMessage_Update_InputMessage.json",
+      "message": "msg_UpdateRequest"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.Epic.Orchestrations.TableOp_BTS_IncomingMessage_Update_OutputMessage",
+      "toName": "TableOp_BTS_IncomingMessage_Update_OutputMessage",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.Orchestrations.TableOp_BTS_IncomingMessage_Update_OutputMessage.json",
+      "message": "msg_UpdateResponse"
+    },
+    {
+      "type": "usesMap",
+      "to": "map:Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_IncomingMessageToUpdateStatusSuccess",
+      "toName": "Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_IncomingMessageToUpdateStatusSuccess",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_IncomingMessageToUpdateStatusSuccess.json",
+      "output": "msg_UpdateRequest.parameters",
+      "input": "msg_Record",
+      "line": 895
+    },
+    {
+      "type": "usesMap",
+      "to": "map:Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_IncomingMessageToUpdateStatusFail",
+      "toName": "Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_IncomingMessageToUpdateStatusFail",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_IncomingMessageToUpdateStatusFail.json",
+      "output": "msg_UpdateRequest.parameters",
+      "input": "msg_Record",
+      "line": 904
+    },
+    {
+      "type": "callsOrchestration",
+      "to": "orchestration:Cloud9.BizTalk.Epic.ProcessingHl7_Inbound",
+      "toName": "ProcessingHl7_Inbound",
+      "toType": "orchestration",
+      "toFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.ProcessingHl7_Inbound.json",
+      "line": 887
+    },
+    {
+      "type": "startsOrchestration",
+      "to": "orchestration:Cloud9.BizTalk.Epic.AddLog",
+      "toName": "AddLog",
+      "toType": "orchestration",
+      "toFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.AddLog.json",
+      "line": 934
+    },
+    {
+      "type": "callsMethod",
+      "to": "method:Cloud9.BizTalk.Helper.XLangMessageHelpers.CreateHL7MessageFromString",
+      "toName": "XLangMessageHelpers.CreateHL7MessageFromString",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.XLangMessageHelpers.CreateHL7MessageFromString.json",
+      "line": 884
+    },
+    {
+      "type": "boundToReceivePort",
+      "to": "receiveport:Cloud9.BizTalk.Deployment/RP.PollingIncomingMessage",
+      "toName": "RP.PollingIncomingMessage",
+      "toType": "receiveport",
+      "toFile": "adjacency/receiveport/Cloud9.BizTalk.Deployment_RP.PollingIncomingMessage.json",
+      "logicalPort": "Port_PollingIncomingMessage",
+      "bindingSet": "Cloud9.BizTalk.Deployment"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.BizTalk.Deployment/WCF_SQL_UPDATE_STATUS",
+      "toName": "WCF_SQL_UPDATE_STATUS",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.BizTalk.Deployment_WCF_SQL_UPDATE_STATUS.json",
+      "bindingSet": "Cloud9.BizTalk.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "Port_SQL_Update"
+    },
+    {
+      "type": "boundToReceivePort",
+      "to": "receiveport:Cloud9.BizTalk.PDS.Deployment/RP.PollingIncomingMessage",
+      "toName": "RP.PollingIncomingMessage",
+      "toType": "receiveport",
+      "toFile": "adjacency/receiveport/Cloud9.BizTalk.PDS.Deployment_RP.PollingIncomingMessage.json",
+      "logicalPort": "Port_PollingIncomingMessage",
+      "bindingSet": "Cloud9.BizTalk.PDS.Deployment"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.BizTalk.PDS.Deployment/WCF_SQL_UPDATE_STATUS",
+      "toName": "WCF_SQL_UPDATE_STATUS",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.BizTalk.PDS.Deployment_WCF_SQL_UPDATE_STATUS.json",
+      "bindingSet": "Cloud9.BizTalk.PDS.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "Port_SQL_Update"
+    }
+  ],
+  "incoming": []
+}

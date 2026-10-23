@@ -1,0 +1,29 @@
+{
+  "node": {
+    "id": "class:Cloud9.BizTalk.Helper.Validation",
+    "type": "class",
+    "name": "Cloud9.BizTalk.Helper.Validation",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/Validation.cs",
+    "visibility": "public",
+    "kind": "class",
+    "line": 11
+  },
+  "outgoing": [
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.Validation.ValidateClaimXML",
+      "toName": "Validation.ValidateClaimXML",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.Validation.ValidateClaimXML.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/Validation.cs",
+      "fromName": "Validation.cs",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Helper_Validation.cs.json"
+    }
+  ]
+}

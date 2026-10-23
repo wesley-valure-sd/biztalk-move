@@ -1,0 +1,31 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.SignalR.Helper.Payload.GetAppointmentChanged",
+    "type": "method",
+    "name": "Payload.GetAppointmentChanged",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.SignalR.Helper/Payload.cs",
+    "class": "Cloud9.BizTalk.SignalR.Helper.Payload",
+    "line": 21,
+    "signatures": [
+      "public static string GetAppointmentChanged(string apptGUID, string schvwGUID)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.SignalR.Helper.Payload",
+      "fromName": "Cloud9.BizTalk.SignalR.Helper.Payload",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.SignalR.Helper.Payload.json"
+    },
+    {
+      "type": "callsMethod",
+      "from": "orchestration:Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient",
+      "fromName": "ProcessHL7MessagesForPatient",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient.json",
+      "line": 2859
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "node": {
+    "id": "map:Cloud9.BizTalk.X12.Maps.ClaimStatusCanonical_To_UpdateClaimStatuses",
+    "type": "map",
+    "name": "Cloud9.BizTalk.X12.Maps.ClaimStatusCanonical_To_UpdateClaimStatuses",
+    "readableSummary": "KnowledgeBase/map-summaries/ClaimStatusCanonical_To_UpdateClaimStatuses.txt",
+    "targetSchema": "Cloud9.BizTalk.Schemas.UCS_TypedProcedure_BTS",
+    "inlineScripts": [],
+    "functoidCount": 1,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/ClaimStatusCanonical_To_UpdateClaimStatuses.btm",
+    "sourceSchema": "Cloud9.BizTalk.Schemas.Canonical.ClaimStatus",
+    "linkCount": 3,
+    "sourceRoot": "ClaimStatus",
+    "targetRoot": "UpdateClaimStatuses"
+  },
+  "outgoing": [
+    {
+      "type": "callsMethod",
+      "to": "method:Cloud9.BizTalk.Helper.ClaimStatus.ConvertEDIClaimStatus",
+      "toName": "ClaimStatus.ConvertEDIClaimStatus",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.ClaimStatus.ConvertEDIClaimStatus.json",
+      "via": "scripting functoid (ExternalAssembly)"
+    },
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/ClaimStatusCanonical_To_UpdateClaimStatuses.btm",
+      "toName": "ClaimStatusCanonical_To_UpdateClaimStatuses.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_ClaimStatusCanonical_To_UpdateClaimStatuses.btm.json"
+    },
+    {
+      "type": "sourceSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.Canonical.ClaimStatus",
+      "toName": "Cloud9.BizTalk.Schemas.Canonical.ClaimStatus",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.Canonical.ClaimStatus.json",
+      "root": "ClaimStatus"
+    },
+    {
+      "type": "targetSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.UCS_TypedProcedure_BTS",
+      "toName": "Cloud9.BizTalk.Schemas.UCS_TypedProcedure_BTS",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.UCS_TypedProcedure_BTS.json",
+      "root": "UpdateClaimStatuses"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "usesMap",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus",
+      "fromName": "Process_CHC_ClaimsStatus",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus.json",
+      "output": "UpdateClaimStatusesRequest.Body",
+      "input": "ClaimStatusCanonical.Body",
+      "line": 464
+    }
+  ]
+}

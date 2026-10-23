@@ -1,0 +1,41 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonDeleteFileRequest",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonDeleteFileRequest",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/CHC_Emdeon/EmdeonDeleteFileRequest.xsd",
+    "rootElements": [
+      "claim_submission_api"
+    ],
+    "kind": "canonical-or-other",
+    "targetNamespace": "http://Cloud9.BizTalk.Schemas.Emdeon.EmdeonDeleteFileRequest",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/CHC_Emdeon/EmdeonDeleteFileRequest.xsd",
+      "toName": "EmdeonDeleteFileRequest.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_CHC_Emdeon_EmdeonDeleteFileRequest.xsd.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.X12.Maps.CHC_GetMailFileListReq_GetMailFileRespElement_To_DeleteMailFileReq",
+      "fromName": "Cloud9.BizTalk.X12.Maps.CHC_GetMailFileListReq_GetMailFileRespElement_To_DeleteMailFileReq",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.CHC_GetMailFileListReq_GetMailFileRespElement_To_DeleteMailFileReq.json",
+      "root": "claim_submission_api"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.MPType_DeleteMailFileReq",
+      "fromName": "MPType_DeleteMailFileReq",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.MPType_DeleteMailFileReq.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonDeleteFileRequest"
+    }
+  ]
+}

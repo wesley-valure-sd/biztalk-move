@@ -1,0 +1,54 @@
+{
+  "node": {
+    "id": "sqlproc:BizTalkCloud9Common.BTS.GetIncomingMessageInfo",
+    "type": "sqlproc",
+    "name": "BTS.GetIncomingMessageInfo",
+    "database": "BizTalkCloud9Common",
+    "definedInRepo": true,
+    "parameters": [
+      "@imGUID UNIQUEIDENTIFIER"
+    ],
+    "path": "Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored Procedures/GetIncomingMessageInfo.sql"
+  },
+  "outgoing": [
+    {
+      "type": "reads",
+      "to": "sqltable:BizTalkCloud9Common.BTS.IncomingMessage",
+      "toName": "BTS.IncomingMessage",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/BizTalkCloud9Common.BTS.IncomingMessage.json"
+    },
+    {
+      "type": "reads",
+      "to": "sqltable:BizTalkCloud9Common.BTS.PracticeConfig",
+      "toName": "BTS.PracticeConfig",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/BizTalkCloud9Common.BTS.PracticeConfig.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored Procedures/GetIncomingMessageInfo.sql",
+      "fromName": "GetIncomingMessageInfo.sql",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Stored_Procedures_GetIncomingMessageInfo.sql.json"
+    },
+    {
+      "type": "describesParametersOf",
+      "from": "schema:Cloud9.BizTalk.Schemas.GIMI_TypedProcedure_BTS",
+      "fromName": "Cloud9.BizTalk.Schemas.GIMI_TypedProcedure_BTS",
+      "fromType": "schema",
+      "fromFile": "adjacency/schema/Cloud9.BizTalk.Schemas.GIMI_TypedProcedure_BTS.json"
+    },
+    {
+      "type": "invokesProc",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_271Eligibility",
+      "fromName": "Process_CHC_271Eligibility",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_271Eligibility.json",
+      "line": 1037,
+      "via": "static send port operation GetIncomingMessageInfo (BtsActionMapping)"
+    }
+  ]
+}

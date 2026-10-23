@@ -1,0 +1,101 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.Post835TypedProcedure_BTS",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.Post835TypedProcedure_BTS",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Post835/Post835TypedProcedure.BTS.xsd",
+    "rootElements": [
+      "Post835InsuranceTransaction",
+      "Post835InsuranceTransactionResponse",
+      "Post835PatientTransaction",
+      "Post835PatientTransactionResponse"
+    ],
+    "kind": "wcf-sql-typed-procedure",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS",
+    "sqlActions": [
+      "TypedProcedure/BTS/Post835InsuranceTransaction",
+      "TypedProcedure/BTS/Post835PatientTransaction"
+    ]
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Post835/Post835TypedProcedure.BTS.xsd",
+      "toName": "Post835TypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_Post835_Post835TypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "describesParametersOf",
+      "to": "sqlproc:PracticeDB.BTS.Post835InsuranceTransaction",
+      "toName": "BTS.Post835InsuranceTransaction",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/PracticeDB.BTS.Post835InsuranceTransaction.json"
+    },
+    {
+      "type": "describesParametersOf",
+      "to": "sqlproc:PracticeDB.BTS.Post835PatientTransaction",
+      "toName": "BTS.Post835PatientTransaction",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/PracticeDB.BTS.Post835PatientTransaction.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835InsuranceTransaction",
+      "fromName": "Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835InsuranceTransaction",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835InsuranceTransaction.json",
+      "root": "Post835InsuranceTransaction"
+    },
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835PatientTransaction",
+      "fromName": "Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835PatientTransaction",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835PatientTransaction.json",
+      "root": "Post835PatientTransaction"
+    },
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835PatientTransactionWeb",
+      "fromName": "Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835PatientTransactionWeb",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.ClaimPaymentCanonical_To_Post835PatientTransactionWeb.json",
+      "root": "Post835PatientTransaction"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.Post835InsuranceTransaction_MMT",
+      "fromName": "Post835InsuranceTransaction_MMT",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.Post835InsuranceTransaction_MMT.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.Post835TypedProcedure_BTS.Post835InsuranceTransaction"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.Post835InsuranceTransactionResponse_MMT",
+      "fromName": "Post835InsuranceTransactionResponse_MMT",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.Post835InsuranceTransactionResponse_MMT.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.Post835TypedProcedure_BTS.Post835InsuranceTransactionResponse"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.Post835PatientTransaction_MMT",
+      "fromName": "Post835PatientTransaction_MMT",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.Post835PatientTransaction_MMT.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.Post835TypedProcedure_BTS.Post835PatientTransaction"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.Post835PatientTransactionResponse_MMT",
+      "fromName": "Post835PatientTransactionResponse_MMT",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.Post835PatientTransactionResponse_MMT.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.Post835TypedProcedure_BTS.Post835PatientTransactionResponse"
+    }
+  ]
+}

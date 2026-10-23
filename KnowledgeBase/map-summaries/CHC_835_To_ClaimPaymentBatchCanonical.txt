@@ -1,0 +1,75 @@
+MAP: CHC_835_To_ClaimPaymentBatchCanonical.btm
+PATH: Cloud9.BizTalk\Cloud9.BizTalk.X12\Maps\CHC_835_To_ClaimPaymentBatchCanonical.btm
+SOURCE: Cloud9.BizTalk.X12.Schemas.CHC_X12_00501_835 (root X12_00501_835)
+TARGET: Cloud9.BizTalk.Schemas.Canonical.ClaimPaymentBatch (root ClaimPaymentBatch)
+SCRIPT PRECEDENCE (first match wins when a functoid has more than one script): CSharp > ExternalAssembly > VbNet > JScript > XsltCallTemplate > Xslt
+
+=== PAGE: Page 1 ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L12: F4 -> ClaimPaymentBatch/ClaimPayment
+L13: X12_00501_835/TS835_2000_Loop/TS835_2100_Loop -> F4
+L15: X12_00501_835/TS835_2000_Loop/TS835_2100_Loop/NM1_SubLoop/NM1_PatientName/NM109_PatientIdentifier -> ClaimPaymentBatch/ClaimPayment/PatientIdentifier
+L16: X12_00501_835/TS835_2000_Loop/TS835_2100_Loop/NM1_SubLoop/NM1_InsuredName/NM109_SubscriberIdentifier -> ClaimPaymentBatch/ClaimPayment/SubscriberIdentifier
+L17: X12_00501_835/TS835_2000_Loop/TS835_2100_Loop/CLP_ClaimPaymentInformation/CLP04_ClaimPaymentAmount -> ClaimPaymentBatch/ClaimPayment/TotalActualProviderPaymentAmount
+L18: X12_00501_835/BPR_FinancialInformation/BPR04_PaymentMethodCode -> ClaimPaymentBatch/ClaimPayment/PaymentMethodCode
+L19: X12_00501_835/BPR_FinancialInformation/BPR07_SenderDFIIdentifier -> ClaimPaymentBatch/ClaimPayment/SenderDFIIdentifier
+L21: X12_00501_835/TRN_ReassociationTraceNumber/TRN02_CheckorEFTTraceNumber -> ClaimPaymentBatch/ClaimPayment/CheckorEFTTraceNumber
+L22: X12_00501_835/TS835_2000_Loop/TS835_2100_Loop/CLP_ClaimPaymentInformation/CLP04_ClaimPaymentAmount -> F5
+L23: F5 -> F6
+L24: F6 -> F7
+L25: F7 -> ClaimPaymentBatch/ClaimPayment/ReversalFlag
+L28: X12_00501_835/TS835_2000_Loop/TS835_2100_Loop/CLP_ClaimPaymentInformation/CLP02_ClaimStatusCode -> F9
+L32: F9 -> F6
+L34: F11 -> F7
+L36: F12 -> F13
+L39: F13 -> F16
+L40: F16 -> F6
+L42: X12_00501_835/TS835_2000_Loop/TS835_2100_Loop/TS835_2110_Loop/CAS_ServiceAdjustment/CAS01_ClaimAdjustmentGroupCode -> F12
+L43: F6 -> F17
+L44: F17 -> F18
+L45: F19 -> F18
+L46: F18 -> ClaimPaymentBatch/ClaimPayment/ReversalFlag
+L47: X12_00501_835/TS835_2000_Loop/TS835_2100_Loop/CLP_ClaimPaymentInformation/CLP01_PatientControlNumber -> F20
+L48: F20 -> ClaimPaymentBatch/ClaimPayment/PatientControlNumber
+L49: F21 -> ClaimPaymentBatch/ClaimPayment/CheckIssueorEFTEffectiveDate
+L50: F21 -> ClaimPaymentBatch/ClaimPayment/PaymentPostedDate
+--- FUNCTOIDS ---
+F4 [Looping] inputs: L13
+F5 [Less Than (inferred)] inputs: L22, const:'0'
+F6 [Logical OR (inferred)] inputs: L23, const:'0', L32, L40
+F7 [Value Mapping] inputs: L24, L34
+F9 [Equal (inferred)] inputs: L28, const:'22'
+F11 [Equal (inferred)] inputs: const:'1', const:'1'
+F12 [Cumulative Concatenate (inferred)] inputs: L42, const:'2'
+F13 [String Find (inferred)] inputs: L36, const:'CR'
+F16 [Greater Than (inferred)] inputs: L39, const:'0'
+F17 [Logical NOT (inferred)] inputs: L43
+F18 [Value Mapping] inputs: L44, L45
+F19 [Equal (inferred)] inputs: const:'1', const:'0'
+F20 [Scripting] inputs: L47
+    script language: CSharp
+    | public string ParseClaimNumber(string C9PatientControlNumber)
+    | {
+    |    // PMS ID 1 - 2 = C9
+    |    // Database #: 3-12 ("Emdeon" Username)
+    |    // Claim #: 13-20
+    |    string strClaimNumber = "";
+    | 
+    |    try
+    |    {
+    |       strClaimNumber = C9PatientControlNumber.Substring(12);
+    |       int claimNbr = Convert.ToInt32(strClaimNumber);
+    |       strClaimNumber = Convert.ToString(claimNbr);
+    | 
+    |    }
+    | 
+    |    catch (System.Exception)
+    |    {
+    |       throw (new System.Exception(System.String.Format("ParseClaimNumber: Parsing Claim Number: {0}",
+    |                                             C9PatientControlNumber)));
+    |    }
+    | 
+    |    return strClaimNumber;
+    | }
+F21 [Date and Time, current (inferred)] inputs: 
+

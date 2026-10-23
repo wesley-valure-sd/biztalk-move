@@ -1,0 +1,114 @@
+{
+  "node": {
+    "id": "project:Cloud9.BizTalk.X12.Schemas",
+    "type": "project",
+    "name": "Cloud9.BizTalk.X12.Schemas",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12.Schemas/Cloud9.BizTalk.X12.Schemas.btproj",
+    "framework": "v4.6",
+    "kind": "biztalk",
+    "rootNamespace": "Cloud9.BizTalk.X12.Schemas",
+    "assemblyName": "Cloud9.BizTalk.X12.Schemas"
+  },
+  "outgoing": [
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12.Schemas/BBVA_X12_00501_835.xsd",
+      "toName": "BBVA_X12_00501_835.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12.Schemas_BBVA_X12_00501_835.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12.Schemas/ChannelHealth_X12_00501_271.xsd",
+      "toName": "ChannelHealth_X12_00501_271.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12.Schemas_ChannelHealth_X12_00501_271.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12.Schemas/CHC_X12_00401_277.xsd",
+      "toName": "CHC_X12_00401_277.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12.Schemas_CHC_X12_00401_277.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12.Schemas/CHC_X12_00501_271.xsd",
+      "toName": "CHC_X12_00501_271.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12.Schemas_CHC_X12_00501_271.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12.Schemas/CHC_X12_00501_277_A.xsd",
+      "toName": "CHC_X12_00501_277_A.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12.Schemas_CHC_X12_00501_277_A.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12.Schemas/CHC_X12_00501_277.xsd",
+      "toName": "CHC_X12_00501_277.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12.Schemas_CHC_X12_00501_277.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12.Schemas/CHC_X12_00501_835.xsd",
+      "toName": "CHC_X12_00501_835.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12.Schemas_CHC_X12_00501_835.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12.Schemas/CHC_X12_00501_837_D.xsd",
+      "toName": "CHC_X12_00501_837_D.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12.Schemas_CHC_X12_00501_837_D.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12.Schemas/SD_X12_00501_835.xsd",
+      "toName": "SD_X12_00501_835.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12.Schemas_SD_X12_00501_835.xsd.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12.Schemas/X12_00501_276.xsd",
+      "toName": "X12_00501_276.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12.Schemas_X12_00501_276.xsd.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "references",
+      "from": "project:Cloud9.BizTalk.X12",
+      "fromName": "Cloud9.BizTalk.X12",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.X12.json"
+    },
+    {
+      "type": "references",
+      "from": "project:Cloud9.BizTalk.X12.PDS",
+      "fromName": "Cloud9.BizTalk.X12.PDS",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.X12.PDS.json"
+    },
+    {
+      "type": "contains",
+      "from": "solution:Cloud9.EDI.PDS",
+      "fromName": "Cloud9.EDI.PDS",
+      "fromType": "solution",
+      "fromFile": "adjacency/solution/Cloud9.EDI.PDS.json"
+    },
+    {
+      "type": "contains",
+      "from": "solution:Cloud9.EDI",
+      "fromName": "Cloud9.EDI",
+      "fromType": "solution",
+      "fromFile": "adjacency/solution/Cloud9.EDI.json"
+    }
+  ]
+}

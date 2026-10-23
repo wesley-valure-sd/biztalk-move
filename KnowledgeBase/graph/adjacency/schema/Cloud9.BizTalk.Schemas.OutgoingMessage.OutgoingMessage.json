@@ -1,0 +1,33 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.OutgoingMessage.OutgoingMessage",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.OutgoingMessage.OutgoingMessage",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/OutgoingMessage/OutgoingMessage.xsd",
+    "rootElements": [
+      "OutgoingMessage"
+    ],
+    "kind": "canonical-or-other",
+    "targetNamespace": "http://Cloud9.BizTalk.Schemas.OutgoingMessage.OutgoingMessage",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/OutgoingMessage/OutgoingMessage.xsd",
+      "toName": "OutgoingMessage.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_OutgoingMessage_OutgoingMessage.xsd.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.OutgoingMessage_MMT",
+      "fromName": "OutgoingMessage_MMT",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.OutgoingMessage_MMT.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.OutgoingMessage.OutgoingMessage"
+    }
+  ]
+}

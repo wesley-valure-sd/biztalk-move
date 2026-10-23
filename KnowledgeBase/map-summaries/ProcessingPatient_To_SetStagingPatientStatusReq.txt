@@ -1,0 +1,15 @@
+MAP: ProcessingPatient_To_SetStagingPatientStatusReq.btm
+PATH: Cloud9.BizTalk\Cloud9.BizTalk.Epic\Maps\ProcessingPatient_To_SetStagingPatientStatusReq.btm
+SOURCE: Cloud9.BizTalk.Schemas.GPSP_ProcedureResultSet_BTS_GetProcessingStagingPatientMessages (root StoredProcedureResultSet0)
+TARGET: Cloud9.BizTalk.Schemas.SSPS_TypedProcedure_BTS (root SetStagingPatientMessageStatus)
+SCRIPT PRECEDENCE (first match wins when a functoid has more than one script): CSharp > ExternalAssembly > VbNet > JScript > XsltCallTemplate > Xslt
+
+=== PAGE: Page 1 ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L1: StoredProcedureResultSet0/hisStagingID -> SetStagingPatientMessageStatus/hisStagingID
+L2: F1 -> SetStagingPatientMessageStatus/hisStatus
+L3: F2 -> SetStagingPatientMessageStatus/hisModifiedBy
+--- FUNCTOIDS ---
+F1 [String Concatenate] inputs: const:'2'
+F2 [String Concatenate] inputs: const:'PatientStatusSuccess'
+

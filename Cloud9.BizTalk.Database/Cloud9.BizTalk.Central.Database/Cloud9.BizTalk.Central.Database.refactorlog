@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="2bef879c-3b03-48de-a928-5eb5b5a50eea" ChangeDateTime="02/13/2019 18:11:21">
+    <Property Name="ElementName" Value="[BTS].[FileMessage].[fmFileContents]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[BTS].[FileMessage]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="fmMessageContents" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="64006b32-4acf-42bf-bb0a-64ae9e3ef60c" ChangeDateTime="02/13/2019 18:11:25">
+    <Property Name="ElementName" Value="[BTS].[FileMessage].[fmGUID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[BTS].[FileMessage]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="imGUID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="092026fd-e9da-4115-a62a-a4cb5655c3d8" ChangeDateTime="02/13/2019 18:11:28">
+    <Property Name="ElementName" Value="[BTS].[FileMessage].[fmMessageId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[BTS].[FileMessage]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="imMessageId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="901fdedc-ae12-4a11-b687-7a069ee7e317" ChangeDateTime="02/13/2019 18:11:31">
+    <Property Name="ElementName" Value="[BTS].[FileMessage].[fmMessageType]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[BTS].[FileMessage]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="imMessageType" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="f6c6899f-4f20-4046-a448-9c86be4b52cc" ChangeDateTime="02/13/2019 18:11:35">
+    <Property Name="ElementName" Value="[BTS].[FileMessage].[fmRowId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[BTS].[FileMessage]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="imRowId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="7410eaff-5f51-4673-9c47-10dad782ab5c" ChangeDateTime="02/13/2019 18:11:39">
+    <Property Name="ElementName" Value="[BTS].[FileMessage].[fmMessageContents]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[BTS].[FileMessage]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="imMessageContents" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="c72f5999-9507-4d72-8977-e2a3f32fe7cc" ChangeDateTime="02/13/2019 18:11:43">
+    <Property Name="ElementName" Value="[BTS].[FileMessage].[fmStatus]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[BTS].[FileMessage]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="imStatus" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="6f89cca3-e2c4-48cd-97db-d8c5a5a86a32" ChangeDateTime="02/13/2019 18:11:48">
+    <Property Name="ElementName" Value="[BTS].[FileMessage].[fmReceiveTime]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[BTS].[FileMessage]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="imReceiveTime" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="35791dd6-0aab-44cc-bc92-4ebdeb5db61e" ChangeDateTime="02/13/2019 18:12:04">
+    <Property Name="ElementName" Value="[BTS].[FileMessage].[fmProcessTime]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[BTS].[FileMessage]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="imProcessTime" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="bd9adfb1-3a89-4620-85de-020228c7314f" ChangeDateTime="02/15/2019 14:11:43">
+    <Property Name="ElementName" Value="[BTS].[IncomingMessage].[imMessageId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[BTS].[IncomingMessage]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="imCorrelationId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="3b5cba61-1f5d-4a52-81d3-99e1950127b1" ChangeDateTime="04/12/2019 17:25:49">
+    <Property Name="ElementName" Value="[BTS].[FunctionLastProcessed].[flpGUID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[BTS].[FunctionLastProcessed]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ppGUID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="936f52d2-47dd-4b7e-85f7-2a8aea4a2f3d" ChangeDateTime="04/12/2019 17:25:54">
+    <Property Name="ElementName" Value="[BTS].[FunctionLastProcessed].[flpID]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[BTS].[FunctionLastProcessed]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ppID" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="45b65a40-9b7d-4822-9080-0de3f2677e46" ChangeDateTime="04/12/2019 17:26:06">
+    <Property Name="ElementName" Value="[BTS].[FunctionLastProcessed].[flpFunctionName]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[BTS].[FunctionLastProcessed]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ppProcessName" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="4db25a6a-912c-40e8-9c67-fb673ae9d9be" ChangeDateTime="04/12/2019 17:26:21">
+    <Property Name="ElementName" Value="[BTS].[FunctionLastProcessed].[flpLastProcessed]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[BTS].[FunctionLastProcessed]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ppProcessLastRun" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="5aa7375f-4785-40ea-933a-e853e13dc697" ChangeDateTime="04/12/2019 17:29:42">
+    <Property Name="ElementName" Value="[BTS].[PK_BTS.FunctionLastProcessed]" />
+    <Property Name="ElementType" Value="SqlPrimaryKeyConstraint" />
+    <Property Name="ParentElementName" Value="[BTS].[FunctionLastProcessed]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[PK_BTS.ProcessParameter]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="d601323b-23e7-49e9-b64c-069cf6cf7dca" ChangeDateTime="05/07/2019 15:33:12">
+    <Property Name="ElementName" Value="[BTS].[PracticeConfig].[IX_PracticeConfig_Column]" />
+    <Property Name="ElementType" Value="SqlIndex" />
+    <Property Name="ParentElementName" Value="[BTS].[PracticeConfig]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[UIX_PracticeConfig_pcName]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="8f0a0afd-6c4d-47a8-a83b-4b89735008d2" ChangeDateTime="08/15/2019 19:28:55">
+    <Property Name="ElementName" Value="[BTS].[PracticeConfig].[pcPrefix]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[BTS].[PracticeConfig]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="pcRoutingPrefix" />
+  </Operation>
+</Operations>

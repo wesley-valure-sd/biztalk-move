@@ -1,0 +1,28 @@
+{
+  "node": {
+    "id": "sqlproc:PracticeDB.BTS.QueueClaims",
+    "type": "sqlproc",
+    "name": "BTS.QueueClaims",
+    "database": "PracticeDB (one database per practice; resolved at run time from BTS.PracticeConfig.pcInstanceAddress)",
+    "definedInRepo": false
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "describesParametersOf",
+      "from": "schema:Cloud9.BizTalk.Schemas.ClaimsProcessing.QC_TypedProcedure_BTS",
+      "fromName": "Cloud9.BizTalk.Schemas.ClaimsProcessing.QC_TypedProcedure_BTS",
+      "fromType": "schema",
+      "fromFile": "adjacency/schema/Cloud9.BizTalk.Schemas.ClaimsProcessing.QC_TypedProcedure_BTS.json"
+    },
+    {
+      "type": "invokesProc",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker",
+      "fromName": "Process_CHC_837Claims_Worker",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker.json",
+      "line": 1436,
+      "via": "dynamic WCF-SQL send port (WCF.Action set in code)"
+    }
+  ]
+}

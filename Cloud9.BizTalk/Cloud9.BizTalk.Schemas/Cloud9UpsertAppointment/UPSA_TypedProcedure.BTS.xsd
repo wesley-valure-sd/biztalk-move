@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ns5="http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/UpsertAppointment" xmlns:ns3="http://schemas.microsoft.com/Sql/2008/05/Types/TableTypes/BTS" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation=".\UPSA_TableType.BTS.xsd" namespace="http://schemas.microsoft.com/Sql/2008/05/Types/TableTypes/BTS" />
+  <xs:import schemaLocation=".\UPSA_ProcedureResultSet.BTS.UpsertAppointment.xsd" namespace="http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/UpsertAppointment" />
+  <xs:annotation>
+    <xs:appinfo>
+      <fileNameHint xmlns="http://schemas.microsoft.com/servicemodel/adapters/metadata/xsd">TypedProcedure.BTS</fileNameHint>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="UpsertAppointment">
+    <xs:annotation>
+      <xs:documentation>
+        <doc:action xmlns:doc="http://schemas.microsoft.com/servicemodel/adapters/metadata/documentation">TypedProcedure/BTS/UpsertAppointment</doc:action>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="MessageType" nillable="true">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:maxLength value="10" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:element>
+        <xs:element minOccurs="0" maxOccurs="1" name="Appointment" nillable="true" type="ns3:ArrayOfAppointmentTableType" />
+        <xs:element minOccurs="0" maxOccurs="1" name="VendorUserName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpsertAppointmentResponse">
+    <xs:annotation>
+      <xs:documentation>
+        <doc:action xmlns:doc="http://schemas.microsoft.com/servicemodel/adapters/metadata/documentation">TypedProcedure/BTS/UpsertAppointment/response</doc:action>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="1" name="StoredProcedureResultSet0" nillable="true" type="ns5:ArrayOfStoredProcedureResultSet0" />
+        <xs:element minOccurs="1" maxOccurs="1" name="ReturnValue" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

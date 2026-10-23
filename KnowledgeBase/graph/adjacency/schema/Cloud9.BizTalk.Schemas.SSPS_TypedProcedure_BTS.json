@@ -1,0 +1,59 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.SSPS_TypedProcedure_BTS",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.SSPS_TypedProcedure_BTS",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/SetStagingPatientMessageStatus/SSPS_TypedProcedure.BTS.xsd",
+    "rootElements": [
+      "SetStagingPatientMessageStatus",
+      "SetStagingPatientMessageStatusResponse"
+    ],
+    "kind": "wcf-sql-typed-procedure",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS",
+    "sqlActions": [
+      "TypedProcedure/BTS/SetStagingPatientMessageStatus"
+    ]
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/SetStagingPatientMessageStatus/SSPS_TypedProcedure.BTS.xsd",
+      "toName": "SSPS_TypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_SetStagingPatientMessageStatus_SSPS_TypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "describesParametersOf",
+      "to": "sqlproc:BizTalkCloud9Common.BTS.SetStagingPatientMessageStatus",
+      "toName": "BTS.SetStagingPatientMessageStatus",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.SetStagingPatientMessageStatus.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.Epic.ProcessingPatient_To_SetStagingPatientStatusReq",
+      "fromName": "Cloud9.BizTalk.Epic.ProcessingPatient_To_SetStagingPatientStatusReq",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.Epic.ProcessingPatient_To_SetStagingPatientStatusReq.json",
+      "root": "SetStagingPatientMessageStatus"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.Epic.MPType_SetStagingPatientMessageStatusReq",
+      "fromName": "MPType_SetStagingPatientMessageStatusReq",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_SetStagingPatientMessageStatusReq.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.SSPS_TypedProcedure_BTS.SetStagingPatientMessageStatus"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.Epic.MPType_SetStagingPatientMessageStatusResp",
+      "fromName": "MPType_SetStagingPatientMessageStatusResp",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_SetStagingPatientMessageStatusResp.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.SSPS_TypedProcedure_BTS.SetStagingPatientMessageStatusResponse"
+    }
+  ]
+}

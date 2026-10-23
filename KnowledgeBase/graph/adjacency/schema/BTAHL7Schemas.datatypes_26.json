@@ -1,0 +1,24 @@
+{
+  "node": {
+    "id": "schema:BTAHL7Schemas.datatypes_26",
+    "type": "schema",
+    "name": "BTAHL7Schemas.datatypes_26",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic.BTAHL7V26Common.Schemas/datatypes_26.xsd",
+    "rootElements": [
+      "HL7DefinedDataTypes"
+    ],
+    "kind": "hl7",
+    "targetNamespace": "http://microsoft.com/HealthCare/HL7/2X/2.6/DataTypes",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic.BTAHL7V26Common.Schemas/datatypes_26.xsd",
+      "toName": "datatypes_26.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic.BTAHL7V26Common.Schemas_datatypes_26.xsd.json"
+    }
+  ],
+  "incoming": []
+}

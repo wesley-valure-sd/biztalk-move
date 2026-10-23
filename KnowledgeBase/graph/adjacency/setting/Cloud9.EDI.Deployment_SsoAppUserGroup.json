@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "setting:Cloud9.EDI.Deployment/SsoAppUserGroup",
+    "type": "setting",
+    "name": "SsoAppUserGroup",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.Deployment/SettingsFileGenerator.xml",
+    "bindingSet": "Cloud9.EDI.Deployment",
+    "valuesByEnvironment": {
+      "Default Values (DefaultSettings)": "BizTalk Application Users",
+      "Local Dev (LocalSettings)": "BizTalk Application Users",
+      "JGLISSON Development (JGLISSONSettings)": "BizTalk Application Users",
+      "LAB (LABSettings)": "CLOUD9\\BizTalk-LAB-SSO-Admins",
+      "LAB2 (LAB2Settings)": "CLOUD9\\BizTalk-LAB-SSO-Admins",
+      "LAB3 (LAB3Settings)": "CLOUD9\\BizTalk-LAB-SSO-Admins",
+      "PROD (C9Prod1_Settings)": "CLOUD9\\BizTalk-PROD-SSO-Admins",
+      "PROD (C9Prod2_Settings)": "CLOUD9\\BizTalk-PROD-SSO-Admins",
+      "LAB (SDLab1_Settings)": "C9\\test.BizTalk.SSO.Admins",
+      "PROD (SDProd1_Settings)": "C9\\prod.BizTalk.SSO.Admins"
+    }
+  },
+  "outgoing": [],
+  "incoming": []
+}

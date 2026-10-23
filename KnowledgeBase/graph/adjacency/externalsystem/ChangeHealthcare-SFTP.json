@@ -1,0 +1,21 @@
+{
+  "node": {
+    "id": "externalsystem:ChangeHealthcare-SFTP",
+    "type": "externalsystem",
+    "name": "Change Healthcare SFTP (835 and 835-to-BBVA folders)",
+    "doc": "KnowledgeBase/docs/02-payments-835-end-to-end.md",
+    "detail": "SFTP receive locations exist in the bindings but are inside the DEV_ENV_START/STOP block and are disabled by default. Settings CH_SFTP_HOST, CH_SFTP_PORT, CH_835_FTP_FOLDER, CH_835_TO_BBVA_FTP_FOLDER.",
+    "curated": true
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "source",
+      "from": "flow:CHC-835-Insurance-ERA",
+      "fromName": "Change Healthcare ERA 835 -> insurance payment transactions or reversal to-do items",
+      "fromType": "flow",
+      "fromFile": "adjacency/flow/CHC-835-Insurance-ERA.json",
+      "curated": true
+    }
+  ]
+}

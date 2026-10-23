@@ -1,0 +1,50 @@
+{
+  "node": {
+    "id": "sqlproc:BizTalkCloud9Common.BTS.GetPracticeConfigurationForClaim",
+    "type": "sqlproc",
+    "name": "BTS.GetPracticeConfigurationForClaim",
+    "database": "BizTalkCloud9Common",
+    "definedInRepo": true,
+    "parameters": [
+      "@pcRoutingPrefix NVARCHAR(6)",
+      "@adaclaimBox23PatientAccountID NVARCHAR(30)",
+      "@adaclaimNumber INT",
+      "@pracTIN NVARCHAR(50)",
+      "@pracProviderNumber NVARCHAR(50)",
+      "@pracLicenseNumber NVARCHAR(50)"
+    ],
+    "path": "Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored Procedures/GetPracticeConfigurationForClaim.sql"
+  },
+  "outgoing": [
+    {
+      "type": "reads",
+      "to": "sqltable:BizTalkCloud9Common.BTS.PracticeConfig",
+      "toName": "BTS.PracticeConfig",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/BizTalkCloud9Common.BTS.PracticeConfig.json"
+    },
+    {
+      "type": "reads",
+      "to": "sqltable:BizTalkCloud9Common.BTS.SubmittedClaim",
+      "toName": "BTS.SubmittedClaim",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/BizTalkCloud9Common.BTS.SubmittedClaim.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored Procedures/GetPracticeConfigurationForClaim.sql",
+      "fromName": "GetPracticeConfigurationForClaim.sql",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Stored_Procedures_GetPracticeConfigurationForClaim.sql.json"
+    },
+    {
+      "type": "describesParametersOf",
+      "from": "schema:Cloud9.BizTalk.Schemas.GPCFC_TypedProcedure_BTS",
+      "fromName": "Cloud9.BizTalk.Schemas.GPCFC_TypedProcedure_BTS",
+      "fromType": "schema",
+      "fromFile": "adjacency/schema/Cloud9.BizTalk.Schemas.GPCFC_TypedProcedure_BTS.json"
+    }
+  ]
+}

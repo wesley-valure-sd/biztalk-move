@@ -1,0 +1,39 @@
+{
+  "node": {
+    "id": "flowstep:BBVA-Patient-01-Receive",
+    "type": "flowstep",
+    "name": "Receive file from region folder",
+    "order": 1,
+    "curated": true,
+    "logic": "FILE (or SFTP) receive location for each region: ${BBVA_835_PATIENT_FILE_FOLDER}\\<REGION>\\*.*. Archive component copies the raw file to <REGION>\\Archive. EDI disassembler splits the interchange into one message for each ST transaction set and resolves the BBVA schema through party agreement BBVA_To_SmileDoctors."
+  },
+  "outgoing": [
+    {
+      "type": "implementedBy",
+      "to": "pipeline:Cloud9.BizTalk.X12.Pipelines.ReceiveEDIPipeline",
+      "toName": "Cloud9.BizTalk.X12.Pipelines.ReceiveEDIPipeline",
+      "toType": "pipeline",
+      "toFile": "adjacency/pipeline/Cloud9.BizTalk.X12.Pipelines.ReceiveEDIPipeline.json",
+      "curated": true
+    },
+    {
+      "type": "implementedBy",
+      "to": "schema:Cloud9.BizTalk.X12.Schemas.BBVA_X12_00501_835",
+      "toName": "Cloud9.BizTalk.X12.Schemas.BBVA_X12_00501_835",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.X12.Schemas.BBVA_X12_00501_835.json",
+      "curated": true
+    }
+  ],
+  "incoming": [
+    {
+      "type": "hasStep",
+      "from": "flow:BBVA-835-Patient-Lockbox",
+      "fromName": "BBVA patient lockbox 835 -> patient payment transactions",
+      "fromType": "flow",
+      "fromFile": "adjacency/flow/BBVA-835-Patient-Lockbox.json",
+      "order": 1,
+      "curated": true
+    }
+  ]
+}

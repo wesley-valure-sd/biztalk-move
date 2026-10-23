@@ -1,0 +1,22 @@
+{
+  "node": {
+    "id": "porttype:Cloud9.BizTalk.Epic.PortType_GetTreatmentCardPatientList",
+    "type": "porttype",
+    "name": "PortType_GetTreatmentCardPatientList",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.ProcessTreatmentCardData.Worker.odx",
+    "module": "Cloud9.BizTalk.Epic",
+    "operations": [
+      "requestresponse GetTreatmentCardPatientList(MPType_GetTreatmentCardPatientListReq, MPType_GetTreatmentCardPatientListResp)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.ProcessTreatmentCardData.Worker.odx",
+      "fromName": "Cloud9.BizTalk.Epic.ProcessTreatmentCardData.Worker.odx",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Orchestrations_Cloud9.BizTalk.Epic.ProcessTreatmentCardData.Worker.odx.json"
+    }
+  ]
+}

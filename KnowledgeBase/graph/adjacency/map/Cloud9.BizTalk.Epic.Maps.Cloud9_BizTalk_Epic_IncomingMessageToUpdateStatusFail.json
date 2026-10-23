@@ -1,0 +1,53 @@
+{
+  "node": {
+    "id": "map:Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_IncomingMessageToUpdateStatusFail",
+    "type": "map",
+    "name": "Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_IncomingMessageToUpdateStatusFail",
+    "readableSummary": "KnowledgeBase/map-summaries/Cloud9.BizTalk.Epic.IncomingMessageToUpdateStatusFail.txt",
+    "targetSchema": "Cloud9.BizTalk.Schemas.Table_IncomingMessage",
+    "inlineScripts": [],
+    "functoidCount": 2,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/Cloud9.BizTalk.Epic.IncomingMessageToUpdateStatusFail.btm",
+    "sourceSchema": "Cloud9.BizTalk.Schemas.Polling_IncomingMessage",
+    "linkCount": 4,
+    "sourceRoot": "TypedPollingResultSet0",
+    "targetRoot": "Update"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/Cloud9.BizTalk.Epic.IncomingMessageToUpdateStatusFail.btm",
+      "toName": "Cloud9.BizTalk.Epic.IncomingMessageToUpdateStatusFail.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Maps_Cloud9.BizTalk.Epic.IncomingMessageToUpdateStatusFail.btm.json"
+    },
+    {
+      "type": "sourceSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.Polling_IncomingMessage",
+      "toName": "Cloud9.BizTalk.Schemas.Polling_IncomingMessage",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.Polling_IncomingMessage.json",
+      "root": "TypedPollingResultSet0"
+    },
+    {
+      "type": "targetSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.Table_IncomingMessage",
+      "toName": "Cloud9.BizTalk.Schemas.Table_IncomingMessage",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.Table_IncomingMessage.json",
+      "root": "Update"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "usesMap",
+      "from": "orchestration:Cloud9.BizTalk.Epic.Orchestrations.HL7SQLReceive",
+      "fromName": "HL7SQLReceive",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.Orchestrations.HL7SQLReceive.json",
+      "output": "msg_UpdateRequest.parameters",
+      "input": "msg_Record",
+      "line": 904
+    }
+  ]
+}

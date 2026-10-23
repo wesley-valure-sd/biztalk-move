@@ -1,0 +1,34 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_835_To_BBVA.odx",
+    "type": "file",
+    "name": "Process_CHC_835_To_BBVA.odx",
+    "kind": "odx",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_835_To_BBVA.odx"
+  },
+  "outgoing": [
+    {
+      "type": "defines",
+      "to": "porttype:Cloud9.BizTalk.X12.SendCHC835ToBBVAPortType",
+      "toName": "SendCHC835ToBBVAPortType",
+      "toType": "porttype",
+      "toFile": "adjacency/porttype/Cloud9.BizTalk.X12.SendCHC835ToBBVAPortType.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.X12",
+      "fromName": "Cloud9.BizTalk.X12",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.X12.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_835_To_BBVA",
+      "fromName": "Process_CHC_835_To_BBVA",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_835_To_BBVA.json"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "node": {
+    "id": "externalsystem:ChangeHealthcare-Mailbox",
+    "type": "externalsystem",
+    "name": "Change Healthcare (Emdeon) claim submission API mailbox",
+    "doc": "KnowledgeBase/docs/02-payments-835-end-to-end.md",
+    "detail": "HTTP XML API (claim_submission_api). GetMailFileList, GetMailFile, DeleteMailFile. URL and credentials come from BTS.GetPracticeEDISettings in each practice database (pracEmdeonURL / pracEmdeonTestURL / pracEmdeonIsTest). Payload is base64 and can be PKZIP.",
+    "curated": true
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "source",
+      "from": "flow:CHC-835-Insurance-ERA",
+      "fromName": "Change Healthcare ERA 835 -> insurance payment transactions or reversal to-do items",
+      "fromType": "flow",
+      "fromFile": "adjacency/flow/CHC-835-Insurance-ERA.json",
+      "curated": true
+    }
+  ]
+}

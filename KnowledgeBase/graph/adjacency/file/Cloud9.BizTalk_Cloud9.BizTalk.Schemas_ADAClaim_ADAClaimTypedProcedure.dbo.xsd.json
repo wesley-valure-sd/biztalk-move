@@ -1,0 +1,26 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ADAClaim/ADAClaimTypedProcedure.dbo.xsd",
+    "type": "file",
+    "name": "ADAClaimTypedProcedure.dbo.xsd",
+    "kind": "xsd",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ADAClaim/ADAClaimTypedProcedure.dbo.xsd"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.Schemas",
+      "fromName": "Cloud9.BizTalk.Schemas",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.Schemas.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "schema:Cloud9.BizTalk.Schemas.ADAClaimTypedProcedure_dbo",
+      "fromName": "Cloud9.BizTalk.Schemas.ADAClaimTypedProcedure_dbo",
+      "fromType": "schema",
+      "fromFile": "adjacency/schema/Cloud9.BizTalk.Schemas.ADAClaimTypedProcedure_dbo.json"
+    }
+  ]
+}

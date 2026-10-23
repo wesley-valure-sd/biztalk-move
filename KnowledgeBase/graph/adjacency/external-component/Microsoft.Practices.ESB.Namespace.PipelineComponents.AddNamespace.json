@@ -1,0 +1,25 @@
+{
+  "node": {
+    "id": "class:Microsoft.Practices.ESB.Namespace.PipelineComponents.AddNamespace",
+    "type": "external-component",
+    "name": "Microsoft.Practices.ESB.Namespace.PipelineComponents.AddNamespace",
+    "definedInRepo": false
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "usesComponent",
+      "from": "pipeline:Cloud9.BizTalk.X12.Pipelines.ReceiveEmdeonMailPipeline",
+      "fromName": "Cloud9.BizTalk.X12.Pipelines.ReceiveEmdeonMailPipeline",
+      "fromType": "pipeline",
+      "fromFile": "adjacency/pipeline/Cloud9.BizTalk.X12.Pipelines.ReceiveEmdeonMailPipeline.json"
+    },
+    {
+      "type": "usesComponent",
+      "from": "pipeline:Cloud9.BizTalk.X12.Pipelines.SendEmdeonXMLPipeline",
+      "fromName": "Cloud9.BizTalk.X12.Pipelines.SendEmdeonXMLPipeline",
+      "fromType": "pipeline",
+      "fromFile": "adjacency/pipeline/Cloud9.BizTalk.X12.Pipelines.SendEmdeonXMLPipeline.json"
+    }
+  ]
+}

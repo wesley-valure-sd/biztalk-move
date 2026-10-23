@@ -1,0 +1,106 @@
+{
+  "node": {
+    "id": "class:Cloud9.BizTalk.Helper.SSOClientHelper",
+    "type": "class",
+    "name": "Cloud9.BizTalk.Helper.SSOClientHelper",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/SSOClientHelper.cs",
+    "visibility": "public",
+    "kind": "class",
+    "line": 11
+  },
+  "outgoing": [
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.SSOClientHelper.Read",
+      "toName": "SSOClientHelper.Read",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.SSOClientHelper.Read.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.SSOClientHelper.getIssuer",
+      "toName": "SSOClientHelper.getIssuer",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.SSOClientHelper.getIssuer.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.SSOClientHelper.getClientId",
+      "toName": "SSOClientHelper.getClientId",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.SSOClientHelper.getClientId.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.SSOClientHelper.getClientSecret",
+      "toName": "SSOClientHelper.getClientSecret",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.SSOClientHelper.getClientSecret.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.SSOClientHelper.getUserName",
+      "toName": "SSOClientHelper.getUserName",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.SSOClientHelper.getUserName.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.SSOClientHelper.getPassword",
+      "toName": "SSOClientHelper.getPassword",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.SSOClientHelper.getPassword.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.SSOClientHelper.getRedirectUri",
+      "toName": "SSOClientHelper.getRedirectUri",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.SSOClientHelper.getRedirectUri.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.SSOClientHelper.getState",
+      "toName": "SSOClientHelper.getState",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.SSOClientHelper.getState.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.SSOClientHelper.getScope",
+      "toName": "SSOClientHelper.getScope",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.SSOClientHelper.getScope.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.SSOClientHelper.getAudience",
+      "toName": "SSOClientHelper.getAudience",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.SSOClientHelper.getAudience.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.SSOClientHelper.getPDSUri",
+      "toName": "SSOClientHelper.getPDSUri",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.SSOClientHelper.getPDSUri.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.SSOClientHelper.getLogAPIResponseSetting",
+      "toName": "SSOClientHelper.getLogAPIResponseSetting",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.SSOClientHelper.getLogAPIResponseSetting.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/SSOClientHelper.cs",
+      "fromName": "SSOClientHelper.cs",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Helper_SSOClientHelper.cs.json"
+    }
+  ]
+}

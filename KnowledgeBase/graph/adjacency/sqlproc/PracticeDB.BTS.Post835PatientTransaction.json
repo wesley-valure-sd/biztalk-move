@@ -1,0 +1,53 @@
+{
+  "node": {
+    "id": "sqlproc:PracticeDB.BTS.Post835PatientTransaction",
+    "type": "sqlproc",
+    "name": "BTS.Post835PatientTransaction",
+    "database": "PracticeDB (one database per practice; resolved at run time from BTS.PracticeConfig.pcInstanceAddress)",
+    "definedInRepo": false
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "describesParametersOf",
+      "from": "schema:Cloud9.BizTalk.Schemas.Post835TypedProcedure_BTS",
+      "fromName": "Cloud9.BizTalk.Schemas.Post835TypedProcedure_BTS",
+      "fromType": "schema",
+      "fromFile": "adjacency/schema/Cloud9.BizTalk.Schemas.Post835TypedProcedure_BTS.json"
+    },
+    {
+      "type": "invokesProc",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_BBVA_835Patient",
+      "fromName": "Process_BBVA_835Patient",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_BBVA_835Patient.json",
+      "line": 693,
+      "via": "dynamic WCF-SQL send port (WCF.Action set in code)"
+    },
+    {
+      "type": "invokesProc",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_SD_835Patient",
+      "fromName": "Process_SD_835Patient",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_SD_835Patient.json",
+      "line": 686,
+      "via": "dynamic WCF-SQL send port (WCF.Action set in code)"
+    },
+    {
+      "type": "implementedBy",
+      "from": "flowstep:BBVA-Patient-04-Post",
+      "fromName": "Post each ClaimPayment with BTS.Post835PatientTransaction",
+      "fromType": "flowstep",
+      "fromFile": "adjacency/flowstep/BBVA-Patient-04-Post.json",
+      "curated": true
+    },
+    {
+      "type": "implementedBy",
+      "from": "flowstep:SD-Web-04-Post",
+      "fromName": "Post each payment with BTS.Post835PatientTransaction (WEB)",
+      "fromType": "flowstep",
+      "fromFile": "adjacency/flowstep/SD-Web-04-Post.json",
+      "curated": true
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetMessageInfo/GIMI_ProcedureResultSet.BTS.GetIncomingMessageInfo.xsd",
+    "type": "file",
+    "name": "GIMI_ProcedureResultSet.BTS.GetIncomingMessageInfo.xsd",
+    "kind": "xsd",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetMessageInfo/GIMI_ProcedureResultSet.BTS.GetIncomingMessageInfo.xsd"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.Schemas",
+      "fromName": "Cloud9.BizTalk.Schemas",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.Schemas.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "schema:Cloud9.BizTalk.Schemas.GIMI_ProcedureResultSet_BTS_GetIncomingMessageInfo",
+      "fromName": "Cloud9.BizTalk.Schemas.GIMI_ProcedureResultSet_BTS_GetIncomingMessageInfo",
+      "fromType": "schema",
+      "fromFile": "adjacency/schema/Cloud9.BizTalk.Schemas.GIMI_ProcedureResultSet_BTS_GetIncomingMessageInfo.json"
+    }
+  ]
+}

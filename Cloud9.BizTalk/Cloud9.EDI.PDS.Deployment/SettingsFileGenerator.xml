@@ -1,0 +1,299 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Created>2014-03-24T21:26:46Z</Created>
+  <LastSaved>2020-03-23T18:50:54Z</LastSaved>
+  <Version>16.00</Version>
+ </DocumentProperties>
+ <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
+  <AllowPNG/>
+  <RemovePersonalInformation/>
+ </OfficeDocumentSettings>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>7770</WindowHeight>
+  <WindowWidth>21570</WindowWidth>
+  <WindowTopX>32767</WindowTopX>
+  <WindowTopY>32767</WindowTopY>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Color="#000000"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s40" ss:Name="40% - Accent1">
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Color="#000000"/>
+   <Interior ss:Color="#B8CCE4" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s62" ss:Name="40% - Accent1 2">
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Color="#000000"/>
+   <Interior ss:Color="#B8CCE4" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s63" ss:Name="40% - Accent1 Bold">
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Color="#000000" ss:Bold="1"/>
+   <Interior ss:Color="#B8CCE4" ss:Pattern="Solid"/>
+   <NumberFormat/>
+  </Style>
+  <Style ss:ID="s64" ss:Name="Hyperlink">
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Color="#0066CC"
+    ss:Underline="Single"/>
+  </Style>
+  <Style ss:ID="s65" ss:Name="Normal 2">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Color="#000000"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s66" ss:Name="Normal Bold">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Color="#000000" ss:Bold="1"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s70" ss:Parent="s63">
+   <Font ss:FontName="Calibri" x:Family="Swiss" ss:Size="16" ss:Color="#000000"
+    ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="s80">
+   <Interior/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Settings">
+  <Table ss:ExpandedColumnCount="10" ss:ExpandedRowCount="15" x:FullColumns="1"
+   x:FullRows="1">
+   <Column ss:StyleID="s66" ss:Width="237"/>
+   <Column ss:Width="199.5"/>
+   <Column ss:AutoFitWidth="0" ss:Width="222.75"/>
+   <Column ss:Width="369.75" ss:Span="6"/>
+   <Row ss:AutoFitHeight="0" ss:Height="21">
+    <Cell ss:StyleID="s70"><Data ss:Type="String">Environment Settings</Data></Cell>
+    <Cell ss:StyleID="s63"/>
+    <Cell ss:StyleID="s63"/>
+    <Cell ss:StyleID="s63"/>
+    <Cell ss:StyleID="s63"/>
+    <Cell ss:StyleID="s63"/>
+    <Cell ss:StyleID="s63"/>
+    <Cell ss:StyleID="s63"/>
+    <Cell ss:StyleID="s63"/>
+    <Cell ss:StyleID="s63"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s63"><Data ss:Type="String">Environment Name:</Data></Cell>
+    <Cell ss:StyleID="s63"><Data ss:Type="String">Default Values</Data></Cell>
+    <Cell ss:StyleID="s63"><Data ss:Type="String">Local Dev</Data></Cell>
+    <Cell ss:StyleID="s63"><Data ss:Type="String">LAB2</Data></Cell>
+    <Cell ss:StyleID="s63"><Data ss:Type="String">DEV</Data></Cell>
+    <Cell ss:StyleID="s63"><Data ss:Type="String">CFG</Data></Cell>
+    <Cell ss:StyleID="s63"><Data ss:Type="String">TST</Data></Cell>
+    <Cell ss:StyleID="s63"><Data ss:Type="String">TRN</Data></Cell>
+    <Cell ss:StyleID="s63"><Data ss:Type="String">STG</Data></Cell>
+    <Cell ss:StyleID="s63"><Data ss:Type="String">PROD</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s63"><Data ss:Type="String">Generate File?</Data></Cell>
+    <Cell ss:StyleID="s40"/>
+    <Cell ss:StyleID="s40"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s40"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s40"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s40"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s40"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s40"><Data ss:Type="String">Yes</Data></Cell>
+    <Cell ss:StyleID="s40"><Data ss:Type="String">Yes</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s63"><Data ss:Type="String">Settings File Name:</Data></Cell>
+    <Cell ss:StyleID="s40"/>
+    <Cell ss:StyleID="s40"><Data ss:Type="String">Exported_LocalSettings.xml</Data></Cell>
+    <Cell ss:StyleID="s62"><Data ss:Type="String">Exported_LAB2Settings.xml</Data></Cell>
+    <Cell ss:StyleID="s40"><Data ss:Type="String">Exported_DEVSettings.xml</Data></Cell>
+    <Cell ss:StyleID="s40"><Data ss:Type="String">Exported_CFGSettings.xml</Data></Cell>
+    <Cell ss:StyleID="s40"><Data ss:Type="String">Exported_TSTSettings.xml</Data></Cell>
+    <Cell ss:StyleID="s40"><Data ss:Type="String">Exported_TrainingSettings.xml</Data></Cell>
+    <Cell ss:StyleID="s40"><Data ss:Type="String">Exported_StagingSettings.xml</Data></Cell>
+    <Cell ss:StyleID="s40"><Data ss:Type="String">Exported_ProdSettings.xml</Data></Cell>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s63"/>
+    <Cell ss:StyleID="s40"/>
+    <Cell ss:StyleID="s40"/>
+    <Cell ss:StyleID="s62"/>
+    <Cell ss:StyleID="s40"/>
+    <Cell ss:StyleID="s40"/>
+    <Cell ss:StyleID="s40"/>
+    <Cell ss:StyleID="s40"/>
+    <Cell ss:StyleID="s40"/>
+    <Cell ss:StyleID="s40"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s63"><Data ss:Type="String">Settings:</Data></Cell>
+    <Cell ss:StyleID="s40"/>
+    <Cell ss:StyleID="s40"/>
+    <Cell ss:StyleID="s62"/>
+    <Cell ss:StyleID="s40"/>
+    <Cell ss:StyleID="s40"/>
+    <Cell ss:StyleID="s40"/>
+    <Cell ss:StyleID="s40"/>
+    <Cell ss:StyleID="s40"/>
+    <Cell ss:StyleID="s40"/>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">SsoAppUserGroup</Data></Cell>
+    <Cell><Data ss:Type="String">BizTalk Application Users</Data></Cell>
+    <Cell><Data ss:Type="String">BizTalk Application Users</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">CLOUD9\BizTalk-LAB-SSO-Admins</Data></Cell>
+    <Cell><Data ss:Type="String">pdsi.corp\AWS-BizTalk-DEV-App-Users-Cloud9</Data></Cell>
+    <Cell><Data ss:Type="String">pdsi.corp\AWS-BizTalk-TST-App-Users-Cloud9</Data></Cell>
+    <Cell><Data ss:Type="String">pdsi.corp\AWS-BizTalk-TST-App-Users-Cloud9</Data></Cell>
+    <Cell><Data ss:Type="String">pdsi.corp\AWS-BizTalk-TRN-App-Users-Cloud9</Data></Cell>
+    <Cell><Data ss:Type="String">pdsi.corp\AWS-BizTalk-STG-App-Users-Cloud9</Data></Cell>
+    <Cell><Data ss:Type="String">pdsi.corp\AWS-BizTalk-PRD-App-Users-Cloud9</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">SsoAppAdminGroup</Data></Cell>
+    <Cell><Data ss:Type="String">BizTalk Server Administrators</Data></Cell>
+    <Cell><Data ss:Type="String">BizTalk Server Administrators</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">CLOUD9\BizTalk-LAB-SSO-Admins</Data></Cell>
+    <Cell><Data ss:Type="String">pdsi.corp\AWS-Biztalk-DEV-SSO-Admins-Cloud9</Data></Cell>
+    <Cell><Data ss:Type="String">pdsi.corp\AWS-Biztalk-TST-SSO-Admins-Cloud9</Data></Cell>
+    <Cell><Data ss:Type="String">pdsi.corp\AWS-Biztalk-TST-SSO-Admins-Cloud9</Data></Cell>
+    <Cell><Data ss:Type="String">pdsi.corp\AWS-Biztalk-TRN-SSO-Admins-Cloud9</Data></Cell>
+    <Cell><Data ss:Type="String">pdsi.corp\AWS-Biztalk-STG-SSO-Admins-Cloud9</Data></Cell>
+    <Cell><Data ss:Type="String">pdsi.corp\AWS-Biztalk-PRD-SSO-Admins-Cloud9</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">ADDR_DB_CLOUD9COMMON</Data></Cell>
+    <Cell><Data ss:Type="String">mssql://localhost//BizTalkCloud9Common</Data></Cell>
+    <Cell><Data ss:Type="String">mssql://localhost//BizTalkCloud9Common</Data></Cell>
+    <Cell ss:StyleID="s65"><Data ss:Type="String">mssql://lab-db1/LABDB1INSTANCE/BizTalkCloud9Common</Data></Cell>
+    <Cell><Data ss:Type="String">mssql://awssql04d01.pdsi.corp//BizTalkCloud9Common</Data></Cell>
+    <Cell><Data ss:Type="String">mssql://AWSSQL09C01.pdsi.corp//BizTalkCloud9Common</Data></Cell>
+    <Cell><Data ss:Type="String">mssql://awssql05t01.pdsi.corp//BizTalkCloud9Common</Data></Cell>
+    <Cell><Data ss:Type="String">mssql://awssql07t01.pdsi.corp//BizTalkCloud9Common</Data></Cell>
+    <Cell><Data ss:Type="String">mssql://awssql06s01.pdsi.corp//BizTalkCloud9Common</Data></Cell>
+    <Cell><Data ss:Type="String">WILL CHANGE mssql://awssql09p01.pdsi.corp//BizTalkCloud9Common </Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">ADDR_FILE_ROOT</Data></Cell>
+    <Cell><Data ss:Type="String">C:\BizTalkTest</Data></Cell>
+    <Cell><Data ss:Type="String">C:\BizTalkTest</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">\\10.2.1.1\Development\Lab2</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">\\awssgw01p02.pdsi.corp\pacden-cloud9\BIZ\DEV</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">\\awssgw01p02.pdsi.corp\pacden-cloud9\BIZ\CFG</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">\\awssgw01p02.pdsi.corp\pacden-cloud9\BIZ\TST</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">\\awssgw01p02.pdsi.corp\pacden-cloud9\BIZ\TRN</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">\\awssgw01p02.pdsi.corp\pacden-cloud9\BIZ\STG</Data></Cell>
+    <Cell ss:StyleID="s64"><Data ss:Type="String">\\awssgw01p02.pdsi.corp\pacden-cloud9\BIZ\PRD</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">DO_NOT_START_SANDBOX_SFTP</Data></Cell>
+    <Cell ss:StyleID="s80"><Data ss:Type="String">DO_NOT_START_RL_</Data></Cell>
+    <Cell ss:StyleID="s80"><Data ss:Type="String">DO_NOT_START_RL_</Data></Cell>
+    <Cell ss:StyleID="s80"><Data ss:Type="String">DO_NOT_START_RL_</Data></Cell>
+    <Cell ss:StyleID="s80"><Data ss:Type="String">DO_NOT_START_RL_</Data></Cell>
+    <Cell ss:StyleID="s80"><Data ss:Type="String">DO_NOT_START_RL_</Data></Cell>
+    <Cell ss:StyleID="s80"><Data ss:Type="String">DO_NOT_START_RL_</Data></Cell>
+    <Cell ss:StyleID="s80"><Data ss:Type="String">DO_NOT_START_RL_</Data></Cell>
+    <Cell ss:StyleID="s80"><Data ss:Type="String">DO_NOT_START_RL_</Data></Cell>
+    <Cell ss:StyleID="s80"><Data ss:Type="String">RL_</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">DO_NOT_START_PROD_RL_</Data></Cell>
+    <Cell ss:StyleID="s80"><Data ss:Type="String">RL_</Data></Cell>
+    <Cell ss:StyleID="s80"><Data ss:Type="String">RL_</Data></Cell>
+    <Cell ss:StyleID="s80"><Data ss:Type="String">RL_</Data></Cell>
+    <Cell ss:StyleID="s80"><Data ss:Type="String">RL_</Data></Cell>
+    <Cell ss:StyleID="s80"><Data ss:Type="String">RL_</Data></Cell>
+    <Cell ss:StyleID="s80"><Data ss:Type="String">RL_</Data></Cell>
+    <Cell ss:StyleID="s80"><Data ss:Type="String">RL_</Data></Cell>
+    <Cell ss:StyleID="s80"><Data ss:Type="String">RL_</Data></Cell>
+    <Cell ss:StyleID="s80"><Data ss:Type="String">DO_NOT_START_RL_</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">CH_276_HTTP_ADDR</Data></Cell>
+    <Cell><Data ss:Type="String">https://claimservices.webmddental.com/WebMD_ClaimStatus_002/Request_002.aspx</Data></Cell>
+    <Cell><Data ss:Type="String">https://claimservices.webmddental.com/WebMD_ClaimStatus_002/Request_002.aspx</Data></Cell>
+    <Cell><Data ss:Type="String">https://claimservices.webmddental.com/WebMD_ClaimStatus_002/Request_002.aspx</Data></Cell>
+    <Cell><Data ss:Type="String">https://claimservices.webmddental.com/WebMD_ClaimStatus_002/Request_002.aspx</Data></Cell>
+    <Cell><Data ss:Type="String">https://claimservices.webmddental.com/WebMD_ClaimStatus_002/Request_002.aspx</Data></Cell>
+    <Cell><Data ss:Type="String">https://claimservices.webmddental.com/WebMD_ClaimStatus_002/Request_002.aspx</Data></Cell>
+    <Cell><Data ss:Type="String">https://claimservices.webmddental.com/WebMD_ClaimStatus_002/Request_002.aspx</Data></Cell>
+    <Cell><Data ss:Type="String">https://claimservices.webmddental.com/WebMD_ClaimStatus_002/Request_002.aspx</Data></Cell>
+    <Cell><Data ss:Type="String">https://claimservices.webmddental.com/WebMD_ClaimStatus_002/Request_002.aspx</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">CH_276_ISA04</Data></Cell>
+    <Cell><Data ss:Type="String">P62TX59AL</Data></Cell>
+    <Cell><Data ss:Type="String">P62TX59AL</Data></Cell>
+    <Cell><Data ss:Type="String">P62TX59AL</Data></Cell>
+    <Cell><Data ss:Type="String">P62TX59AL</Data></Cell>
+    <Cell><Data ss:Type="String">P62TX59AL</Data></Cell>
+    <Cell><Data ss:Type="String">P62TX59AL</Data></Cell>
+    <Cell><Data ss:Type="String">P62TX59AL</Data></Cell>
+    <Cell><Data ss:Type="String">P62TX59AL</Data></Cell>
+    <Cell><Data ss:Type="String">P62TX59AL</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">CH_276_ISA06</Data></Cell>
+    <Cell><Data ss:Type="String">462:TEST001</Data></Cell>
+    <Cell><Data ss:Type="String">462:TEST001</Data></Cell>
+    <Cell><Data ss:Type="String">462:TEST001</Data></Cell>
+    <Cell><Data ss:Type="String">462:TEST001</Data></Cell>
+    <Cell><Data ss:Type="String">462:TEST001</Data></Cell>
+    <Cell><Data ss:Type="String">462:TEST001</Data></Cell>
+    <Cell><Data ss:Type="String">462:TEST001</Data></Cell>
+    <Cell><Data ss:Type="String">462:TEST001</Data></Cell>
+    <Cell><Data ss:Type="String">462:TEST001</Data></Cell>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Layout x:Orientation="Landscape"/>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.25" x:Left="0.25" x:Right="0.25" x:Top="0.25"/>
+   </PageSetup>
+   <FitToPage/>
+   <Print>
+    <ValidPrinterInfo/>
+    <Scale>81</Scale>
+    <HorizontalResolution>600</HorizontalResolution>
+    <VerticalResolution>600</VerticalResolution>
+   </Print>
+   <Selected/>
+   <LeftColumnVisible>4</LeftColumnVisible>
+   <FreezePanes/>
+   <FrozenNoSplit/>
+   <SplitHorizontal>6</SplitHorizontal>
+   <TopRowBottomPane>6</TopRowBottomPane>
+   <ActivePane>2</ActivePane>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+    </Pane>
+    <Pane>
+     <Number>2</Number>
+     <ActiveRow>0</ActiveRow>
+     <ActiveCol>4</ActiveCol>
+     <RangeSelection>R1C5:R6C10</RangeSelection>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>

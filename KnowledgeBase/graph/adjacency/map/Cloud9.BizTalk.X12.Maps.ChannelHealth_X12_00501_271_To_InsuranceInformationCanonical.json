@@ -1,0 +1,61 @@
+{
+  "node": {
+    "id": "map:Cloud9.BizTalk.X12.Maps.ChannelHealth_X12_00501_271_To_InsuranceInformationCanonical",
+    "type": "map",
+    "name": "Cloud9.BizTalk.X12.Maps.ChannelHealth_X12_00501_271_To_InsuranceInformationCanonical",
+    "readableSummary": "KnowledgeBase/map-summaries/ChannelHealth_X12_00501_271_To_InsuranceInformationCanonical.txt",
+    "targetSchema": "Cloud9.BizTalk.Schemas.Canonical.InsuranceInformation",
+    "inlineScripts": [],
+    "functoidCount": 17,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/ChannelHealth_X12_00501_271_To_InsuranceInformationCanonical.btm",
+    "sourceSchema": "Cloud9.BizTalk.X12.Schemas.ChannelHealth_X12_00501_271",
+    "linkCount": 34,
+    "sourceRoot": "X12_00501_271",
+    "targetRoot": "InsuranceInformation"
+  },
+  "outgoing": [
+    {
+      "type": "callsMethod",
+      "to": "method:Cloud9.BizTalk.Helper.DateFormatConversion.ConvertHL7DateToSQLDatetimeWithoutOffset",
+      "toName": "DateFormatConversion.ConvertHL7DateToSQLDatetimeWithoutOffset",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.DateFormatConversion.ConvertHL7DateToSQLDatetimeWithoutOffset.json",
+      "via": "scripting functoid (ExternalAssembly)"
+    },
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/ChannelHealth_X12_00501_271_To_InsuranceInformationCanonical.btm",
+      "toName": "ChannelHealth_X12_00501_271_To_InsuranceInformationCanonical.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_ChannelHealth_X12_00501_271_To_InsuranceInformationCanonical.btm.json"
+    },
+    {
+      "type": "sourceSchema",
+      "to": "schema:Cloud9.BizTalk.X12.Schemas.ChannelHealth_X12_00501_271",
+      "toName": "Cloud9.BizTalk.X12.Schemas.ChannelHealth_X12_00501_271",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.X12.Schemas.ChannelHealth_X12_00501_271.json",
+      "root": "X12_00501_271"
+    },
+    {
+      "type": "targetSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.Canonical.InsuranceInformation",
+      "toName": "Cloud9.BizTalk.Schemas.Canonical.InsuranceInformation",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.Canonical.InsuranceInformation.json",
+      "root": "InsuranceInformation"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "usesMap",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_ChannelHealth_271Eligibility",
+      "fromName": "Process_ChannelHealth_271Eligibility",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_ChannelHealth_271Eligibility.json",
+      "output": "InsuranceInformationCanonical.Body",
+      "input": "ChannelHealth271.Body",
+      "line": 635
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.ErrorReporting.odx",
+    "type": "file",
+    "name": "Cloud9.BizTalk.Epic.ErrorReporting.odx",
+    "kind": "odx",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.ErrorReporting.odx"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "definedIn",
+      "from": "orchestration:Cloud9.BizTalk.Epic.ErrorReporting",
+      "fromName": "ErrorReporting",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.ErrorReporting.json"
+    }
+  ]
+}

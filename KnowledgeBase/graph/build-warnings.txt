@@ -1,0 +1,64 @@
+Map Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/Cloud9.BizTalk.Epic.ADT_A28_A31_26_CanonicalToUpsertPatient.btm source schema not resolved: ..\Schemas\ADT_A28_A31_26_Canonical.xsd
+Map Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/Cloud9.BizTalk.Epic.HL7InboundToStaging.btm source schema not resolved: 
+Map Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/Cloud9.BizTalk.Epic.SUI_CanonicalToUpsertAppointment.btm source schema not resolved: ..\Schemas\SIU_Canonical.xsd
+Map Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/SIUMessageData_To_GetLocationTimezoneReq.btm source schema not resolved: ..\Schemas\SIU_Canonical.xsd
+Map Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/CHC_GetMailFileListReq_GetMailFileRespElement_To_DeleteMailFileReq.btm source schema not resolved: 
+Map Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/CHC_GetMailFileListReq_GetMailFileRespElement_To_GetMailFileReq.btm source schema not resolved: 
+Placeholder node created for receiveport:Cloud9.BizTalk.Deployment/ReceivePortRef
+Placeholder node created for receiveport:Cloud9.BizTalk.PDS.Deployment/ReceivePortRef
+Placeholder node created for receiveport:Cloud9.EDI.Deployment/ReceivePortRef
+Placeholder node created for receiveport:Cloud9.EDI.PDS.Deployment/ReceivePortRef
+Placeholder node created for receiveport:Cloud9.EDI.PDS.Deployment/RP_BBVA835_Insurance
+Placeholder node created for receiveport:Cloud9.EDI.PDS.Deployment/RP_BBVA835_Patient
+Placeholder node created for receiveport:Cloud9.EDI.PDS.Deployment/RP_CHC835ToBBVA
+Placeholder node created for receiveport:Cloud9.EDI.PDS.Deployment/RP_CHC837ToBBVA
+Placeholder node created for receiveport:Cloud9.EDI.PDS.Deployment/RP_SD835_Patient
+Placeholder node created for sendport:Cloud9.BizTalk.Deployment/SendPortRef
+Placeholder node created for sendport:Cloud9.BizTalk.PDS.Deployment/SendPortRef
+Placeholder node created for sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_BBVA_835Insurance_AddImportLogPort_182f4e020577c79e
+Placeholder node created for sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_BBVA_835Insurance_Post835TransactionPort_182f4e020577c79e
+Placeholder node created for sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_BBVA_835Patient_AddImportLogPort_182f4e020577c79e
+Placeholder node created for sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_BBVA_835Patient_Post835TransactionPort_182f4e020577c79e
+Placeholder node created for sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_271Eligibility_AddImportLogPort_182f4e020577c79e
+Placeholder node created for sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_271Eligibility_SetPatientInsuranceEligibilitiesPort_182f4e020577c79e
+Placeholder node created for sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_271Eligibility_UpdatePatientInsurancePolicyByPipGUIDPort_182f4e020577c79e
+Placeholder node created for sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_276ClaimStatus_Port_GetADAClaim_182f4e020577c79e
+Placeholder node created for sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_835Insurance_AddImportLogPort_182f4e020577c79e
+Placeholder node created for sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_835Insurance_Port_AddTodoItem_182f4e020577c79e
+Placeholder node created for sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_835Insurance_Post835TransactionPort_182f4e020577c79e
+Placeholder node created for sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_AddClaimErrorsDynamic_182f4e020577c79e
+Placeholder node created for sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_QueueClaimsDynamic_182f4e020577c79e
+Placeholder node created for sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_SendClaimStatusUpdateDynamic_182f4e020577c79e
+Placeholder node created for sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus_Port_AddClaimErrors_182f4e020577c79e
+Placeholder node created for sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus_Port_AddTodoItemForClaim_182f4e020577c79e
+Placeholder node created for sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus_Port_UpdateClaimStatuses_182f4e020577c79e
+Placeholder node created for sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetPracticeEDISettingsDynamic_182f4e020577c79e
+Placeholder node created for sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_SD_835Patient_AddImportLogPort_182f4e020577c79e
+Placeholder node created for sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_SD_835Patient_Post835TransactionPort_182f4e020577c79e
+Placeholder node created for sendport:Cloud9.EDI.Deployment/SendPortRef
+Placeholder node created for sendport:Cloud9.EDI.Deployment/WCF_UPDATE_PROCESS_PARAMETERS
+Placeholder node created for sendport:Cloud9.EDI.PDS.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_BBVA_835Insurance_AddImportLogPort_182f4e020577c79e
+Placeholder node created for sendport:Cloud9.EDI.PDS.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_BBVA_835Insurance_Post835TransactionPort_182f4e020577c79e
+Placeholder node created for sendport:Cloud9.EDI.PDS.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_BBVA_835Patient_AddImportLogPort_182f4e020577c79e
+Placeholder node created for sendport:Cloud9.EDI.PDS.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_BBVA_835Patient_Post835TransactionPort_182f4e020577c79e
+Placeholder node created for sendport:Cloud9.EDI.PDS.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_271Eligibility_AddImportLogPort_182f4e020577c79e
+Placeholder node created for sendport:Cloud9.EDI.PDS.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_271Eligibility_SetPatientInsuranceEligibilitiesPort_182f4e020577c79e
+Placeholder node created for sendport:Cloud9.EDI.PDS.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_271Eligibility_UpdatePatientInsurancePolicyByPipGUIDPort_182f4e020577c79e
+Placeholder node created for sendport:Cloud9.EDI.PDS.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_276ClaimStatus_Port_GetADAClaim_182f4e020577c79e
+Placeholder node created for sendport:Cloud9.EDI.PDS.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_835Insurance_AddImportLogPort_182f4e020577c79e
+Placeholder node created for sendport:Cloud9.EDI.PDS.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_835Insurance_Port_AddTodoItem_182f4e020577c79e
+Placeholder node created for sendport:Cloud9.EDI.PDS.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_835Insurance_Post835TransactionPort_182f4e020577c79e
+Placeholder node created for sendport:Cloud9.EDI.PDS.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_AddClaimErrorsDynamic_182f4e020577c79e
+Placeholder node created for sendport:Cloud9.EDI.PDS.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_QueueClaimsDynamic_182f4e020577c79e
+Placeholder node created for sendport:Cloud9.EDI.PDS.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_SendClaimStatusUpdateDynamic_182f4e020577c79e
+Placeholder node created for sendport:Cloud9.EDI.PDS.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus_Port_AddClaimErrors_182f4e020577c79e
+Placeholder node created for sendport:Cloud9.EDI.PDS.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus_Port_AddTodoItemForClaim_182f4e020577c79e
+Placeholder node created for sendport:Cloud9.EDI.PDS.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus_Port_UpdateClaimStatuses_182f4e020577c79e
+Placeholder node created for sendport:Cloud9.EDI.PDS.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetPracticeEDISettingsDynamic_182f4e020577c79e
+Placeholder node created for sendport:Cloud9.EDI.PDS.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_SD_835Patient_AddImportLogPort_182f4e020577c79e
+Placeholder node created for sendport:Cloud9.EDI.PDS.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_SD_835Patient_Post835TransactionPort_182f4e020577c79e
+Placeholder node created for sendport:Cloud9.EDI.PDS.Deployment/SendPortRef
+Placeholder node created for sendport:Cloud9.EDI.PDS.Deployment/SP_CHC835ToBBVA_FILE
+Placeholder node created for sendport:Cloud9.EDI.PDS.Deployment/SP_CHC835ToSD_SFTP
+Placeholder node created for sendport:Cloud9.EDI.PDS.Deployment/SP_CHC837ToSD_SFTP
+Placeholder node created for sendport:Cloud9.EDI.PDS.Deployment/WCF_UPDATE_PROCESS_PARAMETERS

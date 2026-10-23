@@ -1,0 +1,152 @@
+{
+  "node": {
+    "id": "orchestration:Cloud9.BizTalk.X12.Process_CHC_835_To_BBVA",
+    "type": "orchestration",
+    "name": "Process_CHC_835_To_BBVA",
+    "activation": "activate receive (ReceiveCHC835Port.Operation_1, CHC835)",
+    "ports": [
+      "ReceiveCHC835Port (implements ReceiveCHC835PortType)",
+      "GetApplicationLookupValuesPort (uses PortType_GetApplicationLookupValues)",
+      "SendCHC835ToBBVAPort (uses SendCHC835ToBBVAPortType)"
+    ],
+    "messages": [
+      "CHC835_Out: CHC835_MMT",
+      "CHC835: CHC835_MMT",
+      "GetApplicationLookupValues: GetApplicationLookupValues_MMT",
+      "GetApplicationLookupValuesResponse: GetApplicationLookupValuesResponse_MMT"
+    ],
+    "visibility": "internal",
+    "module": "Cloud9.BizTalk.X12",
+    "contextProperties": [
+      "EDI.AgreementNameForSend",
+      "EDI.ReceiverPartyNameForSend",
+      "EDI.SenderPartyNameForSend"
+    ],
+    "line": 320,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_835_To_BBVA.odx",
+    "bindingStates": {
+      "Cloud9.EDI.Deployment": "Unenlisted",
+      "Cloud9.EDI.PDS.Deployment": "Unenlisted"
+    }
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_835_To_BBVA.odx",
+      "toName": "Process_CHC_835_To_BBVA.odx",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Orchestrations_Process_CHC_835_To_BBVA.odx.json"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.CHC835_MMT",
+      "toName": "CHC835_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.CHC835_MMT.json",
+      "message": "CHC835_Out"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.GetApplicationLookupValues_MMT",
+      "toName": "GetApplicationLookupValues_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.GetApplicationLookupValues_MMT.json",
+      "message": "GetApplicationLookupValues"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.GetApplicationLookupValuesResponse_MMT",
+      "toName": "GetApplicationLookupValuesResponse_MMT",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.GetApplicationLookupValuesResponse_MMT.json",
+      "message": "GetApplicationLookupValuesResponse"
+    },
+    {
+      "type": "invokesProc",
+      "to": "sqlproc:BizTalkCloud9Common.BTS.GetApplicationLookupValues",
+      "toName": "BTS.GetApplicationLookupValues",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.GetApplicationLookupValues.json",
+      "line": 368,
+      "via": "static send port operation GetApplicationLookupValues (BtsActionMapping)"
+    },
+    {
+      "type": "boundToReceivePort",
+      "to": "receiveport:Cloud9.EDI.Deployment/RP_CHC835ToBBVA",
+      "toName": "RP_CHC835ToBBVA",
+      "toType": "receiveport",
+      "toFile": "adjacency/receiveport/Cloud9.EDI.Deployment_RP_CHC835ToBBVA.json",
+      "logicalPort": "ReceiveCHC835Port",
+      "bindingSet": "Cloud9.EDI.Deployment"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.Deployment/SP_BizTalkCloud9Common_WCF",
+      "toName": "SP_BizTalkCloud9Common_WCF",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.Deployment_SP_BizTalkCloud9Common_WCF.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "GetApplicationLookupValuesPort"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.Deployment/SP_CHC835ToSD_SFTP",
+      "toName": "SP_CHC835ToSD_SFTP",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.Deployment_SP_CHC835ToSD_SFTP.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "SendCHC835ToBBVAPort"
+    },
+    {
+      "type": "boundToReceivePort",
+      "to": "receiveport:Cloud9.EDI.PDS.Deployment/RP_CHC835ToBBVA",
+      "toName": "RP_CHC835ToBBVA",
+      "toType": "receiveport",
+      "toFile": "adjacency/receiveport/Cloud9.EDI.PDS.Deployment_RP_CHC835ToBBVA.json",
+      "logicalPort": "ReceiveCHC835Port",
+      "bindingSet": "Cloud9.EDI.PDS.Deployment"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.PDS.Deployment/SP_BizTalkCloud9Common_WCF",
+      "toName": "SP_BizTalkCloud9Common_WCF",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.PDS.Deployment_SP_BizTalkCloud9Common_WCF.json",
+      "bindingSet": "Cloud9.EDI.PDS.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "GetApplicationLookupValuesPort"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.PDS.Deployment/SP_CHC835ToBBVA_FILE",
+      "toName": "SP_CHC835ToBBVA_FILE",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.PDS.Deployment_SP_CHC835ToBBVA_FILE.json",
+      "bindingSet": "Cloud9.EDI.PDS.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "SendCHC835ToBBVAPort"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.PDS.Deployment/SP_CHC835ToSD_SFTP",
+      "toName": "SP_CHC835ToSD_SFTP",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.PDS.Deployment_SP_CHC835ToSD_SFTP.json",
+      "bindingSet": "Cloud9.EDI.PDS.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "SendCHC835ToBBVAPort"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "implementedBy",
+      "from": "flowstep:CHC2BBVA-02-Lookup",
+      "fromName": "Look up outbound agreement by payee ID",
+      "fromType": "flowstep",
+      "fromFile": "adjacency/flowstep/CHC2BBVA-02-Lookup.json",
+      "curated": true
+    }
+  ]
+}

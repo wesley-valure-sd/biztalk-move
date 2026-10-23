@@ -1,0 +1,37 @@
+{
+  "node": {
+    "id": "messagetype:Cloud9.BizTalk.X12.CHC277_Unsolicitate_MMT",
+    "type": "messagetype",
+    "name": "CHC277_Unsolicitate_MMT",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_277_Unsolicitated_ClaimsStatus.odx",
+    "bodyType": "Schemas.CHC_X12_00501_277_A",
+    "module": "Cloud9.BizTalk.X12"
+  },
+  "outgoing": [
+    {
+      "type": "bodySchema",
+      "to": "schema:Cloud9.BizTalk.X12.Schemas.CHC_X12_00501_277_A",
+      "toName": "Cloud9.BizTalk.X12.Schemas.CHC_X12_00501_277_A",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.X12.Schemas.CHC_X12_00501_277_A.json",
+      "bodyType": "Schemas.CHC_X12_00501_277_A"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_277_Unsolicitated_ClaimsStatus.odx",
+      "fromName": "Process_CHC_277_Unsolicitated_ClaimsStatus.odx",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Orchestrations_Process_CHC_277_Unsolicitated_ClaimsStatus.odx.json"
+    },
+    {
+      "type": "usesMessageType",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_277_Unsolicitated_ClaimsStatus",
+      "fromName": "Process_CHC_277_Unsolicitated_ClaimsStatus",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_277_Unsolicitated_ClaimsStatus.json",
+      "message": "CHC227_Unsolicitate"
+    }
+  ]
+}

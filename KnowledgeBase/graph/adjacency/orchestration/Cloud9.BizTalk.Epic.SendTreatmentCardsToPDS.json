@@ -1,0 +1,75 @@
+{
+  "node": {
+    "id": "orchestration:Cloud9.BizTalk.Epic.SendTreatmentCardsToPDS",
+    "type": "orchestration",
+    "name": "SendTreatmentCardsToPDS",
+    "activation": "activate receive (Port_ReceiveTreatmentCard.ReceiveTreatmentCard, msg_TreatmentCard)",
+    "ports": [
+      "Port_ReceiveTreatmentCard (implements PortType_ReceiveTreatmentCard)"
+    ],
+    "messages": [
+      "msg_TreatmentCard: System.Xml.XmlDocument"
+    ],
+    "visibility": "internal",
+    "module": "Cloud9.BizTalk.Epic",
+    "contextProperties": [],
+    "line": 281,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.SendTreatmentCardsToPDS.odx",
+    "bindingStates": {
+      "Cloud9.BizTalk.Deployment": "Started",
+      "Cloud9.BizTalk.PDS.Deployment": "Started"
+    }
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.SendTreatmentCardsToPDS.odx",
+      "toName": "Cloud9.BizTalk.Epic.SendTreatmentCardsToPDS.odx",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Orchestrations_Cloud9.BizTalk.Epic.SendTreatmentCardsToPDS.odx.json"
+    },
+    {
+      "type": "startsOrchestration",
+      "to": "orchestration:Cloud9.BizTalk.Epic.AddLog",
+      "toName": "AddLog",
+      "toType": "orchestration",
+      "toFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.AddLog.json",
+      "line": 323
+    },
+    {
+      "type": "callsMethod",
+      "to": "method:Cloud9.BizTalk.Helper.XLangMessageHelpers.CreateStringFromXLANGMessage",
+      "toName": "XLangMessageHelpers.CreateStringFromXLANGMessage",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.XLangMessageHelpers.CreateStringFromXLANGMessage.json",
+      "line": 314
+    },
+    {
+      "type": "callsMethod",
+      "to": "method:Cloud9.BizTalk.Helper.OutboundAPI.SendMDMToPDS",
+      "toName": "OutboundAPI.SendMDMToPDS",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.OutboundAPI.SendMDMToPDS.json",
+      "line": 316
+    },
+    {
+      "type": "boundToReceivePort",
+      "to": "receiveport:Cloud9.BizTalk.Deployment/RP.MDM_T02_To_PDS",
+      "toName": "RP.MDM_T02_To_PDS",
+      "toType": "receiveport",
+      "toFile": "adjacency/receiveport/Cloud9.BizTalk.Deployment_RP.MDM_T02_To_PDS.json",
+      "logicalPort": "Port_ReceiveTreatmentCard",
+      "bindingSet": "Cloud9.BizTalk.Deployment"
+    },
+    {
+      "type": "boundToReceivePort",
+      "to": "receiveport:Cloud9.BizTalk.PDS.Deployment/RP.MDM_T02_To_PDS",
+      "toName": "RP.MDM_T02_To_PDS",
+      "toType": "receiveport",
+      "toFile": "adjacency/receiveport/Cloud9.BizTalk.PDS.Deployment_RP.MDM_T02_To_PDS.json",
+      "logicalPort": "Port_ReceiveTreatmentCard",
+      "bindingSet": "Cloud9.BizTalk.PDS.Deployment"
+    }
+  ],
+  "incoming": []
+}

@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>Cloud9.BizTalk.Central.Database</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{4eb15753-21dc-4e20-a738-1b3f6d3b6c85}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>Cloud9.BizTalk.Central.Database</RootNamespace>
+    <AssemblyName>Cloud9.BizTalk.Central.Database</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="BTS\" />
+    <Folder Include="BTS\Tables\" />
+    <Folder Include="BTS\Stored Procedures\" />
+    <Folder Include="Security\" />
+    <Folder Include="Storage\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="BTS\Tables\StagingStatus.sql" />
+    <Build Include="BTS\Tables\HL7InboundStaging.sql" />
+    <Build Include="BTS\Tables\ProcessingError.sql" />
+    <Build Include="BTS\Tables\PracticeConfig.sql" />
+    <Build Include="BTS\Stored Procedures\GetPracticeConfiguration.sql" />
+    <Build Include="Security\BTS.sql" />
+    <Build Include="BTS\Tables\IncomingMessage.sql" />
+    <Build Include="Storage\FileStreamGroup1.sql" />
+    <Build Include="BTS\Stored Procedures\SetStagingPatientMessageStatus.sql" />
+    <Build Include="BTS\Stored Procedures\QueueUnprocessedStagingPatientIDs.sql" />
+    <Build Include="BTS\Stored Procedures\GetProcessingStagingPatientMessages.sql" />
+    <Build Include="BTS\Stored Procedures\PollingIncomingMessages.sql" />
+    <Build Include="BTS\Stored Procedures\UpdateProcessParameters.sql" />
+    <Build Include="BTS\Stored Procedures\QueueProcessParameters.sql" />
+    <Build Include="BTS\Tables\ProcessParameter.sql" />
+    <Build Include="BTS\Stored Procedures\GetPracticeConfigurationByName.sql" />
+    <Build Include="BTS\Stored Procedures\GetOutgoingMessages.sql" />
+    <Build Include="BTS\Tables\OutgoingMessage.sql" />
+    <Build Include="BTS\Tables\OutgoingMessageAttribute.sql" />
+    <Build Include="BTS\Tables\Log.sql" />
+    <Build Include="BTS\Stored Procedures\CreateLogEntry.sql" />
+    <Build Include="BTS\Tables\PracticeConfigStatus.sql" />
+    <Build Include="BTS\Tables\SubmittedClaim.sql" />
+    <Build Include="BTS\Stored Procedures\GetPracticeConfigurationForClaim.sql" />
+    <Build Include="BTS\Stored Procedures\GetApplicationLookupValue.sql" />
+    <Build Include="BTS\Stored Procedures\GetApplicationLookupValues.sql" />
+    <Build Include="BTS\Tables\ApplicationLookupValue.sql" />
+    <Build Include="BTS\Stored Procedures\GetIncomingMessageInfo.sql" />
+    <Build Include="BTS\Stored Procedures\GetPracticeConfigurationByEmdeonUser.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="Cloud9.BizTalk.Central.Database.refactorlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="BizTalkCloud9Common.PostDeployment.sql" />
+  </ItemGroup>
+</Project>

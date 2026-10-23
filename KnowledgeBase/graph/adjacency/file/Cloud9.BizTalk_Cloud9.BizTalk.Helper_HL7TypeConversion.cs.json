@@ -1,0 +1,27 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/HL7TypeConversion.cs",
+    "type": "file",
+    "name": "HL7TypeConversion.cs",
+    "kind": "csharp",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/HL7TypeConversion.cs"
+  },
+  "outgoing": [
+    {
+      "type": "defines",
+      "to": "class:Cloud9.BizTalk.Helper.HL7TypeConversion",
+      "toName": "Cloud9.BizTalk.Helper.HL7TypeConversion",
+      "toType": "class",
+      "toFile": "adjacency/class/Cloud9.BizTalk.Helper.HL7TypeConversion.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.Helper",
+      "fromName": "Cloud9.BizTalk.Helper",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.Helper.json"
+    }
+  ]
+}

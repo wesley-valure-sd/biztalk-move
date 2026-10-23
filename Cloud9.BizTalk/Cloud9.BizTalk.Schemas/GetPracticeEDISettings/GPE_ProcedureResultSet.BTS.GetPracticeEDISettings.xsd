@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ns4="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:ns3="http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetPracticeEDISettings" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetPracticeEDISettings" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation=".\GPE_Serialization.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:annotation>
+    <xs:appinfo>
+      <fileNameHint xmlns="http://schemas.microsoft.com/servicemodel/adapters/metadata/xsd">ProcedureResultSet.BTS.GetPracticeEDISettings</fileNameHint>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:complexType name="StoredProcedureResultSet0">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="pracEmdeonVendorID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="pracEmdeonUserID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="pracEmdeonPassword" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="pracEmdeonLastTraceNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="pracEmdeonIsTest" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" maxOccurs="1" name="pracEmdeonURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="pracEmdeonTestURL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="pracEmdeonSubmitterID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="pracEmdeonStmtUserID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="pracEmdeonStmtPassword" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="pracEmdeonStmtFormNumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="pracEmdeonSFTPAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="pracEmdeonStmtUploadDir" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="pracEmdeonStmtDownloadDir" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="pracEdiUserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="pracEdiPassword" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="pracEdiUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="pracEDIPaidStatus" nillable="true" type="ns4:guid" />
+      <xs:element minOccurs="0" maxOccurs="1" name="pracEDIRejectedStatus" nillable="true" type="ns4:guid" />
+      <xs:element minOccurs="0" maxOccurs="1" name="pracEDIReportFolder" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="pracNewClaimStatus" nillable="true" type="ns4:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StoredProcedureResultSet0" nillable="true" type="ns3:StoredProcedureResultSet0" />
+  <xs:complexType name="ArrayOfStoredProcedureResultSet0">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StoredProcedureResultSet0" type="ns3:StoredProcedureResultSet0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStoredProcedureResultSet0" nillable="true" type="ns3:ArrayOfStoredProcedureResultSet0" />
+</xs:schema>

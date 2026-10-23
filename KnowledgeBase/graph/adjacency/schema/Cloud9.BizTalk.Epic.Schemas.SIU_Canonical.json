@@ -1,0 +1,49 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Epic.Schemas.SIU_Canonical",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Epic.Schemas.SIU_Canonical",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Schemas/SIU_Canonical.xsd",
+    "rootElements": [
+      "SIU_Canonical"
+    ],
+    "kind": "hl7",
+    "targetNamespace": "http://microsoft.com/HealthCare/HL7/2X",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Schemas/SIU_Canonical.xsd",
+      "toName": "SIU_Canonical.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Schemas_SIU_Canonical.xsd.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "sourceSchema",
+      "from": "map:Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_SUI_CanonicalToUpsertAppointment",
+      "fromName": "Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_SUI_CanonicalToUpsertAppointment",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_SUI_CanonicalToUpsertAppointment.json",
+      "root": "SIU_Canonical"
+    },
+    {
+      "type": "sourceSchema",
+      "from": "map:Cloud9.BizTalk.Epic.SIUMessageData_To_GetLocationTimezoneReq",
+      "fromName": "Cloud9.BizTalk.Epic.SIUMessageData_To_GetLocationTimezoneReq",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.Epic.SIUMessageData_To_GetLocationTimezoneReq.json",
+      "root": "SIU_Canonical"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.Epic.MPType_SIU_Canonical",
+      "fromName": "MPType_SIU_Canonical",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_SIU_Canonical.json",
+      "bodyType": "Schemas.SIU_Canonical"
+    }
+  ]
+}

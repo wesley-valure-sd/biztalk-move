@@ -1,0 +1,55 @@
+{
+  "node": {
+    "id": "map:Cloud9.BizTalk.X12.Maps.ClaimStatusCanonical_To_AddClaimErrors",
+    "type": "map",
+    "name": "Cloud9.BizTalk.X12.Maps.ClaimStatusCanonical_To_AddClaimErrors",
+    "readableSummary": "KnowledgeBase/map-summaries/ClaimStatusCanonical_To_AddClaimErrors.txt",
+    "targetSchema": "Cloud9.BizTalk.Schemas.ClaimErrorMessages.ACE_TypedProcedure_BTS",
+    "inlineScripts": [
+      "CSharp:PaddingClaimStatusCode"
+    ],
+    "functoidCount": 1,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/ClaimStatusCanonical_To_AddClaimErrors.btm",
+    "sourceSchema": "Cloud9.BizTalk.Schemas.Canonical.ClaimStatus",
+    "linkCount": 4,
+    "sourceRoot": "ClaimStatus",
+    "targetRoot": "AddClaimErrors"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/ClaimStatusCanonical_To_AddClaimErrors.btm",
+      "toName": "ClaimStatusCanonical_To_AddClaimErrors.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_ClaimStatusCanonical_To_AddClaimErrors.btm.json"
+    },
+    {
+      "type": "sourceSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.Canonical.ClaimStatus",
+      "toName": "Cloud9.BizTalk.Schemas.Canonical.ClaimStatus",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.Canonical.ClaimStatus.json",
+      "root": "ClaimStatus"
+    },
+    {
+      "type": "targetSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.ClaimErrorMessages.ACE_TypedProcedure_BTS",
+      "toName": "Cloud9.BizTalk.Schemas.ClaimErrorMessages.ACE_TypedProcedure_BTS",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.ClaimErrorMessages.ACE_TypedProcedure_BTS.json",
+      "root": "AddClaimErrors"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "usesMap",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus",
+      "fromName": "Process_CHC_ClaimsStatus",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus.json",
+      "output": "AddClaimErrorsRequest.Body",
+      "input": "ClaimStatusCanonical.Body",
+      "line": 485
+    }
+  ]
+}

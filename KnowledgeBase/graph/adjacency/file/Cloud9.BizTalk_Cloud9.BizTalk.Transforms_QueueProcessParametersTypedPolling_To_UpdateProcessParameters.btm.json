@@ -1,0 +1,26 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.Transforms/QueueProcessParametersTypedPolling_To_UpdateProcessParameters.btm",
+    "type": "file",
+    "name": "QueueProcessParametersTypedPolling_To_UpdateProcessParameters.btm",
+    "kind": "btm",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Transforms/QueueProcessParametersTypedPolling_To_UpdateProcessParameters.btm"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.Maps",
+      "fromName": "Cloud9.BizTalk.Maps",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.Maps.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "map:Cloud9.BizTalk.Maps.QueueProcessParametersTypedPolling_To_UpdateProcessParameters",
+      "fromName": "Cloud9.BizTalk.Maps.QueueProcessParametersTypedPolling_To_UpdateProcessParameters",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.Maps.QueueProcessParametersTypedPolling_To_UpdateProcessParameters.json"
+    }
+  ]
+}

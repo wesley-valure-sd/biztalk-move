@@ -1,0 +1,349 @@
+{
+  "node": {
+    "id": "orchestration:Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker",
+    "type": "orchestration",
+    "name": "Process_CHC_InboundFiles_Worker",
+    "ports": [
+      "Port_GetPracticeEDISettingsDynamic (uses dynamic PortType_GetPracticeEDISettingsDynamic)",
+      "Port_GetMailFileList_HTTP_Dynamic (uses dynamic PortType_EmdeonGetMailFileList_HTTP_Dynamic)",
+      "Port_GetMailFile_HTTP_Dynamic (uses dynamic PortType_Emdeon_GetMailFile_HTTP_Dynamic)",
+      "Port_SaveEDIFile (uses PortType_SaveEDIFile)",
+      "Port_DeleteMailFile_HTTP_Dynamic (uses dynamic PortType_DeleteMailFile_HTTP_Dynamic)"
+    ],
+    "parameters": "message MPType_QueueProcessParametersPracticeElement msg_QueueProcessParametersElement, message MPType_QueueProcessParametersHeader msg_QueueProcessParametersHeader",
+    "messages": [
+      "msg_EDI_PreParsed: System.Xml.XmlDocument",
+      "msg_DeleteMailFileResp: MPType_DeleteMailFileResp",
+      "msg_GetMailFileResp: MPType_GetMailFileResp",
+      "msg_GetMailFileReq: MPType_GetMailFileReq",
+      "msg_GetMailFileListResp: MPType_GetMailFileListResp",
+      "msg_GetMailFileListReq: MPType_GetMailFileListReq",
+      "msg_GetPracticeEDISettingsResp: MPType_GetPracticeEDISettingsResp",
+      "msg_GetPracticeEDISettingsReq: MPType_GetPracticeEDISettingsReq",
+      "msg_UpdateProcessParametersResp: MPType_UpdateProcessParametersResp",
+      "msg_UpdateProcessParametersReq: MPType_UpdateProcessParametersReq",
+      "msg_DeleteMailFileReq: MPType_DeleteMailFileReq",
+      "msg_GetMailFileListElement: MPType_GetMailFileListElement"
+    ],
+    "transaction": "longrunning transaction",
+    "visibility": "internal",
+    "module": "Cloud9.BizTalk.X12",
+    "invocation": "called/started by another orchestration",
+    "contextProperties": [
+      "BTS.RetryCount",
+      "BTS.RetryInterval",
+      "FILE.ReceivedFileName",
+      "FILE.TargetFileName",
+      "Microsoft.XLANGs.BaseTypes.Address",
+      "Microsoft.XLANGs.BaseTypes.TransportType",
+      "WCF.Action",
+      "WCF.BindingConfiguration",
+      "WCF.BindingType",
+      "WCF.EnableTransaction"
+    ],
+    "line": 1369,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_InboundFiles_Worker.odx",
+    "bindingStates": {
+      "Cloud9.EDI.Deployment": "Unenlisted",
+      "Cloud9.EDI.PDS.Deployment": "Unenlisted"
+    }
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/Process_CHC_InboundFiles_Worker.odx",
+      "toName": "Process_CHC_InboundFiles_Worker.odx",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Orchestrations_Process_CHC_InboundFiles_Worker.odx.json"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.MPType_DeleteMailFileResp",
+      "toName": "MPType_DeleteMailFileResp",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.MPType_DeleteMailFileResp.json",
+      "message": "msg_DeleteMailFileResp"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.MPType_GetMailFileResp",
+      "toName": "MPType_GetMailFileResp",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.MPType_GetMailFileResp.json",
+      "message": "msg_GetMailFileResp"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.MPType_GetMailFileReq",
+      "toName": "MPType_GetMailFileReq",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.MPType_GetMailFileReq.json",
+      "message": "msg_GetMailFileReq"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.MPType_GetMailFileListResp",
+      "toName": "MPType_GetMailFileListResp",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.MPType_GetMailFileListResp.json",
+      "message": "msg_GetMailFileListResp"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.MPType_GetMailFileListReq",
+      "toName": "MPType_GetMailFileListReq",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.MPType_GetMailFileListReq.json",
+      "message": "msg_GetMailFileListReq"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.MPType_GetPracticeEDISettingsResp",
+      "toName": "MPType_GetPracticeEDISettingsResp",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.MPType_GetPracticeEDISettingsResp.json",
+      "message": "msg_GetPracticeEDISettingsResp"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.MPType_GetPracticeEDISettingsReq",
+      "toName": "MPType_GetPracticeEDISettingsReq",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.MPType_GetPracticeEDISettingsReq.json",
+      "message": "msg_GetPracticeEDISettingsReq"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.MPType_UpdateProcessParametersResp",
+      "toName": "MPType_UpdateProcessParametersResp",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.MPType_UpdateProcessParametersResp.json",
+      "message": "msg_UpdateProcessParametersResp"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.MPType_UpdateProcessParametersReq",
+      "toName": "MPType_UpdateProcessParametersReq",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.MPType_UpdateProcessParametersReq.json",
+      "message": "msg_UpdateProcessParametersReq"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.MPType_DeleteMailFileReq",
+      "toName": "MPType_DeleteMailFileReq",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.MPType_DeleteMailFileReq.json",
+      "message": "msg_DeleteMailFileReq"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.X12.MPType_GetMailFileListElement",
+      "toName": "MPType_GetMailFileListElement",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.X12.MPType_GetMailFileListElement.json",
+      "message": "msg_GetMailFileListElement"
+    },
+    {
+      "type": "usesMap",
+      "to": "map:Cloud9.BizTalk.X12.CHC_PracticeEDISettings_To_GetMailFileListReq",
+      "toName": "Cloud9.BizTalk.X12.CHC_PracticeEDISettings_To_GetMailFileListReq",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.X12.CHC_PracticeEDISettings_To_GetMailFileListReq.json",
+      "output": "msg_GetMailFileListReq.Body",
+      "input": "msg_GetPracticeEDISettingsResp.Body",
+      "line": 1506
+    },
+    {
+      "type": "usesMap",
+      "to": "map:Cloud9.BizTalk.X12.Maps.CHC_GetMailFileListReq_GetMailFileRespElement_To_GetMailFileReq",
+      "toName": "Cloud9.BizTalk.X12.Maps.CHC_GetMailFileListReq_GetMailFileRespElement_To_GetMailFileReq",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.CHC_GetMailFileListReq_GetMailFileRespElement_To_GetMailFileReq.json",
+      "output": "msg_GetMailFileReq.Body",
+      "input": "msg_GetMailFileListReq.Body, msg_GetMailFileListElement.Body",
+      "line": 1571
+    },
+    {
+      "type": "usesMap",
+      "to": "map:Cloud9.BizTalk.X12.Maps.CHC_GetMailFileListReq_GetMailFileRespElement_To_DeleteMailFileReq",
+      "toName": "Cloud9.BizTalk.X12.Maps.CHC_GetMailFileListReq_GetMailFileRespElement_To_DeleteMailFileReq",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.CHC_GetMailFileListReq_GetMailFileRespElement_To_DeleteMailFileReq.json",
+      "output": "msg_DeleteMailFileReq.Body",
+      "input": "msg_GetMailFileListReq.Body, msg_GetMailFileListElement.Body",
+      "line": 1621
+    },
+    {
+      "type": "startsOrchestration",
+      "to": "orchestration:Cloud9.BizTalk.Common.AddLog",
+      "toName": "AddLog",
+      "toType": "orchestration",
+      "toFile": "adjacency/orchestration/Cloud9.BizTalk.Common.AddLog.json",
+      "line": 1647
+    },
+    {
+      "type": "invokesProc",
+      "to": "sqlproc:PracticeDB.BTS.GetPracticeEDISettings",
+      "toName": "BTS.GetPracticeEDISettings",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/PracticeDB.BTS.GetPracticeEDISettings.json",
+      "line": 1475,
+      "via": "dynamic WCF-SQL send port (WCF.Action set in code)"
+    },
+    {
+      "type": "callsMethod",
+      "to": "method:Cloud9.BizTalk.Helper.EmdeonConversion.DecodePayload",
+      "toName": "EmdeonConversion.DecodePayload",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.EmdeonConversion.DecodePayload.json",
+      "line": 1601
+    },
+    {
+      "type": "callsMethod",
+      "to": "method:Cloud9.BizTalk.Helper.XLangMessageHelpers.CreateCustomBTXMessageFromString",
+      "toName": "XLangMessageHelpers.CreateCustomBTXMessageFromString",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.XLangMessageHelpers.CreateCustomBTXMessageFromString.json",
+      "line": 1607
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetPracticeEDISettingsDynamic_182f4e020577c79e",
+      "toName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetPracticeEDISettingsDynamic_182f4e020577c79e",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetPracticeEDISettingsDynamic_182f4e020577c79e.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "4",
+      "logicalPort": "Port_GetPracticeEDISettingsDynamic"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetMailFileList_HTTP_Dynamic_182f4e020577c79e",
+      "toName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetMailFileList_HTTP_Dynamic_182f4e020577c79e",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetMailFileList_HTTP_Dynamic_182f4e020577c79e.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "4",
+      "logicalPort": "Port_GetMailFileList_HTTP_Dynamic"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetMailFile_HTTP_Dynamic_182f4e020577c79e",
+      "toName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetMailFile_HTTP_Dynamic_182f4e020577c79e",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetMailFile_HTTP_Dynamic_182f4e020577c79e.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "4",
+      "logicalPort": "Port_GetMailFile_HTTP_Dynamic"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.Deployment/SP_CHC_Inbound",
+      "toName": "SP_CHC_Inbound",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.Deployment_SP_CHC_Inbound.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "Port_SaveEDIFile"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_DeleteMailFile_HTTP_Dynamic_182f4e020577c79e",
+      "toName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_DeleteMailFile_HTTP_Dynamic_182f4e020577c79e",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_DeleteMailFile_HTTP_Dynamic_182f4e020577c79e.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "4",
+      "logicalPort": "Port_DeleteMailFile_HTTP_Dynamic"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.Deployment/WCF_UPDATE_PROCESS_PARAMETERS",
+      "toName": "WCF_UPDATE_PROCESS_PARAMETERS",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.Deployment_WCF_UPDATE_PROCESS_PARAMETERS.json",
+      "bindingSet": "Cloud9.EDI.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "Port_SendUpdateProcessParameters"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.PDS.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetPracticeEDISettingsDynamic_182f4e020577c79e",
+      "toName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetPracticeEDISettingsDynamic_182f4e020577c79e",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.PDS.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetPracticeEDISettingsDynamic_182f4e020577c79e.json",
+      "bindingSet": "Cloud9.EDI.PDS.Deployment",
+      "bindingOption": "4",
+      "logicalPort": "Port_GetPracticeEDISettingsDynamic"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.PDS.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetMailFileList_HTTP_Dynamic_182f4e020577c79e",
+      "toName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetMailFileList_HTTP_Dynamic_182f4e020577c79e",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.PDS.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetMailFileList_HTTP_Dynamic_182f4e020577c79e.json",
+      "bindingSet": "Cloud9.EDI.PDS.Deployment",
+      "bindingOption": "4",
+      "logicalPort": "Port_GetMailFileList_HTTP_Dynamic"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.PDS.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetMailFile_HTTP_Dynamic_182f4e020577c79e",
+      "toName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetMailFile_HTTP_Dynamic_182f4e020577c79e",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.PDS.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetMailFile_HTTP_Dynamic_182f4e020577c79e.json",
+      "bindingSet": "Cloud9.EDI.PDS.Deployment",
+      "bindingOption": "4",
+      "logicalPort": "Port_GetMailFile_HTTP_Dynamic"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.PDS.Deployment/SP_CHC_Inbound",
+      "toName": "SP_CHC_Inbound",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.PDS.Deployment_SP_CHC_Inbound.json",
+      "bindingSet": "Cloud9.EDI.PDS.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "Port_SaveEDIFile"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.PDS.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_DeleteMailFile_HTTP_Dynamic_182f4e020577c79e",
+      "toName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_DeleteMailFile_HTTP_Dynamic_182f4e020577c79e",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.PDS.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_DeleteMailFile_HTTP_Dynamic_182f4e020577c79e.json",
+      "bindingSet": "Cloud9.EDI.PDS.Deployment",
+      "bindingOption": "4",
+      "logicalPort": "Port_DeleteMailFile_HTTP_Dynamic"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.EDI.PDS.Deployment/WCF_UPDATE_PROCESS_PARAMETERS",
+      "toName": "WCF_UPDATE_PROCESS_PARAMETERS",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.EDI.PDS.Deployment_WCF_UPDATE_PROCESS_PARAMETERS.json",
+      "bindingSet": "Cloud9.EDI.PDS.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "Port_SendUpdateProcessParameters"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "callsOrchestration",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Controller",
+      "fromName": "Process_CHC_InboundFiles_Controller",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Controller.json",
+      "line": 451
+    },
+    {
+      "type": "implementedBy",
+      "from": "flowstep:CHC-02-Download",
+      "fromName": "Download, decode and delete mailbox files",
+      "fromType": "flowstep",
+      "fromFile": "adjacency/flowstep/CHC-02-Download.json",
+      "curated": true
+    }
+  ]
+}

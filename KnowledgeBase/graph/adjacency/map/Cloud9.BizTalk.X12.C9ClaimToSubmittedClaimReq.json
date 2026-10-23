@@ -1,0 +1,44 @@
+{
+  "node": {
+    "id": "map:Cloud9.BizTalk.X12.C9ClaimToSubmittedClaimReq",
+    "type": "map",
+    "name": "Cloud9.BizTalk.X12.C9ClaimToSubmittedClaimReq",
+    "readableSummary": "KnowledgeBase/map-summaries/C9ClaimToSubmittedClaimReq.txt",
+    "targetSchema": "Cloud9.BizTalk.Schemas.SC_TableOperation_BTS_SubmittedClaims",
+    "inlineScripts": [
+      "CSharp:NewGUID"
+    ],
+    "functoidCount": 2,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/C9ClaimToSubmittedClaimReq.btm",
+    "sourceSchema": "Cloud9.BizTalk.Schemas.Canonical.ClaimCanonical",
+    "linkCount": 9,
+    "sourceRoot": "Claim",
+    "targetRoot": "Insert"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/C9ClaimToSubmittedClaimReq.btm",
+      "toName": "C9ClaimToSubmittedClaimReq.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_C9ClaimToSubmittedClaimReq.btm.json"
+    },
+    {
+      "type": "sourceSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.Canonical.ClaimCanonical",
+      "toName": "Cloud9.BizTalk.Schemas.Canonical.ClaimCanonical",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.Canonical.ClaimCanonical.json",
+      "root": "Claim"
+    },
+    {
+      "type": "targetSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.SC_TableOperation_BTS_SubmittedClaims",
+      "toName": "Cloud9.BizTalk.Schemas.SC_TableOperation_BTS_SubmittedClaims",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.SC_TableOperation_BTS_SubmittedClaims.json",
+      "root": "Insert"
+    }
+  ],
+  "incoming": []
+}

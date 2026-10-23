@@ -1,0 +1,25 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.ALV_ProcedureResultSet_BTS_GetApplicationLookupValues",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.ALV_ProcedureResultSet_BTS_GetApplicationLookupValues",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ApplicationLookupValue/ALV_ProcedureResultSet.BTS.GetApplicationLookupValues.xsd",
+    "rootElements": [
+      "StoredProcedureResultSet0",
+      "ArrayOfStoredProcedureResultSet0"
+    ],
+    "kind": "wcf-sql-result-set",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetApplicationLookupValues",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ApplicationLookupValue/ALV_ProcedureResultSet.BTS.GetApplicationLookupValues.xsd",
+      "toName": "ALV_ProcedureResultSet.BTS.GetApplicationLookupValues.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_ApplicationLookupValue_ALV_ProcedureResultSet.BTS.GetApplicationLookupValues.xsd.json"
+    }
+  ],
+  "incoming": []
+}

@@ -1,0 +1,55 @@
+{
+  "node": {
+    "id": "map:Cloud9.BizTalk.X12.Maps.CHC_277A_To_ClaimStatusCanonical",
+    "type": "map",
+    "name": "Cloud9.BizTalk.X12.Maps.CHC_277A_To_ClaimStatusCanonical",
+    "readableSummary": "KnowledgeBase/map-summaries/CHC_277A_To_ClaimStatusCanonical.txt",
+    "targetSchema": "Cloud9.BizTalk.Schemas.Canonical.ClaimStatus",
+    "inlineScripts": [
+      "CSharp:ParseClaimNumber"
+    ],
+    "functoidCount": 2,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/CHC_277A_To_ClaimStatusCanonical.btm",
+    "sourceSchema": "Cloud9.BizTalk.X12.Schemas.CHC_X12_00501_277_A",
+    "linkCount": 5,
+    "sourceRoot": "X12_00501_277_A",
+    "targetRoot": "ClaimStatus"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/CHC_277A_To_ClaimStatusCanonical.btm",
+      "toName": "CHC_277A_To_ClaimStatusCanonical.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_CHC_277A_To_ClaimStatusCanonical.btm.json"
+    },
+    {
+      "type": "sourceSchema",
+      "to": "schema:Cloud9.BizTalk.X12.Schemas.CHC_X12_00501_277_A",
+      "toName": "Cloud9.BizTalk.X12.Schemas.CHC_X12_00501_277_A",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.X12.Schemas.CHC_X12_00501_277_A.json",
+      "root": "X12_00501_277_A"
+    },
+    {
+      "type": "targetSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.Canonical.ClaimStatus",
+      "toName": "Cloud9.BizTalk.Schemas.Canonical.ClaimStatus",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.Canonical.ClaimStatus.json",
+      "root": "ClaimStatus"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "usesMap",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_277AClaimsStatus",
+      "fromName": "Process_CHC_277AClaimsStatus",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_277AClaimsStatus.json",
+      "output": "ClaimStatusCanonical.Body",
+      "input": "CHC227A.Body",
+      "line": 393
+    }
+  ]
+}

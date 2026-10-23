@@ -1,0 +1,31 @@
+{
+  "node": {
+    "id": "receivelocation:Cloud9.BizTalk.PDS.Deployment/RL.PollingIncomingMessage",
+    "type": "receivelocation",
+    "name": "RL.PollingIncomingMessage",
+    "enabled": "false",
+    "bindingSet": "Cloud9.BizTalk.PDS.Deployment",
+    "receivePipeline": "Microsoft.BizTalk.DefaultPipelines.XMLReceive",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.PDS.Deployment/PortBindingsMaster.xml",
+    "address": "${ADDR_DB_CLOUD9COMMON}?InboundId=IncomingMessage",
+    "serviceWindow": "2000-01-01T05:00:00 to 2000-01-01T04:59:59 (enabled=false)",
+    "transport": "WCF-Custom"
+  },
+  "outgoing": [
+    {
+      "type": "partOf",
+      "to": "receiveport:Cloud9.BizTalk.PDS.Deployment/RP.PollingIncomingMessage",
+      "toName": "RP.PollingIncomingMessage",
+      "toType": "receiveport",
+      "toFile": "adjacency/receiveport/Cloud9.BizTalk.PDS.Deployment_RP.PollingIncomingMessage.json"
+    },
+    {
+      "type": "usesSetting",
+      "to": "setting:Cloud9.BizTalk.PDS.Deployment/ADDR_DB_CLOUD9COMMON",
+      "toName": "ADDR_DB_CLOUD9COMMON",
+      "toType": "setting",
+      "toFile": "adjacency/setting/Cloud9.BizTalk.PDS.Deployment_ADDR_DB_CLOUD9COMMON.json"
+    }
+  ],
+  "incoming": []
+}

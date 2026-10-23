@@ -1,0 +1,43 @@
+{
+  "node": {
+    "id": "class:Cloud9.PartnersShared.ViewModels.Security",
+    "type": "class",
+    "name": "Cloud9.PartnersShared.ViewModels.Security",
+    "path": "Cloud9.HL7.WebAPI/Cloud9.HL7.BLL/ViewModels/Security.cs",
+    "visibility": "public",
+    "kind": "class",
+    "line": 8
+  },
+  "outgoing": [
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.PartnersShared.ViewModels.Security.ComputeHashKey",
+      "toName": "Security.ComputeHashKey",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.PartnersShared.ViewModels.Security.ComputeHashKey.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.PartnersShared.ViewModels.Security.Encrypt",
+      "toName": "Security.Encrypt",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.PartnersShared.ViewModels.Security.Encrypt.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.PartnersShared.ViewModels.Security.Decrypt",
+      "toName": "Security.Decrypt",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.PartnersShared.ViewModels.Security.Decrypt.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.BLL/ViewModels/Security.cs",
+      "fromName": "Security.cs",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.HL7.WebAPI_Cloud9.HL7.BLL_ViewModels_Security.cs.json"
+    }
+  ]
+}

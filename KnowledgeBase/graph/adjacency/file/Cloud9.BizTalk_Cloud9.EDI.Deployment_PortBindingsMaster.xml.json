@@ -1,0 +1,271 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.EDI.Deployment/PortBindingsMaster.xml",
+    "type": "file",
+    "name": "PortBindingsMaster.xml",
+    "kind": "binding",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.Deployment/PortBindingsMaster.xml"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "definedIn",
+      "from": "sendport:Cloud9.EDI.Deployment/SP_CH276_HTTP",
+      "fromName": "SP_CH276_HTTP",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.Deployment_SP_CH276_HTTP.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "sendport:Cloud9.EDI.Deployment/SP_CHC276_FILE",
+      "fromName": "SP_CHC276_FILE",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.Deployment_SP_CHC276_FILE.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "sendport:Cloud9.EDI.Deployment/SP_UpdateProcessParameters_WCF",
+      "fromName": "SP_UpdateProcessParameters_WCF",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.Deployment_SP_UpdateProcessParameters_WCF.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "sendport:Cloud9.EDI.Deployment/SP_BizTalkCloud9Common_WCF",
+      "fromName": "SP_BizTalkCloud9Common_WCF",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.Deployment_SP_BizTalkCloud9Common_WCF.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "sendport:Cloud9.EDI.Deployment/SP_GetPracticeConfigurationForEmdeon_WCF",
+      "fromName": "SP_GetPracticeConfigurationForEmdeon_WCF",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.Deployment_SP_GetPracticeConfigurationForEmdeon_WCF.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "sendport:Cloud9.EDI.Deployment/SP_SD835_Web_TEMP_FILE",
+      "fromName": "SP_SD835_Web_TEMP_FILE",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.Deployment_SP_SD835_Web_TEMP_FILE.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "sendport:Cloud9.EDI.Deployment/SP_SubmittedClaim_WCF",
+      "fromName": "SP_SubmittedClaim_WCF",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.Deployment_SP_SubmittedClaim_WCF.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "sendport:Cloud9.EDI.Deployment/SP_GetPracticeConfigurationForClaim_WCF",
+      "fromName": "SP_GetPracticeConfigurationForClaim_WCF",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.Deployment_SP_GetPracticeConfigurationForClaim_WCF.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "sendport:Cloud9.EDI.Deployment/SP_CH_837_SFTP",
+      "fromName": "SP_CH_837_SFTP",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.Deployment_SP_CH_837_SFTP.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "sendport:Cloud9.EDI.Deployment/SP_CHC835ToBBVA_FILE",
+      "fromName": "SP_CHC835ToBBVA_FILE",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.Deployment_SP_CHC835ToBBVA_FILE.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_ChannelHealth_271Eligibility_UpdatePatientInsurancePolicyByPipGUIDPort_182f4e020577c79e",
+      "fromName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_ChannelHealth_271Eligibility_UpdatePatientInsurancePolicyByPipGUIDPort_182f4e020577c79e",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_ChannelHealth_271Eligibility_UpdatePatientInsurancePolicyByPipGUIDPort_182f4e020577c79e.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_ChannelHealth_271Eligibility_AddImportLogPort_182f4e020577c79e",
+      "fromName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_ChannelHealth_271Eligibility_AddImportLogPort_182f4e020577c79e",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_ChannelHealth_271Eligibility_AddImportLogPort_182f4e020577c79e.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetMailFileList_HTTP_Dynamic_182f4e020577c79e",
+      "fromName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetMailFileList_HTTP_Dynamic_182f4e020577c79e",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetMailFileList_HTTP_Dynamic_182f4e020577c79e.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetMailFile_HTTP_Dynamic_182f4e020577c79e",
+      "fromName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetMailFile_HTTP_Dynamic_182f4e020577c79e",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetMailFile_HTTP_Dynamic_182f4e020577c79e.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_DeleteMailFile_HTTP_Dynamic_182f4e020577c79e",
+      "fromName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_DeleteMailFile_HTTP_Dynamic_182f4e020577c79e",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_DeleteMailFile_HTTP_Dynamic_182f4e020577c79e.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "sendport:Cloud9.EDI.Deployment/SP_CHC_Inbound",
+      "fromName": "SP_CHC_Inbound",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.Deployment_SP_CHC_Inbound.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "sendport:Cloud9.EDI.Deployment/SP_CH277_FILE",
+      "fromName": "SP_CH277_FILE",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.Deployment_SP_CH277_FILE.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "sendport:Cloud9.EDI.Deployment/SP_CHC837ToSD_SFTP",
+      "fromName": "SP_CHC837ToSD_SFTP",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.Deployment_SP_CHC837ToSD_SFTP.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "sendport:Cloud9.EDI.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_SendClaim_HTTP_Dynamic_182f4e020577c79e",
+      "fromName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_SendClaim_HTTP_Dynamic_182f4e020577c79e",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_SendClaim_HTTP_Dynamic_182f4e020577c79e.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "sendport:Cloud9.EDI.Deployment/SP_CHC276ToSD_SFTP",
+      "fromName": "SP_CHC276ToSD_SFTP",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.Deployment_SP_CHC276ToSD_SFTP.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "sendport:Cloud9.EDI.Deployment/SP_CHC277ToSD_SFTP",
+      "fromName": "SP_CHC277ToSD_SFTP",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.Deployment_SP_CHC277ToSD_SFTP.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "sendport:Cloud9.EDI.Deployment/SP_CHC835ToSD_SFTP",
+      "fromName": "SP_CHC835ToSD_SFTP",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.Deployment_SP_CHC835ToSD_SFTP.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "sendport:Cloud9.EDI.Deployment/SP_ACKS",
+      "fromName": "SP_ACKS",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.Deployment_SP_ACKS.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "sendport:Cloud9.EDI.Deployment/SP_CHC837D_ARCHIVE",
+      "fromName": "SP_CHC837D_ARCHIVE",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.Deployment_SP_CHC837D_ARCHIVE.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "receiveport:Cloud9.EDI.Deployment/RP_CHC835ToBBVA",
+      "fromName": "RP_CHC835ToBBVA",
+      "fromType": "receiveport",
+      "fromFile": "adjacency/receiveport/Cloud9.EDI.Deployment_RP_CHC835ToBBVA.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "receiveport:Cloud9.EDI.Deployment/RP_QueueClaimsToProcess",
+      "fromName": "RP_QueueClaimsToProcess",
+      "fromType": "receiveport",
+      "fromFile": "adjacency/receiveport/Cloud9.EDI.Deployment_RP_QueueClaimsToProcess.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "receiveport:Cloud9.EDI.Deployment/RP_CHCInboundToProcess",
+      "fromName": "RP_CHCInboundToProcess",
+      "fromType": "receiveport",
+      "fromFile": "adjacency/receiveport/Cloud9.EDI.Deployment_RP_CHCInboundToProcess.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "receiveport:Cloud9.EDI.Deployment/RP_BBVA835_Insurance",
+      "fromName": "RP_BBVA835_Insurance",
+      "fromType": "receiveport",
+      "fromFile": "adjacency/receiveport/Cloud9.EDI.Deployment_RP_BBVA835_Insurance.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "receiveport:Cloud9.EDI.Deployment/RP_BBVA835_Patient",
+      "fromName": "RP_BBVA835_Patient",
+      "fromType": "receiveport",
+      "fromFile": "adjacency/receiveport/Cloud9.EDI.Deployment_RP_BBVA835_Patient.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "receiveport:Cloud9.EDI.Deployment/RP_OutgoingMessagesToProcess",
+      "fromName": "RP_OutgoingMessagesToProcess",
+      "fromType": "receiveport",
+      "fromFile": "adjacency/receiveport/Cloud9.EDI.Deployment_RP_OutgoingMessagesToProcess.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "receiveport:Cloud9.EDI.Deployment/RP_CHC_Inbound_EDI",
+      "fromName": "RP_CHC_Inbound_EDI",
+      "fromType": "receiveport",
+      "fromFile": "adjacency/receiveport/Cloud9.EDI.Deployment_RP_CHC_Inbound_EDI.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "receiveport:Cloud9.EDI.Deployment/RP_CHC_Inbound_277_Unsolicitated_EDI",
+      "fromName": "RP_CHC_Inbound_277_Unsolicitated_EDI",
+      "fromType": "receiveport",
+      "fromFile": "adjacency/receiveport/Cloud9.EDI.Deployment_RP_CHC_Inbound_277_Unsolicitated_EDI.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "receiveport:Cloud9.EDI.Deployment/RP_SD835_Patient",
+      "fromName": "RP_SD835_Patient",
+      "fromType": "receiveport",
+      "fromFile": "adjacency/receiveport/Cloud9.EDI.Deployment_RP_SD835_Patient.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "receiveport:Cloud9.EDI.Deployment/RP_ChannelHealth271",
+      "fromName": "RP_ChannelHealth271",
+      "fromType": "receiveport",
+      "fromFile": "adjacency/receiveport/Cloud9.EDI.Deployment_RP_ChannelHealth271.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "receiveport:Cloud9.EDI.Deployment/RP_ChangeHealthCare271",
+      "fromName": "RP_ChangeHealthCare271",
+      "fromType": "receiveport",
+      "fromFile": "adjacency/receiveport/Cloud9.EDI.Deployment_RP_ChangeHealthCare271.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "receiveport:Cloud9.EDI.Deployment/RP_CHC837ToBBVA",
+      "fromName": "RP_CHC837ToBBVA",
+      "fromType": "receiveport",
+      "fromFile": "adjacency/receiveport/Cloud9.EDI.Deployment_RP_CHC837ToBBVA.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "receiveport:Cloud9.EDI.Deployment/RP_ChangeHealth_271",
+      "fromName": "RP_ChangeHealth_271",
+      "fromType": "receiveport",
+      "fromFile": "adjacency/receiveport/Cloud9.EDI.Deployment_RP_ChangeHealth_271.json"
+    }
+  ]
+}

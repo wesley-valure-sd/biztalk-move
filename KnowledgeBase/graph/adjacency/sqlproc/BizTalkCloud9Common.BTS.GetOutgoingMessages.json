@@ -1,0 +1,43 @@
+{
+  "node": {
+    "id": "sqlproc:BizTalkCloud9Common.BTS.GetOutgoingMessages",
+    "type": "sqlproc",
+    "name": "BTS.GetOutgoingMessages",
+    "database": "BizTalkCloud9Common",
+    "definedInRepo": true,
+    "parameters": [],
+    "path": "Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored Procedures/GetOutgoingMessages.sql"
+  },
+  "outgoing": [
+    {
+      "type": "reads",
+      "to": "sqltable:BizTalkCloud9Common.BTS.OutgoingMessage",
+      "toName": "BTS.OutgoingMessage",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/BizTalkCloud9Common.BTS.OutgoingMessage.json"
+    },
+    {
+      "type": "reads",
+      "to": "sqltable:BizTalkCloud9Common.BTS.OutgoingMessageAttribute",
+      "toName": "BTS.OutgoingMessageAttribute",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/BizTalkCloud9Common.BTS.OutgoingMessageAttribute.json"
+    },
+    {
+      "type": "writes",
+      "to": "sqltable:BizTalkCloud9Common.BTS.OutgoingMessage",
+      "toName": "BTS.OutgoingMessage",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/BizTalkCloud9Common.BTS.OutgoingMessage.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored Procedures/GetOutgoingMessages.sql",
+      "fromName": "GetOutgoingMessages.sql",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Stored_Procedures_GetOutgoingMessages.sql.json"
+    }
+  ]
+}

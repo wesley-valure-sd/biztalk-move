@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "setting:Cloud9.Common.Deployment/ADDR_DB_CLOUD9COMMON",
+    "type": "setting",
+    "name": "ADDR_DB_CLOUD9COMMON",
+    "path": "Cloud9.BizTalk/Cloud9.Common.Deployment/SettingsFileGenerator.xml",
+    "bindingSet": "Cloud9.Common.Deployment",
+    "valuesByEnvironment": {
+      "Default Values": "mssql://localhost//BizTalkCloud9Common",
+      "Local Dev (LocalSettings)": "mssql://localhost//BizTalkCloud9Common",
+      "AWARE Development (AWARESettings)": "mssql://localhost//BizTalkCloud9Common",
+      "LAB (LABSettings)": "mssql://lab-db1/LABDB1INSTANCE/BizTalkCloud9Common",
+      "LAB2 (LAB2Settings)": "mssql://lab-db1/LABDB1INSTANCE/BizTalkCloud9Common",
+      "LAB3 (LAB3Settings)": "mssql://lab-db1/LABDB1INSTANCE/BizTalkCloud9Common",
+      "PROD (C9Prod1_Settings)": "mssql://atl-dbc1//BizTalkCloud9Common",
+      "PROD (C9Prod2_Settings)": "mssql://us-ea1-a2-dbs7/biztalk,1435/BizTalkCloud9Common",
+      "LAB (SDLab1_Settings)": "mssql://c9-t-sql-01//BizTalkCloud9Common",
+      "PROD (SDProd1_Settings)": "mssql://c9-p-sql-01//BizTalkCloud9Common"
+    }
+  },
+  "outgoing": [],
+  "incoming": []
+}

@@ -1,0 +1,49 @@
+{
+  "node": {
+    "id": "sqlproc:BizTalkCloud9Common.BTS.SetStagingPatientMessageStatus",
+    "type": "sqlproc",
+    "name": "BTS.SetStagingPatientMessageStatus",
+    "database": "BizTalkCloud9Common",
+    "definedInRepo": true,
+    "parameters": [
+      "@hisStagingID BIGINT",
+      "@hisStatus SMALLINT",
+      "@hisModifiedBy nvarchar(50)"
+    ],
+    "path": "Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored Procedures/SetStagingPatientMessageStatus.sql"
+  },
+  "outgoing": [
+    {
+      "type": "writes",
+      "to": "sqltable:BizTalkCloud9Common.BTS.HL7InboundStaging",
+      "toName": "BTS.HL7InboundStaging",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/BizTalkCloud9Common.BTS.HL7InboundStaging.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored Procedures/SetStagingPatientMessageStatus.sql",
+      "fromName": "SetStagingPatientMessageStatus.sql",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Stored_Procedures_SetStagingPatientMessageStatus.sql.json"
+    },
+    {
+      "type": "describesParametersOf",
+      "from": "schema:Cloud9.BizTalk.Schemas.SSPS_TypedProcedure_BTS",
+      "fromName": "Cloud9.BizTalk.Schemas.SSPS_TypedProcedure_BTS",
+      "fromType": "schema",
+      "fromFile": "adjacency/schema/Cloud9.BizTalk.Schemas.SSPS_TypedProcedure_BTS.json"
+    },
+    {
+      "type": "invokesProc",
+      "from": "orchestration:Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient",
+      "fromName": "ProcessHL7MessagesForPatient",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient.json",
+      "line": 2965,
+      "via": "static send port operation SetStagingPatientMessageStatus (BtsActionMapping)"
+    }
+  ]
+}

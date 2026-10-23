@@ -1,0 +1,59 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.Cloud9InsertPatient.UpsertPatient_BTS",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.Cloud9InsertPatient.UpsertPatient_BTS",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Cloud9InsertPatient/UpsertPatient_BTS.xsd",
+    "rootElements": [
+      "UpsertPatient",
+      "UpsertPatientResponse"
+    ],
+    "kind": "wcf-sql-typed-procedure",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS",
+    "sqlActions": [
+      "TypedProcedure/BTS/UpsertPatient"
+    ]
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Cloud9InsertPatient/UpsertPatient_BTS.xsd",
+      "toName": "UpsertPatient_BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_Cloud9InsertPatient_UpsertPatient_BTS.xsd.json"
+    },
+    {
+      "type": "describesParametersOf",
+      "to": "sqlproc:PracticeDB.BTS.UpsertPatient",
+      "toName": "BTS.UpsertPatient",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/PracticeDB.BTS.UpsertPatient.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.Epic.Maps.ADT_A28_A31_26_CanonicalToUpsertPatient",
+      "fromName": "Cloud9.BizTalk.Epic.Maps.ADT_A28_A31_26_CanonicalToUpsertPatient",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.Epic.Maps.ADT_A28_A31_26_CanonicalToUpsertPatient.json",
+      "root": "UpsertPatient"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.Epic.MPType_UpsertPatientResp",
+      "fromName": "MPType_UpsertPatientResp",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_UpsertPatientResp.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.Cloud9InsertPatient.UpsertPatient_BTS.UpsertPatientResponse"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.Epic.MPType_UpsertPatientReq",
+      "fromName": "MPType_UpsertPatientReq",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_UpsertPatientReq.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.Cloud9InsertPatient.UpsertPatient_BTS.UpsertPatient"
+    }
+  ]
+}

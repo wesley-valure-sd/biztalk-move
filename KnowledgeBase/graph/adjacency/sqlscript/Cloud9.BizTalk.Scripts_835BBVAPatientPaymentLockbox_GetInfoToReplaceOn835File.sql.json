@@ -1,0 +1,42 @@
+{
+  "node": {
+    "id": "sqlscript:Cloud9.BizTalk.Scripts/835BBVAPatientPaymentLockbox/GetInfoToReplaceOn835File.sql",
+    "type": "sqlscript",
+    "name": "GetInfoToReplaceOn835File.sql",
+    "path": "Cloud9.BizTalk.Scripts/835BBVAPatientPaymentLockbox/GetInfoToReplaceOn835File.sql",
+    "purpose": "Get Patient info to replace on 835 EDI File",
+    "folder": "835BBVAPatientPaymentLockbox",
+    "database": "PRACTICE-DB"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk.Scripts/835BBVAPatientPaymentLockbox/GetInfoToReplaceOn835File.sql",
+      "toName": "GetInfoToReplaceOn835File.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Scripts_835BBVAPatientPaymentLockbox_GetInfoToReplaceOn835File.sql.json"
+    },
+    {
+      "type": "queries",
+      "to": "sqltable:PracticeDB.dbo.Person",
+      "toName": "dbo.Person",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/PracticeDB.dbo.Person.json"
+    },
+    {
+      "type": "queries",
+      "to": "sqltable:PracticeDB.dbo.Patient",
+      "toName": "dbo.Patient",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/PracticeDB.dbo.Patient.json"
+    },
+    {
+      "type": "queries",
+      "to": "sqltable:PracticeDB.dbo.PersonPerson",
+      "toName": "dbo.PersonPerson",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/PracticeDB.dbo.PersonPerson.json"
+    }
+  ],
+  "incoming": []
+}

@@ -1,0 +1,19 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk.Scripts/271ChannelHealthEligibility/GetImportLogsEligibilitySuccess.sql",
+    "type": "file",
+    "name": "GetImportLogsEligibilitySuccess.sql",
+    "kind": "sql",
+    "path": "Cloud9.BizTalk.Scripts/271ChannelHealthEligibility/GetImportLogsEligibilitySuccess.sql"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "definedIn",
+      "from": "sqlscript:Cloud9.BizTalk.Scripts/271ChannelHealthEligibility/GetImportLogsEligibilitySuccess.sql",
+      "fromName": "GetImportLogsEligibilitySuccess.sql",
+      "fromType": "sqlscript",
+      "fromFile": "adjacency/sqlscript/Cloud9.BizTalk.Scripts_271ChannelHealthEligibility_GetImportLogsEligibilitySuccess.sql.json"
+    }
+  ]
+}

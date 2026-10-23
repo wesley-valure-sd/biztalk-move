@@ -1,0 +1,27 @@
+{
+  "node": {
+    "id": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.WebAPI/DTO/IncomingMessageDTO.cs",
+    "type": "file",
+    "name": "IncomingMessageDTO.cs",
+    "kind": "csharp",
+    "path": "Cloud9.HL7.WebAPI/Cloud9.HL7.WebAPI/DTO/IncomingMessageDTO.cs"
+  },
+  "outgoing": [
+    {
+      "type": "defines",
+      "to": "class:Cloud9.HL7.WebAPI.DTO.IncomingMessageDTO",
+      "toName": "Cloud9.HL7.WebAPI.DTO.IncomingMessageDTO",
+      "toType": "class",
+      "toFile": "adjacency/class/Cloud9.HL7.WebAPI.DTO.IncomingMessageDTO.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.HL7.WebAPI",
+      "fromName": "Cloud9.HL7.WebAPI",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.HL7.WebAPI.json"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.HelperTest.OutboundAPITest.TestSendLocationGUID",
+    "type": "method",
+    "name": "OutboundAPITest.TestSendLocationGUID",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.HelperTest/OutboundAPITest.cs",
+    "class": "Cloud9.BizTalk.HelperTest.OutboundAPITest",
+    "line": 43,
+    "signatures": [
+      "public void TestSendLocationGUID()"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.HelperTest.OutboundAPITest",
+      "fromName": "Cloud9.BizTalk.HelperTest.OutboundAPITest",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.HelperTest.OutboundAPITest.json"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "node": {
+    "id": "sqlproc:PracticeDB.BTS.AddTodoItem",
+    "type": "sqlproc",
+    "name": "BTS.AddTodoItem",
+    "database": "PracticeDB (one database per practice; resolved at run time from BTS.PracticeConfig.pcInstanceAddress)",
+    "definedInRepo": false
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "describesParametersOf",
+      "from": "schema:Cloud9.BizTalk.Schemas.AddTodoItemTypedProcedure_BTS",
+      "fromName": "Cloud9.BizTalk.Schemas.AddTodoItemTypedProcedure_BTS",
+      "fromType": "schema",
+      "fromFile": "adjacency/schema/Cloud9.BizTalk.Schemas.AddTodoItemTypedProcedure_BTS.json"
+    },
+    {
+      "type": "invokesProc",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_835Insurance",
+      "fromName": "Process_CHC_835Insurance",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_835Insurance.json",
+      "line": 1274,
+      "via": "dynamic WCF-SQL send port (WCF.Action set in code)"
+    },
+    {
+      "type": "invokesProc",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus",
+      "fromName": "Process_CHC_ClaimsStatus",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus.json",
+      "line": 514,
+      "via": "dynamic WCF-SQL send port (WCF.Action set in code)"
+    },
+    {
+      "type": "implementedBy",
+      "from": "flowstep:CHC-05-ReversalOrPost",
+      "fromName": "For each CLP: reversal to-do or insurance post",
+      "fromType": "flowstep",
+      "fromFile": "adjacency/flowstep/CHC-05-ReversalOrPost.json",
+      "curated": true
+    }
+  ]
+}

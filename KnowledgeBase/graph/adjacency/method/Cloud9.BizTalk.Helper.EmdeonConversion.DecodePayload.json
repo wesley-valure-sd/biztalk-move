@@ -1,0 +1,39 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.Helper.EmdeonConversion.DecodePayload",
+    "type": "method",
+    "name": "EmdeonConversion.DecodePayload",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/EmdeonHelper.cs",
+    "class": "Cloud9.BizTalk.Helper.EmdeonConversion",
+    "line": 61,
+    "signatures": [
+      "public static string DecodePayload(string file_compression, string file_encoding, string file_data)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.Helper.EmdeonConversion",
+      "fromName": "Cloud9.BizTalk.Helper.EmdeonConversion",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.Helper.EmdeonConversion.json"
+    },
+    {
+      "type": "callsMethod",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker",
+      "fromName": "Process_CHC_InboundFiles_Worker",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker.json",
+      "line": 1601
+    },
+    {
+      "type": "implementedBy",
+      "from": "flowstep:CHC-02-Download",
+      "fromName": "Download, decode and delete mailbox files",
+      "fromType": "flowstep",
+      "fromFile": "adjacency/flowstep/CHC-02-Download.json",
+      "curated": true
+    }
+  ]
+}

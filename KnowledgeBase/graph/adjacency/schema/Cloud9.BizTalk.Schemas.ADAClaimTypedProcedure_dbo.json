@@ -1,0 +1,59 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.ADAClaimTypedProcedure_dbo",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.ADAClaimTypedProcedure_dbo",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ADAClaim/ADAClaimTypedProcedure.dbo.xsd",
+    "rootElements": [
+      "GetADAClaim",
+      "GetADAClaimResponse"
+    ],
+    "kind": "wcf-sql-typed-procedure",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/dbo",
+    "sqlActions": [
+      "TypedProcedure/dbo/GetADAClaim"
+    ]
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ADAClaim/ADAClaimTypedProcedure.dbo.xsd",
+      "toName": "ADAClaimTypedProcedure.dbo.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_ADAClaim_ADAClaimTypedProcedure.dbo.xsd.json"
+    },
+    {
+      "type": "describesParametersOf",
+      "to": "sqlproc:PracticeDB.dbo.GetADAClaim",
+      "toName": "dbo.GetADAClaim",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/PracticeDB.dbo.GetADAClaim.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "sourceSchema",
+      "from": "map:Cloud9.BizTalk.X12.Maps.GetADAClaimResponse_To_ClaimInformation",
+      "fromName": "Cloud9.BizTalk.X12.Maps.GetADAClaimResponse_To_ClaimInformation",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.GetADAClaimResponse_To_ClaimInformation.json",
+      "root": "GetADAClaimResponse"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.GetADAClaimRequest_MMT",
+      "fromName": "GetADAClaimRequest_MMT",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.GetADAClaimRequest_MMT.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.ADAClaimTypedProcedure_dbo.GetADAClaim"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.GetADAClaimResponse_MMT",
+      "fromName": "GetADAClaimResponse_MMT",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.GetADAClaimResponse_MMT.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.ADAClaimTypedProcedure_dbo.GetADAClaimResponse"
+    }
+  ]
+}

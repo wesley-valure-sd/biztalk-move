@@ -1,0 +1,53 @@
+{
+  "node": {
+    "id": "sqlproc:BizTalkCloud9Common.BTS.QueueProcessParameters",
+    "type": "sqlproc",
+    "name": "BTS.QueueProcessParameters",
+    "database": "BizTalkCloud9Common",
+    "definedInRepo": true,
+    "parameters": [
+      "@processName varchar(25)"
+    ],
+    "path": "Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored Procedures/QueueProcessParameters.sql"
+  },
+  "outgoing": [
+    {
+      "type": "reads",
+      "to": "sqltable:BizTalkCloud9Common.BTS.ProcessParameter",
+      "toName": "BTS.ProcessParameter",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/BizTalkCloud9Common.BTS.ProcessParameter.json"
+    },
+    {
+      "type": "writes",
+      "to": "sqltable:BizTalkCloud9Common.BTS.ProcessParameter",
+      "toName": "BTS.ProcessParameter",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/BizTalkCloud9Common.BTS.ProcessParameter.json"
+    },
+    {
+      "type": "reads",
+      "to": "sqltable:BizTalkCloud9Common.BTS.PracticeConfig",
+      "toName": "BTS.PracticeConfig",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/BizTalkCloud9Common.BTS.PracticeConfig.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored Procedures/QueueProcessParameters.sql",
+      "fromName": "QueueProcessParameters.sql",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Stored_Procedures_QueueProcessParameters.sql.json"
+    },
+    {
+      "type": "implementedBy",
+      "from": "flowstep:CHC-01-Poll",
+      "fromName": "Scheduled poll of the Change Healthcare mailbox for each practice",
+      "fromType": "flowstep",
+      "fromFile": "adjacency/flowstep/CHC-01-Poll.json",
+      "curated": true
+    }
+  ]
+}

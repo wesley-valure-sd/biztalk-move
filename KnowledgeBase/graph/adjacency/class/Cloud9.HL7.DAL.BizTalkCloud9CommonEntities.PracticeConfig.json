@@ -1,0 +1,21 @@
+{
+  "node": {
+    "id": "class:Cloud9.HL7.DAL.BizTalkCloud9CommonEntities.PracticeConfig",
+    "type": "class",
+    "name": "Cloud9.HL7.DAL.BizTalkCloud9CommonEntities.PracticeConfig",
+    "path": "Cloud9.HL7.WebAPI/Cloud9.HL7.DAL/BizTalkCloud9CommonEntities/PracticeConfig.cs",
+    "visibility": "public",
+    "kind": "class",
+    "line": 9
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.DAL/BizTalkCloud9CommonEntities/PracticeConfig.cs",
+      "fromName": "PracticeConfig.cs",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.HL7.WebAPI_Cloud9.HL7.DAL_BizTalkCloud9CommonEntities_PracticeConfig.cs.json"
+    }
+  ]
+}

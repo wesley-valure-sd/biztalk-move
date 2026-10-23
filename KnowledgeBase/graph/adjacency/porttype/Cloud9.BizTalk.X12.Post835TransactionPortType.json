@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "porttype:Cloud9.BizTalk.X12.Post835TransactionPortType",
+    "type": "porttype",
+    "name": "Post835TransactionPortType",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/EDITypes.odx",
+    "module": "Cloud9.BizTalk.X12",
+    "operations": [
+      "requestresponse Post835InsuranceTransaction(Post835InsuranceTransaction_MMT, Post835InsuranceTransactionResponse_MMT)",
+      "requestresponse Post835PatientTransaction(Post835PatientTransaction_MMT, Post835PatientTransactionResponse_MMT)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Orchestrations/EDITypes.odx",
+      "fromName": "EDITypes.odx",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Orchestrations_EDITypes.odx.json"
+    }
+  ]
+}

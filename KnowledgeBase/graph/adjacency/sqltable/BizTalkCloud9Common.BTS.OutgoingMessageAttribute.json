@@ -1,0 +1,27 @@
+{
+  "node": {
+    "id": "sqltable:BizTalkCloud9Common.BTS.OutgoingMessageAttribute",
+    "type": "sqltable",
+    "name": "BTS.OutgoingMessageAttribute",
+    "database": "BizTalkCloud9Common",
+    "columns": [],
+    "path": "Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Tables/OutgoingMessageAttribute.sql"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Tables/OutgoingMessageAttribute.sql",
+      "fromName": "OutgoingMessageAttribute.sql",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Tables_OutgoingMessageAttribute.sql.json"
+    },
+    {
+      "type": "reads",
+      "from": "sqlproc:BizTalkCloud9Common.BTS.GetOutgoingMessages",
+      "fromName": "BTS.GetOutgoingMessages",
+      "fromType": "sqlproc",
+      "fromFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.GetOutgoingMessages.json"
+    }
+  ]
+}

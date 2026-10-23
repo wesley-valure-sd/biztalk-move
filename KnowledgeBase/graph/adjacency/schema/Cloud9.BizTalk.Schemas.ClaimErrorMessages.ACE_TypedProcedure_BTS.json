@@ -1,0 +1,67 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.ClaimErrorMessages.ACE_TypedProcedure_BTS",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.ClaimErrorMessages.ACE_TypedProcedure_BTS",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ClaimErrorMessages/ACE_TypedProcedure.BTS.xsd",
+    "rootElements": [
+      "AddClaimErrors",
+      "AddClaimErrorsResponse"
+    ],
+    "kind": "wcf-sql-typed-procedure",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS",
+    "sqlActions": [
+      "TypedProcedure/BTS/AddClaimErrors"
+    ]
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/ClaimErrorMessages/ACE_TypedProcedure.BTS.xsd",
+      "toName": "ACE_TypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_ClaimErrorMessages_ACE_TypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "describesParametersOf",
+      "to": "sqlproc:PracticeDB.BTS.AddClaimErrors",
+      "toName": "BTS.AddClaimErrors",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/PracticeDB.BTS.AddClaimErrors.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.X12.Maps.ClaimStatusCanonical_To_AddClaimErrors",
+      "fromName": "Cloud9.BizTalk.X12.Maps.ClaimStatusCanonical_To_AddClaimErrors",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.ClaimStatusCanonical_To_AddClaimErrors.json",
+      "root": "AddClaimErrors"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.AddClaimErrorsRequest_MMT",
+      "fromName": "AddClaimErrorsRequest_MMT",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.AddClaimErrorsRequest_MMT.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.ClaimErrorMessages.ACE_TypedProcedure_BTS.AddClaimErrors"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.AddClaimErrorsResponse_MMT",
+      "fromName": "AddClaimErrorsResponse_MMT",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.AddClaimErrorsResponse_MMT.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.ClaimErrorMessages.ACE_TypedProcedure_BTS.AddClaimErrorsResponse"
+    },
+    {
+      "type": "usesSchema",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker",
+      "fromName": "Process_CHC_837Claims_Worker",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker.json",
+      "message": "msg_AddClaimErrorsResp"
+    }
+  ]
+}

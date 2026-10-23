@@ -1,0 +1,1246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="FullyBound" BoundEndpoints="4" TotalEndpoints="4">
+  <Timestamp>2019-05-07T15:36:36.5021347-04:00</Timestamp>
+  <ModuleRefCollection>
+    <ModuleRef Name="[Application:Cloud9.EDI]" Version="" Culture="" PublicKeyToken="" FullName="[Application:Cloud9.EDI], Version=, Culture=, PublicKeyToken=">
+      <Services />
+      <TrackedSchemas>
+        <Schema FullName="Cloud9.BizTalk.X12.sql_TableType_BTS" RootName="ArrayOfudt835Transaction" AssemblyQualifiedName="Cloud9.BizTalk.X12.sql_TableType_BTS,Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Cloud9.BizTalk.X12.sql_TableType_BTS" RootName="udt835Transaction" AssemblyQualifiedName="Cloud9.BizTalk.X12.sql_TableType_BTS,Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Cloud9.BizTalk.X12.sql_TypedProcedure_BTS" RootName="Post835InsuranceTransaction" AssemblyQualifiedName="Cloud9.BizTalk.X12.sql_TypedProcedure_BTS,Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Cloud9.BizTalk.X12.sql_TypedProcedure_BTS" RootName="Post835InsuranceTransactionResponse" AssemblyQualifiedName="Cloud9.BizTalk.X12.sql_TypedProcedure_BTS,Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Cloud9.BizTalk.X12.sql_TypedProcedure_BTS" RootName="Post835PatientTransaction" AssemblyQualifiedName="Cloud9.BizTalk.X12.sql_TypedProcedure_BTS,Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Cloud9.BizTalk.X12.sql_TypedProcedure_BTS" RootName="Post835PatientTransactionResponse" AssemblyQualifiedName="Cloud9.BizTalk.X12.sql_TypedProcedure_BTS,Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Cloud9.BizTalk.X12.Schemas.BBVA_X12_00501_835" RootName="X12_00501_835" AssemblyQualifiedName="Cloud9.BizTalk.X12.Schemas.BBVA_X12_00501_835,Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Cloud9.BizTalk.X12.Schemas.ChannelHealth_X12_00501_271" RootName="X12_00501_271" AssemblyQualifiedName="Cloud9.BizTalk.X12.Schemas.ChannelHealth_X12_00501_271,Cloud9.BizTalk.X12.Schemas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Cloud9.BizTalk.X12.sql_ProcedureResultSet_BTS_Post835InsuranceTransaction" RootName="ArrayOfStoredProcedureResultSet0" AssemblyQualifiedName="Cloud9.BizTalk.X12.sql_ProcedureResultSet_BTS_Post835InsuranceTransaction,Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Cloud9.BizTalk.X12.sql_ProcedureResultSet_BTS_Post835InsuranceTransaction" RootName="StoredProcedureResultSet0" AssemblyQualifiedName="Cloud9.BizTalk.X12.sql_ProcedureResultSet_BTS_Post835InsuranceTransaction,Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Cloud9.BizTalk.X12.sql_ProcedureResultSet_BTS_Post835PatientTransaction" RootName="ArrayOfStoredProcedureResultSet0" AssemblyQualifiedName="Cloud9.BizTalk.X12.sql_ProcedureResultSet_BTS_Post835PatientTransaction,Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Cloud9.BizTalk.X12.sql_ProcedureResultSet_BTS_Post835PatientTransaction" RootName="StoredProcedureResultSet0" AssemblyQualifiedName="Cloud9.BizTalk.X12.sql_ProcedureResultSet_BTS_Post835PatientTransaction,Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Cloud9.BizTalk.X12.sql_Serialization" RootName="anyType" AssemblyQualifiedName="Cloud9.BizTalk.X12.sql_Serialization,Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Cloud9.BizTalk.X12.sql_Serialization" RootName="anyURI" AssemblyQualifiedName="Cloud9.BizTalk.X12.sql_Serialization,Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Cloud9.BizTalk.X12.sql_Serialization" RootName="base64Binary" AssemblyQualifiedName="Cloud9.BizTalk.X12.sql_Serialization,Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Cloud9.BizTalk.X12.sql_Serialization" RootName="boolean" AssemblyQualifiedName="Cloud9.BizTalk.X12.sql_Serialization,Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Cloud9.BizTalk.X12.sql_Serialization" RootName="byte" AssemblyQualifiedName="Cloud9.BizTalk.X12.sql_Serialization,Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Cloud9.BizTalk.X12.sql_Serialization" RootName="char" AssemblyQualifiedName="Cloud9.BizTalk.X12.sql_Serialization,Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Cloud9.BizTalk.X12.sql_Serialization" RootName="dateTime" AssemblyQualifiedName="Cloud9.BizTalk.X12.sql_Serialization,Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Cloud9.BizTalk.X12.sql_Serialization" RootName="decimal" AssemblyQualifiedName="Cloud9.BizTalk.X12.sql_Serialization,Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Cloud9.BizTalk.X12.sql_Serialization" RootName="double" AssemblyQualifiedName="Cloud9.BizTalk.X12.sql_Serialization,Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Cloud9.BizTalk.X12.sql_Serialization" RootName="duration" AssemblyQualifiedName="Cloud9.BizTalk.X12.sql_Serialization,Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Cloud9.BizTalk.X12.sql_Serialization" RootName="float" AssemblyQualifiedName="Cloud9.BizTalk.X12.sql_Serialization,Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Cloud9.BizTalk.X12.sql_Serialization" RootName="guid" AssemblyQualifiedName="Cloud9.BizTalk.X12.sql_Serialization,Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Cloud9.BizTalk.X12.sql_Serialization" RootName="int" AssemblyQualifiedName="Cloud9.BizTalk.X12.sql_Serialization,Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Cloud9.BizTalk.X12.sql_Serialization" RootName="long" AssemblyQualifiedName="Cloud9.BizTalk.X12.sql_Serialization,Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Cloud9.BizTalk.X12.sql_Serialization" RootName="QName" AssemblyQualifiedName="Cloud9.BizTalk.X12.sql_Serialization,Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Cloud9.BizTalk.X12.sql_Serialization" RootName="short" AssemblyQualifiedName="Cloud9.BizTalk.X12.sql_Serialization,Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Cloud9.BizTalk.X12.sql_Serialization" RootName="string" AssemblyQualifiedName="Cloud9.BizTalk.X12.sql_Serialization,Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Cloud9.BizTalk.X12.sql_Serialization" RootName="unsignedByte" AssemblyQualifiedName="Cloud9.BizTalk.X12.sql_Serialization,Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Cloud9.BizTalk.X12.sql_Serialization" RootName="unsignedInt" AssemblyQualifiedName="Cloud9.BizTalk.X12.sql_Serialization,Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Cloud9.BizTalk.X12.sql_Serialization" RootName="unsignedLong" AssemblyQualifiedName="Cloud9.BizTalk.X12.sql_Serialization,Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Cloud9.BizTalk.X12.sql_Serialization" RootName="unsignedShort" AssemblyQualifiedName="Cloud9.BizTalk.X12.sql_Serialization,Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" AlwaysTrackAllProperties="false">
+          <TrackedPropertyNames />
+        </Schema>
+      </TrackedSchemas>
+    </ModuleRef>
+    <ModuleRef Name="Cloud9.BizTalk.Maps" Version="1.0.0.0" Culture="neutral" PublicKeyToken="182f4e020577c79e" FullName="Cloud9.BizTalk.Maps, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="Cloud9.BizTalk.X12.Schemas" Version="1.0.0.0" Culture="neutral" PublicKeyToken="182f4e020577c79e" FullName="Cloud9.BizTalk.X12.Schemas, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="Cloud9.BizTalk.X12" Version="1.0.0.0" Culture="neutral" PublicKeyToken="182f4e020577c79e" FullName="Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e">
+      <Services>
+        <Service Name="Cloud9.BizTalk.X12.Process_BBVA_835Insurance" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
+          <Ports>
+            <Port Name="ReceiveBBVA835InsurancePort" Modifier="2" BindingOption="1">
+              <SendPortRef xsi:nil="true" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef Name="RP_BBVA835_Insurance" />
+            </Port>
+            <Port Name="GetPracticeConfigurationByNamePort" Modifier="1" BindingOption="1">
+              <SendPortRef Name="SP_BizTalkCloud9Common_WCF" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="Post835TransactionPort" Modifier="1" BindingOption="4">
+              <SendPortRef Name="Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_BBVA_835Insurance_Post835TransactionPort_182f4e020577c79e" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="AddImportLogPort" Modifier="1" BindingOption="4">
+              <SendPortRef Name="Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_BBVA_835Insurance_AddImportLogPort_182f4e020577c79e" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+          </Ports>
+          <Roles />
+          <Host Name="BizTalkProcessingHost" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
+        </Service>
+        <Service Name="Cloud9.BizTalk.X12.EDITypes" State="Started" TrackingOption="None" AnalyticsEnabled="false" Description="">
+          <Ports />
+          <Roles />
+          <Host Name="BizTalkProcessingHost" NTGroupName="CLOUD9\BizTalk-LAB-App-Users" Type="1" Trusted="false" />
+        </Service>
+        <Service Name="Cloud9.BizTalk.X12.Process_BBVA_835Patient" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
+          <Ports>
+            <Port Name="ReceiveBBVA835PatientPort" Modifier="2" BindingOption="1">
+              <SendPortRef xsi:nil="true" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef Name="RP_BBVA835_Patient" />
+            </Port>
+            <Port Name="GetPracticeConfigurationByNamePort" Modifier="1" BindingOption="1">
+              <SendPortRef Name="SP_BizTalkCloud9Common_WCF" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="Post835TransactionPort" Modifier="1" BindingOption="4">
+              <SendPortRef Name="Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_BBVA_835Patient_Post835TransactionPort_182f4e020577c79e" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="AddImportLogPort" Modifier="1" BindingOption="4">
+              <SendPortRef Name="Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_BBVA_835Patient_AddImportLogPort_182f4e020577c79e" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+          </Ports>
+          <Roles />
+          <Host Name="BizTalkProcessingHost" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
+        </Service>
+        <Service Name="Cloud9.BizTalk.X12.Process_SD_835Patient" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
+          <Ports>
+            <Port Name="ReceiveSD835PatientPort" Modifier="2" BindingOption="1">
+              <SendPortRef xsi:nil="true" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef Name="RP_SD835_Patient" />
+            </Port>
+            <Port Name="GetPracticeConfigurationByNamePort" Modifier="1" BindingOption="1">
+              <SendPortRef Name="SP_BizTalkCloud9Common_WCF" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="Post835TransactionPort" Modifier="1" BindingOption="4">
+              <SendPortRef Name="Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_SD_835Patient_Post835TransactionPort_182f4e020577c79e" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="AddImportLogPort" Modifier="1" BindingOption="4">
+              <SendPortRef Name="Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_SD_835Patient_AddImportLogPort_182f4e020577c79e" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+          </Ports>
+          <Roles />
+          <Host Name="BizTalkProcessingHost" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
+        </Service>
+        <Service Name="Cloud9.BizTalk.X12.Process_CHC_837Claims_Controller" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" AnalyticsEnabled="false">
+          <Ports>
+            <Port Name="Port_SendUpdateProcessParameters" Modifier="1" BindingOption="1">
+              <SendPortRef Name="SP_UpdateProcessParameters_WCF" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+          </Ports>
+          <Roles />
+          <Host Name="BizTalkProcessingHost" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
+        </Service>
+        <Service Name="Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
+          <Ports>
+            <Port Name="Port_QueueClaimsDynamic" Modifier="1" BindingOption="4">
+              <SendPortRef Name="Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_QueueClaimsDynamic_182f4e020577c79e" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="Port_AddClaimErrorsDynamic" Modifier="1" BindingOption="4">
+              <SendPortRef Name="Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_AddClaimErrorsDynamic_182f4e020577c79e" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="Port_SendClaim_HTTP_Dynamic" Modifier="1" BindingOption="4">
+              <SendPortRef Name="Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_SendClaim_HTTP_Dynamic_182f4e020577c79e" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="Port_SendClaimStatusUpdateDynamic" Modifier="1" BindingOption="4">
+              <SendPortRef Name="Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_SendClaimStatusUpdateDynamic_182f4e020577c79e" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+          </Ports>
+          <Roles />
+          <Host Name="BizTalkProcessingHost" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
+        </Service>
+        <Service Name="Cloud9.BizTalk.X12.Process_CHC_277ClaimsStatus" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
+          <Ports>
+            <Port Name="ReceiveCHC277Port" Modifier="2" BindingOption="1">
+              <SendPortRef xsi:nil="true" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef Name="RP_CHC_Inbound_EDI" />
+            </Port>
+            <Port Name="GetPracticeConfigurationByNamePort" Modifier="1" BindingOption="1">
+              <SendPortRef Name="SP_BizTalkCloud9Common_WCF" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+          </Ports>
+          <Roles />
+          <Host Name="BizTalkProcessingHost" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
+        </Service>
+        <Service Name="Cloud9.BizTalk.X12.Process_CHC_277AClaimsStatus" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
+          <Ports>
+            <Port Name="ReceiveCHC277APort" Modifier="2" BindingOption="1">
+              <SendPortRef xsi:nil="true" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef Name="RP_CHC_Inbound_EDI" />
+            </Port>
+            <Port Name="GetPracticeConfigurationByNamePort" Modifier="1" BindingOption="1">
+              <SendPortRef Name="SP_BizTalkCloud9Common_WCF" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+          </Ports>
+          <Roles />
+          <Host Name="BizTalkProcessingHost" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
+        </Service>
+        <Service Name="Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
+          <Ports>
+            <Port Name="Port_UpdateClaimStatuses" Modifier="1" BindingOption="4">
+              <SendPortRef Name="Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus_Port_UpdateClaimStatuses_182f4e020577c79e" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="Port_AddClaimErrors" Modifier="1" BindingOption="4">
+              <SendPortRef Name="Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus_Port_AddClaimErrors_182f4e020577c79e" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="Port_AddTodoItemForClaim" Modifier="1" BindingOption="4">
+              <SendPortRef Name="Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus_Port_AddTodoItemForClaim_182f4e020577c79e" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+          </Ports>
+          <Roles />
+          <Host Name="BizTalkProcessingHost" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
+        </Service>
+        <Service Name="Cloud9.BizTalk.X12.Process_CHC_835Insurance" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive InboundMessageBody OutboundMessageBody OrchestrationEvents TrackPropertiesForIncomingMessages TrackPropertiesForOutgoingMessages" AnalyticsEnabled="false" Description="">
+          <Ports>
+            <Port Name="ReceiveCHC835InsurancePort" Modifier="2" BindingOption="1">
+              <SendPortRef xsi:nil="true" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef Name="RP_CHC_Inbound_EDI" />
+            </Port>
+            <Port Name="GetPracticeConfigurationByNamePort" Modifier="1" BindingOption="1">
+              <SendPortRef Name="SP_BizTalkCloud9Common_WCF" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="Port_AddTodoItem" Modifier="1" BindingOption="4">
+              <SendPortRef Name="Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_835Insurance_Port_AddTodoItem_182f4e020577c79e" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="Post835TransactionPort" Modifier="1" BindingOption="4">
+              <SendPortRef Name="Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_835Insurance_Post835TransactionPort_182f4e020577c79e" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="AddImportLogPort" Modifier="1" BindingOption="4">
+              <SendPortRef Name="Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_835Insurance_AddImportLogPort_182f4e020577c79e" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+          </Ports>
+          <Roles />
+          <Host Name="BizTalkProcessingHost" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
+        </Service>
+        <Service Name="Cloud9.BizTalk.X12.Process_CHC_276ClaimStatus" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" Description="">
+          <Ports>
+            <Port Name="Port_OutgoingMessage" Modifier="2" BindingOption="1">
+              <SendPortRef xsi:nil="true" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef Name="RP_OutgoingMessagesToProcess" />
+            </Port>
+            <Port Name="Port_GetPracticeConfigurationByName" Modifier="1" BindingOption="1">
+              <SendPortRef Name="SP_BizTalkCloud9Common_WCF" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="Port_GetADAClaim" Modifier="1" BindingOption="4">
+              <SendPortRef Name="Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_276ClaimStatus_Port_GetADAClaim_182f4e020577c79e" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="SendCH276Port" Modifier="1" BindingOption="1">
+              <SendPortRef Name="SP_CH276_HTTP" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="SendCH277Port" Modifier="1" BindingOption="1">
+              <SendPortRef Name="SP_CH277_FILE" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+          </Ports>
+          <Roles />
+          <Host Name="BizTalkProcessingHost" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
+        </Service>
+        <Service Name="Cloud9.BizTalk.X12.Process_CHC_835_To_BBVA" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" AnalyticsEnabled="false">
+          <Ports>
+            <Port Name="ReceiveCHC835Port" Modifier="2" BindingOption="1">
+              <SendPortRef xsi:nil="true" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef Name="RP_CHC835ToBBVA" />
+            </Port>
+            <Port Name="GetApplicationLookupValuesPort" Modifier="1" BindingOption="1">
+              <SendPortRef Name="SP_BizTalkCloud9Common_WCF" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="SendCHC835ToBBVAPort" Modifier="1" BindingOption="1">
+              <SendPortRef Name="SP_CHC835ToBBVA_FILE" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+          </Ports>
+          <Roles />
+          <Host Name="BizTalkProcessingHost" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
+        </Service>
+        <Service Name="Cloud9.BizTalk.X12.Process_CHC_271Eligibility" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" AnalyticsEnabled="false" Description="">
+          <Ports>
+            <Port Name="ReceiveCHC271Port" Modifier="2" BindingOption="1">
+              <SendPortRef xsi:nil="true" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef Name="RP_ChangeHealth_271" />
+            </Port>
+            <Port Name="GetIncomingMessageInfoPort" Modifier="1" BindingOption="1">
+              <SendPortRef Name="SP_BizTalkCloud9Common_WCF" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="SetPatientInsuranceEligibilitiesPort" Modifier="1" BindingOption="4">
+              <SendPortRef Name="Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_271Eligibility_SetPatientInsuranceEligibilitiesPort_182f4e020577c79e" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="UpdatePatientInsurancePolicyByPipGUIDPort" Modifier="1" BindingOption="4">
+              <SendPortRef Name="Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_271Eligibility_UpdatePatientInsurancePolicyByPipGUIDPort_182f4e020577c79e" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="AddImportLogPort" Modifier="1" BindingOption="4">
+              <SendPortRef Name="Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_271Eligibility_AddImportLogPort_182f4e020577c79e" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+          </Ports>
+          <Roles />
+          <Host Name="BizTalkProcessingHost" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
+        </Service>
+        <Service Name="Cloud9.BizTalk.X12.Process_CHC_271Eligibility" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" AnalyticsEnabled="false">
+          <Ports>
+            <Port Name="ReceiveCHC271Port" Modifier="2" BindingOption="1">
+              <SendPortRef xsi:nil="true" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef Name="RP_ChangeHealth_271" />
+            </Port>
+            <Port Name="GetPracticeConfig" Modifier="1" BindingOption="1">
+              <SendPortRef Name="SP_BizTalkCloud9Common_WCF" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="UpdatePatientInsurancePolicyByPipGUIDPort" Modifier="1" BindingOption="4">
+              <SendPortRef Name="Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_271Eligibility_UpdatePatientInsurancePolicyByPipGUIDPort_182f4e020577c79e" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="AddImportLogPort" Modifier="1" BindingOption="4">
+              <SendPortRef Name="Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_271Eligibility_AddImportLogPort_182f4e020577c79e" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+          </Ports>
+          <Roles />
+          <Host Name="BizTalkProcessingHost" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
+        </Service>
+        <Service Name="Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Controller" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" AnalyticsEnabled="false" Description="">
+          <Ports>
+            <Port Name="Port_SendUpdateProcessParameters" Modifier="1" BindingOption="1">
+              <SendPortRef Name="SP_UpdateProcessParameters_WCF" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+          </Ports>
+          <Roles />
+          <Host Name="BizTalkProcessingHost" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
+        </Service>
+        <Service Name="Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" AnalyticsEnabled="false" Description="">
+          <Ports>
+            <Port Name="Port_GetPracticeEDISettingsDynamic" Modifier="1" BindingOption="4">
+              <SendPortRef Name="Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetPracticeEDISettingsDynamic_182f4e020577c79e" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="Port_GetMailFileList_HTTP_Dynamic" Modifier="1" BindingOption="4">
+              <SendPortRef Name="Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetMailFileList_HTTP_Dynamic_182f4e020577c79e" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="Port_GetMailFile_HTTP_Dynamic" Modifier="1" BindingOption="4">
+              <SendPortRef Name="Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetMailFile_HTTP_Dynamic_182f4e020577c79e" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="Port_SaveEDIFile" Modifier="1" BindingOption="1">
+              <SendPortRef Name="SP_CHC_Inbound" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="Port_DeleteMailFile_HTTP_Dynamic" Modifier="1" BindingOption="4">
+              <SendPortRef Name="Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_DeleteMailFile_HTTP_Dynamic_182f4e020577c79e" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+          </Ports>
+          <Roles />
+          <Host Name="BizTalkProcessingHost" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
+        </Service>
+        <Service Name="Cloud9.BizTalk.X12.Process_CHC_835_To_BBVA" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" AnalyticsEnabled="false" Description="">
+          <Ports>
+            <Port Name="ReceiveCHC835Port" Modifier="2" BindingOption="1">
+              <SendPortRef xsi:nil="true" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef Name="RP_CHC835ToBBVA" />
+            </Port>
+            <Port Name="GetApplicationLookupValuesPort" Modifier="1" BindingOption="1">
+              <SendPortRef Name="SP_BizTalkCloud9Common_WCF" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="SendCHC835ToBBVAPort" Modifier="1" BindingOption="1">
+              <SendPortRef Name="SP_CHC835ToBBVA_FILE" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+          </Ports>
+          <Roles />
+          <Host Name="BizTalkProcessingHost" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
+        </Service>
+        <Service Name="Cloud9.BizTalk.X12.Process_CHC_837_To_BBVA" State="Started" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" AnalyticsEnabled="false" Description="">
+          <Ports>
+            <Port Name="ReceiveCHC837Port" Modifier="2" BindingOption="1">
+              <SendPortRef xsi:nil="true" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef Name="RP_CHC837ToBBVA" />
+            </Port>
+            <Port Name="GetApplicationLookupValuesPort" Modifier="1" BindingOption="1">
+              <SendPortRef Name="SP_BizTalkCloud9Common_WCF" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+            <Port Name="SendCHC837ToSDPort" Modifier="1" BindingOption="1">
+              <SendPortRef Name="SP_CHC837ToSD_SFTP" />
+              <DistributionListRef xsi:nil="true" />
+              <ReceivePortRef xsi:nil="true" />
+            </Port>
+          </Ports>
+          <Roles />
+          <Host Name="BizTalkProcessingHost" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
+        </Service>
+    <Service Name="Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Controller" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" AnalyticsEnabled="false" Description="">
+      <Ports />
+      <Roles />
+      <Host Name="BizTalkProcessingHost" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
+    </Service>
+    <Service Name="Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" AnalyticsEnabled="false" Description="">
+      <Ports>
+        <Port Name="Port_GetPracticeEDISettingsDynamic" Modifier="1" BindingOption="4">
+          <SendPortRef Name="Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetPracticeEDISettingsDynamic_182f4e020577c79e" />
+          <DistributionListRef xsi:nil="true" />
+          <ReceivePortRef xsi:nil="true" />
+        </Port>
+        <Port Name="Port_SendUpdateProcessParameters" Modifier="1" BindingOption="1">
+          <SendPortRef Name="WCF_UPDATE_PROCESS_PARAMETERS" />
+          <DistributionListRef xsi:nil="true" />
+          <ReceivePortRef xsi:nil="true" />
+        </Port>
+      </Ports>
+      <Roles />
+      <Host Name="BizTalkProcessingHost" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
+    </Service>
+    <Service Name="Cloud9.BizTalk.X12.Process_CHC_835_To_BBVA" State="Unenlisted" TrackingOption="ServiceStartEnd MessageSendReceive OrchestrationEvents" AnalyticsEnabled="false" Description="">
+      <Ports>
+        <Port Name="ReceiveCHC835Port" Modifier="2" BindingOption="1">
+          <SendPortRef xsi:nil="true" />
+          <DistributionListRef xsi:nil="true" />
+          <ReceivePortRef Name="RP_CHC835ToBBVA" />
+        </Port>
+        <Port Name="GetApplicationLookupValuesPort" Modifier="1" BindingOption="1">
+          <SendPortRef Name="SP_BizTalkCloud9Common_WCF" />
+          <DistributionListRef xsi:nil="true" />
+          <ReceivePortRef xsi:nil="true" />
+        </Port>
+        <Port Name="SendCHC835ToBBVAPort" Modifier="1" BindingOption="1">
+          <SendPortRef Name="SP_CHC835ToSD_SFTP" />
+          <DistributionListRef xsi:nil="true" />
+          <ReceivePortRef xsi:nil="true" />
+        </Port>
+      </Ports>
+      <Roles />
+      <Host Name="BizTalkProcessingHost" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
+    </Service>
+	  </Services>
+      <TrackedSchemas />
+    </ModuleRef>
+  </ModuleRefCollection>
+  <SendPortCollection>
+    <SendPort Name="SP_CH276_HTTP" IsStatic="true" IsTwoWay="true" BindingOption="1" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.Edi.DefaultPipelines.EdiSend" FullyQualifiedName="Microsoft.BizTalk.Edi.DefaultPipelines.EdiSend, Microsoft.BizTalk.Edi.EdiPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>${CH_276_HTTP_ADDR}</Address>
+        <TransportType Name="HTTP" Capabilities="387" ConfigurationClsid="1c56d157-0553-4345-8a1f-55d2d1a3ffb6" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;EnableChunkedEncoding vt="11"&gt;-1&lt;/EnableChunkedEncoding&gt;&lt;ProxyPort vt="3"&gt;80&lt;/ProxyPort&gt;&lt;AuthenticationScheme vt="8"&gt;Anonymous&lt;/AuthenticationScheme&gt;&lt;UseHandlerSetting vt="11"&gt;-1&lt;/UseHandlerSetting&gt;&lt;UseProxy vt="11"&gt;0&lt;/UseProxy&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2019-11-08T05:00:00</FromTime>
+        <ToTime>2019-11-09T04:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="BizTalkSendHost" HostTrusted="false">
+          <TransportType Name="HTTP" Capabilities="387" ConfigurationClsid="1c56d157-0553-4345-8a1f-55d2d1a3ffb6" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2019-11-08T05:00:00</FromTime>
+        <ToTime>2019-11-09T04:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipeline Name="Cloud9.BizTalk.X12.Pipelines.ReceiveEDIPipeline" FullyQualifiedName="Cloud9.BizTalk.X12.Pipelines.ReceiveEDIPipeline, Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <InboundTransforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>Cloud9.EDI</ApplicationName>
+    </SendPort>
+    <SendPort Name="SP_CHC276_FILE" IsStatic="true" IsTwoWay="false" BindingOption="1">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.Edi.DefaultPipelines.EdiSend" FullyQualifiedName="Microsoft.BizTalk.Edi.DefaultPipelines.EdiSend, Microsoft.BizTalk.Edi.EdiPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>${ADDR_FILE_ROOT}\CHC_276\%MessageID%.edi</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%MessageID%.xml&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T04:00:00</FromTime>
+        <ToTime>2000-01-01T03:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="BizTalkSendHost" HostTrusted="false">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T04:00:00</FromTime>
+        <ToTime>2000-01-01T03:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>Cloud9.EDI</ApplicationName>
+    </SendPort>
+    <SendPort Name="SP_UpdateProcessParameters_WCF" IsStatic="true" IsTwoWay="true" BindingOption="1" AnalyticsEnabled="false">
+      <Description>SendPort for SqlAdapterBinding.</Description>
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="None" Description="" />
+      <PrimaryTransport>
+        <Address>${ADDR_DB_CLOUD9COMMON}?</Address>
+        <TransportType Name="WCF-Custom" Capabilities="907" ConfigurationClsid="af081f69-38ca-4d5b-87df-f0344b12557a" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;BindingType vt="8"&gt;sqlBinding&lt;/BindingType&gt;&lt;BindingConfiguration vt="8"&gt;&amp;lt;binding name="SqlAdapterBinding" receiveTimeout="00:01:00" useAmbientTransaction="false" /&amp;gt;&lt;/BindingConfiguration&gt;&lt;InboundBodyPathExpression vt="8" /&gt;&lt;OutboundBodyLocation vt="8"&gt;UseBodyElement&lt;/OutboundBodyLocation&gt;&lt;AffiliateApplicationName vt="8" /&gt;&lt;StaticAction vt="8"&gt;&amp;lt;BtsActionMapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;
+  &amp;lt;Operation Name="UpdateProcessParameters" Action="TypedProcedure/BTS/UpdateProcessParameters" /&amp;gt;
+&amp;lt;/BtsActionMapping&amp;gt;&lt;/StaticAction&gt;&lt;ProxyAddress vt="8" /&gt;&lt;UserName vt="8" /&gt;&lt;InboundBodyLocation vt="8"&gt;UseBodyElement&lt;/InboundBodyLocation&gt;&lt;ProxyUserName vt="8" /&gt;&lt;OutboundXmlTemplate vt="8"&gt;&amp;lt;bts-msg-body xmlns="http://www.microsoft.com/schemas/bts2007" encoding="xml"/&amp;gt;&lt;/OutboundXmlTemplate&gt;&lt;PropagateFaultMessage vt="11"&gt;-1&lt;/PropagateFaultMessage&gt;&lt;IsolationLevel vt="8"&gt;ReadCommitted&lt;/IsolationLevel&gt;&lt;InboundNodeEncoding vt="8"&gt;Xml&lt;/InboundNodeEncoding&gt;&lt;Identity vt="8" /&gt;&lt;UseSSO vt="11"&gt;0&lt;/UseSSO&gt;&lt;EnableTransaction vt="11"&gt;0&lt;/EnableTransaction&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>1</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T00:00:00</FromTime>
+        <ToTime>2000-01-01T23:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="BizTalkSendHost" HostTrusted="false">
+          <TransportType Name="WCF-Custom" Capabilities="907" ConfigurationClsid="af081f69-38ca-4d5b-87df-f0344b12557a" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T00:00:00</FromTime>
+        <ToTime>2000-01-01T23:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="None" Description="" />
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <InboundTransforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>Cloud9.BizTalk</ApplicationName>
+    </SendPort>
+    <SendPort Name="SP_BizTalkCloud9Common_WCF" IsStatic="true" IsTwoWay="true" BindingOption="1">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="None" Description="" />
+      <PrimaryTransport>
+        <Address>${ADDR_DB_CLOUD9COMMON}?</Address>
+        <TransportType Name="WCF-Custom" Capabilities="907" ConfigurationClsid="af081f69-38ca-4d5b-87df-f0344b12557a" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;BindingType vt="8"&gt;sqlBinding&lt;/BindingType&gt;&lt;BindingConfiguration vt="8"&gt;&amp;lt;binding name="sqlBinding" receiveTimeout="00:01:00" useAmbientTransaction="false" /&amp;gt;&lt;/BindingConfiguration&gt;&lt;InboundBodyPathExpression vt="8" /&gt;&lt;OutboundBodyLocation vt="8"&gt;UseBodyElement&lt;/OutboundBodyLocation&gt;&lt;AffiliateApplicationName vt="8" /&gt;&lt;StaticAction vt="8"&gt;&amp;lt;BtsActionMapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;
+  &amp;lt;Operation Name="GetPracticeConfiguration" Action="TypedProcedure/BTS/GetPracticeConfiguration" /&amp;gt;
+  &amp;lt;Operation Name="GetIncomingMessageInfo" Action="TypedProcedure/BTS/GetIncomingMessageInfo" /&amp;gt;
+  &amp;lt;Operation Name="GetPracticeConfigurationByName" Action="TypedProcedure/BTS/GetPracticeConfigurationByName" /&amp;gt;
+  &amp;lt;Operation Name="GetApplicationLookupValue" Action="TypedProcedure/BTS/GetApplicationLookupValue" /&amp;gt;
+  &amp;lt;Operation Name="GetApplicationLookupValues" Action="TypedProcedure/BTS/GetApplicationLookupValues" /&amp;gt;
+&amp;lt;/BtsActionMapping&amp;gt;&lt;/StaticAction&gt;&lt;ProxyUserName vt="8" /&gt;&lt;ProxyAddress vt="8" /&gt;&lt;UserName vt="8" /&gt;&lt;InboundBodyLocation vt="8"&gt;UseBodyElement&lt;/InboundBodyLocation&gt;&lt;EndpointBehaviorConfiguration vt="8"&gt;&amp;lt;behavior name="EndpointBehavior" /&amp;gt;&lt;/EndpointBehaviorConfiguration&gt;&lt;OutboundXmlTemplate vt="8"&gt;&amp;lt;bts-msg-body xmlns="http://www.microsoft.com/schemas/bts2007" encoding="xml"/&amp;gt;&lt;/OutboundXmlTemplate&gt;&lt;PropagateFaultMessage vt="11"&gt;-1&lt;/PropagateFaultMessage&gt;&lt;InboundNodeEncoding vt="8"&gt;Xml&lt;/InboundNodeEncoding&gt;&lt;IsolationLevel vt="8"&gt;ReadCommitted&lt;/IsolationLevel&gt;&lt;UseSSO vt="11"&gt;0&lt;/UseSSO&gt;&lt;EnableTransaction vt="11"&gt;0&lt;/EnableTransaction&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>1</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T04:00:00</FromTime>
+        <ToTime>2000-01-01T03:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="BizTalkSendHost" HostTrusted="false">
+          <TransportType Name="WCF-Custom" Capabilities="907" ConfigurationClsid="af081f69-38ca-4d5b-87df-f0344b12557a" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T04:00:00</FromTime>
+        <ToTime>2000-01-01T03:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="None" Description="" />
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <InboundTransforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>Cloud9.EDI</ApplicationName>
+    </SendPort>
+    <SendPort Name="SP_SubmittedClaim_WCF" IsStatic="true" IsTwoWay="true" BindingOption="0" AnalyticsEnabled="false">
+      <Description>SendPort for SqlAdapterBinding.</Description>
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="None" Description="" />
+      <PrimaryTransport>
+        <Address>${ADDR_DB_CLOUD9COMMON}?</Address>
+        <TransportType Name="WCF-Custom" Capabilities="907" ConfigurationClsid="af081f69-38ca-4d5b-87df-f0344b12557a" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;BindingType vt="8"&gt;sqlBinding&lt;/BindingType&gt;&lt;BindingConfiguration vt="8"&gt;&amp;lt;binding name="SqlAdapterBinding" receiveTimeout="00:01:00" useAmbientTransaction="false" pollingSqlReceiveTimeout="00:10:00" /&amp;gt;&lt;/BindingConfiguration&gt;&lt;InboundBodyPathExpression vt="8" /&gt;&lt;OutboundBodyLocation vt="8"&gt;UseBodyElement&lt;/OutboundBodyLocation&gt;&lt;AffiliateApplicationName vt="8" /&gt;&lt;StaticAction vt="8"&gt;&amp;lt;BtsActionMapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;
+  &amp;lt;Operation Name="Delete" Action="TableOp/Delete/BTS/SubmittedClaim" /&amp;gt;
+  &amp;lt;Operation Name="Insert" Action="TableOp/Insert/BTS/SubmittedClaim" /&amp;gt;
+  &amp;lt;Operation Name="Update" Action="TableOp/Update/BTS/SubmittedClaim" /&amp;gt;
+&amp;lt;/BtsActionMapping&amp;gt;&lt;/StaticAction&gt;&lt;ProxyAddress vt="8" /&gt;&lt;UserName vt="8" /&gt;&lt;InboundBodyLocation vt="8"&gt;UseBodyElement&lt;/InboundBodyLocation&gt;&lt;ProxyUserName vt="8" /&gt;&lt;OutboundXmlTemplate vt="8"&gt;&amp;lt;bts-msg-body xmlns="http://www.microsoft.com/schemas/bts2007" encoding="xml"/&amp;gt;&lt;/OutboundXmlTemplate&gt;&lt;PropagateFaultMessage vt="11"&gt;-1&lt;/PropagateFaultMessage&gt;&lt;IsolationLevel vt="8"&gt;ReadCommitted&lt;/IsolationLevel&gt;&lt;InboundNodeEncoding vt="8"&gt;Xml&lt;/InboundNodeEncoding&gt;&lt;Identity vt="8" /&gt;&lt;UseSSO vt="11"&gt;0&lt;/UseSSO&gt;&lt;EnableTransaction vt="11"&gt;0&lt;/EnableTransaction&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>1</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T00:00:00</FromTime>
+        <ToTime>2000-01-01T23:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>0</DeliveryNotification>
+        <SendHandler Name="BizTalkSendHost" HostTrusted="false">
+          <TransportType Name="WCF-Custom" Capabilities="907" ConfigurationClsid="af081f69-38ca-4d5b-87df-f0344b12557a" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <TransportTypeData />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>1</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T00:00:00</FromTime>
+        <ToTime>2000-01-01T23:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>0</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="None" Description="" />
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName xsi:nil="true" />
+    </SendPort>
+    <SendPort Name="SP_GetPracticeConfigurationForClaim_WCF" IsStatic="true" IsTwoWay="true" BindingOption="0" AnalyticsEnabled="false">
+      <Description>SendPort for SqlAdapterBinding.</Description>
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="None" Description="" />
+      <PrimaryTransport>
+        <Address>${ADDR_DB_CLOUD9COMMON}?</Address>
+        <TransportType Name="WCF-Custom" Capabilities="907" ConfigurationClsid="af081f69-38ca-4d5b-87df-f0344b12557a" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;BindingType vt="8"&gt;sqlBinding&lt;/BindingType&gt;&lt;BindingConfiguration vt="8"&gt;&amp;lt;binding name="SqlAdapterBinding" receiveTimeout="00:01:00" useAmbientTransaction="false" /&amp;gt;&lt;/BindingConfiguration&gt;&lt;InboundBodyPathExpression vt="8" /&gt;&lt;OutboundBodyLocation vt="8"&gt;UseBodyElement&lt;/OutboundBodyLocation&gt;&lt;AffiliateApplicationName vt="8" /&gt;&lt;StaticAction vt="8"&gt;&amp;lt;BtsActionMapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&amp;gt;
+  &amp;lt;Operation Name="GetPracticeConfigurationForClaim" Action="TypedProcedure/BTS/GetPracticeConfigurationForClaim" /&amp;gt;
+&amp;lt;/BtsActionMapping&amp;gt;&lt;/StaticAction&gt;&lt;ProxyAddress vt="8" /&gt;&lt;UserName vt="8" /&gt;&lt;InboundBodyLocation vt="8"&gt;UseBodyElement&lt;/InboundBodyLocation&gt;&lt;ProxyUserName vt="8" /&gt;&lt;OutboundXmlTemplate vt="8"&gt;&amp;lt;bts-msg-body xmlns="http://www.microsoft.com/schemas/bts2007" encoding="xml"/&amp;gt;&lt;/OutboundXmlTemplate&gt;&lt;PropagateFaultMessage vt="11"&gt;-1&lt;/PropagateFaultMessage&gt;&lt;IsolationLevel vt="8"&gt;ReadCommitted&lt;/IsolationLevel&gt;&lt;InboundNodeEncoding vt="8"&gt;Xml&lt;/InboundNodeEncoding&gt;&lt;Identity vt="8" /&gt;&lt;UseSSO vt="11"&gt;0&lt;/UseSSO&gt;&lt;EnableTransaction vt="11"&gt;0&lt;/EnableTransaction&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>4</RetryCount>
+        <RetryInterval>1</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T00:00:00</FromTime>
+        <ToTime>2000-01-01T23:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>0</DeliveryNotification>
+        <SendHandler Name="BizTalkSendHost" HostTrusted="false">
+          <TransportType Name="WCF-Custom" Capabilities="907" ConfigurationClsid="af081f69-38ca-4d5b-87df-f0344b12557a" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <TransportTypeData />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T00:00:00</FromTime>
+        <ToTime>2000-01-01T23:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>0</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="None" Description="" />
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName xsi:nil="true" />
+    </SendPort>
+    <SendPort Name="Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetMailFileList_HTTP_Dynamic_182f4e020577c79e" IsStatic="false" IsTwoWay="true" BindingOption="4" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Cloud9.BizTalk.X12.Pipelines.SendEmdeonXMLPipeline" FullyQualifiedName="Cloud9.BizTalk.X12.Pipelines.SendEmdeonXMLPipeline, Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" Type="2" TrackingOption="None" Description="" />
+      <SendPipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4107-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Microsoft.BizTalk.Component.XmlAsmComp"&gt;&lt;Properties /&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;Stage CategoryId="9d0e4108-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Microsoft.Practices.ESB.Namespace.PipelineComponents.RemoveNamespace"&gt;&lt;Properties /&gt;&lt;/Component&gt;&lt;Component Name="Microsoft.Practices.ESB.Namespace.PipelineComponents.AddNamespace"&gt;&lt;Properties&gt;&lt;NamespaceBase vt="8"&gt;Emdeon_claim_submission_api&lt;/NamespaceBase&gt;&lt;Separator vt="8"&gt;/&lt;/Separator&gt;&lt;/Properties&gt;&lt;/Component&gt;&lt;Component Name="Cloud9.BizTalk.Shared.Components.Archive.Archive"&gt;&lt;Properties /&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</SendPipelineData>
+      <ReceivePipeline Name="Cloud9.BizTalk.X12.Pipelines.ReceiveEmdeonMailPipeline" FullyQualifiedName="Cloud9.BizTalk.X12.Pipelines.ReceiveEmdeonMailPipeline, Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" Type="1" TrackingOption="None" Description="" />
+      <ReceivePipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4103-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Microsoft.Practices.ESB.Namespace.PipelineComponents.RemoveNamespace"&gt;&lt;Properties /&gt;&lt;/Component&gt;&lt;Component Name="Microsoft.Practices.ESB.Namespace.PipelineComponents.AddNamespace"&gt;&lt;Properties&gt;&lt;NamespaceBase vt="8"&gt;http://Cloud9.BizTalk.Schemas.Emdeon.EmdeonGetAllMailFilesResponse&lt;/NamespaceBase&gt;&lt;NamespacePrefix vt="8"&gt;emdeon&lt;/NamespacePrefix&gt;&lt;Separator vt="8"&gt;/&lt;/Separator&gt;&lt;/Properties&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;Stage CategoryId="9d0e4105-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Microsoft.BizTalk.Component.XmlDasmComp"&gt;&lt;Properties /&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</ReceivePipelineData>
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <InboundTransforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>Cloud9.EDI</ApplicationName>
+    </SendPort>
+    <SendPort Name="Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_GetMailFile_HTTP_Dynamic_182f4e020577c79e" IsStatic="false" IsTwoWay="true" BindingOption="4" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Cloud9.BizTalk.X12.Pipelines.SendEmdeonXMLPipeline" FullyQualifiedName="Cloud9.BizTalk.X12.Pipelines.SendEmdeonXMLPipeline, Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" Type="2" TrackingOption="None" Description="" />
+      <SendPipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4107-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Microsoft.BizTalk.Component.XmlAsmComp"&gt;&lt;Properties /&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;Stage CategoryId="9d0e4108-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Microsoft.Practices.ESB.Namespace.PipelineComponents.RemoveNamespace"&gt;&lt;Properties /&gt;&lt;/Component&gt;&lt;Component Name="Microsoft.Practices.ESB.Namespace.PipelineComponents.AddNamespace"&gt;&lt;Properties&gt;&lt;NamespaceBase vt="8"&gt;Emdeon_claim_submission_api&lt;/NamespaceBase&gt;&lt;Separator vt="8"&gt;/&lt;/Separator&gt;&lt;/Properties&gt;&lt;/Component&gt;&lt;Component Name="Cloud9.BizTalk.Shared.Components.Archive.Archive"&gt;&lt;Properties /&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</SendPipelineData>
+      <ReceivePipeline Name="Cloud9.BizTalk.X12.Pipelines.ReceiveEmdeonMailPipeline" FullyQualifiedName="Cloud9.BizTalk.X12.Pipelines.ReceiveEmdeonMailPipeline, Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" Type="1" TrackingOption="None" Description="" />
+      <ReceivePipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4103-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Microsoft.Practices.ESB.Namespace.PipelineComponents.RemoveNamespace"&gt;&lt;Properties /&gt;&lt;/Component&gt;&lt;Component Name="Microsoft.Practices.ESB.Namespace.PipelineComponents.AddNamespace"&gt;&lt;Properties&gt;&lt;NamespaceBase vt="8"&gt;http://Cloud9.BizTalk.Schemas.Emdeon.EmdeonGetMailFileResponse&lt;/NamespaceBase&gt;&lt;NamespacePrefix vt="8"&gt;emdeon&lt;/NamespacePrefix&gt;&lt;Separator vt="8"&gt;/&lt;/Separator&gt;&lt;/Properties&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;Stage CategoryId="9d0e4105-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Microsoft.BizTalk.Component.XmlDasmComp"&gt;&lt;Properties /&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</ReceivePipelineData>
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <InboundTransforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>Cloud9.EDI</ApplicationName>
+    </SendPort>
+    <SendPort Name="Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_InboundFiles_Worker_Port_DeleteMailFile_HTTP_Dynamic_182f4e020577c79e" IsStatic="false" IsTwoWay="true" BindingOption="4" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Cloud9.BizTalk.X12.Pipelines.SendEmdeonXMLPipeline" FullyQualifiedName="Cloud9.BizTalk.X12.Pipelines.SendEmdeonXMLPipeline, Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" Type="2" TrackingOption="None" Description="" />
+      <SendPipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4107-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Microsoft.BizTalk.Component.XmlAsmComp"&gt;&lt;Properties /&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;Stage CategoryId="9d0e4108-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Microsoft.Practices.ESB.Namespace.PipelineComponents.RemoveNamespace"&gt;&lt;Properties /&gt;&lt;/Component&gt;&lt;Component Name="Microsoft.Practices.ESB.Namespace.PipelineComponents.AddNamespace"&gt;&lt;Properties&gt;&lt;NamespaceBase vt="8"&gt;Emdeon_claim_submission_api&lt;/NamespaceBase&gt;&lt;Separator vt="8"&gt;/&lt;/Separator&gt;&lt;/Properties&gt;&lt;/Component&gt;&lt;Component Name="Cloud9.BizTalk.Shared.Components.Archive.Archive"&gt;&lt;Properties /&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</SendPipelineData>
+      <ReceivePipeline Name="Cloud9.BizTalk.X12.Pipelines.ReceiveEmdeonMailPipeline" FullyQualifiedName="Cloud9.BizTalk.X12.Pipelines.ReceiveEmdeonMailPipeline, Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" Type="1" TrackingOption="None" Description="" />
+      <ReceivePipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4103-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Microsoft.Practices.ESB.Namespace.PipelineComponents.RemoveNamespace"&gt;&lt;Properties /&gt;&lt;/Component&gt;&lt;Component Name="Microsoft.Practices.ESB.Namespace.PipelineComponents.AddNamespace"&gt;&lt;Properties&gt;&lt;NamespaceBase vt="8"&gt;http://Cloud9.BizTalk.Schemas.Emdeon.EmdeonDeleteFileResponse&lt;/NamespaceBase&gt;&lt;NamespacePrefix vt="8"&gt;emdeon&lt;/NamespacePrefix&gt;&lt;Separator vt="8"&gt;/&lt;/Separator&gt;&lt;/Properties&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;Stage CategoryId="9d0e4105-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Microsoft.BizTalk.Component.XmlDasmComp"&gt;&lt;Properties /&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</ReceivePipelineData>
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <InboundTransforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>Cloud9.EDI</ApplicationName>
+    </SendPort>
+    <SendPort Name="SP_CHC_Inbound" IsStatic="true" IsTwoWay="false" BindingOption="1" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>${ADDR_FILE_ROOT}\CHC_Inbound\%SourceFileName%</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%SourceFileName%&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T05:00:00</FromTime>
+        <ToTime>2000-01-01T04:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="BizTalkSendHost" HostTrusted="false">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2000-01-01T05:00:00</FromTime>
+        <ToTime>2000-01-01T04:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>Cloud9.EDI</ApplicationName>
+    </SendPort>
+    <SendPort Name="SP_CH277_FILE" IsStatic="true" IsTwoWay="false" BindingOption="1" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>${ADDR_FILE_ROOT}\CHC_277\%MessageID%.xml</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%MessageID%.xml&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2019-11-14T05:00:00</FromTime>
+        <ToTime>2019-11-15T04:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="BizTalkSendHost" HostTrusted="false">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2019-11-14T05:00:00</FromTime>
+        <ToTime>2019-11-15T04:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>Cloud9.EDI</ApplicationName>
+    </SendPort>
+    <SendPort Name="Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_SendClaim_HTTP_Dynamic_182f4e020577c79e" IsStatic="false" IsTwoWay="true" BindingOption="4">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Cloud9.BizTalk.X12.Pipelines.SendEmdeonEDIPipeline" FullyQualifiedName="Cloud9.BizTalk.X12.Pipelines.SendEmdeonEDIPipeline, Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <SendPipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4107-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Microsoft.BizTalk.Edi.Pipelines.EdiAssembler"&gt;&lt;Properties /&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;Stage CategoryId="9d0e4108-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Cloud9.BizTalk.PipelineComponent.EmdeonPayload.EmdeonPayload"&gt;&lt;Properties /&gt;&lt;/Component&gt;&lt;Component Name="Cloud9.BizTalk.Shared.Components.Archive.Archive"&gt;&lt;Properties&gt;&lt;Enabled vt="11"&gt;-1&lt;/Enabled&gt;&lt;FileName vt="8"&gt;Req_%MessageID%.xml&lt;/FileName&gt;&lt;FilePath vt="8"&gt;${ADDR_FILE_ROOT}\CHC_837\Out&lt;/FilePath&gt;&lt;/Properties&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</SendPipelineData>
+      <ReceivePipeline Name="Cloud9.BizTalk.X12.Pipelines.ReceiveEmdeonMailPipeline" FullyQualifiedName="Cloud9.BizTalk.X12.Pipelines.ReceiveEmdeonMailPipeline, Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" Type="1" TrackingOption="None" Description="" />
+      <ReceivePipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4103-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Microsoft.Practices.ESB.Namespace.PipelineComponents.RemoveNamespace"&gt;&lt;Properties /&gt;&lt;/Component&gt;&lt;Component Name="Microsoft.Practices.ESB.Namespace.PipelineComponents.AddNamespace"&gt;&lt;Properties&gt;&lt;NamespaceBase vt="8"&gt;http://Cloud9.BizTalk.Schemas.Emdeon.ClaimSubmissionResponse&lt;/NamespaceBase&gt;&lt;NamespacePrefix vt="8"&gt;emdeon&lt;/NamespacePrefix&gt;&lt;Separator vt="8"&gt;/&lt;/Separator&gt;&lt;/Properties&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;Stage CategoryId="9d0e4105-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Microsoft.BizTalk.Component.XmlDasmComp"&gt;&lt;Properties /&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;Stage CategoryId="9d0e410d-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Cloud9.BizTalk.Shared.Components.Archive.Archive"&gt;&lt;Properties&gt;&lt;Enabled vt="11"&gt;-1&lt;/Enabled&gt;&lt;FileName vt="8"&gt;Resp_%MessageID%.xml&lt;/FileName&gt;&lt;FilePath vt="8"&gt;${ADDR_FILE_ROOT}\CHC_837\Out&lt;/FilePath&gt;&lt;/Properties&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</ReceivePipelineData>
+      <Tracking>0</Tracking>
+      <Filter />
+      <Transforms />
+      <InboundTransforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>Cloud9.EDI</ApplicationName>
+    </SendPort>
+    <SendPort Name="SP_ACKS" IsStatic="true" IsTwoWay="false" BindingOption="0" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <TransmitPipeline Name="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="2" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+      <PrimaryTransport>
+        <Address>${ADDR_FILE_ROOT}\Acks\%MessageID%.xml</Address>
+        <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        <TransportTypeData>&lt;CustomProps&gt;&lt;UseTempFileOnWrite vt="11"&gt;0&lt;/UseTempFileOnWrite&gt;&lt;AllowCacheOnWrite vt="11"&gt;0&lt;/AllowCacheOnWrite&gt;&lt;CopyMode vt="19"&gt;1&lt;/CopyMode&gt;&lt;FileName vt="8"&gt;%MessageID%.xml&lt;/FileName&gt;&lt;/CustomProps&gt;</TransportTypeData>
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2020-03-19T04:00:00</FromTime>
+        <ToTime>2020-03-20T03:59:59</ToTime>
+        <Primary>true</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler Name="BizTalkSendHost" HostTrusted="false">
+          <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+        </SendHandler>
+      </PrimaryTransport>
+      <SecondaryTransport>
+        <Address />
+        <RetryCount>3</RetryCount>
+        <RetryInterval>5</RetryInterval>
+        <ServiceWindowEnabled>false</ServiceWindowEnabled>
+        <FromTime>2020-03-19T04:00:00</FromTime>
+        <ToTime>2020-03-20T03:59:59</ToTime>
+        <Primary>false</Primary>
+        <OrderedDelivery>false</OrderedDelivery>
+        <DeliveryNotification>1</DeliveryNotification>
+        <SendHandler xsi:nil="true" />
+      </SecondaryTransport>
+      <ReceivePipelineData xsi:nil="true" />
+      <Tracking>0</Tracking>
+      <Filter>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;Filter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;Group&gt;
+    &lt;Statement Property="BTS.MessageType" Operator="0" Value="http://schemas.microsoft.com/Edi/X12#X12_TA1_Root" /&gt;
+  &lt;/Group&gt;
+&lt;/Filter&gt;</Filter>
+      <Transforms />
+      <OrderedDelivery>false</OrderedDelivery>
+      <Priority>5</Priority>
+      <StopSendingOnFailure>false</StopSendingOnFailure>
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>Cloud9.EDI</ApplicationName>
+    </SendPort>
+  </SendPortCollection>
+  <DistributionListCollection />
+  <ReceivePortCollection>
+    <ReceivePort Name="RP_QueueClaimsToProcess" IsTwoWay="false" BindingOption="0" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="${DO_NOT_START_PROD_RL_}QueueClaimsToProcess">
+          <Description xsi:nil="true" />
+          <Address>${ADDR_DB_CLOUD9COMMON}?InboundId=QueueProcessParameters&amp;MyID=QueueClaims</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2019-06-03T00:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2019-06-03T23:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2019-06-03T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2019-06-04T00:00:00</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="WCF-Custom" Capabilities="907" ConfigurationClsid="af081f69-38ca-4d5b-87df-f0344b12557a" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;BindingConfiguration vt="8"&gt;&amp;lt;binding name="sqlBinding" useAmbientTransaction="false" polledDataAvailableStatement="select COUNT([ppID]) from [BTS].[ProcessParameter] WHERE [ppProcessName] = 'ProcessClaims' and [ppStatus] = 0 " pollingStatement="EXEC [BTS].[QueueProcessParameters] 'ProcessClaims'" inboundOperationType="TypedPolling" /&amp;gt;&lt;/BindingConfiguration&gt;&lt;InboundBodyPathExpression vt="8" /&gt;&lt;InboundBodyLocation vt="8"&gt;UseBodyElement&lt;/InboundBodyLocation&gt;&lt;AffiliateApplicationName vt="8" /&gt;&lt;BindingType vt="8"&gt;sqlBinding&lt;/BindingType&gt;&lt;DisableLocationOnFailure vt="11"&gt;0&lt;/DisableLocationOnFailure&gt;&lt;UserName vt="8" /&gt;&lt;ServiceBehaviorConfiguration vt="8"&gt;&amp;lt;behavior name="ServiceBehavior" /&amp;gt;&lt;/ServiceBehaviorConfiguration&gt;&lt;EndpointBehaviorConfiguration vt="8"&gt;&amp;lt;behavior name="EndpointBehavior" /&amp;gt;&lt;/EndpointBehaviorConfiguration&gt;&lt;OutboundXmlTemplate vt="8"&gt;&amp;lt;bts-msg-body xmlns="http://www.microsoft.com/schemas/bts2007" encoding="xml"/&amp;gt;&lt;/OutboundXmlTemplate&gt;&lt;IncludeExceptionDetailInFaults vt="11"&gt;0&lt;/IncludeExceptionDetailInFaults&gt;&lt;InboundNodeEncoding vt="8"&gt;Xml&lt;/InboundNodeEncoding&gt;&lt;CredentialType vt="8"&gt;None&lt;/CredentialType&gt;&lt;OutboundBodyLocation vt="8"&gt;UseBodyElement&lt;/OutboundBodyLocation&gt;&lt;SuspendMessageOnFailure vt="11"&gt;0&lt;/SuspendMessageOnFailure&gt;&lt;OrderedProcessing vt="11"&gt;0&lt;/OrderedProcessing&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="None" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="BizTalkReceiveHost" HostTrusted="false">
+            <TransportType Name="WCF-Custom" Capabilities="907" ConfigurationClsid="af081f69-38ca-4d5b-87df-f0344b12557a" />
+          </ReceiveHandler>
+          <ScheduleRecurrenceType>None</ScheduleRecurrenceType>
+          <ScheduleRecurenceFrom>2019-06-03T00:00:00</ScheduleRecurenceFrom>
+          <ScheduleRecurrenceInterval>1</ScheduleRecurrenceInterval>
+          <ScheduleDaysOfWeek>None</ScheduleDaysOfWeek>
+          <ScheduleMonths>None</ScheduleMonths>
+          <ScheduleMonthDays>None</ScheduleMonthDays>
+          <ScheduleOrdinalDayOfWeek>None</ScheduleOrdinalDayOfWeek>
+          <ScheduleOrdinalType>None</ScheduleOrdinalType>
+          <ScheduleIsOrdinal>false</ScheduleIsOrdinal>
+          <ScheduleLastDayOfMonth>false</ScheduleLastDayOfMonth>
+          <ScheduleAutoAdjustToDaylightSaving>true</ScheduleAutoAdjustToDaylightSaving>
+          <ScheduleTimeZone>UTC</ScheduleTimeZone>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>Cloud9.EDI</ApplicationName>
+    </ReceivePort>
+    <ReceivePort Name="RP_CHCInboundToProcess" IsTwoWay="false" BindingOption="0" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="${DO_NOT_START_PROD_RL_}CHCInboundToProcess">
+          <Description xsi:nil="true" />
+          <Address>${ADDR_DB_CLOUD9COMMON}?InboundId=QueueProcessParameters&amp;MyID=CHCInbound</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2019-06-03T00:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2019-06-03T23:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2019-06-03T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2019-06-04T00:00:00</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="WCF-Custom" Capabilities="907" ConfigurationClsid="af081f69-38ca-4d5b-87df-f0344b12557a" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;BindingConfiguration vt="8"&gt;&amp;lt;binding name="sqlBinding" useAmbientTransaction="false" polledDataAvailableStatement="select COUNT([ppID]) from [BTS].[ProcessParameter] WHERE [ppProcessName] = 'ProcessCHCInboundFiles' and [ppStatus] = 0 " pollingStatement="EXEC [BTS].[QueueProcessParameters] 'ProcessCHCInboundFiles'" inboundOperationType="TypedPolling" /&amp;gt;&lt;/BindingConfiguration&gt;&lt;InboundBodyPathExpression vt="8" /&gt;&lt;InboundBodyLocation vt="8"&gt;UseBodyElement&lt;/InboundBodyLocation&gt;&lt;AffiliateApplicationName vt="8" /&gt;&lt;BindingType vt="8"&gt;sqlBinding&lt;/BindingType&gt;&lt;DisableLocationOnFailure vt="11"&gt;0&lt;/DisableLocationOnFailure&gt;&lt;UserName vt="8" /&gt;&lt;ServiceBehaviorConfiguration vt="8"&gt;&amp;lt;behavior name="ServiceBehavior" /&amp;gt;&lt;/ServiceBehaviorConfiguration&gt;&lt;EndpointBehaviorConfiguration vt="8"&gt;&amp;lt;behavior name="EndpointBehavior" /&amp;gt;&lt;/EndpointBehaviorConfiguration&gt;&lt;OutboundXmlTemplate vt="8"&gt;&amp;lt;bts-msg-body xmlns="http://www.microsoft.com/schemas/bts2007" encoding="xml"/&amp;gt;&lt;/OutboundXmlTemplate&gt;&lt;IncludeExceptionDetailInFaults vt="11"&gt;0&lt;/IncludeExceptionDetailInFaults&gt;&lt;InboundNodeEncoding vt="8"&gt;Xml&lt;/InboundNodeEncoding&gt;&lt;CredentialType vt="8"&gt;None&lt;/CredentialType&gt;&lt;OutboundBodyLocation vt="8"&gt;UseBodyElement&lt;/OutboundBodyLocation&gt;&lt;SuspendMessageOnFailure vt="11"&gt;0&lt;/SuspendMessageOnFailure&gt;&lt;OrderedProcessing vt="11"&gt;0&lt;/OrderedProcessing&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="None" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="BizTalkReceiveHost" HostTrusted="false">
+            <TransportType Name="WCF-Custom" Capabilities="907" ConfigurationClsid="af081f69-38ca-4d5b-87df-f0344b12557a" />
+          </ReceiveHandler>
+          <ScheduleRecurrenceType>None</ScheduleRecurrenceType>
+          <ScheduleRecurenceFrom>2019-06-03T00:00:00</ScheduleRecurenceFrom>
+          <ScheduleRecurrenceInterval>1</ScheduleRecurrenceInterval>
+          <ScheduleDaysOfWeek>None</ScheduleDaysOfWeek>
+          <ScheduleMonths>None</ScheduleMonths>
+          <ScheduleMonthDays>None</ScheduleMonthDays>
+          <ScheduleOrdinalDayOfWeek>None</ScheduleOrdinalDayOfWeek>
+          <ScheduleOrdinalType>None</ScheduleOrdinalType>
+          <ScheduleIsOrdinal>false</ScheduleIsOrdinal>
+          <ScheduleLastDayOfMonth>false</ScheduleLastDayOfMonth>
+          <ScheduleAutoAdjustToDaylightSaving>true</ScheduleAutoAdjustToDaylightSaving>
+          <ScheduleTimeZone>UTC</ScheduleTimeZone>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>Cloud9.EDI</ApplicationName>
+    </ReceivePort>
+    <ReceivePort Name="RP_OutgoingMessagesToProcess" IsTwoWay="false" BindingOption="0" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="RL_OutgoingMessagesToProcess">
+          <Description xsi:nil="true" />
+          <Address>${ADDR_DB_CLOUD9COMMON}?InboundId=GetOutgoingMessages&amp;MyID=GetOutgoingMessages</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2019-06-03T00:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2019-06-03T23:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2019-06-03T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2019-06-04T00:00:00</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="WCF-Custom" Capabilities="907" ConfigurationClsid="af081f69-38ca-4d5b-87df-f0344b12557a" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;BindingConfiguration vt="8"&gt;&amp;lt;binding name="sqlBinding" useAmbientTransaction="false" polledDataAvailableStatement="SELECT COUNT([omGUID]) FROM [BTS].[OutgoingMessage] WHERE [stsStatusID] = 0" pollingStatement="EXEC [BTS].[GetOutgoingMessages]" inboundOperationType="XmlPolling" xmlStoredProcedureRootNodeName="OutgoingMessageBatch" xmlStoredProcedureRootNodeNamespace="http://Cloud9.BizTalk.Schemas.OutgoingMessage.OutgoingMessageBatch" /&amp;gt;&lt;/BindingConfiguration&gt;&lt;InboundBodyPathExpression vt="8" /&gt;&lt;InboundBodyLocation vt="8"&gt;UseBodyElement&lt;/InboundBodyLocation&gt;&lt;AffiliateApplicationName vt="8" /&gt;&lt;BindingType vt="8"&gt;sqlBinding&lt;/BindingType&gt;&lt;DisableLocationOnFailure vt="11"&gt;0&lt;/DisableLocationOnFailure&gt;&lt;UserName vt="8" /&gt;&lt;ServiceBehaviorConfiguration vt="8"&gt;&amp;lt;behavior name="ServiceBehavior" /&amp;gt;&lt;/ServiceBehaviorConfiguration&gt;&lt;EndpointBehaviorConfiguration vt="8"&gt;&amp;lt;behavior name="EndpointBehavior" /&amp;gt;&lt;/EndpointBehaviorConfiguration&gt;&lt;OutboundXmlTemplate vt="8"&gt;&amp;lt;bts-msg-body xmlns="http://www.microsoft.com/schemas/bts2007" encoding="xml"/&amp;gt;&lt;/OutboundXmlTemplate&gt;&lt;IncludeExceptionDetailInFaults vt="11"&gt;0&lt;/IncludeExceptionDetailInFaults&gt;&lt;InboundNodeEncoding vt="8"&gt;Xml&lt;/InboundNodeEncoding&gt;&lt;CredentialType vt="8"&gt;None&lt;/CredentialType&gt;&lt;OutboundBodyLocation vt="8"&gt;UseBodyElement&lt;/OutboundBodyLocation&gt;&lt;SuspendMessageOnFailure vt="11"&gt;0&lt;/SuspendMessageOnFailure&gt;&lt;OrderedProcessing vt="11"&gt;0&lt;/OrderedProcessing&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Microsoft.BizTalk.DefaultPipelines.XMLReceive" FullyQualifiedName="Microsoft.BizTalk.DefaultPipelines.XMLReceive, Microsoft.BizTalk.DefaultPipelines, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="None" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="BizTalkReceiveHost" HostTrusted="false">
+            <TransportType Name="WCF-Custom" Capabilities="907" ConfigurationClsid="af081f69-38ca-4d5b-87df-f0344b12557a" />
+          </ReceiveHandler>
+          <ScheduleRecurrenceType>None</ScheduleRecurrenceType>
+          <ScheduleRecurenceFrom>2019-06-03T00:00:00</ScheduleRecurenceFrom>
+          <ScheduleRecurrenceInterval>1</ScheduleRecurrenceInterval>
+          <ScheduleDaysOfWeek>None</ScheduleDaysOfWeek>
+          <ScheduleMonths>None</ScheduleMonths>
+          <ScheduleMonthDays>None</ScheduleMonthDays>
+          <ScheduleOrdinalDayOfWeek>None</ScheduleOrdinalDayOfWeek>
+          <ScheduleOrdinalType>None</ScheduleOrdinalType>
+          <ScheduleIsOrdinal>false</ScheduleIsOrdinal>
+          <ScheduleLastDayOfMonth>false</ScheduleLastDayOfMonth>
+          <ScheduleAutoAdjustToDaylightSaving>true</ScheduleAutoAdjustToDaylightSaving>
+          <ScheduleTimeZone>UTC</ScheduleTimeZone>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>Cloud9.EDI</ApplicationName>
+    </ReceivePort>
+    <ReceivePort Name="RP_CHC_Inbound_EDI" IsTwoWay="false" BindingOption="1">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="RL_CHC_Inbound_EDI">
+          <Description xsi:nil="true" />
+          <Address>${ADDR_FILE_ROOT}\CHC_Inbound\*.*</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2019-06-19T04:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2019-06-20T03:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2019-06-19T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2019-06-20T00:00:00</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;RenameReceivedFiles vt="11"&gt;0&lt;/RenameReceivedFiles&gt;&lt;RemoveReceivedFileDelay vt="19"&gt;10&lt;/RemoveReceivedFileDelay&gt;&lt;RemoveReceivedFileMaxInterval vt="19"&gt;300000&lt;/RemoveReceivedFileMaxInterval&gt;&lt;FileMask vt="8"&gt;*.*&lt;/FileMask&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;RemoveReceivedFileRetryCount vt="19"&gt;5&lt;/RemoveReceivedFileRetryCount&gt;&lt;BatchSizeInBytes vt="19"&gt;102400&lt;/BatchSizeInBytes&gt;&lt;PollingInterval vt="19"&gt;60000&lt;/PollingInterval&gt;&lt;FileNetFailRetryCount vt="19"&gt;5&lt;/FileNetFailRetryCount&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Cloud9.BizTalk.X12.Pipelines.ReceiveEDIPipeline" FullyQualifiedName="Cloud9.BizTalk.X12.Pipelines.ReceiveEDIPipeline, Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4103-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Cloud9.BizTalk.Shared.Components.Archive.Archive"&gt;&lt;Properties&gt;&lt;Enabled vt="11"&gt;-1&lt;/Enabled&gt;&lt;FileName vt="8"&gt;%FileReceivedFileName%%FileReceivedFileExtension%&lt;/FileName&gt;&lt;FilePath vt="8"&gt;${ADDR_FILE_ROOT}\CHC_Inbound\Archive&lt;/FilePath&gt;&lt;Overwrite vt="11"&gt;-1&lt;/Overwrite&gt;&lt;/Properties&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;Stage CategoryId="9d0e4105-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Microsoft.BizTalk.Edi.Pipelines.EdiDisassembler"&gt;&lt;Properties /&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</ReceivePipelineData>
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>true</Enable>
+          <ReceiveHandler Name="BizTalkServerApplication" HostTrusted="false">
+            <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          </ReceiveHandler>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>Cloud9.EDI</ApplicationName>
+    </ReceivePort>
+    <ReceivePort Name="RP_ChangeHealth_271" IsTwoWay="false" BindingOption="1" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="RL_ChangeHealth_271">
+          <Description xsi:nil="true" />
+          <Address>${ADDR_FILE_ROOT}\CHC_271\*.*</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2020-03-12T00:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2020-03-12T23:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2020-03-12T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2020-03-13T00:00:00</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;RenameReceivedFiles vt="11"&gt;0&lt;/RenameReceivedFiles&gt;&lt;RemoveReceivedFileDelay vt="19"&gt;10&lt;/RemoveReceivedFileDelay&gt;&lt;RemoveReceivedFileMaxInterval vt="19"&gt;300000&lt;/RemoveReceivedFileMaxInterval&gt;&lt;FileMask vt="8"&gt;*.*&lt;/FileMask&gt;&lt;FileNetFailRetryInt vt="19"&gt;5&lt;/FileNetFailRetryInt&gt;&lt;RemoveReceivedFileRetryCount vt="19"&gt;5&lt;/RemoveReceivedFileRetryCount&gt;&lt;BatchSizeInBytes vt="19"&gt;102400&lt;/BatchSizeInBytes&gt;&lt;PollingInterval vt="19"&gt;60000&lt;/PollingInterval&gt;&lt;FileNetFailRetryCount vt="19"&gt;5&lt;/FileNetFailRetryCount&gt;&lt;BatchSize vt="19"&gt;20&lt;/BatchSize&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="Cloud9.BizTalk.X12.Pipelines.ReceiveEDIPipeline" FullyQualifiedName="Cloud9.BizTalk.X12.Pipelines.ReceiveEDIPipeline, Cloud9.BizTalk.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e" Type="1" TrackingOption="ServiceStartEnd MessageSendReceive PipelineEvents" Description="" />
+          <ReceivePipelineData>&lt;Root xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;&lt;Stages&gt;&lt;Stage CategoryId="9d0e4103-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Cloud9.BizTalk.Shared.Components.Archive.Archive"&gt;&lt;Properties&gt;&lt;Enabled vt="11"&gt;-1&lt;/Enabled&gt;&lt;FileName vt="8"&gt;%FileReceivedFileName%%FileReceivedFileExtension%&lt;/FileName&gt;&lt;FilePath vt="8"&gt;${ADDR_FILE_ROOT}\CHC_271\Archive&lt;/FilePath&gt;&lt;/Properties&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;Stage CategoryId="9d0e4105-4cce-4536-83fa-4a5040674ad6"&gt;&lt;Components&gt;&lt;Component Name="Microsoft.BizTalk.Edi.Pipelines.EdiDisassembler"&gt;&lt;Properties /&gt;&lt;/Component&gt;&lt;/Components&gt;&lt;/Stage&gt;&lt;/Stages&gt;&lt;/Root&gt;</ReceivePipelineData>
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData xsi:nil="true" />
+          <Enable>false</Enable>
+          <ReceiveHandler Name="BizTalkServerApplication" HostTrusted="false">
+            <TransportType Name="FILE" Capabilities="11" ConfigurationClsid="5e49e3a6-b4fc-4077-b44c-22f34a242fdb" />
+          </ReceiveHandler>
+          <ScheduleRecurrenceType>None</ScheduleRecurrenceType>
+          <ScheduleRecurenceFrom>2020-03-12T00:00:00</ScheduleRecurenceFrom>
+          <ScheduleRecurrenceInterval>1</ScheduleRecurrenceInterval>
+          <ScheduleDaysOfWeek>None</ScheduleDaysOfWeek>
+          <ScheduleMonths>None</ScheduleMonths>
+          <ScheduleMonthDays>None</ScheduleMonthDays>
+          <ScheduleOrdinalDayOfWeek>None</ScheduleOrdinalDayOfWeek>
+          <ScheduleOrdinalType>None</ScheduleOrdinalType>
+          <ScheduleIsOrdinal>false</ScheduleIsOrdinal>
+          <ScheduleLastDayOfMonth>false</ScheduleLastDayOfMonth>
+          <ScheduleAutoAdjustToDaylightSaving>true</ScheduleAutoAdjustToDaylightSaving>
+          <ScheduleTimeZone>UTC</ScheduleTimeZone>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>Cloud9.EDI</ApplicationName>
+    </ReceivePort>
+  </ReceivePortCollection>
+</BindingInfo>

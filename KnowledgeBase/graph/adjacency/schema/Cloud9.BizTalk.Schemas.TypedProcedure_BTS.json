@@ -1,0 +1,51 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.TypedProcedure_BTS",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.TypedProcedure_BTS",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/PatientEligibility/TypedProcedure.BTS.xsd",
+    "rootElements": [
+      "SetPatientInsuranceEligibility",
+      "SetPatientInsuranceEligibilityResponse"
+    ],
+    "kind": "wcf-sql-typed-procedure",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS",
+    "sqlActions": [
+      "TypedProcedure/BTS/SetPatientInsuranceEligibility"
+    ]
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/PatientEligibility/TypedProcedure.BTS.xsd",
+      "toName": "TypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_PatientEligibility_TypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "describesParametersOf",
+      "to": "sqlproc:PracticeDB.BTS.SetPatientInsuranceEligibility",
+      "toName": "BTS.SetPatientInsuranceEligibility",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/PracticeDB.BTS.SetPatientInsuranceEligibility.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.SetPatientEligibilitiesRequest_MMT",
+      "fromName": "SetPatientEligibilitiesRequest_MMT",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.SetPatientEligibilitiesRequest_MMT.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.TypedProcedure_BTS.SetPatientInsuranceEligibility"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.SetPatientEligibilitiesResponse_MMT",
+      "fromName": "SetPatientEligibilitiesResponse_MMT",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.SetPatientEligibilitiesResponse_MMT.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.TypedProcedure_BTS.SetPatientInsuranceEligibilityResponse"
+    }
+  ]
+}

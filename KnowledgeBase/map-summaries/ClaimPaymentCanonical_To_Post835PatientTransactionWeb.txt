@@ -1,0 +1,105 @@
+MAP: ClaimPaymentCanonical_To_Post835PatientTransactionWeb.btm
+PATH: Cloud9.BizTalk\Cloud9.BizTalk.X12\Maps\ClaimPaymentCanonical_To_Post835PatientTransactionWeb.btm
+SOURCE: Cloud9.BizTalk.Schemas.Canonical.ClaimPayment (root ClaimPayment)
+TARGET: Cloud9.BizTalk.Schemas.Post835TypedProcedure_BTS (root Post835PatientTransaction)
+SCRIPT PRECEDENCE (first match wins when a functoid has more than one script): CSharp > ExternalAssembly > VbNet > JScript > XsltCallTemplate > Xslt
+
+=== PAGE: Links ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L64: ClaimPayment/PatientIdentifier -> Post835PatientTransaction/patGUID
+L66: ClaimPayment/SubscriberIdentifier -> Post835PatientTransaction/ppGUID
+L68: ClaimPayment/PaymentMethodCode -> Post835PatientTransaction/lbcLockboxCode
+L85: ClaimPayment/ApprovalCode -> Post835PatientTransaction/transApprovalCode
+L86: ClaimPayment/MaskedCreditCardNumber -> Post835PatientTransaction/transCardNumber
+L87: ClaimPayment/OpenEdgeXWebGUID -> Post835PatientTransaction/xwebGUID
+L88: ClaimPayment/CreditCardType -> Post835PatientTransaction/transCardType
+L91: ClaimPayment/OpenEdgeCheckNumber -> Post835PatientTransaction/transCheckNumber
+L95: ClaimPayment/MaskedRoutingNumber -> Post835PatientTransaction/transRouting
+L100: ClaimPayment/MaskedBankAccountNumber -> F28
+L101: ClaimPayment/MaskedCreditCardNumber -> F27
+L102: F28 -> Post835PatientTransaction/transReference
+L103: F27 -> Post835PatientTransaction/transReference
+L104: ClaimPayment/ReferenceIdentifier -> Post835PatientTransaction/transTransactionIDStr
+L106: ClaimPayment/MaskedRoutingNumber -> F31
+L107: F31 -> F32
+L99: F26 -> F27
+L108: F32 -> F26
+L109: F32 -> F28
+--- FUNCTOIDS ---
+F27 [Value Mapping] inputs: L99, L101
+F28 [Value Mapping] inputs: L109, L100
+F31 [String Size (inferred)] inputs: L106
+F32 [Greater Than (inferred)] inputs: L107, const:'0'
+F26 [Logical NOT (inferred)] inputs: L108
+
+=== PAGE: Functoids ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L1: F1 -> Post835PatientTransaction/transDateTimePosted
+L3: F3 -> Post835PatientTransaction/transStatus
+L4: F4 -> Post835PatientTransaction/transProductionAmount
+L5: F4 -> Post835PatientTransaction/transClaimAmount
+L6: F5 -> Post835PatientTransaction/transIsGroup
+L14: F6 -> Post835PatientTransaction/transDueNowAmount
+L15: F6 -> Post835PatientTransaction/transTotalDueAmount
+L63: F6 -> Post835PatientTransaction/transAmount
+L71: ClaimPayment/TotalActualProviderPaymentAmount -> F6
+L2: F22 -> Post835PatientTransaction/transGUID
+L72: F23 -> Post835PatientTransaction/lbcLockboxCodeType
+L73: ClaimPayment/CheckIssueorEFTEffectiveDate -> F24
+L74: F24 -> Post835PatientTransaction/transDateTime
+L110: ClaimPayment/PaymentMethodCode -> F33
+L114: ClaimPayment/ApprovalCode -> F33
+L120: F33 -> Post835PatientTransaction/transNote
+L121: F33 -> Post835PatientTransaction/transReceiptNote
+L122: ClaimPayment/ReferenceIdentifier -> F33
+L123: ClaimPayment/TotalActualProviderPaymentAmount -> F33
+--- FUNCTOIDS ---
+F1 [Date and Time, current (inferred)] inputs: 
+F3 [String Concatenate] inputs: const:'N'
+F4 [String Concatenate] inputs: const:'0'
+F5 [String Concatenate] inputs: const:'0'
+F6 [Multiplication (inferred)] inputs: L71, const:'-1'
+F22 [Scripting] inputs: 
+    script language: CSharp
+    | public string GetTransGUID()
+    | {
+    | return System.Guid.NewGuid().ToString();
+    | }
+F23 [String Concatenate] inputs: const:'WEB'
+F24 [Scripting] inputs: L73
+    script language: CSharp
+    | public string FormatDate(string inputDate)
+    | {
+    | 	if(inputDate.Length == 8)
+    | 	{
+    | 		return System.DateTime.ParseExact(inputDate, "yyyyMMdd", System.Globalization.CultureInfo.InvariantCulture).ToString("yyyy-MM-dd");
+    | 	}
+    | 	else
+    | 	{
+    | 		return System.DateTime.Parse(inputDate).ToString("yyyy-MM-ddTHH:mm:ss");
+    | 	}
+    | 	
+    | }
+F33 [Scripting] inputs: L110, L122, L114, L123
+    script language: CSharp
+    | public string FormatNote(string paymentMethodCode, string trxID, string approvalCode, string pmtAmt)
+    | {
+    |   string formattedNote = "";
+    |   if (paymentMethodCode == "ACH")
+    |   {
+    |     formattedNote = System.String.Format("{0} payment; Transaction ID = {1}; Response = Check Submitted", System.DateTime.Now.ToString("M/dd/yyyy"), trxID );
+    |   }
+    |   if (paymentMethodCode == "REV")
+    |   {
+    |     double amt = Math.Abs(System.Convert.ToDouble(pmtAmt));
+    |     formattedNote = System.String.Format("{0} - Web ACH Return - (${2}) Additional Info: {1}", System.DateTime.Now.ToString("M/dd/yyyy HH:mm:ss tt"), trxID, amt.ToString("#.##") );
+    |   }
+    |   if (paymentMethodCode == "CCC")
+    |   {
+    |     formattedNote = System.String.Format("Approval Code={0}; Transaction ID={1}", approvalCode, trxID );
+    |   }
+    | 
+    |   return formattedNote ;
+    | }
+    | 
+

@@ -1,0 +1,59 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.GPSP_TypedProcedure_BTS",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.GPSP_TypedProcedure_BTS",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetProcessingStagingPatientMessages/GPSP_TypedProcedure.BTS.xsd",
+    "rootElements": [
+      "GetProcessingStagingPatientMessages",
+      "GetProcessingStagingPatientMessagesResponse"
+    ],
+    "kind": "wcf-sql-typed-procedure",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS",
+    "sqlActions": [
+      "TypedProcedure/BTS/GetProcessingStagingPatientMessages"
+    ]
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetProcessingStagingPatientMessages/GPSP_TypedProcedure.BTS.xsd",
+      "toName": "GPSP_TypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_GetProcessingStagingPatientMessages_GPSP_TypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "describesParametersOf",
+      "to": "sqlproc:BizTalkCloud9Common.BTS.GetProcessingStagingPatientMessages",
+      "toName": "BTS.GetProcessingStagingPatientMessages",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.GetProcessingStagingPatientMessages.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.Epic.PatientToProcess_To_GetProcessingStagingPatientMessages",
+      "fromName": "Cloud9.BizTalk.Epic.PatientToProcess_To_GetProcessingStagingPatientMessages",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.Epic.PatientToProcess_To_GetProcessingStagingPatientMessages.json",
+      "root": "GetProcessingStagingPatientMessages"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.Epic.MPType_GetProcessingStagingPatientMessagesResp",
+      "fromName": "MPType_GetProcessingStagingPatientMessagesResp",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_GetProcessingStagingPatientMessagesResp.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.GPSP_TypedProcedure_BTS.GetProcessingStagingPatientMessagesResponse"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.Epic.MPType_GetProcessingStagingPatientMessagesReq",
+      "fromName": "MPType_GetProcessingStagingPatientMessagesReq",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_GetProcessingStagingPatientMessagesReq.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.GPSP_TypedProcedure_BTS.GetProcessingStagingPatientMessages"
+    }
+  ]
+}

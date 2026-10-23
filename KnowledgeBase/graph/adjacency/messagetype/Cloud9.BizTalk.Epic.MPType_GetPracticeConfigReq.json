@@ -1,0 +1,37 @@
+{
+  "node": {
+    "id": "messagetype:Cloud9.BizTalk.Epic.MPType_GetPracticeConfigReq",
+    "type": "messagetype",
+    "name": "MPType_GetPracticeConfigReq",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.StageHL7.Inbound.odx",
+    "bodyType": "Cloud9.BizTalk.Schemas.GPC_TypedProcedure_BTS.GetPracticeConfiguration",
+    "module": "Cloud9.BizTalk.Epic"
+  },
+  "outgoing": [
+    {
+      "type": "bodySchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.GPC_TypedProcedure_BTS",
+      "toName": "Cloud9.BizTalk.Schemas.GPC_TypedProcedure_BTS",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.GPC_TypedProcedure_BTS.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.GPC_TypedProcedure_BTS.GetPracticeConfiguration"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.StageHL7.Inbound.odx",
+      "fromName": "Cloud9.BizTalk.Epic.StageHL7.Inbound.odx",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Orchestrations_Cloud9.BizTalk.Epic.StageHL7.Inbound.odx.json"
+    },
+    {
+      "type": "usesMessageType",
+      "from": "orchestration:Cloud9.BizTalk.Epic.StageHL7_Inbound",
+      "fromName": "StageHL7_Inbound",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.StageHL7_Inbound.json",
+      "message": "msgGetPracticeConfigReq"
+    }
+  ]
+}

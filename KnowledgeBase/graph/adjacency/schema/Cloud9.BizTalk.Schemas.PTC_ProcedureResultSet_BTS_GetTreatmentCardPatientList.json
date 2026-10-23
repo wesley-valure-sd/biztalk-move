@@ -1,0 +1,42 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.PTC_ProcedureResultSet_BTS_GetTreatmentCardPatientList",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.PTC_ProcedureResultSet_BTS_GetTreatmentCardPatientList",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/PatientTreatmentCard/PTC_ProcedureResultSet.BTS.GetTreatmentCardPatientList.xsd",
+    "rootElements": [
+      "StoredProcedureResultSet0",
+      "ArrayOfStoredProcedureResultSet0"
+    ],
+    "kind": "wcf-sql-result-set",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetTreatmentCardPatientList",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/PatientTreatmentCard/PTC_ProcedureResultSet.BTS.GetTreatmentCardPatientList.xsd",
+      "toName": "PTC_ProcedureResultSet.BTS.GetTreatmentCardPatientList.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_PatientTreatmentCard_PTC_ProcedureResultSet.BTS.GetTreatmentCardPatientList.xsd.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "sourceSchema",
+      "from": "map:Cloud9.BizTalk.Epic.Maps.TCForPatient_To_MDM_T02Body",
+      "fromName": "Cloud9.BizTalk.Epic.Maps.TCForPatient_To_MDM_T02Body",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.Epic.Maps.TCForPatient_To_MDM_T02Body.json",
+      "root": "StoredProcedureResultSet0"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.Epic.MPType_TCPatientListElement",
+      "fromName": "MPType_TCPatientListElement",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_TCPatientListElement.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.PTC_ProcedureResultSet_BTS_GetTreatmentCardPatientList.StoredProcedureResultSet0"
+    }
+  ]
+}

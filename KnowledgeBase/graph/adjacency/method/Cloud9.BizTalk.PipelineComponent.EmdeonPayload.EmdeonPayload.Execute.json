@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.PipelineComponent.EmdeonPayload.EmdeonPayload.Execute",
+    "type": "method",
+    "name": "EmdeonPayload.Execute",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.PipelineComponent.EmdeonPayload/EmdeonPayload.cs",
+    "class": "Cloud9.BizTalk.PipelineComponent.EmdeonPayload.EmdeonPayload",
+    "line": 178,
+    "signatures": [
+      "public IBaseMessage Execute(Microsoft.BizTalk.Component.Interop.IPipelineContext pc, IBaseMessage inmsg)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.PipelineComponent.EmdeonPayload.EmdeonPayload",
+      "fromName": "Cloud9.BizTalk.PipelineComponent.EmdeonPayload.EmdeonPayload",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.PipelineComponent.EmdeonPayload.EmdeonPayload.json"
+    }
+  ]
+}

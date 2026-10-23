@@ -1,0 +1,54 @@
+{
+  "node": {
+    "id": "sqlproc:BizTalkCloud9Common.BTS.GetProcessingStagingPatientMessages",
+    "type": "sqlproc",
+    "name": "BTS.GetProcessingStagingPatientMessages",
+    "database": "BizTalkCloud9Common",
+    "definedInRepo": true,
+    "parameters": [
+      "@hisEPICPatientID nvarchar(100)"
+    ],
+    "path": "Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored Procedures/GetProcessingStagingPatientMessages.sql"
+  },
+  "outgoing": [
+    {
+      "type": "reads",
+      "to": "sqltable:BizTalkCloud9Common.BTS.HL7InboundStaging",
+      "toName": "BTS.HL7InboundStaging",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/BizTalkCloud9Common.BTS.HL7InboundStaging.json"
+    },
+    {
+      "type": "reads",
+      "to": "sqltable:BizTalkCloud9Common.BTS.IncomingMessage",
+      "toName": "BTS.IncomingMessage",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/BizTalkCloud9Common.BTS.IncomingMessage.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored Procedures/GetProcessingStagingPatientMessages.sql",
+      "fromName": "GetProcessingStagingPatientMessages.sql",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Stored_Procedures_GetProcessingStagingPatientMessages.sql.json"
+    },
+    {
+      "type": "describesParametersOf",
+      "from": "schema:Cloud9.BizTalk.Schemas.GPSP_TypedProcedure_BTS",
+      "fromName": "Cloud9.BizTalk.Schemas.GPSP_TypedProcedure_BTS",
+      "fromType": "schema",
+      "fromFile": "adjacency/schema/Cloud9.BizTalk.Schemas.GPSP_TypedProcedure_BTS.json"
+    },
+    {
+      "type": "invokesProc",
+      "from": "orchestration:Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient",
+      "fromName": "ProcessHL7MessagesForPatient",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient.json",
+      "line": 2502,
+      "via": "static send port operation GetProcessingStagingPatientMessages (BtsActionMapping)"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "node": {
+    "id": "setting:Cloud9.EDI.PDS.Deployment/CH_276_HTTP_ADDR",
+    "type": "setting",
+    "name": "CH_276_HTTP_ADDR",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.PDS.Deployment/SettingsFileGenerator.xml",
+    "bindingSet": "Cloud9.EDI.PDS.Deployment",
+    "valuesByEnvironment": {
+      "Default Values": "https://claimservices.webmddental.com/WebMD_ClaimStatus_002/Request_002.aspx",
+      "Local Dev (LocalSettings)": "https://claimservices.webmddental.com/WebMD_ClaimStatus_002/Request_002.aspx",
+      "LAB2 (LAB2Settings)": "https://claimservices.webmddental.com/WebMD_ClaimStatus_002/Request_002.aspx",
+      "DEV (DEVSettings)": "https://claimservices.webmddental.com/WebMD_ClaimStatus_002/Request_002.aspx",
+      "CFG (CFGSettings)": "https://claimservices.webmddental.com/WebMD_ClaimStatus_002/Request_002.aspx",
+      "TST (TSTSettings)": "https://claimservices.webmddental.com/WebMD_ClaimStatus_002/Request_002.aspx",
+      "TRN (TrainingSettings)": "https://claimservices.webmddental.com/WebMD_ClaimStatus_002/Request_002.aspx",
+      "STG (StagingSettings)": "https://claimservices.webmddental.com/WebMD_ClaimStatus_002/Request_002.aspx",
+      "PROD (ProdSettings)": "https://claimservices.webmddental.com/WebMD_ClaimStatus_002/Request_002.aspx"
+    }
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "usesSetting",
+      "from": "sendport:Cloud9.EDI.PDS.Deployment/SP_CH276_HTTP",
+      "fromName": "SP_CH276_HTTP",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.PDS.Deployment_SP_CH276_HTTP.json"
+    }
+  ]
+}

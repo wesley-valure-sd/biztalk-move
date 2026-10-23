@@ -1,0 +1,145 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.Deployment/PortBindingsMaster.xml",
+    "type": "file",
+    "name": "PortBindingsMaster.xml",
+    "kind": "binding",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Deployment/PortBindingsMaster.xml"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "definedIn",
+      "from": "sendport:Cloud9.BizTalk.Deployment/WCF_SQL_GET_PRACTICE_CONFIG",
+      "fromName": "WCF_SQL_GET_PRACTICE_CONFIG",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.BizTalk.Deployment_WCF_SQL_GET_PRACTICE_CONFIG.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "sendport:Cloud9.BizTalk.Deployment/WCF_SQL_INSERT_PROCESSING_ERROR",
+      "fromName": "WCF_SQL_INSERT_PROCESSING_ERROR",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.BizTalk.Deployment_WCF_SQL_INSERT_PROCESSING_ERROR.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "sendport:Cloud9.BizTalk.Deployment/WCF_SQL_INSERT_HL7_STAGING",
+      "fromName": "WCF_SQL_INSERT_HL7_STAGING",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.BizTalk.Deployment_WCF_SQL_INSERT_HL7_STAGING.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "sendport:Cloud9.BizTalk.Deployment/WCF_SQL_SET_STAGING_PATIENT_MESSAGE_STATUS",
+      "fromName": "WCF_SQL_SET_STAGING_PATIENT_MESSAGE_STATUS",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.BizTalk.Deployment_WCF_SQL_SET_STAGING_PATIENT_MESSAGE_STATUS.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "sendport:Cloud9.BizTalk.Deployment/WCF_SQL_GET_STAGING_PATIENT_MESSAGES",
+      "fromName": "WCF_SQL_GET_STAGING_PATIENT_MESSAGES",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.BizTalk.Deployment_WCF_SQL_GET_STAGING_PATIENT_MESSAGES.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "sendport:Cloud9.BizTalk.Deployment/WCF_SQL_UPDATE_STATUS",
+      "fromName": "WCF_SQL_UPDATE_STATUS",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.BizTalk.Deployment_WCF_SQL_UPDATE_STATUS.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "sendport:Cloud9.BizTalk.Deployment/Cloud9.BizTalk.Epic_1.0.0.0_Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient_Port_UpsertPatientDynamic_182f4e020577c79e",
+      "fromName": "Cloud9.BizTalk.Epic_1.0.0.0_Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient_Port_UpsertPatientDynamic_182f4e020577c79e",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.BizTalk.Deployment_Cloud9.BizTalk.Epic_1.0.0.0_Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient_Port_UpsertPatientDynamic_182f4e020577c79e.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "sendport:Cloud9.BizTalk.Deployment/Cloud9.BizTalk.Epic_1.0.0.0_Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient_Port_UpsertEmployeeDynamic_182f4e020577c79e",
+      "fromName": "Cloud9.BizTalk.Epic_1.0.0.0_Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient_Port_UpsertEmployeeDynamic_182f4e020577c79e",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.BizTalk.Deployment_Cloud9.BizTalk.Epic_1.0.0.0_Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient_Port_UpsertEmployeeDynamic_182f4e020577c79e.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "sendport:Cloud9.BizTalk.Deployment/Cloud9.BizTalk.Epic_1.0.0.0_Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient_Port_UpsertAppointmentDynamic_182f4e020577c79e",
+      "fromName": "Cloud9.BizTalk.Epic_1.0.0.0_Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient_Port_UpsertAppointmentDynamic_182f4e020577c79e",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.BizTalk.Deployment_Cloud9.BizTalk.Epic_1.0.0.0_Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient_Port_UpsertAppointmentDynamic_182f4e020577c79e.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "sendport:Cloud9.BizTalk.Deployment/SP.MDM_T02.Outbound",
+      "fromName": "SP.MDM_T02.Outbound",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.BizTalk.Deployment_SP.MDM_T02.Outbound.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "sendport:Cloud9.BizTalk.Deployment/Cloud9.BizTalk.Epic_1.0.0.0_Cloud9.BizTalk.Epic.ProcessTreatmentCardData_Worker_Port_GetTreatmentCardPatientListDynamic_182f4e020577c79e",
+      "fromName": "Cloud9.BizTalk.Epic_1.0.0.0_Cloud9.BizTalk.Epic.ProcessTreatmentCardData_Worker_Port_GetTreatmentCardPatientListDynamic_182f4e020577c79e",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.BizTalk.Deployment_Cloud9.BizTalk.Epic_1.0.0.0_Cloud9.BizTalk.Epic.ProcessTreatmentCardData_Worker_Port_GetTreatmentCardPatientListDynamic_182f4e020577c79e.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "sendport:Cloud9.BizTalk.Deployment/Cloud9.BizTalk.Epic_1.0.0.0_Cloud9.BizTalk.Epic.ProcessTreatmentCardData_Worker_Port_GetTreatmentCardEntriesForPatientDynamic_182f4e020577c79e",
+      "fromName": "Cloud9.BizTalk.Epic_1.0.0.0_Cloud9.BizTalk.Epic.ProcessTreatmentCardData_Worker_Port_GetTreatmentCardEntriesForPatientDynamic_182f4e020577c79e",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.BizTalk.Deployment_Cloud9.BizTalk.Epic_1.0.0.0_Cloud9.BizTalk.Epic.ProcessTreatmentCardData_Worker_Port_GetTreatmentCardEntriesForPatientDynamic_182f4e020577c79e.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "sendport:Cloud9.BizTalk.Deployment/WCF_UPDATE_PROCESS_PARAMETERS",
+      "fromName": "WCF_UPDATE_PROCESS_PARAMETERS",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.BizTalk.Deployment_WCF_UPDATE_PROCESS_PARAMETERS.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "sendport:Cloud9.BizTalk.Deployment/Cloud9.BizTalk.Epic_1.0.0.0_Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient_Port_AddSignalRPayloadDynamic_182f4e020577c79e",
+      "fromName": "Cloud9.BizTalk.Epic_1.0.0.0_Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient_Port_AddSignalRPayloadDynamic_182f4e020577c79e",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.BizTalk.Deployment_Cloud9.BizTalk.Epic_1.0.0.0_Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient_Port_AddSignalRPayloadDynamic_182f4e020577c79e.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "sendport:Cloud9.BizTalk.Deployment/WCF_SQL_CREATE_LOG_ENTRY",
+      "fromName": "WCF_SQL_CREATE_LOG_ENTRY",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.BizTalk.Deployment_WCF_SQL_CREATE_LOG_ENTRY.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "receiveport:Cloud9.BizTalk.Deployment/RP.ReceiveUnprocessedPatientStagingHL7",
+      "fromName": "RP.ReceiveUnprocessedPatientStagingHL7",
+      "fromType": "receiveport",
+      "fromFile": "adjacency/receiveport/Cloud9.BizTalk.Deployment_RP.ReceiveUnprocessedPatientStagingHL7.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "receiveport:Cloud9.BizTalk.Deployment/RP.PollingIncomingMessage",
+      "fromName": "RP.PollingIncomingMessage",
+      "fromType": "receiveport",
+      "fromFile": "adjacency/receiveport/Cloud9.BizTalk.Deployment_RP.PollingIncomingMessage.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "receiveport:Cloud9.BizTalk.Deployment/RP.QueueTreatmentCardSendProcess",
+      "fromName": "RP.QueueTreatmentCardSendProcess",
+      "fromType": "receiveport",
+      "fromFile": "adjacency/receiveport/Cloud9.BizTalk.Deployment_RP.QueueTreatmentCardSendProcess.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "receiveport:Cloud9.BizTalk.Deployment/RP.MDM_T02_To_PDS",
+      "fromName": "RP.MDM_T02_To_PDS",
+      "fromType": "receiveport",
+      "fromFile": "adjacency/receiveport/Cloud9.BizTalk.Deployment_RP.MDM_T02_To_PDS.json"
+    }
+  ]
+}

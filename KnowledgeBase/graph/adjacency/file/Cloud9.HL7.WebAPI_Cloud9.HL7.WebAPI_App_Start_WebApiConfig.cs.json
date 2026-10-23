@@ -1,0 +1,27 @@
+{
+  "node": {
+    "id": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.WebAPI/App_Start/WebApiConfig.cs",
+    "type": "file",
+    "name": "WebApiConfig.cs",
+    "kind": "csharp",
+    "path": "Cloud9.HL7.WebAPI/Cloud9.HL7.WebAPI/App_Start/WebApiConfig.cs"
+  },
+  "outgoing": [
+    {
+      "type": "defines",
+      "to": "class:Cloud9.HL7.WebAPI.WebApiConfig",
+      "toName": "Cloud9.HL7.WebAPI.WebApiConfig",
+      "toType": "class",
+      "toFile": "adjacency/class/Cloud9.HL7.WebAPI.WebApiConfig.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.HL7.WebAPI",
+      "fromName": "Cloud9.HL7.WebAPI",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.HL7.WebAPI.json"
+    }
+  ]
+}

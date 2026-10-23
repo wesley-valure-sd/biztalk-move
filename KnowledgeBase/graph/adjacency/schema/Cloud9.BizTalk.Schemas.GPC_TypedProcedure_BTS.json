@@ -1,0 +1,85 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.GPC_TypedProcedure_BTS",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.GPC_TypedProcedure_BTS",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/PracticeConfig/GPC_TypedProcedure.BTS.xsd",
+    "rootElements": [
+      "GetPracticeConfiguration",
+      "GetPracticeConfigurationResponse",
+      "GetPracticeConfigurationByName",
+      "GetPracticeConfigurationByNameResponse"
+    ],
+    "kind": "wcf-sql-typed-procedure",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS",
+    "sqlActions": [
+      "TypedProcedure/BTS/GetPracticeConfiguration"
+    ]
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/PracticeConfig/GPC_TypedProcedure.BTS.xsd",
+      "toName": "GPC_TypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_PracticeConfig_GPC_TypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "describesParametersOf",
+      "to": "sqlproc:BizTalkCloud9Common.BTS.GetPracticeConfiguration",
+      "toName": "BTS.GetPracticeConfiguration",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.GetPracticeConfiguration.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.Epic.Maps.HL7_MHToGetPracticeConfig",
+      "fromName": "Cloud9.BizTalk.Epic.Maps.HL7_MHToGetPracticeConfig",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.Epic.Maps.HL7_MHToGetPracticeConfig.json",
+      "root": "GetPracticeConfiguration"
+    },
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.X12.Maps.Instantiate_GetPracticeConfigurationByName",
+      "fromName": "Cloud9.BizTalk.X12.Maps.Instantiate_GetPracticeConfigurationByName",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.Instantiate_GetPracticeConfigurationByName.json",
+      "root": "GetPracticeConfigurationByName"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.Epic.MPType_GetPracticeConfigResp",
+      "fromName": "MPType_GetPracticeConfigResp",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_GetPracticeConfigResp.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.GPC_TypedProcedure_BTS.GetPracticeConfigurationResponse"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.Epic.MPType_GetPracticeConfigReq",
+      "fromName": "MPType_GetPracticeConfigReq",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_GetPracticeConfigReq.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.GPC_TypedProcedure_BTS.GetPracticeConfiguration"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.GetPracticeConfigurationByName_MMT",
+      "fromName": "GetPracticeConfigurationByName_MMT",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.GetPracticeConfigurationByName_MMT.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.GPC_TypedProcedure_BTS.GetPracticeConfigurationByName"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.X12.GetPracticeConfigurationByNameResponse_MMT",
+      "fromName": "GetPracticeConfigurationByNameResponse_MMT",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.X12.GetPracticeConfigurationByNameResponse_MMT.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.GPC_TypedProcedure_BTS.GetPracticeConfigurationByNameResponse"
+    }
+  ]
+}

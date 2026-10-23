@@ -1,0 +1,182 @@
+{
+  "node": {
+    "id": "map:Cloud9.BizTalk.X12.Maps.ClaimCanonical_To_CHC_X12_5010_837D",
+    "type": "map",
+    "name": "Cloud9.BizTalk.X12.Maps.ClaimCanonical_To_CHC_X12_5010_837D",
+    "readableSummary": "KnowledgeBase/map-summaries/ClaimCanonical_To_CHC_X12_5010_837D.txt",
+    "targetSchema": "Cloud9.BizTalk.X12.Schemas.CHC_X12_00501_837_D",
+    "inlineScripts": [
+      "CSharp:StripDashes",
+      "CSharp:ReplaceColon",
+      "CSharp:CurrentHL01",
+      "CSharp:GetHL01",
+      "XsltCallTemplate:NoteSplit",
+      "CSharp:FormatDouble2",
+      "CSharp:FormatC9PatientControlNumber",
+      "XsltCallTemplate:NoteSplit2"
+    ],
+    "functoidCount": 398,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/ClaimCanonical_To_CHC_X12_5010_837D.btm",
+    "sourceSchema": "Cloud9.BizTalk.Schemas.Canonical.ClaimCanonical",
+    "linkCount": 692,
+    "sourceRoot": "Claim",
+    "targetRoot": "X12_00501_837_D"
+  },
+  "outgoing": [
+    {
+      "type": "callsMethod",
+      "to": "method:Cloud9.BizTalk.Helper.ParseNameAddressBox.GetFirstname",
+      "toName": "ParseNameAddressBox.GetFirstname",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.ParseNameAddressBox.GetFirstname.json",
+      "via": "scripting functoid (ExternalAssembly)"
+    },
+    {
+      "type": "callsMethod",
+      "to": "method:Cloud9.BizTalk.Helper.ParseNameAddressBox.GetLastname",
+      "toName": "ParseNameAddressBox.GetLastname",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.ParseNameAddressBox.GetLastname.json",
+      "via": "scripting functoid (ExternalAssembly)"
+    },
+    {
+      "type": "callsMethod",
+      "to": "method:Cloud9.BizTalk.Helper.ParseNameAddressBox.GetMiddleInitial",
+      "toName": "ParseNameAddressBox.GetMiddleInitial",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.ParseNameAddressBox.GetMiddleInitial.json",
+      "via": "scripting functoid (ExternalAssembly)"
+    },
+    {
+      "type": "callsMethod",
+      "to": "method:Cloud9.BizTalk.Helper.ParseNameAddressBox.GetTitle",
+      "toName": "ParseNameAddressBox.GetTitle",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.ParseNameAddressBox.GetTitle.json",
+      "via": "scripting functoid (ExternalAssembly)"
+    },
+    {
+      "type": "callsMethod",
+      "to": "method:Cloud9.BizTalk.Helper.ParseNameAddressBox.GetName",
+      "toName": "ParseNameAddressBox.GetName",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.ParseNameAddressBox.GetName.json",
+      "via": "scripting functoid (ExternalAssembly)"
+    },
+    {
+      "type": "callsMethod",
+      "to": "method:Cloud9.BizTalk.Helper.EDIClaimHelper.CleanPhoneNumber",
+      "toName": "EDIClaimHelper.CleanPhoneNumber",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.EDIClaimHelper.CleanPhoneNumber.json",
+      "via": "scripting functoid (ExternalAssembly)"
+    },
+    {
+      "type": "callsMethod",
+      "to": "method:Cloud9.BizTalk.Helper.ParseNameAddressBox.GetAddress1",
+      "toName": "ParseNameAddressBox.GetAddress1",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.ParseNameAddressBox.GetAddress1.json",
+      "via": "scripting functoid (ExternalAssembly)"
+    },
+    {
+      "type": "callsMethod",
+      "to": "method:Cloud9.BizTalk.Helper.ParseNameAddressBox.GetAddress2",
+      "toName": "ParseNameAddressBox.GetAddress2",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.ParseNameAddressBox.GetAddress2.json",
+      "via": "scripting functoid (ExternalAssembly)"
+    },
+    {
+      "type": "callsMethod",
+      "to": "method:Cloud9.BizTalk.Helper.ParseNameAddressBox.GetCity",
+      "toName": "ParseNameAddressBox.GetCity",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.ParseNameAddressBox.GetCity.json",
+      "via": "scripting functoid (ExternalAssembly)"
+    },
+    {
+      "type": "callsMethod",
+      "to": "method:Cloud9.BizTalk.Helper.ParseNameAddressBox.GetState",
+      "toName": "ParseNameAddressBox.GetState",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.ParseNameAddressBox.GetState.json",
+      "via": "scripting functoid (ExternalAssembly)"
+    },
+    {
+      "type": "callsMethod",
+      "to": "method:Cloud9.BizTalk.Helper.ParseNameAddressBox.GetZipcode",
+      "toName": "ParseNameAddressBox.GetZipcode",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.ParseNameAddressBox.GetZipcode.json",
+      "via": "scripting functoid (ExternalAssembly)"
+    },
+    {
+      "type": "callsMethod",
+      "to": "method:Cloud9.BizTalk.Helper.DateFormatConversion.ConvertSQLDateToEDIDate",
+      "toName": "DateFormatConversion.ConvertSQLDateToEDIDate",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.DateFormatConversion.ConvertSQLDateToEDIDate.json",
+      "via": "scripting functoid (ExternalAssembly)"
+    },
+    {
+      "type": "callsMethod",
+      "to": "method:Cloud9.BizTalk.Helper.EDICodeConversion.ConvertGenderCodeFromC9ToEDI",
+      "toName": "EDICodeConversion.ConvertGenderCodeFromC9ToEDI",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.EDICodeConversion.ConvertGenderCodeFromC9ToEDI.json",
+      "via": "scripting functoid (ExternalAssembly)"
+    },
+    {
+      "type": "callsMethod",
+      "to": "method:Cloud9.BizTalk.Helper.EDIClaimHelper.FormatDouble",
+      "toName": "EDIClaimHelper.FormatDouble",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.EDIClaimHelper.FormatDouble.json",
+      "via": "scripting functoid (ExternalAssembly)"
+    },
+    {
+      "type": "callsMethod",
+      "to": "method:Cloud9.BizTalk.Helper.ParseNameAddressBox.GetMiddlename",
+      "toName": "ParseNameAddressBox.GetMiddlename",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.ParseNameAddressBox.GetMiddlename.json",
+      "via": "scripting functoid (ExternalAssembly)"
+    },
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/ClaimCanonical_To_CHC_X12_5010_837D.btm",
+      "toName": "ClaimCanonical_To_CHC_X12_5010_837D.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_ClaimCanonical_To_CHC_X12_5010_837D.btm.json"
+    },
+    {
+      "type": "sourceSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.Canonical.ClaimCanonical",
+      "toName": "Cloud9.BizTalk.Schemas.Canonical.ClaimCanonical",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.Canonical.ClaimCanonical.json",
+      "root": "Claim"
+    },
+    {
+      "type": "targetSchema",
+      "to": "schema:Cloud9.BizTalk.X12.Schemas.CHC_X12_00501_837_D",
+      "toName": "Cloud9.BizTalk.X12.Schemas.CHC_X12_00501_837_D",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.X12.Schemas.CHC_X12_00501_837_D.json",
+      "root": "X12_00501_837_D"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "usesMap",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker",
+      "fromName": "Process_CHC_837Claims_Worker",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker.json",
+      "output": "msg_837Claim",
+      "input": "msg_C9Claim",
+      "line": 1549
+    }
+  ]
+}

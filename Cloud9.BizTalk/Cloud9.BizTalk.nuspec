@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Cloud9.BizTalk</id>
+    <version>1.0.0</version>
+    <authors>Cloud9</authors>
+    <owners>Cloud9</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>BizTalk Deployment Packages</description>
+    <releaseNotes>Initial Release</releaseNotes>
+    <copyright>Copyright 2019</copyright>
+  </metadata>
+	<files>
+		<file src="Cloud9.Common.Deployment\bin\Release\*.msi" target="" />
+		<file src="Cloud9.BizTalk.Deployment\bin\Release\*.msi" target="" />
+		<file src="Cloud9.EDI.Deployment\bin\Release\*.msi" target="" />
+		<file src="Tools\*.ps1" target="tools" />
+		<file src="Configuration\PartyCollection.ALL.xml" target="tools" />
+		<file src="Configuration\Readme.txt" target="tools" />
+
+	</files>  
+</package>

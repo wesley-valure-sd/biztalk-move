@@ -1,0 +1,47 @@
+{
+  "node": {
+    "id": "flowstep:BBVA-Patient-02-PracticeLookup",
+    "type": "flowstep",
+    "name": "Find practice database from folder name",
+    "order": 2,
+    "curated": true,
+    "logic": "Practice name = name of the parent folder of the receive location (text between the last two path separators of BTS.InboundTransportLocation). Call BTS.GetPracticeConfigurationByName(@pcName) in BizTalkCloud9Common. Use pcInstanceAddress (a WCF-SQL mssql:// URI) as the practice database address. No check exists for a missing row."
+  },
+  "outgoing": [
+    {
+      "type": "implementedBy",
+      "to": "orchestration:Cloud9.BizTalk.X12.Process_BBVA_835Patient",
+      "toName": "Process_BBVA_835Patient",
+      "toType": "orchestration",
+      "toFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_BBVA_835Patient.json",
+      "curated": true
+    },
+    {
+      "type": "implementedBy",
+      "to": "sqlproc:BizTalkCloud9Common.BTS.GetPracticeConfigurationByName",
+      "toName": "BTS.GetPracticeConfigurationByName",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.GetPracticeConfigurationByName.json",
+      "curated": true
+    }
+  ],
+  "incoming": [
+    {
+      "type": "hasStep",
+      "from": "flow:BBVA-835-Patient-Lockbox",
+      "fromName": "BBVA patient lockbox 835 -> patient payment transactions",
+      "fromType": "flow",
+      "fromFile": "adjacency/flow/BBVA-835-Patient-Lockbox.json",
+      "order": 2,
+      "curated": true
+    },
+    {
+      "type": "appliesTo",
+      "from": "businessrule:PracticeResolution",
+      "fromName": "Practice database resolution",
+      "fromType": "businessrule",
+      "fromFile": "adjacency/businessrule/PracticeResolution.json",
+      "curated": true
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindingInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Assembly="Microsoft.BizTalk.Deployment, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Version="3.5.1.0" BindingStatus="NoBindings" BoundEndpoints="0" TotalEndpoints="0">
+  <Timestamp>2019-05-07T15:36:55.0672116-04:00</Timestamp>
+  <ModuleRefCollection>
+    <ModuleRef Name="[Application:Cloud9.Common]" Version="" Culture="" PublicKeyToken="" FullName="[Application:Cloud9.Common], Version=, Culture=, PublicKeyToken=">
+       <Services/>
+     <TrackedSchemas>
+        <Schema FullName="BTAHL7Schemas.HL7PropertySchema" AssemblyQualifiedName="BTAHL7Schemas.HL7PropertySchema,Microsoft.Solutions.BTAHL7.HL7Schemas, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" AlwaysTrackAllProperties="false" Description="">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="BTAHL7Schemas.Fts" RootName="FtsWrapper" AssemblyQualifiedName="BTAHL7Schemas.Fts,Microsoft.Solutions.BTAHL7.HL7Schemas, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" AlwaysTrackAllProperties="false" Description="">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="BTAHL7Schemas.Bhs" RootName="BhsWrapper" AssemblyQualifiedName="BTAHL7Schemas.Bhs,Microsoft.Solutions.BTAHL7.HL7Schemas, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" AlwaysTrackAllProperties="false" Description="">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="BTAHL7Schemas.Bts" RootName="BtsWrapper" AssemblyQualifiedName="BTAHL7Schemas.Bts,Microsoft.Solutions.BTAHL7.HL7Schemas, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" AlwaysTrackAllProperties="false" Description="">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="BTAHL7Schemas.Fhs" RootName="FhsWrapper" AssemblyQualifiedName="BTAHL7Schemas.Fhs,Microsoft.Solutions.BTAHL7.HL7Schemas, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" AlwaysTrackAllProperties="false" Description="">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Microsoft.Solutions.BTAHL7.BatchOrchestration.PropertySchema" AssemblyQualifiedName="Microsoft.Solutions.BTAHL7.BatchOrchestration.PropertySchema,Microsoft.Solutions.BTAHL7.BatchOrchestration, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" AlwaysTrackAllProperties="false" Description="">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Microsoft.Solutions.BTAHL7.BatchOrchestration.BatchTermination" RootName="BTAHL7_BatchTermination_24_GLO_DEF" AssemblyQualifiedName="Microsoft.Solutions.BTAHL7.BatchOrchestration.BatchTermination,Microsoft.Solutions.BTAHL7.BatchOrchestration, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" AlwaysTrackAllProperties="false" Description="">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Microsoft.Solutions.BTAHL7.BatchOrchestration.BatchActivation" RootName="BTAHL7_BatchActivation_24_GLO_DEF" AssemblyQualifiedName="Microsoft.Solutions.BTAHL7.BatchOrchestration.BatchActivation,Microsoft.Solutions.BTAHL7.BatchOrchestration, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" AlwaysTrackAllProperties="false" Description="">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Microsoft.Solutions.BTAHL7.BatchOrchestration.BatchMessages" RootName="BatchMessages" AssemblyQualifiedName="Microsoft.Solutions.BTAHL7.BatchOrchestration.BatchMessages,Microsoft.Solutions.BTAHL7.BatchOrchestration, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" AlwaysTrackAllProperties="false" Description="">
+          <TrackedPropertyNames />
+        </Schema>
+        <Schema FullName="Microsoft.Solutions.BTAHL7.BatchOrchestration.BatchRequest" RootName="BTAHL7_BatchRequest_24_GLO_DEF" AssemblyQualifiedName="Microsoft.Solutions.BTAHL7.BatchOrchestration.BatchRequest,Microsoft.Solutions.BTAHL7.BatchOrchestration, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" AlwaysTrackAllProperties="false" Description="">
+          <TrackedPropertyNames />
+        </Schema>
+      </TrackedSchemas>
+    </ModuleRef>
+    <ModuleRef Name="Microsoft.Solutions.BTAHL7.HL7Schemas" Version="1.3.0.0" Culture="neutral" PublicKeyToken="31bf3856ad364e35" FullName="Microsoft.Solutions.BTAHL7.HL7Schemas, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="Microsoft.Solutions.BTAHL7.BatchOrchestration" Version="1.3.0.0" Culture="neutral" PublicKeyToken="31bf3856ad364e35" FullName="Microsoft.Solutions.BTAHL7.BatchOrchestration, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Services>
+        <Service Name="BatchOrchestration.Orchestration_1" State="Unenlisted" TrackingOption="None" AnalyticsEnabled="false" Description="">
+          <Ports />
+          <Roles />
+          <Host Name="BizTalkServerApplication" NTGroupName="BizTalk Application Users" Type="1" Trusted="false" />
+        </Service>
+      </Services>
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="BTAHL72XMLPipelines" Version="1.3.0.0" Culture="neutral" PublicKeyToken="31bf3856ad364e35" FullName="BTAHL72XMLPipelines, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+    <ModuleRef Name="BTAHL72XPipelines" Version="1.3.0.0" Culture="neutral" PublicKeyToken="31bf3856ad364e35" FullName="BTAHL72XPipelines, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Services />
+      <TrackedSchemas />
+    </ModuleRef>
+  </ModuleRefCollection>
+  <SendPortCollection />
+  <DistributionListCollection />
+  <ReceivePortCollection>
+    <ReceivePort Name="TwoWayAckReceivePort" IsTwoWay="false" BindingOption="0" AnalyticsEnabled="false">
+      <Description xsi:nil="true" />
+      <ReceiveLocations>
+        <ReceiveLocation Name="DO_NOT_START_TwoWayAckReceiveLocation">
+          <Description />
+          <Address>127.0.0.1:65535</Address>
+          <PublicAddress />
+          <Primary>true</Primary>
+          <ReceiveLocationServiceWindowEnabled>false</ReceiveLocationServiceWindowEnabled>
+          <ReceiveLocationFromTime>2019-01-22T00:00:00</ReceiveLocationFromTime>
+          <ReceiveLocationToTime>2019-01-22T23:59:59</ReceiveLocationToTime>
+          <ReceiveLocationStartDateEnabled>false</ReceiveLocationStartDateEnabled>
+          <ReceiveLocationStartDate>2019-01-22T00:00:00</ReceiveLocationStartDate>
+          <ReceiveLocationEndDateEnabled>false</ReceiveLocationEndDateEnabled>
+          <ReceiveLocationEndDate>2019-01-23T23:59:59</ReceiveLocationEndDate>
+          <ReceiveLocationTransportType Name="MLLP" Capabilities="15755" ConfigurationClsid="0060692e-81e5-4aa9-b979-963d60ed5788" />
+          <ReceiveLocationTransportTypeData>&lt;CustomProps&gt;&lt;AdapterConfig vt="8"&gt;&amp;lt;Receive xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&amp;gt;&amp;lt;connectionName&amp;gt;2way&amp;lt;/connectionName&amp;gt;&amp;lt;comments /&amp;gt;&amp;lt;serverName&amp;gt;127.0.0.1&amp;lt;/serverName&amp;gt;&amp;lt;port&amp;gt;65535&amp;lt;/port&amp;gt;&amp;lt;timeout&amp;gt;60000&amp;lt;/timeout&amp;gt;&amp;lt;persistentConnectionRecSide&amp;gt;FALSE&amp;lt;/persistentConnectionRecSide&amp;gt;&amp;lt;startBlockDelimiter&amp;gt;0b&amp;lt;/startBlockDelimiter&amp;gt;&amp;lt;endBlockDelimiter&amp;gt;1c&amp;lt;/endBlockDelimiter&amp;gt;&amp;lt;carriageReturn&amp;gt;0d&amp;lt;/carriageReturn&amp;gt;&amp;lt;uri&amp;gt;127.0.0.1:65535&amp;lt;/uri&amp;gt;&amp;lt;orderedDelivery&amp;gt;FALSE&amp;lt;/orderedDelivery&amp;gt;&amp;lt;/Receive&amp;gt;&lt;/AdapterConfig&gt;&lt;/CustomProps&gt;</ReceiveLocationTransportTypeData>
+          <ReceivePipeline Name="BTAHL72XPipelines.BTAHL72XReceivePipeline" FullyQualifiedName="BTAHL72XPipelines.BTAHL72XReceivePipeline, BTAHL72XPipelines, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Type="1" TrackingOption="None" Description="" />
+          <ReceivePipelineData xsi:nil="true" />
+          <SendPipeline xsi:nil="true" />
+          <SendPipelineData />
+          <Enable>false</Enable>
+          <ReceiveHandler Name="BizTalkServerApplication" HostTrusted="false">
+            <TransportType Name="MLLP" Capabilities="15755" ConfigurationClsid="0060692e-81e5-4aa9-b979-963d60ed5788" />
+          </ReceiveHandler>
+          <ScheduleRecurrenceType>None</ScheduleRecurrenceType>
+          <ScheduleRecurenceFrom>2019-01-22T00:00:00</ScheduleRecurenceFrom>
+          <ScheduleRecurrenceInterval>1</ScheduleRecurrenceInterval>
+          <ScheduleDaysOfWeek>None</ScheduleDaysOfWeek>
+          <ScheduleMonths>None</ScheduleMonths>
+          <ScheduleMonthDays>None</ScheduleMonthDays>
+          <ScheduleOrdinalDayOfWeek>None</ScheduleOrdinalDayOfWeek>
+          <ScheduleOrdinalType>None</ScheduleOrdinalType>
+          <ScheduleIsOrdinal>false</ScheduleIsOrdinal>
+          <ScheduleLastDayOfMonth>false</ScheduleLastDayOfMonth>
+          <ScheduleAutoAdjustToDaylightSaving>true</ScheduleAutoAdjustToDaylightSaving>
+          <ScheduleTimeZone>UTC</ScheduleTimeZone>
+        </ReceiveLocation>
+      </ReceiveLocations>
+      <SendPipelineData xsi:nil="true" />
+      <Authentication>0</Authentication>
+      <Tracking>0</Tracking>
+      <Transforms />
+      <RouteFailedMessage>false</RouteFailedMessage>
+      <ApplicationName>Cloud9.Common</ApplicationName>
+    </ReceivePort>
+  </ReceivePortCollection>
+  <PartyCollection xsi:nil="true" />
+</BindingInfo>

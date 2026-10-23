@@ -1,0 +1,72 @@
+{
+  "node": {
+    "id": "setting:Cloud9.EDI.PDS.Deployment/ADDR_FILE_ROOT",
+    "type": "setting",
+    "name": "ADDR_FILE_ROOT",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.PDS.Deployment/SettingsFileGenerator.xml",
+    "bindingSet": "Cloud9.EDI.PDS.Deployment",
+    "valuesByEnvironment": {
+      "Default Values": "C:\\BizTalkTest",
+      "Local Dev (LocalSettings)": "C:\\BizTalkTest",
+      "LAB2 (LAB2Settings)": "\\\\10.2.1.1\\Development\\Lab2",
+      "DEV (DEVSettings)": "\\\\awssgw01p02.pdsi.corp\\pacden-cloud9\\BIZ\\DEV",
+      "CFG (CFGSettings)": "\\\\awssgw01p02.pdsi.corp\\pacden-cloud9\\BIZ\\CFG",
+      "TST (TSTSettings)": "\\\\awssgw01p02.pdsi.corp\\pacden-cloud9\\BIZ\\TST",
+      "TRN (TrainingSettings)": "\\\\awssgw01p02.pdsi.corp\\pacden-cloud9\\BIZ\\TRN",
+      "STG (StagingSettings)": "\\\\awssgw01p02.pdsi.corp\\pacden-cloud9\\BIZ\\STG",
+      "PROD (ProdSettings)": "\\\\awssgw01p02.pdsi.corp\\pacden-cloud9\\BIZ\\PRD"
+    }
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "usesSetting",
+      "from": "sendport:Cloud9.EDI.PDS.Deployment/SP_CHC276_FILE",
+      "fromName": "SP_CHC276_FILE",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.PDS.Deployment_SP_CHC276_FILE.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "sendport:Cloud9.EDI.PDS.Deployment/SP_CHC_Inbound",
+      "fromName": "SP_CHC_Inbound",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.PDS.Deployment_SP_CHC_Inbound.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "sendport:Cloud9.EDI.PDS.Deployment/SP_CH277_FILE",
+      "fromName": "SP_CH277_FILE",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.PDS.Deployment_SP_CH277_FILE.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "sendport:Cloud9.EDI.PDS.Deployment/Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_SendClaim_HTTP_Dynamic_182f4e020577c79e",
+      "fromName": "Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_SendClaim_HTTP_Dynamic_182f4e020577c79e",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.PDS.Deployment_Cloud9.BizTalk.X12_1.0.0.0_Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker_Port_SendClaim_HTTP_Dynamic_182f4e020577c79e.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "sendport:Cloud9.EDI.PDS.Deployment/SP_ACKS",
+      "fromName": "SP_ACKS",
+      "fromType": "sendport",
+      "fromFile": "adjacency/sendport/Cloud9.EDI.PDS.Deployment_SP_ACKS.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.PDS.Deployment/RL_CHC_Inbound_EDI",
+      "fromName": "RL_CHC_Inbound_EDI",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.PDS.Deployment_RL_CHC_Inbound_EDI.json"
+    },
+    {
+      "type": "usesSetting",
+      "from": "receivelocation:Cloud9.EDI.PDS.Deployment/RL_ChangeHealth_271",
+      "fromName": "RL_ChangeHealth_271",
+      "fromType": "receivelocation",
+      "fromFile": "adjacency/receivelocation/Cloud9.EDI.PDS.Deployment_RL_ChangeHealth_271.json"
+    }
+  ]
+}

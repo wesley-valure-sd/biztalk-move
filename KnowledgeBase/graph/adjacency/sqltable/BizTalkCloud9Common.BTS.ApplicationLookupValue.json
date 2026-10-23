@@ -1,0 +1,48 @@
+{
+  "node": {
+    "id": "sqltable:BizTalkCloud9Common.BTS.ApplicationLookupValue",
+    "type": "sqltable",
+    "name": "BTS.ApplicationLookupValue",
+    "database": "BizTalkCloud9Common",
+    "columns": [],
+    "path": "Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Tables/ApplicationLookupValue.sql"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Tables/ApplicationLookupValue.sql",
+      "fromName": "ApplicationLookupValue.sql",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Tables_ApplicationLookupValue.sql.json"
+    },
+    {
+      "type": "reads",
+      "from": "sqlproc:BizTalkCloud9Common.BTS.GetApplicationLookupValue",
+      "fromName": "BTS.GetApplicationLookupValue",
+      "fromType": "sqlproc",
+      "fromFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.GetApplicationLookupValue.json"
+    },
+    {
+      "type": "reads",
+      "from": "sqlproc:BizTalkCloud9Common.BTS.GetApplicationLookupValues",
+      "fromName": "BTS.GetApplicationLookupValues",
+      "fromType": "sqlproc",
+      "fromFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.GetApplicationLookupValues.json"
+    },
+    {
+      "type": "queries",
+      "from": "sqlscript:Cloud9.BizTalk.Scripts/835CHCtoBBVAPassthrough/GetApplicationLookupValues.sql",
+      "fromName": "GetApplicationLookupValues.sql",
+      "fromType": "sqlscript",
+      "fromFile": "adjacency/sqlscript/Cloud9.BizTalk.Scripts_835CHCtoBBVAPassthrough_GetApplicationLookupValues.sql.json"
+    },
+    {
+      "type": "queries",
+      "from": "sqlscript:Cloud9.BizTalk.Scripts/837CHCtoBBVAPassthrough/GetApplicationLookupValues.sql",
+      "fromName": "GetApplicationLookupValues.sql",
+      "fromType": "sqlscript",
+      "fromFile": "adjacency/sqlscript/Cloud9.BizTalk.Scripts_837CHCtoBBVAPassthrough_GetApplicationLookupValues.sql.json"
+    }
+  ]
+}

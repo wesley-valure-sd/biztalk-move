@@ -1,0 +1,26 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic.BTAHL7_2_6.Schemas/MFN_M02_26_GLO_DEF.xsd",
+    "type": "file",
+    "name": "MFN_M02_26_GLO_DEF.xsd",
+    "kind": "xsd",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic.BTAHL7_2_6.Schemas/MFN_M02_26_GLO_DEF.xsd"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.Epic.BTAHL7_2_6.Schemas",
+      "fromName": "Cloud9.BizTalk.Epic.BTAHL7_2_6.Schemas",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.Epic.BTAHL7_2_6.Schemas.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "schema:BTAHL7Schemas.MFN_M02_26_GLO_DEF",
+      "fromName": "BTAHL7Schemas.MFN_M02_26_GLO_DEF",
+      "fromType": "schema",
+      "fromFile": "adjacency/schema/BTAHL7Schemas.MFN_M02_26_GLO_DEF.json"
+    }
+  ]
+}

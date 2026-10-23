@@ -1,0 +1,28 @@
+{
+  "node": {
+    "id": "sqlscript:Cloud9.BizTalk.Scripts/271ChannelHealthEligibility/GetImportLogsEligibilityFailed.sql",
+    "type": "sqlscript",
+    "name": "GetImportLogsEligibilityFailed.sql",
+    "path": "Cloud9.BizTalk.Scripts/271ChannelHealthEligibility/GetImportLogsEligibilityFailed.sql",
+    "purpose": "Get Import Logs for failed Channel Health Eligibility",
+    "folder": "271ChannelHealthEligibility",
+    "database": "PRACTICE-DB"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk.Scripts/271ChannelHealthEligibility/GetImportLogsEligibilityFailed.sql",
+      "toName": "GetImportLogsEligibilityFailed.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Scripts_271ChannelHealthEligibility_GetImportLogsEligibilityFailed.sql.json"
+    },
+    {
+      "type": "queries",
+      "to": "sqltable:PracticeDB.dbo.ImportLog",
+      "toName": "dbo.ImportLog",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/PracticeDB.dbo.ImportLog.json"
+    }
+  ],
+  "incoming": []
+}

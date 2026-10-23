@@ -1,0 +1,63 @@
+{
+  "node": {
+    "id": "map:Cloud9.BizTalk.Epic.Maps.ADT_A28_A31_26_CanonicalToUpsertPatient",
+    "type": "map",
+    "name": "Cloud9.BizTalk.Epic.Maps.ADT_A28_A31_26_CanonicalToUpsertPatient",
+    "readableSummary": "KnowledgeBase/map-summaries/Cloud9.BizTalk.Epic.ADT_A28_A31_26_CanonicalToUpsertPatient.txt",
+    "targetSchema": "Cloud9.BizTalk.Schemas.Cloud9InsertPatient.UpsertPatient_BTS",
+    "inlineScripts": [
+      "CSharp:TrimLast2"
+    ],
+    "functoidCount": 50,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/Cloud9.BizTalk.Epic.ADT_A28_A31_26_CanonicalToUpsertPatient.btm",
+    "sourceSchema": "..\\Schemas\\ADT_A28_A31_26_Canonical.xsd",
+    "linkCount": 161,
+    "sourceRoot": "ADT_A28_A31_26_Canonical",
+    "targetRoot": "UpsertPatient"
+  },
+  "outgoing": [
+    {
+      "type": "callsMethod",
+      "to": "method:Cloud9.BizTalk.Helper.DateFormatConversion.ConvertHL7DateToSQLDate",
+      "toName": "DateFormatConversion.ConvertHL7DateToSQLDate",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.DateFormatConversion.ConvertHL7DateToSQLDate.json",
+      "via": "scripting functoid (ExternalAssembly)"
+    },
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/Cloud9.BizTalk.Epic.ADT_A28_A31_26_CanonicalToUpsertPatient.btm",
+      "toName": "Cloud9.BizTalk.Epic.ADT_A28_A31_26_CanonicalToUpsertPatient.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Maps_Cloud9.BizTalk.Epic.ADT_A28_A31_26_CanonicalToUpsertPatient.btm.json"
+    },
+    {
+      "type": "sourceSchema",
+      "to": "schema:Cloud9.BizTalk.Epic.Schemas.ADT_A28_A31_26_Canonical",
+      "toName": "Cloud9.BizTalk.Epic.Schemas.ADT_A28_A31_26_Canonical",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Epic.Schemas.ADT_A28_A31_26_Canonical.json",
+      "root": "ADT_A28_A31_26_Canonical"
+    },
+    {
+      "type": "targetSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.Cloud9InsertPatient.UpsertPatient_BTS",
+      "toName": "Cloud9.BizTalk.Schemas.Cloud9InsertPatient.UpsertPatient_BTS",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.Cloud9InsertPatient.UpsertPatient_BTS.json",
+      "root": "UpsertPatient"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "usesMap",
+      "from": "orchestration:Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient",
+      "fromName": "ProcessHL7MessagesForPatient",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient.json",
+      "output": "msg_UpsertPatientReq.Body",
+      "input": "msg_MessageData.Body",
+      "line": 2575
+    }
+  ]
+}

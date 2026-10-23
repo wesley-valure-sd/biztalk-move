@@ -1,0 +1,25 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.SC_Table_BTS",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.SC_Table_BTS",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/SubmittedClaims/SC_Table.BTS.xsd",
+    "rootElements": [
+      "SubmittedClaim",
+      "ArrayOfSubmittedClaim"
+    ],
+    "kind": "wcf-sql-table",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/Types/Tables/BTS",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/SubmittedClaims/SC_Table.BTS.xsd",
+      "toName": "SC_Table.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_SubmittedClaims_SC_Table.BTS.xsd.json"
+    }
+  ],
+  "incoming": []
+}

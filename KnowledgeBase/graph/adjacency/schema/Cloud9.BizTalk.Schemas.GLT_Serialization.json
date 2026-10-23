@@ -1,0 +1,44 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.GLT_Serialization",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.GLT_Serialization",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetLocationTimezone/GLT_Serialization.xsd",
+    "rootElements": [
+      "anyType",
+      "anyURI",
+      "base64Binary",
+      "boolean",
+      "byte",
+      "dateTime",
+      "decimal",
+      "double",
+      "float",
+      "int",
+      "long",
+      "QName",
+      "short",
+      "string",
+      "unsignedByte",
+      "unsignedInt",
+      "unsignedLong",
+      "unsignedShort",
+      "char",
+      "duration",
+      "guid"
+    ],
+    "kind": "wcf-serialization",
+    "targetNamespace": "http://schemas.microsoft.com/2003/10/Serialization/",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/GetLocationTimezone/GLT_Serialization.xsd",
+      "toName": "GLT_Serialization.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_GetLocationTimezone_GLT_Serialization.xsd.json"
+    }
+  ],
+  "incoming": []
+}

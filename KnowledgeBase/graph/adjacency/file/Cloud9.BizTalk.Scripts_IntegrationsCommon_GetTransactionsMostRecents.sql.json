@@ -1,0 +1,19 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk.Scripts/IntegrationsCommon/GetTransactionsMostRecents.sql",
+    "type": "file",
+    "name": "GetTransactionsMostRecents.sql",
+    "kind": "sql",
+    "path": "Cloud9.BizTalk.Scripts/IntegrationsCommon/GetTransactionsMostRecents.sql"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "definedIn",
+      "from": "sqlscript:Cloud9.BizTalk.Scripts/IntegrationsCommon/GetTransactionsMostRecents.sql",
+      "fromName": "GetTransactionsMostRecents.sql",
+      "fromType": "sqlscript",
+      "fromFile": "adjacency/sqlscript/Cloud9.BizTalk.Scripts_IntegrationsCommon_GetTransactionsMostRecents.sql.json"
+    }
+  ]
+}

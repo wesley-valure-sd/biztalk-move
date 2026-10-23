@@ -1,0 +1,97 @@
+{
+  "node": {
+    "id": "sqltable:BizTalkCloud9Common.BTS.PracticeConfig",
+    "type": "sqltable",
+    "name": "BTS.PracticeConfig",
+    "database": "BizTalkCloud9Common",
+    "columns": [
+      "pcGUID uniqueidentifier",
+      "pcInstanceAddress nvarchar(200)",
+      "pcCreatedDate datetime",
+      "pcCreatedBy nvarchar(50)",
+      "pcLastModified datetime",
+      "pcLastModifiedBy nvarchar(50)",
+      "pcInstanceConnectionString nvarchar(200)",
+      "pcName nvarchar(50)",
+      "pcsStatusID smallint",
+      "pcRoutingPrefix NVARCHAR(6)",
+      "emdeonUserID NVARCHAR(10)",
+      "pcGUID ASC"
+    ],
+    "path": "Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Tables/PracticeConfig.sql"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Tables/PracticeConfig.sql",
+      "fromName": "PracticeConfig.sql",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Tables_PracticeConfig.sql.json"
+    },
+    {
+      "type": "reads",
+      "from": "sqlproc:BizTalkCloud9Common.BTS.GetIncomingMessageInfo",
+      "fromName": "BTS.GetIncomingMessageInfo",
+      "fromType": "sqlproc",
+      "fromFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.GetIncomingMessageInfo.json"
+    },
+    {
+      "type": "reads",
+      "from": "sqlproc:BizTalkCloud9Common.BTS.GetPracticeConfiguration",
+      "fromName": "BTS.GetPracticeConfiguration",
+      "fromType": "sqlproc",
+      "fromFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.GetPracticeConfiguration.json"
+    },
+    {
+      "type": "reads",
+      "from": "sqlproc:BizTalkCloud9Common.BTS.GetPracticeConfigurationByEmdeonUser",
+      "fromName": "BTS.GetPracticeConfigurationByEmdeonUser",
+      "fromType": "sqlproc",
+      "fromFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.GetPracticeConfigurationByEmdeonUser.json"
+    },
+    {
+      "type": "reads",
+      "from": "sqlproc:BizTalkCloud9Common.BTS.GetPracticeConfigurationByName",
+      "fromName": "BTS.GetPracticeConfigurationByName",
+      "fromType": "sqlproc",
+      "fromFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.GetPracticeConfigurationByName.json"
+    },
+    {
+      "type": "reads",
+      "from": "sqlproc:BizTalkCloud9Common.BTS.GetPracticeConfigurationForClaim",
+      "fromName": "BTS.GetPracticeConfigurationForClaim",
+      "fromType": "sqlproc",
+      "fromFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.GetPracticeConfigurationForClaim.json"
+    },
+    {
+      "type": "reads",
+      "from": "sqlproc:BizTalkCloud9Common.BTS.QueueProcessParameters",
+      "fromName": "BTS.QueueProcessParameters",
+      "fromType": "sqlproc",
+      "fromFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.QueueProcessParameters.json"
+    },
+    {
+      "type": "reads",
+      "from": "sqlproc:BizTalkCloud9Common.BTS.QueueUnprocessedStagingPatientIDs",
+      "fromName": "BTS.QueueUnprocessedStagingPatientIDs",
+      "fromType": "sqlproc",
+      "fromFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.QueueUnprocessedStagingPatientIDs.json"
+    },
+    {
+      "type": "queries",
+      "from": "sqlscript:Cloud9.BizTalk.Scripts/IntegrationsCommon/GetPracticeConfig.sql",
+      "fromName": "GetPracticeConfig.sql",
+      "fromType": "sqlscript",
+      "fromFile": "adjacency/sqlscript/Cloud9.BizTalk.Scripts_IntegrationsCommon_GetPracticeConfig.sql.json"
+    },
+    {
+      "type": "appliesTo",
+      "from": "businessrule:PracticeResolution",
+      "fromName": "Practice database resolution",
+      "fromType": "businessrule",
+      "fromFile": "adjacency/businessrule/PracticeResolution.json",
+      "curated": true
+    }
+  ]
+}

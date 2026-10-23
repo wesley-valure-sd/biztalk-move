@@ -1,0 +1,36 @@
+MAP: CHC_X12_00501_271SelfSubscr_To_PatientEligibilitiesCanonical.btm
+PATH: Cloud9.BizTalk\Cloud9.BizTalk.X12\Maps\CHC_X12_00501_271SelfSubscr_To_PatientEligibilitiesCanonical.btm
+SOURCE: Cloud9.BizTalk.X12.Schemas.CHC_X12_00501_271 (root X12_00501_271)
+TARGET: Cloud9.BizTalk.Schemas.Canonical.PatientEligibilities (root PatientEligibilityInfo)
+SCRIPT PRECEDENCE (first match wins when a functoid has more than one script): CSharp > ExternalAssembly > VbNet > JScript > XsltCallTemplate > Xslt
+
+=== PAGE: All ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L40: F25 -> PatientEligibilityInfo/patGUID
+L41: F4 -> PatientEligibilityInfo/PolicyNumber
+L42: F24 -> PatientEligibilityInfo/GroupNumber
+L77: F39 -> PatientEligibilityInfo/FileName
+--- FUNCTOIDS ---
+F4 [Scripting] inputs: 
+    script language: Xslt
+    | <xsl:element name="PolicyNumber">
+    | <xsl:value-of select="/*[local-name()='X12_00501_271' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000A_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000B_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2100C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='NM1_SubscriberName' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']
+    | 	[*[local-name()='NM101_EntityIdentifierCode'] = 'IL']
+    | 	/*[local-name()='NM109_SubscriberPrimaryIdentifier']"/>
+    | </xsl:element>
+F24 [Scripting] inputs: 
+    script language: Xslt
+    | <xsl:element name="GroupNumber">
+    | <xsl:value-of select="/*[local-name()='X12_00501_271' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000A_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000B_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2100C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='REF_SubscriberAdditionalIdentification' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']
+    | [*[local-name()='REF01_ReferenceIdentificationQualifier'] = '6P']
+    | /*[local-name()='REF02_SubscriberSupplementalIdentifier' and namespace-uri()='']"/>
+    | </xsl:element>
+F25 [Scripting] inputs: 
+    script language: Xslt
+    | <xsl:element name="patGUID">
+    | <xsl:value-of select="/*[local-name()='X12_00501_271' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000A_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000B_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2100C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='REF_SubscriberAdditionalIdentification' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']
+    | [*[local-name()='REF01_ReferenceIdentificationQualifier'] = 'EA']
+    | /*[local-name()='REF02_SubscriberSupplementalIdentifier' and namespace-uri()='']"/>
+    | </xsl:element>
+F39 [String Concatenate] inputs: const:'setme'
+

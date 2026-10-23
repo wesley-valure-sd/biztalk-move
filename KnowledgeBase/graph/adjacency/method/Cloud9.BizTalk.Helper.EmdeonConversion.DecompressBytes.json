@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.Helper.EmdeonConversion.DecompressBytes",
+    "type": "method",
+    "name": "EmdeonConversion.DecompressBytes",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/EmdeonHelper.cs",
+    "class": "Cloud9.BizTalk.Helper.EmdeonConversion",
+    "line": 15,
+    "signatures": [
+      "private static byte[] DecompressBytes(byte[] data)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.Helper.EmdeonConversion",
+      "fromName": "Cloud9.BizTalk.Helper.EmdeonConversion",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.Helper.EmdeonConversion.json"
+    }
+  ]
+}

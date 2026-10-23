@@ -1,0 +1,26 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/CHC_277_Unsolicited_To_ClaimStatusCanonical.btm",
+    "type": "file",
+    "name": "CHC_277_Unsolicited_To_ClaimStatusCanonical.btm",
+    "kind": "btm",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/CHC_277_Unsolicited_To_ClaimStatusCanonical.btm"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.X12",
+      "fromName": "Cloud9.BizTalk.X12",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.X12.json"
+    },
+    {
+      "type": "definedIn",
+      "from": "map:Cloud9.BizTalk.X12.Maps.CHC_277_Unsolicited_To_ClaimStatusCanonical",
+      "fromName": "Cloud9.BizTalk.X12.Maps.CHC_277_Unsolicited_To_ClaimStatusCanonical",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.CHC_277_Unsolicited_To_ClaimStatusCanonical.json"
+    }
+  ]
+}

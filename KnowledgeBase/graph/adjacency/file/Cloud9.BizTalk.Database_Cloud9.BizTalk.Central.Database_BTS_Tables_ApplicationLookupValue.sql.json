@@ -1,0 +1,27 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Tables/ApplicationLookupValue.sql",
+    "type": "file",
+    "name": "ApplicationLookupValue.sql",
+    "kind": "sql",
+    "path": "Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Tables/ApplicationLookupValue.sql"
+  },
+  "outgoing": [
+    {
+      "type": "defines",
+      "to": "sqltable:BizTalkCloud9Common.BTS.ApplicationLookupValue",
+      "toName": "BTS.ApplicationLookupValue",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/BizTalkCloud9Common.BTS.ApplicationLookupValue.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.Central.Database",
+      "fromName": "Cloud9.BizTalk.Central.Database",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.Central.Database.json"
+    }
+  ]
+}

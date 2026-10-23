@@ -1,0 +1,59 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.Cloud9UpsertAppointment.UPSA_TypedProcedure_BTS",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.Cloud9UpsertAppointment.UPSA_TypedProcedure_BTS",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Cloud9UpsertAppointment/UPSA_TypedProcedure.BTS.xsd",
+    "rootElements": [
+      "UpsertAppointment",
+      "UpsertAppointmentResponse"
+    ],
+    "kind": "wcf-sql-typed-procedure",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS",
+    "sqlActions": [
+      "TypedProcedure/BTS/UpsertAppointment"
+    ]
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Cloud9UpsertAppointment/UPSA_TypedProcedure.BTS.xsd",
+      "toName": "UPSA_TypedProcedure.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_Cloud9UpsertAppointment_UPSA_TypedProcedure.BTS.xsd.json"
+    },
+    {
+      "type": "describesParametersOf",
+      "to": "sqlproc:PracticeDB.BTS.UpsertAppointment",
+      "toName": "BTS.UpsertAppointment",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/PracticeDB.BTS.UpsertAppointment.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_SUI_CanonicalToUpsertAppointment",
+      "fromName": "Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_SUI_CanonicalToUpsertAppointment",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_SUI_CanonicalToUpsertAppointment.json",
+      "root": "UpsertAppointment"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.Epic.MPType_UpsertAppointmentReq",
+      "fromName": "MPType_UpsertAppointmentReq",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_UpsertAppointmentReq.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.Cloud9UpsertAppointment.UPSA_TypedProcedure_BTS.UpsertAppointment"
+    },
+    {
+      "type": "bodySchema",
+      "from": "messagetype:Cloud9.BizTalk.Epic.MPType_UpsertAppointmentResp",
+      "fromName": "MPType_UpsertAppointmentResp",
+      "fromType": "messagetype",
+      "fromFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_UpsertAppointmentResp.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.Cloud9UpsertAppointment.UPSA_TypedProcedure_BTS.UpsertAppointmentResponse"
+    }
+  ]
+}

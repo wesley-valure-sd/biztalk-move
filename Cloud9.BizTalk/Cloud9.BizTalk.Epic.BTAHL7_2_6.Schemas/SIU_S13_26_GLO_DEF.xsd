@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ns0="http://microsoft.com/HealthCare/HL7/2X/2.6/Segments" xmlns:b="http://schemas.microsoft.com/BizTalk/2003" xmlns="http://microsoft.com/HealthCare/HL7/2X" targetNamespace="http://microsoft.com/HealthCare/HL7/2X" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="BTAHL7Schemas.segments_26" namespace="http://microsoft.com/HealthCare/HL7/2X/2.6/Segments" />
+  <xs:annotation>
+    <xs:appinfo>
+      <b:references>
+        <b:reference targetNameSpace="http://microsoft.com/HealthCare/HL7/2X/2.6/Segments" />
+        <b:reference targetNameSpace="http://microsoft.com/HealthCare/HL7/2X/2.6/DataTypes" />
+        <b:reference targetNameSpace="http://microsoft.com/HealthCare/HL7/2X/2.6/Tables" />
+      </b:references>
+      <b:schemaInfo standards_version="HL7.DBVersion.1_5" document_type="HL7 2X Schema" version="0.0.0.0.2.0" root_reference="SIU_S13_26_GLO_DEF" />
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="SIU_S13_26_GLO_DEF">
+	<xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" name="SCH_SchedulingActivityInformation" type="ns0:SCH" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="TQ1_TimingQuantity" type="ns0:TQ1" />
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="NTE_NotesAndComments" type="ns0:NTE" />
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:element minOccurs="1" maxOccurs="1" name="PID_PatientIdentification" type="ns0:PID" />
+		  <xs:element minOccurs="0" maxOccurs="unbounded" name="ZPD_AdditionalPatientIdentificationInfo" type="ns0:ZPD" />
+		  <xs:element minOccurs="0" maxOccurs="unbounded" name="LAN_LanguageDetail" type="ns0:LAN" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PD1_PatientAdditionalDemographic" type="ns0:PD1" />
+		  <xs:element minOccurs="0" maxOccurs="1" name="ROL_Role_1" type="ns0:ROL" />
+          <xs:element minOccurs="1" maxOccurs="1" name="PV1_PatientVisit" type="ns0:PV1" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PV2_PatientVisitAdditionalInformation" type="ns0:PV2" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="OBX_ObservationResult" type="ns0:OBX" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="DG1_Diagnosis" type="ns0:DG1" />
+        </xs:sequence>
+        <xs:sequence minOccurs="1" maxOccurs="unbounded">
+          <xs:element minOccurs="1" maxOccurs="1" name="RGS_ResourceGroup" type="ns0:RGS" />
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:element minOccurs="1" maxOccurs="1" name="AIS_AppointmentInformation" type="ns0:AIS" />
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="NTE_NotesAndComments_AIS" type="ns0:NTE" />
+          </xs:sequence>
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:element minOccurs="1" maxOccurs="1" name="AIG_AppointmentInformationGeneralResource" type="ns0:AIG" />
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="NTE_NotesAndComments_AIG" type="ns0:NTE" />
+          </xs:sequence>
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:element minOccurs="0" maxOccurs="1" name="AIL_AppointmentInformationLocationResource" type="ns0:AIL" />
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="NTE_NotesAndComments_AIL" type="ns0:NTE" />
+          </xs:sequence>
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:element minOccurs="1" maxOccurs="1" name="AIP_AppointmentInformationPersonnelResource" type="ns0:AIP" />
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="NTE_NotesAndComments_AIP" type="ns0:NTE" />
+		  </xs:sequence>
+		  <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:element minOccurs="0" maxOccurs="1" name="ZOR_AdditionalOrderInfo" type="ns0:ZOR" />
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="NTE_NotesAndComments_ZOR" type="ns0:NTE" />
+          </xs:sequence>
+        </xs:sequence>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

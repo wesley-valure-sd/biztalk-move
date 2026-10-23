@@ -1,0 +1,55 @@
+{
+  "node": {
+    "id": "map:Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_ErrorToInsertRequest",
+    "type": "map",
+    "name": "Cloud9.BizTalk.Epic.Maps.Cloud9_BizTalk_Epic_ErrorToInsertRequest",
+    "readableSummary": "KnowledgeBase/map-summaries/Cloud9.BizTalk.Epic.ErrorToInsertRequest.txt",
+    "targetSchema": "Cloud9.BizTalk.Schemas.PE_TableOperation_BTS_ProcessingError",
+    "inlineScripts": [
+      "CSharp:ValidateGuid"
+    ],
+    "functoidCount": 13,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/Cloud9.BizTalk.Epic.ErrorToInsertRequest.btm",
+    "sourceSchema": "Cloud9.BizTalk.Schemas.PE_Table_BTS",
+    "linkCount": 21,
+    "sourceRoot": "ProcessingError",
+    "targetRoot": "Insert"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/Cloud9.BizTalk.Epic.ErrorToInsertRequest.btm",
+      "toName": "Cloud9.BizTalk.Epic.ErrorToInsertRequest.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Maps_Cloud9.BizTalk.Epic.ErrorToInsertRequest.btm.json"
+    },
+    {
+      "type": "sourceSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.PE_Table_BTS",
+      "toName": "Cloud9.BizTalk.Schemas.PE_Table_BTS",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.PE_Table_BTS.json",
+      "root": "ProcessingError"
+    },
+    {
+      "type": "targetSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.PE_TableOperation_BTS_ProcessingError",
+      "toName": "Cloud9.BizTalk.Schemas.PE_TableOperation_BTS_ProcessingError",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.PE_TableOperation_BTS_ProcessingError.json",
+      "root": "Insert"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "usesMap",
+      "from": "orchestration:Cloud9.BizTalk.Epic.ErrorReporting",
+      "fromName": "ErrorReporting",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.ErrorReporting.json",
+      "output": "msg_InsertError.Body",
+      "input": "msg_Error",
+      "line": 343
+    }
+  ]
+}

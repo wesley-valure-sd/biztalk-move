@@ -1,0 +1,37 @@
+{
+  "node": {
+    "id": "project:Cloud9.BizTalk.ReportGenerator.ConsoleTest",
+    "type": "project",
+    "name": "Cloud9.BizTalk.ReportGenerator.ConsoleTest",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.ReportGenerator/Cloud9.BizTalk.ReportGenerator.ConsoleTest/Cloud9.BizTalk.ReportGenerator.ConsoleTest.csproj",
+    "framework": "v4.5.2",
+    "kind": "csharp",
+    "rootNamespace": "Cloud9.BizTalk.ReportGenerator.ConsoleTest",
+    "assemblyName": "Cloud9.BizTalk.ReportGenerator.ConsoleTest"
+  },
+  "outgoing": [
+    {
+      "type": "references",
+      "to": "project:Cloud9.BizTalk.ReportGenerator",
+      "toName": "Cloud9.BizTalk.ReportGenerator",
+      "toType": "project",
+      "toFile": "adjacency/project/Cloud9.BizTalk.ReportGenerator.json"
+    },
+    {
+      "type": "contains",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.ReportGenerator/Cloud9.BizTalk.ReportGenerator.ConsoleTest/Program.cs",
+      "toName": "Program.cs",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.ReportGenerator_Cloud9.BizTalk.ReportGenerator.ConsoleTest_Program.cs.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "solution:Cloud9.BizTalk.ReportGenerator",
+      "fromName": "Cloud9.BizTalk.ReportGenerator",
+      "fromType": "solution",
+      "fromFile": "adjacency/solution/Cloud9.BizTalk.ReportGenerator.json"
+    }
+  ]
+}

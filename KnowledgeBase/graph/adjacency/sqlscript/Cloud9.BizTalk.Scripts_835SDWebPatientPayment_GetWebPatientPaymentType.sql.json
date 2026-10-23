@@ -1,0 +1,50 @@
+{
+  "node": {
+    "id": "sqlscript:Cloud9.BizTalk.Scripts/835SDWebPatientPayment/GetWebPatientPaymentType.sql",
+    "type": "sqlscript",
+    "name": "GetWebPatientPaymentType.sql",
+    "path": "Cloud9.BizTalk.Scripts/835SDWebPatientPayment/GetWebPatientPaymentType.sql",
+    "purpose": "Get SD Web Patient Payment Type configured on BizTalk (Expected: WEBCC, WEBACH & WEBACHRET)",
+    "folder": "835SDWebPatientPayment",
+    "database": "PRACTICE-DB"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk.Scripts/835SDWebPatientPayment/GetWebPatientPaymentType.sql",
+      "toName": "GetWebPatientPaymentType.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Scripts_835SDWebPatientPayment_GetWebPatientPaymentType.sql.json"
+    },
+    {
+      "type": "queries",
+      "to": "sqltable:PracticeDB.BTS.PaymentType",
+      "toName": "BTS.PaymentType",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/PracticeDB.BTS.PaymentType.json"
+    },
+    {
+      "type": "queries",
+      "to": "sqltable:PracticeDB.dbo.the",
+      "toName": "dbo.the",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/PracticeDB.dbo.the.json"
+    },
+    {
+      "type": "queries",
+      "to": "sqltable:PracticeDB.dbo.TransactionType",
+      "toName": "dbo.TransactionType",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/PracticeDB.dbo.TransactionType.json"
+    },
+    {
+      "type": "verifies",
+      "to": "flow:SD-835-Web-Patient-Payment",
+      "toName": "Smile Doctors web payment 835 -> patient payment transactions (card / ACH / ACH return)",
+      "toType": "flow",
+      "toFile": "adjacency/flow/SD-835-Web-Patient-Payment.json",
+      "curated": true
+    }
+  ],
+  "incoming": []
+}

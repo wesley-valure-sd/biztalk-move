@@ -1,0 +1,53 @@
+{
+  "node": {
+    "id": "map:Cloud9.BizTalk.X12.Maps.CHC_X12_00501_271SelfSubscr_To_PatientEligibilitiesCanonical",
+    "type": "map",
+    "name": "Cloud9.BizTalk.X12.Maps.CHC_X12_00501_271SelfSubscr_To_PatientEligibilitiesCanonical",
+    "readableSummary": "KnowledgeBase/map-summaries/CHC_X12_00501_271SelfSubscr_To_PatientEligibilitiesCanonical.txt",
+    "targetSchema": "Cloud9.BizTalk.Schemas.Canonical.PatientEligibilities",
+    "inlineScripts": [],
+    "functoidCount": 4,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/CHC_X12_00501_271SelfSubscr_To_PatientEligibilitiesCanonical.btm",
+    "sourceSchema": "Cloud9.BizTalk.X12.Schemas.CHC_X12_00501_271",
+    "linkCount": 4,
+    "sourceRoot": "X12_00501_271",
+    "targetRoot": "PatientEligibilityInfo"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/CHC_X12_00501_271SelfSubscr_To_PatientEligibilitiesCanonical.btm",
+      "toName": "CHC_X12_00501_271SelfSubscr_To_PatientEligibilitiesCanonical.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_CHC_X12_00501_271SelfSubscr_To_PatientEligibilitiesCanonical.btm.json"
+    },
+    {
+      "type": "sourceSchema",
+      "to": "schema:Cloud9.BizTalk.X12.Schemas.CHC_X12_00501_271",
+      "toName": "Cloud9.BizTalk.X12.Schemas.CHC_X12_00501_271",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.X12.Schemas.CHC_X12_00501_271.json",
+      "root": "X12_00501_271"
+    },
+    {
+      "type": "targetSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.Canonical.PatientEligibilities",
+      "toName": "Cloud9.BizTalk.Schemas.Canonical.PatientEligibilities",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.Canonical.PatientEligibilities.json",
+      "root": "PatientEligibilityInfo"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "usesMap",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_271Eligibility",
+      "fromName": "Process_CHC_271Eligibility",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_271Eligibility.json",
+      "output": "msgPatientEligiblities.Body",
+      "input": "CHC271.Body",
+      "line": 1057
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.X12.Schemas.EDIPropertySchema",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.X12.Schemas.EDIPropertySchema",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Schemas/EDIPropertySchema.xsd",
+    "rootElements": [
+      "InputFileName",
+      "PracticeName"
+    ],
+    "kind": "property-schema",
+    "targetNamespace": "https://Cloud9.BizTalk.X12.Schemas.EDIPropertySchema",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Schemas/EDIPropertySchema.xsd",
+      "toName": "EDIPropertySchema.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Schemas_EDIPropertySchema.xsd.json"
+    }
+  ],
+  "incoming": []
+}

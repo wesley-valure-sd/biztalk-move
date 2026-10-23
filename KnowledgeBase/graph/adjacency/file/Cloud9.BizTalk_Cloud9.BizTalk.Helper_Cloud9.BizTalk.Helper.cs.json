@@ -1,0 +1,34 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/Cloud9.BizTalk.Helper.cs",
+    "type": "file",
+    "name": "Cloud9.BizTalk.Helper.cs",
+    "kind": "csharp",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/Cloud9.BizTalk.Helper.cs"
+  },
+  "outgoing": [
+    {
+      "type": "defines",
+      "to": "class:Cloud9.BizTalk.Helper.Conversion",
+      "toName": "Cloud9.BizTalk.Helper.Conversion",
+      "toType": "class",
+      "toFile": "adjacency/class/Cloud9.BizTalk.Helper.Conversion.json"
+    },
+    {
+      "type": "defines",
+      "to": "class:Cloud9.BizTalk.Helper.Configuration",
+      "toName": "Cloud9.BizTalk.Helper.Configuration",
+      "toType": "class",
+      "toFile": "adjacency/class/Cloud9.BizTalk.Helper.Configuration.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "contains",
+      "from": "project:Cloud9.BizTalk.Helper",
+      "fromName": "Cloud9.BizTalk.Helper",
+      "fromType": "project",
+      "fromFile": "adjacency/project/Cloud9.BizTalk.Helper.json"
+    }
+  ]
+}

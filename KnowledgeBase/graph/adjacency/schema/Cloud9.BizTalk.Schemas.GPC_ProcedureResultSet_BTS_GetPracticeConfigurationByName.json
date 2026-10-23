@@ -1,0 +1,25 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.GPC_ProcedureResultSet_BTS_GetPracticeConfigurationByName",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.GPC_ProcedureResultSet_BTS_GetPracticeConfigurationByName",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/PracticeConfig/GPC_ProcedureResultSet.BTS.GetPracticeConfigurationByName.xsd",
+    "rootElements": [
+      "StoredProcedureResultSet0",
+      "ArrayOfStoredProcedureResultSet0"
+    ],
+    "kind": "wcf-sql-result-set",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetPracticeConfigurationByName",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/PracticeConfig/GPC_ProcedureResultSet.BTS.GetPracticeConfigurationByName.xsd",
+      "toName": "GPC_ProcedureResultSet.BTS.GetPracticeConfigurationByName.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_PracticeConfig_GPC_ProcedureResultSet.BTS.GetPracticeConfigurationByName.xsd.json"
+    }
+  ],
+  "incoming": []
+}

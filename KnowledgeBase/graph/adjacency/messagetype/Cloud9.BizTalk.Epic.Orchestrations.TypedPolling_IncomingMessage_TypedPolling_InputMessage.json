@@ -1,0 +1,37 @@
+{
+  "node": {
+    "id": "messagetype:Cloud9.BizTalk.Epic.Orchestrations.TypedPolling_IncomingMessage_TypedPolling_InputMessage",
+    "type": "messagetype",
+    "name": "TypedPolling_IncomingMessage_TypedPolling_InputMessage",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.HL7SQLReceive.odx",
+    "bodyType": "Cloud9.BizTalk.Schemas.Polling_IncomingMessage.TypedPolling",
+    "module": "Cloud9.BizTalk.Epic.Orchestrations"
+  },
+  "outgoing": [
+    {
+      "type": "bodySchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.Polling_IncomingMessage",
+      "toName": "Cloud9.BizTalk.Schemas.Polling_IncomingMessage",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.Polling_IncomingMessage.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.Polling_IncomingMessage.TypedPolling"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.HL7SQLReceive.odx",
+      "fromName": "Cloud9.BizTalk.Epic.HL7SQLReceive.odx",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Orchestrations_Cloud9.BizTalk.Epic.HL7SQLReceive.odx.json"
+    },
+    {
+      "type": "usesMessageType",
+      "from": "orchestration:Cloud9.BizTalk.Epic.Orchestrations.HL7SQLReceive",
+      "fromName": "HL7SQLReceive",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.Orchestrations.HL7SQLReceive.json",
+      "message": "msg_IncomingMessage"
+    }
+  ]
+}

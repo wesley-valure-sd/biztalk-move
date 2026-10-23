@@ -1,0 +1,298 @@
+MAP: CHC_X12_00501_271_To_InsuranceInformationCanonical.btm
+PATH: Cloud9.BizTalk\Cloud9.BizTalk.X12\Maps\CHC_X12_00501_271_To_InsuranceInformationCanonical.btm
+SOURCE: Cloud9.BizTalk.X12.Schemas.CHC_X12_00501_271 (root X12_00501_271)
+TARGET: Cloud9.BizTalk.Schemas.Canonical.InsuranceInformation (root InsuranceInformation)
+SCRIPT PRECEDENCE (first match wins when a functoid has more than one script): CSharp > ExternalAssembly > VbNet > JScript > XsltCallTemplate > Xslt
+
+=== PAGE: Logic ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L21: X12_00501_271/TS271_2000A_Loop/TS271_2000B_Loop/TS271_2000C_Loop/TS271_2000D_Loop/TS271_2100D_Loop/TS271_2110D_Loop/DTP_DependentEligibility_BenefitDate/DTP03_EligibilityorBenefitDateTimePeriod -> F17
+L29: F20 -> InsuranceInformation/PolicyIdentifier
+L30: F19 -> InsuranceInformation/Note
+L31: F4 -> InsuranceInformation/IndividualDeductible
+L32: F8 -> InsuranceInformation/IndividualAnnualMax
+L33: F7 -> InsuranceInformation/FamilyDeductible
+L34: F12 -> InsuranceInformation/FamilyAnnualMax
+L35: F6 -> InsuranceInformation/IndividualOrthoDeductible
+L36: F10 -> InsuranceInformation/IndividualOrthoMax
+L41: F17 -> InsuranceInformation/BenefitRenewalDate
+L42: F11 -> InsuranceInformation/IndividualOrthoMaxRemaining
+L43: F5 -> InsuranceInformation/IndividualDeductibleRemaining
+L44: F9 -> InsuranceInformation/IndividualAnnualMaxRemaining
+L45: F15 -> InsuranceInformation/ReplaceMissingTeethFlag
+L46: F13 -> InsuranceInformation/LifetimeMax
+L47: F14 -> InsuranceInformation/InNetworkFlag
+L48: F16 -> InsuranceInformation/PayOutOfNetworkFlag
+--- FUNCTOIDS ---
+F4 [Scripting] inputs: 
+    script language: Xslt
+    | <xsl:element name="IndividualDeductible">
+    | <xsl:value-of select="/*[local-name()='X12_00501_271']/*[local-name()='TS271_2000A_Loop']/*[local-name()='TS271_2000B_Loop']/*[local-name()='TS271_2000C_Loop']/*[local-name()='TS271_2000D_Loop']/*[local-name()='TS271_2100D_Loop']/*[local-name()='TS271_2110D_Loop']/*[local-name()='EB_DependentEligibilityorBenefitInformation']
+    | 	[*[local-name()='EB01_EligibilityorBenefitInformation'] = 'C'
+    | 		and *[local-name()='EB02_BenefitCoverageLevelCode'] = 'IND'
+    | 		and *[local-name()='EB03_ServiceTypeCode'] = '35'
+    | 		and not(*[local-name()='EB06_TimePeriodQualifier'])]
+    | 	/*[local-name()='EB07_BenefitAmount']"/>
+    | <xsl:value-of select="/*[local-name()='X12_00501_271' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000A_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000B_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2100C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2110C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='EB_SubscriberEligibilityorBenefitInformation' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']
+    | 	[*[local-name()='EB01_EligibilityorBenefitInformation'] = 'C'
+    | 		and *[local-name()='EB02_BenefitCoverageLevelCode'] = 'IND'
+    | 		and *[local-name()='EB03_ServiceTypeCode'] = '35'
+    | 		and not(*[local-name()='EB06_TimePeriodQualifier'])]
+    | 	/*[local-name()='EB07_BenefitAmount']"/>
+    | </xsl:element>
+F5 [Scripting] inputs: 
+    script language: Xslt
+    | <xsl:element name="IndividualDeductibleRemaining">
+    | <xsl:value-of select="/*[local-name()='X12_00501_271']/*[local-name()='TS271_2000A_Loop']/*[local-name()='TS271_2000B_Loop']/*[local-name()='TS271_2000C_Loop']/*[local-name()='TS271_2000D_Loop']/*[local-name()='TS271_2100D_Loop']/*[local-name()='TS271_2110D_Loop']/*[local-name()='EB_DependentEligibilityorBenefitInformation']
+    | 	[*[local-name()='EB01_EligibilityorBenefitInformation'] = 'C'
+    | 		and *[local-name()='EB02_BenefitCoverageLevelCode'] = 'IND'
+    | 		and *[local-name()='EB03_ServiceTypeCode'] = '35'
+    | 		and *[local-name()='EB06_TimePeriodQualifier'] = '29']
+    | 	/*[local-name()='EB07_BenefitAmount']"/>
+    | <xsl:value-of select="/*[local-name()='X12_00501_271' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000A_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000B_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2100C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2110C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='EB_SubscriberEligibilityorBenefitInformation' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']
+    | 	[*[local-name()='EB01_EligibilityorBenefitInformation'] = 'C'
+    | 		and *[local-name()='EB02_BenefitCoverageLevelCode'] = 'IND'
+    | 		and *[local-name()='EB03_ServiceTypeCode'] = '35'
+    | 		and *[local-name()='EB06_TimePeriodQualifier'] = '29']
+    | 	/*[local-name()='EB07_BenefitAmount']"/>	
+    | </xsl:element>
+F6 [Scripting] inputs: 
+    script language: Xslt
+    | <xsl:element name="IndividualOrthoDeductible">
+    | <xsl:value-of select="/*[local-name()='X12_00501_271']/*[local-name()='TS271_2000A_Loop']/*[local-name()='TS271_2000B_Loop']/*[local-name()='TS271_2000C_Loop']/*[local-name()='TS271_2000D_Loop']/*[local-name()='TS271_2100D_Loop']/*[local-name()='TS271_2110D_Loop']/*[local-name()='EB_DependentEligibilityorBenefitInformation']
+    | 	[*[local-name()='EB01_EligibilityorBenefitInformation'] = 'C'
+    | 		and *[local-name()='EB02_BenefitCoverageLevelCode'] = 'IND'
+    | 		and *[local-name()='EB03_ServiceTypeCode'] = '38']
+    | 	/*[local-name()='EB07_BenefitAmount']"/>
+    | <xsl:value-of select="/*[local-name()='X12_00501_271' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000A_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000B_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2100C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2110C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='EB_SubscriberEligibilityorBenefitInformation' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']
+    | 	[*[local-name()='EB01_EligibilityorBenefitInformation'] = 'C'
+    | 		and *[local-name()='EB02_BenefitCoverageLevelCode'] = 'IND'
+    | 		and *[local-name()='EB03_ServiceTypeCode'] = '38']
+    | 	/*[local-name()='EB07_BenefitAmount']"/>
+    | </xsl:element>
+F7 [Scripting] inputs: 
+    script language: Xslt
+    | <xsl:element name="FamilyDeductible">
+    | <xsl:value-of select="/*[local-name()='X12_00501_271']/*[local-name()='TS271_2000A_Loop']/*[local-name()='TS271_2000B_Loop']/*[local-name()='TS271_2000C_Loop']/*[local-name()='TS271_2000D_Loop']/*[local-name()='TS271_2100D_Loop']/*[local-name()='TS271_2110D_Loop']/*[local-name()='EB_DependentEligibilityorBenefitInformation']
+    | 	[*[local-name()='EB01_EligibilityorBenefitInformation'] = 'C'
+    | 		and *[local-name()='EB02_BenefitCoverageLevelCode'] = 'FAM'
+    | 		and *[local-name()='EB03_ServiceTypeCode'] = '35'
+    |                                 and not(*[local-name()='EB06_TimePeriodQualifier'])]
+    | 	/*[local-name()='EB07_BenefitAmount']"/>
+    | <xsl:value-of select="/*[local-name()='X12_00501_271' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000A_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000B_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2100C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2110C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='EB_SubscriberEligibilityorBenefitInformation' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']
+    | 	[*[local-name()='EB01_EligibilityorBenefitInformation'] = 'C'
+    | 		and *[local-name()='EB02_BenefitCoverageLevelCode'] = 'FAM'
+    | 		and *[local-name()='EB03_ServiceTypeCode'] = '35'
+    |                                 and not(*[local-name()='EB06_TimePeriodQualifier'])]
+    | 	/*[local-name()='EB07_BenefitAmount']"/>
+    | </xsl:element>
+F8 [Scripting] inputs: 
+    script language: Xslt
+    | <xsl:element name="IndividualAnnualMax">
+    | <xsl:value-of select="/*[local-name()='X12_00501_271']/*[local-name()='TS271_2000A_Loop']/*[local-name()='TS271_2000B_Loop']/*[local-name()='TS271_2000C_Loop']/*[local-name()='TS271_2000D_Loop']/*[local-name()='TS271_2100D_Loop']/*[local-name()='TS271_2110D_Loop']/*[local-name()='EB_DependentEligibilityorBenefitInformation']
+    | 	[*[local-name()='EB01_EligibilityorBenefitInformation'] = 'F'
+    | 		and *[local-name()='EB02_BenefitCoverageLevelCode'] = 'IND'
+    | 		and *[local-name()='EB03_ServiceTypeCode'] = '35'
+    | 		and *[local-name()='EB06_TimePeriodQualifier'] = '23']
+    | 	/*[local-name()='EB07_BenefitAmount']"/>
+    | <xsl:value-of select="/*[local-name()='X12_00501_271' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000A_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000B_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2100C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2110C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='EB_SubscriberEligibilityorBenefitInformation' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']
+    | 	[*[local-name()='EB01_EligibilityorBenefitInformation'] = 'F'
+    | 		and *[local-name()='EB02_BenefitCoverageLevelCode'] = 'IND'
+    | 		and *[local-name()='EB03_ServiceTypeCode'] = '35'
+    | 		and *[local-name()='EB06_TimePeriodQualifier'] = '23']
+    | 	/*[local-name()='EB07_BenefitAmount']"/>
+    | </xsl:element>
+F9 [Scripting] inputs: 
+    script language: Xslt
+    | <xsl:element name="IndividualAnnualMaxRemaining">
+    | <xsl:value-of select="/*[local-name()='X12_00501_271']/*[local-name()='TS271_2000A_Loop']/*[local-name()='TS271_2000B_Loop']/*[local-name()='TS271_2000C_Loop']/*[local-name()='TS271_2000D_Loop']/*[local-name()='TS271_2100D_Loop']/*[local-name()='TS271_2110D_Loop']/*[local-name()='EB_DependentEligibilityorBenefitInformation']
+    | 	[*[local-name()='EB01_EligibilityorBenefitInformation'] = 'F'
+    | 		and *[local-name()='EB02_BenefitCoverageLevelCode'] = 'IND'
+    | 		and *[local-name()='EB03_ServiceTypeCode'] = '35'
+    | 		and *[local-name()='EB06_TimePeriodQualifier'] = '29']
+    | 	/*[local-name()='EB07_BenefitAmount']"/>
+    | <xsl:value-of select="/*[local-name()='X12_00501_271' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000A_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000B_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2100C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2110C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='EB_SubscriberEligibilityorBenefitInformation' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']
+    | 	[*[local-name()='EB01_EligibilityorBenefitInformation'] = 'F'
+    | 		and *[local-name()='EB02_BenefitCoverageLevelCode'] = 'IND'
+    | 		and *[local-name()='EB03_ServiceTypeCode'] = '35'
+    | 		and *[local-name()='EB06_TimePeriodQualifier'] = '29']
+    | 	/*[local-name()='EB07_BenefitAmount']"/>
+    | </xsl:element>
+F10 [Scripting] inputs: 
+    script language: Xslt
+    | <xsl:element name="IndividualOrthoMax">
+    | <xsl:value-of select="/*[local-name()='X12_00501_271']/*[local-name()='TS271_2000A_Loop']/*[local-name()='TS271_2000B_Loop']/*[local-name()='TS271_2000C_Loop']/*[local-name()='TS271_2000D_Loop']/*[local-name()='TS271_2100D_Loop']/*[local-name()='TS271_2110D_Loop']/*[local-name()='EB_DependentEligibilityorBenefitInformation']
+    | 	[*[local-name()='EB01_EligibilityorBenefitInformation'] = 'F'
+    | 		and *[local-name()='EB02_BenefitCoverageLevelCode'] = 'IND'
+    | 		and *[local-name()='EB03_ServiceTypeCode'] = '38'
+    | 		and *[local-name()='EB06_TimePeriodQualifier'] = '32']
+    | 	/*[local-name()='EB07_BenefitAmount']"/>
+    | <xsl:value-of select="/*[local-name()='X12_00501_271' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000A_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000B_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2100C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2110C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='EB_SubscriberEligibilityorBenefitInformation' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']
+    | 	[*[local-name()='EB01_EligibilityorBenefitInformation'] = 'F'
+    | 		and *[local-name()='EB02_BenefitCoverageLevelCode'] = 'IND'
+    | 		and *[local-name()='EB03_ServiceTypeCode'] = '38'
+    | 		and *[local-name()='EB06_TimePeriodQualifier'] = '32']
+    | 	/*[local-name()='EB07_BenefitAmount']"/>
+    | </xsl:element>
+F11 [Scripting] inputs: 
+    script language: Xslt
+    | <xsl:element name="IndividualOrthoMaxRemaining">
+    | <xsl:value-of select="/*[local-name()='X12_00501_271']/*[local-name()='TS271_2000A_Loop']/*[local-name()='TS271_2000B_Loop']/*[local-name()='TS271_2000C_Loop']/*[local-name()='TS271_2000D_Loop']/*[local-name()='TS271_2100D_Loop']/*[local-name()='TS271_2110D_Loop']/*[local-name()='EB_DependentEligibilityorBenefitInformation']
+    | 	[*[local-name()='EB01_EligibilityorBenefitInformation'] = 'F'
+    | 		and *[local-name()='EB02_BenefitCoverageLevelCode'] = 'IND'
+    | 		and *[local-name()='EB03_ServiceTypeCode'] = '38'
+    | 		and *[local-name()='EB06_TimePeriodQualifier'] = '29']
+    | 	/*[local-name()='EB07_BenefitAmount']"/>
+    | <xsl:value-of select="/*[local-name()='X12_00501_271' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000A_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000B_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2100C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2110C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='EB_SubscriberEligibilityorBenefitInformation' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']
+    | 	[*[local-name()='EB01_EligibilityorBenefitInformation'] = 'F'
+    | 		and *[local-name()='EB02_BenefitCoverageLevelCode'] = 'IND'
+    | 		and *[local-name()='EB03_ServiceTypeCode'] = '38'
+    | 		and *[local-name()='EB06_TimePeriodQualifier'] = '29']
+    | 	/*[local-name()='EB07_BenefitAmount']"/>	
+    | </xsl:element>
+F12 [Scripting] inputs: 
+    script language: Xslt
+    | <xsl:element name="FamilyAnnualMax">
+    | <xsl:value-of select="/*[local-name()='X12_00501_271']/*[local-name()='TS271_2000A_Loop']/*[local-name()='TS271_2000B_Loop']/*[local-name()='TS271_2000C_Loop']/*[local-name()='TS271_2000D_Loop']/*[local-name()='TS271_2100D_Loop']/*[local-name()='TS271_2110D_Loop']/*[local-name()='EB_DependentEligibilityorBenefitInformation']
+    | 	[*[local-name()='EB01_EligibilityorBenefitInformation'] = 'F'
+    | 		and *[local-name()='EB02_BenefitCoverageLevelCode'] = 'FAM'
+    | 		and *[local-name()='EB03_ServiceTypeCode'] = '35'
+    | 		and *[local-name()='EB06_TimePeriodQualifier'] = '23']
+    | 	/*[local-name()='EB07_BenefitAmount']"/>
+    | <xsl:value-of select="/*[local-name()='X12_00501_271' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000A_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000B_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2100C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2110C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='EB_SubscriberEligibilityorBenefitInformation' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']
+    | 	[*[local-name()='EB01_EligibilityorBenefitInformation'] = 'F'
+    | 		and *[local-name()='EB02_BenefitCoverageLevelCode'] = 'FAM'
+    | 		and *[local-name()='EB03_ServiceTypeCode'] = '35'
+    | 		and *[local-name()='EB06_TimePeriodQualifier'] = '23']
+    | 	/*[local-name()='EB07_BenefitAmount']"/>
+    | </xsl:element>
+F13 [Scripting] inputs: 
+    script language: Xslt
+    | <xsl:element name="LifetimeMax">
+    | <xsl:value-of select="/*[local-name()='X12_00501_271']/*[local-name()='TS271_2000A_Loop']/*[local-name()='TS271_2000B_Loop']/*[local-name()='TS271_2000C_Loop']/*[local-name()='TS271_2000D_Loop']/*[local-name()='TS271_2100D_Loop']/*[local-name()='TS271_2110D_Loop']/*[local-name()='EB_DependentEligibilityorBenefitInformation']
+    | 	[*[local-name()='EB01_EligibilityorBenefitInformation'] = 'F'
+    | 		and *[local-name()='EB02_BenefitCoverageLevelCode'] = 'IND'
+    | 		and *[local-name()='EB03_ServiceTypeCode'] = '35'
+    | 		and *[local-name()='EB06_TimePeriodQualifier'] = '32']
+    | 	/*[local-name()='EB07_BenefitAmount']"/>
+    | <xsl:value-of select="/*[local-name()='X12_00501_271' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000A_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000B_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2100C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2110C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='EB_SubscriberEligibilityorBenefitInformation' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']
+    | 	[*[local-name()='EB01_EligibilityorBenefitInformation'] = 'F'
+    | 		and *[local-name()='EB02_BenefitCoverageLevelCode'] = 'IND'
+    | 		and *[local-name()='EB03_ServiceTypeCode'] = '35'
+    | 		and *[local-name()='EB06_TimePeriodQualifier'] = '32']
+    | 	/*[local-name()='EB07_BenefitAmount']"/>
+    | </xsl:element>
+F14 [Scripting] inputs: 
+    script language: Xslt
+    | <xsl:element name="InNetworkFlag">
+    | 	<xsl:variable name="InNetwork" select="/*[local-name()='X12_00501_271']/*[local-name()='TS271_2000A_Loop']/*[local-name()='TS271_2000B_Loop']/*[local-name()='TS271_2000C_Loop']/*[local-name()='TS271_2000D_Loop']/*[local-name()='TS271_2100D_Loop']/*[local-name()='TS271_2110D_Loop']/*[local-name()='EB_DependentEligibilityorBenefitInformation']
+    | 		[*[local-name()='EB01_EligibilityorBenefitInformation'] = 'D'
+    | 			and *[local-name()='EB03_ServiceTypeCode'] = '38'
+    | 			and *[local-name()='EB05_PlanCoverageDescription'] = 'InNetwork']
+    | 		/*[local-name()='EB12_InPlanNetworkIndicator']"/>
+    | 	<xsl:variable name="InNetworkC" select="/*[local-name()='X12_00501_271' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000A_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000B_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2100C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2110C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='EB_SubscriberEligibilityorBenefitInformation' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']
+    | 		[*[local-name()='EB01_EligibilityorBenefitInformation'] = 'D'
+    | 			and *[local-name()='EB03_ServiceTypeCode'] = '38'
+    | 			and *[local-name()='EB05_PlanCoverageDescription'] = 'InNetwork']
+    | 		/*[local-name()='EB12_InPlanNetworkIndicator']"/>
+    | 	<xsl:choose>
+    | 		<xsl:when test="$InNetwork = 'Y'">
+    | 			<xsl:value-of select="'true'"/>
+    | 		</xsl:when>
+    | 		<xsl:when test="$InNetworkC = 'Y'">
+    | 			<xsl:value-of select="'true'"/>
+    | 		</xsl:when>
+    | 		<xsl:otherwise>
+    | 			<xsl:value-of select="'false'"/>
+    | 		</xsl:otherwise>	
+    | 	</xsl:choose>
+    | </xsl:element>
+F15 [Scripting] inputs: 
+    script language: Xslt
+    | <xsl:element name="ReplaceMissingTeethFlag">
+    | 	<xsl:variable name="ReplaceMissingTeeth" select="/*[local-name()='X12_00501_271']/*[local-name()='TS271_2000A_Loop']/*[local-name()='TS271_2000B_Loop']/*[local-name()='TS271_2000C_Loop']/*[local-name()='TS271_2000D_Loop']/*[local-name()='TS271_2100D_Loop']/*[local-name()='TS271_2110D_Loop']/*[local-name()='EB_DependentEligibilityorBenefitInformation']
+    | 		[*[local-name()='EB01_EligibilityorBenefitInformation'] = 'D'
+    | 			and *[local-name()='EB03_ServiceTypeCode'] = '38'
+    | 			and *[local-name()='EB05_PlanCoverageDescription'] = 'ReplaceMissingTeeth']
+    | 		/*[local-name()='EB12_InPlanNetworkIndicator']"/>
+    | 	<xsl:variable name="ReplaceMissingTeethC" select="/*[local-name()='X12_00501_271' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000A_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000B_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2100C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2110C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='EB_SubscriberEligibilityorBenefitInformation' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']
+    | 		[*[local-name()='EB01_EligibilityorBenefitInformation'] = 'D'
+    | 			and *[local-name()='EB03_ServiceTypeCode'] = '38'
+    | 			and *[local-name()='EB05_PlanCoverageDescription'] = 'ReplaceMissingTeeth']
+    | 		/*[local-name()='EB12_InPlanNetworkIndicator']"/>
+    | 	<xsl:choose>
+    | 		<xsl:when test="$ReplaceMissingTeeth = 'Y'">
+    | 			<xsl:value-of select="'true'"/>
+    | 		</xsl:when>
+    | 		<xsl:when test="$ReplaceMissingTeethC = 'Y'">
+    | 			<xsl:value-of select="'true'"/>
+    | 		</xsl:when>
+    | 		<xsl:otherwise>
+    | 			<xsl:value-of select="'false'"/>
+    | 		</xsl:otherwise>	
+    | 	</xsl:choose>
+    | </xsl:element>
+    | 
+F16 [Scripting] inputs: 
+    script language: Xslt
+    | <xsl:element name="PayOutOfNetworkFlag">
+    | 	<xsl:variable name="PayOutOfNetwork" select="/*[local-name()='X12_00501_271']/*[local-name()='TS271_2000A_Loop']/*[local-name()='TS271_2000B_Loop']/*[local-name()='TS271_2000C_Loop']/*[local-name()='TS271_2000D_Loop']/*[local-name()='TS271_2100D_Loop']/*[local-name()='TS271_2110D_Loop']/*[local-name()='EB_DependentEligibilityorBenefitInformation']
+    | 		[*[local-name()='EB01_EligibilityorBenefitInformation'] = 'D'
+    | 			and *[local-name()='EB03_ServiceTypeCode'] = '38'
+    | 			and *[local-name()='EB05_PlanCoverageDescription'] = 'PayOutOfNetwork']
+    | 		/*[local-name()='EB12_InPlanNetworkIndicator']"/>
+    | 	<xsl:variable name="PayOutOfNetworkC" select="/*[local-name()='X12_00501_271' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000A_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000B_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2100C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2110C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='EB_SubscriberEligibilityorBenefitInformation' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']
+    | 		[*[local-name()='EB01_EligibilityorBenefitInformation'] = 'D'
+    | 			and *[local-name()='EB03_ServiceTypeCode'] = '38'
+    | 			and *[local-name()='EB05_PlanCoverageDescription'] = 'PayOutOfNetwork']
+    | 		/*[local-name()='EB12_InPlanNetworkIndicator']"/>
+    | 	<xsl:choose>
+    | 		<xsl:when test="$PayOutOfNetwork = 'Y'">
+    | 			<xsl:value-of select="'true'"/>
+    | 		</xsl:when>
+    | 		<xsl:when test="$PayOutOfNetworkC = 'Y'">
+    | 			<xsl:value-of select="'true'"/>
+    | 		</xsl:when>
+    | 		<xsl:otherwise>
+    | 			<xsl:value-of select="'false'"/>
+    | 		</xsl:otherwise>	
+    | 	</xsl:choose>
+    | </xsl:element>
+F17 [Scripting] inputs: L21
+    script ExternalAssembly: Cloud9.BizTalk.Helper.DateFormatConversion.ConvertHL7DateToSQLDatetimeWithoutOffset [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+F19 [Scripting] inputs: 
+    script language: Xslt
+    | <xsl:element name="Note">
+    | 	<xsl:for-each select="/*[local-name()='X12_00501_271' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000A_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000B_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2000C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2100C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='TS271_2110C_Loop' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='MSG_MessageText' and namespace-uri()='http://schemas.microsoft.com/BizTalk/EDI/X12/2006/CHC']/*[local-name()='MSG01_FreeFormMessageText' and namespace-uri()='']">
+    | 		<xsl:value-of select="concat(., '; ')"/>
+    | 	</xsl:for-each>
+    | </xsl:element>
+F20 [Scripting] inputs: 
+    script language: Xslt
+    | <xsl:element name="PolicyIdentifier">
+    | 	<xsl:value-of select="/*[local-name()='X12_00501_271']/*[local-name()='TS271_2000A_Loop']/*[local-name()='TS271_2000B_Loop']/*[local-name()='TS271_2000C_Loop']/*[local-name()='TS271_2000D_Loop']/*[local-name()='TS271_2100D_Loop']/*[local-name()='REF_DependentAdditionalIdentification']
+    | 		[*[local-name()='REF01_ReferenceIdentificationQualifier'] = '69']/*[local-name()='REF02_DependentSupplementalIdentifier']"/>
+    | </xsl:element>
+
+=== PAGE: Nil ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L49: F21 -> InsuranceInformation/PatientIdentifier
+L50: F21 -> InsuranceInformation/OrganizationPlanIdentifier
+L51: F21 -> InsuranceInformation/BillingCenterIdentifier
+L52: F21 -> InsuranceInformation/CodeTypeIdentifier
+L53: F21 -> InsuranceInformation/RelatedPersonIdentifier
+L54: F21 -> InsuranceInformation/FeeScheduleIdentifier
+L55: F21 -> InsuranceInformation/PolicyNumber
+L56: F21 -> InsuranceInformation/GroupNumber
+L57: F21 -> InsuranceInformation/AcceptAssignmentFlag
+L58: F21 -> InsuranceInformation/PredeterminationRequiredFlag
+L59: F21 -> InsuranceInformation/InitialRequiredFlag
+L60: F21 -> InsuranceInformation/ContinuationRequiredFlag
+L61: F21 -> InsuranceInformation/ActiveFlag
+L62: F21 -> InsuranceInformation/DeletedFlag
+L63: F21 -> InsuranceInformation/ExcludeFromMassBenefitUpdateFlag
+L64: F21 -> InsuranceInformation/Rank
+L65: F21 -> InsuranceInformation/SubscriberName
+--- FUNCTOIDS ---
+F21 [FID 376] inputs: 
+

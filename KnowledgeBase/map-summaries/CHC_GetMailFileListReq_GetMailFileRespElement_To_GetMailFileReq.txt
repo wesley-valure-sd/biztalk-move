@@ -1,0 +1,23 @@
+MAP: CHC_GetMailFileListReq_GetMailFileRespElement_To_GetMailFileReq.btm
+PATH: Cloud9.BizTalk\Cloud9.BizTalk.X12\Maps\CHC_GetMailFileListReq_GetMailFileRespElement_To_GetMailFileReq.btm
+SOURCE:  (root Root)
+TARGET: Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonGetMailFileRequest (root claim_submission_api)
+SCRIPT PRECEDENCE (first match wins when a functoid has more than one script): CSharp > ExternalAssembly > VbNet > JScript > XsltCallTemplate > Xslt
+
+=== PAGE: Page 1 ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L1: Root/InputMessagePart_0/claim_submission_api/authentication/vendor_id -> claim_submission_api/authentication/vendor_id
+L2: Root/InputMessagePart_0/claim_submission_api/authentication/user_id -> claim_submission_api/authentication/user_id
+L3: Root/InputMessagePart_0/claim_submission_api/authentication/password -> claim_submission_api/authentication/password
+L4: Root/InputMessagePart_0/claim_submission_api/transaction/trace_id -> claim_submission_api/transaction/trace_id
+L5: Root/InputMessagePart_1/mail_file/file_name -> claim_submission_api/transaction/trx_data/mail_file/file_name
+L6: Root/InputMessagePart_1/mail_file/file_token -> claim_submission_api/transaction/trx_data/mail_file/file_token
+L7: F1 -> claim_submission_api/transaction/trx_data/mail_file/desired_compression
+L8: F2 -> claim_submission_api/transaction/trx_data/mail_file/desired_encoding
+L10: Root/InputMessagePart_0/claim_submission_api/revision -> claim_submission_api/revision
+L11: F4 -> claim_submission_api/transaction/trx_type
+--- FUNCTOIDS ---
+F1 [String Concatenate] inputs: const:'pkzip'
+F2 [String Concatenate] inputs: const:'base64'
+F4 [String Concatenate] inputs: const:'get_mail_file_request'
+

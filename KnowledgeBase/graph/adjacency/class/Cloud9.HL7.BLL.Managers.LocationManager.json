@@ -1,0 +1,43 @@
+{
+  "node": {
+    "id": "class:Cloud9.HL7.BLL.Managers.LocationManager",
+    "type": "class",
+    "name": "Cloud9.HL7.BLL.Managers.LocationManager",
+    "path": "Cloud9.HL7.WebAPI/Cloud9.HL7.BLL/Managers/LocationManager.cs",
+    "visibility": "public",
+    "kind": "class",
+    "line": 11
+  },
+  "outgoing": [
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.HL7.BLL.Managers.LocationManager.LocationExists",
+      "toName": "LocationManager.LocationExists",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.HL7.BLL.Managers.LocationManager.LocationExists.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.HL7.BLL.Managers.LocationManager.GetLocationGuidByName",
+      "toName": "LocationManager.GetLocationGuidByName",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.HL7.BLL.Managers.LocationManager.GetLocationGuidByName.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.HL7.BLL.Managers.LocationManager.SaveLocation",
+      "toName": "LocationManager.SaveLocation",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.HL7.BLL.Managers.LocationManager.SaveLocation.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.HL7.WebAPI/Cloud9.HL7.BLL/Managers/LocationManager.cs",
+      "fromName": "LocationManager.cs",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.HL7.WebAPI_Cloud9.HL7.BLL_Managers_LocationManager.cs.json"
+    }
+  ]
+}

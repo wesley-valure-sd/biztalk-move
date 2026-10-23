@@ -1,0 +1,63 @@
+{
+  "node": {
+    "id": "sqlproc:BizTalkCloud9Common.BTS.CreateLogEntry",
+    "type": "sqlproc",
+    "name": "BTS.CreateLogEntry",
+    "database": "BizTalkCloud9Common",
+    "definedInRepo": true,
+    "parameters": [
+      "@pcInstanceAddress NVARCHAR(200)",
+      "@Process VARCHAR(50)",
+      "@Type VARCHAR(50)",
+      "@Message VARCHAR(MAX)",
+      "@InternalEntityID VARCHAR(100)",
+      "@ExternalEntityID VARCHAR(100)",
+      "@StackTrace VARCHAR(MAX)",
+      "@CreatedBy VARCHAR(50)"
+    ],
+    "path": "Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored Procedures/CreateLogEntry.sql"
+  },
+  "outgoing": [
+    {
+      "type": "writes",
+      "to": "sqltable:BizTalkCloud9Common.BTS.Log",
+      "toName": "BTS.Log",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/BizTalkCloud9Common.BTS.Log.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk.Database/Cloud9.BizTalk.Central.Database/BTS/Stored Procedures/CreateLogEntry.sql",
+      "fromName": "CreateLogEntry.sql",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk.Database_Cloud9.BizTalk.Central.Database_BTS_Stored_Procedures_CreateLogEntry.sql.json"
+    },
+    {
+      "type": "describesParametersOf",
+      "from": "schema:Cloud9.BizTalk.Schemas.CLE_TypedProcedure_BTS",
+      "fromName": "Cloud9.BizTalk.Schemas.CLE_TypedProcedure_BTS",
+      "fromType": "schema",
+      "fromFile": "adjacency/schema/Cloud9.BizTalk.Schemas.CLE_TypedProcedure_BTS.json"
+    },
+    {
+      "type": "invokesProc",
+      "from": "orchestration:Cloud9.BizTalk.Common.AddLog",
+      "fromName": "AddLog",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Common.AddLog.json",
+      "line": 298,
+      "via": "static send port operation CreateLogEntry (BtsActionMapping)"
+    },
+    {
+      "type": "invokesProc",
+      "from": "orchestration:Cloud9.BizTalk.Epic.AddLog",
+      "fromName": "AddLog",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.AddLog.json",
+      "line": 232,
+      "via": "static send port operation CreateLogEntry (BtsActionMapping)"
+    }
+  ]
+}

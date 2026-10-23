@@ -1,0 +1,99 @@
+{
+  "node": {
+    "id": "class:Cloud9.BizTalk.Helper.ParseNameAddressBox",
+    "type": "class",
+    "name": "Cloud9.BizTalk.Helper.ParseNameAddressBox",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/ParseNameAddressBox.cs",
+    "visibility": "public",
+    "kind": "class",
+    "line": 17
+  },
+  "outgoing": [
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.ParseNameAddressBox.GetTitle",
+      "toName": "ParseNameAddressBox.GetTitle",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.ParseNameAddressBox.GetTitle.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.ParseNameAddressBox.GetName",
+      "toName": "ParseNameAddressBox.GetName",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.ParseNameAddressBox.GetName.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.ParseNameAddressBox.GetFirstname",
+      "toName": "ParseNameAddressBox.GetFirstname",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.ParseNameAddressBox.GetFirstname.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.ParseNameAddressBox.GetLastname",
+      "toName": "ParseNameAddressBox.GetLastname",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.ParseNameAddressBox.GetLastname.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.ParseNameAddressBox.GetMiddlename",
+      "toName": "ParseNameAddressBox.GetMiddlename",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.ParseNameAddressBox.GetMiddlename.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.ParseNameAddressBox.GetMiddleInitial",
+      "toName": "ParseNameAddressBox.GetMiddleInitial",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.ParseNameAddressBox.GetMiddleInitial.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.ParseNameAddressBox.GetAddress1",
+      "toName": "ParseNameAddressBox.GetAddress1",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.ParseNameAddressBox.GetAddress1.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.ParseNameAddressBox.GetAddress2",
+      "toName": "ParseNameAddressBox.GetAddress2",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.ParseNameAddressBox.GetAddress2.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.ParseNameAddressBox.GetCity",
+      "toName": "ParseNameAddressBox.GetCity",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.ParseNameAddressBox.GetCity.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.ParseNameAddressBox.GetState",
+      "toName": "ParseNameAddressBox.GetState",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.ParseNameAddressBox.GetState.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.ParseNameAddressBox.GetZipcode",
+      "toName": "ParseNameAddressBox.GetZipcode",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.ParseNameAddressBox.GetZipcode.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/ParseNameAddressBox.cs",
+      "fromName": "ParseNameAddressBox.cs",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Helper_ParseNameAddressBox.cs.json"
+    }
+  ]
+}

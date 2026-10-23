@@ -1,0 +1,19 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk.Scripts/IntegrationsCommon/GetImportLogsMostRecents.sql",
+    "type": "file",
+    "name": "GetImportLogsMostRecents.sql",
+    "kind": "sql",
+    "path": "Cloud9.BizTalk.Scripts/IntegrationsCommon/GetImportLogsMostRecents.sql"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "definedIn",
+      "from": "sqlscript:Cloud9.BizTalk.Scripts/IntegrationsCommon/GetImportLogsMostRecents.sql",
+      "fromName": "GetImportLogsMostRecents.sql",
+      "fromType": "sqlscript",
+      "fromFile": "adjacency/sqlscript/Cloud9.BizTalk.Scripts_IntegrationsCommon_GetImportLogsMostRecents.sql.json"
+    }
+  ]
+}

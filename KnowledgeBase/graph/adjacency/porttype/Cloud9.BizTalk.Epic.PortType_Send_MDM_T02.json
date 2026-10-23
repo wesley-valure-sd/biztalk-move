@@ -1,0 +1,22 @@
+{
+  "node": {
+    "id": "porttype:Cloud9.BizTalk.Epic.PortType_Send_MDM_T02",
+    "type": "porttype",
+    "name": "PortType_Send_MDM_T02",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.ProcessTreatmentCardData.Worker.odx",
+    "module": "Cloud9.BizTalk.Epic",
+    "operations": [
+      "oneway Send_MDM_T02(MPType_MDM_T02)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.ProcessTreatmentCardData.Worker.odx",
+      "fromName": "Cloud9.BizTalk.Epic.ProcessTreatmentCardData.Worker.odx",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Orchestrations_Cloud9.BizTalk.Epic.ProcessTreatmentCardData.Worker.odx.json"
+    }
+  ]
+}

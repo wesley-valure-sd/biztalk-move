@@ -1,0 +1,9 @@
+﻿CREATE TABLE BTS.OutgoingMessageAttribute(
+	omaGUID UNIQUEIDENTIFIER NOT NULL
+	, omGUID UNIQUEIDENTIFIER
+	, AttributeName VARCHAR(50) NOT NULL
+	, AttributeValue VARCHAR(255) NOT NULL
+	, CONSTRAINT PK_OutgoingMessageAttribute PRIMARY KEY NONCLUSTERED (omaGUID)
+	, CONSTRAINT FK_OutgoingMessageAttribute_omGUID FOREIGN KEY (omGUID)
+		REFERENCES BTS.OutgoingMessage(omGUID)
+)

@@ -1,0 +1,39 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.Helper.OutboundAPI.SendException",
+    "type": "method",
+    "name": "OutboundAPI.SendException",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/OutboundAPI.cs",
+    "class": "Cloud9.BizTalk.Helper.OutboundAPI",
+    "line": 155,
+    "signatures": [
+      "public static string SendException(string xCorrelationId, string exception)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.Helper.OutboundAPI",
+      "fromName": "Cloud9.BizTalk.Helper.OutboundAPI",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.Helper.OutboundAPI.json"
+    },
+    {
+      "type": "callsMethod",
+      "from": "orchestration:Cloud9.BizTalk.Epic.ErrorReporting",
+      "fromName": "ErrorReporting",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.ErrorReporting.json",
+      "line": 291
+    },
+    {
+      "type": "callsMethod",
+      "from": "orchestration:Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient",
+      "fromName": "ProcessHL7MessagesForPatient",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient.json",
+      "line": 2972
+    }
+  ]
+}

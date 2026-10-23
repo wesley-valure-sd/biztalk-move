@@ -1,0 +1,33 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/PracticeConfig/GPC_ProcedureResultSet.BTS.GetPracticeConfigurationByName.cs",
+    "type": "file",
+    "name": "GPC_ProcedureResultSet.BTS.GetPracticeConfigurationByName.cs",
+    "kind": "csharp",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/PracticeConfig/GPC_ProcedureResultSet.BTS.GetPracticeConfigurationByName.cs"
+  },
+  "outgoing": [
+    {
+      "type": "defines",
+      "to": "class:Cloud9.BizTalk.EDI.sql_ProcedureResultSet_BTS_GetPracticeConfigurationByName",
+      "toName": "Cloud9.BizTalk.EDI.sql_ProcedureResultSet_BTS_GetPracticeConfigurationByName",
+      "toType": "class",
+      "toFile": "adjacency/class/Cloud9.BizTalk.EDI.sql_ProcedureResultSet_BTS_GetPracticeConfigurationByName.json"
+    },
+    {
+      "type": "defines",
+      "to": "class:Cloud9.BizTalk.EDI.StoredProcedureResultSet0",
+      "toName": "Cloud9.BizTalk.EDI.StoredProcedureResultSet0",
+      "toType": "class",
+      "toFile": "adjacency/class/Cloud9.BizTalk.EDI.StoredProcedureResultSet0.json"
+    },
+    {
+      "type": "defines",
+      "to": "class:Cloud9.BizTalk.EDI.ArrayOfStoredProcedureResultSet0",
+      "toName": "Cloud9.BizTalk.EDI.ArrayOfStoredProcedureResultSet0",
+      "toType": "class",
+      "toFile": "adjacency/class/Cloud9.BizTalk.EDI.ArrayOfStoredProcedureResultSet0.json"
+    }
+  ],
+  "incoming": []
+}

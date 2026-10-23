@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.Helper.Configuration.GetConfiguration",
+    "type": "method",
+    "name": "Configuration.GetConfiguration",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/Cloud9.BizTalk.Helper.cs",
+    "class": "Cloud9.BizTalk.Helper.Configuration",
+    "line": 39,
+    "signatures": [
+      "public static string GetConfiguration(string section, string key)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.Helper.Configuration",
+      "fromName": "Cloud9.BizTalk.Helper.Configuration",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.Helper.Configuration.json"
+    }
+  ]
+}

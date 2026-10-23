@@ -1,0 +1,44 @@
+MAP: CHC_277_Unsolicited_To_ClaimStatusCanonical.btm
+PATH: Cloud9.BizTalk\Cloud9.BizTalk.X12\Maps\CHC_277_Unsolicited_To_ClaimStatusCanonical.btm
+SOURCE: Cloud9.BizTalk.X12.Schemas.CHC_X12_00501_277_A (root X12_00501_277_A)
+TARGET: Cloud9.BizTalk.Schemas.Canonical.ClaimStatus (root ClaimStatus)
+SCRIPT PRECEDENCE (first match wins when a functoid has more than one script): CSharp > ExternalAssembly > VbNet > JScript > XsltCallTemplate > Xslt
+
+=== PAGE: Page 1 ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L22: F7 -> ClaimStatus/Patient/Claim
+L23: F4 -> ClaimStatus/Patient/Claim/ClaimControlNumber
+L24: F6 -> ClaimStatus/Patient/Claim
+L27: X12_00501_277_A/TS277_2000A_Loop/TS277_2000B_Loop/TS277_2000C_Loop/TS277_2000D_Loop/TS277_2200D_Loop/TRN_ClaimStatusTrackingNumber/TRN02_PatientControlNumber -> F4
+L28: X12_00501_277_A/TS277_2000A_Loop/TS277_2000B_Loop/TS277_2000C_Loop/TS277_2000D_Loop/TS277_2200D_Loop -> F6
+L29: X12_00501_277_A/TS277_2000A_Loop/TS277_2000B_Loop/TS277_2000C_Loop/TS277_2000D_Loop/HL_PatientLevel/HL02_HierarchicalParentIDNumber -> F7
+L30: X12_00501_277_A/TS277_2000A_Loop/TS277_2000B_Loop/TS277_2000C_Loop/TS277_2000D_Loop/TS277_2200D_Loop/STC_ClaimLevelStatusInformation/C043_HealthCareClaimStatus_7/C04302_HealthCareClaimStatusCode -> ClaimStatus/Patient/Claim/StatusCode
+--- FUNCTOIDS ---
+F4 [Scripting] inputs: L27
+    script language: CSharp
+    | public string ParseClaimNumber(string C9PatientControlNumber)
+    | {
+    |    // PMS ID 1 - 2 = C9
+    |    // Database #: 3-12 ("Emdeon" Username)
+    |    // Claim #: 13-20
+    |    string strClaimNumber = "";
+    | 
+    |    try
+    |    {
+    |       strClaimNumber = C9PatientControlNumber.Substring(12);
+    |       int claimNbr = Convert.ToInt32(strClaimNumber);
+    |       strClaimNumber = Convert.ToString(claimNbr);
+    | 
+    |    }
+    | 
+    |    catch (System.Exception)
+    |    {
+    |       throw (new System.Exception(System.String.Format("ParseClaimNumber: Parsing Claim Number: {0}",
+    |                                             C9PatientControlNumber)));
+    |    }
+    | 
+    |    return strClaimNumber;
+    | }
+F6 [Looping] inputs: L28
+F7 [Equal (inferred)] inputs: L29, const:'3'
+

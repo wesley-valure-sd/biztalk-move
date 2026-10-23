@@ -1,0 +1,36 @@
+{
+  "node": {
+    "id": "sqlscript:Cloud9.BizTalk.Scripts/835BBVAInsurancePayment/GetUnmappedTransactionsInsurancePayment.sql",
+    "type": "sqlscript",
+    "name": "GetUnmappedTransactionsInsurancePayment.sql",
+    "path": "Cloud9.BizTalk.Scripts/835BBVAInsurancePayment/GetUnmappedTransactionsInsurancePayment.sql",
+    "purpose": "Get Insurance Payment Unmapped Transactions",
+    "folder": "835BBVAInsurancePayment",
+    "database": "PRACTICE-DB"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk.Scripts/835BBVAInsurancePayment/GetUnmappedTransactionsInsurancePayment.sql",
+      "toName": "GetUnmappedTransactionsInsurancePayment.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Scripts_835BBVAInsurancePayment_GetUnmappedTransactionsInsurancePayment.sql.json"
+    },
+    {
+      "type": "queries",
+      "to": "sqltable:PracticeDB.dbo.UnmappedTransaction",
+      "toName": "dbo.UnmappedTransaction",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/PracticeDB.dbo.UnmappedTransaction.json"
+    },
+    {
+      "type": "verifies",
+      "to": "flow:BBVA-835-Insurance-Lockbox",
+      "toName": "BBVA insurance lockbox 835 -> insurance payment and PLB adjustment transactions",
+      "toType": "flow",
+      "toFile": "adjacency/flow/BBVA-835-Insurance-Lockbox.json",
+      "curated": true
+    }
+  ],
+  "incoming": []
+}

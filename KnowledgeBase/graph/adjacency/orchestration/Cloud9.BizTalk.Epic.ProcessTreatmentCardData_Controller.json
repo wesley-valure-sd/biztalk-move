@@ -1,0 +1,135 @@
+{
+  "node": {
+    "id": "orchestration:Cloud9.BizTalk.Epic.ProcessTreatmentCardData_Controller",
+    "type": "orchestration",
+    "name": "ProcessTreatmentCardData_Controller",
+    "activation": "activate receive (Port_Receive_QueueProcessParametersResp.Operation_Receive_QueueProcessParametersResp, msg_QueueProcessParametersResp)",
+    "ports": [
+      "Port_Receive_QueueProcessParametersResp (implements PortType_Receive_QueueProcessParametersResp)",
+      "Port_SendUpdateProcessParameters (uses PortType__SendUpdateProcessParameters)"
+    ],
+    "messages": [
+      "msg_QueueProcessParametersHeader: MPType_QueueProcessParametersHeader",
+      "msg_QueueProcessParametersResp: MPType_QueueProcessParametersResp",
+      "msg_QueueProcessParametersPracticeElement: MPType_QueueProcessParametersPracticeElement",
+      "msg_UpdateProcessParametersReq: MPType_UpdateProcessParametersReq",
+      "msg_UpdateProcessParametersResp: MPType_UpdateProcessParametersResp"
+    ],
+    "transaction": "longrunning transaction",
+    "visibility": "internal",
+    "module": "Cloud9.BizTalk.Epic",
+    "activationFilter": "(Cloud9.BizTalk.Schemas.PropertySchema.processName == \"ProcessTreatmentCards\")",
+    "contextProperties": [],
+    "line": 548,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.ProcessTreatmentCardData.Controller.odx",
+    "bindingStates": {
+      "Cloud9.BizTalk.Deployment": "Unenlisted",
+      "Cloud9.BizTalk.PDS.Deployment": "Unenlisted"
+    }
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.ProcessTreatmentCardData.Controller.odx",
+      "toName": "Cloud9.BizTalk.Epic.ProcessTreatmentCardData.Controller.odx",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Orchestrations_Cloud9.BizTalk.Epic.ProcessTreatmentCardData.Controller.odx.json"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.Epic.MPType_QueueProcessParametersHeader",
+      "toName": "MPType_QueueProcessParametersHeader",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_QueueProcessParametersHeader.json",
+      "message": "msg_QueueProcessParametersHeader"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.Epic.MPType_QueueProcessParametersResp",
+      "toName": "MPType_QueueProcessParametersResp",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_QueueProcessParametersResp.json",
+      "message": "msg_QueueProcessParametersResp"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.Epic.MPType_QueueProcessParametersPracticeElement",
+      "toName": "MPType_QueueProcessParametersPracticeElement",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_QueueProcessParametersPracticeElement.json",
+      "message": "msg_QueueProcessParametersPracticeElement"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.Epic.MPType_UpdateProcessParametersReq",
+      "toName": "MPType_UpdateProcessParametersReq",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_UpdateProcessParametersReq.json",
+      "message": "msg_UpdateProcessParametersReq"
+    },
+    {
+      "type": "usesMessageType",
+      "to": "messagetype:Cloud9.BizTalk.Epic.MPType_UpdateProcessParametersResp",
+      "toName": "MPType_UpdateProcessParametersResp",
+      "toType": "messagetype",
+      "toFile": "adjacency/messagetype/Cloud9.BizTalk.Epic.MPType_UpdateProcessParametersResp.json",
+      "message": "msg_UpdateProcessParametersResp"
+    },
+    {
+      "type": "usesMap",
+      "to": "map:Cloud9.BizTalk.Epic.Transform_QueueProcParams_To_UpdateQueueProcParams",
+      "toName": "Cloud9.BizTalk.Epic.Transform_QueueProcParams_To_UpdateQueueProcParams",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.Epic.Transform_QueueProcParams_To_UpdateQueueProcParams.json",
+      "output": "msg_UpdateProcessParametersReq.Body",
+      "input": "msg_QueueProcessParametersResp.Body",
+      "line": 620
+    },
+    {
+      "type": "callsOrchestration",
+      "to": "orchestration:Cloud9.BizTalk.Epic.ProcessTreatmentCardData_Worker",
+      "toName": "ProcessTreatmentCardData_Worker",
+      "toType": "orchestration",
+      "toFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.ProcessTreatmentCardData_Worker.json",
+      "line": 612
+    },
+    {
+      "type": "startsOrchestration",
+      "to": "orchestration:Cloud9.BizTalk.Epic.AddLog",
+      "toName": "AddLog",
+      "toType": "orchestration",
+      "toFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.AddLog.json",
+      "line": 639
+    },
+    {
+      "type": "invokesProc",
+      "to": "sqlproc:BizTalkCloud9Common.BTS.UpdateProcessParameters",
+      "toName": "BTS.UpdateProcessParameters",
+      "toType": "sqlproc",
+      "toFile": "adjacency/sqlproc/BizTalkCloud9Common.BTS.UpdateProcessParameters.json",
+      "line": 623,
+      "via": "static send port operation UpdateProcessParameters (BtsActionMapping)"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.BizTalk.Deployment/WCF_UPDATE_PROCESS_PARAMETERS",
+      "toName": "WCF_UPDATE_PROCESS_PARAMETERS",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.BizTalk.Deployment_WCF_UPDATE_PROCESS_PARAMETERS.json",
+      "bindingSet": "Cloud9.BizTalk.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "Port_SendUpdateProcessParameters"
+    },
+    {
+      "type": "boundToSendPort",
+      "to": "sendport:Cloud9.BizTalk.PDS.Deployment/WCF_UPDATE_PROCESS_PARAMETERS",
+      "toName": "WCF_UPDATE_PROCESS_PARAMETERS",
+      "toType": "sendport",
+      "toFile": "adjacency/sendport/Cloud9.BizTalk.PDS.Deployment_WCF_UPDATE_PROCESS_PARAMETERS.json",
+      "bindingSet": "Cloud9.BizTalk.PDS.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "Port_SendUpdateProcessParameters"
+    }
+  ],
+  "incoming": []
+}

@@ -1,0 +1,19 @@
+{
+  "node": {
+    "id": "sqltable:PracticeDB.dbo.UnmappedTransaction",
+    "type": "sqltable",
+    "name": "dbo.UnmappedTransaction",
+    "database": "PracticeDB (one database per practice; not in this repo)",
+    "definedInRepo": false
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "queries",
+      "from": "sqlscript:Cloud9.BizTalk.Scripts/835BBVAInsurancePayment/GetUnmappedTransactionsInsurancePayment.sql",
+      "fromName": "GetUnmappedTransactionsInsurancePayment.sql",
+      "fromType": "sqlscript",
+      "fromFile": "adjacency/sqlscript/Cloud9.BizTalk.Scripts_835BBVAInsurancePayment_GetUnmappedTransactionsInsurancePayment.sql.json"
+    }
+  ]
+}

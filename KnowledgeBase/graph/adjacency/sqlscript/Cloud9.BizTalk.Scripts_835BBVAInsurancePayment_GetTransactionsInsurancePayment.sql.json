@@ -1,0 +1,28 @@
+{
+  "node": {
+    "id": "sqlscript:Cloud9.BizTalk.Scripts/835BBVAInsurancePayment/GetTransactionsInsurancePayment.sql",
+    "type": "sqlscript",
+    "name": "GetTransactionsInsurancePayment.sql",
+    "path": "Cloud9.BizTalk.Scripts/835BBVAInsurancePayment/GetTransactionsInsurancePayment.sql",
+    "purpose": "Get Insurance Payment Transactions",
+    "folder": "835BBVAInsurancePayment",
+    "database": "PRACTICE-DB"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk.Scripts/835BBVAInsurancePayment/GetTransactionsInsurancePayment.sql",
+      "toName": "GetTransactionsInsurancePayment.sql",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk.Scripts_835BBVAInsurancePayment_GetTransactionsInsurancePayment.sql.json"
+    },
+    {
+      "type": "queries",
+      "to": "sqltable:PracticeDB.dbo.Transaction",
+      "toName": "dbo.Transaction",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/PracticeDB.dbo.Transaction.json"
+    }
+  ],
+  "incoming": []
+}

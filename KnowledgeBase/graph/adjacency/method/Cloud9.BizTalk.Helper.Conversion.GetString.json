@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.Helper.Conversion.GetString",
+    "type": "method",
+    "name": "Conversion.GetString",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/Cloud9.BizTalk.Helper.cs",
+    "class": "Cloud9.BizTalk.Helper.Conversion",
+    "line": 17,
+    "signatures": [
+      "public static string GetString(XLANGMessage msg)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.Helper.Conversion",
+      "fromName": "Cloud9.BizTalk.Helper.Conversion",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.Helper.Conversion.json"
+    }
+  ]
+}

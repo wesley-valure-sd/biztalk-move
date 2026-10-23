@@ -1,0 +1,25 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.HIS_Table_BTS",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.HIS_Table_BTS",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/HL7InboundStaging/HIS_Table.BTS.xsd",
+    "rootElements": [
+      "HL7InboundStaging",
+      "ArrayOfHL7InboundStaging"
+    ],
+    "kind": "wcf-sql-table",
+    "targetNamespace": "http://schemas.microsoft.com/Sql/2008/05/Types/Tables/BTS",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/HL7InboundStaging/HIS_Table.BTS.xsd",
+      "toName": "HIS_Table.BTS.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_HL7InboundStaging_HIS_Table.BTS.xsd.json"
+    }
+  ],
+  "incoming": []
+}

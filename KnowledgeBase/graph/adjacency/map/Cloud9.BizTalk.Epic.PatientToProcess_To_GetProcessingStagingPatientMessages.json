@@ -1,0 +1,53 @@
+{
+  "node": {
+    "id": "map:Cloud9.BizTalk.Epic.PatientToProcess_To_GetProcessingStagingPatientMessages",
+    "type": "map",
+    "name": "Cloud9.BizTalk.Epic.PatientToProcess_To_GetProcessingStagingPatientMessages",
+    "readableSummary": "KnowledgeBase/map-summaries/PatientToProcess_To_GetProcessingStagingPatientMessages.txt",
+    "targetSchema": "Cloud9.BizTalk.Schemas.GPSP_TypedProcedure_BTS",
+    "inlineScripts": [],
+    "functoidCount": 0,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/PatientToProcess_To_GetProcessingStagingPatientMessages.btm",
+    "sourceSchema": "Cloud9.BizTalk.Schemas.QUSP_TypedPolling_QueueUnprocessedStagingPatientIDs",
+    "linkCount": 1,
+    "sourceRoot": "TypedPollingResultSet0",
+    "targetRoot": "GetProcessingStagingPatientMessages"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/PatientToProcess_To_GetProcessingStagingPatientMessages.btm",
+      "toName": "PatientToProcess_To_GetProcessingStagingPatientMessages.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Maps_PatientToProcess_To_GetProcessingStagingPatientMessages.btm.json"
+    },
+    {
+      "type": "sourceSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.QUSP_TypedPolling_QueueUnprocessedStagingPatientIDs",
+      "toName": "Cloud9.BizTalk.Schemas.QUSP_TypedPolling_QueueUnprocessedStagingPatientIDs",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.QUSP_TypedPolling_QueueUnprocessedStagingPatientIDs.json",
+      "root": "TypedPollingResultSet0"
+    },
+    {
+      "type": "targetSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.GPSP_TypedProcedure_BTS",
+      "toName": "Cloud9.BizTalk.Schemas.GPSP_TypedProcedure_BTS",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.GPSP_TypedProcedure_BTS.json",
+      "root": "GetProcessingStagingPatientMessages"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "usesMap",
+      "from": "orchestration:Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient",
+      "fromName": "ProcessHL7MessagesForPatient",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.ProcessHL7MessagesForPatient.json",
+      "output": "msg_GetProcessingStagingPatientMessagesReq.Body",
+      "input": "msg_PatientToProcess.Body",
+      "line": 2499
+    }
+  ]
+}

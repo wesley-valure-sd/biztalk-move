@@ -1,0 +1,58 @@
+{
+  "node": {
+    "id": "schema:Cloud9.BizTalk.Schemas.Canonical.ClaimCanonical",
+    "type": "schema",
+    "name": "Cloud9.BizTalk.Schemas.Canonical.ClaimCanonical",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Canonical/Claim.xsd",
+    "rootElements": [
+      "Claim",
+      "Root"
+    ],
+    "kind": "canonical-or-other",
+    "targetNamespace": "http://Cloud9.BizTalk.X12.Schemas.ClaimsGrouped",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/Canonical/Claim.xsd",
+      "toName": "Claim.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_Canonical_Claim.xsd.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "sourceSchema",
+      "from": "map:Cloud9.BizTalk.X12.C9ClaimToSubmittedClaimReq",
+      "fromName": "Cloud9.BizTalk.X12.C9ClaimToSubmittedClaimReq",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.C9ClaimToSubmittedClaimReq.json",
+      "root": "Claim"
+    },
+    {
+      "type": "sourceSchema",
+      "from": "map:Cloud9.BizTalk.X12.Maps.ClaimCanonical_To_CHC_X12_5010_837D",
+      "fromName": "Cloud9.BizTalk.X12.Maps.ClaimCanonical_To_CHC_X12_5010_837D",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.ClaimCanonical_To_CHC_X12_5010_837D.json",
+      "root": "Claim"
+    },
+    {
+      "type": "targetSchema",
+      "from": "map:Cloud9.BizTalk.X12.Maps.QueueClaimsResponse_To_ClaimsCanonical",
+      "fromName": "Cloud9.BizTalk.X12.Maps.QueueClaimsResponse_To_ClaimsCanonical",
+      "fromType": "map",
+      "fromFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.QueueClaimsResponse_To_ClaimsCanonical.json",
+      "root": "Root"
+    },
+    {
+      "type": "usesSchema",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker",
+      "fromName": "Process_CHC_837Claims_Worker",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_837Claims_Worker.json",
+      "message": "msg_C9Claim"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "node": {
+    "id": "flowstep:SD-Web-02-MapCanonical",
+    "type": "flowstep",
+    "name": "Map SD 835 to ClaimPaymentBatch",
+    "order": 2,
+    "curated": true,
+    "logic": "BPR04 drives payment type: CCC (card), ACH, REV (ACH return). REF qualifiers in the CLP loop: 2H transaction ID, 1Z approval code (CCC) or check number (ACH/REV), TN masked card (CCC) or masked bank account (ACH/REV), 8X card type, EY masked routing, EM OpenEdge XWeb GUID, TD reversal. NM1*QC NM109 = patGUID, NM1*IL NM109 = ppGUID."
+  },
+  "outgoing": [
+    {
+      "type": "implementedBy",
+      "to": "map:Cloud9.BizTalk.X12.Maps.SD_835WebPayment_To_ClaimPaymentBatchCanonical",
+      "toName": "Cloud9.BizTalk.X12.Maps.SD_835WebPayment_To_ClaimPaymentBatchCanonical",
+      "toType": "map",
+      "toFile": "adjacency/map/Cloud9.BizTalk.X12.Maps.SD_835WebPayment_To_ClaimPaymentBatchCanonical.json",
+      "curated": true
+    }
+  ],
+  "incoming": [
+    {
+      "type": "hasStep",
+      "from": "flow:SD-835-Web-Patient-Payment",
+      "fromName": "Smile Doctors web payment 835 -> patient payment transactions (card / ACH / ACH return)",
+      "fromType": "flow",
+      "fromFile": "adjacency/flow/SD-835-Web-Patient-Payment.json",
+      "order": 2,
+      "curated": true
+    }
+  ]
+}

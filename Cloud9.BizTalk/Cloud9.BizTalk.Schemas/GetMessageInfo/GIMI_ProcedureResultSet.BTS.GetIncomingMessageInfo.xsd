@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ns4="http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetIncomingMessageInfo" xmlns:ns3="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetIncomingMessageInfo" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation=".\GIMI_Serialization.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:annotation>
+    <xs:appinfo>
+      <fileNameHint xmlns="http://schemas.microsoft.com/servicemodel/adapters/metadata/xsd">ProcedureResultSet.BTS.GetIncomingMessageInfo</fileNameHint>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:complexType name="StoredProcedureResultSet0">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="imCorrelationId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="imVendorUserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="imMessageType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="imStatus" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="imProcessImmediately" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="patGUID" nillable="true" type="ns3:guid" />
+      <xs:element minOccurs="0" maxOccurs="1" name="pcGUID" nillable="true" type="ns3:guid" />
+      <xs:element minOccurs="0" maxOccurs="1" name="pcInstanceAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="pcInstanceConnectionString" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="pcRoutingPrefix" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StoredProcedureResultSet0" nillable="true" type="ns4:StoredProcedureResultSet0" />
+  <xs:complexType name="ArrayOfStoredProcedureResultSet0">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StoredProcedureResultSet0" type="ns4:StoredProcedureResultSet0" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStoredProcedureResultSet0" nillable="true" type="ns4:ArrayOfStoredProcedureResultSet0" />
+</xs:schema>

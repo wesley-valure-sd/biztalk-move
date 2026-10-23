@@ -1,0 +1,19 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk.Scripts/835BBVAInsurancePayment/GetInsurancePaymentType.sql",
+    "type": "file",
+    "name": "GetInsurancePaymentType.sql",
+    "kind": "sql",
+    "path": "Cloud9.BizTalk.Scripts/835BBVAInsurancePayment/GetInsurancePaymentType.sql"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "definedIn",
+      "from": "sqlscript:Cloud9.BizTalk.Scripts/835BBVAInsurancePayment/GetInsurancePaymentType.sql",
+      "fromName": "GetInsurancePaymentType.sql",
+      "fromType": "sqlscript",
+      "fromFile": "adjacency/sqlscript/Cloud9.BizTalk.Scripts_835BBVAInsurancePayment_GetInsurancePaymentType.sql.json"
+    }
+  ]
+}

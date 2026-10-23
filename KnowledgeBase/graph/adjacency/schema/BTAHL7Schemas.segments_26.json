@@ -1,0 +1,24 @@
+{
+  "node": {
+    "id": "schema:BTAHL7Schemas.segments_26",
+    "type": "schema",
+    "name": "BTAHL7Schemas.segments_26",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic.BTAHL7V26Common.Schemas/segments_26.xsd",
+    "rootElements": [
+      "HL7DefinedSegments"
+    ],
+    "kind": "hl7",
+    "targetNamespace": "http://microsoft.com/HealthCare/HL7/2X/2.6/Segments",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic.BTAHL7V26Common.Schemas/segments_26.xsd",
+      "toName": "segments_26.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic.BTAHL7V26Common.Schemas_segments_26.xsd.json"
+    }
+  ],
+  "incoming": []
+}

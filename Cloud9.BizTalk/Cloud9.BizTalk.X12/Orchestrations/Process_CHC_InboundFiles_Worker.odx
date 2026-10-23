@@ -1,0 +1,1687 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="432bbc0e-0082-4d6a-8c9c-bf13c9286ab0" LowerBound="1.1" HigherBound="398.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Cloud9.BizTalk.X12" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="ServiceDeclaration" OID="61d7e007-cab7-499c-be3a-36ef199acafb" ParentLink="Module_ServiceDeclaration" LowerBound="79.1" HigherBound="397.1">
+            <om:Property Name="InitializedTransactionType" Value="True" />
+            <om:Property Name="IsInvokable" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="Process_CHC_InboundFiles_Worker" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="VariableDeclaration" OID="7cfcd74a-14db-49c5-911e-505b997edce4" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="104.1" HigherBound="105.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="instanceConnectionString" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="24ed7b6b-d499-467d-bdd3-2bd11e1cbf83" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="105.1" HigherBound="106.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="InternalEntityID" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="4fa4e652-c192-4e62-bf55-9816d4a62e59" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="106.1" HigherBound="107.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ExternalEntityID" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="855ddc0a-3915-4d9d-961d-3706a699c741" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="107.1" HigherBound="108.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strProcessName" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="11b149eb-8494-41cf-b459-873ce49620cc" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="108.1" HigherBound="109.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strPracticeAddr" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="d8050c9a-be83-4179-bb47-c09e65f71d51" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="109.1" HigherBound="110.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strLogType" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="15787887-520a-43bc-b02a-35710f47b55e" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="110.1" HigherBound="111.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="imCorrelationId" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="4417bdb8-6798-4b1b-ac8d-b39aba6ce3a0" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="111.1" HigherBound="112.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strError" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="7ecfac3e-c050-4289-bf73-4f64fdfd8628" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="112.1" HigherBound="113.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strXPath" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="7fffaf2a-b1a2-4167-9c3b-54fda0bb34df" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="113.1" HigherBound="114.1">
+                <om:Property Name="InitialValue" Value="1" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="iFileListIdx" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="36804efc-82d5-4e69-abd3-1353591777d8" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="114.1" HigherBound="115.1">
+                <om:Property Name="InitialValue" Value="0" />
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.Int32" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="iFileListCount" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="7a2f5407-fb8c-449e-8eab-f647a5dbfdb9" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="115.1" HigherBound="116.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strPracticeURL" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="a51ccb68-d042-4f40-9413-4353574104af" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="116.1" HigherBound="117.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="tempXML" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="bb6524bc-78e8-4e39-adee-18172b0b6b71" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="117.1" HigherBound="118.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strXML" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="52a8acb6-a6b1-4256-9dbc-9f690ea75ed4" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="118.1" HigherBound="119.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="xmlDoc" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="1e237a06-8957-4dfa-8443-7b76a236dd47" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="119.1" HigherBound="120.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="resultErrorCode" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="afae7826-7f48-4c35-9484-1bbb875a77d7" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="120.1" HigherBound="121.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="resultErrorMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="f9eb6e55-9b48-461f-87da-c811a62ffa0a" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="121.1" HigherBound="122.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="file_compression" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="00eb1255-d4f1-4aed-922d-d45ac7541507" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="122.1" HigherBound="123.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="file_encoding" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="77f6cd98-dc75-4efc-99d5-fb843f2e18b1" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="123.1" HigherBound="124.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="file_data" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="277f8c22-c44d-4ef4-907e-7a36d434d8e5" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="124.1" HigherBound="125.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Exception" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="exception" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="5c3afc39-7281-4ca7-bc12-0555aa996b0d" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="125.1" HigherBound="126.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strMailboxURL" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="9ee4ebd7-ab12-4b2b-80f4-eaef0e14fcf3" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="126.1" HigherBound="127.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="test_mode" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="60e74fb3-8777-40e1-94fe-f1d8e0860ded" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="127.1" HigherBound="128.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="payloadDecoded" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="6a3ed316-2208-49ba-b289-84495b00bbf4" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="128.1" HigherBound="129.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="file_prefix" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="36966d89-24a0-4bb1-9a12-401005aa1fb8" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="129.1" HigherBound="130.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="file_name" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="82e1ebfe-2351-4d7a-9a8a-b1057f00b7dd" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="130.1" HigherBound="131.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="strTemp" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="LongRunningTransaction" OID="c93bb6bd-04f5-4390-9530-7ecd3ad46bf0" ParentLink="ServiceDeclaration_Transaction" LowerBound="80.21" HigherBound="80.77">
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Transaction_1" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="87dae132-8193-4005-875e-288ffc67bba1" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="92.1" HigherBound="93.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_EDI_PreParsed" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="1a25d70e-64bc-4194-bf76-536282507532" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="93.1" HigherBound="94.1">
+                <om:Property Name="Type" Value="Cloud9.BizTalk.X12.MPType_DeleteMailFileResp" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_DeleteMailFileResp" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="a768a31f-72f9-4a13-a2db-7fae5db442e9" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="94.1" HigherBound="95.1">
+                <om:Property Name="Type" Value="Cloud9.BizTalk.X12.MPType_GetMailFileResp" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_GetMailFileResp" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="4558b874-1bb4-4afa-91e6-55111245b463" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="95.1" HigherBound="96.1">
+                <om:Property Name="Type" Value="Cloud9.BizTalk.X12.MPType_GetMailFileReq" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_GetMailFileReq" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="8b6b3e8c-c738-42a0-b10b-e0dd0c5a0760" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="96.1" HigherBound="97.1">
+                <om:Property Name="Type" Value="Cloud9.BizTalk.X12.MPType_GetMailFileListResp" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_GetMailFileListResp" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="06fb02e9-d21c-4f4b-9fb7-69462ba91b50" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="97.1" HigherBound="98.1">
+                <om:Property Name="Type" Value="Cloud9.BizTalk.X12.MPType_GetMailFileListReq" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_GetMailFileListReq" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="9f42d7da-699e-44e2-952b-1c01c5333024" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="98.1" HigherBound="99.1">
+                <om:Property Name="Type" Value="Cloud9.BizTalk.X12.MPType_GetPracticeEDISettingsResp" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_GetPracticeEDISettingsResp" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="b44ac4e5-f31e-48d3-bf51-ad8c5c0f966c" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="99.1" HigherBound="100.1">
+                <om:Property Name="Type" Value="Cloud9.BizTalk.X12.MPType_GetPracticeEDISettingsReq" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_GetPracticeEDISettingsReq" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="a4ec7595-14a2-4fc2-aec7-f961e3247d90" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="100.1" HigherBound="101.1">
+                <om:Property Name="Type" Value="Cloud9.BizTalk.X12.MPType_UpdateProcessParametersResp" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_UpdateProcessParametersResp" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="14f299fe-deaa-403e-a677-505c5462c815" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="101.1" HigherBound="102.1">
+                <om:Property Name="Type" Value="Cloud9.BizTalk.X12.MPType_UpdateProcessParametersReq" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_UpdateProcessParametersReq" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="29c306d0-8eed-447b-b5d5-48e5fbf33830" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="102.1" HigherBound="103.1">
+                <om:Property Name="Type" Value="Cloud9.BizTalk.X12.MPType_DeleteMailFileReq" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_DeleteMailFileReq" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="37f9e75d-ab92-4bf7-8f49-57f1b9c993a2" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="103.1" HigherBound="104.1">
+                <om:Property Name="Type" Value="Cloud9.BizTalk.X12.MPType_GetMailFileListElement" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="msg_GetMailFileListElement" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="fb9ed679-2250-4724-a125-c4a1880c8a5e" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageDeclaration" OID="be09b82a-8ef8-4dfc-b1fe-6f021781f75e" ParentLink="ServiceBody_Declaration" LowerBound="131.15" HigherBound="131.101">
+                    <om:Property Name="Type" Value="Cloud9.BizTalk.X12.MPType_QueueProcessParametersPracticeElement" />
+                    <om:Property Name="ParamDirection" Value="In" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="msg_QueueProcessParametersElement" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="MessageDeclaration" OID="87a22dc1-afa5-452e-9bb2-dab89f856a31" ParentLink="ServiceBody_Declaration" LowerBound="131.103" HigherBound="131.179">
+                    <om:Property Name="Type" Value="Cloud9.BizTalk.X12.MPType_QueueProcessParametersHeader" />
+                    <om:Property Name="ParamDirection" Value="In" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="msg_QueueProcessParametersHeader" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Scope" OID="67fdb730-1308-4d61-b6ad-b1ef8ad9b748" ParentLink="ServiceBody_Statement" LowerBound="160.1" HigherBound="395.1">
+                    <om:Property Name="InitializedTransactionType" Value="True" />
+                    <om:Property Name="IsSynchronized" Value="False" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Scope_Process_CHC_InboundFiles_Worker" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="LongRunningTransaction" OID="7992a26f-cd98-4d75-a32a-80023ab48ab2" ParentLink="Scope_Transaction" LowerBound="161.18" HigherBound="161.56">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Transaction_2" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                    <om:Element Type="VariableAssignment" OID="67264aa2-ece9-4f14-a1ec-01d079963609" ParentLink="ComplexStatement_Statement" LowerBound="165.1" HigherBound="172.1">
+                        <om:Property Name="Expression" Value="&#xD;&#xA;strProcessName = &quot;Process_CHC_InboundFiles_Worker&quot;;&#xD;&#xA;strPracticeURL = xpath(msg_QueueProcessParametersElement.Body, &quot;string(/*[local-name()='TypedPollingResultSet1' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/QueueProcessParameters']/*[local-name()='pcInstanceAddress' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/QueueProcessParameters'])&quot;);&#xD;&#xA;file_prefix  = xpath(msg_QueueProcessParametersElement.Body, &quot;string(/*[local-name()='TypedPollingResultSet1' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/QueueProcessParameters']/*[local-name()='pcName' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/QueueProcessParameters'])&quot;);&#xD;&#xA;strMailboxURL = &quot;xxx&quot; ;&#xD;&#xA;strPracticeAddr = &quot;http://localhost:8080/ChangeHealth/GetMailFileList.aspx&quot; ;&#xD;&#xA;" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Get_PracticeURL" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="Scope" OID="3daf994b-0137-4270-8ceb-fb2cfe7960f2" ParentLink="ComplexStatement_Statement" LowerBound="172.1" HigherBound="380.1">
+                        <om:Property Name="InitializedTransactionType" Value="True" />
+                        <om:Property Name="IsSynchronized" Value="False" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Scope_GetPracticeSettings" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="Construct" OID="8f0423ba-88a9-47d1-8304-3a66322fca6a" ParentLink="ComplexStatement_Statement" LowerBound="177.1" HigherBound="196.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Construct_msg_GetPracticeEDISettingsReq" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessageAssignment" OID="6937c57b-dcaf-412d-9c47-d9242ac71030" ParentLink="ComplexStatement_Statement" LowerBound="180.1" HigherBound="195.1">
+                                <om:Property Name="Expression" Value="xmlDoc = new System.Xml.XmlDocument();&#xD;&#xA;strXML = &quot;&lt;ns0:GetPracticeEDISettings xmlns:ns0=\&quot;http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS\&quot;/&gt;&quot; ;&#xD;&#xA;&#xD;&#xA;xmlDoc.LoadXml(strXML);&#xD;&#xA;msg_GetPracticeEDISettingsReq.Body = xmlDoc ;&#xD;&#xA;msg_GetPracticeEDISettingsReq(WCF.Action)=&quot;TypedProcedure/BTS/GetPracticeEDISettings&quot;;  &#xD;&#xA;msg_GetPracticeEDISettingsReq(WCF.BindingType)=&quot;sqlBinding&quot;;&#xD;&#xA;msg_GetPracticeEDISettingsReq(BTS.RetryCount) = 0;&#xD;&#xA;msg_GetPracticeEDISettingsReq(BTS.RetryInterval) = 1; //(in minutes)&#xD;&#xA;msg_GetPracticeEDISettingsReq(WCF.BindingConfiguration)=@&quot;&lt;binding name=&quot;&quot;SqlAdapterBinding&quot;&quot; useAmbientTransaction=&quot;&quot;false&quot;&quot;/&gt;&quot;;&#xD;&#xA;msg_GetPracticeEDISettingsReq(WCF.EnableTransaction) = false; // Transaction is handled in the stored procedure&#xD;&#xA;&#xD;&#xA;Port_GetPracticeEDISettingsDynamic(Microsoft.XLANGs.BaseTypes.Address)= strPracticeURL;&#xD;&#xA;Port_GetPracticeEDISettingsDynamic(Microsoft.XLANGs.BaseTypes.TransportType)=&quot;WCF-Custom&quot;;&#xD;&#xA;" />
+                                <om:Property Name="ReportToAnalyst" Value="False" />
+                                <om:Property Name="Name" Value="MessageAssignment_msg_GetPracticeEDISettingsReq" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessageRef" OID="bf1904b2-d85a-4c48-8556-ac0a6f9f6346" ParentLink="Construct_MessageRef" LowerBound="178.39" HigherBound="178.68">
+                                <om:Property Name="Ref" Value="msg_GetPracticeEDISettingsReq" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="Send" OID="aa29d20e-1cdb-4508-bac5-50a6770ece9f" ParentLink="ComplexStatement_Statement" LowerBound="196.1" HigherBound="198.1">
+                            <om:Property Name="PortName" Value="Port_GetPracticeEDISettingsDynamic" />
+                            <om:Property Name="MessageName" Value="msg_GetPracticeEDISettingsReq" />
+                            <om:Property Name="OperationName" Value="GetPracticeEDISettingsDynamic" />
+                            <om:Property Name="OperationMessageName" Value="Request" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Send_msg_GetPracticeEDISettingsReq" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="Receive" OID="182698bc-96df-4194-a2dc-c9fe8a68fe1a" ParentLink="ComplexStatement_Statement" LowerBound="198.1" HigherBound="200.1">
+                            <om:Property Name="Activate" Value="False" />
+                            <om:Property Name="PortName" Value="Port_GetPracticeEDISettingsDynamic" />
+                            <om:Property Name="MessageName" Value="msg_GetPracticeEDISettingsResp" />
+                            <om:Property Name="OperationName" Value="GetPracticeEDISettingsDynamic" />
+                            <om:Property Name="OperationMessageName" Value="Response" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Receive_msg_GetPracticeEDISettingsResp" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="VariableAssignment" OID="fb74136e-fb93-4c07-b90e-a8245e40248f" ParentLink="ComplexStatement_Statement" LowerBound="200.1" HigherBound="202.1">
+                            <om:Property Name="Expression" Value="test_mode = xpath(msg_GetPracticeEDISettingsResp.Body, &quot;string(/*[local-name()='GetPracticeEDISettingsResponse' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS']/*[local-name()='StoredProcedureResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS']/*[local-name()='StoredProcedureResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetPracticeEDISettings']/*[local-name()='pracEmdeonIsTest' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetPracticeEDISettings'])&quot;) ;" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Expression_1" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="Decision" OID="a1317ccf-8204-404c-a940-64818197549b" ParentLink="ComplexStatement_Statement" LowerBound="202.1" HigherBound="213.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Decide_TestMode" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="DecisionBranch" OID="a05f2a21-239d-44ad-8f5c-b8046eb5acf5" ParentLink="ReallyComplexStatement_Branch" LowerBound="203.29" HigherBound="208.1">
+                                <om:Property Name="Expression" Value="test_mode == &quot;1&quot;" />
+                                <om:Property Name="IsGhostBranch" Value="True" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Rule_IsTestMode" />
+                                <om:Property Name="Signal" Value="False" />
+                                <om:Element Type="VariableAssignment" OID="eac16a83-2d74-4272-a839-696e815a97a1" ParentLink="ComplexStatement_Statement" LowerBound="205.1" HigherBound="207.1">
+                                    <om:Property Name="Expression" Value="strMailboxURL = xpath(msg_GetPracticeEDISettingsResp.Body, &quot;string(/*[local-name()='GetPracticeEDISettingsResponse' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS']/*[local-name()='StoredProcedureResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS']/*[local-name()='StoredProcedureResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetPracticeEDISettings']/*[local-name()='pracEmdeonTestURL' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetPracticeEDISettings'])&quot;) ;&#xD;&#xA;" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Set Test Mailbox URL" />
+                                    <om:Property Name="Signal" Value="True" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="DecisionBranch" OID="f4c71ef1-9738-482b-9fa6-8eaf5febed6a" ParentLink="ReallyComplexStatement_Branch">
+                                <om:Property Name="IsGhostBranch" Value="True" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Else" />
+                                <om:Property Name="Signal" Value="False" />
+                                <om:Element Type="VariableAssignment" OID="60664d0e-bb16-41d5-8d36-14c97ab4b30a" ParentLink="ComplexStatement_Statement" LowerBound="210.1" HigherBound="212.1">
+                                    <om:Property Name="Expression" Value="strMailboxURL = xpath(msg_GetPracticeEDISettingsResp.Body, &quot;string(/*[local-name()='GetPracticeEDISettingsResponse' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS']/*[local-name()='StoredProcedureResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS']/*[local-name()='StoredProcedureResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetPracticeEDISettings']/*[local-name()='pracEmdeonURL' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetPracticeEDISettings'])&quot;) ;" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Set PROD Mailbox URL" />
+                                    <om:Property Name="Signal" Value="True" />
+                                </om:Element>
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="Construct" OID="7261aba0-a55e-4c22-bb2b-fadd60d5807d" ParentLink="ComplexStatement_Statement" LowerBound="213.1" HigherBound="225.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Construct_msg_GetMailFileListReq" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="Transform" OID="956b9597-f05e-45b0-9d57-a6a103ffa9f2" ParentLink="ComplexStatement_Statement" LowerBound="216.1" HigherBound="218.1">
+                                <om:Property Name="ClassName" Value="Cloud9.BizTalk.X12.CHC_PracticeEDISettings_To_GetMailFileListReq" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="XForm_msg_GetMailFileListReq" />
+                                <om:Property Name="Signal" Value="False" />
+                                <om:Element Type="MessagePartRef" OID="cfd0ea26-b5b2-4fb6-8d1c-d280d968771b" ParentLink="Transform_InputMessagePartRef" LowerBound="217.141" HigherBound="217.176">
+                                    <om:Property Name="MessageRef" Value="msg_GetPracticeEDISettingsResp" />
+                                    <om:Property Name="PartRef" Value="Body" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_4" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="MessagePartRef" OID="7519f37a-8819-429f-b5a3-649c447be4b2" ParentLink="Transform_OutputMessagePartRef" LowerBound="217.44" HigherBound="217.71">
+                                    <om:Property Name="MessageRef" Value="msg_GetMailFileListReq" />
+                                    <om:Property Name="PartRef" Value="Body" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="MessagePartReference_5" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="MessageAssignment" OID="6966ae9b-59f6-4732-9fe3-d99e847c3d92" ParentLink="ComplexStatement_Statement" LowerBound="218.1" HigherBound="224.1">
+                                <om:Property Name="Expression" Value="msg_GetMailFileListReq(BTS.RetryCount) = 0;&#xD;&#xA;msg_GetMailFileListReq(BTS.RetryInterval) = 1; //(in minutes)&#xD;&#xA;&#xD;&#xA;Port_GetMailFileList_HTTP_Dynamic(Microsoft.XLANGs.BaseTypes.Address) = strMailboxURL ;&#xD;&#xA;Port_GetMailFileList_HTTP_Dynamic(Microsoft.XLANGs.BaseTypes.TransportType)=&quot;HTTP&quot;;&#xD;&#xA;" />
+                                <om:Property Name="ReportToAnalyst" Value="False" />
+                                <om:Property Name="Name" Value="MessageAssignment_1" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="MessageRef" OID="ae30cc1e-e2be-43c9-8922-917c9515c251" ParentLink="Construct_MessageRef" LowerBound="214.39" HigherBound="214.61">
+                                <om:Property Name="Ref" Value="msg_GetMailFileListReq" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="Send" OID="dcf750a2-8b0d-4802-8fd3-e9be7730ec11" ParentLink="ComplexStatement_Statement" LowerBound="225.1" HigherBound="227.1">
+                            <om:Property Name="PortName" Value="Port_GetMailFileList_HTTP_Dynamic" />
+                            <om:Property Name="MessageName" Value="msg_GetMailFileListReq" />
+                            <om:Property Name="OperationName" Value="GetMailFileList" />
+                            <om:Property Name="OperationMessageName" Value="Request" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Send_msg_GetMailFileListReq" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="Receive" OID="1ca6aedf-ae63-43f9-aaef-4e2715186748" ParentLink="ComplexStatement_Statement" LowerBound="227.1" HigherBound="229.1">
+                            <om:Property Name="Activate" Value="False" />
+                            <om:Property Name="PortName" Value="Port_GetMailFileList_HTTP_Dynamic" />
+                            <om:Property Name="MessageName" Value="msg_GetMailFileListResp" />
+                            <om:Property Name="OperationName" Value="GetMailFileList" />
+                            <om:Property Name="OperationMessageName" Value="Response" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Receive_msg_GetMailFileListResp" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="VariableAssignment" OID="3bd29004-4b0b-4dc7-bbe4-beff9aca046e" ParentLink="ComplexStatement_Statement" LowerBound="229.1" HigherBound="232.1">
+                            <om:Property Name="Expression" Value="resultErrorCode = xpath(msg_GetMailFileListResp.Body, &quot;string(/*[local-name()='claim_submission_api' and namespace-uri()='http://Cloud9.BizTalk.Schemas.Emdeon.EmdeonGetAllMailFilesResponse']/*[local-name()='transaction' and namespace-uri()='']/*[local-name()='trx_data' and namespace-uri()='']/*[local-name()='result' and namespace-uri()='']/*[local-name()='error_code' and namespace-uri()=''])&quot;);&#xD;&#xA;resultErrorMessage = xpath(msg_GetMailFileListResp.Body, &quot;string(/*[local-name()='claim_submission_api' and namespace-uri()='http://Cloud9.BizTalk.Schemas.Emdeon.EmdeonGetAllMailFilesResponse']/*[local-name()='transaction' and namespace-uri()='']/*[local-name()='trx_data' and namespace-uri()='']/*[local-name()='result' and namespace-uri()='']/*[local-name()='error_message' and namespace-uri()=''])&quot;);&#xD;&#xA;" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Get Results" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="Decision" OID="16235410-cae8-4c6b-9441-09d2c0e9a86f" ParentLink="ComplexStatement_Statement" LowerBound="232.1" HigherBound="240.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Decide_Success" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="DecisionBranch" OID="1c7d7812-1c2b-4d5f-9e55-0776ea1a12cc" ParentLink="ReallyComplexStatement_Branch" LowerBound="233.29" HigherBound="240.1">
+                                <om:Property Name="Expression" Value="resultErrorCode != &quot;0&quot;" />
+                                <om:Property Name="IsGhostBranch" Value="True" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Rule_IsError" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="VariableAssignment" OID="2f6f6406-bf75-429b-8674-08ece9a7423a" ParentLink="ComplexStatement_Statement" LowerBound="235.1" HigherBound="237.1">
+                                    <om:Property Name="Expression" Value="exception = new System.Exception( System.String.Format(&quot;Error getting files: {0}, {1}&quot;, resultErrorCode, resultErrorMessage ) );" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Create Exception" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="Throw" OID="fe18d27e-b413-4617-9d48-d43f7bee2378" ParentLink="ComplexStatement_Statement" LowerBound="237.1" HigherBound="239.1">
+                                    <om:Property Name="ThrownReference" Value="exception" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Throw Get Mail List Exception" />
+                                    <om:Property Name="Signal" Value="True" />
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="DecisionBranch" OID="14587353-f1aa-4c79-9422-3a327614fb58" ParentLink="ReallyComplexStatement_Branch">
+                                <om:Property Name="IsGhostBranch" Value="True" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Else" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="VariableAssignment" OID="77be71f1-aa49-41ce-8ce0-2c889d0406b9" ParentLink="ComplexStatement_Statement" LowerBound="240.1" HigherBound="243.1">
+                            <om:Property Name="Expression" Value="iFileListCount = xpath(msg_GetMailFileListResp.Body, &quot;count(/*[local-name()='claim_submission_api' and namespace-uri()='http://Cloud9.BizTalk.Schemas.Emdeon.EmdeonGetAllMailFilesResponse']/*[local-name()='transaction' and namespace-uri()='']/*[local-name()='trx_data' and namespace-uri()='']/*[local-name()='mail_list' and namespace-uri()='']/*[local-name()='mail_file' and namespace-uri()=''])&quot; );&#xD;&#xA;&#xD;&#xA;" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Get File Count" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="While" OID="e3abbcfa-859d-40f4-9249-49c6b61448da" ParentLink="ComplexStatement_Statement" LowerBound="243.1" HigherBound="365.1">
+                            <om:Property Name="Expression" Value="iFileListIdx &lt;= iFileListCount" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Loop_FileList" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="Scope" OID="c37e4382-6820-4e65-9d72-a46ccff35459" ParentLink="ComplexStatement_Statement" LowerBound="246.1" HigherBound="362.1">
+                                <om:Property Name="InitializedTransactionType" Value="True" />
+                                <om:Property Name="IsSynchronized" Value="False" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Scope_ProcessFile" />
+                                <om:Property Name="Signal" Value="True" />
+                                <om:Element Type="LongRunningTransaction" OID="94d07fed-9da8-42cb-8f20-ddef3a25ab6e" ParentLink="Scope_Transaction" LowerBound="247.38" HigherBound="247.76">
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Transaction_4" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="Construct" OID="0f0776ce-2c1f-488b-b027-c918de49aea4" ParentLink="ComplexStatement_Statement" LowerBound="251.1" HigherBound="278.1">
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Construct_msg_GetMailFileListElement" />
+                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Element Type="MessageAssignment" OID="a7c8050b-07cb-4ab9-accf-1a5dc7c9d64b" ParentLink="ComplexStatement_Statement" LowerBound="254.1" HigherBound="277.1">
+                                        <om:Property Name="Expression" Value="strXML = @&quot;&lt;ns0:mail_file xmlns:ns0='http://Cloud9.BizTalk.Schemas.Emdeon.EmdeonGetAllMailFilesResponse'&gt;&#xD;&#xA;	&lt;ns0:file_name&gt;&lt;/ns0:file_name&gt;&#xD;&#xA;	&lt;ns0:date_created&gt;&lt;/ns0:date_created&gt;&#xD;&#xA;	&lt;ns0:file_token&gt;&lt;/ns0:file_token&gt;&#xD;&#xA;	&lt;ns0:file_size&gt;&lt;/ns0:file_size&gt;&#xD;&#xA;&lt;/ns0:mail_file&gt;&quot;;&#xD;&#xA;&#xD;&#xA;xmlDoc = new System.Xml.XmlDocument();&#xD;&#xA;xmlDoc.LoadXml(strXML);&#xD;&#xA;&#xD;&#xA;msg_GetMailFileListElement.Body = xmlDoc;&#xD;&#xA;&#xD;&#xA;strXPath = System.String.Format(&quot;string((//*[local-name()='mail_file'])[{0}]/*[local-name()='file_name'])&quot;, iFileListIdx);&#xD;&#xA;msg_GetMailFileListElement.Body.file_name = xpath(msg_GetMailFileListResp.Body, strXPath);&#xD;&#xA;strXPath = System.String.Format(&quot;string((//*[local-name()='mail_file'])[{0}]/*[local-name()='file_size'])&quot;, iFileListIdx);&#xD;&#xA;msg_GetMailFileListElement.Body.file_size = xpath(msg_GetMailFileListResp.Body, strXPath);&#xD;&#xA;strXPath = System.String.Format(&quot;string((//*[local-name()='mail_file'])[{0}]/*[local-name()='file_token'])&quot;, iFileListIdx);&#xD;&#xA;msg_GetMailFileListElement.Body.file_token = xpath(msg_GetMailFileListResp.Body, strXPath);&#xD;&#xA;strXPath = System.String.Format(&quot;string((//*[local-name()='mail_file'])[{0}]/*[local-name()='date_created'])&quot;, iFileListIdx);&#xD;&#xA;msg_GetMailFileListElement.Body.date_created = xpath(msg_GetMailFileListResp.Body, strXPath);&#xD;&#xA;&#xD;&#xA;msg_GetMailFileListElement.Body = xmlDoc;" />
+                                        <om:Property Name="ReportToAnalyst" Value="False" />
+                                        <om:Property Name="Name" Value="MessageAssign_msg_GetMailFileListElement" />
+                                        <om:Property Name="Signal" Value="True" />
+                                    </om:Element>
+                                    <om:Element Type="MessageRef" OID="0b958782-e185-4f61-8133-9fab5444fa03" ParentLink="Construct_MessageRef" LowerBound="252.51" HigherBound="252.77">
+                                        <om:Property Name="Ref" Value="msg_GetMailFileListElement" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                </om:Element>
+                                <om:Element Type="Construct" OID="e346d512-5356-4f5c-b696-0e8720200d56" ParentLink="ComplexStatement_Statement" LowerBound="278.1" HigherBound="290.1">
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Construct_msg_GetMailFileReq" />
+                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Element Type="MessageRef" OID="ffeadf01-4205-49a3-9d5e-5ec43061d66d" ParentLink="Construct_MessageRef" LowerBound="279.51" HigherBound="279.69">
+                                        <om:Property Name="Ref" Value="msg_GetMailFileReq" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                    <om:Element Type="Transform" OID="89839aeb-5f67-4abf-9957-583a72d9fbf2" ParentLink="ComplexStatement_Statement" LowerBound="281.1" HigherBound="283.1">
+                                        <om:Property Name="ClassName" Value="Cloud9.BizTalk.X12.Maps.CHC_GetMailFileListReq_GetMailFileRespElement_To_GetMailFileReq" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="XForm_msg_GetMailFileReq" />
+                                        <om:Property Name="Signal" Value="True" />
+                                        <om:Element Type="MessagePartRef" OID="0bfc6f2f-0557-46ed-8797-e066520a026b" ParentLink="Transform_InputMessagePartRef" LowerBound="282.172" HigherBound="282.199">
+                                            <om:Property Name="MessageRef" Value="msg_GetMailFileListReq" />
+                                            <om:Property Name="PartRef" Value="Body" />
+                                            <om:Property Name="ReportToAnalyst" Value="True" />
+                                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                                            <om:Property Name="Signal" Value="False" />
+                                        </om:Element>
+                                        <om:Element Type="MessagePartRef" OID="1673e65e-fcb1-4ed7-bf99-e372cfb938fb" ParentLink="Transform_InputMessagePartRef" LowerBound="282.201" HigherBound="282.232">
+                                            <om:Property Name="MessageRef" Value="msg_GetMailFileListElement" />
+                                            <om:Property Name="PartRef" Value="Body" />
+                                            <om:Property Name="ReportToAnalyst" Value="True" />
+                                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                                            <om:Property Name="Signal" Value="False" />
+                                        </om:Element>
+                                        <om:Element Type="MessagePartRef" OID="b3df2a59-5d3a-4158-94b4-f8679cc0153e" ParentLink="Transform_OutputMessagePartRef" LowerBound="282.56" HigherBound="282.79">
+                                            <om:Property Name="MessageRef" Value="msg_GetMailFileReq" />
+                                            <om:Property Name="PartRef" Value="Body" />
+                                            <om:Property Name="ReportToAnalyst" Value="True" />
+                                            <om:Property Name="Name" Value="MessagePartReference_3" />
+                                            <om:Property Name="Signal" Value="False" />
+                                        </om:Element>
+                                    </om:Element>
+                                    <om:Element Type="MessageAssignment" OID="4fd7d31e-06da-4ea8-8827-dba16b012b68" ParentLink="ComplexStatement_Statement" LowerBound="283.1" HigherBound="289.1">
+                                        <om:Property Name="Expression" Value="msg_GetMailFileReq(BTS.RetryCount) = 0;&#xD;&#xA;msg_GetMailFileReq(BTS.RetryInterval) = 1; //(in minutes)&#xD;&#xA;&#xD;&#xA;Port_GetMailFile_HTTP_Dynamic(Microsoft.XLANGs.BaseTypes.Address) = strMailboxURL ;&#xD;&#xA;Port_GetMailFile_HTTP_Dynamic(Microsoft.XLANGs.BaseTypes.TransportType)=&quot;HTTP&quot;;" />
+                                        <om:Property Name="ReportToAnalyst" Value="False" />
+                                        <om:Property Name="Name" Value="MessageAssignment_2" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                </om:Element>
+                                <om:Element Type="Send" OID="9e894369-7ff1-40f0-995c-10c16175e518" ParentLink="ComplexStatement_Statement" LowerBound="290.1" HigherBound="292.1">
+                                    <om:Property Name="PortName" Value="Port_GetMailFile_HTTP_Dynamic" />
+                                    <om:Property Name="MessageName" Value="msg_GetMailFileReq" />
+                                    <om:Property Name="OperationName" Value="GetMailFile" />
+                                    <om:Property Name="OperationMessageName" Value="Request" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Send_msg_GetMailFileReq" />
+                                    <om:Property Name="Signal" Value="True" />
+                                </om:Element>
+                                <om:Element Type="Receive" OID="b5c14aa7-fd68-40dd-aa9e-ee110b11441c" ParentLink="ComplexStatement_Statement" LowerBound="292.1" HigherBound="294.1">
+                                    <om:Property Name="Activate" Value="False" />
+                                    <om:Property Name="PortName" Value="Port_GetMailFile_HTTP_Dynamic" />
+                                    <om:Property Name="MessageName" Value="msg_GetMailFileResp" />
+                                    <om:Property Name="OperationName" Value="GetMailFile" />
+                                    <om:Property Name="OperationMessageName" Value="Response" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Receive_msg_GetMailFileListResp" />
+                                    <om:Property Name="Signal" Value="True" />
+                                </om:Element>
+                                <om:Element Type="Decision" OID="323f4e43-fcfd-4564-8dac-235e15729efb" ParentLink="ComplexStatement_Statement" LowerBound="294.1" HigherBound="328.1">
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Decide_Success" />
+                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Element Type="DecisionBranch" OID="742c0cb1-a5ab-4061-99a6-039be6af6a8a" ParentLink="ReallyComplexStatement_Branch" LowerBound="295.41" HigherBound="302.1">
+                                        <om:Property Name="Expression" Value="resultErrorCode != &quot;0&quot;" />
+                                        <om:Property Name="IsGhostBranch" Value="True" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="Rule_File_RetrieveFailed" />
+                                        <om:Property Name="Signal" Value="True" />
+                                        <om:Element Type="VariableAssignment" OID="48c4139d-80a2-4bdb-a269-334f210dcdbf" ParentLink="ComplexStatement_Statement" LowerBound="297.1" HigherBound="299.1">
+                                            <om:Property Name="Expression" Value="exception = new System.Exception( System.String.Format(&quot;Error getting files: {0}, {1}&quot;, resultErrorCode, resultErrorMessage ) );" />
+                                            <om:Property Name="ReportToAnalyst" Value="True" />
+                                            <om:Property Name="Name" Value="Create Exception" />
+                                            <om:Property Name="Signal" Value="False" />
+                                        </om:Element>
+                                        <om:Element Type="Throw" OID="03ce4726-9f4f-4f7b-a49e-00452af71f16" ParentLink="ComplexStatement_Statement" LowerBound="299.1" HigherBound="301.1">
+                                            <om:Property Name="ThrownReference" Value="exception" />
+                                            <om:Property Name="ReportToAnalyst" Value="True" />
+                                            <om:Property Name="Name" Value="Throw Get Mail List Exception" />
+                                            <om:Property Name="Signal" Value="True" />
+                                        </om:Element>
+                                    </om:Element>
+                                    <om:Element Type="DecisionBranch" OID="70b794c2-75d8-4694-8145-db126d12a727" ParentLink="ReallyComplexStatement_Branch">
+                                        <om:Property Name="IsGhostBranch" Value="True" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="Else" />
+                                        <om:Property Name="Signal" Value="False" />
+                                        <om:Element Type="VariableAssignment" OID="291e2ffc-8570-458e-8072-9cf721f6b0df" ParentLink="ComplexStatement_Statement" LowerBound="304.1" HigherBound="313.1">
+                                            <om:Property Name="Expression" Value="resultErrorCode = xpath(msg_GetMailFileResp.Body, &quot;string(/*[local-name()='claim_submission_api' and namespace-uri()='http://Cloud9.BizTalk.Schemas.Emdeon.EmdeonGetMailFileResponse']/*[local-name()='transaction' and namespace-uri()='']/*[local-name()='trx_data' and namespace-uri()='']/*[local-name()='result' and namespace-uri()='']/*[local-name()='error_code' and namespace-uri()=''])&quot;);&#xD;&#xA;resultErrorMessage = xpath(msg_GetMailFileResp.Body, &quot;string(/*[local-name()='claim_submission_api' and namespace-uri()='http://Cloud9.BizTalk.Schemas.Emdeon.EmdeonGetMailFileResponse']/*[local-name()='transaction' and namespace-uri()='']/*[local-name()='trx_data' and namespace-uri()='']/*[local-name()='result' and namespace-uri()='']/*[local-name()='error_message' and namespace-uri()=''])&quot;);&#xD;&#xA;&#xD;&#xA;file_compression = xpath(msg_GetMailFileResp.Body, &quot;string(/*[local-name()='claim_submission_api' and namespace-uri()='http://Cloud9.BizTalk.Schemas.Emdeon.EmdeonGetMailFileResponse']/*[local-name()='transaction' and namespace-uri()='']/*[local-name()='trx_data' and namespace-uri()='']/*[local-name()='mail_file' and namespace-uri()='']/*[local-name()='file_compression' and namespace-uri()=''])&quot;);&#xD;&#xA;file_encoding = xpath(msg_GetMailFileResp.Body, &quot;string(/*[local-name()='claim_submission_api' and namespace-uri()='http://Cloud9.BizTalk.Schemas.Emdeon.EmdeonGetMailFileResponse']/*[local-name()='transaction' and namespace-uri()='']/*[local-name()='trx_data' and namespace-uri()='']/*[local-name()='mail_file' and namespace-uri()='']/*[local-name()='file_encoding' and namespace-uri()=''])&quot;);&#xD;&#xA;file_data = xpath(msg_GetMailFileResp.Body, &quot;string(/*[local-name()='claim_submission_api' and namespace-uri()='http://Cloud9.BizTalk.Schemas.Emdeon.EmdeonGetMailFileResponse']/*[local-name()='transaction' and namespace-uri()='']/*[local-name()='trx_data' and namespace-uri()='']/*[local-name()='mail_file' and namespace-uri()='']/*[local-name()='file_data' and namespace-uri()=''])&quot;);&#xD;&#xA;&#xD;&#xA;payloadDecoded = Cloud9.BizTalk.Helper.EmdeonConversion.DecodePayload(file_compression, file_encoding, file_data);" />
+                                            <om:Property Name="ReportToAnalyst" Value="True" />
+                                            <om:Property Name="Name" Value="Get Results" />
+                                            <om:Property Name="Signal" Value="False" />
+                                        </om:Element>
+                                        <om:Element Type="Construct" OID="085008b6-d149-4bc4-acb0-7555affe105b" ParentLink="ComplexStatement_Statement" LowerBound="313.1" HigherBound="325.1">
+                                            <om:Property Name="ReportToAnalyst" Value="True" />
+                                            <om:Property Name="Name" Value="Construct PreParsed Message" />
+                                            <om:Property Name="Signal" Value="True" />
+                                            <om:Element Type="MessageAssignment" OID="7f3aad24-b745-4669-8b36-70beb2ba8ca9" ParentLink="ComplexStatement_Statement" LowerBound="316.1" HigherBound="324.1">
+                                                <om:Property Name="Expression" Value="&#xD;&#xA;msg_EDI_PreParsed = Cloud9.BizTalk.Helper.XLangMessageHelpers.CreateCustomBTXMessageFromString(payloadDecoded, &quot;msg_EDI_PreParsed&quot;, &quot;part&quot;);&#xD;&#xA;&#xD;&#xA;strTemp = System.String.Format(&quot;{0}&quot;, System.Guid.NewGuid() ) ;&#xD;&#xA;file_name = System.String.Format(&quot;{0}_{1}.edi&quot;, file_prefix, strTemp ) ;&#xD;&#xA;msg_EDI_PreParsed(FILE.TargetFileName) = file_name ;&#xD;&#xA;msg_EDI_PreParsed(FILE.ReceivedFileName) = file_name ;&#xD;&#xA;" />
+                                                <om:Property Name="ReportToAnalyst" Value="False" />
+                                                <om:Property Name="Name" Value="MessageAssignment_HL7MessagePart" />
+                                                <om:Property Name="Signal" Value="True" />
+                                            </om:Element>
+                                            <om:Element Type="MessageRef" OID="0f6dc36d-d5bb-4097-9f9a-c8a1ab1b419c" ParentLink="Construct_MessageRef" LowerBound="314.55" HigherBound="314.72">
+                                                <om:Property Name="Ref" Value="msg_EDI_PreParsed" />
+                                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                                <om:Property Name="Signal" Value="False" />
+                                            </om:Element>
+                                        </om:Element>
+                                        <om:Element Type="Send" OID="bd202bba-d8d6-4458-b3e7-c96a5ac93d5c" ParentLink="ComplexStatement_Statement" LowerBound="325.1" HigherBound="327.1">
+                                            <om:Property Name="PortName" Value="Port_SaveEDIFile" />
+                                            <om:Property Name="MessageName" Value="msg_EDI_PreParsed" />
+                                            <om:Property Name="OperationName" Value="Operation_1" />
+                                            <om:Property Name="OperationMessageName" Value="Request" />
+                                            <om:Property Name="ReportToAnalyst" Value="True" />
+                                            <om:Property Name="Name" Value="Send_msg_EDI_PreParsed" />
+                                            <om:Property Name="Signal" Value="True" />
+                                        </om:Element>
+                                    </om:Element>
+                                </om:Element>
+                                <om:Element Type="Construct" OID="5ed3fbd7-c23f-4b09-a29a-fdb6de68ff59" ParentLink="ComplexStatement_Statement" LowerBound="328.1" HigherBound="340.1">
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Construct_msg_DeleteMailFileReq" />
+                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Element Type="Transform" OID="6ae464c3-93c8-486a-97b0-b8f68ae714b7" ParentLink="ComplexStatement_Statement" LowerBound="331.1" HigherBound="333.1">
+                                        <om:Property Name="ClassName" Value="Cloud9.BizTalk.X12.Maps.CHC_GetMailFileListReq_GetMailFileRespElement_To_DeleteMailFileReq" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="XForm_msg_DeleteMailFileReq" />
+                                        <om:Property Name="Signal" Value="True" />
+                                        <om:Element Type="MessagePartRef" OID="b82e51d2-f584-4ad2-8b8f-c088168769cc" ParentLink="Transform_InputMessagePartRef" LowerBound="332.178" HigherBound="332.205">
+                                            <om:Property Name="MessageRef" Value="msg_GetMailFileListReq" />
+                                            <om:Property Name="PartRef" Value="Body" />
+                                            <om:Property Name="ReportToAnalyst" Value="True" />
+                                            <om:Property Name="Name" Value="MessagePartReference_9" />
+                                            <om:Property Name="Signal" Value="False" />
+                                        </om:Element>
+                                        <om:Element Type="MessagePartRef" OID="5025949a-0a0c-41fc-bc9f-799a34f3c357" ParentLink="Transform_InputMessagePartRef" LowerBound="332.207" HigherBound="332.238">
+                                            <om:Property Name="MessageRef" Value="msg_GetMailFileListElement" />
+                                            <om:Property Name="PartRef" Value="Body" />
+                                            <om:Property Name="ReportToAnalyst" Value="True" />
+                                            <om:Property Name="Name" Value="MessagePartReference_10" />
+                                            <om:Property Name="Signal" Value="False" />
+                                        </om:Element>
+                                        <om:Element Type="MessagePartRef" OID="fb79ec46-712e-40b1-a632-a4e8f0702e41" ParentLink="Transform_OutputMessagePartRef" LowerBound="332.56" HigherBound="332.82">
+                                            <om:Property Name="MessageRef" Value="msg_DeleteMailFileReq" />
+                                            <om:Property Name="PartRef" Value="Body" />
+                                            <om:Property Name="ReportToAnalyst" Value="True" />
+                                            <om:Property Name="Name" Value="MessagePartReference_11" />
+                                            <om:Property Name="Signal" Value="False" />
+                                        </om:Element>
+                                    </om:Element>
+                                    <om:Element Type="MessageAssignment" OID="a6915dac-02a9-46ef-9e02-4b84009ff51d" ParentLink="ComplexStatement_Statement" LowerBound="333.1" HigherBound="339.1">
+                                        <om:Property Name="Expression" Value="msg_DeleteMailFileReq(BTS.RetryCount) = 0;&#xD;&#xA;msg_DeleteMailFileReq(BTS.RetryInterval) = 1; //(in minutes)&#xD;&#xA;&#xD;&#xA;Port_DeleteMailFile_HTTP_Dynamic(Microsoft.XLANGs.BaseTypes.Address) = strMailboxURL ;&#xD;&#xA;Port_DeleteMailFile_HTTP_Dynamic(Microsoft.XLANGs.BaseTypes.TransportType)=&quot;HTTP&quot;;" />
+                                        <om:Property Name="ReportToAnalyst" Value="False" />
+                                        <om:Property Name="Name" Value="MessageAssignment_2" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                    <om:Element Type="MessageRef" OID="32e2b641-9ce2-4716-ae53-bcc138890f2a" ParentLink="Construct_MessageRef" LowerBound="329.51" HigherBound="329.72">
+                                        <om:Property Name="Ref" Value="msg_DeleteMailFileReq" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                </om:Element>
+                                <om:Element Type="Send" OID="31f876ce-4f21-4965-ac5f-e01259931a4b" ParentLink="ComplexStatement_Statement" LowerBound="340.1" HigherBound="342.1">
+                                    <om:Property Name="PortName" Value="Port_DeleteMailFile_HTTP_Dynamic" />
+                                    <om:Property Name="MessageName" Value="msg_DeleteMailFileReq" />
+                                    <om:Property Name="OperationName" Value="DeleteMailFile" />
+                                    <om:Property Name="OperationMessageName" Value="Request" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Send_msg_DeleteMailFileReq" />
+                                    <om:Property Name="Signal" Value="True" />
+                                </om:Element>
+                                <om:Element Type="Receive" OID="c469fb7a-2a40-4c96-b923-8b0792a22ec3" ParentLink="ComplexStatement_Statement" LowerBound="342.1" HigherBound="344.1">
+                                    <om:Property Name="Activate" Value="False" />
+                                    <om:Property Name="PortName" Value="Port_DeleteMailFile_HTTP_Dynamic" />
+                                    <om:Property Name="MessageName" Value="msg_DeleteMailFileResp" />
+                                    <om:Property Name="OperationName" Value="DeleteMailFile" />
+                                    <om:Property Name="OperationMessageName" Value="Response" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Receive_msg_DeleteMailFileResp" />
+                                    <om:Property Name="Signal" Value="True" />
+                                </om:Element>
+                                <om:Element Type="VariableAssignment" OID="da9e0991-b339-46ac-bf9d-711858fbfe9f" ParentLink="ComplexStatement_Statement" LowerBound="344.1" HigherBound="347.1">
+                                    <om:Property Name="Expression" Value="resultErrorCode = xpath(msg_DeleteMailFileResp.Body, &quot;string(/*[local-name()='claim_submission_api' and namespace-uri()='http://Cloud9.BizTalk.Schemas.Emdeon.EmdeonDeleteFileResponse']/*[local-name()='transaction' and namespace-uri()='']/*[local-name()='trx_data' and namespace-uri()='']/*[local-name()='result' and namespace-uri()='']/*[local-name()='error_code' and namespace-uri()=''])&quot;);&#xD;&#xA;resultErrorMessage = xpath(msg_DeleteMailFileResp.Body, &quot;string(/*[local-name()='claim_submission_api' and namespace-uri()='http://Cloud9.BizTalk.Schemas.Emdeon.EmdeonDeleteFileResponse']/*[local-name()='transaction' and namespace-uri()='']/*[local-name()='trx_data' and namespace-uri()='']/*[local-name()='result' and namespace-uri()='']/*[local-name()='error_message' and namespace-uri()=''])&quot;);&#xD;&#xA;" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Get Results" />
+                                    <om:Property Name="Signal" Value="True" />
+                                </om:Element>
+                                <om:Element Type="Catch" OID="2d222680-b70a-4edf-b92c-73910976b281" ParentLink="Scope_Catch" LowerBound="350.1" HigherBound="360.1">
+                                    <om:Property Name="ExceptionName" Value="exc" />
+                                    <om:Property Name="ExceptionType" Value="System.Exception" />
+                                    <om:Property Name="IsFaultMessage" Value="False" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Catch_SystemException" />
+                                    <om:Property Name="Signal" Value="True" />
+                                    <om:Element Type="VariableAssignment" OID="edc049ab-4b76-4d06-996d-0d03d818221c" ParentLink="Catch_Statement" LowerBound="353.1" HigherBound="357.1">
+                                        <om:Property Name="Expression" Value="strLogType = &quot;Error&quot;;&#xD;&#xA;strPracticeAddr = &quot;&quot;;&#xD;&#xA;strError = exc.Message;" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="Get Error Message" />
+                                        <om:Property Name="Signal" Value="False" />
+                                    </om:Element>
+                                    <om:Element Type="Exec" OID="05e10c53-2742-4666-9e7d-d541fcdc68cb" ParentLink="Catch_Statement" LowerBound="357.1" HigherBound="359.1">
+                                        <om:Property Name="Invokee" Value="Cloud9.BizTalk.Common.AddLog" />
+                                        <om:Property Name="ReportToAnalyst" Value="True" />
+                                        <om:Property Name="Name" Value="StartOrchestration_ErrorReporting" />
+                                        <om:Property Name="Signal" Value="False" />
+                                        <om:Element Type="Parameter" OID="2d54e9e6-cafa-4519-85a8-83ccfddc8bf9" ParentLink="InvokeStatement_Parameter">
+                                            <om:Property Name="Direction" Value="In" />
+                                            <om:Property Name="Name" Value="strPracticeAddr" />
+                                            <om:Property Name="Type" Value="System.String" />
+                                            <om:Property Name="Signal" Value="False" />
+                                        </om:Element>
+                                        <om:Element Type="Parameter" OID="e13f4bf9-7efa-43dc-8916-548dd55fa542" ParentLink="InvokeStatement_Parameter">
+                                            <om:Property Name="Direction" Value="In" />
+                                            <om:Property Name="Name" Value="strError" />
+                                            <om:Property Name="Type" Value="System.String" />
+                                            <om:Property Name="Signal" Value="False" />
+                                        </om:Element>
+                                        <om:Element Type="Parameter" OID="2553a2b7-2fbf-4644-b241-7fc4a6773b4f" ParentLink="InvokeStatement_Parameter">
+                                            <om:Property Name="Direction" Value="In" />
+                                            <om:Property Name="Name" Value="strLogType" />
+                                            <om:Property Name="Type" Value="System.String" />
+                                            <om:Property Name="Signal" Value="False" />
+                                        </om:Element>
+                                        <om:Element Type="Parameter" OID="3ae5fee9-faaa-4cd4-a6b3-9fd551e9d0f7" ParentLink="InvokeStatement_Parameter">
+                                            <om:Property Name="Direction" Value="In" />
+                                            <om:Property Name="Name" Value="strProcessName" />
+                                            <om:Property Name="Type" Value="System.String" />
+                                            <om:Property Name="Signal" Value="False" />
+                                        </om:Element>
+                                        <om:Element Type="Parameter" OID="83248069-bce6-4de9-b206-4812f0e1f042" ParentLink="InvokeStatement_Parameter">
+                                            <om:Property Name="Direction" Value="In" />
+                                            <om:Property Name="Name" Value="InternalEntityID" />
+                                            <om:Property Name="Type" Value="System.String" />
+                                            <om:Property Name="Signal" Value="False" />
+                                        </om:Element>
+                                        <om:Element Type="Parameter" OID="75a77264-bb0d-434f-abfb-40957b0877e5" ParentLink="InvokeStatement_Parameter">
+                                            <om:Property Name="Direction" Value="In" />
+                                            <om:Property Name="Name" Value="ExternalEntityID" />
+                                            <om:Property Name="Type" Value="System.String" />
+                                            <om:Property Name="Signal" Value="False" />
+                                        </om:Element>
+                                    </om:Element>
+                                </om:Element>
+                            </om:Element>
+                            <om:Element Type="VariableAssignment" OID="a83bc6cd-0ccf-4e14-9faf-aa3f8a907303" ParentLink="ComplexStatement_Statement" LowerBound="362.1" HigherBound="364.1">
+                                <om:Property Name="Expression" Value="iFileListIdx = iFileListIdx + 1;" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Increment File Index" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="Catch" OID="8e3babd5-bf68-4438-886e-cbde98edd046" ParentLink="Scope_Catch" LowerBound="368.1" HigherBound="378.1">
+                            <om:Property Name="ExceptionName" Value="exc" />
+                            <om:Property Name="ExceptionType" Value="System.Exception" />
+                            <om:Property Name="IsFaultMessage" Value="False" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Catch_SystemException" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="VariableAssignment" OID="6a872e5c-f66d-4606-87fb-af6ad2d1a4d7" ParentLink="Catch_Statement" LowerBound="371.1" HigherBound="375.1">
+                                <om:Property Name="Expression" Value="strLogType = &quot;Error&quot;;&#xD;&#xA;strPracticeAddr = &quot;&quot;;&#xD;&#xA;strError = exc.Message;" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Get Error Message" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="Exec" OID="b648f730-e203-4fc4-b4f2-91d313b181fe" ParentLink="Catch_Statement" LowerBound="375.1" HigherBound="377.1">
+                                <om:Property Name="Invokee" Value="Cloud9.BizTalk.Common.AddLog" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="StartOrchestration_ErrorReporting" />
+                                <om:Property Name="Signal" Value="False" />
+                                <om:Element Type="Parameter" OID="fb85750d-9ecb-4bd5-8ea6-353ff92c0485" ParentLink="InvokeStatement_Parameter">
+                                    <om:Property Name="Direction" Value="In" />
+                                    <om:Property Name="Name" Value="strPracticeAddr" />
+                                    <om:Property Name="Type" Value="System.String" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="Parameter" OID="bb0e8d5b-eccd-4e3e-b4c6-7b8e614dbb66" ParentLink="InvokeStatement_Parameter">
+                                    <om:Property Name="Direction" Value="In" />
+                                    <om:Property Name="Name" Value="strError" />
+                                    <om:Property Name="Type" Value="System.String" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="Parameter" OID="2fafe836-f3f6-4847-9f7f-fb1c844e2a6d" ParentLink="InvokeStatement_Parameter">
+                                    <om:Property Name="Direction" Value="In" />
+                                    <om:Property Name="Name" Value="strLogType" />
+                                    <om:Property Name="Type" Value="System.String" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="Parameter" OID="4bfde875-4dee-492d-8e5c-216da267c995" ParentLink="InvokeStatement_Parameter">
+                                    <om:Property Name="Direction" Value="In" />
+                                    <om:Property Name="Name" Value="strProcessName" />
+                                    <om:Property Name="Type" Value="System.String" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="Parameter" OID="fe4d456c-ab9a-40cb-8de5-9e2b94d1294b" ParentLink="InvokeStatement_Parameter">
+                                    <om:Property Name="Direction" Value="In" />
+                                    <om:Property Name="Name" Value="InternalEntityID" />
+                                    <om:Property Name="Type" Value="System.String" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                                <om:Element Type="Parameter" OID="b5e7c6ad-ca60-4135-ad8a-89552f6739f6" ParentLink="InvokeStatement_Parameter">
+                                    <om:Property Name="Direction" Value="In" />
+                                    <om:Property Name="Name" Value="ExternalEntityID" />
+                                    <om:Property Name="Type" Value="System.String" />
+                                    <om:Property Name="Signal" Value="False" />
+                                </om:Element>
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="LongRunningTransaction" OID="5f7f1642-5a86-4abe-9bc6-7dc7aa0aa8c2" ParentLink="Scope_Transaction" LowerBound="173.26" HigherBound="173.64">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Transaction_3" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Catch" OID="70f5efa4-40c3-4cef-bfd4-64e69b26bffc" ParentLink="Scope_Catch" LowerBound="383.1" HigherBound="393.1">
+                        <om:Property Name="ExceptionName" Value="exc" />
+                        <om:Property Name="ExceptionType" Value="System.Exception" />
+                        <om:Property Name="IsFaultMessage" Value="False" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Catch_SystemException" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="VariableAssignment" OID="37c415c4-f797-42c3-ba5e-e435ab746b21" ParentLink="Catch_Statement" LowerBound="386.1" HigherBound="390.1">
+                            <om:Property Name="Expression" Value="strLogType = &quot;Error&quot;;&#xD;&#xA;strPracticeAddr = &quot;&quot;;&#xD;&#xA;strError = exc.Message;" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Get Error Message" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="Exec" OID="adff2098-87f4-4b90-a6b0-3025c557268b" ParentLink="Catch_Statement" LowerBound="390.1" HigherBound="392.1">
+                            <om:Property Name="Invokee" Value="Cloud9.BizTalk.Common.AddLog" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="StartOrchestration_ErrorReporting" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="Parameter" OID="aed285df-5d14-4071-8da9-c7d07aae79d1" ParentLink="InvokeStatement_Parameter">
+                                <om:Property Name="Direction" Value="In" />
+                                <om:Property Name="Name" Value="strPracticeAddr" />
+                                <om:Property Name="Type" Value="System.String" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="Parameter" OID="2d5162d3-7ae8-44b0-b505-a1719c0a3fe5" ParentLink="InvokeStatement_Parameter">
+                                <om:Property Name="Direction" Value="In" />
+                                <om:Property Name="Name" Value="strError" />
+                                <om:Property Name="Type" Value="System.String" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="Parameter" OID="3751902e-ef11-4d57-ab85-afaff25791ec" ParentLink="InvokeStatement_Parameter">
+                                <om:Property Name="Direction" Value="In" />
+                                <om:Property Name="Name" Value="strLogType" />
+                                <om:Property Name="Type" Value="System.String" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="Parameter" OID="638a6941-2e68-4a3a-9274-a89e1f83edad" ParentLink="InvokeStatement_Parameter">
+                                <om:Property Name="Direction" Value="In" />
+                                <om:Property Name="Name" Value="strProcessName" />
+                                <om:Property Name="Type" Value="System.String" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="Parameter" OID="07ffa2ff-6dc5-4e79-b1eb-38df3806974f" ParentLink="InvokeStatement_Parameter">
+                                <om:Property Name="Direction" Value="In" />
+                                <om:Property Name="Name" Value="InternalEntityID" />
+                                <om:Property Name="Type" Value="System.String" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="Parameter" OID="df766fc8-dc15-4a4a-99f8-72413deb78d9" ParentLink="InvokeStatement_Parameter">
+                                <om:Property Name="Direction" Value="In" />
+                                <om:Property Name="Name" Value="ExternalEntityID" />
+                                <om:Property Name="Type" Value="System.String" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="59ffba71-a1a8-482b-a0df-5274a528c9a6" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="82.1" HigherBound="84.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="25" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Cloud9.BizTalk.X12.PortType_GetPracticeEDISettingsDynamic" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_GetPracticeEDISettingsDynamic" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="PhysicalBindingAttribute" OID="d0406381-6e7a-4b3b-921b-e10e63b4f9ef" ParentLink="PortDeclaration_CLRAttribute" LowerBound="82.1" HigherBound="83.1">
+                    <om:Property Name="InPipeline" Value="Microsoft.BizTalk.DefaultPipelines.XMLReceive" />
+                    <om:Property Name="OutPipeline" Value="Microsoft.BizTalk.DefaultPipelines.XMLTransmit" />
+                    <om:Property Name="TransportType" Value="HTTP" />
+                    <om:Property Name="URI" Value="http://tempURI" />
+                    <om:Property Name="IsDynamic" Value="True" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="e361d546-6825-4041-9de8-ebb1034976ec" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="84.1" HigherBound="86.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="49" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Cloud9.BizTalk.X12.PortType_EmdeonGetMailFileList_HTTP_Dynamic" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_GetMailFileList_HTTP_Dynamic" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="PhysicalBindingAttribute" OID="178707a1-47a3-4887-8ac1-745134dada22" ParentLink="PortDeclaration_CLRAttribute" LowerBound="84.1" HigherBound="85.1">
+                    <om:Property Name="InPipeline" Value="Cloud9.BizTalk.X12.Pipelines.ReceiveEmdeonMailPipeline" />
+                    <om:Property Name="OutPipeline" Value="Cloud9.BizTalk.X12.Pipelines.SendEmdeonXMLPipeline" />
+                    <om:Property Name="TransportType" Value="HTTP" />
+                    <om:Property Name="URI" Value="http://tempURI" />
+                    <om:Property Name="IsDynamic" Value="True" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="139d71cd-5983-4503-87ff-3973403a4a71" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="86.1" HigherBound="88.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="129" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Cloud9.BizTalk.X12.PortType_Emdeon_GetMailFile_HTTP_Dynamic" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_GetMailFile_HTTP_Dynamic" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="PhysicalBindingAttribute" OID="8c844232-aa06-40d3-81c5-b8125488d2fa" ParentLink="PortDeclaration_CLRAttribute" LowerBound="86.1" HigherBound="87.1">
+                    <om:Property Name="InPipeline" Value="Cloud9.BizTalk.X12.Pipelines.ReceiveEmdeonMailPipeline" />
+                    <om:Property Name="OutPipeline" Value="Cloud9.BizTalk.X12.Pipelines.SendEmdeonXMLPipeline" />
+                    <om:Property Name="TransportType" Value="HTTP" />
+                    <om:Property Name="URI" Value="http://tempURI" />
+                    <om:Property Name="IsDynamic" Value="True" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="0d1abdde-9573-435e-9fb0-622c8a096837" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="88.1" HigherBound="90.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="196" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Cloud9.BizTalk.X12.PortType_SaveEDIFile" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_SaveEDIFile" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="370e33ef-d8b8-40a9-8869-b73b5c6e74d2" ParentLink="PortDeclaration_CLRAttribute" LowerBound="88.1" HigherBound="89.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="b594884f-baaa-4167-b766-1fcd7928e6cb" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="90.1" HigherBound="92.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="218" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Cloud9.BizTalk.X12.PortType_DeleteMailFile_HTTP_Dynamic" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_DeleteMailFile_HTTP_Dynamic" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="PhysicalBindingAttribute" OID="727e11f6-b885-4530-b062-d8bfc064b330" ParentLink="PortDeclaration_CLRAttribute" LowerBound="90.1" HigherBound="91.1">
+                    <om:Property Name="InPipeline" Value="Cloud9.BizTalk.X12.Pipelines.ReceiveEmdeonMailPipeline" />
+                    <om:Property Name="OutPipeline" Value="Cloud9.BizTalk.X12.Pipelines.SendEmdeonXMLPipeline" />
+                    <om:Property Name="TransportType" Value="HTTP" />
+                    <om:Property Name="URI" Value="http://tempURI" />
+                    <om:Property Name="IsDynamic" Value="True" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="793470b6-dec4-4efb-8b1a-727665bd8d88" ParentLink="Module_MessageType" LowerBound="4.1" HigherBound="8.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="MPType_EDI_Message" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="aac66c44-bbb9-4f4c-8b0b-27ed708aaf97" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="6.1" HigherBound="7.1">
+                <om:Property Name="ClassName" Value="System.Xml.XmlDocument" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="d1387ec1-b3da-42ea-86cf-5f131e469fe2" ParentLink="Module_MessageType" LowerBound="8.1" HigherBound="12.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="MPType_GetMailFileListElement" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="e7ae2903-a1f8-4ce8-b906-3013c531ef9f" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="10.1" HigherBound="11.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonGetMailFileListMailFileElement" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="65e19088-0eca-4098-9e11-c83500996cb7" ParentLink="Module_MessageType" LowerBound="12.1" HigherBound="16.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="MPType_DeleteMailFileResp" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="1ec8153a-795f-43ce-9f0b-3d33a33fef41" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="14.1" HigherBound="15.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonDeleteFileResponse" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="d14e9a2e-a2d2-429c-9b06-40d22b1c2d55" ParentLink="Module_MessageType" LowerBound="16.1" HigherBound="20.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="MPType_DeleteMailFileReq" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="6f197e94-4c6e-49d6-9b25-9b0af734d0f0" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="18.1" HigherBound="19.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonDeleteFileRequest" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="f1dacc29-cd2b-4f6e-82fe-bb927479a433" ParentLink="Module_MessageType" LowerBound="20.1" HigherBound="24.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="MPType_GetMailFileResp" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="c625b48d-96fc-47c0-9ee7-af86c8d18189" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="22.1" HigherBound="23.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonGetMailFileResponse" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="f130f080-ffb9-4013-a884-7b10e94fa8a6" ParentLink="Module_MessageType" LowerBound="24.1" HigherBound="28.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="MPType_GetMailFileReq" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="6e57ad15-fa22-40a8-aa6d-7605a937fcfd" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="26.1" HigherBound="27.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonGetMailFileRequest" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="522cfdf6-eab8-4a1a-ba29-964e27370606" ParentLink="Module_MessageType" LowerBound="28.1" HigherBound="32.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="MPType_GetMailFileListResp" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="7f4133ad-ad0c-4b9f-b34d-d5249f2e658d" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="30.1" HigherBound="31.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonGetMailFileListResponse" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="7b9f954c-420b-4bc9-8be4-2a8d9742219c" ParentLink="Module_MessageType" LowerBound="32.1" HigherBound="36.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="MPType_GetMailFileListReq" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="90a2a47f-6d0a-48ed-9e82-7a94d9ee1a78" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="34.1" HigherBound="35.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonGetMailFileListRequest" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="6ef4c655-14d9-4054-9af5-1439bb94530a" ParentLink="Module_MessageType" LowerBound="36.1" HigherBound="40.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="MPType_GetPracticeEDISettingsResp" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="c3fadc73-fd8a-47d4-9d8e-1ee641f70e8d" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="38.1" HigherBound="39.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.Schemas.GPE_TypedProcedure_BTS.GetPracticeEDISettingsResponse" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="MultipartMessageType" OID="7ceff6da-b450-4400-aacd-ae7ea08ed50b" ParentLink="Module_MessageType" LowerBound="40.1" HigherBound="44.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="MPType_GetPracticeEDISettingsReq" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PartDeclaration" OID="4314306c-9d70-4188-a360-b5187b8f4a8c" ParentLink="MultipartMessageType_PartDeclaration" LowerBound="42.1" HigherBound="43.1">
+                <om:Property Name="ClassName" Value="Cloud9.BizTalk.Schemas.GPE_TypedProcedure_BTS.GetPracticeEDISettings" />
+                <om:Property Name="IsBodyPart" Value="True" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Body" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="2086a827-4e8b-40a3-be3c-9407cb436ee9" ParentLink="Module_PortType" LowerBound="44.1" HigherBound="51.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_GetPracticeEDISettingsDynamic" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="231e16d8-eb18-4f34-93a8-d5bd2cf41252" ParentLink="PortType_OperationDeclaration" LowerBound="46.1" HigherBound="50.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="GetPracticeEDISettingsDynamic" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="0e7b20e7-c03d-4533-b3c2-7e1e401ce88c" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="48.13" HigherBound="48.45">
+                    <om:Property Name="Ref" Value="Cloud9.BizTalk.X12.MPType_GetPracticeEDISettingsReq" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="c0b51810-baf0-4a1e-8e7a-222356d049ba" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="48.47" HigherBound="48.80">
+                    <om:Property Name="Ref" Value="Cloud9.BizTalk.X12.MPType_GetPracticeEDISettingsResp" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="af19899f-e5f3-4084-8a0f-8c751dfff0cb" ParentLink="Module_PortType" LowerBound="51.1" HigherBound="58.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_EmdeonGetMailFileList_HTTP_Dynamic" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="OperationDeclaration" OID="fbae6585-8cdf-45f6-8830-7bba95f5bc76" ParentLink="PortType_OperationDeclaration" LowerBound="53.1" HigherBound="57.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="GetMailFileList" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="2cb39362-9178-414c-8715-5c5cf8dc0fe8" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="55.13" HigherBound="55.38">
+                    <om:Property Name="Ref" Value="Cloud9.BizTalk.X12.MPType_GetMailFileListReq" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="c3d51388-bef0-43db-af4d-08f6f69402e4" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="55.40" HigherBound="55.66">
+                    <om:Property Name="Ref" Value="Cloud9.BizTalk.X12.MPType_GetMailFileListResp" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="5d8ba36d-c735-4df0-8a46-d6b4b5c873a9" ParentLink="Module_PortType" LowerBound="58.1" HigherBound="65.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_Emdeon_GetMailFile_HTTP_Dynamic" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="f071fb1a-b78a-4baf-9464-01573e27c15f" ParentLink="PortType_OperationDeclaration" LowerBound="60.1" HigherBound="64.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="GetMailFile" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="484eaa8d-ea97-4d1f-bf1b-2a67aea3cedc" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="62.13" HigherBound="62.34">
+                    <om:Property Name="Ref" Value="Cloud9.BizTalk.X12.MPType_GetMailFileReq" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="db9b3c1a-cdb2-4ae8-a812-ffc67239f67e" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="62.36" HigherBound="62.58">
+                    <om:Property Name="Ref" Value="Cloud9.BizTalk.X12.MPType_GetMailFileResp" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="e01cddba-9c3b-4440-acc1-7fc11ecc0507" ParentLink="Module_PortType" LowerBound="65.1" HigherBound="72.1">
+            <om:Property Name="Synchronous" Value="True" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_DeleteMailFile_HTTP_Dynamic" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="160463fb-5872-40c5-9b39-0d0bd20b86c5" ParentLink="PortType_OperationDeclaration" LowerBound="67.1" HigherBound="71.1">
+                <om:Property Name="OperationType" Value="RequestResponse" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="DeleteMailFile" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="MessageRef" OID="d42b5ac6-6806-40d4-9598-cda748239437" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="69.13" HigherBound="69.37">
+                    <om:Property Name="Ref" Value="Cloud9.BizTalk.X12.MPType_DeleteMailFileReq" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="MessageRef" OID="091c47a4-93df-48af-bd04-39a97d16ae71" ParentLink="OperationDeclaration_ResponseMessageRef" LowerBound="69.39" HigherBound="69.64">
+                    <om:Property Name="Ref" Value="Cloud9.BizTalk.X12.MPType_DeleteMailFileResp" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Response" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="0c896a2f-d52a-4842-9764-d2529b407012" ParentLink="Module_PortType" LowerBound="72.1" HigherBound="79.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_SaveEDIFile" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="fef364e5-7771-42fe-a420-f16bee58dd06" ParentLink="PortType_OperationDeclaration" LowerBound="74.1" HigherBound="78.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="7d9f1bd9-559f-48f1-9401-c764a04d57b0" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="76.13" HigherBound="76.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Cloud9.BizTalk.X12
+{
+    internal messagetype MPType_EDI_Message
+    {
+        body System.Xml.XmlDocument Body;
+    };
+    internal messagetype MPType_GetMailFileListElement
+    {
+        body Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonGetMailFileListMailFileElement Body;
+    };
+    internal messagetype MPType_DeleteMailFileResp
+    {
+        body Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonDeleteFileResponse Body;
+    };
+    internal messagetype MPType_DeleteMailFileReq
+    {
+        body Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonDeleteFileRequest Body;
+    };
+    internal messagetype MPType_GetMailFileResp
+    {
+        body Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonGetMailFileResponse Body;
+    };
+    internal messagetype MPType_GetMailFileReq
+    {
+        body Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonGetMailFileRequest Body;
+    };
+    internal messagetype MPType_GetMailFileListResp
+    {
+        body Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonGetMailFileListResponse Body;
+    };
+    internal messagetype MPType_GetMailFileListReq
+    {
+        body Cloud9.BizTalk.Schemas.CHC_Emdeon.EmdeonGetMailFileListRequest Body;
+    };
+    internal messagetype MPType_GetPracticeEDISettingsResp
+    {
+        body Cloud9.BizTalk.Schemas.GPE_TypedProcedure_BTS.GetPracticeEDISettingsResponse Body;
+    };
+    internal messagetype MPType_GetPracticeEDISettingsReq
+    {
+        body Cloud9.BizTalk.Schemas.GPE_TypedProcedure_BTS.GetPracticeEDISettings Body;
+    };
+    internal porttype PortType_GetPracticeEDISettingsDynamic
+    {
+        requestresponse GetPracticeEDISettingsDynamic
+        {
+            MPType_GetPracticeEDISettingsReq, MPType_GetPracticeEDISettingsResp
+        };
+    };
+    internal porttype PortType_EmdeonGetMailFileList_HTTP_Dynamic
+    {
+        requestresponse GetMailFileList
+        {
+            MPType_GetMailFileListReq, MPType_GetMailFileListResp
+        };
+    };
+    internal porttype PortType_Emdeon_GetMailFile_HTTP_Dynamic
+    {
+        requestresponse GetMailFile
+        {
+            MPType_GetMailFileReq, MPType_GetMailFileResp
+        };
+    };
+    internal porttype PortType_DeleteMailFile_HTTP_Dynamic
+    {
+        requestresponse DeleteMailFile
+        {
+            MPType_DeleteMailFileReq, MPType_DeleteMailFileResp
+        };
+    };
+    internal porttype PortType_SaveEDIFile
+    {
+        oneway Operation_1
+        {
+            System.Xml.XmlDocument
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service longrunning transaction Process_CHC_InboundFiles_Worker
+    {
+        [Microsoft.XLANGs.BaseTypes.PhysicalBinding(typeof(Microsoft.BizTalk.DefaultPipelines.XMLReceive), typeof(Microsoft.BizTalk.DefaultPipelines.XMLTransmit))]
+        port uses dynamic PortType_GetPracticeEDISettingsDynamic Port_GetPracticeEDISettingsDynamic;
+        [Microsoft.XLANGs.BaseTypes.PhysicalBinding(typeof(Cloud9.BizTalk.X12.Pipelines.ReceiveEmdeonMailPipeline), typeof(Cloud9.BizTalk.X12.Pipelines.SendEmdeonXMLPipeline))]
+        port uses dynamic PortType_EmdeonGetMailFileList_HTTP_Dynamic Port_GetMailFileList_HTTP_Dynamic;
+        [Microsoft.XLANGs.BaseTypes.PhysicalBinding(typeof(Cloud9.BizTalk.X12.Pipelines.ReceiveEmdeonMailPipeline), typeof(Cloud9.BizTalk.X12.Pipelines.SendEmdeonXMLPipeline))]
+        port uses dynamic PortType_Emdeon_GetMailFile_HTTP_Dynamic Port_GetMailFile_HTTP_Dynamic;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_SaveEDIFile Port_SaveEDIFile;
+        [Microsoft.XLANGs.BaseTypes.PhysicalBinding(typeof(Cloud9.BizTalk.X12.Pipelines.ReceiveEmdeonMailPipeline), typeof(Cloud9.BizTalk.X12.Pipelines.SendEmdeonXMLPipeline))]
+        port uses dynamic PortType_DeleteMailFile_HTTP_Dynamic Port_DeleteMailFile_HTTP_Dynamic;
+        message System.Xml.XmlDocument msg_EDI_PreParsed;
+        message MPType_DeleteMailFileResp msg_DeleteMailFileResp;
+        message MPType_GetMailFileResp msg_GetMailFileResp;
+        message MPType_GetMailFileReq msg_GetMailFileReq;
+        message MPType_GetMailFileListResp msg_GetMailFileListResp;
+        message MPType_GetMailFileListReq msg_GetMailFileListReq;
+        message MPType_GetPracticeEDISettingsResp msg_GetPracticeEDISettingsResp;
+        message MPType_GetPracticeEDISettingsReq msg_GetPracticeEDISettingsReq;
+        message MPType_UpdateProcessParametersResp msg_UpdateProcessParametersResp;
+        message MPType_UpdateProcessParametersReq msg_UpdateProcessParametersReq;
+        message MPType_DeleteMailFileReq msg_DeleteMailFileReq;
+        message MPType_GetMailFileListElement msg_GetMailFileListElement;
+        System.String instanceConnectionString;
+        System.String InternalEntityID;
+        System.String ExternalEntityID;
+        System.String strProcessName;
+        System.String strPracticeAddr;
+        System.String strLogType;
+        System.String imCorrelationId;
+        System.String strError;
+        System.String strXPath;
+        System.Int32 iFileListIdx;
+        System.Int32 iFileListCount;
+        System.String strPracticeURL;
+        System.Xml.XmlDocument tempXML;
+        System.String strXML;
+        System.Xml.XmlDocument xmlDoc;
+        System.String resultErrorCode;
+        System.String resultErrorMessage;
+        System.String file_compression;
+        System.String file_encoding;
+        System.String file_data;
+        System.Exception exception;
+        System.String strMailboxURL;
+        System.String test_mode;
+        System.String payloadDecoded;
+        System.String file_prefix;
+        System.String file_name;
+        System.String strTemp;
+        body (message MPType_QueueProcessParametersPracticeElement msg_QueueProcessParametersElement, message MPType_QueueProcessParametersHeader msg_QueueProcessParametersHeader)
+        {
+            instanceConnectionString = "";
+            InternalEntityID = "";
+            ExternalEntityID = "";
+            strProcessName = "";
+            strPracticeAddr = "";
+            strLogType = "";
+            imCorrelationId = "";
+            strError = "";
+            strXPath = "";
+            iFileListIdx = 1;
+            iFileListCount = 0;
+            strPracticeURL = "";
+            tempXML = new System.Xml.XmlDocument();
+            strXML = "";
+            xmlDoc = new System.Xml.XmlDocument();
+            resultErrorCode = "";
+            resultErrorMessage = "";
+            file_compression = "";
+            file_encoding = "";
+            file_data = "";
+            exception = new System.Exception();
+            strMailboxURL = "";
+            test_mode = "";
+            payloadDecoded = "";
+            file_prefix = "";
+            file_name = "";
+            strTemp = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("67fdb730-1308-4d61-b6ad-b1ef8ad9b748")]
+            scope longrunning transaction Transaction_2
+            {
+                body
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("67264aa2-ece9-4f14-a1ec-01d079963609")]
+                    
+                    strProcessName = "Process_CHC_InboundFiles_Worker";
+                    strPracticeURL = xpath(msg_QueueProcessParametersElement.Body, "string(/*[local-name()='TypedPollingResultSet1' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/QueueProcessParameters']/*[local-name()='pcInstanceAddress' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/QueueProcessParameters'])");
+                    file_prefix  = xpath(msg_QueueProcessParametersElement.Body, "string(/*[local-name()='TypedPollingResultSet1' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/QueueProcessParameters']/*[local-name()='pcName' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedPolling/QueueProcessParameters'])");
+                    strMailboxURL = "xxx" ;
+                    strPracticeAddr = "http://localhost:8080/ChangeHealth/GetMailFileList.aspx" ;
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("3daf994b-0137-4270-8ceb-fb2cfe7960f2")]
+                    scope longrunning transaction Transaction_3
+                    {
+                        body
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("8f0423ba-88a9-47d1-8304-3a66322fca6a")]
+                            construct msg_GetPracticeEDISettingsReq
+                            {
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("6937c57b-dcaf-412d-9c47-d9242ac71030")]
+                                xmlDoc = new System.Xml.XmlDocument();
+                                strXML = "<ns0:GetPracticeEDISettings xmlns:ns0=\"http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS\"/>" ;
+                                
+                                xmlDoc.LoadXml(strXML);
+                                msg_GetPracticeEDISettingsReq.Body = xmlDoc ;
+                                msg_GetPracticeEDISettingsReq(WCF.Action)="TypedProcedure/BTS/GetPracticeEDISettings";  
+                                msg_GetPracticeEDISettingsReq(WCF.BindingType)="sqlBinding";
+                                msg_GetPracticeEDISettingsReq(BTS.RetryCount) = 0;
+                                msg_GetPracticeEDISettingsReq(BTS.RetryInterval) = 1; //(in minutes)
+                                msg_GetPracticeEDISettingsReq(WCF.BindingConfiguration)=@"<binding name=""SqlAdapterBinding"" useAmbientTransaction=""false""/>";
+                                msg_GetPracticeEDISettingsReq(WCF.EnableTransaction) = false; // Transaction is handled in the stored procedure
+                                
+                                Port_GetPracticeEDISettingsDynamic(Microsoft.XLANGs.BaseTypes.Address)= strPracticeURL;
+                                Port_GetPracticeEDISettingsDynamic(Microsoft.XLANGs.BaseTypes.TransportType)="WCF-Custom";
+                            }
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("aa29d20e-1cdb-4508-bac5-50a6770ece9f")]
+                            send (Port_GetPracticeEDISettingsDynamic.GetPracticeEDISettingsDynamic, msg_GetPracticeEDISettingsReq);
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("182698bc-96df-4194-a2dc-c9fe8a68fe1a")]
+                            receive (Port_GetPracticeEDISettingsDynamic.GetPracticeEDISettingsDynamic, msg_GetPracticeEDISettingsResp);
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("fb74136e-fb93-4c07-b90e-a8245e40248f")]
+                            test_mode = xpath(msg_GetPracticeEDISettingsResp.Body, "string(/*[local-name()='GetPracticeEDISettingsResponse' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS']/*[local-name()='StoredProcedureResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS']/*[local-name()='StoredProcedureResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetPracticeEDISettings']/*[local-name()='pracEmdeonIsTest' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetPracticeEDISettings'])") ;
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("a1317ccf-8204-404c-a940-64818197549b")]
+                            if (test_mode == "1")
+                            {
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("eac16a83-2d74-4272-a839-696e815a97a1")]
+                                strMailboxURL = xpath(msg_GetPracticeEDISettingsResp.Body, "string(/*[local-name()='GetPracticeEDISettingsResponse' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS']/*[local-name()='StoredProcedureResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS']/*[local-name()='StoredProcedureResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetPracticeEDISettings']/*[local-name()='pracEmdeonTestURL' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetPracticeEDISettings'])") ;
+                            }
+                            else 
+                            {
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("60664d0e-bb16-41d5-8d36-14c97ab4b30a")]
+                                strMailboxURL = xpath(msg_GetPracticeEDISettingsResp.Body, "string(/*[local-name()='GetPracticeEDISettingsResponse' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS']/*[local-name()='StoredProcedureResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/TypedProcedures/BTS']/*[local-name()='StoredProcedureResultSet0' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetPracticeEDISettings']/*[local-name()='pracEmdeonURL' and namespace-uri()='http://schemas.microsoft.com/Sql/2008/05/ProceduresResultSets/BTS/GetPracticeEDISettings'])") ;
+                            }
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("7261aba0-a55e-4c22-bb2b-fadd60d5807d")]
+                            construct msg_GetMailFileListReq
+                            {
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("956b9597-f05e-45b0-9d57-a6a103ffa9f2")]
+                                transform (msg_GetMailFileListReq.Body) = Cloud9.BizTalk.X12.CHC_PracticeEDISettings_To_GetMailFileListReq (msg_GetPracticeEDISettingsResp.Body);
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("6966ae9b-59f6-4732-9fe3-d99e847c3d92")]
+                                msg_GetMailFileListReq(BTS.RetryCount) = 0;
+                                msg_GetMailFileListReq(BTS.RetryInterval) = 1; //(in minutes)
+                                
+                                Port_GetMailFileList_HTTP_Dynamic(Microsoft.XLANGs.BaseTypes.Address) = strMailboxURL ;
+                                Port_GetMailFileList_HTTP_Dynamic(Microsoft.XLANGs.BaseTypes.TransportType)="HTTP";
+                            }
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("dcf750a2-8b0d-4802-8fd3-e9be7730ec11")]
+                            send (Port_GetMailFileList_HTTP_Dynamic.GetMailFileList, msg_GetMailFileListReq);
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("1ca6aedf-ae63-43f9-aaef-4e2715186748")]
+                            receive (Port_GetMailFileList_HTTP_Dynamic.GetMailFileList, msg_GetMailFileListResp);
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("3bd29004-4b0b-4dc7-bbe4-beff9aca046e")]
+                            resultErrorCode = xpath(msg_GetMailFileListResp.Body, "string(/*[local-name()='claim_submission_api' and namespace-uri()='http://Cloud9.BizTalk.Schemas.Emdeon.EmdeonGetAllMailFilesResponse']/*[local-name()='transaction' and namespace-uri()='']/*[local-name()='trx_data' and namespace-uri()='']/*[local-name()='result' and namespace-uri()='']/*[local-name()='error_code' and namespace-uri()=''])");
+                            resultErrorMessage = xpath(msg_GetMailFileListResp.Body, "string(/*[local-name()='claim_submission_api' and namespace-uri()='http://Cloud9.BizTalk.Schemas.Emdeon.EmdeonGetAllMailFilesResponse']/*[local-name()='transaction' and namespace-uri()='']/*[local-name()='trx_data' and namespace-uri()='']/*[local-name()='result' and namespace-uri()='']/*[local-name()='error_message' and namespace-uri()=''])");
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("16235410-cae8-4c6b-9441-09d2c0e9a86f")]
+                            if (resultErrorCode != "0")
+                            {
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("2f6f6406-bf75-429b-8674-08ece9a7423a")]
+                                exception = new System.Exception( System.String.Format("Error getting files: {0}, {1}", resultErrorCode, resultErrorMessage ) );
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("fe18d27e-b413-4617-9d48-d43f7bee2378")]
+                                throw exception;
+                            }
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("77be71f1-aa49-41ce-8ce0-2c889d0406b9")]
+                            iFileListCount = xpath(msg_GetMailFileListResp.Body, "count(/*[local-name()='claim_submission_api' and namespace-uri()='http://Cloud9.BizTalk.Schemas.Emdeon.EmdeonGetAllMailFilesResponse']/*[local-name()='transaction' and namespace-uri()='']/*[local-name()='trx_data' and namespace-uri()='']/*[local-name()='mail_list' and namespace-uri()='']/*[local-name()='mail_file' and namespace-uri()=''])" );
+                            
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("e3abbcfa-859d-40f4-9249-49c6b61448da")]
+                            while (iFileListIdx <= iFileListCount)
+                            {
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("c37e4382-6820-4e65-9d72-a46ccff35459")]
+                                scope longrunning transaction Transaction_4
+                                {
+                                    body
+                                    {
+                                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("0f0776ce-2c1f-488b-b027-c918de49aea4")]
+                                        construct msg_GetMailFileListElement
+                                        {
+                                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("a7c8050b-07cb-4ab9-accf-1a5dc7c9d64b")]
+                                            strXML = @"<ns0:mail_file xmlns:ns0='http://Cloud9.BizTalk.Schemas.Emdeon.EmdeonGetAllMailFilesResponse'>
+                                            	<ns0:file_name></ns0:file_name>
+                                            	<ns0:date_created></ns0:date_created>
+                                            	<ns0:file_token></ns0:file_token>
+                                            	<ns0:file_size></ns0:file_size>
+                                            </ns0:mail_file>";
+                                            
+                                            xmlDoc = new System.Xml.XmlDocument();
+                                            xmlDoc.LoadXml(strXML);
+                                            
+                                            msg_GetMailFileListElement.Body = xmlDoc;
+                                            
+                                            strXPath = System.String.Format("string((//*[local-name()='mail_file'])[{0}]/*[local-name()='file_name'])", iFileListIdx);
+                                            msg_GetMailFileListElement.Body.file_name = xpath(msg_GetMailFileListResp.Body, strXPath);
+                                            strXPath = System.String.Format("string((//*[local-name()='mail_file'])[{0}]/*[local-name()='file_size'])", iFileListIdx);
+                                            msg_GetMailFileListElement.Body.file_size = xpath(msg_GetMailFileListResp.Body, strXPath);
+                                            strXPath = System.String.Format("string((//*[local-name()='mail_file'])[{0}]/*[local-name()='file_token'])", iFileListIdx);
+                                            msg_GetMailFileListElement.Body.file_token = xpath(msg_GetMailFileListResp.Body, strXPath);
+                                            strXPath = System.String.Format("string((//*[local-name()='mail_file'])[{0}]/*[local-name()='date_created'])", iFileListIdx);
+                                            msg_GetMailFileListElement.Body.date_created = xpath(msg_GetMailFileListResp.Body, strXPath);
+                                            
+                                            msg_GetMailFileListElement.Body = xmlDoc;
+                                        }
+                                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("e346d512-5356-4f5c-b696-0e8720200d56")]
+                                        construct msg_GetMailFileReq
+                                        {
+                                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("89839aeb-5f67-4abf-9957-583a72d9fbf2")]
+                                            transform (msg_GetMailFileReq.Body) = Cloud9.BizTalk.X12.Maps.CHC_GetMailFileListReq_GetMailFileRespElement_To_GetMailFileReq (msg_GetMailFileListReq.Body, msg_GetMailFileListElement.Body);
+                                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("4fd7d31e-06da-4ea8-8827-dba16b012b68")]
+                                            msg_GetMailFileReq(BTS.RetryCount) = 0;
+                                            msg_GetMailFileReq(BTS.RetryInterval) = 1; //(in minutes)
+                                            
+                                            Port_GetMailFile_HTTP_Dynamic(Microsoft.XLANGs.BaseTypes.Address) = strMailboxURL ;
+                                            Port_GetMailFile_HTTP_Dynamic(Microsoft.XLANGs.BaseTypes.TransportType)="HTTP";
+                                        }
+                                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("9e894369-7ff1-40f0-995c-10c16175e518")]
+                                        send (Port_GetMailFile_HTTP_Dynamic.GetMailFile, msg_GetMailFileReq);
+                                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("b5c14aa7-fd68-40dd-aa9e-ee110b11441c")]
+                                        receive (Port_GetMailFile_HTTP_Dynamic.GetMailFile, msg_GetMailFileResp);
+                                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("323f4e43-fcfd-4564-8dac-235e15729efb")]
+                                        if (resultErrorCode != "0")
+                                        {
+                                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("48c4139d-80a2-4bdb-a269-334f210dcdbf")]
+                                            exception = new System.Exception( System.String.Format("Error getting files: {0}, {1}", resultErrorCode, resultErrorMessage ) );
+                                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("03ce4726-9f4f-4f7b-a49e-00452af71f16")]
+                                            throw exception;
+                                        }
+                                        else 
+                                        {
+                                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("291e2ffc-8570-458e-8072-9cf721f6b0df")]
+                                            resultErrorCode = xpath(msg_GetMailFileResp.Body, "string(/*[local-name()='claim_submission_api' and namespace-uri()='http://Cloud9.BizTalk.Schemas.Emdeon.EmdeonGetMailFileResponse']/*[local-name()='transaction' and namespace-uri()='']/*[local-name()='trx_data' and namespace-uri()='']/*[local-name()='result' and namespace-uri()='']/*[local-name()='error_code' and namespace-uri()=''])");
+                                            resultErrorMessage = xpath(msg_GetMailFileResp.Body, "string(/*[local-name()='claim_submission_api' and namespace-uri()='http://Cloud9.BizTalk.Schemas.Emdeon.EmdeonGetMailFileResponse']/*[local-name()='transaction' and namespace-uri()='']/*[local-name()='trx_data' and namespace-uri()='']/*[local-name()='result' and namespace-uri()='']/*[local-name()='error_message' and namespace-uri()=''])");
+                                            
+                                            file_compression = xpath(msg_GetMailFileResp.Body, "string(/*[local-name()='claim_submission_api' and namespace-uri()='http://Cloud9.BizTalk.Schemas.Emdeon.EmdeonGetMailFileResponse']/*[local-name()='transaction' and namespace-uri()='']/*[local-name()='trx_data' and namespace-uri()='']/*[local-name()='mail_file' and namespace-uri()='']/*[local-name()='file_compression' and namespace-uri()=''])");
+                                            file_encoding = xpath(msg_GetMailFileResp.Body, "string(/*[local-name()='claim_submission_api' and namespace-uri()='http://Cloud9.BizTalk.Schemas.Emdeon.EmdeonGetMailFileResponse']/*[local-name()='transaction' and namespace-uri()='']/*[local-name()='trx_data' and namespace-uri()='']/*[local-name()='mail_file' and namespace-uri()='']/*[local-name()='file_encoding' and namespace-uri()=''])");
+                                            file_data = xpath(msg_GetMailFileResp.Body, "string(/*[local-name()='claim_submission_api' and namespace-uri()='http://Cloud9.BizTalk.Schemas.Emdeon.EmdeonGetMailFileResponse']/*[local-name()='transaction' and namespace-uri()='']/*[local-name()='trx_data' and namespace-uri()='']/*[local-name()='mail_file' and namespace-uri()='']/*[local-name()='file_data' and namespace-uri()=''])");
+                                            
+                                            payloadDecoded = Cloud9.BizTalk.Helper.EmdeonConversion.DecodePayload(file_compression, file_encoding, file_data);
+                                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("085008b6-d149-4bc4-acb0-7555affe105b")]
+                                            construct msg_EDI_PreParsed
+                                            {
+                                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("7f3aad24-b745-4669-8b36-70beb2ba8ca9")]
+                                                
+                                                msg_EDI_PreParsed = Cloud9.BizTalk.Helper.XLangMessageHelpers.CreateCustomBTXMessageFromString(payloadDecoded, "msg_EDI_PreParsed", "part");
+                                                
+                                                strTemp = System.String.Format("{0}", System.Guid.NewGuid() ) ;
+                                                file_name = System.String.Format("{0}_{1}.edi", file_prefix, strTemp ) ;
+                                                msg_EDI_PreParsed(FILE.TargetFileName) = file_name ;
+                                                msg_EDI_PreParsed(FILE.ReceivedFileName) = file_name ;
+                                            }
+                                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("bd202bba-d8d6-4458-b3e7-c96a5ac93d5c")]
+                                            send (Port_SaveEDIFile.Operation_1, msg_EDI_PreParsed);
+                                        }
+                                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("5ed3fbd7-c23f-4b09-a29a-fdb6de68ff59")]
+                                        construct msg_DeleteMailFileReq
+                                        {
+                                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("6ae464c3-93c8-486a-97b0-b8f68ae714b7")]
+                                            transform (msg_DeleteMailFileReq.Body) = Cloud9.BizTalk.X12.Maps.CHC_GetMailFileListReq_GetMailFileRespElement_To_DeleteMailFileReq (msg_GetMailFileListReq.Body, msg_GetMailFileListElement.Body);
+                                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("a6915dac-02a9-46ef-9e02-4b84009ff51d")]
+                                            msg_DeleteMailFileReq(BTS.RetryCount) = 0;
+                                            msg_DeleteMailFileReq(BTS.RetryInterval) = 1; //(in minutes)
+                                            
+                                            Port_DeleteMailFile_HTTP_Dynamic(Microsoft.XLANGs.BaseTypes.Address) = strMailboxURL ;
+                                            Port_DeleteMailFile_HTTP_Dynamic(Microsoft.XLANGs.BaseTypes.TransportType)="HTTP";
+                                        }
+                                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("31f876ce-4f21-4965-ac5f-e01259931a4b")]
+                                        send (Port_DeleteMailFile_HTTP_Dynamic.DeleteMailFile, msg_DeleteMailFileReq);
+                                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("c469fb7a-2a40-4c96-b923-8b0792a22ec3")]
+                                        receive (Port_DeleteMailFile_HTTP_Dynamic.DeleteMailFile, msg_DeleteMailFileResp);
+                                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("da9e0991-b339-46ac-bf9d-711858fbfe9f")]
+                                        resultErrorCode = xpath(msg_DeleteMailFileResp.Body, "string(/*[local-name()='claim_submission_api' and namespace-uri()='http://Cloud9.BizTalk.Schemas.Emdeon.EmdeonDeleteFileResponse']/*[local-name()='transaction' and namespace-uri()='']/*[local-name()='trx_data' and namespace-uri()='']/*[local-name()='result' and namespace-uri()='']/*[local-name()='error_code' and namespace-uri()=''])");
+                                        resultErrorMessage = xpath(msg_DeleteMailFileResp.Body, "string(/*[local-name()='claim_submission_api' and namespace-uri()='http://Cloud9.BizTalk.Schemas.Emdeon.EmdeonDeleteFileResponse']/*[local-name()='transaction' and namespace-uri()='']/*[local-name()='trx_data' and namespace-uri()='']/*[local-name()='result' and namespace-uri()='']/*[local-name()='error_message' and namespace-uri()=''])");
+                                    }
+                                    exceptions
+                                    {
+                                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("2d222680-b70a-4edf-b92c-73910976b281")]
+                                        catch (System.Exception exc)
+                                        {
+                                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("edc049ab-4b76-4d06-996d-0d03d818221c")]
+                                            strLogType = "Error";
+                                            strPracticeAddr = "";
+                                            strError = exc.Message;
+                                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("05e10c53-2742-4666-9e7d-d541fcdc68cb")]
+                                            exec Cloud9.BizTalk.Common.AddLog (strPracticeAddr, strError, strLogType, strProcessName, InternalEntityID, ExternalEntityID);
+                                        }
+                                    }
+                                }
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("a83bc6cd-0ccf-4e14-9faf-aa3f8a907303")]
+                                iFileListIdx = iFileListIdx + 1;
+                            }
+                        }
+                        exceptions
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("8e3babd5-bf68-4438-886e-cbde98edd046")]
+                            catch (System.Exception exc)
+                            {
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("6a872e5c-f66d-4606-87fb-af6ad2d1a4d7")]
+                                strLogType = "Error";
+                                strPracticeAddr = "";
+                                strError = exc.Message;
+                                [Microsoft.XLANGs.BaseTypes.DesignerPosition("b648f730-e203-4fc4-b4f2-91d313b181fe")]
+                                exec Cloud9.BizTalk.Common.AddLog (strPracticeAddr, strError, strLogType, strProcessName, InternalEntityID, ExternalEntityID);
+                            }
+                        }
+                    }
+                }
+                exceptions
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("70f5efa4-40c3-4cef-bfd4-64e69b26bffc")]
+                    catch (System.Exception exc)
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("37c415c4-f797-42c3-ba5e-e435ab746b21")]
+                        strLogType = "Error";
+                        strPracticeAddr = "";
+                        strError = exc.Message;
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("adff2098-87f4-4b90-a6b0-3025c557268b")]
+                        exec Cloud9.BizTalk.Common.AddLog (strPracticeAddr, strError, strLogType, strProcessName, InternalEntityID, ExternalEntityID);
+                    }
+                }
+            }
+        }
+    }
+}
+

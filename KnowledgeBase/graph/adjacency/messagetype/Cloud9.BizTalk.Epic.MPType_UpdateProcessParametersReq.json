@@ -1,0 +1,37 @@
+{
+  "node": {
+    "id": "messagetype:Cloud9.BizTalk.Epic.MPType_UpdateProcessParametersReq",
+    "type": "messagetype",
+    "name": "MPType_UpdateProcessParametersReq",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.ProcessTreatmentCardData.Controller.odx",
+    "bodyType": "Cloud9.BizTalk.Schemas.UPP_TypedProcedure_BTS.UpdateProcessParameters",
+    "module": "Cloud9.BizTalk.Epic"
+  },
+  "outgoing": [
+    {
+      "type": "bodySchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.UPP_TypedProcedure_BTS",
+      "toName": "Cloud9.BizTalk.Schemas.UPP_TypedProcedure_BTS",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.UPP_TypedProcedure_BTS.json",
+      "bodyType": "Cloud9.BizTalk.Schemas.UPP_TypedProcedure_BTS.UpdateProcessParameters"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Orchestrations/Cloud9.BizTalk.Epic.ProcessTreatmentCardData.Controller.odx",
+      "fromName": "Cloud9.BizTalk.Epic.ProcessTreatmentCardData.Controller.odx",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Orchestrations_Cloud9.BizTalk.Epic.ProcessTreatmentCardData.Controller.odx.json"
+    },
+    {
+      "type": "usesMessageType",
+      "from": "orchestration:Cloud9.BizTalk.Epic.ProcessTreatmentCardData_Controller",
+      "fromName": "ProcessTreatmentCardData_Controller",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.ProcessTreatmentCardData_Controller.json",
+      "message": "msg_UpdateProcessParametersReq"
+    }
+  ]
+}

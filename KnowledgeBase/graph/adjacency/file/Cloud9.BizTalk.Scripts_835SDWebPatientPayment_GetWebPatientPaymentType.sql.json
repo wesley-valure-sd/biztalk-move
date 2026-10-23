@@ -1,0 +1,19 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk.Scripts/835SDWebPatientPayment/GetWebPatientPaymentType.sql",
+    "type": "file",
+    "name": "GetWebPatientPaymentType.sql",
+    "kind": "sql",
+    "path": "Cloud9.BizTalk.Scripts/835SDWebPatientPayment/GetWebPatientPaymentType.sql"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "definedIn",
+      "from": "sqlscript:Cloud9.BizTalk.Scripts/835SDWebPatientPayment/GetWebPatientPaymentType.sql",
+      "fromName": "GetWebPatientPaymentType.sql",
+      "fromType": "sqlscript",
+      "fromFile": "adjacency/sqlscript/Cloud9.BizTalk.Scripts_835SDWebPatientPayment_GetWebPatientPaymentType.sql.json"
+    }
+  ]
+}

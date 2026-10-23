@@ -1,0 +1,53 @@
+{
+  "node": {
+    "id": "map:Cloud9.BizTalk.Epic.HeaderAndFileToProcessingError",
+    "type": "map",
+    "name": "Cloud9.BizTalk.Epic.HeaderAndFileToProcessingError",
+    "readableSummary": "KnowledgeBase/map-summaries/Cloud9.BizTalk.Epic.HeaderAndFileToProcessingError.txt",
+    "targetSchema": "Cloud9.BizTalk.Schemas.PE_TableOperation_BTS_ProcessingError",
+    "inlineScripts": [],
+    "functoidCount": 3,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/Cloud9.BizTalk.Epic.HeaderAndFileToProcessingError.btm",
+    "sourceSchema": "Cloud9.BizTalk.Schemas.HL7InboundMessage",
+    "linkCount": 6,
+    "sourceRoot": "HL7InboundMessage",
+    "targetRoot": "Insert"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Epic/Maps/Cloud9.BizTalk.Epic.HeaderAndFileToProcessingError.btm",
+      "toName": "Cloud9.BizTalk.Epic.HeaderAndFileToProcessingError.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Epic_Maps_Cloud9.BizTalk.Epic.HeaderAndFileToProcessingError.btm.json"
+    },
+    {
+      "type": "sourceSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.HL7InboundMessage",
+      "toName": "Cloud9.BizTalk.Schemas.HL7InboundMessage",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.HL7InboundMessage.json",
+      "root": "HL7InboundMessage"
+    },
+    {
+      "type": "targetSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.PE_TableOperation_BTS_ProcessingError",
+      "toName": "Cloud9.BizTalk.Schemas.PE_TableOperation_BTS_ProcessingError",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.PE_TableOperation_BTS_ProcessingError.json",
+      "root": "Insert"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "usesMap",
+      "from": "orchestration:Cloud9.BizTalk.Epic.Orchestrations.HL7FlatFileReceive",
+      "fromName": "HL7FlatFileReceive",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.Epic.Orchestrations.HL7FlatFileReceive.json",
+      "output": "msgProcessingErrorReq.Body",
+      "input": "msg_MessageInfo",
+      "line": 807
+    }
+  ]
+}

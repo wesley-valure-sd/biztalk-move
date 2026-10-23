@@ -1,0 +1,24 @@
+{
+  "node": {
+    "id": "receivelocation:Cloud9.Common.Deployment/DO_NOT_START_TwoWayAckReceiveLocation",
+    "type": "receivelocation",
+    "name": "DO_NOT_START_TwoWayAckReceiveLocation",
+    "enabled": "false",
+    "bindingSet": "Cloud9.Common.Deployment",
+    "receivePipeline": "BTAHL72XPipelines.BTAHL72XReceivePipeline",
+    "path": "Cloud9.BizTalk/Cloud9.Common.Deployment/PortBindingsMaster.xml",
+    "address": "127.0.0.1:65535",
+    "serviceWindow": "2019-01-22T00:00:00 to 2019-01-22T23:59:59 (enabled=false)",
+    "transport": "MLLP"
+  },
+  "outgoing": [
+    {
+      "type": "partOf",
+      "to": "receiveport:Cloud9.Common.Deployment/TwoWayAckReceivePort",
+      "toName": "TwoWayAckReceivePort",
+      "toType": "receiveport",
+      "toFile": "adjacency/receiveport/Cloud9.Common.Deployment_TwoWayAckReceivePort.json"
+    }
+  ],
+  "incoming": []
+}

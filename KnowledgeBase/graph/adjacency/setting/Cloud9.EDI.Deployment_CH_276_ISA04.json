@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "setting:Cloud9.EDI.Deployment/CH_276_ISA04",
+    "type": "setting",
+    "name": "CH_276_ISA04",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.Deployment/SettingsFileGenerator.xml",
+    "bindingSet": "Cloud9.EDI.Deployment",
+    "valuesByEnvironment": {
+      "Default Values (DefaultSettings)": "P62TX59AL",
+      "Local Dev (LocalSettings)": "P62TX59AL",
+      "JGLISSON Development (JGLISSONSettings)": "P62TX59AL",
+      "LAB (LABSettings)": "P62TX59AL",
+      "LAB2 (LAB2Settings)": "P62TX59AL",
+      "LAB3 (LAB3Settings)": "P62TX59AL",
+      "PROD (C9Prod1_Settings)": "P62TX59AL",
+      "PROD (C9Prod2_Settings)": "P62TX59AL",
+      "LAB (SDLab1_Settings)": "P62TX59AL",
+      "PROD (SDProd1_Settings)": "P62TX59AL"
+    }
+  },
+  "outgoing": [],
+  "incoming": []
+}

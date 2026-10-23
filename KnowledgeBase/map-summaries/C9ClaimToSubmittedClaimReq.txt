@@ -1,0 +1,31 @@
+MAP: C9ClaimToSubmittedClaimReq.btm
+PATH: Cloud9.BizTalk\Cloud9.BizTalk.X12\Maps\C9ClaimToSubmittedClaimReq.btm
+SOURCE: Cloud9.BizTalk.Schemas.Canonical.ClaimCanonical (root Claim)
+TARGET: Cloud9.BizTalk.Schemas.SC_TableOperation_BTS_SubmittedClaims (root Insert)
+SCRIPT PRECEDENCE (first match wins when a functoid has more than one script): CSharp > ExternalAssembly > VbNet > JScript > XsltCallTemplate > Xslt
+
+=== PAGE: Page 1 ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L8: Claim/adaclaimBox23PatientAccountID -> Insert/Rows/SubmittedClaim/adaclaimBox23PatientAccountID
+L9: Claim/adaclaimTotal -> Insert/Rows/SubmittedClaim/adaclaimTotal
+L10: Claim/adaclaimNumber -> Insert/Rows/SubmittedClaim/adaclaimNumber
+L11: Claim/pracTIN -> Insert/Rows/SubmittedClaim/pracTIN
+L12: Claim/pracProviderNumber -> Insert/Rows/SubmittedClaim/pracProviderNumber
+L13: Claim/pracLicenseNumber -> Insert/Rows/SubmittedClaim/pracLicenseNumber
+L14: F1 -> Insert/Rows/SubmittedClaim/pcGUID
+L15: Claim/adaClaimGUID -> Insert/Rows/SubmittedClaim/adaClaimGUID
+L16: F2 -> Insert/Rows/SubmittedClaim/scGUID
+--- FUNCTOIDS ---
+F1 [String Concatenate] inputs: const:'setme'
+F2 [Scripting] inputs: 
+    script language: CSharp
+    | ///*Uncomment the following code for a sample Inline C# function
+    | //that concatenates two inputs. Change the number of parameters of
+    | //this function to be equal to the number of inputs connected to this functoid.*/
+    | 
+    | public string NewGUID()
+    | {
+    | 	return System.Guid.NewGuid().ToString();
+    | }
+    | 
+

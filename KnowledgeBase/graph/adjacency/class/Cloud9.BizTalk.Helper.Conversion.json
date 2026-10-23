@@ -1,0 +1,36 @@
+{
+  "node": {
+    "id": "class:Cloud9.BizTalk.Helper.Conversion",
+    "type": "class",
+    "name": "Cloud9.BizTalk.Helper.Conversion",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/Cloud9.BizTalk.Helper.cs",
+    "visibility": "public",
+    "kind": "class",
+    "line": 15
+  },
+  "outgoing": [
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.Conversion.GetString",
+      "toName": "Conversion.GetString",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.Conversion.GetString.json"
+    },
+    {
+      "type": "hasMethod",
+      "to": "method:Cloud9.BizTalk.Helper.Conversion.SetXMLNode",
+      "toName": "Conversion.SetXMLNode",
+      "toType": "method",
+      "toFile": "adjacency/method/Cloud9.BizTalk.Helper.Conversion.SetXMLNode.json"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "defines",
+      "from": "file:Cloud9.BizTalk/Cloud9.BizTalk.Helper/Cloud9.BizTalk.Helper.cs",
+      "fromName": "Cloud9.BizTalk.Helper.cs",
+      "fromType": "file",
+      "fromFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Helper_Cloud9.BizTalk.Helper.cs.json"
+    }
+  ]
+}

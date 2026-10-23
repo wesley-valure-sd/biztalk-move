@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.Reports._PatientTreatmentCard.table1_ItemDataBound",
+    "type": "method",
+    "name": "_PatientTreatmentCard.table1_ItemDataBound",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.ReportGenerator/Cloud9.BizTalk.Reports/_PatientTreatmentCard.cs",
+    "class": "Cloud9.BizTalk.Reports._PatientTreatmentCard",
+    "line": 29,
+    "signatures": [
+      "private void table1_ItemDataBound(object sender, EventArgs e)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.Reports._PatientTreatmentCard",
+      "fromName": "Cloud9.BizTalk.Reports._PatientTreatmentCard",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.Reports._PatientTreatmentCard.json"
+    }
+  ]
+}

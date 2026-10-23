@@ -1,0 +1,33 @@
+{
+  "node": {
+    "id": "schema:file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/CH_Realtime/Core_www_caqh_org_SOAP_WSDL_CORERule2_2_0.xsd",
+    "type": "schema",
+    "name": "Core_www_caqh_org_SOAP_WSDL_CORERule2_2_0",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Schemas/CH_Realtime/Core_www_caqh_org_SOAP_WSDL_CORERule2_2_0.xsd",
+    "rootElements": [
+      "COREEnvelopeRealTimeRequest",
+      "COREEnvelopeRealTimeResponse",
+      "COREEnvelopeBatchSubmission",
+      "COREEnvelopeBatchSubmissionResponse",
+      "COREEnvelopeBatchSubmissionAckRetrievalRequest",
+      "COREEnvelopeBatchSubmissionAckRetrievalResponse",
+      "COREEnvelopeBatchResultsRetrievalRequest",
+      "COREEnvelopeBatchResultsRetrievalResponse",
+      "COREEnvelopeBatchResultsAckSubmission",
+      "COREEnvelopeBatchResultsAckSubmissionResponse"
+    ],
+    "kind": "canonical-or-other",
+    "targetNamespace": "http://www.caqh.org/SOAP/WSDL/CORERule2.2.0.xsd",
+    "sqlActions": []
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.Schemas/CH_Realtime/Core_www_caqh_org_SOAP_WSDL_CORERule2_2_0.xsd",
+      "toName": "Core_www_caqh_org_SOAP_WSDL_CORERule2_2_0.xsd",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.Schemas_CH_Realtime_Core_www_caqh_org_SOAP_WSDL_CORERule2_2_0.xsd.json"
+    }
+  ],
+  "incoming": []
+}

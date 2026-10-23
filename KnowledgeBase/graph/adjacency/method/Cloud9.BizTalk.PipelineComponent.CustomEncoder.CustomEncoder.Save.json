@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.PipelineComponent.CustomEncoder.CustomEncoder.Save",
+    "type": "method",
+    "name": "CustomEncoder.Save",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.PipelineComponent.CustomEncoder/CustomEncoder.cs",
+    "class": "Cloud9.BizTalk.PipelineComponent.CustomEncoder.CustomEncoder",
+    "line": 89,
+    "signatures": [
+      "public virtual void Save(Microsoft.BizTalk.Component.Interop.IPropertyBag pb, bool fClearDirty, bool fSaveAllProperties)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.PipelineComponent.CustomEncoder.CustomEncoder",
+      "fromName": "Cloud9.BizTalk.PipelineComponent.CustomEncoder.CustomEncoder",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.PipelineComponent.CustomEncoder.CustomEncoder.json"
+    }
+  ]
+}

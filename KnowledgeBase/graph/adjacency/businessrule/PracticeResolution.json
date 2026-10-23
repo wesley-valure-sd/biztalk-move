@@ -1,0 +1,44 @@
+{
+  "node": {
+    "id": "businessrule:PracticeResolution",
+    "type": "businessrule",
+    "name": "Practice database resolution",
+    "curated": true,
+    "logic": "BBVA and SD flows: folder name. CHC flow: file name prefix written by the mailbox worker. In every case the lookup key is BTS.PracticeConfig.pcName and the target is pcInstanceAddress."
+  },
+  "outgoing": [
+    {
+      "type": "appliesTo",
+      "to": "sqltable:BizTalkCloud9Common.BTS.PracticeConfig",
+      "toName": "BTS.PracticeConfig",
+      "toType": "sqltable",
+      "toFile": "adjacency/sqltable/BizTalkCloud9Common.BTS.PracticeConfig.json",
+      "curated": true
+    },
+    {
+      "type": "appliesTo",
+      "to": "flowstep:BBVA-Patient-02-PracticeLookup",
+      "toName": "Find practice database from folder name",
+      "toType": "flowstep",
+      "toFile": "adjacency/flowstep/BBVA-Patient-02-PracticeLookup.json",
+      "curated": true
+    },
+    {
+      "type": "appliesTo",
+      "to": "flowstep:SD-Web-03-PracticeLookup",
+      "toName": "Find practice database from folder name",
+      "toType": "flowstep",
+      "toFile": "adjacency/flowstep/SD-Web-03-PracticeLookup.json",
+      "curated": true
+    },
+    {
+      "type": "appliesTo",
+      "to": "flowstep:CHC-04-PracticeLookup",
+      "toName": "Find practice from the file name prefix",
+      "toType": "flowstep",
+      "toFile": "adjacency/flowstep/CHC-04-PracticeLookup.json",
+      "curated": true
+    }
+  ],
+  "incoming": []
+}

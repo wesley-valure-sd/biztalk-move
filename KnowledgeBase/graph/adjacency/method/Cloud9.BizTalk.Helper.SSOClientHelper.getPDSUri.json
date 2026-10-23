@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.Helper.SSOClientHelper.getPDSUri",
+    "type": "method",
+    "name": "SSOClientHelper.getPDSUri",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.Helper/SSOClientHelper.cs",
+    "class": "Cloud9.BizTalk.Helper.SSOClientHelper",
+    "line": 82,
+    "signatures": [
+      "public static string getPDSUri()"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.Helper.SSOClientHelper",
+      "fromName": "Cloud9.BizTalk.Helper.SSOClientHelper",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.Helper.SSOClientHelper.json"
+    }
+  ]
+}

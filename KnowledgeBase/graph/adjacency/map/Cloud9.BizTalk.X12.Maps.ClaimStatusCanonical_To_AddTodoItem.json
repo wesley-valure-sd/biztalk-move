@@ -1,0 +1,55 @@
+{
+  "node": {
+    "id": "map:Cloud9.BizTalk.X12.Maps.ClaimStatusCanonical_To_AddTodoItem",
+    "type": "map",
+    "name": "Cloud9.BizTalk.X12.Maps.ClaimStatusCanonical_To_AddTodoItem",
+    "readableSummary": "KnowledgeBase/map-summaries/ClaimStatusCanonical_To_AddTodoItem.txt",
+    "targetSchema": "Cloud9.BizTalk.Schemas.AddTodoItemTypedProcedure_BTS",
+    "inlineScripts": [
+      "CSharp:PaddingClaimStatusCode"
+    ],
+    "functoidCount": 2,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/ClaimStatusCanonical_To_AddTodoItem.btm",
+    "sourceSchema": "Cloud9.BizTalk.Schemas.Canonical.ClaimStatus",
+    "linkCount": 6,
+    "sourceRoot": "ClaimStatus",
+    "targetRoot": "AddTodoItem"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/ClaimStatusCanonical_To_AddTodoItem.btm",
+      "toName": "ClaimStatusCanonical_To_AddTodoItem.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_ClaimStatusCanonical_To_AddTodoItem.btm.json"
+    },
+    {
+      "type": "sourceSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.Canonical.ClaimStatus",
+      "toName": "Cloud9.BizTalk.Schemas.Canonical.ClaimStatus",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.Canonical.ClaimStatus.json",
+      "root": "ClaimStatus"
+    },
+    {
+      "type": "targetSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.AddTodoItemTypedProcedure_BTS",
+      "toName": "Cloud9.BizTalk.Schemas.AddTodoItemTypedProcedure_BTS",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.AddTodoItemTypedProcedure_BTS.json",
+      "root": "AddTodoItem"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "usesMap",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus",
+      "fromName": "Process_CHC_ClaimsStatus",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_ClaimsStatus.json",
+      "output": "AddTodoItemRequest.Body",
+      "input": "ClaimStatusCanonical.Body",
+      "line": 511
+    }
+  ]
+}

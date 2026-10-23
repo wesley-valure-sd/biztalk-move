@@ -1,0 +1,100 @@
+MAP: ClaimPaymentCanonical_To_Post835InsuranceTransaction.btm
+PATH: Cloud9.BizTalk\Cloud9.BizTalk.X12\Maps\ClaimPaymentCanonical_To_Post835InsuranceTransaction.btm
+SOURCE: Cloud9.BizTalk.Schemas.Canonical.ClaimPayment (root ClaimPayment)
+TARGET: Cloud9.BizTalk.Schemas.Post835TypedProcedure_BTS (root Post835InsuranceTransaction)
+SCRIPT PRECEDENCE (first match wins when a functoid has more than one script): CSharp > ExternalAssembly > VbNet > JScript > XsltCallTemplate > Xslt
+
+=== PAGE: Links ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L59: ClaimPayment/SenderDFIIdentifier -> Post835InsuranceTransaction/Transactions/udt835Transaction/transRouting
+L63: ClaimPayment/PatientControlNumber -> Post835InsuranceTransaction/Transactions/udt835Transaction/adaClaimNumber
+L68: ClaimPayment/CheckorEFTTraceNumber -> Post835InsuranceTransaction/Transactions/udt835Transaction/transCheckNumber
+L70: ClaimPayment/PaymentMethodCode -> Post835InsuranceTransaction/ptPaymentTypeCode
+L72: ClaimPayment/patGUID -> Post835InsuranceTransaction/patGUID
+L74: ClaimPayment/PatientIdentifier -> Post835InsuranceTransaction/pipPolicyNumber
+L58: ClaimPayment/ReferenceIdentifier -> Post835InsuranceTransaction/transReference
+L75: ClaimPayment/AdjustmentType -> Post835InsuranceTransaction/AdjustmentType
+L73: ClaimPayment/pipGUID -> Post835InsuranceTransaction/pipGUID
+L76: ClaimPayment/PaymentIdentifier -> Post835InsuranceTransaction/PaymentIdentifier
+L77: ClaimPayment/ClaimIdentifier -> Post835InsuranceTransaction/ClaimIdentifier
+--- FUNCTOIDS ---
+
+=== PAGE: Functoids ===
+--- LINKS (LinkID: From -> To). A number is a functoid ID. ---
+L3: F3 -> Post835InsuranceTransaction/Transactions/udt835Transaction/transStatus
+L4: F4 -> Post835InsuranceTransaction/Transactions/udt835Transaction/transProductionAmount
+L5: F4 -> Post835InsuranceTransaction/Transactions/udt835Transaction/transClaimAmount
+L6: F5 -> Post835InsuranceTransaction/Transactions/udt835Transaction/transIsGroup
+L14: F6 -> Post835InsuranceTransaction/Transactions/udt835Transaction/transDueNowAmount
+L15: F6 -> Post835InsuranceTransaction/Transactions/udt835Transaction/transTotalDueAmount
+L36: F15 -> Post835InsuranceTransaction/Transactions/udt835Transaction/transNote
+L37: F15 -> Post835InsuranceTransaction/Transactions/udt835Transaction/transReceiptNote
+L9: F19 -> Post835InsuranceTransaction/Transactions/udt835Transaction/transDateTime
+L56: F6 -> Post835InsuranceTransaction/Transactions/udt835Transaction/transAmount
+L60: ClaimPayment/CheckIssueorEFTEffectiveDate -> F19
+L66: ClaimPayment/TotalActualProviderPaymentAmount -> F6
+L2: F22 -> Post835InsuranceTransaction/Transactions/udt835Transaction/transGUID
+L61: ClaimPayment/CheckorEFTTraceNumber -> F15
+L62: ClaimPayment/PatientControlNumber -> F15
+L69: ClaimPayment/TransactionNote -> F15
+L81: F23 -> Post835InsuranceTransaction/transDateTimePosted
+L82: ClaimPayment/PaymentPostedDate -> F23
+--- FUNCTOIDS ---
+F3 [String Concatenate] inputs: const:'N'
+F4 [String Concatenate] inputs: const:'0'
+F5 [String Concatenate] inputs: const:'0'
+F6 [Multiplication (inferred)] inputs: L66, const:'-1'
+F15 [Scripting] inputs: L61, L62, L69
+    script language: CSharp
+    | public string GetNote(string checkNumber, string claimNumber, string transNote)
+    | {
+    | // Default to the transNote value if it exists
+    | // This value can be mapped to in the 835 to ClaimPayment canonica map
+    | if(transNote.Length > 0)
+    | return transNote;
+    | 
+    | var note = System.String.Empty;
+    | 
+    | if(!String.IsNullOrEmpty(checkNumber))
+    | note = "Check Number: " + checkNumber;
+    | 
+    | if(!String.IsNullOrEmpty(claimNumber))
+    | note = note + ", Claim Number: " + claimNumber;
+    | 
+    | return note;
+    | }
+F19 [Scripting] inputs: L60
+    script ExternalAssembly: Cloud9.BizTalk.Helper.DateFormatConversion.ConvertHL7DateToSQLDatetimeWithoutOffset [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+    script language: CSharp
+    | public string GetDateTime(string inputDate){
+    | 
+    | if(inputDate.Length == 8)
+    | 	{
+    | 		return System.DateTime.ParseExact(inputDate, "yyyyMMdd", System.Globalization.CultureInfo.InvariantCulture).ToString("yyyy-MM-dd");
+    | 	}
+    | 	else
+    | 	{
+    | 		return System.DateTime.Parse(inputDate).ToString("yyyy-MM-ddTHH:mm:ss");
+    | 	}
+    | }
+F22 [Scripting] inputs: 
+    script language: CSharp
+    | public string GetTransGUID()
+    | {
+    | return System.Guid.NewGuid().ToString();
+    | }
+F23 [Scripting] inputs: L82
+    script ExternalAssembly: Cloud9.BizTalk.Helper.DateFormatConversion.ConvertHL7DateToSQLDatetimeWithoutOffset [Cloud9.BizTalk.Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=182f4e020577c79e]
+    script language: CSharp
+    | public string GetDateTimePosted(string inputDate){
+    | 
+    | if(inputDate.Length == 8)
+    | 	{
+    | 		return System.DateTime.ParseExact(inputDate, "yyyyMMdd", System.Globalization.CultureInfo.InvariantCulture).ToString("yyyy-MM-dd");
+    | 	}
+    | 	else
+    | 	{
+    | 		return System.DateTime.Parse(inputDate).ToString("yyyy-MM-ddTHH:mm:ss");
+    | 	}
+    | }
+

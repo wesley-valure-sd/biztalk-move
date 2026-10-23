@@ -1,0 +1,19 @@
+{
+  "node": {
+    "id": "file:Cloud9.BizTalk.Scripts/835CHCtoBBVAPassthrough/GetApplicationLookupValues.sql",
+    "type": "file",
+    "name": "GetApplicationLookupValues.sql",
+    "kind": "sql",
+    "path": "Cloud9.BizTalk.Scripts/835CHCtoBBVAPassthrough/GetApplicationLookupValues.sql"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "definedIn",
+      "from": "sqlscript:Cloud9.BizTalk.Scripts/835CHCtoBBVAPassthrough/GetApplicationLookupValues.sql",
+      "fromName": "GetApplicationLookupValues.sql",
+      "fromType": "sqlscript",
+      "fromFile": "adjacency/sqlscript/Cloud9.BizTalk.Scripts_835CHCtoBBVAPassthrough_GetApplicationLookupValues.sql.json"
+    }
+  ]
+}

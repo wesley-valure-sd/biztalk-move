@@ -1,0 +1,22 @@
+{
+  "node": {
+    "id": "setting:Cloud9.EDI.PDS.Deployment/DO_NOT_START_PROD_RL_",
+    "type": "setting",
+    "name": "DO_NOT_START_PROD_RL_",
+    "path": "Cloud9.BizTalk/Cloud9.EDI.PDS.Deployment/SettingsFileGenerator.xml",
+    "bindingSet": "Cloud9.EDI.PDS.Deployment",
+    "valuesByEnvironment": {
+      "Default Values": "RL_",
+      "Local Dev (LocalSettings)": "RL_",
+      "LAB2 (LAB2Settings)": "RL_",
+      "DEV (DEVSettings)": "RL_",
+      "CFG (CFGSettings)": "RL_",
+      "TST (TSTSettings)": "RL_",
+      "TRN (TrainingSettings)": "RL_",
+      "STG (StagingSettings)": "RL_",
+      "PROD (ProdSettings)": "DO_NOT_START_RL_"
+    }
+  },
+  "outgoing": [],
+  "incoming": []
+}

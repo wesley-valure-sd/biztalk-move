@@ -1,0 +1,22 @@
+{
+  "node": {
+    "id": "sendport:Cloud9.EDI.PDS.Deployment/SP_CHC837ToSD_SFTP",
+    "type": "sendport",
+    "name": "SP_CHC837ToSD_SFTP",
+    "note": "Bound here but not defined in this binding file.",
+    "bindingSet": "Cloud9.EDI.PDS.Deployment"
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "boundToSendPort",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_CHC_837_To_BBVA",
+      "fromName": "Process_CHC_837_To_BBVA",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_CHC_837_To_BBVA.json",
+      "bindingSet": "Cloud9.EDI.PDS.Deployment",
+      "bindingOption": "1",
+      "logicalPort": "SendCHC837ToSDPort"
+    }
+  ]
+}

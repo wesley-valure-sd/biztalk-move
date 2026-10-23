@@ -1,0 +1,23 @@
+{
+  "node": {
+    "id": "method:Cloud9.BizTalk.Reports.ReportConnectionStringManager.UpdateReportSource",
+    "type": "method",
+    "name": "ReportConnectionStringManager.UpdateReportSource",
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.ReportGenerator/Cloud9.BizTalk.Reports/ReportConnectionStringManager.cs",
+    "class": "Cloud9.BizTalk.Reports.ReportConnectionStringManager",
+    "line": 18,
+    "signatures": [
+      "public ReportSource UpdateReportSource(ReportSource sourceReportSource)"
+    ]
+  },
+  "outgoing": [],
+  "incoming": [
+    {
+      "type": "hasMethod",
+      "from": "class:Cloud9.BizTalk.Reports.ReportConnectionStringManager",
+      "fromName": "Cloud9.BizTalk.Reports.ReportConnectionStringManager",
+      "fromType": "class",
+      "fromFile": "adjacency/class/Cloud9.BizTalk.Reports.ReportConnectionStringManager.json"
+    }
+  ]
+}

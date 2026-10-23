@@ -1,0 +1,63 @@
+{
+  "node": {
+    "id": "map:Cloud9.BizTalk.X12.Maps.BBVA_835_To_AdjustmentClaimPaymentBatchCanonical",
+    "type": "map",
+    "name": "Cloud9.BizTalk.X12.Maps.BBVA_835_To_AdjustmentClaimPaymentBatchCanonical",
+    "readableSummary": "KnowledgeBase/map-summaries/BBVA_835_To_AdjustmentClaimPaymentBatchCanonical.txt",
+    "targetSchema": "Cloud9.BizTalk.Schemas.Canonical.ClaimPaymentBatch",
+    "inlineScripts": [
+      "CSharp:GetLockboxNumber"
+    ],
+    "functoidCount": 12,
+    "path": "Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/BBVA_835_To_AdjustmentClaimPaymentBatchCanonical.btm",
+    "sourceSchema": "Cloud9.BizTalk.X12.Schemas.BBVA_X12_00501_835",
+    "linkCount": 45,
+    "sourceRoot": "X12_00501_835",
+    "targetRoot": "ClaimPaymentBatch"
+  },
+  "outgoing": [
+    {
+      "type": "definedIn",
+      "to": "file:Cloud9.BizTalk/Cloud9.BizTalk.X12/Maps/BBVA_835_To_AdjustmentClaimPaymentBatchCanonical.btm",
+      "toName": "BBVA_835_To_AdjustmentClaimPaymentBatchCanonical.btm",
+      "toType": "file",
+      "toFile": "adjacency/file/Cloud9.BizTalk_Cloud9.BizTalk.X12_Maps_BBVA_835_To_AdjustmentClaimPaymentBatchCanonical.btm.json"
+    },
+    {
+      "type": "sourceSchema",
+      "to": "schema:Cloud9.BizTalk.X12.Schemas.BBVA_X12_00501_835",
+      "toName": "Cloud9.BizTalk.X12.Schemas.BBVA_X12_00501_835",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.X12.Schemas.BBVA_X12_00501_835.json",
+      "root": "X12_00501_835"
+    },
+    {
+      "type": "targetSchema",
+      "to": "schema:Cloud9.BizTalk.Schemas.Canonical.ClaimPaymentBatch",
+      "toName": "Cloud9.BizTalk.Schemas.Canonical.ClaimPaymentBatch",
+      "toType": "schema",
+      "toFile": "adjacency/schema/Cloud9.BizTalk.Schemas.Canonical.ClaimPaymentBatch.json",
+      "root": "ClaimPaymentBatch"
+    }
+  ],
+  "incoming": [
+    {
+      "type": "usesMap",
+      "from": "orchestration:Cloud9.BizTalk.X12.Process_BBVA_835Insurance",
+      "fromName": "Process_BBVA_835Insurance",
+      "fromType": "orchestration",
+      "fromFile": "adjacency/orchestration/Cloud9.BizTalk.X12.Process_BBVA_835Insurance.json",
+      "output": "AdjClaimPaymentBatch",
+      "input": "BBVA835.Body",
+      "line": 1097
+    },
+    {
+      "type": "implementedBy",
+      "from": "flowstep:BBVA-Ins-04-PostPLB",
+      "fromName": "Post each PLB as an adjustment",
+      "fromType": "flowstep",
+      "fromFile": "adjacency/flowstep/BBVA-Ins-04-PostPLB.json",
+      "curated": true
+    }
+  ]
+}
