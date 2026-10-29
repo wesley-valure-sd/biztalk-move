@@ -373,14 +373,14 @@ The BBVA schema has custom REF qualifiers in loop 2100:
 ```text
 base = "Deposit Date: " + DTM02 + ", Check Date: " + BPR16 + ", Claim Number: " + CLP01 + ", Lockbox: " + GetLockboxNumber(REF*LB, DTM02)
 if BPR04 == "NON":
-    claimAdj   = concat over claim-level CAS of (CAS02 + ": " + CAS03 + ", "), then drop the last 2 characters
-    serviceAdj = concat over service-level CAS of (CAS02 + ": " + CAS03 + ", "), then drop the last 2 characters
+    claimAdj   = concat over the claim-level CAS of the whole transaction set of (CAS02 + ": " + CAS03 + ", "), then drop the last 2 characters
+    serviceAdj = concat over the service-level CAS of the whole transaction set of (CAS02 + ": " + CAS03 + ", "), then drop the last 2 characters
     TransactionNote = Left(base + ", " + claimAdj + ", " + serviceAdj, 250)
 else:
     TransactionNote = base
 ```
 
-Only the first reason/amount pair (CAS02/CAS03) of each CAS segment is used. The functoid names for this logic are inferred from their inputs. See the map summary for the exact chain.
+Only the first reason/amount pair (CAS02/CAS03) of each CAS segment is used. The cumulative concatenate functoids have no scope input, so they collect the CAS of every claim in the transaction set: each NON claim of a set with several claims gets the same lists. An empty list gives an empty string, so a claim with no claim-level CAS gets `, , ` in the note. Verified 2026-10-29: the POC mapper reproduced 80 of 80 sampled production notes (40 NON, 40 other) exactly (SHA-256 compared with C9-P `[Transaction].transNote`).
 
 ### Map: BBVA 835 to adjustment canonical (PLB)
 
