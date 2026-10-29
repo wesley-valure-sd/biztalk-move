@@ -221,7 +221,64 @@ public class InsuranceLockboxMapperTests
     [Fact]
     public void I15_without_REF_LB_gets_an_empty_lockbox_in_the_note()
     {
-        Assert.EndsWith(", Lockbox: ", MapSinglePost("I15").TransNote);
+        Assert.EndsWith(", Lockbox: ", MapSingleSet("I15").Posts.Single(p => !p.IsAdjustment).TransNote);
+    }
+
+    [Fact]
+    public void I14_posts_the_claim_then_one_L6_adjustment_with_the_first_pair_only()
+    {
+        var posts = MapSingleSet("I14").Posts;
+
+        Assert.Equal(2, posts.Count);
+        Assert.False(posts[0].IsAdjustment);
+        var adj = posts[1];
+        Assert.True(adj.IsAdjustment);
+        Assert.Equal("L6", adj.AdjustmentType);
+        Assert.Equal(-1.78m, adj.TransAmount);
+        Assert.Equal(-1.78m, adj.TransDueNowAmount);
+        Assert.Equal(-1.78m, adj.TransTotalDueAmount);
+        Assert.Equal($"ADJ1-{posts[0].TransCheckNumber}", adj.TransReference);
+        Assert.Equal(posts[0].TransCheckNumber, adj.TransCheckNumber);
+        Assert.Equal(posts[0].PaymentIdentifier, adj.PaymentIdentifier);
+        Assert.Equal("EOB14010001", adj.PaymentIdentifier);
+        Assert.Equal(posts[0].AdaClaimNumber, adj.AdaClaimNumber);
+        Assert.Equal(posts[0].PatGuid, adj.PatGuid);
+        Assert.Equal(posts[0].PipGuid, adj.PipGuid);
+        Assert.Equal(posts[0].PipPolicyNumber, adj.PipPolicyNumber);
+        Assert.Equal("ACH", adj.PtPaymentTypeCode);
+        Assert.Equal(posts[0].TransNote + ", Adj Reason: L6", adj.TransNote);
+        Assert.Equal(adj.TransNote, adj.TransReceiptNote);
+        Assert.NotEqual(posts[0].TransGuid, adj.TransGuid);
+    }
+
+    [Fact]
+    public void I15_posts_one_adjustment_for_each_PLB_numbered_in_order()
+    {
+        var adjustments = MapSingleSet("I15").Posts.Where(p => p.IsAdjustment).ToList();
+
+        Assert.Equal(2, adjustments.Count);
+        Assert.Equal(("WO", 396m), (adjustments[0].AdjustmentType, adjustments[0].TransAmount));
+        Assert.Equal(("L6", -50m), (adjustments[1].AdjustmentType, adjustments[1].TransAmount));
+        Assert.StartsWith("ADJ1-", adjustments[0].TransReference);
+        Assert.StartsWith("ADJ2-", adjustments[1].TransReference);
+        Assert.All(adjustments, a => Assert.Null(a.PaymentIdentifier));
+        Assert.EndsWith(", Lockbox: , Adj Reason: WO", adjustments[0].TransNote);
+    }
+
+    [Fact]
+    public void Reads_the_adjustment_reason_with_the_ISA16_component_separator()
+    {
+        var text = InsuranceScenarios.Text("I14").Replace("*:~", "*>~").Replace("L6:", "L6>").Replace("CT:", "CT>").Replace("PS:", "PS>").Replace("AD:", "AD>");
+
+        var adj = InsuranceLockboxMapper.Map(Assert.Single(X12Interchange.Parse(text).TransactionSets), Now).Posts.Single(p => p.IsAdjustment);
+
+        Assert.Equal("L6", adj.AdjustmentType);
+    }
+
+    [Fact]
+    public void A_set_without_PLB_has_no_adjustments()
+    {
+        Assert.DoesNotContain(MapSingleSet("I01").Posts, p => p.IsAdjustment);
     }
 
     [Fact]

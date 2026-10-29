@@ -85,7 +85,56 @@ public static class InsuranceLockboxMapper
                 SourceControlNumber = transactionSet.ControlNumber,
             });
         }
+        AddAdjustments(posts, transactionSet, headerEnd, depositDate, checkDate, lockbox, paymentMethod, traceNumber, bpr, trn, postTime);
         return new InsuranceMapResult(posts, null);
+    }
+
+    /// <summary>
+    /// Copies BBVA_835_To_AdjustmentClaimPaymentBatchCanonical: one post for each PLB segment, after the claims. The
+    /// guard leaves at most one claim when a PLB exists; the claim fields come from it. Only the first adjustment pair
+    /// (PLB03/PLB04) is used (D7). The canonical amount is -PLB04 and the posting map negates it again (D8).
+    /// </summary>
+    private static void AddAdjustments(List<InsurancePaymentPost> posts, X12TransactionSet set, int headerEnd, string depositDate,
+        string checkDate, string lockbox, string paymentMethod, string? traceNumber, X12Segment? bpr, X12Segment? trn, DateTime postTime)
+    {
+        var segments = set.Segments;
+        var clpIndex = IndexOf(segments, "CLP", headerEnd);
+        var claimEnd = clpIndex < 0 ? clpIndex : NextLoopStart(segments, clpIndex + 1);
+        if (clpIndex >= 0 && IndexOf(segments, "SVC", clpIndex + 1, claimEnd) is var svc and >= 0) claimEnd = svc;
+        X12Segment? Claim(string id, Func<X12Segment, bool>? match = null) => clpIndex < 0 ? null : Find(segments, id, clpIndex + 1, claimEnd, match);
+        var claimNumber = clpIndex < 0 ? string.Empty : segments[clpIndex][1];
+
+        var iteration = 0;
+        foreach (var plb in segments.Where(s => s.Id == "PLB"))
+        {
+            iteration++;
+            var reason = plb[3].Split(set.ComponentSeparator)[0];
+            var amount = ParseAmount(plb[4], set.ControlNumber, "PLB04");
+            var note = $"Deposit Date: {depositDate}, Check Date: {checkDate}, Claim Number: {claimNumber}, Lockbox: {lockbox}, Adj Reason: {reason}";
+            posts.Add(new InsurancePaymentPost
+            {
+                TransGuid = Guid.NewGuid(),
+                TransDateTime = postTime,
+                TransDateTimePosted = postTime,
+                PatGuid = ParseGuid(Claim("REF", s => s[1] == "EJ")?[2], "REF*EJ", set.ControlNumber),
+                PipGuid = ParseGuid(Claim("REF", s => s[1] == "69")?[2], "REF*69", set.ControlNumber),
+                TransAmount = amount,
+                TransDueNowAmount = amount,
+                TransTotalDueAmount = amount,
+                TransNote = note,
+                TransReceiptNote = note,
+                TransReference = $"ADJ{iteration}-{traceNumber}",
+                TransCheckNumber = traceNumber,
+                TransRouting = NullIfEmpty(bpr?[7]),
+                AdaClaimNumber = NullIfEmpty(claimNumber),
+                PipPolicyNumber = NullIfEmpty(Claim("NM1", s => s[1] == "QC")?[9]),
+                PtPaymentTypeCode = NullIfEmpty(paymentMethod),
+                ClaimIdentifier = NullIfEmpty(trn?[4]),
+                PaymentIdentifier = NullIfEmpty(Claim("REF", s => s[1] == "F8")?[2]),
+                AdjustmentType = NullIfEmpty(reason),
+                SourceControlNumber = set.ControlNumber,
+            });
+        }
     }
 
     /// <summary>
@@ -123,10 +172,10 @@ public static class InsuranceLockboxMapper
         return segments.Count;
     }
 
-    private static decimal ParseAmount(string value, string controlNumber) =>
+    private static decimal ParseAmount(string value, string controlNumber, string element = "CLP04") =>
         decimal.TryParse(value, NumberStyles.Number, CultureInfo.InvariantCulture, out var amount)
             ? amount
-            : throw new X12FormatException($"CLP04 '{value}' in transaction set {controlNumber} is not a number.");
+            : throw new X12FormatException($"{element} '{value}' in transaction set {controlNumber} is not a number.");
 
     // An empty or missing value is not sent, so the procedure receives NULL. The value is not echoed (it can be PHI).
     private static Guid? ParseGuid(string? value, string source, string controlNumber)
