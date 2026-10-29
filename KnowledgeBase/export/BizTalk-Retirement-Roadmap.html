@@ -11,8 +11,8 @@
 })();
 </script>
 <style>
-:root { --bg: #ffffff; --fg: #1f2328; --muted: #656d76; --border: #d0d7de; --surface: #f6f8fa; --code: #f3f4f6; --link: #0969da; }
-:root[data-theme="dark"] { --bg: #0d1117; --fg: #e6edf3; --muted: #8b949e; --border: #30363d; --surface: #161b22; --code: #21262d; --link: #58a6ff; }
+:root { --bg: #ffffff; --fg: #1f2328; --muted: #656d76; --border: #d0d7de; --surface: #f6f8fa; --code: #f3f4f6; --link: #0969da; --callout-bg: #fff8c5; --callout-border: #bf8700; }
+:root[data-theme="dark"] { --bg: #0d1117; --fg: #e6edf3; --muted: #8b949e; --border: #30363d; --surface: #161b22; --code: #21262d; --link: #58a6ff; --callout-bg: #3b2e00; --callout-border: #d29922; }
 body { font-family: Segoe UI, Arial, sans-serif; max-width: 1100px; margin: 0 auto; padding: 24px; line-height: 1.5; background: var(--bg); color: var(--fg); }
 a { color: var(--link); }
 h1 { border-bottom: 2px solid var(--border); padding-bottom: 6px; }
@@ -23,6 +23,7 @@ pre code { background: none; padding: 0; }
 table { border-collapse: collapse; margin: 12px 0; font-size: 92%; }
 th, td { border: 1px solid var(--border); padding: 6px 10px; vertical-align: top; text-align: left; }
 th { background: var(--surface); }
+blockquote { margin: 16px 0; padding: 4px 16px; border-left: 5px solid var(--callout-border); background: var(--callout-bg); border-radius: 0 6px 6px 0; }
 tr { page-break-inside: avoid; }
 nav { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 8px 24px; }
 section { page-break-before: always; }
@@ -33,7 +34,7 @@ section:first-of-type { page-break-before: auto; }
 :root.diagrams-ready[data-theme="dark"] .diagram-light { display: none; }
 :root.diagrams-ready[data-theme="dark"] .diagram-dark { display: block; }
 @media print {
-  :root, :root[data-theme="dark"] { --bg: #ffffff; --fg: #1f2328; --muted: #656d76; --border: #d0d7de; --surface: #f6f8fa; --code: #f3f4f6; --link: #1f2328; }
+  :root, :root[data-theme="dark"] { --bg: #ffffff; --fg: #1f2328; --muted: #656d76; --border: #d0d7de; --surface: #f6f8fa; --code: #f3f4f6; --link: #1f2328; --callout-bg: #fff8c5; --callout-border: #bf8700; }
   nav, #theme-toggle { display: none; }
   .diagram-dark { display: none !important; }
   .diagram-light { display: block !important; }
@@ -42,18 +43,24 @@ section:first-of-type { page-break-before: auto; }
 </head>
 <body>
 <button id="theme-toggle" type="button" aria-label="Toggle dark mode"></button>
-<p class="meta">Generated 2026-10-28 16:35 from 06-retirement-roadmap.md.</p>
+<p class="meta">Generated 2026-10-29 11:13 from 06-retirement-roadmap.md.</p>
 
 <section id="doc-06-retirement-roadmap"><h1 id="biztalk-retirement-roadmap-draft-for-review">BizTalk retirement roadmap (draft for review)</h1>
 <p>Status: draft, 2026-10-28. Owner: Wes Valure. Estimates are rough and are not commitments. Facts that are not yet confirmed are marked <strong>(assumption)</strong> or <strong>(open)</strong>.</p>
-<p>Related documents: 03-replacement-guide.md (what BizTalk does and what the replacement must do) and 05-known-issues-and-open-questions.md (risks and open questions).</p>
 <h2 id="summary">1. Summary</h2>
+<blockquote>
+<p><strong>IMPORTANT: retiring BizTalk will not end our dependence on Guidehouse.</strong></p>
+<ul>
+<li><strong>What changes:</strong> insurance payment files currently reach Guidehouse through a manual transfer from Fifth Third bank. Once we collect them directly from Fifth Third, they no longer need to pass through Guidehouse.</li>
+<li><strong>What does not change:</strong> other processes, such as patient payments, are still delivered to the Guidehouse SFTP. We must keep collecting and monitoring those, so our connection to Guidehouse stays.</li>
+<li><strong>What it means:</strong> the Guidehouse relationship and any associated costs will continue after this project. Those other files, and the processes behind them, are outside this project's scope.</li>
+</ul>
+</blockquote>
 <ul>
 <li><strong>Goal.</strong> Replace the BizTalk file flows that post payments to Cloud 9, then retire BizTalk. First scope: the Fifth Third / BBVA patient and insurance lockbox flows. The web patient payment flow is not part of this project, because it has already been wound down.</li>
-<li><strong>Where we are.</strong> The <strong>patient</strong> proof of concept is complete. It reads a patient 835, posts to C9-T, and was compared with production data. The <strong>insurance</strong> proof of concept is being implemented now, building on the patient framework. It still has to be verified against the live insurance posting procedure, and the source documents flag a schema difference (D1), so the insurance estimate is unconfirmed <strong>(assumption)</strong>.</li>
-<li><strong>Guidehouse stays in the end state.</strong> Even after all insurance carriers move to Fifth Third, the Guidehouse SFTP still delivers other patient payment files. Those files are not scoped in this project beyond continuing to ingest them. Both intake paths (Fifth Third and Guidehouse) must be maintained, and the Guidehouse relationship, and its cost, will probably continue until someone investigates those patient payment files. Retiring BizTalk does not end it.</li>
+<li><strong>Where we are.</strong> The <strong>patient</strong> and <strong>insurance</strong> proofs of concept are both complete. Each reads its 835 files and posts to C9-T. The patient proof of concept was also compared with production data. What remains is to move both into the Azure processor, set up the Azure environment, and complete the partner, network, and parallel-run work below.</li>
 <li><strong>Approach.</strong> Separate external transport from internal processing. Partner sources drop files into one internal storage container. API Management is a future route into the same container. One processor, triggered by the container, posts to Cloud 9. A new partner source, or a change of partner, adds or removes a source function and does not change or redeploy the processor.</li>
-<li><strong>Estimated retirement window.</strong> About 6 to 10 weeks from 2026-10-28, which is roughly <strong>2026-12-09 to 2027-01-06 (assumption)</strong>. Build effort is about 50 hours (roughly 1.5 weeks of work), reusing the completed patient proof of concept. The calendar time comes from Engineering, partner allowlisting and testing, and the parallel-run observation period, not from build effort. A year-end change freeze, if one applies, would move the end later <strong>(open)</strong>.</li>
+<li><strong>Estimated retirement window.</strong> About 6 to 10 weeks from 2026-10-28, which is roughly <strong>2026-12-09 to 2027-01-06 (assumption)</strong>. Build effort is about 45 hours (roughly 1.5 weeks of work), reusing the completed patient and insurance proofs of concept. The calendar time comes from Engineering, partner allowlisting and testing, and the parallel-run observation period, not from build effort. A year-end change freeze, if one applies, would move the end later <strong>(open)</strong>.</li>
 <li><strong>Critical path.</strong> Engineering (network and static outbound IP), then partner IP allowlisting, then partner testing, then the parallel run.</li>
 </ul>
 <h2 id="architecture-decision">2. Architecture decision</h2>
@@ -94,7 +101,7 @@ section:first-of-type { page-break-before: auto; }
 </ul>
 <h3 id="security-and-credentials">Security and credentials</h3>
 <ul>
-<li>Partner SFTP passwords move from LastPass to Key Vault. The function reads them with a managed identity. Pin the SFTP host keys. The current BizTalk setup does not verify host keys and keeps passwords in plain text in its settings files (S1, S2).</li>
+<li>Partner SFTP passwords move from LastPass to Key Vault. The function reads them with a managed identity. Pin the SFTP host keys: store each partner's expected server fingerprint and refuse to connect if the server presents a different one. BizTalk does not check this today, so it cannot tell a real partner server from an impostor. Pinning closes that gap, but each partner must give us its fingerprint and tell us when it changes.</li>
 <li>Cloud 9 SQL uses a SQL login stored in Key Vault. Investigate managed identity for SQL again later.</li>
 <li>Credential contact: Jon Morgan, Sr VP RCM (Smile Doctors) and Current Product Owner. Ownership of each partner credential and the rotation process are open.</li>
 </ul>
@@ -102,7 +109,7 @@ section:first-of-type { page-break-before: auto; }
 <ul>
 <li><strong>File level.</strong> Same name and content as a processed file: skip. Same name with different content: flag for a person (possible correction). A file in error: can be replayed.</li>
 <li><strong>Payment level.</strong> The Cloud 9 ledger decides. A payment already in the ledger is never posted again. A half-posted file can be replayed to catch the missing payments.</li>
-<li><strong>Open.</strong> Replay depends on the payment-level duplicate check in each posting procedure. The patient procedure is known. The insurance procedure is checked during the insurance proof of concept. The patient check also blocks previously failed payments (D18).</li>
+<li><strong>Open.</strong> Replay depends on the payment-level duplicate check in each posting procedure. The patient and insurance procedures are known from the proofs of concept. The patient check also blocks previously failed payments. In plain terms: the patient procedure rejects any payment whose payment identifier already appears in the import log, including entries marked as failed. A payment that failed once therefore cannot be retried with the same identifier after the data is fixed, unless the import log entry is reset or the procedure is changed. This was seen on the test server and still needs confirming in production.</li>
 </ul>
 <h3 id="monitoring">Monitoring</h3>
 <ul>
@@ -137,17 +144,17 @@ section:first-of-type { page-break-before: auto; }
 </tr>
 <tr>
 <td>3</td>
-<td>Core processor in DEV: port the completed patient proof of concept to a blob trigger, add file status and replay, with tests</td>
+<td>Core processor in DEV: port the completed insurance proof of concept to a blob trigger (insurance folder routing), add file status and replay, with tests</td>
 <td>4-6h</td>
 <td>1-2 days</td>
 <td>Chunk 2 for the Azure parts. Posting from Azure needs the VNet to Cloud 9 SQL</td>
 </tr>
 <tr>
 <td>3b</td>
-<td>Insurance proof of concept (in progress now), then port to the processor</td>
-<td>4-6h</td>
-<td>1-2 days (assumption)</td>
-<td>The port needs DEV set up (chunk 2). Verify against the live insurance procedure (D1)</td>
+<td>Port the completed patient proof of concept to the processor (patient folder routing, tests)</td>
+<td>2-3h</td>
+<td>1 day</td>
+<td>Chunk 3</td>
 </tr>
 <tr>
 <td>4</td>
@@ -201,7 +208,7 @@ section:first-of-type { page-break-before: auto; }
 <tr>
 <td>-</td>
 <td><strong>Total</strong> (excludes the optional chunk 5)</td>
-<td><strong>About 50h</strong></td>
+<td><strong>About 45h</strong></td>
 <td><strong>6-10 weeks (assumption)</strong></td>
 <td></td>
 </tr>
@@ -213,7 +220,7 @@ section:first-of-type { page-break-before: auto; }
 <li>Partner allowlisting (6a) starts in parallel with chunks 2 to 4, as soon as chunk 1 gives us an IP.</li>
 <li>Fifth Third and Guidehouse ingestion are independent and run in parallel.</li>
 <li>The Guidehouse ingestion function cannot be disabled when the insurance carriers move to Fifth Third, because other patient payment files still arrive on the Guidehouse SFTP. Both ingestion functions stay in service. Disabling Guidehouse needs a separate investigation of those files, which is out of scope here. The processor does not change either way.</li>
-<li>The insurance proof of concept is in progress now and does not wait for DEV. Its port to the processor follows the patient port.</li>
+<li>Both proofs of concept are complete. The insurance port comes first, and the patient port follows it closely.</li>
 </ul>
 <h2 id="near-term-milestones">4. Near-term milestones</h2>
 <table>
@@ -230,7 +237,7 @@ section:first-of-type { page-break-before: auto; }
 </tr>
 <tr>
 <td>2026-11-06</td>
-<td>All external requests submitted. Patient file processed in DEV (against C9-T), or locally if the VNet is not ready</td>
+<td>All external requests submitted. Insurance and patient files processed in DEV (against C9-T), or locally if the VNet is not ready</td>
 </tr>
 </tbody>
 </table>
@@ -362,7 +369,7 @@ section:first-of-type { page-break-before: auto; }
 <td>Escalate through Cade now</td>
 </tr>
 <tr>
-<td>Replay and duplicate rules depend on the posting procedures (patient check blocks failed payments; insurance procedure to be verified)</td>
+<td>Replay and duplicate rules depend on the posting procedures (patient check blocks failed payments)</td>
 <td>Wrong or duplicate postings</td>
 <td>Verify before replay is enabled for each flow</td>
 </tr>

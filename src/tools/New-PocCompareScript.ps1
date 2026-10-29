@@ -3,7 +3,7 @@
 .SYNOPSIS
     Makes the read-only SSMS script that compares the POC result with the BizTalk result.
 .DESCRIPTION
-    -Target Test: reads the TESTC9 test files. Writes src\sql\C9-T.verify-poc-run.sql. Run it on C9-T after the POC run.
+    -Target Test: reads the TESTC9 patient test files (src\testdata\Patient\TESTC9). Writes src\sql\C9-T.verify-poc-run.sql. Run it on C9-T after the POC run.
                   The last result set has a PASS or FAIL for each scenario.
     -Target Prod: reads the production sample files (BBVA patient 835). Writes the script OUTSIDE the repo by default.
                   Run it on C9-P (PROD). It shows the BizTalk result for the same scenarios. It never prints production data here.
@@ -20,7 +20,7 @@ param(
 $ErrorActionPreference = 'Stop'
 $src = Split-Path $PSScriptRoot -Parent
 $repo = Split-Path $src -Parent
-if (-not $SourceDir) { $SourceDir = if ($Target -eq 'Test') { Join-Path $src 'testdata\TESTC9' } else { Join-Path $repo 'references\SampleInputFiles\BBVA_835\Patient\GULFCOAST' } }
+if (-not $SourceDir) { $SourceDir = if ($Target -eq 'Test') { Join-Path $src 'testdata\Patient\TESTC9' } else { Join-Path $repo 'references\SampleInputFiles\BBVA_835\Patient\GULFCOAST' } }
 if (-not $Database) { $Database = if ($Target -eq 'Test') { 'TestC9' } else { 'GULFCOAST' } }
 if (-not $OutFile) { $OutFile = if ($Target -eq 'Test') { Join-Path $src 'sql\C9-T.verify-poc-run.sql' } else { Join-Path $env:TEMP 'C9-P.read-biztalk-results.sql' } }
 if ($Database -notmatch '^[A-Za-z0-9_-]+$') { throw "Database '$Database' is not a plain name." }

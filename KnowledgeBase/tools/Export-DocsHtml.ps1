@@ -86,8 +86,8 @@ $page = @"
 })();
 </script>
 <style>
-:root { --bg: #ffffff; --fg: #1f2328; --muted: #656d76; --border: #d0d7de; --surface: #f6f8fa; --code: #f3f4f6; --link: #0969da; }
-:root[data-theme="dark"] { --bg: #0d1117; --fg: #e6edf3; --muted: #8b949e; --border: #30363d; --surface: #161b22; --code: #21262d; --link: #58a6ff; }
+:root { --bg: #ffffff; --fg: #1f2328; --muted: #656d76; --border: #d0d7de; --surface: #f6f8fa; --code: #f3f4f6; --link: #0969da; --callout-bg: #fff8c5; --callout-border: #bf8700; }
+:root[data-theme="dark"] { --bg: #0d1117; --fg: #e6edf3; --muted: #8b949e; --border: #30363d; --surface: #161b22; --code: #21262d; --link: #58a6ff; --callout-bg: #3b2e00; --callout-border: #d29922; }
 body { font-family: Segoe UI, Arial, sans-serif; max-width: 1100px; margin: 0 auto; padding: 24px; line-height: 1.5; background: var(--bg); color: var(--fg); }
 a { color: var(--link); }
 h1 { border-bottom: 2px solid var(--border); padding-bottom: 6px; }
@@ -98,6 +98,7 @@ pre code { background: none; padding: 0; }
 table { border-collapse: collapse; margin: 12px 0; font-size: 92%; }
 th, td { border: 1px solid var(--border); padding: 6px 10px; vertical-align: top; text-align: left; }
 th { background: var(--surface); }
+blockquote { margin: 16px 0; padding: 4px 16px; border-left: 5px solid var(--callout-border); background: var(--callout-bg); border-radius: 0 6px 6px 0; }
 tr { page-break-inside: avoid; }
 nav { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 8px 24px; }
 section { page-break-before: always; }
@@ -108,7 +109,7 @@ section:first-of-type { page-break-before: auto; }
 :root.diagrams-ready[data-theme="dark"] .diagram-light { display: none; }
 :root.diagrams-ready[data-theme="dark"] .diagram-dark { display: block; }
 @media print {
-  :root, :root[data-theme="dark"] { --bg: #ffffff; --fg: #1f2328; --muted: #656d76; --border: #d0d7de; --surface: #f6f8fa; --code: #f3f4f6; --link: #1f2328; }
+  :root, :root[data-theme="dark"] { --bg: #ffffff; --fg: #1f2328; --muted: #656d76; --border: #d0d7de; --surface: #f6f8fa; --code: #f3f4f6; --link: #1f2328; --callout-bg: #fff8c5; --callout-border: #bf8700; }
   nav, #theme-toggle { display: none; }
   .diagram-dark { display: none !important; }
   .diagram-light { display: block !important; }

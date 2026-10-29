@@ -2,15 +2,19 @@
 
 Status: draft, 2026-10-28. Owner: Wes Valure. Estimates are rough and are not commitments. Facts that are not yet confirmed are marked **(assumption)** or **(open)**.
 
-Related documents: [03-replacement-guide.md](03-replacement-guide.md) (what BizTalk does and what the replacement must do) and [05-known-issues-and-open-questions.md](05-known-issues-and-open-questions.md) (risks and open questions).
-
 ## 1. Summary
 
+> **IMPORTANT: retiring BizTalk will not end our dependence on Guidehouse.**
+>
+> - **What changes:** insurance payment files currently reach Guidehouse through a manual transfer from Fifth Third bank. Once we collect them directly from Fifth Third, they no longer need to pass through Guidehouse.
+> - **What does not change:** other processes, such as patient payments, are still delivered to the Guidehouse SFTP. We must keep collecting and monitoring those, so our connection to Guidehouse stays.
+> - **What it means:** the Guidehouse relationship and any associated costs will continue after this project. Those other files, and the processes behind them, are outside this project's scope.
+
+
 - **Goal.** Replace the BizTalk file flows that post payments to Cloud 9, then retire BizTalk. First scope: the Fifth Third / BBVA patient and insurance lockbox flows. The web patient payment flow is not part of this project, because it has already been wound down.
-- **Where we are.** The **patient** proof of concept is complete. It reads a patient 835, posts to C9-T, and was compared with production data. The **insurance** proof of concept is being implemented now, building on the patient framework. It still has to be verified against the live insurance posting procedure, and the source documents flag a schema difference (D1), so the insurance estimate is unconfirmed **(assumption)**.
-- **Guidehouse stays in the end state.** Even after all insurance carriers move to Fifth Third, the Guidehouse SFTP still delivers other patient payment files. Those files are not scoped in this project beyond continuing to ingest them. Both intake paths (Fifth Third and Guidehouse) must be maintained, and the Guidehouse relationship, and its cost, will probably continue until someone investigates those patient payment files. Retiring BizTalk does not end it.
+- **Where we are.** The **patient** and **insurance** proofs of concept are both complete. Each reads its 835 files and posts to C9-T. The patient proof of concept was also compared with production data. What remains is to move both into the Azure processor, set up the Azure environment, and complete the partner, network, and parallel-run work below.
 - **Approach.** Separate external transport from internal processing. Partner sources drop files into one internal storage container. API Management is a future route into the same container. One processor, triggered by the container, posts to Cloud 9. A new partner source, or a change of partner, adds or removes a source function and does not change or redeploy the processor.
-- **Estimated retirement window.** About 6 to 10 weeks from 2026-10-28, which is roughly **2026-12-09 to 2027-01-06 (assumption)**. Build effort is about 50 hours (roughly 1.5 weeks of work), reusing the completed patient proof of concept. The calendar time comes from Engineering, partner allowlisting and testing, and the parallel-run observation period, not from build effort. A year-end change freeze, if one applies, would move the end later **(open)**.
+- **Estimated retirement window.** About 6 to 10 weeks from 2026-10-28, which is roughly **2026-12-09 to 2027-01-06 (assumption)**. Build effort is about 45 hours (roughly 1.5 weeks of work), reusing the completed patient and insurance proofs of concept. The calendar time comes from Engineering, partner allowlisting and testing, and the parallel-run observation period, not from build effort. A year-end change freeze, if one applies, would move the end later **(open)**.
 - **Critical path.** Engineering (network and static outbound IP), then partner IP allowlisting, then partner testing, then the parallel run.
 
 ## 2. Architecture decision
@@ -53,7 +57,7 @@ flowchart LR
 
 ### Security and credentials
 
-- Partner SFTP passwords move from LastPass to Key Vault. The function reads them with a managed identity. Pin the SFTP host keys. The current BizTalk setup does not verify host keys and keeps passwords in plain text in its settings files (S1, S2).
+- Partner SFTP passwords move from LastPass to Key Vault. The function reads them with a managed identity. Pin the SFTP host keys: store each partner's expected server fingerprint and refuse to connect if the server presents a different one. BizTalk does not check this today, so it cannot tell a real partner server from an impostor. Pinning closes that gap, but each partner must give us its fingerprint and tell us when it changes. 
 - Cloud 9 SQL uses a SQL login stored in Key Vault. Investigate managed identity for SQL again later.
 - Credential contact: Jon Morgan, Sr VP RCM (Smile Doctors) and Current Product Owner. Ownership of each partner credential and the rotation process are open.
 
@@ -61,7 +65,7 @@ flowchart LR
 
 - **File level.** Same name and content as a processed file: skip. Same name with different content: flag for a person (possible correction). A file in error: can be replayed.
 - **Payment level.** The Cloud 9 ledger decides. A payment already in the ledger is never posted again. A half-posted file can be replayed to catch the missing payments.
-- **Open.** Replay depends on the payment-level duplicate check in each posting procedure. The patient procedure is known. The insurance procedure is checked during the insurance proof of concept. The patient check also blocks previously failed payments (D18).
+- **Open.** Replay depends on the payment-level duplicate check in each posting procedure. The patient and insurance procedures are known from the proofs of concept. The patient check also blocks previously failed payments. In plain terms: the patient procedure rejects any payment whose payment identifier already appears in the import log, including entries marked as failed. A payment that failed once therefore cannot be retried with the same identifier after the data is fixed, unless the import log entry is reset or the procedure is changed. This was seen on the test server and still needs confirming in production.
 
 ### Monitoring
 
@@ -75,8 +79,8 @@ Effort is in working hours (AI estimate). Calendar time includes waiting.
 | --- | ------------------------------------------------------------------------------------------- | ------ | ------------------------------ | ---------------------------------------------------- |
 | 1   | Engineering requests: static outbound IP and cost, `Microsoft.App`, VNet to Cloud 9 SQL     | 2h     | Unknown (largest unknown)      | Engineering                                          |
 | 2   | Manual DEV build: storage, drop container, Event Grid, function app, Key Vault, App Insights | 1 day (about 6h) | 1 day                | Chunk 1 for the VNet and SQL parts                   |
-| 3   | Core processor in DEV: port the completed patient proof of concept to a blob trigger, add file status and replay, with tests | 4-6h   | 1-2 days                       | Chunk 2 for the Azure parts. Posting from Azure needs the VNet to Cloud 9 SQL |
-| 3b  | Insurance proof of concept (in progress now), then port to the processor                    | 4-6h   | 1-2 days (assumption)          | The port needs DEV set up (chunk 2). Verify against the live insurance procedure (D1) |
+| 3   | Core processor in DEV: port the completed insurance proof of concept to a blob trigger (insurance folder routing), add file status and replay, with tests | 4-6h   | 1-2 days                       | Chunk 2 for the Azure parts. Posting from Azure needs the VNet to Cloud 9 SQL |
+| 3b  | Port the completed patient proof of concept to the processor (patient folder routing, tests) | 2-3h   | 1 day                          | Chunk 3                                              |
 | 4   | Datadog monitors and alerts                                                                 | 4h     | 1 day                          | Notification owners                                  |
 | 5   | Terraform for DEV and PROD (optional, not in scope yet; not in the total)                   | (4-6h) | (1-2 days)                     | Chunks 2 to 4 settled                                |
 | 6   | PROD build with NAT gateway                                                                 | 3-4h   | 1 day                          | Engineering cost approval                            |
@@ -84,7 +88,7 @@ Effort is in working hours (AI estimate). Calendar time includes waiting.
 | 7   | Vendor ingestion functions (Fifth Third, Guidehouse), parallel                              | About 4h each | Driven by partners      | Chunk 6a, credentials, partner test files            |
 | 8   | Parallel run and validation per flow                                                        | About 10h | Observation period (open)   | Chunks 3 to 7                                        |
 | 9   | Cutover and disable BizTalk locations                                                       | About 4h | After the observation period | Chunk 8 and acceptance criteria                      |
-| -   | **Total** (excludes the optional chunk 5)                                                   | **About 50h** | **6-10 weeks (assumption)** |                                                      |
+| -   | **Total** (excludes the optional chunk 5)                                                   | **About 45h** | **6-10 weeks (assumption)** |                                                      |
 
 Sequencing rules:
 
@@ -92,14 +96,14 @@ Sequencing rules:
 - Partner allowlisting (6a) starts in parallel with chunks 2 to 4, as soon as chunk 1 gives us an IP.
 - Fifth Third and Guidehouse ingestion are independent and run in parallel.
 - The Guidehouse ingestion function cannot be disabled when the insurance carriers move to Fifth Third, because other patient payment files still arrive on the Guidehouse SFTP. Both ingestion functions stay in service. Disabling Guidehouse needs a separate investigation of those files, which is out of scope here. The processor does not change either way.
-- The insurance proof of concept is in progress now and does not wait for DEV. Its port to the processor follows the patient port.
+- Both proofs of concept are complete. The insurance port comes first, and the patient port follows it closely.
 
 ## 4. Near-term milestones
 
 | Date           | Milestone                                                                                          |
 | -------------- | -------------------------------------------------------------------------------------------------- |
 | 2026-10-30     | This roadmap delivered, with blockers, dependencies, and the timeframe                              |
-| 2026-11-06     | All external requests submitted. Patient file processed in DEV (against C9-T), or locally if the VNet is not ready |
+| 2026-11-06     | All external requests submitted. Insurance and patient files processed in DEV (against C9-T), or locally if the VNet is not ready |
 
 The full retirement is not planned for 2026-11-06. See section 1.
 
@@ -161,7 +165,7 @@ Ask both Fifth Third and Guidehouse unless noted.
 | No static outbound IP or NAT gateway exists, and cost is unknown                              | Partners cannot allowlist us; schedule slips | Ask Engineering now. Only PROD needs the IP                      |
 | App-dev subscription cannot reach the Cloud 9 SQL servers                                    | Processor cannot post from Azure             | Confirm early. Fallback: run the processor locally against C9-T  |
 | Partner allowlisting and testing turnaround                                                  | Chunk 7 and the retirement date slip        | Escalate through Cade now                                        |
-| Replay and duplicate rules depend on the posting procedures (patient check blocks failed payments; insurance procedure to be verified) | Wrong or duplicate postings     | Verify before replay is enabled for each flow                    |
+| Replay and duplicate rules depend on the posting procedures (patient check blocks failed payments) | Wrong or duplicate postings     | Verify before replay is enabled for each flow                    |
 | Other patient payment files on the Guidehouse SFTP are not scoped                              | Guidehouse intake and cost continue after the insurance migration | Keep ingesting them. Investigate them separately |
 | Subscription move changes resource IDs, network, or access                                    | Rework                                      | Build in the app-dev subscription directly; record each setting so it can be rebuilt |
 | BizTalk has stopped silently before (2021, no alert)                                          | Missed payments during the parallel run     | Monitors for stuck files and missing deliveries from the start   |

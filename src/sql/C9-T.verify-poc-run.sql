@@ -55,7 +55,7 @@ DECLARE @to   datetime = (SELECT DATEADD(MINUTE,  10, MAX(ilDateTime)) FROM #il)
 
 SELECT
     t.transReference, t.transDateTime, t.transDateTimePosted, t.transAmount, t.transDueNowAmount,
-    t.transTotalDueAmount, t.transProductionAmount, t.transStatus, t.transIsGroup, t.transRouting,
+    t.transTotalDueAmount, t.transProductionAmount, t.transIsGroup, t.transRouting,
     t.transCheckNumber, t.transNote, tt.ttypCode
 INTO #tx
 FROM dbo.[Transaction] t
@@ -89,7 +89,6 @@ SELECT
     tx.transDueNowAmount                                       AS due_now,
     tx.transTotalDueAmount                                     AS total_due,
     tx.transProductionAmount                                   AS production,
-    tx.transStatus                                             AS txn_status,
     tx.transIsGroup                                            AS is_group,
     tx.ttypCode                                                AS ttyp_code,
     CASE WHEN tx.transReference IS NULL THEN NULL
@@ -98,7 +97,6 @@ SELECT
          WHEN ISNULL(CONVERT(varchar(20), tx.transCheckNumber), '') = ISNULL(CASE WHEN s.trace NOT LIKE N'%[^0-9]%' AND LEN(s.trace) <= 18 THEN CASE WHEN CONVERT(bigint, s.trace) <= 2147483647 THEN CONVERT(varchar(20), CONVERT(bigint, s.trace)) END END, '') THEN 1 ELSE 0 END AS check_no_ok,
     CASE WHEN tx.transReference IS NULL THEN NULL
          WHEN tx.transDateTime = tx.transDateTimePosted THEN 1 ELSE 0 END AS posted_equals_trans,
-    DATEDIFF(SECOND, tx.transDateTime, i.ilDateTime)           AS secs_txn_to_il,
     CASE WHEN CHARINDEX(N', Lockbox:', tx.transNote) > 0
          THEN LEFT(tx.transNote, CHARINDEX(N', Lockbox:', tx.transNote) - 1) END AS note_head,
     uc.n                                                       AS ut_rows,
@@ -126,13 +124,13 @@ OUTER APPLY (SELECT TOP (1) u.* FROM #ut u
              ORDER BY u.utDateTime DESC) ux;
 
 -- PASS needs: one ImportLog row in the right state, one [Transaction] row (or none and one UnmappedTransaction row for a Failed file),
--- the amounts equal to the file, status N, is_group 0, and the check number equal to TRN02.
+-- the amounts equal to the file, is_group 0, and the check number equal to TRN02. The status column is not compared (the end-of-day run changes N to D).
 SELECT r.*,
     CASE WHEN r.expected_state = N'Finished' THEN
             CASE WHEN r.import_rows = 1 AND r.il_state = N'Finished' AND r.il_level = 2
                       AND r.il_process = N'Process_BBVA_835Patient' AND r.il_file_name_only = 1 AND r.il_msg_tail = N'Success'
                       AND r.txn_rows = 1 AND r.txn_amount = -r.file_amount AND r.due_now = -r.file_amount AND r.total_due = -r.file_amount
-                      AND r.txn_status = N'N' AND r.is_group = N'0' AND r.check_no_ok = 1 AND r.posted_equals_trans = 1 AND r.ut_rows = 0
+                      AND r.is_group = N'0' AND r.check_no_ok = 1 AND r.posted_equals_trans = 1 AND r.ut_rows = 0
                  THEN N'PASS' ELSE N'FAIL' END
          ELSE
             CASE WHEN r.import_rows = 1 AND r.il_state = N'Failed' AND r.il_level = 0
