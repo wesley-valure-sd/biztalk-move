@@ -7,7 +7,8 @@ Related documents: [03-replacement-guide.md](03-replacement-guide.md) (what BizT
 ## 1. Summary
 
 - **Goal.** Replace the BizTalk file flows that post payments to Cloud 9, then retire BizTalk. First scope: the Fifth Third / BBVA patient and insurance lockbox flows. The web patient payment flow is not part of this project, because it has already been wound down.
-- **Where we are.** Only the **patient** proof of concept is complete. It reads a patient 835, posts to C9-T, and was compared with production data. The insurance proof of concept is not started. The plan is to do it as a quick follow-up once the DEV environment is set up **(assumption: the insurance posting procedure has not been read yet, and the source documents flag a schema difference (D1), so "quick" is unconfirmed)**.
+- **Where we are.** The **patient** proof of concept is complete. It reads a patient 835, posts to C9-T, and was compared with production data. The **insurance** proof of concept is being implemented now, building on the patient framework. It still has to be verified against the live insurance posting procedure, and the source documents flag a schema difference (D1), so the insurance estimate is unconfirmed **(assumption)**.
+- **Guidehouse stays in the end state.** Even after all insurance carriers move to Fifth Third, the Guidehouse SFTP still delivers other patient payment files. Those files are not scoped in this project beyond continuing to ingest them. Both intake paths (Fifth Third and Guidehouse) must be maintained, and the Guidehouse relationship, and its cost, will probably continue until someone investigates those patient payment files. Retiring BizTalk does not end it.
 - **Approach.** Separate external transport from internal processing. Partner sources drop files into one internal storage container. API Management is a future route into the same container. One processor, triggered by the container, posts to Cloud 9. A new partner source, or a change of partner, adds or removes a source function and does not change or redeploy the processor.
 - **Estimated retirement window.** About 6 to 10 weeks from 2026-10-28, which is roughly **2026-12-09 to 2027-01-06 (assumption)**. Build effort is about 50 hours (roughly 1.5 weeks of work), reusing the completed patient proof of concept. The calendar time comes from Engineering, partner allowlisting and testing, and the parallel-run observation period, not from build effort. A year-end change freeze, if one applies, would move the end later **(open)**.
 - **Critical path.** Engineering (network and static outbound IP), then partner IP allowlisting, then partner testing, then the parallel run.
@@ -60,7 +61,7 @@ flowchart LR
 
 - **File level.** Same name and content as a processed file: skip. Same name with different content: flag for a person (possible correction). A file in error: can be replayed.
 - **Payment level.** The Cloud 9 ledger decides. A payment already in the ledger is never posted again. A half-posted file can be replayed to catch the missing payments.
-- **Open.** Replay depends on the payment-level duplicate check in each posting procedure. The patient procedure is known. The insurance procedure has not been read. The patient check also blocks previously failed payments (D18).
+- **Open.** Replay depends on the payment-level duplicate check in each posting procedure. The patient procedure is known. The insurance procedure is checked during the insurance proof of concept. The patient check also blocks previously failed payments (D18).
 
 ### Monitoring
 
@@ -75,7 +76,7 @@ Effort is in working hours (AI estimate). Calendar time includes waiting.
 | 1   | Engineering requests: static outbound IP and cost, `Microsoft.App`, VNet to Cloud 9 SQL     | 2h     | Unknown (largest unknown)      | Engineering                                          |
 | 2   | Manual DEV build: storage, drop container, Event Grid, function app, Key Vault, App Insights | 1 day (about 6h) | 1 day                | Chunk 1 for the VNet and SQL parts                   |
 | 3   | Core processor in DEV: port the completed patient proof of concept to a blob trigger, add file status and replay, with tests | 4-6h   | 1-2 days                       | Chunk 2 for the Azure parts. Posting from Azure needs the VNet to Cloud 9 SQL |
-| 3b  | Insurance proof of concept, then port to the processor: read the live insurance procedure, build, test | 4-6h   | 1-2 days (assumption)          | DEV set up (chunk 2). Insurance procedure not yet read |
+| 3b  | Insurance proof of concept (in progress now), then port to the processor                    | 4-6h   | 1-2 days (assumption)          | The port needs DEV set up (chunk 2). Verify against the live insurance procedure (D1) |
 | 4   | Datadog monitors and alerts                                                                 | 4h     | 1 day                          | Notification owners                                  |
 | 5   | Terraform for DEV and PROD (optional, not in scope yet; not in the total)                   | (4-6h) | (1-2 days)                     | Chunks 2 to 4 settled                                |
 | 6   | PROD build with NAT gateway                                                                 | 3-4h   | 1 day                          | Engineering cost approval                            |
@@ -90,8 +91,8 @@ Sequencing rules:
 - Chunks 2 and 3 do not wait for partners. Build and test with sample files.
 - Partner allowlisting (6a) starts in parallel with chunks 2 to 4, as soon as chunk 1 gives us an IP.
 - Fifth Third and Guidehouse ingestion are independent and run in parallel.
-- The Guidehouse ingestion function can be disabled later, when Fifth Third becomes the direct source, without changing the processor.
-- The insurance proof of concept follows quickly once DEV is set up. It can overlap with the patient port.
+- The Guidehouse ingestion function cannot be disabled when the insurance carriers move to Fifth Third, because other patient payment files still arrive on the Guidehouse SFTP. Both ingestion functions stay in service. Disabling Guidehouse needs a separate investigation of those files, which is out of scope here. The processor does not change either way.
+- The insurance proof of concept is in progress now and does not wait for DEV. Its port to the processor follows the patient port.
 
 ## 4. Near-term milestones
 
@@ -120,7 +121,7 @@ The full retirement is not planned for 2026-11-06. See section 1.
 
 Ask both Fifth Third and Guidehouse unless noted.
 
-1. Which SFTP host, folders, and file name patterns will we pick up from? Does Guidehouse stay in the path, and when does Fifth Third become the direct source?
+1. Which SFTP host, folders, and file name patterns will we pick up from? When do the insurance carriers move to Fifth Third as the direct source?
 2. What is the access model (do we pull, or do they push)? Which credentials do we get, who owns them, and how are they rotated?
 3. Do the pickup credentials allow moving or deleting files, or are they read-only? We will not assume write access.
 4. Do you require our source IP addresses allowlisted? What is your turnaround for adding or changing one?
@@ -130,6 +131,7 @@ Ask both Fifth Third and Guidehouse unless noted.
 8. Do you expect any acknowledgment (such as 997 or 999) for received files?
 9. (Jon Morgan, Product Owner) Which ERA transaction types, if any, are in scope, and who asked for them?
 10. (Jon Morgan, Product Owner) What observation period and evidence do you require before a BizTalk folder or port is disabled?
+11. (Guidehouse) Besides the insurance files, which other patient payment files arrive on the Guidehouse SFTP, in what format and volume, and what would it take to stop depending on Guidehouse for them?
 
 ## 7. Testing, monitoring, and retirement acceptance
 
@@ -159,7 +161,8 @@ Ask both Fifth Third and Guidehouse unless noted.
 | No static outbound IP or NAT gateway exists, and cost is unknown                              | Partners cannot allowlist us; schedule slips | Ask Engineering now. Only PROD needs the IP                      |
 | App-dev subscription cannot reach the Cloud 9 SQL servers                                    | Processor cannot post from Azure             | Confirm early. Fallback: run the processor locally against C9-T  |
 | Partner allowlisting and testing turnaround                                                  | Chunk 7 and the retirement date slip        | Escalate through Cade now                                        |
-| Replay and duplicate rules depend on the posting procedures (patient check blocks failed payments; insurance procedure unread) | Wrong or duplicate postings     | Verify before replay is enabled for each flow                    |
+| Replay and duplicate rules depend on the posting procedures (patient check blocks failed payments; insurance procedure to be verified) | Wrong or duplicate postings     | Verify before replay is enabled for each flow                    |
+| Other patient payment files on the Guidehouse SFTP are not scoped                              | Guidehouse intake and cost continue after the insurance migration | Keep ingesting them. Investigate them separately |
 | Subscription move changes resource IDs, network, or access                                    | Rework                                      | Build in the app-dev subscription directly; record each setting so it can be rebuilt |
 | BizTalk has stopped silently before (2021, no alert)                                          | Missed payments during the parallel run     | Monitors for stuck files and missing deliveries from the start   |
 | Active-flow inventory is incomplete (21 legacy folders, about 9 in use)                       | A live flow is missed at retirement         | Complete the inventory and the zero-traffic check before disabling BizTalk |
@@ -171,11 +174,13 @@ Ask both Fifth Third and Guidehouse unless noted.
 2. Approve Flex Consumption with VNet integration as the working hosting plan, and a NAT gateway for PROD if Engineering cost is acceptable.
 3. Agree the parallel-run observation period.
 4. Approve escalating the partner questions in section 6.
+5. Agree who investigates the other patient payment files on the Guidehouse SFTP, and when.
 
 ## 10. Out of scope and parked
 
 - The web patient payment flow (already wound down), other 835 flows (CHC ERA, pass-through) unless live evidence shows they are used, and the inactive 271 flows.
 - API Management as a route into the container (future roadmap).
+- Investigation of the other patient payment files on the Guidehouse SFTP, and whether the Guidehouse relationship can end.
 - Region-to-practice mapping table (backlog).
 - Managed identity for Cloud 9 SQL (revisit later).
 - Terraform for DEV and PROD (optional, not in scope yet), including moving Terraform state to a storage account.
