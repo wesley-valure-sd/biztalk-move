@@ -221,6 +221,8 @@ Result set 0: `ErrorCount` (int), `ResponseMessage` (string). Also `ReturnValue`
 11. Add ` Payment amount exceeds remaining balance.` if `-transAmount` is more than `TotalDue` of `dbo.udfGetAgingAsOfDate`. Add ` Success`. Commit.
 12. CATCH: roll back, `ErrorCount + 1`, `ResponseMessage = ERROR_MESSAGE()` (only the SQL text for a conversion error or a deadlock), and insert an `UnmappedTransaction` row if `transGUID` is not in `[Transaction]`.
 
+C9-P check (2026-10-29, read-only): all 14,344 flow C ImportLog rows since 2026-09-01 have this header shape, Check Date = Deposit Date, every Finished row ends in `Success`, and 1,191 of 1,198 NON rows have an empty `Check No` (TRN02 not an int). So C9-P most likely runs the same body **(inferred)**. The read-only login cannot read the body.
+
 TestC9 `BTS.PaymentType` rows for `INSURANCE`: `ACH` (LBOXINSEFT), `BOP` (LBOXINSCC), `CHK` (LBOXINSC), `NON` (LBOXINSC), `PLB` (LBOXINSC), `L6C` (INTERESTOTSD), `L6P` (INSIPC).
 
 ### BTS.AddImportLog (all posting flows)
