@@ -59,6 +59,19 @@ One file for each scenario in [Insurance/scenarios.csv](Insurance/scenarios.csv)
 
 I15 comes from a hand-made Delta Dental file (`BD_SDOC_*`). It is the only sample with a WO adjustment and with no REF*LB.
 
+### Run the scenarios on C9-T and check them
+
+The run moves files into `Processing`, `Done`, and `Failed`, so run a copy, not the repo folder. The root folder must be named `Insurance` (or give `--flow insurance`).
+
+```powershell
+$run = Join-Path $env:TEMP 'lockbox-run\Insurance'
+Remove-Item (Split-Path $run) -Recurse -Force -ErrorAction SilentlyContinue
+Copy-Item src\testdata\Insurance\TESTC9 (Join-Path $run 'TESTC9') -Recurse
+$env:LOCKBOX_SQL_CONNECTION = '<connection string to the Utility database on C9-T>'
+dotnet run --project src\Cloud9.Lockbox.Cli -- run $run --min-age-seconds 0
+```
+
+Then run [C9-T.verify-insurance-run.sql](../sql/C9-T.verify-insurance-run.sql) on C9-T (read-only). Each scenario must show PASS. The script comes from [New-InsuranceVerifyScript.ps1](../tools/New-InsuranceVerifyScript.ps1), which reads the files and the `Expect` column of `scenarios.csv`. I21 must run after I01 (the file names sort that way).
 ### How the files are made
 
 [New-TestC9InsuranceFiles.ps1](../tools/New-TestC9InsuranceFiles.ps1) reads the production samples from `references\SampleInputFiles\BBVA_835\Insurance\GULFCOAST` (git ignores that folder) and writes these files. It replaces names, IDs, bank numbers, trace numbers, and payment references, and keeps amounts, dates, codes, and structure. Masked values keep their shape (digit count, letters), because the shape drives I04, I11, I12, and I22. The script stops if a source value survives.
