@@ -223,6 +223,13 @@ Result set 0: `ErrorCount` (int), `ResponseMessage` (string). Also `ReturnValue`
 
 C9-P check (2026-10-29, read-only): all 14,344 flow C ImportLog rows since 2026-09-01 have this header shape, Check Date = Deposit Date, every Finished row ends in `Success`, and 1,191 of 1,198 NON rows have an empty `Check No` (TRN02 not an int). So C9-P most likely runs the same body **(inferred)**. The read-only login cannot read the body.
 
+POC compared with PROD (#28347, 2026-10-30): the C9-T `[Transaction]` rows of the POC test run (22 scenarios, 25 PROD posts) were compared with the C9-P rows of the source files. Rows were matched on hashes of `transNote` and `transReference`, so no PHI was read. Row count, amount, transaction type, due amounts, `transIsGroup`/`transClaimAmount`/`transProductionAmount`, receipt note, posted date, check number, routing, debit group, `adaclaimGUID` (NULL in both), the link columns, and the `UnmappedTransaction` row of each failure all match. The differences have known causes:
+
+- `transStatus` is `D` in PROD and `N` on C9-T. The procedure inserts `N`; later Cloud9 processing changes it.
+- In PROD, I15 (the claim and the WO adjustment) has a `transCreditGroup`. The procedure does not set it (BizTalk sends NULL), and no other scenario has one, so it comes from later account work in Cloud9.
+- In the I02 source, both CLPs have the same CLP01. The test file gives each CLP its own TestC9 claim. Both sides post 2 rows for -200.00.
+- I21 is synthetic and has no PROD rows.
+
 TestC9 `BTS.PaymentType` rows for `INSURANCE`: `ACH` (LBOXINSEFT), `BOP` (LBOXINSCC), `CHK` (LBOXINSC), `NON` (LBOXINSC), `PLB` (LBOXINSC), `L6C` (INTERESTOTSD), `L6P` (INSIPC).
 
 ### BTS.AddImportLog (all posting flows)
