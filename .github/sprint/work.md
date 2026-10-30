@@ -54,3 +54,4 @@ dotnet test src\Cloud9.Lockbox.slnx
 - PROD samples go in `references\SampleInputFiles\...` (git ignores it). Never put them in `src\testdata`.
 - In the VS Code terminal, output can be lost. Write it to a file and read the file.
 - The insurance duplicate check matches any ImportLog row with the REF*F8, Failed or Finished (KB doc 05 D25).
+- The session cannot run the CLI on C9-T, so a proof task waits for Wes's run (Biztalk 2: #28346 waited 19h in QA). Agree on the run time with Wes when the build tasks start.
