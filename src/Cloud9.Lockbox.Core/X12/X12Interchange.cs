@@ -1,7 +1,7 @@
 namespace Cloud9.Lockbox.X12;
 
-/// <summary>The segments of one ST/SE transaction set, ST and SE included.</summary>
-public sealed record X12TransactionSet(string ControlNumber, IReadOnlyList<X12Segment> Segments);
+/// <summary>The segments of one ST/SE transaction set, ST and SE included. <see cref="ComponentSeparator"/> is ISA16.</summary>
+public sealed record X12TransactionSet(string ControlNumber, IReadOnlyList<X12Segment> Segments, char ComponentSeparator = ':');
 
 /// <summary>
 /// Parses one X12 interchange. The separators come from the ISA segment, so files with
@@ -54,10 +54,10 @@ public sealed class X12Interchange
             .Select(s => new X12Segment(s.Split(elementSeparator)))
             .ToList();
 
-        return new X12Interchange(elementSeparator, componentSeparator, segmentTerminator, segments, ReadTransactionSets(segments));
+        return new X12Interchange(elementSeparator, componentSeparator, segmentTerminator, segments, ReadTransactionSets(segments, componentSeparator));
     }
 
-    private static List<X12TransactionSet> ReadTransactionSets(List<X12Segment> segments)
+    private static List<X12TransactionSet> ReadTransactionSets(List<X12Segment> segments, char componentSeparator)
     {
         if (segments[^1].Id != "IEA") throw new X12FormatException("The interchange has no IEA segment.");
         if (segments[^1][2] != segments[0][13]) throw new X12FormatException($"IEA02 '{segments[^1][2]}' does not match ISA13 '{segments[0][13]}'.");
@@ -95,7 +95,7 @@ public sealed class X12Interchange
                     var st = current[0];
                     if (segment[2] != st[2]) throw new X12FormatException($"SE02 '{segment[2]}' does not match ST02 '{st[2]}'.");
                     if (segment[1] != current.Count.ToString()) throw new X12FormatException($"SE01 is '{segment[1]}', but transaction set {st[2]} has {current.Count} segments.");
-                    sets.Add(new X12TransactionSet(st[2], current));
+                    sets.Add(new X12TransactionSet(st[2], current, componentSeparator));
                     setsInGroup++;
                     current = null;
                     break;

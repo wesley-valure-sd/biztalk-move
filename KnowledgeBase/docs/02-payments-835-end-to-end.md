@@ -373,14 +373,14 @@ The BBVA schema has custom REF qualifiers in loop 2100:
 ```text
 base = "Deposit Date: " + DTM02 + ", Check Date: " + BPR16 + ", Claim Number: " + CLP01 + ", Lockbox: " + GetLockboxNumber(REF*LB, DTM02)
 if BPR04 == "NON":
-    claimAdj   = concat over claim-level CAS of (CAS02 + ": " + CAS03 + ", "), then drop the last 2 characters
-    serviceAdj = concat over service-level CAS of (CAS02 + ": " + CAS03 + ", "), then drop the last 2 characters
+    claimAdj   = concat over the claim-level CAS of the whole transaction set of (CAS02 + ": " + CAS03 + ", "), then drop the last 2 characters
+    serviceAdj = concat over the service-level CAS of the whole transaction set of (CAS02 + ": " + CAS03 + ", "), then drop the last 2 characters
     TransactionNote = Left(base + ", " + claimAdj + ", " + serviceAdj, 250)
 else:
     TransactionNote = base
 ```
 
-Only the first reason/amount pair (CAS02/CAS03) of each CAS segment is used. The functoid names for this logic are inferred from their inputs. See the map summary for the exact chain.
+Only the first reason/amount pair (CAS02/CAS03) of each CAS segment is used. The cumulative concatenate functoids have no scope input, so they collect the CAS of every claim in the transaction set: each NON claim of a set with several claims gets the same lists. An empty list gives an empty string, so a claim with no claim-level CAS gets `, , ` in the note. Verified 2026-10-29: the POC mapper reproduced 80 of 80 sampled production notes (40 NON, 40 other) exactly (SHA-256 compared with C9-P `[Transaction].transNote`).
 
 ### Map: BBVA 835 to adjustment canonical (PLB)
 
@@ -434,6 +434,18 @@ Important: in the map, many links point to `Post835InsuranceTransaction/Transact
 - `GetInsurancePaymentType.sql` expects `BTS.PaymentType.ptPaymentTypeCode IN ('L6C','L6P','PLB')` and transaction types `INTERESTOTSD`, `INSIPC`, `LBOXINSC`. The procedure uses these codes **(inferred)**. The mapping from BPR04 / AdjustmentType to these codes is inside the procedure and is not in this repo.
 - `GetUnmappedTransactionsInsurancePayment.sql` reads `UnmappedTransaction`. The procedure writes a row there when it cannot match a payment. Release 1.3.2108.86 (C9-33839) confirms this. It removed a foreign key so that a payment with an unknown `patGUID` or `pipGUID` goes to the unmapped transactions.
 - `GetInfoToReplaceOn835File.sql` shows the test data: `REF*EJ` = `patGUID`, NM1*QC NM109 = `pipPolicyNumber`, CLP01 = `ADAClaim.adaclaimNumber`.
+
+### Production evidence (C9-GulfCoast, read-only, 2026-10-29)
+
+2,112 production GULFCOAST insurance files (2026-02 to 2026-10, 17,339 claims, 9 PLBs) and 4 hand-made Delta Dental test files (`BD_SDOC_*`) were compared with their ImportLog rows. The test scenarios that came from this work are in [src/testdata/README.md](../../src/testdata/README.md).
+
+- **One ImportLog row for each CLP and each PLB.** True for 1,936 of 1,979 logged files that pass the guard. The others reuse a file name (D27). A guard failure writes one row for the transaction set.
+- **Message form.** `[ADJ - ]Check No: TRN02, Claim No: CLP01, Check Date, Deposit Date, Check Amount, Insurance Co, Policy No, Patient ID, PaymentType, pipGUID, patGUID, ilExternalReference: REF*F8 :: <result>`. The procedure builds it. Results: `Success`, `Payment amount exceeds remaining balance. Success` (Finished), and the failures below.
+- **Posted, Finished.** CLP04 = 0 (CLP02 1 or 4) is posted as 0.00. A negative CLP04 (mostly CLP02 22, a reversal) is posted, so `transAmount` is positive. No reversal to-do item, unlike flow D.
+- **Failed in the procedure.** No REF*EJ or REF*69 (about 6% of claims): `Could not locate Claim ...; Could not locate Insurance Policy ...`. Unknown `pipGUID`: `PatientInsurancePolicy record not found for pipGUID`. CLP01 not an int: conversion errors (D23). A REF*F8 that is already in any ImportLog row: `Duplicate payment for ilExternalReference` (D25). An L6 ADJ fails as a duplicate of its own claim (D24). Procedure details: document 04, "Live procedure behavior" of `Post835InsuranceTransaction`.
+- **`pipGUID` is REF*69 only** (D5). NM1*IL NM109 does not reach it.
+- **Shapes seen.** BPR04 `CHK` (BPR01 `C`), `ACH` (`I`), `NON` (`H`, BPR02 0, TRN02 not numeric), `BOP` (`U`), and `BOP` and `CHK` sets in one file. Up to 206 transaction sets in one file and 85 CLPs in one set. TRN02 has 7 to 17 digits or has letters; the 15-digit and letter forms post without error even though `transCheckNumber` is an int. PLB03 codes are only `L6` (interest, negative PLB04) in the BBVA files. Several PLBs have more than one adjustment pair (D7). REF*LB has five or more formats; `GetLockboxNumber` removes only the DTM*405 date. No base note is longer than 166 characters.
+- **Never logged.** 128 production files have no ImportLog row (D26).
 
 ## Flow D: Change Healthcare 835 ERA
 

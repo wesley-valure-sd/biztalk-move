@@ -160,7 +160,7 @@ Other logic around `ImportLog` (read on C9-T `TestC9`, 2026-10-21):
 - `dbo.ImportLog` has no triggers and no default constraints. `ilDateTime` and `CREATEDBY` stay as the caller sends them (`CREATEDBY` is NULL).
 - `ilDateTime` is `DateTime.Now` of the BizTalk server. The two clocks can differ from the SQL server clock. The Utility procedure takes an optional `@ilDateTime`. If the caller does not send it, the procedure uses `GETDATE()` of the SQL server. The POC sends its own processing time (Wes, 2026-10-21).
 - Readers: `dbo.GetImportLogs(@ImportID)` returns all rows with `ilImportGUID = @ImportID`, in `ilDateTime` order. `dbo.GetImportLogsByProcess(@ilProcess, @ilDateTimeStart, @ilDateTimeEnd, @LogLevel)` filters by process, time range, and level. Both map the level: 0 Error, 1 Debug, 2 Info, 3 Security. So `ilImportGUID`, `ilProcess`, `ilDateTime`, and `ilLogLevel` must keep the BizTalk meaning.
-- `BTS.Post835PatientTransaction` and `BTS.Post835InsuranceTransaction` read `ImportLog` for the duplicate check. `BTS.Post835InsuranceTransaction` skips the check for the `PLB` payment type. No procedure other than `AddImportLog` writes ImportLog for flows A to D.
+- `BTS.Post835PatientTransaction` and `BTS.Post835InsuranceTransaction` read `ImportLog` for the duplicate check. `BTS.Post835InsuranceTransaction` skips the check for the `PLB` payment type. The procedure sets `PLB` only when `AdjustmentType` is set and is not `L6`, so flow C L6 adjustments are checked and fail as duplicates of their claim (document 05, D24). No procedure other than `AddImportLog` writes ImportLog for flows A to D.
 - Other users that write ImportLog: `BTS.SetPatientInsuranceEligibility` inserts rows directly. `dbo.SetPatientDemographicInfo` returns a text that starts with `Error`, and an SSIS package saves it in ImportLog. Neither is part of flows A to D.
 - In the BizTalk flow, the post and the `AddImportLog` call are separate (D22). If the flow throws an exception, no ImportLog row is written, and the payments that are left in the set are not processed.
 
@@ -179,7 +179,7 @@ Decision (Wes, 2026-10-21): the Utility posting procedure is `[TestC9].usp_bts_P
 
 ### BTS.Post835InsuranceTransaction (flows C and D)
 
-Same schema file. Repository version: flat parameters below. The map expects a `Transactions` table-valued parameter of type `udt835Transaction` for some fields. Confirm the live signature.
+Same schema file. The live procedure (C9-T `TestC9`, read 2026-10-29) has flat parameters, as below, and no table-valued parameter (D1 closed). Live types that differ from the table: `transNote` nvarchar(500), `transReceiptNote` nvarchar(250), `transStatus` nvarchar(2), `AdjustmentType` varchar(2). Defaults are NULL except for `transDateTime`, `transDateTimePosted`, `transStatus`, `transGUID`, `transAmount`, `transNote`, `transReference`, `transCheckNumber`, and `ptPaymentTypeCode`.
 
 | Parameter                                                                                                                                        | Type        | Flow C (claim)            | Flow C (PLB)                                 | Flow D                                         |
 | ------------------------------------------------------------------------------------------------------------------------------------------------ | ----------- | ------------------------- | -------------------------------------------- | ---------------------------------------------- |
@@ -200,11 +200,37 @@ Same schema file. Repository version: flat parameters below. The map expects a `
 | `pipPolicyNumber`                                                                                                                                | string(100) | NM1*QC NM109              | NM1*QC NM109                                 | NM1*QC NM109                                   |
 | `ptPaymentTypeCode`                                                                                                                              | string(3)   | BPR04                     | BPR04                                        | BPR04                                          |
 | `ClaimIdentifier`                                                                                                                                | string(100) | TRN04                     | TRN04                                        | Not sent                                       |
-| `PaymentIdentifier`                                                                                                                              | string(100) | REF*F8                    | REF*F8 (or `true`/`false`, see known issues) | Not sent                                       |
+| `PaymentIdentifier`                                                                                                                              | string(100) | REF*F8                    | REF*F8 of the single claim (production, D6)  | Not sent                                       |
 | `AdjustmentType`                                                                                                                                 | string(2)   | Not sent                  | PLB03-1                                      | Not sent                                       |
 | `locGUIDPosted`, `locGUIDAssigned`, `empGUIDProvider`, `ttypGUID`, `transDebitGroup`, `transCreditGroup`, `ppGUID`, `persGUIDRelated`, `orgGUID` | guid        | Not sent                  | Not sent                                     | Not sent                                       |
 
 Result set 0: `ErrorCount` (int), `ResponseMessage` (string). Also `ReturnValue` (int).
+
+#### Live procedure behavior (C9-T `TestC9`, read 2026-10-29)
+
+1. `@checkNumber = CONVERT(int, @transCheckNumber)` in a TRY. A TRN02 that is not an int (15 digits, letters) gives NULL `transCheckNumber` and an empty `Check No:` in the message. No error.
+2. If `@pipGUID` is NULL: look up the claim by `adaclaimNumber = @adaClaimNumber` and an active policy with `pipPolicyNumber = @pipPolicyNumber`. Production has no Finished claim without REF*EJ since 2026-05, so this path does not succeed in practice.
+3. Build the message header: `Check No, Claim No, Check Date (= transDateTime), Deposit Date (= transDateTimePosted), Check Amount (= -transAmount), Insurance Co, Policy No, Patient ID, PaymentType, pipGUID, patGUID, ilExternalReference :: `.
+4. Validation adds an error for each: `pipGUID` given and not found; `pipGUID` NULL and claim not found; `pipGUID` NULL and claim plus policy not found; `ptPaymentTypeCode` not in `BTS.PaymentType`.
+5. `ADAClaim.adaclaimNumber` is an **int**. The claim lookup compares it with the nvarchar `@adaClaimNumber`, so a CLP01 that is not an int raises a conversion error (D23). The lookup runs for every claim.
+6. If `AdjustmentType` is set and is not `L6`, the payment type becomes `PLB`. Duplicate check: an error if any `ImportLog` row (any state, any process) has `ilExternalReference = @PaymentIdentifier`, unless the type is `PLB`. A NULL `PaymentIdentifier` never matches (D24, D25).
+7. Any error: RAISERROR with the full message.
+8. Not L6: insert one `[Transaction]` row. The transaction type comes from `BTS.PaymentType` (`ptPaymentType = 'INSURANCE'`, code = `ptPaymentTypeCode`); patient, provider, and location come from the policy and `Patient`. `transDebitGroup` is set if the amount is positive, `transCreditGroup` if negative (both NULL as BizTalk sends them).
+9. L6: insert two rows with new GUIDs, `L6C` (charge, amounts negated, new debit group) and `L6P` (payment, new credit group).
+10. 0 rows inserted: error `[Transaction] Record Not Created for adaclaimGUID ...`.
+11. Add ` Payment amount exceeds remaining balance.` if `-transAmount` is more than `TotalDue` of `dbo.udfGetAgingAsOfDate`. Add ` Success`. Commit.
+12. CATCH: roll back, `ErrorCount + 1`, `ResponseMessage = ERROR_MESSAGE()` (only the SQL text for a conversion error or a deadlock), and insert an `UnmappedTransaction` row if `transGUID` is not in `[Transaction]`.
+
+C9-P check (2026-10-29, read-only): all 14,344 flow C ImportLog rows since 2026-09-01 have this header shape, Check Date = Deposit Date, every Finished row ends in `Success`, and 1,191 of 1,198 NON rows have an empty `Check No` (TRN02 not an int). So C9-P most likely runs the same body **(inferred)**. The read-only login cannot read the body.
+
+POC compared with PROD (#28347, 2026-10-30): the C9-T `[Transaction]` rows of the POC test run (22 scenarios, 25 PROD posts) were compared with the C9-P rows of the source files. Rows were matched on hashes of `transNote` and `transReference`, so no PHI was read. Row count, amount, transaction type, due amounts, `transIsGroup`/`transClaimAmount`/`transProductionAmount`, receipt note, posted date, check number, routing, debit group, `adaclaimGUID` (NULL in both), the link columns, and the `UnmappedTransaction` row of each failure all match. The differences have known causes:
+
+- `transStatus` is `D` in PROD and `N` on C9-T. The procedure inserts `N`; later Cloud9 processing changes it.
+- In PROD, I15 (the claim and the WO adjustment) has a `transCreditGroup`. The procedure does not set it (BizTalk sends NULL), and no other scenario has one, so it comes from later account work in Cloud9.
+- In the I02 source, both CLPs have the same CLP01. The test file gives each CLP its own TestC9 claim. Both sides post 2 rows for -200.00.
+- I21 is synthetic and has no PROD rows.
+
+TestC9 `BTS.PaymentType` rows for `INSURANCE`: `ACH` (LBOXINSEFT), `BOP` (LBOXINSCC), `CHK` (LBOXINSC), `NON` (LBOXINSC), `PLB` (LBOXINSC), `L6C` (INTERESTOTSD), `L6P` (INSIPC).
 
 ### BTS.AddImportLog (all posting flows)
 
